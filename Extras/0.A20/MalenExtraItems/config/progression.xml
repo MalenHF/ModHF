@@ -1,0 +1,362 @@
+<configs>
+  <!-- ▼▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲ increases XP per LVL ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+    <set xpath="/progression/level/@clamp_exp_cost_at_level">75</set>
+
+  <!-- ▼▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲ increases player max lvl to 450, vanilla is 300 ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+    <set xpath="/progression/level/@max_level">450</set>
+
+  <!-- ▼▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲ Unlock New Workbench ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+    <append xpath="/progression/perks/perk[@name='perkAdvancedEngineering']">
+      <effect_group>
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,5" value="1" tags="SPWK"/>
+      </effect_group>
+    </append>
+  <!-- ▼▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲ Unlock Acid Recipe ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+    <append xpath="/progression/perks/perk[@name='perkPhysician']/effect_group">
+      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,4" value="1" tags="resourceAcid"/>
+    </append>
+
+  <!-- ▼▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲ Add Art of mining key for localitation ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+    <setattribute xpath="/progression/perks/perk[@name='perkArtOfMiningComplete']" name="name_key">bafcom</setattribute>
+
+  <!-- ▼▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲ Add 10k bundles unlock to Art of mining ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+    <append xpath="/progression/perks/perk[@name='perkArtOfMiningComplete']">
+      <effect_group>
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="resourceClayLumpBundle15k,resourceRockSmallBundle10k,resourceWoodBundle10k,resourceScrapIronBundle10k,resourcePotassiumNitratePowderBundle10k,resourceLeadBundle10k,resourceCoalBundle10k,resourceOilShaleBundle10k,casinoCoinD,resourceCrushedSandBundle10k"/>
+      </effect_group>
+    </append>
+  <!-- ▼▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲ Add 10k Gunpowder unlock to Demolition Expert ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+    <append xpath="/progression/perks/perk[@name='perkDemolitionsExpert']">
+      <effect_group>
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="5" value="1" tags="resourceGunPowderBundle10k"/>
+      </effect_group>
+    </append>
+
+  <!-- ▼▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲ Add 1k ammo bundles unlock to their perks ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+    <append xpath="/progression/perks/perk[@name='perkSniperComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,bammoBundle762mmBulletBall,bammoBundle762mmBulletHP,bammoBundle762mmBulletAP</append>
+    <append xpath="/progression/perks/perk[@name='perkShotgunMessiahComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,bammoBundleShotgunShell,bammoBundleShotgunSlug,bammoBundleShotgunBreachingSlug</append>
+    <append xpath="/progression/perks/perk[@name='perkPistolPeteComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,bammoBundle9mmBulletBall,bammoBundle9mmBulletAP,bammoBundle9mmBulletHP</append>
+    <append xpath="/progression/perks/perk[@name='perkEnforcerComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,bammoBundle44MagnumBulletBall,bammoBundle44MagnumBulletHP,bammoBundle44MagnumBulletAP</append>
+
+  <!-- ▼▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲ Add Special SKILLS! ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+    <!-- ▼▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲ Add Special SKILLS! ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+    <insertAfter xpath="/progression/attributes/attribute[@name='attIntellect']">
+      <!--Attribute Special-->
+      <attribute name="special" name_key="spname" desc_key="SpecialDesc" icon="ui_game_symbol_star" min_level="0" max_level="10" base_skill_point_cost="1" cost_multiplier_per_level="1.2">
+        <level_requirements level="1">
+          <requirement name="PlayerLevel" operation="GTE" value="50" desc_key="reqs1"/>
+        </level_requirements>
+        <level_requirements level="2">
+          <requirement name="PlayerLevel" operation="GTE" value="100" desc_key="reqs2"/>
+        </level_requirements>
+        <level_requirements level="3">
+          <requirement name="PlayerLevel" operation="GTE" value="100" desc_key="reqs2"/>
+        </level_requirements>
+        <level_requirements level="4">
+          <requirement name="PlayerLevel" operation="GTE" value="150" desc_key="reqs3"/>
+        </level_requirements>
+        <level_requirements level="5">
+          <requirement name="PlayerLevel" operation="GTE" value="200" desc_key="reqs4"/>
+        </level_requirements>
+        <level_requirements level="6">
+          <requirement name="PlayerLevel" operation="GTE" value="200" desc_key="reqs4"/>
+        </level_requirements>
+        <level_requirements level="7">
+          <requirement name="PlayerLevel" operation="GTE" value="250" desc_key="reqs5"/>
+        </level_requirements>
+        <level_requirements level="8">
+          <requirement name="PlayerLevel" operation="GTE" value="300" desc_key="reqs6"/>
+        </level_requirements>
+        <level_requirements level="9">
+          <requirement name="PlayerLevel" operation="GTE" value="300" desc_key="reqs7"/>
+        </level_requirements>
+        <level_requirements level="10">
+          <requirement name="PlayerLevel" operation="GTE" value="350" desc_key="reqs8"/>
+        </level_requirements>
+
+        <effect_group>
+          <!--
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,10" value="1" tags=""/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="7,10" value="1" tags=""/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="8,10" value="1" tags=""/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="9,10" value="1" tags=""/>
+          -->
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="10" value="1" tags="betsyPlac,betsyPlac2"/>
+          <passive_effect name="EntityDamage" operation="perc_add" level="10" value=".1">
+            <requirement name="EntityTagCompare" target="other" tags="zombie"/>
+          </passive_effect>
+
+          <passive_effect name="HealthMax" operation="base_add" value="5,40" level="2,9"/>
+          <passive_effect name="HealthMax" operation="base_add" value="50" level="10"/>
+          <passive_effect name="StaminaMax" operation="base_add" value="5,40" level="2,9"/>
+          <passive_effect name="StaminaMax" operation="base_add" value="50" level="10"/>
+
+          <effect_description level="1" desc_key="SP1desc" long_desc_key="SP1longdesc"/>
+          <effect_description level="2" desc_key="SP2desc" long_desc_key="SP2longdesc"/>
+          <effect_description level="3" desc_key="SP3desc" long_desc_key="SP3longdesc"/>
+          <effect_description level="4" desc_key="SP4desc" long_desc_key="SP4longdesc"/>
+          <effect_description level="5" desc_key="SP5desc" long_desc_key="SP5longdesc"/>
+          <effect_description level="6" desc_key="SP6desc" long_desc_key="SP6longdesc"/>
+          <effect_description level="7" desc_key="SP7desc" long_desc_key="SP7longdesc"/>
+          <effect_description level="8" desc_key="SP8desc" long_desc_key="SP8longdesc"/>
+          <effect_description level="9" desc_key="SP9desc" long_desc_key="SP9longdesc"/>
+          <effect_description level="10" desc_base="Betsy! " justify="center" long_desc_key="SP10longdesc"/>
+
+        </effect_group>
+      </attribute>
+    </insertAfter>
+    
+    <insertAfter xpath="/progression/skills/skill[@name='skillIntellectCraftsmanship']">
+      <!--Parent Books-->
+      <skill name="skillbooks" parent="special" name_key="L_M" desc_key="" icon="ui_game_symbol_book_read">
+        <effect_group/>
+      </skill>
+      <!--Parent Craft-->
+      <skill name="skillherramientas" parent="special" name_key="H_L" desc_key="" icon="ui_game_symbol_resource">
+        <effect_group/>
+      </skill>
+      <!--Parent Specialist-->
+      <skill name="skillarmas" parent="special" name_key="A_S" desc_key="" icon="ui_game_symbol_marksmanship">
+        <effect_group/>
+      </skill>
+    </insertAfter>
+    <insertAfter xpath="/progression/perks/perk[@name='perkGreaseMonkey']">
+      <!-- Books -->
+      <!--Guns-->
+      <perk name="PBMA" parent="skillbooks" max_level="3" base_skill_point_cost="3" cost_multiplier_per_level="1.2" name_key="PMASKILL" desc_key="PBdesc1" long_desc_key="" icon="ui_game_symbol_book">
+        <!--
+        <level_requirements level="1">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="1" desc_key="perkSpdesc1"/>
+        </level_requirements>
+        <level_requirements level="2">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="2" desc_key="perkSpdesc2"/>
+        </level_requirements>
+        <level_requirements level="3">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="4" desc_key="perkSpdesc4"/>
+        </level_requirements>
+        -->
+        <effect_group>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,3" value="1" tags="PLArms,PLMelee,PLWast"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,3" value="1" tags="PaLArms,PaLMelee,PaLWast"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="3" value="1" tags="LMArms,LMMelee,LMWast"/>
+          <effect_description level="1" desc_key="PMASDESC1" long_desc_key="PMASLONDESC1"/>
+          <effect_description level="2" desc_key="PMASDESC2" long_desc_key="PMASLONDESC2"/>
+          <effect_description level="3" desc_key="PMASDESC3" long_desc_key="PMASLONDESC3"/>
+        </effect_group>
+      </perk>
+      <!--Melee-->
+      <perk name="PBMAr" parent="skillbooks" max_level="3" name_key="PBMArname" desc_key="PBdesc2" long_desc_key="" icon="ui_game_symbol_book">
+        <level_requirements level="1">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="1" desc_key="perkSpdesc1"/>
+        </level_requirements>
+        <level_requirements level="2">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="2" desc_key="perkSpdesc2"/>
+        </level_requirements>
+        <level_requirements level="3">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="4" desc_key="perkSpdesc4"/>
+        </level_requirements>
+        <effect_group>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,3" value="1" tags=""/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,3" value="1" tags=""/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="3" value="1" tags=""/>
+
+          <effect_description level="1" desc_key="PBMArdesc1" long_desc_key="PBMArlongdesc1"/>
+          <effect_description level="2" desc_key="PBMArdesc2" long_desc_key="PBMArlongdesc2"/>
+          <effect_description level="3" desc_key="PBMArdesc3" long_desc_key="PBMArlongdesc3"/>
+        </effect_group>
+      </perk>
+      <!--Wastelan-->
+      <perk name="PBMH" parent="skillbooks" max_level="5" name_key="PMMSKILL" base_skill_point_cost="20" desc_key="PBdesc3" long_desc_key="" icon="ui_game_symbol_book">
+        <level_requirements level="1">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="10" desc_key="perkSpdesc10"/>
+        </level_requirements>
+        <level_requirements level="2">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="10" desc_key="perkSpdesc10"/>
+        </level_requirements>
+        <level_requirements level="3">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="10" desc_key="perkSpdesc10"/>
+        </level_requirements>
+        <level_requirements level="4">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="10" desc_key="perkSpdesc10"/>
+        </level_requirements>
+        <level_requirements level="5">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="10" desc_key="perkSpdesc10"/>
+        </level_requirements>
+
+        <effect_group>
+          <passive_effect name="HealthMax" operation="base_add" value="20,100" level="1,5"/>
+          <passive_effect name="StaminaMax" operation="base_add" value="20,100" level="1,5"/>
+
+          <effect_description level="1" desc_key="PMMSDESC1" long_desc_key="PMMSLONDESC1"/>
+          <effect_description level="2" desc_key="PMMSDESC2" long_desc_key="PMMSLONDESC2"/>
+          <effect_description level="3" desc_key="PMMSDESC3" long_desc_key="PMMSLONDESC3"/>
+        </effect_group>
+      </perk>
+      <!--Craft Perks-->
+      <!--Inge-->
+      <perk name="PBMT" parent="skillherramientas" max_level="3" name_key="PMISKILL" desc_key="PBdesc" long_desc_key="" icon="ui_game_symbol_misc_crafting">
+        <level_requirements level="1">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="1" desc_key="perkSpdesc1"/>
+        </level_requirements>
+        <level_requirements level="2">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="4" desc_key="perkSpdesc4"/>
+        </level_requirements>
+        <level_requirements level="3">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="7" desc_key="perkSpdesc7"/>
+        </level_requirements>
+        <effect_group>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,3" value="1" tags="PerkIngeS1"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,3" value="1" tags="PerkIngeS2"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="3" value="1" tags="PerkIngeS3"/>
+          <passive_effect name="CraftingTier" operation="base_add" level="0,1,2,3" value="6,6,6,6" tags="LCLvlInge"/>
+
+          <effect_description level="1" desc_key="PMISDESC1" long_desc_key="PMISLONDESC1"/>
+          <effect_description level="2" desc_key="PMISDESC2" long_desc_key="PMISLONDESC2"/>
+          <effect_description level="3" desc_key="PMISDESC3" long_desc_key="PMISLONDESC3"/>
+        </effect_group>
+      </perk>
+      <!--Blacksmith-->
+      <perk name="HML" parent="skillherramientas" max_level="3" name_key="SHLS" desc_key="PHLD" long_desc_key="" icon="ui_game_symbol_mining">
+        <level_requirements level="1">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="3" desc_key="perkSpdesc3"/>
+        </level_requirements>
+        <level_requirements level="2">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="6" desc_key="perkSpdesc6"/>
+        </level_requirements>
+        <level_requirements level="3">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="9" desc_key="perkSpdesc9"/>
+        </level_requirements>
+        <effect_group>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,3" value="1" tags="PLHr1"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,3" value="1" tags="PLHr2"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="3" value="1" tags="PLHr3"/>
+          <passive_effect name="EntityDamage" operation="perc_add" level="2,3" value=".1,.2">
+            <requirement name="HoldingItemHasTags" tags="legenMelee"/>
+          </passive_effect>
+
+          <effect_description level="1" desc_key="SHLSDESC1" long_desc_key="SHLSLONDESC1"/>
+          <effect_description level="2" desc_key="SHLSDESC2" long_desc_key="SHLSLONDESC2"/>
+          <effect_description level="3" desc_key="SHLSDESC3" long_desc_key="SHLSLONDESC3"/>
+        </effect_group>
+      </perk>
+      <!-- Especialistas -->
+      <!--Gun-->
+      <perk name="PPL" parent="skillarmas" max_level="3" name_key="PPLN" desc_key="PPLD" long_desc_key="PPLLD" icon="ui_game_symbol_gunslinger">
+        <level_requirements level="1">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="2" desc_key="perkSpdesc2"/>
+        </level_requirements>
+        <level_requirements level="2">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="5" desc_key="perkSpdesc5"/>
+        </level_requirements>
+        <level_requirements level="3">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="8" desc_key="perkSpdesc8"/>
+        </level_requirements>
+        <effect_group>
+          <passive_effect name="EntityDamage" operation="perc_add" level="1,2" value=".05,.1">
+            <requirement name="HoldingItemHasTags" tags="perkGunslinger"/>
+          </passive_effect>
+          <passive_effect name="EntityDamage" operation="perc_add" level="3" value=".2">
+            <requirement name="HoldingItemHasTags" tags="perkGunslinger"/>
+          </passive_effect>
+          <passive_effect name="CraftingTier" operation="base_add" level="0,1,2,3" value="5,5,5,5" tags="LCLvl"/>
+          <effect_description level="1" desc_key="SAPSDESC1" long_desc_key="SAPSLONDESC1"/>
+          <effect_description level="2" desc_key="SAPSDESC2" long_desc_key="SAPSLONDESC2"/>
+          <effect_description level="3" desc_key="SAPSDESC3" long_desc_key="SAPSLONDESC3"/>
+        </effect_group>
+      </perk>
+      <!--Shotgun-->
+      <perk name="PEL" parent="skillarmas" max_level="3" name_key="PELN" desc_key="PELD" long_desc_key="PELLD" icon="ui_game_symbol_shotgun">
+        <level_requirements level="1">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="2" desc_key="perkSpdesc2"/>
+        </level_requirements>
+        <level_requirements level="2">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="5" desc_key="perkSpdesc5"/>
+        </level_requirements>
+        <level_requirements level="3">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="8" desc_key="perkSpdesc8"/>
+        </level_requirements>
+        <effect_group>
+          <passive_effect name="EntityDamage" operation="perc_add" level="1,2" value=".05,.1">
+            <requirement name="HoldingItemHasTags" tags="perkBoomstick"/>
+          </passive_effect>
+          <passive_effect name="EntityDamage" operation="perc_add" level="3" value=".2">
+            <requirement name="HoldingItemHasTags" tags="perkBoomstick"/>
+          </passive_effect>
+          <effect_description level="1" desc_key="SAESDESC1" long_desc_key="SAESLONDESC1"/>
+          <effect_description level="2" desc_key="SAESDESC2" long_desc_key="SAESLONDESC2"/>
+          <effect_description level="3" desc_key="SAESDESC3" long_desc_key="SAESLONDESC3"/>
+        </effect_group>
+      </perk>
+      <!--Rifle-->
+      <perk name="PRL" parent="skillarmas" max_level="3" name_key="PRLN" desc_key="PRLD" long_desc_key="PRLLD" icon="ui_game_symbol_map_cursor">
+        <level_requirements level="1">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="2" desc_key="perkSpdesc2"/>
+        </level_requirements>
+        <level_requirements level="2">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="5" desc_key="perkSpdesc5"/>
+        </level_requirements>
+        <level_requirements level="3">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="8" desc_key="perkSpdesc8"/>
+        </level_requirements>
+        <effect_group>
+          <passive_effect name="EntityDamage" operation="perc_add" level="1,2" value=".05,.1">
+            <requirement name="perkBoomstick" tags="perkDeadEye"/>
+          </passive_effect>
+          <passive_effect name="EntityDamage" operation="perc_add" level="3" value=".2">
+            <requirement name="perkBoomstick" tags="perkDeadEye"/>
+          </passive_effect>
+          <effect_description level="1" desc_key="SASSDESC1" long_desc_key="SASSLONDESC1"/>
+          <effect_description level="2" desc_key="SASSDESC2" long_desc_key="SASSLONDESC2"/>
+          <effect_description level="3" desc_key="SASSDESC3" long_desc_key="SASSLONDESC3"/>
+        </effect_group>
+      </perk>
+      <!--Automatic-->
+      <perk name="PML" parent="skillarmas" max_level="3" name_key="PMLN" desc_key="PMLD" long_desc_key="PMLLD" icon="ui_game_symbol_rifle">
+        <level_requirements level="1">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="2" desc_key="perkSpdesc2"/>
+        </level_requirements>
+        <level_requirements level="2">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="5" desc_key="perkSpdesc5"/>
+        </level_requirements>
+        <level_requirements level="3">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="8" desc_key="perkSpdesc8"/>
+        </level_requirements>
+        <effect_group>
+          <passive_effect name="EntityDamage" operation="perc_add" level="1,2" value=".05,.1">
+            <requirement name="HoldingItemHasTags" tags="perkMachineGunner"/>
+          </passive_effect>
+          <passive_effect name="EntityDamage" operation="perc_add" level="3" value=".2">
+            <requirement name="HoldingItemHasTags" tags="perkMachineGunner"/>
+          </passive_effect>
+          <effect_description level="1" desc_key="SAMSDESC1" long_desc_key="SAMSLONDESC1"/>
+          <effect_description level="2" desc_key="SAMSDESC2" long_desc_key="SAMSLONDESC2"/>
+          <effect_description level="3" desc_key="SAMSDESC3" long_desc_key="SAMSLONDESC3"/>
+        </effect_group>
+      </perk>
+      <!--Crossbow-->
+      <perk name="PBAL" parent="skillarmas" max_level="3" name_key="PBLN" desc_key="PBLD" long_desc_key="PBLLD" icon="ui_game_symbol_archery">
+        <level_requirements level="1">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="2" desc_key="perkSpdesc2"/>
+        </level_requirements>
+        <level_requirements level="2">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="5" desc_key="perkSpdesc5"/>
+        </level_requirements>
+        <level_requirements level="3">
+          <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="8" desc_key="perkSpdesc8"/>
+        </level_requirements>
+        <effect_group>
+          <passive_effect name="EntityDamage" operation="perc_add" level="1,2" value=".05,.1">
+            <requirement name="HoldingItemHasTags" tags="perkArchery"/>
+          </passive_effect>
+          <passive_effect name="EntityDamage" operation="perc_add" level="3" value=".2">
+            <requirement name="HoldingItemHasTags" tags="perkArchery"/>
+          </passive_effect>
+          <effect_description level="1" desc_key="LBADesc1" long_desc_key="LBADesc1long"/>
+          <effect_description level="2" desc_key="LBADesc2" long_desc_key="LBADesc2long"/>
+          <effect_description level="3" desc_key="LBADesc3" long_desc_key="LBADesc3long"/>
+        </effect_group>
+      </perk>
+      <!---->
+    </insertAfter>
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->	
+</configs>

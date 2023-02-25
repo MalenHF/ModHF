@@ -1,0 +1,54 @@
+<config>
+    <insertAfter xpath="/dialogs/dialog[@id='trader']/statement[@id='start']/response_entry[@id='jobshave5']">
+        <response_entry id="jobshave6" />
+    </insertAfter> 
+
+    <append xpath="/dialogs/dialog[@id='trader']">
+        <statement id="currentjobs6" text="dialog_trader_statement_currentjobs" nextstatementid="start">
+            <quest_entry listindex="0" tier="6" />
+            <quest_entry listindex="1" tier="6" />
+            <quest_entry listindex="2" tier="6" />
+            <response_entry id="jobsprev5" uniqueid="prev" />
+            <response_entry id="jobsprev4" uniqueid="prev" />
+            <response_entry id="jobsprev3" uniqueid="prev" />
+            <response_entry id="jobsprev2" uniqueid="prev" />
+            <response_entry id="jobsprev1" uniqueid="prev" />
+
+            <response_entry id="nevermind" />
+        </statement>
+        <response id="jobshave6" text="dialog_trader_response_jobshave" nextstatementid="currentjobs6" >
+			<requirement type="QuestStatus" value="NotStarted" requirementtype="Hide" />
+			<requirement type="QuestTierHighest" value="6" requirementtype="Hide" />
+			<action type="AddJournalEntry" id="questTip" />
+		</response>
+        <response id="jobsprev5" text="Previous Tier" nextstatementid="currentjobs5" >
+			<requirement type="QuestTier" value="5" requirementtype="Hide" />
+		</response>
+        <response id="jobsnext6" text="Next Tier" nextstatementid="currentjobs6" >
+			<requirement type="QuestTier" value="6" requirementtype="Hide" />
+		</response>
+
+    </append>
+    
+       
+    <insertAfter xpath="/dialogs/dialog[@id='trader']/statement[@id='currentjobs1']/response_entry[@id='jobsnext5']">
+        <response_entry id="jobsnext6" uniqueid="next" />
+    </insertAfter>
+    <insertAfter xpath="/dialogs/dialog[@id='trader']/statement[@id='currentjobs2']/response_entry[@id='jobsnext5']">
+        <response_entry id="jobsnext6" uniqueid="next" />
+    </insertAfter>
+    <insertAfter xpath="/dialogs/dialog[@id='trader']/statement[@id='currentjobs3']/response_entry[@id='jobsnext5']">
+        <response_entry id="jobsnext6" uniqueid="next" />
+    </insertAfter>
+    <insertAfter xpath="/dialogs/dialog[@id='trader']/statement[@id='currentjobs4']/response_entry[@id='jobsnext5']">
+        <response_entry id="jobsnext6" uniqueid="next" />
+    </insertAfter>
+    <insertAfter xpath="/dialogs/dialog[@id='trader']/statement[@id='currentjobs5']/response_entry[@id='jobsprev1']">
+        <response_entry id="jobsnext6" uniqueid="next" />
+    </insertAfter>
+
+    <append xpath="/dialogs/dialog[@id='trader']/statement[@id='currentjobs5']">
+        <response_entry id="jobsnext6" uniqueid="next" />
+    </append>
+
+</config>

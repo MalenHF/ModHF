@@ -1,0 +1,217 @@
+<config>
+    <setattribute xpath="/gameevents" name="max_entities">50</setattribute>
+    <append xpath="/gameevents">
+        <!--Eventos-->
+        <action_sequence name="spawn_boss">
+
+            <action class="SpawnEntity">
+                <property name="entity_names" value="BossTavoSoldier,BosszombieSiren,BossZombieJuggernaut,BossMineralSpider,BossMummy,BossPractoSpider" />
+                <property name="spawn_count" value="1" />
+            </action>
+
+            <action class="PlaySound">
+                <property name="sound" value="twitch_bad_spawn" />
+                <property name="phase" value="1" />
+            </action>
+
+            <action class="PlaySound">
+                <property name="sound" value="zombiemalealert" />
+                <property name="phase" value="1" />
+            </action>
+
+        </action_sequence>
+
+        <action_sequence name="spawn_siren">
+
+            <action class="SpawnEntity">
+                <property name="entity_names" value="BosszombieSiren" />
+            </action>
+
+            <action class="PlaySound">
+                <property name="sound" value="sirenidle" />
+                <property name="phase" value="1" />
+            </action>
+
+            <action class="PlaySound">
+                <property name="sound" value="zombiemalealert" />
+                <property name="phase" value="1" />
+            </action>
+
+        </action_sequence>
+
+        <action_sequence name="spawn_elite">
+
+            <action class="SpawnEntity">
+                <property name="entity_names" value="EliteCop,EliteSolider,EliteHawai,EliteSkater,EliteFeral,EliteBoomer,ZombieBomberElite" />
+            </action>
+
+            <action class="PlaySound">
+                <property name="sound" value="twitch_bad_spawn" />
+                <property name="phase" value="1" />
+            </action>
+
+            <action class="PlaySound">
+                <property name="sound" value="zombiemalealert" />
+                <property name="phase" value="1" />
+            </action>
+
+        </action_sequence>
+
+        <action_sequence name="spawn_special">
+
+            <action class="SpawnEntity">
+                <property name="entity_names" value="HeadZombiePonky,VenSpiritu,NighScreamer,zombieGunner,TAVOzombieFire,MiniSiren" />
+            </action>
+
+            <action class="PlaySound">
+                <property name="sound" value="twitch_bad_spawn" />
+                <property name="phase" value="1" />
+            </action>
+
+            <action class="PlaySound">
+                <property name="sound" value="zombiemalealert" />
+                <property name="phase" value="1" />
+            </action>
+
+        </action_sequence>
+
+        <action_sequence name="spawn_tavo">
+
+            <action class="SpawnEntity">
+                <property name="entity_names" value="TAVOZombieROPA" />
+            </action>
+
+            <action class="PlaySound">
+                <property name="sound" value="malehateattack" />
+                <property name="phase" value="1" />
+            </action>
+
+            <action class="PlaySound">
+                <property name="sound" value="zombiemalealert" />
+                <property name="phase" value="1" />
+            </action>
+
+        </action_sequence>
+
+        <action_sequence name="spawn_nigh">
+
+            <action class="SpawnEntity">
+                <property name="entity_names" value="NighCop,NighSolider,NighHawai,NighSkater,NighFeral,NighBoomer,NighFarmer,NighSnow,NighScreamer" />
+            </action>
+
+            <action class="PlaySound">
+                <property name="sound" value="sirenidle" />
+                <property name="phase" value="1" />
+            </action>
+
+            <action class="PlaySound">
+                <property name="sound" value="zombiemalealert" />
+                <property name="phase" value="1" />
+            </action>
+
+        </action_sequence>
+
+        <action_sequence name="spawn_zilla">
+
+            <action class="SpawnEntity">
+                <property name="entity_names" value="Gallinazilla" />
+            </action>
+
+            <action class="PlaySound">
+                <property name="sound" value="Animals/Chicken/chickenpain" />
+                <property name="phase" value="1" />
+            </action>
+
+            <action class="PlaySound">
+                <property name="sound" value="zombiemalealert" />
+                <property name="phase" value="1" />
+            </action>
+
+        </action_sequence>
+
+        <action_sequence name="spawn_mini">
+
+            <action class="SpawnEntity">
+                <property name="entity_names" value="MiniSiren" />
+            </action>
+
+            <action class="PlaySound">
+                <property name="sound" value="sirenidle" />
+                <property name="phase" value="1" />
+            </action>
+
+            <action class="PlaySound">
+                <property name="sound" value="zombiemalealert" />
+                <property name="phase" value="1" />
+            </action>
+
+        </action_sequence>
+
+        <action_sequence name="spawn_horda">
+
+            <action class="SpawnEntity">
+                <property name="entity_names" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombieStripper,zombieBurnt,zombieJanitor" />
+                <property name="spawn_count" value="6" />
+            </action>
+
+            <action class="PlaySound">
+                <property name="sound" value="malehateattack" />
+                <property name="phase" value="1" />
+            </action>
+
+            <action class="PlaySound">
+                <property name="sound" value="zombiemalealert" />
+                <property name="phase" value="1" />
+            </action>
+
+        </action_sequence>
+
+        <action_sequence name="buff_down">
+
+            <requirement class="HasBuff">
+                <property name="buff_name" value="twitch_buffDistort" />
+                <property name="invert" value="true" />
+            </requirement>
+
+            <requirement class="HasBuff">
+                <property name="buff_name" value="twitch_buffMonochrome" />
+                <property name="invert" value="true" />
+            </requirement>
+
+            <action class="AddPartyToGroup">
+                <property name="phase" value="0" />
+                <property name="group_name" value="party" />
+            </action>
+
+            <action class="PlaySound">
+                <property name="sound" value="twitch_bad_buff" />
+                <property name="phase" value="1" />
+                <property name="inside_head" value="true" />
+                <property name="target_group" value="party" />
+            </action>
+
+            <action class="PlaySound">
+                <property name="phase" value="1" />
+                <property name="sound" value="player1vomit" />
+                <property name="inside_head" value="true" />
+                <property name="target_group" value="party" />
+            </action>
+
+            <action class="AddBuff">
+                <property name="phase" value="1" />
+                <property name="buff_name" value="buffInjuryKnockdown01" />
+                <property name="target_group" value="party" />
+            </action>
+
+        </action_sequence>
+
+        <action_sequence name="action_scaresiren">
+
+            <action class="PlaySound">
+                <property name="sound" value="sirenidle" />
+                <property name="behind_player" value="true" />
+            </action>
+
+        </action_sequence>
+    </append>
+</config>

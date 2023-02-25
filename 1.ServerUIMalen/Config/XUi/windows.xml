@@ -1,0 +1,1217 @@
+<MalenSUI>
+    <!-- Remover chat y mueve la chatbox-->
+    <remove xpath="/windows/window[@name='chatoutput']"/>
+    <remove xpath="/windows/window[@name='chat']"/>
+    <!-- Cambia la capa del editor-->
+    <setattribute xpath="/windows/window[@name='ingameDebugMenu']" name="depth">6</setattribute>
+    <setattribute xpath="/windows/window[@name='editorPanelSelector']" name="depth">6</setattribute>
+    <setattribute xpath="/windows/window[@name='levelTools']" name="depth">6</setattribute>
+    <setattribute xpath="/windows/window[@name='levelTools2']" name="depth">6</setattribute>
+    <setattribute xpath="/windows/window[@name='prefabList']" name="depth">6</setattribute>
+    <append xpath="/windows/window[@name='ingameMenu']">
+        <!--BackGround black layer-->
+        <sprite depth="-4" name="backgroundMain" sprite="menu_empty3px" pos="-20,20" height="1440" width="2560" color="[black]" type="sliced" fillcenter="true" globalopacity="true" globalopacitymod=".7"/>
+    </append>
+
+    <append xpath="/windows">
+        <window name="serverinfowindow" anchor="LeftTop" pos="20,-20" width="200" height="200" cursor_area="true" depth="2">
+            <!-- Tab buttons -->
+            <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="800" width="1280">
+                <rect name="tabsHeader" height="56" depth="3">                    <!--Change rows to the number of "buttons you need"-->
+                    <grid name="tabButtons" pos="0,-400" depth="2" rows="8" cols="1" cell_width="250" cell_height="56" repeat_content="true" arrangement="vertical">
+                        <rect>
+                            <simplebutton name="tabButton" depth="2" pos="2,-2" width="250" height="46" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="[black]" foregroundlayer="true"/>
+
+                        </rect>
+                    </grid>
+                </rect>
+
+                <!-- Contenido de la tabulacion -->
+                <rect name="tabsContents" depth="2" pos="278,-110" height="761">
+                    <!-- BackgroundMain and Border -->
+                    <sprite depth="-2" pos="2,0" width="1276" height="800" name="backgroundMain" sprite="menu_empty3px" color="[mediumGrey]" type="sliced" fillcenter="true"/>
+                    <sprite name="border" sprite="menu_empty3px" height="802" pos="0,1" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                    <!-- Main, links and PNG -->
+                    <rect tab_key="Hooligans Force">
+                        <panel name="rheader" pos="0,46" height="46" width="1280" depth="0" disableautobackground="true">
+                            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1276" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                            <label style="header.name" pos="6,-6" height="34" width="1268" justify="Center" text_key="Hooligans Force" />
+                        </panel>
+                        <!--PNG-->
+                        <panel name="cmdcontent" pos="0,0" width="260" height="250" depth="0" pivot="center" disableautobackground="true">
+                            <texture on_drag="true" on_press="true" size="342,232" texture="@https://cdn.discordapp.com/attachments/819714579289341972/930902416256270456/image_-_copia.png" depth="11" pos="467,-50"/>
+                            <!--Change the url one of your choise-->
+                        </panel>
+                        <!--LINKS-->
+                        <panel name="headMapa" pos="70,-320" height="46" width="332" depth="0" disableautobackground="true">
+                            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="42" width="328" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                            <label pos="10, -5" width="312" height="36" name="encavezadidiscord" text="Mapa del Servidor" justify="center" style="hover,header.name" font_size="30" upper_case="false" />
+                        </panel>
+                        <panel name="contentMapa" pos="70,-363" height="46" width="332" depth="0" disableautobackground="true" controller="ServerInfo">
+                            <label name="ServerDescription" />
+                            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="42" width="328" color="[darkGrey]" type="sliced" fillcenter="true" globalopacity="true" globalopacitymod="0.80"/>
+                            <label pos="10, -5" width="312" height="36" name="ServerWebsiteURL" text="http://192.169.89.114:5402" justify="center" style="press, hover" font_size="30" upper_case="false" />
+                        </panel>
+
+                        <panel name="discheader" pos="472,-320" height="46" width="332" depth="0" disableautobackground="true">
+                            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="42" width="328" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                            <label pos="10, -5" width="312" height="36" name="encavezadidiscord" text="Discord del Servidor" justify="center" style="hover,header.name" font_size="30" upper_case="false" />
+                        </panel>
+                        <panel name="discontent" pos="472,-363" height="46" width="332" depth="0" disableautobackground="true" controller="ServerInfo">
+                            <label name="ServerDescription" />
+                            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="42" width="328" color="[darkGrey]" type="sliced" fillcenter="true" globalopacity="true" globalopacitymod="0.80"/>
+                            <label pos="10, -5" width="312" height="36" name="ServerWebsiteURL" text="https://discord.gg/fCQ6tPD" justify="center" style="press, hover" font_size="30" upper_case="false" />
+                        </panel>
+
+                        <panel name="headZR" pos="874,-320" height="46" width="332" depth="0" disableautobackground="true">
+                            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="42" width="328" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                            <label pos="10, -5" width="312" height="36" name="encavezadidiscord" text="Mapa Zonas de Reinicio" justify="center" style="hover,header.name" font_size="30" upper_case="false" />
+                        </panel>
+                        <panel name="contentZR" pos="874,-363" height="46" width="332" depth="0" disableautobackground="true" controller="ServerInfo">
+                            <label name="ServerDescription" />
+                            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="42" width="328" color="[darkGrey]" type="sliced" fillcenter="true" globalopacity="true" globalopacitymod="0.80"/>
+                            <label pos="10, -5" width="312" height="36" name="ServerWebsiteURL" text="http://192.169.89.114:5403" justify="center" style="press, hover" font_size="30" upper_case="false" />
+                        </panel>
+
+                        <panel name="headVot" pos="70,-440" height="46" width="533" depth="0" disableautobackground="true">
+                            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="42" width="529" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                            <label pos="10, -5" width="513" height="36" name="encavezadidiscord" text="♦Link de Donaciones♦" color="255,221,0" justify="center" style="hover,header.name" font_size="30" upper_case="false" />
+                        </panel>
+                        <panel name="contentVot" pos="70,-483" height="46" width="533" depth="0" disableautobackground="true" controller="ServerInfo">
+                            <label name="ServerDescription" />
+                            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="42" width="529" color="[darkGrey]" type="sliced" fillcenter="true" globalopacity="true" globalopacitymod="0.80"/>
+                            <label pos="10, -5" width="513" height="36" name="ServerWebsiteURL" text="https://paypal.me/payHF" justify="center" style="press, hover" font_size="30" upper_case="false" />
+                        </panel>
+
+                        <panel name="headVot" pos="673,-440" height="46" width="533" depth="0" disableautobackground="true">
+                            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="42" width="529" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                            <label pos="10, -5" width="513" height="36" name="encavezadidiscord" text="♦Vota por el Servidor♦" color="0,221,255" justify="center" style="hover,header.name" font_size="30" upper_case="false" />
+                        </panel>
+                        <panel name="contentVot" pos="673,-483" height="46" width="533" depth="0" disableautobackground="true" controller="ServerInfo">
+                            <label name="ServerDescription" />
+                            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="42" width="529" color="[darkGrey]" type="sliced" fillcenter="true" globalopacity="true" globalopacitymod="0.80"/>
+                            <label pos="10, -5" width="513" height="36" name="ServerWebsiteURL" text="https://7daystodie-servers.com/server/90295/" justify="center" style="press, hover" font_size="30" upper_case="false" />
+                        </panel>
+                    </rect>
+                    <!-- Reglas del servidor -->
+                    <rect tab_key="HeaderR">
+                        <panel name="rheader" pos="0,46" height="46" width="1280" depth="0" disableautobackground="true">
+                            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1276" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                            <label style="header.name" pos="6,-6" height="34" width="1268" justify="Center" text_key="HeaderR" />
+                        </panel>
+                        <rect name="tabs" controller="TabSelector" pivot="center" height="100" width="1280">
+                            <rect name="tabsHeader" pos="117,0" width="100%" height="60" depth="0">
+                                <sprite depth="7" pos="7,-30" color="200, 200, 100" width="36" height="36" sprite="ui_game_symbol_perk" foregroundlayer="true"/>
+                                <sprite depth="7" pos="366,-30" color="255, 128, 0" width="36" height="36" sprite="ui_game_symbol_map_trader" foregroundlayer="true"/>
+                                <sprite depth="7" pos="723,-30" color="0, 255, 0" width="36" height="36" sprite="ui_game_symbol_resource" foregroundlayer="true"/>
+                                <grid name="tabButtons" pos="0,-20" depth="4" rows="1" cols="3" cell_width="358" cell_height="51" repeat_content="true" arrangement="horizontal">
+                                    <rect>
+                                        <simplebutton2 name="tabButton" borderW="336" iconC="0, 0, 0" buttonIcon="" depth="2" pos="2,-3" width="336" height="48" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
+                                    </rect>
+                                </grid>
+                            </rect>
+                            <rect name="tabsContents" depth="2" pos="0,-50" height="713">
+                                <rect tab_key="HeaderR">
+                                    <rect name="tabs" controller="TabSelector" pivot="center" height="100" width="100">
+                                        <rect name="tabsHeader" pos="190,-150" width="100%" height="650" depth="0">
+                                            <grid name="tabButtons" pos="0,-150" depth="4" rows="10" cols="3" cell_width="308" cell_height="51" repeat_content="true" arrangement="horizontal">
+                                                <rect>
+                                                    <simplebutton2 name="tabButton" iconC="200, 200, 100" borderW="306" buttonIcon="ui_game_symbol_perk" depth="2" pos="2,-3" width="306" height="48" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
+                                                </rect>
+                                            </grid>
+                                        </rect>
+                                        <rect name="tabsContents" depth="2" pos="100,-106" height="713">
+                                            <panel name="testUI" pos="0,43" height="46" width="1086" depth="0" disableautobackground="true">
+                                                <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                                <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1082" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                                            </panel>
+                                            <rect tab_key="R1N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R1N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R1SCR"/>
+                                            </rect>
+                                            <rect tab_key="R2N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R2N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R2SCR"/>
+                                            </rect>
+                                            <rect tab_key="R3N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R3N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R3SCR"/>
+                                            </rect>
+                                            <rect tab_key="R4N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R4N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R4SCR"/>
+                                            </rect>
+                                            <rect tab_key="R5N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R5N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R5SCR"/>
+                                            </rect>
+                                            <rect tab_key="R6N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R6N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R6SCR"/>
+                                            </rect>
+                                            <rect tab_key="R7N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R7N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R7SCR"/>
+                                            </rect>
+                                            <rect tab_key="R8N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R8N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R8SCR"/>
+                                            </rect>
+                                            <rect tab_key="R9N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R9N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R9SCR"/>
+                                            </rect>
+                                            <rect tab_key="R10N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R10N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R10SCR"/>
+                                            </rect>
+                                            <rect tab_key="R11N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R11N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R11SCR"/>
+                                            </rect>
+                                            <rect tab_key="R12N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R12N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R12SCR"/>
+                                            </rect>
+                                            <rect tab_key="R13N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R13N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R13SCR"/>
+                                            </rect>
+                                            <rect tab_key="R14N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R14N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R14SCR"/>
+                                            </rect>
+                                            <rect tab_key="R15N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R15N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R15SCR"/>
+                                            </rect>
+                                        </rect>
+                                    </rect>
+                                </rect>
+                                <rect tab_key="HeaderRM">
+                                    <rect name="tabs" controller="TabSelector" pivot="center" height="100" width="100">
+                                        <rect name="tabsHeader" pos="190,-200" width="100%" height="650" depth="0">
+                                            <grid name="tabButtons" pos="0,-98" depth="4" rows="10" cols="3" cell_width="308" cell_height="51" repeat_content="true" arrangement="horizontal">
+                                                <rect>
+                                                    <simplebutton2 name="tabButton" iconC="255, 128, 0" borderW="306" buttonIcon="ui_game_symbol_map_trader" depth="2" pos="2,-3" width="306" height="48" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
+                                                </rect>
+                                            </grid>
+                                        </rect>
+                                        <rect name="tabsContents" depth="2" pos="100,-106" height="713">
+                                            <panel name="testUI" pos="0,43" height="46" width="1086" depth="0" disableautobackground="true">
+                                                <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                                <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1082" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+
+                                            </panel>
+                                            <rect tab_key="R1N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R1N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M1SCR"/>
+                                            </rect>
+                                            <rect tab_key="R2N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R2N"/>
+                                                <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M2SCR"/>
+                                            </rect>
+                                            <rect tab_key="R3N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R3N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M3SCR"/>
+                                            </rect>
+                                            <rect tab_key="R4N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R4N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M4SCR"/>
+                                            </rect>
+                                            <rect tab_key="R5N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R5N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M5SCR"/>
+                                            </rect>
+                                            <rect tab_key="R6N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R6N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M6SCR"/>
+                                            </rect>
+                                            <rect tab_key="R7N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R7N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M7SCR"/>
+                                            </rect>
+                                            <rect tab_key="R8N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R8N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M8SCR"/>
+                                            </rect>
+                                            <rect tab_key="R9N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R9N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M9SCR"/>
+                                            </rect>
+                                            <rect tab_key="R10N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R10N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M10SCR"/>
+                                            </rect>
+                                            <rect tab_key="R11N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R11N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M11SCR"/>
+                                            </rect>
+                                            <rect tab_key="R12N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R12N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M12SCR"/>
+                                            </rect>
+                                            <rect tab_key="R13N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R13N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M13SCR"/>
+                                            </rect>
+                                            <rect tab_key="R14N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R14N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M14SCR"/>
+                                            </rect>
+                                            <rect tab_key="R15N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R15N" />
+                                                <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M15SCR"/>
+                                            </rect>
+                                        </rect>
+                                    </rect>
+                                </rect>
+                                <rect tab_key="HeaderR2">
+                                    <rect name="rect" depth="2" pos="100,-35">
+                                        <textEntry name="0" width="1086" height="135" tIconC="0, 255, 0" txtIcon="ui_game_symbol_resource" justTxt="center" txt2="LMH1"/>
+                                    </rect>
+                                    <rect name="rect" depth="2" pos="100,-180">
+                                        <textEntry name="0" width="1086" height="135" tIconC="0, 255, 0" txtIcon="ui_game_symbol_resource" justTxt="center" txt2="LMH2"/>
+                                    </rect>
+                                    <rect name="tabs" controller="TabSelector" pivot="center" height="100" width="100">
+                                        <rect name="tabsHeader" pos="100,-200" width="100%" height="650" depth="0">
+                                            <grid name="tabButtons" pos="0,-122" depth="4" rows="8" cols="1" cell_width="308" cell_height="51" repeat_content="true" arrangement="horizontal">
+                                                <rect>
+                                                    <simplebutton2 name="tabButton" iconC="0, 255, 0" borderW="306" buttonIcon="ui_game_symbol_resource" depth="2" pos="2,-3" width="306" height="48" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
+                                                </rect>
+                                            </grid>
+                                        </rect>
+                                        <rect name="tabsContents" depth="2" pos="458,-368" height="713">
+                                            <panel name="testUI" pos="0,43" height="46" width="728" depth="0" disableautobackground="true">
+                                                <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                                <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="724" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                                            </panel>
+                                            <rect tab_key="L1R">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="L1R" />
+                                                <textEntry name="0" width="728" height="357" tIconC="0, 255, 0" txtIcon="ui_game_symbol_resource" justTxt="left" txt2="L1RInf"/>
+                                            </rect>
+                                            <rect tab_key="L2R">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="L2R" />
+                                                <textEntry name="0" width="728" height="357" tIconC="0, 255, 0" txtIcon="ui_game_symbol_resource" justTxt="left" txt2="L2RInf"/>
+                                            </rect>
+                                            <rect tab_key="L3R">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="L3R" />
+                                                <textEntry name="0" width="728" height="357" tIconC="0, 255, 0" txtIcon="ui_game_symbol_resource" justTxt="left" txt2="L3RInf"/>
+                                            </rect>
+                                            <rect tab_key="L4R">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="L4R" />
+                                                <textEntry name="0" width="728" height="357" tIconC="0, 255, 0" txtIcon="ui_game_symbol_resource" justTxt="left" txt2="L4RInf"/>
+                                            </rect>
+                                            <rect tab_key="L5R">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="L5R" />
+                                                <textEntry name="0" width="728" height="357" tIconC="0, 255, 0" txtIcon="ui_game_symbol_resource" justTxt="left" txt2="L5RInf"/>
+                                            </rect>
+                                            <rect tab_key="L6R">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="L6R" />
+                                                <textEntry name="0" width="728" height="357" tIconC="0, 255, 0" txtIcon="ui_game_symbol_resource" justTxt="left" txt2="L6RInf"/>
+                                            </rect>
+                                            <rect tab_key="L7R">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="L7R" />
+                                                <textEntry name="0" width="728" height="357" tIconC="0, 255, 0" txtIcon="ui_game_symbol_resource" justTxt="left" txt2="L7RInf"/>
+                                            </rect>
+                                            <rect tab_key="L8R">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="L8R" />
+                                                <textEntry name="0" width="728" height="357" tIconC="0, 255, 0" txtIcon="ui_game_symbol_resource" justTxt="left" txt2="L8RInf"/>
+                                            </rect>
+                                        </rect>
+                                    </rect>
+                                </rect>
+                            </rect>
+                        </rect>
+                    </rect>                    
+                    <!-- Comandos del servidor -->
+                    <rect tab_key="HeaderC">
+                        <panel name="HeadCom" pos="0,46" height="46" width="1280" depth="0" disableautobackground="true">
+                            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1276" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                            <label style="header.name" pos="6,-6" height="34" width="1268" justify="Center" text_key="HeaderC" />
+                        </panel>
+                        <rect name="tabs" controller="TabSelector" pivot="center" height="100" width="1280">
+                            <rect name="tabsHeader" pos="117,0" width="100%" height="60" depth="0">
+                                <sprite depth="7" pos="14,-28" color="[white]" width="36" height="36" sprite="ui_game_symbol_star" foregroundlayer="true"/>
+                                <sprite depth="7" pos="375,-29" color="[white]" width="36" height="36" sprite="ui_game_symbol_quest" foregroundlayer="true"/>
+                                <sprite depth="7" pos="733,-27" color="255, 255, 0" width="36" height="36" sprite="ui_game_symbol_twitch_special" foregroundlayer="true"/>
+
+                                <grid name="tabButtons" pos="0,-20" depth="4" rows="1" cols="3" cell_width="358" cell_height="51" repeat_content="true" arrangement="horizontal">
+                                    <rect>
+                                        <simplebutton2 name="tabButton" borderW="336" iconC="0, 0, 0" buttonIcon="" depth="2" pos="2,-3" width="336" height="48" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
+                                    </rect>
+                                </grid>
+                            </rect>
+                            <rect name="tabsContents" depth="2" pos="0,-50" height="713">
+                                <rect tab_key="HeaderCG">
+                                    <rect name="tabs" controller="TabSelector" pivot="center" height="100" width="100">
+                                        <rect name="tabsHeader" pos="190,-150" width="100%" height="650" depth="0">
+                                            <grid name="tabButtons" pos="0,-250" depth="4" rows="5" cols="3" cell_width="308" cell_height="51" repeat_content="true" arrangement="horizontal">
+                                                <rect>
+                                                    <simplebutton2 name="tabButton" iconC="200, 200, 100" borderW="306" buttonIcon="ui_game_symbol_star" depth="2" pos="2,-3" width="306" height="48" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
+                                                </rect>
+                                            </grid>
+                                        </rect>
+                                        <rect name="tabsContents" depth="2" pos="100,-106" height="713">
+                                            <panel name="testUI" pos="0,43" height="46" width="1086" depth="0" disableautobackground="true">
+                                                <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                                <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1082" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                                            </panel>
+                                            <rect tab_key="C1N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C1N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C1SCR"/>
+                                            </rect>
+                                            <rect tab_key="C2N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C2N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C2SCR"/>
+                                            </rect>
+                                            <rect tab_key="C3N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C3N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C3SCR"/>
+                                            </rect>
+                                            <rect tab_key="C4N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C4N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C4SCR"/>
+                                            </rect>
+                                            <rect tab_key="C5N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C5N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C5SCR"/>
+                                            </rect>
+                                            <rect tab_key="C6N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C6N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C6SCR"/>
+                                            </rect>
+                                            <rect tab_key="C7N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C7N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C7SCR"/>
+                                            </rect>
+                                            <rect tab_key="C8N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C8N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C8SCR"/>
+                                            </rect>
+                                            <rect tab_key="C9N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C9N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C9SCR"/>
+                                            </rect>
+                                            <rect tab_key="C10N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C10N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C10SCR"/>
+                                            </rect>
+                                            <rect tab_key="C11N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C11N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C11SCR"/>
+                                            </rect>
+                                            <rect tab_key="C12N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C12N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C12SCR"/>
+                                            </rect>
+                                            <rect tab_key="C13N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C13N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C13SCR"/>
+                                            </rect>
+                                            <rect tab_key="C14N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C14N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C14SCR"/>
+                                            </rect>
+                                            <rect tab_key="C15N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C15N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C15SCR"/>
+                                            </rect>
+                                        </rect>
+                                    </rect>
+                                </rect>
+                                <rect tab_key="HeaderCI">
+                                    <rect name="tabs" controller="TabSelector" pivot="center" height="100" width="100">
+                                        <rect name="tabsHeader" pos="190,-150" width="100%" height="650" depth="0">
+                                            <grid name="tabButtons" pos="0,-250" depth="4" rows="5" cols="3" cell_width="308" cell_height="51" repeat_content="true" arrangement="horizontal">
+                                                <rect>
+                                                    <simplebutton2 name="tabButton" iconC="[white]" borderW="306" buttonIcon="ui_game_symbol_quest" depth="2" pos="2,-3" width="306" height="48" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
+                                                </rect>
+                                            </grid>
+                                        </rect>
+                                        <rect name="tabsContents" depth="2" pos="100,-106" height="713">
+                                            <panel name="testUI" pos="0,43" height="46" width="1086" depth="0" disableautobackground="true">
+                                                <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                                <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1082" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                                            </panel>
+                                            <rect tab_key="CI1N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="CI1N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="[white]" txtIcon="ui_game_symbol_quest" justTxt="left" txt2="CI1SCR"/>
+                                            </rect>
+                                            <rect tab_key="CI2N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="CI2N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="[white]" txtIcon="ui_game_symbol_quest" justTxt="left" txt2="CI2SCR"/>
+                                            </rect>
+                                            <rect tab_key="CI3N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="CI3N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="[white]" txtIcon="ui_game_symbol_quest" justTxt="left" txt2="CI3SCR"/>
+                                            </rect>
+                                            <rect tab_key="CI4N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="CI4N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="[white]" txtIcon="ui_game_symbol_quest" justTxt="left" txt2="CI4SCR"/>
+                                            </rect>
+                                            <rect tab_key="CI5N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="CI5N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="[white]" txtIcon="ui_game_symbol_quest" justTxt="left" txt2="CI5SCR"/>
+                                            </rect>
+                                            <rect tab_key="CI6N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="CI6N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="[white]" txtIcon="ui_game_symbol_quest" justTxt="left" txt2="CI6SCR"/>
+                                            </rect>
+                                            <rect tab_key="CI7N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="CI7N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="[white]" txtIcon="ui_game_symbol_quest" justTxt="left" txt2="CI7SCR"/>
+                                            </rect>
+                                            <rect tab_key="CI8N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="CI8N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="[white]" txtIcon="ui_game_symbol_quest" justTxt="left" txt2="CI8SCR"/>
+                                            </rect>
+                                            <rect tab_key="CI9N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="CI9N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="[white]" txtIcon="ui_game_symbol_quest" justTxt="left" txt2="CI9SCR"/>
+                                            </rect>
+                                        </rect>
+                                    </rect>
+                                </rect>
+                                <rect tab_key="HeaderCP">
+                                    <rect name="tabs" controller="TabSelector" pivot="center" height="100" width="100">
+                                        <rect name="tabsHeader" pos="190,-150" width="100%" height="650" depth="0">
+                                            <grid name="tabButtons" pos="0,-250" depth="4" rows="3" cols="3" cell_width="308" cell_height="51" repeat_content="true" arrangement="horizontal">
+                                                <rect>
+                                                    <simplebutton2 name="tabButton" iconC="255, 255, 0" borderW="306" buttonIcon="ui_game_symbol_twitch_special" depth="2" pos="2,-3" width="306" height="48" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
+                                                </rect>
+                                            </grid>
+                                        </rect>
+                                        <rect name="tabsContents" depth="2" pos="100,-106" height="713">
+                                            <panel name="testUI" pos="0,43" height="46" width="1086" depth="0" disableautobackground="true">
+                                                <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                                <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1082" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                                            </panel>
+                                            <rect tab_key="CP1N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C1N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="255, 255, 0" txtIcon="ui_game_symbol_twitch_special" justTxt="left" txt2="CP1SCR"/>
+                                            </rect>
+                                            <rect tab_key="CP2N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C2N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="255, 255, 0" txtIcon="ui_game_symbol_twitch_special" justTxt="left" txt2="CP2SCR"/>
+                                            </rect>
+                                            <rect tab_key="CP3N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C3N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="255, 255, 0" txtIcon="ui_game_symbol_twitch_special" justTxt="left" txt2="CP3SCR"/>
+                                            </rect>
+                                            <rect tab_key="CP4N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C4N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="255, 255, 0" txtIcon="ui_game_symbol_twitch_special" justTxt="left" txt2="CP4SCR"/>
+                                            </rect>
+                                            <rect tab_key="CP5N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C5N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="255, 255, 0" txtIcon="ui_game_symbol_twitch_special" justTxt="left" txt2="CP5SCR"/>
+                                            </rect>
+                                            <rect tab_key="CP6N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C6N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="255, 255, 0" txtIcon="ui_game_symbol_twitch_special" justTxt="left" txt2="CP6SCR"/>
+                                            </rect>
+                                            <rect tab_key="CP7N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C6N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="255, 255, 0" txtIcon="ui_game_symbol_twitch_special" justTxt="left" txt2="CP7SCR"/>
+                                            </rect>
+                                            <rect tab_key="CP8N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C6N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="255, 255, 0" txtIcon="ui_game_symbol_twitch_special" justTxt="left" txt2="CP8SCR"/>
+                                            </rect>
+                                            <rect tab_key="CP9N">
+                                                <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C6N" />
+                                                <textEntry name="0" width="1086" height="263" tIconC="255, 255, 0" txtIcon="ui_game_symbol_twitch_special" justTxt="left" txt2="CP9SCR"/>
+                                            </rect>
+                                        </rect>
+                                    </rect>
+                                </rect>
+                            </rect>
+                        </rect>
+                        <!--
+                            <table columns="2" depth="3" padding="5,5" pos="3,-10">
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C1N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C1SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C2N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C2SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C3N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C3SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C4N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C4SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C5N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C5SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C6N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C6SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C7N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C7SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C8N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C8SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C9N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C9SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C10N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C10SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C11N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C11SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C12N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C12SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C13N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C13SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C14N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C14SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C15N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C15SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C16N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C16SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C17N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C17SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C18N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C18SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C19N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C19SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C20N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C20SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C21N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C21SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C22N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C22SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C23N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C23SCR"/>
+                                <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C24N"/>
+                                <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C24SCR"/>
+
+                            </table>
+                        -->
+                    </rect>
+                    <!-- Tienda de HC -->
+                    <rect tab_key="HeaderCT">
+                        <panel name="headTienda" pos="0,46" height="46" width="1280" depth="0" disableautobackground="true">
+                            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1276" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                            <label style="header.name" pos="6,-6" height="34" width="1268" justify="Center" text_key="HeaderCT" />
+                        </panel>
+                        <rect tab_key="HeaderCT">
+                            <!-- Intro panel -->
+                            <panel name="headIntro" pos="100,-15" height="46" width="1086" depth="0" disableautobackground="true">
+                                <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1084" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                                <label style="header.name" depth="3" pos="6,-6" height="34" width="1074" justify="Center" text_key="HeaderCTC" />
+                            </panel>
+                            <rect name="rect" depth="2" pos="100,-58">
+                                <textEntry name="0" width="1086" height="263" tIconC="0, 255, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="tiendaIntro"/>
+                            </rect>
+                            <!-- Head Categoris -->
+                            <panel name="headCate" pos="100,-357" height="46" width="306" depth="0" disableautobackground="true">
+                                <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="302" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                                <label style="header.name" pos="6,-6" height="34" width="294" justify="Center" text_key="Categoria" />
+                            </panel>
+                            <!-- List Head -->
+                            <panel name="headList" pos="440,-357" height="46" width="746" depth="0" disableautobackground="true">
+                                <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="742" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                            </panel>
+                            <!-- List Panel Backgrond -->
+                            <rect name="listPanel" pos="485,-406">
+                                <shop_header depth="4" name="0"/>
+                                <sprite depth="3" name="border" sprite="menu_empty3px" pos="-45,6" width="746" height="363" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                <sprite depth="2" name="background" width="744" height="357" pos="-43,3" color="[darkGrey]" type="sliced" />
+                                <sprite depth="5" name="uIcon" color="0, 255, 0" width="36" height="36" sprite="ui_game_symbol_map_trader" pos="-40,1" foregroundlayer="true"/>
+                                <sprite depth="5" name="uIcon" color="0, 255, 0" width="36" height="36" sprite="ui_game_symbol_map_trader" pos="660,1" foregroundlayer="true"/>
+                            </rect>
+                            <!-- Tab buttons -->
+                            <rect name="tabs" controller="TabSelector" pivot="center" height="100" width="100">
+                                <rect name="tabsHeader" pos="100,-200" width="100%" height="650" depth="0">
+                                    <grid name="tabButtons" pos="0,-202" depth="4" rows="8" cols="1" cell_width="308" cell_height="47" repeat_content="true" arrangement="horizontal">
+                                        <rect>
+                                            <simplebutton2 name="tabButton" iconC="0, 255, 0" borderW="306" buttonIcon="ui_game_symbol_map_trader" depth="2" pos="0,0" width="306" height="48" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
+                                        </rect>
+                                    </grid>
+                                </rect>
+                                <!-- Tabs Contents-->
+                                <rect name="tabsContents" depth="2" pos="440,-400" height="713">
+                                    <rect tab_key="tiendaCate1">
+                                        <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="tiendaCate1" />
+                                        <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
+                                            <rect name="tabsHeader" height="40">
+                                                <grid name="tabButtons" pos="704,-45" rows="2" cols="1" cell_width="33" cell_height="35" repeat_content="true" arrangement="vertical">
+                                                    <rect>
+                                                        <simplebutton depth="4" name="tabButton" pos="2,-2" width="30" height="30" font_size="20" caption_key="xuiBack" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
+                                                    </rect>
+                                                </grid>
+                                            </rect>
+                                            <rect name="tabsContents">
+                                                <rect tab_key="1">
+                                                    <rect height="360">
+                                                        <rect pos="45,-6">
+                                                            <shop_row name="0" posty="-38" itxt="1" otxt="tname001" ctxt="tcant1" ptxt="tprec0010" utxt="/buy 1"/>
+
+                                                            <shop_row name="0" posty="-67" itxt="2" otxt="tname002" ctxt="tcant1" ptxt="tprec0050" utxt="/buy 2"/>
+                                                            <shop_row name="0" posty="-96" itxt="3" otxt="tname003" ctxt="tcant1" ptxt="tprec0050" utxt="/buy 3"/>
+                                                            <shop_row name="0" posty="-125" itxt="4" otxt="tname004" ctxt="tcant1" ptxt="tprec0050" utxt="/buy 4"/>
+                                                            <shop_row name="0" posty="-154" itxt="5" otxt="tname005" ctxt="tcant1" ptxt="tprec0050" utxt="/buy 5"/>
+                                                            <shop_row name="0" posty="-183" itxt="6" otxt="tname006" ctxt="tcant1" ptxt="tprec0050" utxt="/buy 6"/>
+                                                            <shop_row name="0" posty="-212" itxt="7" otxt="tname007" ctxt="tcant1" ptxt="tprec0050" utxt="/buy 7"/>
+                                                            <shop_row name="0" posty="-241" itxt="8" otxt="tname008" ctxt="tcant1" ptxt="tprec0050" utxt="/buy 8"/>
+                                                            <shop_row name="0" posty="-270" itxt="9" otxt="tname009" ctxt="tcant1" ptxt="tprec0050" utxt="/buy 9"/>
+                                                            <shop_row name="0" posty="-299" itxt="10" otxt="tname010" ctxt="tcant1" ptxt="tprec0050" utxt="/buy 10"/>
+                                                        </rect>
+                                                    </rect>
+                                                </rect>
+                                                <rect tab_key="2">
+                                                    <rect height="360">
+                                                        <rect pos="45,-6">
+                                                            <shop_row name="0" posty="-38" itxt="11" otxt="tname011" ctxt="tcant1" ptxt="tprec0050" utxt="/buy 11"/>
+                                                            <shop_row name="0" posty="-67" itxt="12" otxt="tname012" ctxt="tcant1" ptxt="tprec0050" utxt="/buy 12"/>
+                                                            <shop_row name="0" posty="-96" itxt="13" otxt="tname013" ctxt="tcant5" ptxt="tprec0100" utxt="/buy 13"/>
+                                                            <shop_row name="0" posty="-125" itxt="14" otxt="tname014" ctxt="tcant5" ptxt="tprec0100" utxt="/buy 14"/>
+                                                            <shop_row name="0" posty="-154" itxt="15" otxt="tname015" ctxt="tcant1" ptxt="tprec0150" utxt="/buy 15"/>
+                                                            <shop_row name="0" posty="-183" itxt="16" otxt="tname016" ctxt="tcant1" ptxt="tprec0150" utxt="/buy 16"/>
+                                                            <shop_row name="0" posty="-212" itxt="17" otxt="tname017" ctxt="tcant1" ptxt="tprec0200" utxt="/buy 17"/>
+                                                            <shop_row name="0" posty="-241" itxt="18" otxt="tname018" ctxt="tcant1" ptxt="tprec0200" utxt="/buy 18"/>
+                                                            <shop_row name="0" posty="-270" itxt="19" otxt="tname019" ctxt="tcant1" ptxt="tprec0300" utxt="/buy 19"/>
+                                                            <shop_row name="0" posty="-299" itxt="20" otxt="tname020" ctxt="tcant1" ptxt="tprec5000" utxt="/buy 20"/>
+                                                        </rect>
+                                                    </rect>
+                                                </rect>
+                                            </rect>
+                                        </rect>
+
+                                    </rect>
+                                    <rect tab_key="tiendaCate2">
+                                        <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="tiendaCate2" />
+                                        <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
+                                            <rect name="tabsHeader" height="40">
+                                                <grid name="tabButtons" pos="704,-45" rows="1" cols="1" cell_width="33" cell_height="35" repeat_content="true" arrangement="vertical">
+                                                    <rect>
+                                                        <simplebutton depth="4" name="tabButton" pos="2,-2" width="30" height="30" font_size="20" caption_key="xuiBack" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
+                                                    </rect>
+                                                </grid>
+                                            </rect>
+                                            <rect name="tabsContents">
+                                                <rect tab_key="1">
+                                                    <rect height="360">
+                                                        <rect pos="45,-6">
+                                                            <shop_row name="0" posty="-38" itxt="21" otxt="tname021" ctxt="tcant1" ptxt="tprec3500" utxt="/buy 21"/>
+                                                            <shop_row name="0" posty="-67" itxt="22" otxt="tname022" ctxt="tcant1" ptxt="tprec0100" utxt="/buy 22"/>
+                                                            <shop_row name="0" posty="-96" itxt="23" otxt="tname023" ctxt="tcant1" ptxt="tprec0070" utxt="/buy 23"/>
+                                                            <shop_row name="0" posty="-125" itxt="24" otxt="tname024" ctxt="tcant1" ptxt="tprec0010" utxt="/buy 24"/>
+                                                            <shop_row name="0" posty="-154" itxt="25" otxt="tname025" ctxt="tcant1" ptxt="tprec0020" utxt="/buy 25"/>
+                                                            <shop_row name="0" posty="-183" itxt="26" otxt="tname026" ctxt="tcant1" ptxt="tprec0050" utxt="/buy 26"/>
+                                                            <shop_row name="0" posty="-212" itxt="27" otxt="tname027" ctxt="tcant1" ptxt="tprec0050" utxt="/buy 27"/>
+                                                            <shop_row name="0" posty="-241" itxt="28" otxt="tname028" ctxt="tcant1" ptxt="tprec0100" utxt="/buy 28"/>
+                                                        </rect>
+                                                    </rect>
+                                                </rect>
+                                            </rect>
+                                        </rect>
+                                    </rect>
+                                    <rect tab_key="tiendaCate3">
+                                        <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="tiendaCate3" />
+                                        <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
+                                            <rect name="tabsHeader" height="40">
+                                                <grid name="tabButtons" pos="704,-45" rows="2" cols="1" cell_width="33" cell_height="35" repeat_content="true" arrangement="vertical">
+                                                    <rect>
+                                                        <simplebutton depth="4" name="tabButton" pos="2,-2" width="30" height="30" font_size="20" caption_key="xuiBack" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
+                                                    </rect>
+                                                </grid>
+                                            </rect>
+                                            <rect name="tabsContents">
+                                                <rect tab_key="1">
+                                                    <rect height="360">
+                                                        <rect pos="45,-6">
+                                                            <shop_row name="0" posty="-38" itxt="29" otxt="tname029" ctxt="tcant1" ptxt="tprec0100" utxt="/buy 29"/>
+                                                            <shop_row name="0" posty="-67" itxt="30" otxt="tname030" ctxt="tcant1" ptxt="tprec0150" utxt="/buy 30"/>
+                                                            <shop_row name="0" posty="-96" itxt="31" otxt="tname031" ctxt="tcant1" ptxt="tprec0150" utxt="/buy 31"/>
+                                                            <shop_row name="0" posty="-125" itxt="32" otxt="tname032" ctxt="tcant2" ptxt="tprec0001" utxt="/buy 32"/>
+                                                            <shop_row name="0" posty="-154" itxt="33" otxt="tname033" ctxt="tcant2" ptxt="tprec0003" utxt="/buy 33"/>
+                                                            <shop_row name="0" posty="-183" itxt="34" otxt="tname034" ctxt="tcant1" ptxt="tprec0003" utxt="/buy 34"/>
+                                                            <shop_row name="0" posty="-212" itxt="35" otxt="tname035" ctxt="tcant1" ptxt="tprec0002" utxt="/buy 35"/>
+                                                            <shop_row name="0" posty="-241" itxt="36" otxt="tname036" ctxt="tcant1" ptxt="tprec0004" utxt="/buy 36"/>
+                                                            <shop_row name="0" posty="-270" itxt="37" otxt="tname037" ctxt="tcant1" ptxt="tprec0005" utxt="/buy 37"/>
+                                                            <shop_row name="0" posty="-299" itxt="38" otxt="tname038" ctxt="tcant1" ptxt="tprec0005" utxt="/buy 38"/>
+                                                        </rect>
+                                                    </rect>
+                                                </rect>
+                                                <rect tab_key="2">
+                                                    <rect height="360">
+                                                        <rect pos="45,-6">
+                                                            <shop_row name="0" posty="-38" itxt="39" otxt="tname039" ctxt="tcant1" ptxt="tprec0010" utxt="/buy 39"/>
+                                                            <shop_row name="0" posty="-67" itxt="40" otxt="tname040" ctxt="tcant1" ptxt="tprec0020" utxt="/buy 40"/>
+                                                            <shop_row name="0" posty="-96" itxt="41" otxt="tname041" ctxt="tcant1" ptxt="tprec0025" utxt="/buy 41"/>
+                                                            <shop_row name="0" posty="-125" itxt="42" otxt="tname042" ctxt="tcant1" ptxt="tprec0025" utxt="/buy 42"/>
+                                                            <shop_row name="0" posty="-154" itxt="43" otxt="tname043" ctxt="tcant1" ptxt="tprec0010" utxt="/buy 43"/>
+                                                            <shop_row name="0" posty="-183" itxt="44" otxt="tname044" ctxt="tcant1" ptxt="tprec0020" utxt="/buy 44"/>
+                                                            <shop_row name="0" posty="-212" itxt="45" otxt="tname045" ctxt="tcant1" ptxt="tprec0025" utxt="/buy 45"/>
+                                                            <shop_row name="0" posty="-241" itxt="46" otxt="tname046" ctxt="tcant1" ptxt="tprec0025" utxt="/buy 46"/>
+                                                        </rect>
+                                                    </rect>
+                                                </rect>
+                                            </rect>
+                                        </rect>
+                                    </rect>
+                                    <rect tab_key="tiendaCate4">
+                                        <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="tiendaCate4" />
+                                        <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
+                                            <rect name="tabsHeader" height="40">
+                                                <grid name="tabButtons" pos="704,-45" rows="1" cols="1" cell_width="33" cell_height="35" repeat_content="true" arrangement="vertical">
+                                                    <rect>
+                                                        <simplebutton depth="4" name="tabButton" pos="2,-2" width="30" height="30" font_size="20" caption_key="xuiBack" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
+                                                    </rect>
+                                                </grid>
+                                            </rect>
+                                            <rect name="tabsContents">
+                                                <rect tab_key="1">
+                                                    <rect height="360">
+                                                        <rect pos="45,-6">
+                                                            <shop_row name="0" posty="-38" itxt="47" otxt="tname047" ctxt="tcant1" ptxt="tprec0200" utxt="/buy 47"/>
+                                                            <shop_row name="0" posty="-67" itxt="48" otxt="tname048" ctxt="tcant1" ptxt="tprec2000" utxt="/buy 48"/>
+                                                            <shop_row name="0" posty="-96" itxt="49" otxt="tname049" ctxt="tcant1" ptxt="tprec3000" utxt="/buy 49"/>
+                                                            <shop_row name="0" posty="-125" itxt="50" otxt="tname050" ctxt="tcant1" ptxt="tprec2000" utxt="/buy 50"/>
+                                                            <shop_row name="0" posty="-154" itxt="51" otxt="tname051" ctxt="tcant1" ptxt="tprec3500" utxt="/buy 51"/>
+                                                            <shop_row name="0" posty="-183" itxt="52" otxt="tname052" ctxt="tcant1" ptxt="tprec3500" utxt="/buy 52"/>
+                                                            <shop_row name="0" posty="-212" itxt="53" otxt="tname053" ctxt="tcant1" ptxt="tprec4000" utxt="/buy 53"/>
+                                                            <shop_row name="0" posty="-241" itxt="54" otxt="tname054" ctxt="tcant1" ptxt="tprec2500" utxt="/buy 54"/>
+                                                        </rect>
+                                                    </rect>
+                                                </rect>
+                                            </rect>
+                                        </rect>
+                                    </rect>
+                                    <rect tab_key="tiendaCate5">
+                                        <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="tiendaCate5" />
+                                        <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
+                                            <rect name="tabsHeader" height="40">
+                                                <grid name="tabButtons" pos="704,-45" rows="2" cols="1" cell_width="33" cell_height="35" repeat_content="true" arrangement="vertical">
+                                                    <rect>
+                                                        <simplebutton depth="4" name="tabButton" pos="2,-2" width="30" height="30" font_size="20" caption_key="xuiBack" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
+                                                    </rect>
+                                                </grid>
+                                            </rect>
+                                            <rect name="tabsContents">
+                                                <rect tab_key="1">
+                                                    <rect height="360">
+                                                        <rect pos="45,-6">
+                                                            <shop_row name="0" posty="-38" itxt="55" otxt="tname055" ctxt="tcant1" ptxt="tprec0025" utxt="/buy 55"/>
+                                                            <shop_row name="0" posty="-67" itxt="56" otxt="tname056" ctxt="tcant1" ptxt="tprec0150" utxt="/buy 56"/>
+                                                            <shop_row name="0" posty="-96" itxt="57" otxt="tname057" ctxt="tcant1" ptxt="tprec0150" utxt="/buy 57"/>
+                                                            <shop_row name="0" posty="-125" itxt="58" otxt="tname058" ctxt="tcant1" ptxt="tprec0150" utxt="/buy 58"/>
+                                                            <shop_row name="0" posty="-154" itxt="59" otxt="tname059" ctxt="tcant1" ptxt="tprec0150" utxt="/buy 59"/>
+                                                            <shop_row name="0" posty="-183" itxt="60" otxt="tname060" ctxt="tcant1" ptxt="tprec0150" utxt="/buy 60"/>
+                                                            <shop_row name="0" posty="-212" itxt="61" otxt="tname061" ctxt="tcant1" ptxt="tprec0150" utxt="/buy 61"/>
+                                                            <shop_row name="0" posty="-241" itxt="62" otxt="tname062" ctxt="tcant1" ptxt="tprec0150" utxt="/buy 62"/>
+                                                            <shop_row name="0" posty="-270" itxt="63" otxt="tname063" ctxt="tcant1" ptxt="tprec0150" utxt="/buy 63"/>
+                                                            <shop_row name="0" posty="-299" itxt="64" otxt="tname064" ctxt="tcant1" ptxt="tprec0150" utxt="/buy 64"/>
+                                                        </rect>
+                                                    </rect>
+                                                </rect>
+                                                <rect tab_key="2">
+                                                    <rect height="360">
+                                                        <rect pos="45,-6">
+                                                            <shop_row name="0" posty="-38" itxt="65" otxt="tname065" ctxt="tcant1" ptxt="tprec0150" utxt="/buy 65"/>
+                                                            <shop_row name="0" posty="-67" itxt="66" otxt="tname066" ctxt="tcant1" ptxt="tprec0150" utxt="/buy 66"/>
+                                                            <shop_row name="0" posty="-96" itxt="67" otxt="tname067" ctxt="tcant1" ptxt="tprec0150" utxt="/buy 67"/>
+                                                            <shop_row name="0" posty="-125" itxt="68" otxt="tname068" ctxt="tcant1" ptxt="tprec0150" utxt="/buy 68"/>
+                                                            <shop_row name="0" posty="-154" itxt="69" otxt="tname069" ctxt="tcant1" ptxt="tprec0150" utxt="/buy 69"/>
+                                                            <shop_row name="0" posty="-183" itxt="70" otxt="tname070" ctxt="tcant1" ptxt="tprec0150" utxt="/buy 70"/>
+                                                        </rect>
+                                                    </rect>
+                                                </rect>
+                                            </rect>
+                                        </rect>
+                                    </rect>
+                                    <rect tab_key="tiendaCate6">
+                                        <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="tiendaCate6" />
+                                        <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
+                                            <rect name="tabsHeader" height="40">
+                                                <grid name="tabButtons" pos="704,-45" rows="4" cols="1" cell_width="33" cell_height="35" repeat_content="true" arrangement="vertical">
+                                                    <rect>
+                                                        <simplebutton depth="4" name="tabButton" pos="2,-2" width="30" height="30" font_size="20" caption_key="xuiBack" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
+                                                    </rect>
+                                                </grid>
+                                            </rect>
+                                            <rect name="tabsContents">
+                                                <rect tab_key="1">
+                                                    <rect height="360">
+                                                        <rect pos="45,-6">
+                                                            <shop_row name="0" posty="-38" itxt="71" otxt="tname071" ctxt="tcant1" ptxt="tprec3500" utxt="/buy 71"/>
+                                                            <shop_row name="0" posty="-67" itxt="72" otxt="tname072" ctxt="tcant1" ptxt="tprec1500" utxt="/buy 72"/>
+                                                            <shop_row name="0" posty="-96" itxt="73" otxt="tname073" ctxt="tcant1" ptxt="tprec1500" utxt="/buy 73"/>
+                                                            <shop_row name="0" posty="-125" itxt="74" otxt="tname074" ctxt="tcant1" ptxt="tprec1500" utxt="/buy 74"/>
+                                                            <shop_row name="0" posty="-154" itxt="75" otxt="tname075" ctxt="tcant1" ptxt="tprec1500" utxt="/buy 75"/>
+                                                            <shop_row name="0" posty="-183" itxt="76" otxt="tname076" ctxt="tcant1" ptxt="tprec1500" utxt="/buy 76"/>
+                                                            <shop_row name="0" posty="-212" itxt="77" otxt="tname077" ctxt="tcant1" ptxt="tprec1500" utxt="/buy 77"/>
+                                                            <shop_row name="0" posty="-241" itxt="78" otxt="tname078" ctxt="tcant1" ptxt="tprec1500" utxt="/buy 78"/>
+                                                            <shop_row name="0" posty="-270" itxt="79" otxt="tname079" ctxt="tcant1" ptxt="tprec2500" utxt="/buy 79"/>
+                                                            <shop_row name="0" posty="-299" itxt="80" otxt="tname080" ctxt="tcant1" ptxt="tprec2500" utxt="/buy 80"/>
+                                                        </rect>
+                                                    </rect>
+                                                </rect>
+                                                <rect tab_key="2">
+                                                    <rect height="360">
+                                                        <rect pos="45,-6">
+                                                            <shop_row name="0" posty="-38" itxt="81" otxt="tname081" ctxt="tcant1" ptxt="tprec2500" utxt="/buy 81"/>
+                                                            <shop_row name="0" posty="-67" itxt="82" otxt="tname082" ctxt="tcant1" ptxt="tprec2500" utxt="/buy 82"/>
+                                                            <shop_row name="0" posty="-96" itxt="83" otxt="tname083" ctxt="tcant1" ptxt="tprec2500" utxt="/buy 83"/>
+                                                            <shop_row name="0" posty="-125" itxt="84" otxt="tname084" ctxt="tcant1" ptxt="tprec2500" utxt="/buy 84"/>
+                                                            <shop_row name="0" posty="-154" itxt="85" otxt="tname085" ctxt="tcant1" ptxt="tprec2500" utxt="/buy 85"/>
+                                                            <shop_row name="0" posty="-183" itxt="86" otxt="tname086" ctxt="tcant1" ptxt="tprec2500" utxt="/buy 86"/>
+                                                            <shop_row name="0" posty="-212" itxt="87" otxt="tname087" ctxt="tcant1" ptxt="tprec2500" utxt="/buy 87"/>
+                                                            <shop_row name="0" posty="-241" itxt="88" otxt="tname088" ctxt="tcant1" ptxt="tprec2500" utxt="/buy 88"/>
+                                                            <shop_row name="0" posty="-270" itxt="89" otxt="tname089" ctxt="tcant1" ptxt="tprec2500" utxt="/buy 89"/>
+                                                            <shop_row name="0" posty="-299" itxt="90" otxt="tname090" ctxt="tcant1" ptxt="tprec2500" utxt="/buy 90"/>
+                                                        </rect>
+                                                    </rect>
+                                                </rect>
+                                                <rect tab_key="3">
+                                                    <rect height="360">
+                                                        <rect pos="45,-6">
+                                                            <shop_row name="0" posty="-38" itxt="91" otxt="tname091" ctxt="tcant1" ptxt="tprec3500" utxt="/buy 91"/>
+                                                            <shop_row name="0" posty="-67" itxt="92" otxt="tname092" ctxt="tcant1" ptxt="tprec3500" utxt="/buy 92"/>
+                                                            <shop_row name="0" posty="-96" itxt="93" otxt="tname093" ctxt="tcant1" ptxt="tprec3500" utxt="/buy 93"/>
+                                                            <shop_row name="0" posty="-125" itxt="94" otxt="tname094" ctxt="tcant1" ptxt="tprec3500" utxt="/buy 94"/>
+                                                            <shop_row name="0" posty="-154" itxt="95" otxt="tname095" ctxt="tcant1" ptxt="tprec3500" utxt="/buy 95"/>
+                                                            <shop_row name="0" posty="-183" itxt="96" otxt="tname096" ctxt="tcant1" ptxt="tprec3500" utxt="/buy 96"/>
+                                                            <shop_row name="0" posty="-212" itxt="97" otxt="tname097" ctxt="tcant1" ptxt="tprec3500" utxt="/buy 97"/>
+                                                            <shop_row name="0" posty="-241" itxt="98" otxt="tname098" ctxt="tcant1" ptxt="tprec3500" utxt="/buy 98"/>
+                                                            <shop_row name="0" posty="-270" itxt="99" otxt="tname099" ctxt="tcant1" ptxt="tprec3500" utxt="/buy 99"/>
+                                                            <shop_row name="0" posty="-299" itxt="100" otxt="tname100" ctxt="tcant1" ptxt="tprec3500" utxt="/buy 100"/>
+                                                        </rect>
+                                                    </rect>
+                                                </rect>
+                                                <rect tab_key="4">
+                                                    <rect height="360">
+                                                        <rect pos="45,-6">
+                                                            <shop_row name="0" posty="-38" itxt="101" otxt="tname101" ctxt="tcant1" ptxt="tprec3500" utxt="/buy 101"/>
+                                                            <shop_row name="0" posty="-67" itxt="102" otxt="tname102" ctxt="tcant1" ptxt="tprec3500" utxt="/buy 102"/>
+                                                            <shop_row name="0" posty="-96" itxt="103" otxt="tname103" ctxt="tcant1" ptxt="tprec3500" utxt="/buy 103"/>
+                                                        </rect>
+                                                    </rect>
+                                                </rect>
+                                            </rect>
+                                        </rect>
+                                    </rect>
+                                    <rect tab_key="tiendaCate7">
+                                        <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="tiendaCate7" />
+                                        <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
+                                            <rect name="tabsHeader" height="40">
+                                                <grid name="tabButtons" pos="704,-45" rows="2" cols="1" cell_width="33" cell_height="35" repeat_content="true" arrangement="vertical">
+                                                    <rect>
+                                                        <simplebutton depth="4" name="tabButton" pos="2,-2" width="30" height="30" font_size="20" caption_key="xuiBack" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
+                                                    </rect>
+                                                </grid>
+                                            </rect>
+                                            <rect name="tabsContents">
+                                                <rect tab_key="1">
+                                                    <rect height="360">
+                                                        <rect pos="45,-6">
+                                                            <shop_row name="0" posty="-38" itxt="104" otxt="tname104" ctxt="tcant1" ptxt="tprec0050" utxt="/buy 104"/>
+                                                            <shop_row name="0" posty="-67" itxt="105" otxt="tname105" ctxt="tcant1" ptxt="tprec0500" utxt="/buy 105"/>
+                                                            <shop_row name="0" posty="-96" itxt="106" otxt="tname106" ctxt="tcant1" ptxt="tprec0500" utxt="/buy 106"/>
+                                                            <shop_row name="0" posty="-125" itxt="107" otxt="tname107" ctxt="tcant1" ptxt="tprec0100" utxt="/buy 107"/>
+                                                            <shop_row name="0" posty="-154" itxt="108" otxt="tname108" ctxt="tcant1" ptxt="tprec150k" utxt="/buy 108"/>
+                                                            <shop_row name="0" posty="-183" itxt="109" otxt="tname109" ctxt="tcant1" ptxt="tprec0500" utxt="/buy 109"/>
+                                                            <shop_row name="0" posty="-212" itxt="110" otxt="tname110" ctxt="tcant1" ptxt="tprec1000" utxt="/buy 110"/>
+                                                            <shop_row name="0" posty="-241" itxt="111" otxt="tname111" ctxt="tcant1" ptxt="tprec1000" utxt="/buy 111"/>
+                                                            <shop_row name="0" posty="-270" itxt="112" otxt="tname112" ctxt="tcant1" ptxt="tprec1000" utxt="/buy 112"/>
+                                                            <shop_row name="0" posty="-299" itxt="113" otxt="tname113" ctxt="tcant1" ptxt="tprec1000" utxt="/buy 113"/>
+                                                        </rect>
+                                                    </rect>
+                                                </rect>
+                                                <rect tab_key="2">
+                                                    <rect height="360">
+                                                        <rect pos="45,-6">
+                                                            <shop_row name="0" posty="-38" itxt="114" otxt="tname114" ctxt="tcant1" ptxt="tprec1000" utxt="/buy 114"/>
+                                                            <shop_row name="0" posty="-67" itxt="115" otxt="tname115" ctxt="tcant1" ptxt="tprec1000" utxt="/buy 115"/>
+                                                            <shop_row name="0" posty="-96" itxt="116" otxt="tname116" ctxt="tcant1" ptxt="tprec1000" utxt="/buy 116"/>
+                                                        </rect>
+                                                    </rect>
+                                                </rect>
+                                            </rect>
+                                        </rect>
+                                    </rect>
+                                </rect>
+                            </rect>
+                        </rect>
+                    </rect>
+                    <!-- Donaciones -->
+                    <rect tab_key="HeadDon">
+                        <panel name="testUI" pos="0,46" height="46" width="1280" depth="0" disableautobackground="true">
+                            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1276" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                            <label style="header.name" pos="6,-6" height="34" width="1268" justify="Center" text_key="HeadDon" />
+                        </panel>
+                        <panel name="headDon" pos="100,-76" height="46" width="1086" depth="0" disableautobackground="true">
+                            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1084" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                            <label style="header.name" depth="3" pos="6,-6" height="34" width="1074" justify="Center" text_key="headerDonaTxt" />
+                        </panel>
+                        <rect name ="headDonList" height="123" pos="100,-120" disabled_font_color="[disabledLabelColor]" enabled_font_color="[labelColor]" sound="[recipe_click]" sound_play_on_hover="[default_hover]">
+                            <sprite depth="3" name="border" sprite="menu_empty3px" width="1086" height="106" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                            <sprite depth="2" name="background" width="1084" height="100" pos="2,-3" color="[darkGrey]" type="sliced" />
+                            <sprite depth="5" name="uIcon" color="255, 255, 0" width="36" height="36" sprite="ui_game_symbol_twitch_special" pos="25,-15" foregroundlayer="true"/>
+                            <sprite depth="5" name="uIcon" color="255, 255, 0" width="36" height="36" sprite="ui_game_symbol_twitch_special" pos="1025,-15" foregroundlayer="true"/>
+                            <label depth="4" name="Name" pos="40,-6" width="1014" height="94" text_key="Dontxt" font_size="27" justify="Center"/>
+                        </rect>
+
+                        <rect name ="HCashValue" height="123" pos="400,-223" disabled_font_color="[disabledLabelColor]" enabled_font_color="[labelColor]" sound="[recipe_click]" sound_play_on_hover="[default_hover]">
+                            <sprite depth="3" name="border" sprite="menu_empty3px" width="486" height="86" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                            <sprite depth="2" name="background" width="484" height="80" pos="2,-3" color="[darkGrey]" type="sliced" />
+                            <sprite depth="5" name="uIcon" color="255, 255, 0" width="36" height="36" sprite="ui_game_symbol_twitch_special" pos="25,-15" foregroundlayer="true"/>
+                            <sprite depth="5" name="uIcon" color="255, 255, 0" width="36" height="36" sprite="ui_game_symbol_twitch_special" pos="425,-15" foregroundlayer="true"/>
+                            <label depth="4" name="Name" pos="40,-6" width="414" height="74" text_key="DontValue" font_size="27" justify="Center"/>
+                        </rect>
+                        <rect name="tabs" controller="TabSelector" pivot="center" height="100" width="1280">
+                            <rect name="tabsHeader" pos="117,0" width="100%" height="60" depth="0">
+                                <sprite depth="7" pos="7,-30" color="200, 200, 100" width="36" height="36" sprite="ui_game_symbol_shopping_cart" foregroundlayer="true"/>
+                                <sprite depth="7" pos="553,-30" color="200, 200, 100" width="36" height="36" sprite="ui_game_symbol_perk" foregroundlayer="true"/>
+                                <grid name="tabButtons" pos="0,-20" depth="4" rows="1" cols="2" cell_width="546" cell_height="51" repeat_content="true" arrangement="horizontal">
+                                    <rect>
+                                        <simplebutton2 name="tabButton" borderW="336" iconC="0, 0, 0" buttonIcon="" depth="2" pos="2,-3" width="506" height="48" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
+                                    </rect>
+                                </grid>
+                            </rect>
+                            <rect name="tabsContents" depth="2" pos="0,0" height="713">
+                                <rect tab_key="DonItN">
+                                    <label depth="4" name="Name" pos="140,-640" width="1014" height="94" text_key="DonItT" font_size="27" justify="Center"/>
+                                    <rect name ="footDon" height="123" pos="100,-634" disabled_font_color="[disabledLabelColor]" enabled_font_color="[labelColor]" sound="[recipe_click]" sound_play_on_hover="[default_hover]">
+                                        <sprite depth="3" name="border" sprite="menu_empty3px" width="1086" height="106" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                        <sprite depth="2" name="background" width="1084" height="100" pos="2,-3" color="[darkGrey]" type="sliced" />
+                                        <sprite depth="5" name="uIcon" color="255, 255, 0" width="36" height="36" sprite="ui_game_symbol_twitch_special" pos="25,-15" foregroundlayer="true"/>
+                                        <sprite depth="5" name="uIcon" color="255, 255, 0" width="36" height="36" sprite="ui_game_symbol_twitch_special" pos="1025,-15" foregroundlayer="true"/>
+                                    </rect>
+                                    <!-- Tienda-->
+                                    <panel name="discheader" pos="472,-340" height="46" width="332" depth="0" disableautobackground="true">
+                                        <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                        <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="42" width="328" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                                        <label pos="10, -5" width="312" height="36" name="encavezadidiscord" text="Tienda de HCash" justify="center" style="hover,header.name" font_size="30" upper_case="false" />
+                                    </panel>
+                                    <panel name="discontent" pos="472,-383" height="46" width="332" depth="0" disableautobackground="true" controller="ServerInfo">
+                                        <label name="ServerDescription" />
+                                        <label depth="2" pos="0,0" height="32" width="332" name="ServerWebsiteURL" text="https://au.csmm.app/shop/236" justify="center" style="press,hover" font_size="1" upper_case="false" sound="[paging_click]" />
+                                        <sprite depth="4" name="mapIcon" style="icon30px" pos="5,0" color="[black]" sprite="ui_game_symbol_shopping_cart" />
+                                        <sprite depth="3" pos="0,0" height="32" width="332" name="URLMask" color="[white]" foregroundlayer="true" fillcenter="true" />
+                                        <label depth="4" style="header.name" pos="0,0" height="32" width="332" justify="center" color="[black]" text="Click para abrir" />
+                                    </panel>
+                                    <rect name ="listService" pos="100,-435" height="50" disabled_font_color="[disabledLabelColor]" enabled_font_color="[labelColor]" sound="[recipe_click]" sound_play_on_hover="[default_hover]">
+                                        <sprite width="1086" height="56" depth="3" name="border" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                        <sprite pos="2,-2" width="1084" height="25" depth="-1" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                                        <label pos="6,-6" width="1074" height="19" style="header.name" depth="3" justify="Center" text_key="Donde realizar la donación" />
+                                        <sprite pos="2,-27" width="1084" height="26" depth="2" name="background" color="[darkGrey]" type="sliced" />
+                                        <label pos="2,-31" width="1086" height="19" style="header.name" depth="3" font_size="20" justify="Center" text_key="DonDDD" />
+                                    </rect>
+                                    <!-- Paypal -->
+                                    <panel name="headPP" pos="70,-500" height="46" width="332" depth="0" disableautobackground="true">
+                                        <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                        <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="42" width="328" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                                        <label pos="10, -5" width="312" height="36" name="encavezadidiscord" text="PayPal" justify="center" style="hover,header.name" font_size="30" upper_case="false" />
+                                    </panel>
+                                    <panel name="contentPP" pos="70,-543" height="46" width="332" depth="0" disableautobackground="true" controller="ServerInfo">
+                                        <label name="ServerDescription" />
+                                        <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                        <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="42" width="328" color="[darkGrey]" type="sliced" fillcenter="true" globalopacity="true" globalopacitymod="0.80"/>
+                                        <label pos="10, -5" width="312" height="36" name="ServerWebsiteURL" text="https://paypal.me/payHF" justify="center" style="press, hover" font_size="30" upper_case="false" />
+                                    </panel>
+                                    <!-- Discord -->
+                                    <panel name="discheader" pos="472,-500" height="46" width="332" depth="0" disableautobackground="true">
+                                        <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                        <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="42" width="328" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                                        <label pos="10, -5" width="312" height="36" name="encavezadidiscord" text="Otros Medios en Discord" justify="center" style="hover,header.name" font_size="30" upper_case="false" />
+                                    </panel>
+                                    <panel name="discontent" pos="472,-543" height="46" width="332" depth="0" disableautobackground="true" controller="ServerInfo">
+                                        <label name="ServerDescription" />
+                                        <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                        <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="42" width="328" color="[darkGrey]" type="sliced" fillcenter="true" globalopacity="true" globalopacitymod="0.80"/>
+                                        <label pos="0,-3" width="332" height="46" name="ServerWebsiteURL" text="https://discord.com/channels/667084271957311515/667164485458591756/667170696719368210" sound="[paging_click]" justify="center" style="press, hover" font_size="1" upper_case="false" />
+                                        <sprite depth="4" name="mapIcon" style="icon30px" pos="5,0" color="[black]" sprite="ui_game_symbol_shopping_cart" />
+                                        <sprite depth="3" pos="3,-2" height="40" width="326" name="URLMask" color="[white]" foregroundlayer="true" fillcenter="true" />
+                                        <label depth="4" style="header.name" pos="3,-3" height="40" width="326" justify="center" color="[black]" text="Click para abrir" />
+                                    </panel>
+
+                                    <!-- Mercado pago -->
+                                    <panel name="headBin" pos="874,-500" height="46" width="332" depth="0" disableautobackground="true">
+                                        <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                        <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="42" width="328" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                                        <label pos="10, -5" width="312" height="36" name="encavezadidiscord" text="Mercado Pago" justify="center" style="hover,header.name" font_size="30" upper_case="false" />
+                                    </panel>
+                                    <panel name="contentBin" pos="874,-543" height="46" width="332" depth="0" disableautobackground="true" controller="ServerInfo">
+                                        <label name="ServerDescription" />
+                                        <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                        <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="42" width="328" color="[darkGrey]" type="sliced" fillcenter="true" globalopacity="true" globalopacitymod="0.80"/>
+                                        <label pos="10, -5" width="312" height="36" name="ServerWebsiteURL" text="PROXIMAMENTE" justify="center" style="press, hover" font_size="30" upper_case="false" />
+                                    </panel>
+                                </rect>
+                                <rect tab_key="DonSvN">
+
+                                    <!-- X 
+                                    <rect name ="listService" pos="100,-300" height="50" disabled_font_color="[disabledLabelColor]" enabled_font_color="[labelColor]" sound="[recipe_click]" sound_play_on_hover="[default_hover]">
+                                        <sprite width="1086" height="56" depth="3" name="border" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                        <sprite pos="2,-2" width="1084" height="25" depth="-1" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                                        <label pos="6,-6" width="1074" height="19" style="header.name" depth="3" justify="Center" text_key="serviceHead1" />
+                                        <sprite pos="2,-28" width="1084" height="25" depth="2" name="background" color="[darkGrey]" type="sliced" />
+                                        <label pos="2,-31" width="1086" height="19" style="header.name" font_size="20" justify="left" text_key="TestList" />
+                                    </rect>
+                                    -->
+                                    <table columns="1" depth="3" padding="0,5" pos="100,-310">
+                                        <!-- Prefijo -->
+                                        <rect name ="listService" height="50" disabled_font_color="[disabledLabelColor]" enabled_font_color="[labelColor]" sound="[recipe_click]" sound_play_on_hover="[default_hover]">
+                                            <sprite width="1086" height="56" depth="3" name="border" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                            <sprite pos="2,-2" width="1084" height="25" depth="-1" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                                            <label pos="6,-6" width="1074" height="19" style="header.name" depth="3" justify="Center" text_key="serviceHead1" />
+                                            <sprite pos="2,-27" width="1084" height="26" depth="-1" name="background" color="[darkGrey]" type="sliced" />
+                                            <label pos="2,-31" width="1086" height="19" style="header.name" font_size="20" justify="left" text_key="serviceList1" />
+                                        </rect>
+                                        <!-- Seguro -->
+                                        <rect name ="listService" height="50" disabled_font_color="[disabledLabelColor]" enabled_font_color="[labelColor]" sound="[recipe_click]" sound_play_on_hover="[default_hover]">
+                                            <sprite width="1086" height="82" depth="3" name="border" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                            <sprite pos="2,-2" width="1084" height="25" depth="-1" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                                            <label pos="6,-6" width="1074" height="19" style="header.name" depth="3" justify="Center" text_key="serviceHead2" />
+                                            <sprite pos="2,-27" width="1084" height="52" depth="-1" name="background" color="[darkGrey]" type="sliced" />
+                                            <label pos="2,-31" width="1086" height="55" style="header.name" font_size="23" justify="left" text_key="serviceList2" />
+                                        </rect>
+                                        <!-- Teleport -->
+                                        <rect name ="listService" height="50" disabled_font_color="[disabledLabelColor]" enabled_font_color="[labelColor]" sound="[recipe_click]" sound_play_on_hover="[default_hover]">
+                                            <sprite width="1086" height="82" depth="3" name="border" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                            <sprite pos="2,-2" width="1084" height="25" depth="-1" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                                            <label pos="6,-6" width="1074" height="19" style="header.name" depth="3" justify="Center" text_key="serviceHead3" />
+                                            <sprite pos="2,-27" width="1084" height="52" depth="-1" name="background" color="[darkGrey]" type="sliced" />
+                                            <label pos="2,-31" width="1086" height="40" style="header.name" font_size="20" justify="left" text_key="serviceList3" />
+                                        </rect>
+                                        <!-- Premiun -->
+                                        <rect name ="listService" height="50" disabled_font_color="[disabledLabelColor]" enabled_font_color="[labelColor]" sound="[recipe_click]" sound_play_on_hover="[default_hover]">
+                                            <sprite width="1086" height="108" depth="3" name="border" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                            <sprite pos="2,-2" width="1084" height="25" depth="-1" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                                            <label pos="6,-6" width="1074" height="19" style="header.name" depth="3" justify="Center" text_key="serviceHead4" />
+                                            <sprite pos="2,-27" width="1084" height="78" depth="-1" name="background" color="[darkGrey]" type="sliced" />
+                                            <label pos="2,-31" width="1086" height="72" style="header.name" font_size="20" justify="left" text_key="serviceList4" />
+                                        </rect>
+
+                                        <rect name ="listService" height="50" disabled_font_color="[disabledLabelColor]" enabled_font_color="[labelColor]" sound="[recipe_click]" sound_play_on_hover="[default_hover]">
+                                            <sprite pos="0,-19" width="1086" height="82" depth="3" name="border" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                            <sprite pos="2,-20" width="1084" height="80" depth="-1" name="background" color="[darkGrey]" type="sliced" />
+                                            <label pos="2,-31" width="1086" height="88" style="header.name" font_size="27" justify="Center" text_key="DonSvT" />
+                                        </rect>
+
+                                        
+                                        <!--<label style="header.name" font_size="20" overflow="resizeheight" width="1086" justify="left" text_key="DonSvT1" />
+                                        <label style="header.name" font_size="20" overflow="resizeheight" width="1086" justify="left" text_key="DonSvT2" />
+                                        <label style="header.name" font_size="20" overflow="resizeheight" width="1086" justify="left" text_key="DonSvT3" />
+                                        <label style="header.name" font_size="20" overflow="resizeheight" width="1086" justify="left" text_key="DonSvT4" />
+                                        -->
+                                    </table>
+                                    
+                                </rect>
+                            </rect>
+                        </rect>
+                    </rect>
+                    <!--Avisos
+                    <rect tab_key="HeaderA">
+                        <panel name="HeadAv" pos="0,46" height="46" width="1280" depth="0" disableautobackground="true">
+                            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1276" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+                            <label style="header.name" pos="6,-6" height="34" width="1268" justify="Center" text_key="HeaderA" />
+                        </panel>
+
+                        
+                        <label style="header.name" pos="3,-10" height="34" width="1240" justify="Center" text_key="AVEN" />
+                        <table columns="1" depth="3" padding="20,5" pos="3,-50">
+                            <label style="header.name" font_size="27" overflow="resizeheight" width="1240" justify="Center" text_key="A1N" />
+                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A1SCR" />
+
+                            <label style="header.name" font_size="27" overflow="resizeheight" width="1240" justify="Center" text_key="A2N" />
+                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A2SCR" />
+
+                            <label style="header.name" font_size="27" overflow="resizeheight" width="1240" justify="Center" text_key="A6N" />
+                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A6SCR" />
+
+                            <label parse_actions="true" width="160" font_size="25" overflow="resizeheight" justify="right" pivot="topleft" text_key="AEN"/>
+
+                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A7N" />
+                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A7SCR" />
+
+                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A3N" />
+                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A3SCR" />
+
+
+                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A4N" />
+                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A4SCR" />
+
+                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A5N" />
+                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A5SCR" />
+
+                        </table>
+                    </rect>
+                    
+                    <rect tab_key="testUI">
+                        
+                    </rect>
+                    -->
+                </rect>
+            </rect>
+        </window>
+
+        <window name="chatoutput" pos="30, -250" depth="-1" width="500" height="250" anchor="LeftTop" controller="ChatOutput" fadeout_wait_time="5" fadeout_duration="2">
+            <sprite pos="197,-739" depth="3" width="26" height="26" sprite="ui_game_symbol_x" color="[red]" />
+            <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
+                <rect name="tabsHeader" height="40">
+                    <grid name="tabButtons" pos="160,-735" rows="1" cols="2" cell_width="33" cell_height="35" repeat_content="true" arrangement="horizontal">
+                        <rect>
+                            <simplebutton depth="-3" defaultsprite="ui_game_symbol_shape_text" name="tabButton" pos="2,-2" width="30" height="30" font_size="30" caption_key="xuiBack" defaultcolor="255,255,255" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
+                            <sprite depth="-2" pos="4,-5" width="26" height="26" sprite="ui_game_symbol_shape_text" color="255,255,255" />
+                        </rect>
+                    </grid>
+                </rect>
+                <!--Contenido de la tabulacion-->
+                <rect name="tabsContents">
+                    <rect tab_key="">
+                        <textlist name="txtOutput" pos="8,-214" width="484" height="210" list_style="chat" pivot="bottomleft" depth="2" font_size="26" crispness="Never">
+                            <sprite pos="-32,23" depth="5" width="21" height="21" sprite="ui_game_symbol_x" color="[red]" />
+                            <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
+                                <rect name="tabsHeader" height="40">                                    <!--Change rows to the number of "buttons you need"-->
+                                    <grid name="tabButtons" pos="-34,55" rows="2" cols="1" cell_width="25" cell_height="30" repeat_content="true" arrangement="vertical">
+                                        <rect>
+                                            <simplebutton depth="3" name="tabButton" width="25" height="25" font_size="25" caption_key="xuiBack" defaultcolor="0,0,0,150" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
+                                            <sprite depth="4" pos="2,-2" width="21" height="21" sprite="ui_game_symbol_stealth" color="255,255,255" />
+                                        </rect>
+                                    </grid>
+                                </rect>
+                                <!--Contenido de la tabulacion-->
+                                <rect name="tabsContents">
+                                    <rect tab_key="">
+                                        <sprite depth="-1" name="border" pos="-8,212" width="500" height="218" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false"/>
+                                        <sprite depth="-1" color="[darkGrey]" pos="-8,212" width="500" height="218" type="sliced" globalopacitymod=".95" />
+                                    </rect>
+                                    <rect tab_key="">
+                                    </rect>                                    
+                                </rect>
+                            </rect>
+                        </textlist>
+                    </rect>
+                    <rect tab_key="">
+                    </rect>
+                </rect>
+            </rect>
+        </window>
+        <window name="chat" pos="30, -251" width="500" height="250" anchor="LeftTop" controller="Chat" cursor_area="true">
+            <sprite depth="3" name="border" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false" />
+            <rect name="input" depth="2" pos="0,-218" height="32">
+                <sprite depth="3" name="border" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false" />
+                <sprite color="[darkGrey]" type="sliced" globalopacitymod="0.95" />
+                <combobox name="cbxTarget" type="ComboBoxList`1[EChatType]" value_max="party" pos="2, -6" width="100" height="22" font_size="22" localization_prefix="xuiChatTarget" />
+                <textfield name="txtInput" backgroundcolor="[transparent]" depth="1" pos="110,-16" width="386" height="28" pivot="left" justify="left" overflow="ClampContent" max_line_count="1" crispness="Never" open_vk_on_open="true" />
+            </rect>
+        </window>
+    </append>
+</MalenSUI>

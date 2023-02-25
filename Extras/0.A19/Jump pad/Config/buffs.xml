@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<configs>
+
+<append xpath="buffs/buff[@name='buffStatusCheck01']/effect_group/triggered_effect[@trigger='onSelfFallImpact']">
+	<requirement name="NotHasBuff" buff="NoFallDamage"/>
+ </append>
+ 
+	<append xpath="buffs">
+
+		<buff name="JumpPadBuff" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="0.5"/>
+			<effect_group>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="NoFallDamage"/>
+				<triggered_effect trigger="onSelfJump" action="RemoveBuff" buff="NoFallDamage"/>
+				<triggered_effect trigger="onSelfJump" action="AddBuff" buff="Superjump"/>
+				<triggered_effect trigger="onSelfJump" action="PlaySound" sound="m136_fire" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="NoFallDamage"/>
+			</effect_group>
+		</buff>
+
+		<buff name="Superjump" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="0.5"/>
+			<effect_group>
+				<passive_effect name="JumpStrength" operation="base_set" value="11.5"/>
+			</effect_group>
+			<effect_group>
+			<requirement name="ProgressionLevel" progression_name="perkParkour" operation="GTE" value="3"/>
+				<passive_effect name="JumpStrength" operation="base_set" value="8"/>
+			</effect_group>
+			<effect_group>
+			<requirement name="ProgressionLevel" progression_name="perkParkour" operation="GTE" value="5"/>
+				<passive_effect name="JumpStrength" operation="base_set" value="6"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="NoFallDamage" hidden="true">
+		<display_value_key value="No Fall Damage"/> <display_value value="xxx"/> 
+			<stack_type value="ignore"/>
+			<duration value="10"/>
+		</buff>
+	</append>
+</configs>

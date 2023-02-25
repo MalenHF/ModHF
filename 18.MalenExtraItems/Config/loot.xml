@@ -1,0 +1,58 @@
+<MalenEI>
+	<set xpath="/lootcontainers/lootprobtemplates/lootprobtemplate[@name='ProbT0']/loot[@level='60,999999']/@prob">.01</set>
+	<set xpath="/lootcontainers/lootprobtemplates/lootprobtemplate[@name='ProbT1']/loot[@level='130,999999']/@prob">.5</set>
+	<set xpath="/lootcontainers/lootprobtemplates/lootprobtemplate[@name='ProbT2']/loot[@level='235,999999']/@prob">.15</set>
+
+
+	<append xpath="/lootcontainers">
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ New vehicles storage ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+
+		<lootcontainer id="200" name="betsyStorage" count="0" size="12,12" sound_open="UseActions/open_chest" sound_close="UseActions/close_chest" loot_quality_template="qualBaseTemplate">
+			<item name="cobweb" count="1,2"/>
+		</lootcontainer>
+		<lootcontainer id="202" name="sPOStorage" count="0" size="10,10" sound_open="UseActions/open_chest" sound_close="UseActions/close_chest" loot_quality_template="qualBaseTemplate">
+			<item name="cobweb" count="1,2"/>
+		</lootcontainer>
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+	</append>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='schematicsElectrical']">
+		<lootgroup name="perkBooksLootHF">
+			<item group="perkBooksT0" count="1,2"/>
+			<item group="perkBooksT1" prob="1,2"/>
+			<item group="perkBooksT2" prob="1,2"/>
+		</lootgroup>
+		<lootgroup name="schematicLootHF">
+			<item group="farmingCookingRecipesT0"/>
+			<item group="farmingCookingRecipesT1" loot_prob_template="med"/>
+			<item group="farmingCookingRecipesT2" loot_prob_template="low"/>
+			<item group="schematicsWeaponsArmorT0"/>
+			<item group="schematicsWeaponsArmorT1" loot_prob_template="med"/>
+			<item group="schematicsWeaponsArmorT2" loot_prob_template="verylow"/>
+			<item group="schematicsModsAndGeneralT0"/>
+			<item group="schematicsModsAndGeneralT1" loot_prob_template="med"/>
+			<item group="schematicsModsAndGeneralT2" loot_prob_template="low"/>
+			<item group="schematicsToolsT0"/>
+			<item group="schematicsToolsT1" loot_prob_template="med"/>
+			<item group="schematicsToolsT2" loot_prob_template="verylow"/>
+			<item group="schematicsVehiclesT0"/>
+			<item group="schematicsVehiclesT1" loot_prob_template="med"/>
+			<item group="schematicsVehiclesT2" loot_prob_template="verylow"/>
+		</lootgroup>
+	</insertAfter>
+
+	<append xpath="/lootcontainers/lootgroup[@name='booksAllScaled']">
+		<item group="perkBooksLootHF" loot_prob_template="high"/>
+		<item group="schematicLootHF" loot_prob_template="med"/>
+	</append>
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Zombie loot destroy on close ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+		<set xpath="/lootcontainers/lootcontainer[@id='73']/@destroy_on_close">true</set>
+		<set xpath="/lootcontainers/lootcontainer[@id='71']/@destroy_on_close">true</set>
+		<set xpath="/lootcontainers/lootcontainer[@id='70']/@destroy_on_close">true</set>
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Fix to duplicate bug ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+		<set xpath="/lootcontainers/lootcontainer[@id='73']/@open_time">0</set>
+		<set xpath="/lootcontainers/lootcontainer[@id='71']/@open_time">0</set>
+		<set xpath="/lootcontainers/lootcontainer[@id='70']/@open_time">0</set>
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+</MalenEI>

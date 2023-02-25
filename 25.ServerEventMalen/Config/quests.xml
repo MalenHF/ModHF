@@ -1,0 +1,267 @@
+<configs>
+  <append xpath="/quests">
+
+    <quest id="xmas">
+      <property name="name_key" value="xmasquest"/>
+      <property name="subtitle_key" value="xmassubkey"/>
+      <property name="description_key" value="xmasfindesc"/>
+      <property name="icon" value="ui_game_twitch_special"/>
+      <property name="category_key" value="quest"/>
+      <property name="difficulty" value="easy"/>
+      <property name="repeatable" value="false"/>
+      <property name="offer_key" value="xmasquestoffer"/>
+      <property name="shareable" value="false"/>
+      <property name="difficulty_tier" value="8"/>
+      <action type="ShowTip" value="tutorialTipQuest02"/>
+      <action type="TrackQuest"/>
+      <objective type="RandomPOIGoto">
+        <property name="phase" value="1"/>
+        <property name="nav_object" value="quest"/>
+      </objective>
+      <objective type="RallyPoint">
+        <property name="phase" value="2"/>
+        <property name="nav_object" value="rally"/>
+      </objective>
+      <objective type="AnimalKill" id="animalChicken" value="1" phase="3"/>
+      <reward type="Quest" id="xmas2"/>
+    </quest>
+
+    <quest id="xmas2">
+      <property name="group_name_key" value="quest_BasicSurvival"/>
+      <property name="name_key" value="xmasquest"/>
+      <property name="subtitle_key" value="xmassubkey"/>
+      <property name="description_key" value="xmasfindesc2"/>
+      <property name="icon" value="ui_game_twitch_special"/>
+      <property name="repeatable" value="true"/>
+      <property name="offer_key" value="Nota de compensacion por error en el evento"/>
+      <property name="login_rally_reset" value="true"/>
+      <property name="category_key" value="reward"/>
+      <property name="difficulty" value="easy"/>
+      <property name="shareable" value="false"/>
+      <property name="completiontype" value="TurnIn"/>
+      <property name="completion_key" value="xmascompletekey"/>
+      <objective type="InteractWithNPC">
+        <property name="phase" value="1"/>
+      </objective>
+      <reward type="Exp" value="250000"/>
+      <reward type="Item" id="navidadKit" value="1"/>
+    </quest>
+
+    <quest id="q_eventPascua">
+      <property name="name" value="Evento de Pascua" />
+      <property name="description_key" value="KillTaco" />
+      <property name="subtitle_key" value="Evento de Pascua" />
+      <property name="category_key" value="quest"/>
+      <property name="completion_key" value="comletePascua"/>
+      <property name="offer_key" value="eventPacuaOffer"/>
+
+      <property name="icon" value="ui_game_symbol_adventure"/>
+      <property name="repeatable" value="false"/>
+      <property name="shareable" value="false" />
+
+      <property name="difficulty" value="easy"/>
+      <property name="completiontype" value="TurnIn"/>
+
+      <objective type="AnimalKill" id="animalChicken" value="100" phase="1"/>
+      <objective type="AnimalKill" id="Gallinazilla" value="1" phase="1"/>
+
+      <objective type="InteractWithNPC">
+        <property name="phase" value="2"/>
+      </objective>
+
+      <reward type="Exp" value="100000"/>
+      <reward type="Item" id="casinoCoinD" value="1"/>
+      <reward type="Item" id="gunLSHF" value="1"/>
+      <reward type="Item" id="eventIT2" value="50"/>
+      <reward type="Item" id="eventIT1" value="50"/>
+    </quest>
+
+    <quest id="q_Boom1">
+      <property name="name" value="Evento de Pascua" />
+      <property name="description_key" value="KillTaco" />
+      <property name="subtitle_key" value="Evento de Pascua" />
+      <property name="category_key" value="quest"/>
+      <property name="completion_key" value="comletePascua"/>
+      <property name="offer_key" value="eventPacuaOffer"/>
+
+      <property name="icon" value="ui_game_symbol_adventure"/>
+      <property name="repeatable" value="false"/>
+      <property name="shareable" value="false" />
+
+      <property name="difficulty" value="easy"/>
+      <property name="completiontype" value="TurnIn"/>
+
+      <objective type="AnimalKill" id="animalChicken" value="50" phase="1"/>
+      <objective type="AnimalKill" id="Gallinazilla" value="1" phase="1"/>
+
+      <objective type="InteractWithNPC">
+        <property name="phase" value="2"/>
+      </objective>
+      <reward type="Exp" value="50000"/>
+      <reward type="Item" id="casinoCoinD" value="1"/>
+      <reward type="Item" id="gunLSHF" value="1"/>
+      <reward type="Item" id="eventIT2" value="100"/>
+    </quest>
+
+    <quest id="q_Boom2">
+      <property name="name" value="Evento de Pascua" />
+      <property name="description_key" value="KillTaco" />
+      <property name="subtitle_key" value="Evento de Pascua" />
+      <property name="category_key" value="quest"/>
+      <property name="completion_key" value="comletePascua"/>
+      <property name="offer_key" value="eventPacuaOffer"/>
+
+      <property name="icon" value="ui_game_symbol_adventure"/>
+      <property name="repeatable" value="false"/>
+      <property name="shareable" value="false" />
+
+      <property name="difficulty" value="easy"/>
+      <property name="completiontype" value="TurnIn"/>
+
+      <objective type="AnimalKill" id="animalChicken" value="100" phase="1"/>
+      <objective type="AnimalKill" id="Gallinazilla" value="1" phase="1"/>
+
+      <objective type="InteractWithNPC">
+        <property name="phase" value="2"/>
+      </objective>
+      <reward type="Exp" value="50000"/>
+      <reward type="Item" id="casinoCoinD" value="1"/>
+      <reward type="Item" id="gunLSHF" value="1"/>
+      <reward type="Item" id="eventIT2" value="100"/>
+    </quest>
+
+    <!--
+    <quest id="qlab1">
+      <property name="group_name_key" value="quest_BasicSurvival"/>
+      <property name="name_key" value="xmasquest"/>
+      <property name="subtitle_key" value="xmassubkey"/>
+      <property name="description_key" value="xmasfindesc2"/>
+      <property name="icon" value="ui_game_symbol_quest"/>
+      <property name="repeatable" value="false"/>
+      <property name="login_rally_reset" value="true"/>
+      <property name="category_key" value="reward"/>
+      <property name="difficulty" value="easy"/>
+      <property name="shareable" value="false"/>
+      <property name="completiontype" value="TurnIn"/>
+      <property name="completion_key" value="xmascompletekey"/>
+      <objective type="InteractWithNPC">
+        <property name="phase" value="1"/>
+      </objective>
+      <reward type="Item" id="eventIT2" value="10"/>
+    </quest>
+
+    <quest id="qlab">
+      <property name="name_key" value="xmasquest"/>
+      <property name="subtitle_key" value="xmassubkey"/>
+      <property name="description_key" value="xmasfindesc"/>
+      <property name="icon" value="ui_game_symbol_quest"/>
+      <property name="category_key" value="quest"/>
+      <property name="difficulty" value="veryeasy"/>
+      <property name="repeatable" value="true"/>
+      <property name="offer_key" value="xmasquestoffer"/>
+      <property name="shareable" value="false"/>
+      <property name="category_key" value="challenge"/>
+      <property name="repeatable" value="true"/>
+      <property name="difficulty_tier" value="6"/>
+
+      <action type="ShowTip" value="tutorialTipQuest02"/>
+      <action type="TrackQuest"/>
+
+      <objective type="RandomPOIGoto">
+        <property name="phase" value="1"/>
+        <property name="nav_object" value="quest"/>
+      </objective>
+      <objective type="RallyPoint">
+        <property name="phase" value="2"/>
+        <property name="nav_object" value="rally"/>
+      </objective>
+      <objective type="ZombieKill" value="1" phase="3"/>
+      <objective type="POIStayWithin">
+        <property name="phase" value="3"/>
+        <property name="radius" value="25"/>
+      </objective>      
+      <reward type="Quest" id="qlab1"/>
+
+    </quest>
+
+    <quest id="qlab2">
+      <property name="group_name_key" value="quest_BasicSurvival"/>
+      <property name="name_key" value="xmasquest"/>
+      <property name="subtitle_key" value="xmassubkey"/>
+      <property name="description_key" value="xmasfindesc2"/>
+      <property name="icon" value="ui_game_symbol_quest"/>
+      <property name="repeatable" value="false"/>
+      <property name="login_rally_reset" value="true"/>
+      <property name="category_key" value="reward"/>
+      <property name="difficulty" value="easy"/>
+      <property name="shareable" value="false"/>
+      <property name="completiontype" value="TurnIn"/>
+      <property name="completion_key" value="xmascompletekey"/>
+      <objective type="InteractWithNPC">
+        <property name="phase" value="1"/>
+      </objective>
+      <reward type="Exp" value="40000"/>
+      <reward type="Item" id="eventIT2" value="20"/>
+      <reward type="Item" id="casinoCoinD" value="2"/>
+      <reward type="LootItem" id="lootlab1" ischosen="true" isfixed="true" value="3"/>
+      <reward type="LootItem" id="lootlab2,lootlab3,lootlab4,lootlab5" ischosen="true" value="1"/>
+      <reward type="LootItem" id="lootlab2,lootlab3,lootlab4,lootlab5" ischosen="true" value="2"/>
+      <reward type="LootItem" id="lootlab2,lootlab3,lootlab4,lootlab5" ischosen="true" value="1"/>
+      <reward type="LootItem" id="lootlab2,lootlab3,lootlab4,lootlab5" ischosen="true" value="2"/>
+    </quest>
+
+    <quest id="qpark1">
+      <property name="group_name_key" value="quest_BasicSurvival"/>
+      <property name="name_key" value="xmasquest"/>
+      <property name="subtitle_key" value="xmassubkey"/>
+      <property name="description_key" value="xmasfindesc2"/>
+      <property name="icon" value="ui_game_symbol_quest"/>
+      <property name="repeatable" value="false"/>
+      <property name="login_rally_reset" value="true"/>
+      <property name="category_key" value="reward"/>
+      <property name="difficulty" value="easy"/>
+      <property name="shareable" value="false"/>
+      <property name="completiontype" value="TurnIn"/>
+      <property name="completion_key" value="xmascompletekey"/> 
+      <objective type="InteractWithNPC">
+        <property name="phase" value="1"/>
+      </objective>
+      <reward type="Item" id="eventIT2" value="20"/>
+      <reward type="Item" id="casinoCoinD" value="1"/>
+      <reward type="Exp" value="25000"/>
+      <reward type="LootItem" id="lootpark1" ischosen="true" isfixed="true" value="3"/>
+      <reward type="LootItem" id="lootlab2,lootlab4,lootlab5" ischosen="true" value="1"/>
+      <reward type="LootItem" id="lootlab2,lootlab4,lootlab5" ischosen="true" value="1"/>
+      <reward type="LootItem" id="lootlab2,lootlab4,lootlab5" ischosen="true" value="1"/>
+      <reward type="LootItem" id="lootlab2,lootlab4,lootlab5" ischosen="true" value="1"/>
+    </quest>
+
+    <quest id="qpark2">
+      <property name="group_name_key" value="quest_BasicSurvival"/>
+      <property name="name_key" value="xmasquest"/>
+      <property name="subtitle_key" value="xmassubkey"/>
+      <property name="description_key" value="xmasfindesc2"/>
+      <property name="icon" value="ui_game_symbol_quest"/>
+      <property name="repeatable" value="false"/>
+      <property name="login_rally_reset" value="true"/>
+      <property name="category_key" value="reward"/>
+      <property name="difficulty" value="easy"/>
+      <property name="shareable" value="false"/>
+      <property name="completiontype" value="TurnIn"/>
+      <property name="completion_key" value="xmascompletekey"/>
+      <objective type="InteractWithNPC">
+        <property name="phase" value="1"/>
+      </objective>
+      <reward type="Exp" value="40000"/>
+      <reward type="Item" id="casinoCoinD" value="2"/>
+      <reward type="Item" id="eventIT2" value="30"/>
+      <reward type="LootItem" id="lootlab1" ischosen="true" isfixed="true" value="3"/>
+      <reward type="LootItem" id="lootlab2,lootlab3,lootlab4,lootlab5" ischosen="true" value="1"/>
+      <reward type="LootItem" id="lootlab2,lootlab3,lootlab4,lootlab5" ischosen="true" value="1"/>
+      <reward type="LootItem" id="lootlab2,lootlab3,lootlab4,lootlab5" ischosen="true" value="1"/>
+      <reward type="LootItem" id="lootlab2,lootlab3,lootlab4,lootlab5" ischosen="true" value="1"/>
+    </quest>
+  -->
+
+  </append>
+</configs>

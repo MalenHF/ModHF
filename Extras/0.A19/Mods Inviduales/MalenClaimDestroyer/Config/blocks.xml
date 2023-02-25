@@ -1,0 +1,122 @@
+<MalenCD>
+    <append xpath="/blocks/block[@name='keystoneBlock']">
+        <property name="Class" value="LandClaim"/>
+        <property name="CreativeMode" value="Player"/>
+        <property name="Material" value="Msteel"/>
+        <property name="DisplayType" value="blockHardened"/>
+        <property name="Texture" value="189"/>
+        <property name="Weight" value="0"/>
+        <property name="SortOrder2" value="0050"/>
+        <!--  SortShape  -->
+        <property class="RepairItems">
+            <property name="resourceRockSmall" value="10"/>
+        </property>
+        <property name="IndexName" value="lpblock"/>
+        <drop event="Destroy" count="0"/>
+        <property name="Stacknumber" value="1"/>
+        <property name="TakeDelay" value="30"/>
+        <property name="Group" value="Building,advBuilding"/>
+        <property name="EconomicValue" value="1"/>
+        <property name="SellableToTrader" value="false"/>
+        <property name="ActivationDistance" value="25"/>
+        <property name="FilterTags" value="fbuilding"/>
+        <property name="DisplayInfo" value="Custom"/>
+        <property name="UseGlobalUV" value="Local"/>
+        <!--  players want to see the flag rotated correctly  -->
+        <property class="UpgradeBlock">
+            <property name="ToBlock" value="woodMaster"/>
+            <property name="Item" value="CD"/>
+            <property name="ItemCount" value="1"/>
+            <property name="UpgradeHitCount" value="1"/>
+        </property>
+    </append>
+    <append xpath="/blocks">
+        <block name="INVD_stainlessSteelBlock">
+            <property name="Group" value="Building,advBuilding"/>
+            <property name="DescriptionKey" value="stainlessSteelBlockGroupDesc"/>
+            <property name="DisplayType" value="blockHardened"/>
+            <!--  <property name="ImposterExchange" value="imposterBlock" param1="77"/>  -->
+            <property name="CreativeMode" value="Player"/>
+            <drop event="Harvest" name="resourceScrapIron" count="15" tag="allHarvest"/>
+            <drop event="Destroy" count="0"/>
+            <drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+
+            <property name="EconomicBundleSize" value="1"/>
+            <property name="SellableToTrader" value="false"/>
+            <property name="FilterTags" value="fbuilding,fsteel"/>
+ 
+            <property name="Material" value="Mbedrock"/>
+            <property name="ItemTypeIcon" value="star"/>
+            <property name="CustomIcon" value="stainlessSteelBlock"/>
+            <property name="CustomIconTint" value="10,10,10"/>
+            <property name="CreativeMode" value="Player"/>
+
+            <property name="Texture" value="62"/>
+            <property class="UpgradeBlock">
+                <property name="ToBlock" value="woodMaster"/>
+                <property name="Item" value="CD"/>
+                <property name="ItemCount" value="1"/>
+                <property name="UpgradeHitCount" value="1"/>
+            </property>
+        </block>
+
+        <block name="INVD_stainlessSteelRamp">
+            <property name="Extends" value="INVD_stainlessSteelBlock"/>
+            <property name="CreativeMode" value="Player"/>
+            <property name="CustomIcon" value="stainlessSteelRamp"/>
+            <property name="Shape" value="New"/>
+            <property name="Model" value="ramp"/>
+            <property name="Place" value="TowardsPlacerInverted"/>
+
+        </block>
+        <block name="INVD_stainlessSteelPlate">
+            <property name="Extends" value="INVD_stainlessSteelBlock"/>
+            <property name="CreativeMode" value="Player"/>
+            <property name="Shape" value="New"/>
+            <property name="CustomIcon" value="stainlessSteelPlate"/>
+            <property name="Model" value="Plate"/>
+
+            <property name="Texture" value="580"/>
+            <!--  SortShape  -->
+        </block>
+        <block name="INVD_stainlessSteelPlateHalfTriangle">
+            <property name="Extends" value="INVD_stainlessSteelBlock"/>
+            <property name="CustomIcon" value="concretePlateHalfTriangle"/>
+            <property name="CreativeMode" value="Player"/>
+            <property name="Shape" value="New"/>
+            <property name="Model" value="plate_half_triangle"/>
+
+            <property name="Texture" value="580"/>
+            <!--  SortShape  -->
+        </block>
+
+        <block name="INVD_metalSignLetter_i">
+            <property name="Extends" value="metalSignLetter_a"/>
+            <property name="ItemTypeIcon" value="star"/>
+            <property name="CreativeMode" value="Player"/>
+            <property name="CustomIcon" value="metalSignLetter_i"/>
+            <property name="CustomIconTint" value="10,10,10"/>
+            <property name="Model" value="font_i"/>
+            <property name="Material" value="Mbedrock"/>
+            <property class="UpgradeBlock">
+                <property name="ToBlock" value="woodMaster"/>
+                <property name="Item" value="CD"/>
+                <property name="ItemCount" value="1"/>
+                <property name="UpgradeHitCount" value="1"/>
+            </property>
+        </block>
+        <block name="INVD_metalSignLetter_cross">
+            <property name="Extends" value="INVD_metalSignLetter_i"/>
+            <property name="CustomIcon" value="metalSignLetter_cross"/>
+            <property name="Model" value="font_cross"/>
+        </block>
+        <block name="INVD_metalSignLetter_t">
+            <property name="Extends" value="INVD_metalSignLetter_i"/>
+            <property name="CustomIcon" value="metalSignLetter_t"/>
+            <property name="Model" value="font_t"/>
+        </block>
+
+    </append>
+
+
+</MalenCD>

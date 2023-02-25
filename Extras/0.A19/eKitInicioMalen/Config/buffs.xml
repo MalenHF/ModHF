@@ -1,0 +1,26 @@
+<configs>
+	<append xpath="/buffs">		
+		<buff name="buffchale" name_key="chalebuff" description_key="chalebuffdesc" tooltip_key="buffbuffchaleTooltip" icon="ui_game_symbol_run" icon_color="0,255,255">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<display_value value=".buffchaleDisplay"/>
+			<display_value_format value="time"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffchaleDuration" operation="subtract" value="@$MetabolismDuration"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffchaleDisplay" operation="set" value="@$buffchaleDuration"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffchaleDisplay" operation="divide" value="@$MetabolismDuration"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffchale">
+					<requirement name="CVarCompare" cvar="$buffchaleDuration" operation="LTE" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffchaleDisplay" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffchaleDuration" operation="set" value="0"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="RunSpeed" operation="perc_add" value=".5"/>
+				<passive_effect name="WaterLossPerStaminaPointGained" operation="perc_add" value="1.2"/>				
+			</effect_group>
+		</buff>
+	</append>
+</configs>

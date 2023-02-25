@@ -1,0 +1,1849 @@
+<configs>
+	<set xpath="/quests/@max_quest_tier">6</set>
+	<remove xpath="/quests/quest[@id='tier6_clear']"/>	
+	<append xpath="/quests/quest_list[@id='trader_quests']">
+		<quest id="tier6_clear"/>		
+		<quest id="tier6_nexttrader" />
+	</append>
+
+	<insertAfter xpath="/quests/quest[@id='quest_tier6complete']">
+		<quest id="tier6_nexttrader">
+			<property name="group_name_key" value="quest_next_trader"/>
+			<property name="name_key" value="quest_next_trader"/>
+			<property name="subtitle_key" value="quest_next_trader_subtitle"/>
+			<property name="description_key" value="quest_next_trader_description"/>
+			<property name="icon" value="ui_game_symbol_map_trader"/>
+			<property name="category_key" value="quest"/>
+			<property name="difficulty" value="medium"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="difficulty" value="medium"/>
+			<property name="difficulty_tier" value="6"/>
+
+			<property name="unique_key" value="traderquest" />
+
+			<property name="offer_key" value="quest_next_trader_offer"/>
+			<property name="statement_key" value="quest_next_trader_statement"/>
+			<property name="response_key" value="quest_next_trader_response6"/>
+
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_next_trader_completion"/>
+
+			<property name="return_to_quest_giver" value="false" />
+
+			<property name="quest_type" value="special" />
+
+			<objective type="Goto" id="trader" value="5" phase="1">
+				<property name="nav_object" value="go_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader" />
+				<property name="use_closest" value="true" />
+			</objective>
+
+			<reward type="Exp" value="500"/>
+		</quest>
+		<quest id="tier6_clear">
+			<property name="name_key" value="quest_tier6_clear"/>
+			<property name="subtitle_key" value="quest_clear_subtitle"/>
+			<property name="description_key" value="quest_clear_description"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="repeatable" value="true"/>
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="quest_tier6_clear_offer"/>
+			<property name="difficulty" value="medium"/>
+			<property name="difficulty_tier" value="6"/>
+			<property name="statement_key" value="quest_clear_statement"/>
+			<property name="response_key" value="6quest_clear_response"/>
+			<property name="login_rally_reset" value="true"/>
+
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_clear_completion"/>
+
+			<objective type="RandomPOIGoto">
+				<property name="phase" value="1"/>
+				<property name="nav_object" value="quest" />
+			</objective>
+
+			<objective type="RallyPoint">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="rally" />
+			</objective>
+
+			<objective type="ClearSleepers">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="sleeper_volume"/>
+			</objective>
+
+			<objective type="POIStayWithin">
+				<property name="phase" value="3"/>
+				<property name="radius" value="25"/>
+			</objective>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<reward type="Exp" value="25000"/>
+			<reward type="Item" id="casinoCoin" value="8000"/>
+
+			<reward type="LootItem" id="specialGroupQuestWeaponsRangedT3" ischosen="true" isfixed="true" value="6"/>
+			<reward type="LootItem" id="specialGroupQuestArmorT2,specialGroupQuestMedical" ischosen="true" isfixed="true" value="6"/>
+			<reward type="LootItem" id="specialGroupQuestAmmo" ischosen="true" value="6"/>
+			<reward type="LootItem" id="specialGroupQuestToolsT3" ischosen="true" value="6"/>
+			<reward type="LootItem" id="specialGroupQuestChallenge,speciaslSchematicsWeaponsArmorCommon" ischosen="true" value="6"/>
+			<reward type="LootItem" id="speciaslPiezasArmas" ischosen="true" value="6"/>
+		</quest>
+		<quest id="testtier6_clear">
+			<property name="name_key" value="quest_tier6_clear"/>
+			<property name="subtitle_key" value="quest_clear_subtitle"/>
+			<property name="description_key" value="quest_clear_description"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="repeatable" value="true"/>
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="quest_tier6_clear_offer"/>
+			<property name="difficulty" value="medium"/>
+			<property name="difficulty_tier" value="6"/>
+			<property name="statement_key" value="quest_clear_statement"/>
+			<property name="response_key" value="6quest_clear_response"/>
+			<property name="login_rally_reset" value="false"/>
+
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_clear_completion"/>
+
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="1"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<reward type="Exp" value="25000"/>
+			<reward type="Item" id="casinoCoin" value="8000"/>
+
+			<reward type="LootItem" id="specialGroupQuestWeaponsRangedT3" ischosen="true" isfixed="true" value="6"/>
+			<reward type="LootItem" id="specialGroupQuestArmorT2,specialGroupQuestMedical" ischosen="true" value="6"/>
+			<reward type="LootItem" id="specialGroupQuestAmmo" ischosen="true" value="6"/>
+			<reward type="LootItem" id="specialGroupQuestToolsT3" ischosen="true" value="6"/>
+			<reward type="LootItem" id="specialGroupQuestChallenge,speciaslSchematicsWeaponsArmorCommon" ischosen="true" value="6"/>
+			<reward type="LootItem" id="speciaslPiezasArmas" ischosen="true" value="6"/>
+		</quest>
+		<quest id="gallinaRewardQuest">
+			<property name="name_key" value="Gallinazilla"/>
+			<property name="subtitle_key" value="bossCompleteQuestName"/>
+			<property name="description_key" value="bossCompleteDesc"/>
+			<property name="completion_key" value="comleteZilla"/>
+			<property name="icon" value="ui_game_symbol_tracking_chicken"/>
+			<property name="repeatable" value="false"/>
+			<property name="category_key" value="reward"/>
+			<property name="difficulty" value="insane"/>
+			<property name="shareable" value="false"/>
+			<property name="completiontype" value="TurnIn"/>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="1"/>
+			</objective>
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="bossTokenNatu" value="1"/>
+		</quest>
+		<quest id="randomRewardQuest">
+			<property name="name_key" value="Random Quest"/>
+			<property name="subtitle_key" value="Convocaste una quest random"/>
+			<property name="description_key" value="Convocaste una quest random, ve al trader por una recompensa."/>
+			<property name="completion_key" value="Veo que leiste una quest random, toma estas recompensas."/>
+			<property name="icon" value="ui_game_symbol_star"/>
+			<property name="repeatable" value="false"/>
+			<property name="category_key" value="reward"/>
+			<property name="difficulty" value="insane"/>
+			<property name="shareable" value="false"/>
+			<property name="completiontype" value="TurnIn"/>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="1"/>
+			</objective>
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>
+		<quest id="tier2RewardQuest">
+			<property name="name_key" value="bossCompleteQuestName"/>
+			<property name="subtitle_key" value="bossCompleteQuestName"/>
+			<property name="description_key" value="bossCompleteDesc"/>
+			<property name="completion_key" value="bossCompleteKey"/>
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="false"/>
+			<property name="category_key" value="reward"/>
+			<property name="difficulty" value="insane"/>
+			<property name="shareable" value="false"/>
+			<property name="completiontype" value="TurnIn"/>
+			<objective type="InteractWithNPC">
+				<property name="phase" value="1"/>
+			</objective>
+			<reward type="Exp" value="15000"/>
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="LootItem" id="groupQuestLUNATICOS1" ischosen="true" isfixed="true" value="6"/>
+			<reward type="LootItem" id="groupQuestLUNATICOS2" ischosen="true" value="6"/>
+			<reward type="LootItem" id="groupQuestLUNATICOS3" ischosen="true" value="6"/>
+			<reward type="LootItem" id="groupQuestLUNATICOS4" ischosen="true" value="6"/>
+			<reward type="LootItem" id="groupQuestLUNATICOS5" ischosen="true" value="6"/>
+		</quest>
+		<quest id="bossRewardQuest">
+			<property name="name_key" value="bossCompleteQuestName"/>
+			<property name="subtitle_key" value="bossCompleteQuestName"/>
+			<property name="description_key" value="bossCompleteDesc"/>
+			<property name="completion_key" value="bossCompleteKey"/>
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="false"/>
+			<property name="category_key" value="reward"/>
+			<property name="difficulty" value="insane"/>
+			<property name="shareable" value="false"/>
+			<property name="completiontype" value="TurnIn"/>
+			<objective type="InteractWithNPC">
+				<property name="phase" value="1"/>
+			</objective>
+			<reward type="Exp" value="30000"/>
+			<reward type="Item" id="casinoCoin" value="10000"/>
+			<reward type="LootItem" id="sQuestloot1" ischosen="true" isfixed="true" value="6"/>
+			<reward type="LootItem" id="sQuestloot2" ischosen="true" value="6"/>
+			<reward type="LootItem" id="sQuestloot3" ischosen="true" value="6"/>
+			<reward type="LootItem" id="sQuestloot4" ischosen="true" value="6"/>
+			<reward type="LootItem" id="sQuestloot5" ischosen="true" value="6"/>
+		</quest>
+		<quest id="t4voRewardQuest">
+			<property name="name_key" value="bossCompleteQuestName"/>
+			<property name="subtitle_key" value="bossCompleteQuestName"/>
+			<property name="description_key" value="bossCompleteDesc"/>
+			<property name="completion_key" value="bossCompleteKey"/>
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="false"/>
+			<property name="category_key" value="reward"/>
+			<property name="difficulty" value="insane"/>
+			<property name="shareable" value="false"/>
+			<property name="completiontype" value="TurnIn"/>
+			<objective type="InteractWithNPC">
+				<property name="phase" value="1"/>
+			</objective>
+			<reward type="Exp" value="50000"/>
+			<reward type="Item" id="casinoCoin" value="30000"/>
+			<reward type="LootItem" id="groupQuestTAVO1" ischosen="true" isfixed="true" value="6"/>
+			<reward type="LootItem" id="groupQuestTAVO2" ischosen="true" value="6"/>
+			<reward type="LootItem" id="groupQuestTAVO3" ischosen="true" value="6"/>
+			<reward type="LootItem" id="groupQuestTAVO4" ischosen="true" value="6"/>
+			<reward type="LootItem" id="groupQuestTAVO5" ischosen="true" value="6"/>
+		</quest>
+
+
+		<!--Tier 1-->
+		<quest id="q_killGallinazilla">
+			<property name="name_key" value="¿?" />
+			<property name="description_key" value="Questzilla" />
+			<property name="subtitle_key" value="Gallinazilla" />
+			<property name="icon" value="ui_game_symbol_tracking_chicken"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleteZilla"/>
+			<property name="offer_key" value="Questzilla2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>
+
+			<action type="SpawnEnemy" id="Gallinazilla" value="1" phase="1"/>
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="bossTokenNatu" value="1"/>
+		</quest>
+
+		<quest id="LosLunaticos">
+			<property name="name" value="LosLunaticos" />
+			<property name="description_key" value="TAVOQUESTDesc" />
+			<property name="subtitle_key" value="LosLunaticos" />
+			<property name="icon" value="ui_game_symbol_death"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="true" />
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="LunaLQuestLongDesc"/>
+			<property name="difficulty" value="medium"/>
+			<action type="TrackQuest"/>
+			<objective type="RandomGoto" value="200-500" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<action type="SpawnEnemy" id="zombiePsycho" value="5" phase="3"/>
+			<action type="SpawnEnemy" id="zombieWendigo" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="TAVOZombieROPA" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="zombieMantis" value="4" phase="3"/>
+			<action type="SpawnEnemy" id="zombieBanshee" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="zombieCowhead" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="zombieStripperFeral" value="4" phase="3"/>
+
+			<objective type="ZombieKill" id="zombieMantis" value="2" phase="3"/>
+			<objective type="ZombieKill" id="zombiePsycho" value="2" phase="3"/>
+			<objective type="ZombieKill" id="zombieStripperFeral" value="2" phase="3"/>
+			<objective type="ZombieKill" id="TAVOZombieROPA" value="1" phase="3"/>
+			<reward type="Quest" id="tier2RewardQuest"/>
+		</quest>
+		<quest id="q_KillCriaturas">
+			<property name="name" value="Elimina a las extrañas criaturas" />
+			<property name="description_key" value="KillCriaturas1" />
+			<property name="subtitle_key" value="KillCriaturas" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="true" />
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="CriaturasQuest1"/>
+			<property name="completion_key" value="comleteCriaturas"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>
+			<objective type="RandomGoto" value="200-300" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<action type="SpawnEnemy" id="NighSolider" value="3" phase="3"/>
+			<action type="SpawnEnemy" id="NighSkater" value="3" phase="3"/>
+			<action type="SpawnEnemy" id="NighCop" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="NighHawai" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="NighFeral" value="3" phase="3"/>
+			<action type="SpawnEnemy" id="NighBoomer" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="NighScreamer" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="NighSnow" value="3" phase="3"/>
+			<action type="SpawnEnemy" id="NighFarmer" value="2" phase="3"/>
+			<objective type="ZombieKill" id="NighSolider" value="1" phase="3"/>
+			<objective type="ZombieKill" id="NighFeral" value="1" phase="3"/>
+			<objective type="ZombieKill" id="NighSnow" value="1" phase="3"/>
+			<objective type="ZombieKill" id="NighSkater" value="1" phase="3"/>
+			<reward type="Quest" id="tier2RewardQuest"/>
+		</quest>
+		<quest id="q_venganza">
+			<property name="name" value="La Venganza de la Naturaleza" />
+			<property name="description_key" value="KillAnimals" />
+			<property name="subtitle_key" value="Venganza de la Naturaleza" />
+			<property name="icon" value="ui_game_symbol_tree"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="true" />
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="VZQuest1"/>
+			<property name="completion_key" value="comleteVZ"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>
+			<objective type="RandomGoto" value="200-300" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<action type="SpawnEnemy" id="TAVOanimalChickenDemonFeralBOSS" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="TAVOanimalSnakeFeral" value="3" phase="3"/>
+			<action type="SpawnEnemy" id="TAVOanimalZombieBearLEGENDARY" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="HellLion" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="TAVOanimalChickenDemonFeralFUEGO" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="TAVOanimalChickenDemonFeralBOLT" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="TAVOanimalChickenDemonFeral" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="animalMountainLion" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="animalDireWolf" value="2" phase="3"/>
+			<objective type="AnimalKill" id="TAVOanimalZombieBearLEGENDARY" value="1" phase="3"/>
+			<objective type="AnimalKill" id="HellLion" value="1" phase="3"/>
+			<reward type="Quest" id="tier2RewardQuest"/>
+		</quest>
+		<quest id="q_elites">
+			<property name="name" value="Elimina a los zombies elites" />
+			<property name="description_key" value="KillElites1" />
+			<property name="subtitle_key" value="KillElites" />
+			<property name="icon" value="ui_game_symbol_radiation"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="true" />
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="ElitesQuest1"/>
+			<property name="completion_key" value="comleteElites"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>
+			<objective type="RandomGoto" value="200-300" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<action type="SpawnEnemy" id="EliteSolider" value="5" phase="3"/>
+			<action type="SpawnEnemy" id="EliteSkater" value="4" phase="3"/>
+			<action type="SpawnEnemy" id="EliteCop" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="EliteHawai" value="3" phase="3"/>
+			<action type="SpawnEnemy" id="EliteFeral" value="4" phase="3"/>
+			<action type="SpawnEnemy" id="EliteDemo" value="3" phase="3"/>
+			<action type="SpawnEnemy" id="ZombieEliteBomber" value="3" phase="3"/>
+			<objective type="ZombieKill" id="EliteSolider" value="3" phase="3"/>
+			<objective type="ZombieKill" id="EliteFeral" value="2" phase="3"/>
+			<objective type="ZombieKill" id="EliteSkater" value="2" phase="3"/>
+
+			<reward type="Quest" id="tier2RewardQuest"/>
+		</quest>
+		<quest id="q_KillMinis">
+			<property name="name" value="Pequeña Amenaza" />
+			<property name="description_key" value="KillMinis" />
+			<property name="subtitle_key" value="Pequeña Amenaza" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="true" />
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="MinisQuest2"/>
+			<property name="completion_key" value="comleteMini"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>
+			<objective type="RandomGoto" value="200-300" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<action type="SpawnEnemy" id="MiniRopaJoel" value="4" phase="3"/>
+			<action type="SpawnEnemy" id="HeadZombiePonky" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="MiniSiren" value="1" phase="3"/>
+			<objective type="ZombieKill" id="MiniRopaJoel" value="2" phase="3"/>
+
+			<reward type="Quest" id="tier2RewardQuest"/>
+		</quest>
+		<quest id="q_KillSpecial">
+			<property name="name" value="♦ Especiales ♦" />
+			<property name="description_key" value="KillSpecial" />
+			<property name="subtitle_key" value="♦ Especiales ♦" />
+			<property name="icon" value="ui_game_symbol_star"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="true" />
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="SpecialQuest2"/>
+			<property name="completion_key" value="comleteSpecial"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>
+			<objective type="RandomGoto" value="200-300" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<action type="SpawnEnemy" id="MiniRopaJoel" value="3" phase="3"/>
+			<action type="SpawnEnemy" id="HeadZombiePonky" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="VenSpiritu" value="3" phase="3"/>
+			<action type="SpawnEnemy" id="NighScreamer" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="TAVOanimalChickenDemonFeralBOLT" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="TAVOzombieFire" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="TAVOZombieROPA" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="ZombieEliteBomber" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="zombieMantis" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="zombieBanshee" value="1" phase="3"/>
+			<objective type="ZombieKill" id="MiniRopaJoel" value="1" phase="3"/>
+			<objective type="ZombieKill" id="TAVOZombieROPA" value="1" phase="3"/>
+			<objective type="ZombieKill" id="VenSpiritu" value="1" phase="3"/>
+			<reward type="Quest" id="tier2RewardQuest"/>
+		</quest>
+		<!--Tier 2-->
+		<quest id="q_KillJuggernaut">
+			<property name="name" value="Mata al Juggernaut" />
+			<property name="description_key" value="KillJug" />
+			<property name="subtitle_key" value="Mata al Juggernaut" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="true" />
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="JugQuest1"/>
+			<property name="completion_key" value="comleteJugger"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>
+
+
+			<objective type="RandomGoto" value="200-300" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<action type="SpawnEnemy" id="BossZombieJuggernaut" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="zombieGunner" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="ZombieBomber" value="5" phase="3"/>
+			<action type="SpawnEnemy" id="TAVOzombieFire" value="3" phase="3"/>
+			<action type="SpawnEnemy" id="EliteDemo" value="2" phase="3"/>
+			<objective type="ZombieKill" id="BossZombieJuggernaut" value="1" phase="3"/>
+			<objective type="ZombieKill" id="TAVOzombieFire" value="1" phase="3"/>
+			<reward type="Quest" id="bossRewardQuest"/>
+
+		</quest>
+		<quest id="q_KillSiren">
+			<property name="name" value="Termina con la pesadilla" />
+			<property name="description_key" value="KillSiren" />
+			<property name="subtitle_key" value="Pesadilla" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="true" />
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="SirenQuest1"/>
+			<property name="completion_key" value="comleteSiren"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>
+			<objective type="RandomGoto" value="200-300" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<action type="SpawnEnemy" id="BosszombieSiren" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="NighScreamer" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="zombieMantis" value="3" phase="3"/>
+			<action type="SpawnEnemy" id="zombieScarecrow" value="3" phase="3"/>
+			<action type="SpawnEnemy" id="ZombieBomber" value="6" phase="3"/>
+			<objective type="ZombieKill" id="BosszombieSiren" value="1" phase="3"/>
+			<objective type="ZombieKill" id="zombieMantis" value="1" phase="3"/>
+			<reward type="Quest" id="bossRewardQuest"/>
+		</quest>
+		<quest id="q_KillSoldier">
+			<property name="name" value="Honor a los caidos" />
+			<property name="description_key" value="KillSoldier" />
+			<property name="subtitle_key" value="Honor a los caidos" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="true" />
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="SoldierQuest1"/>
+			<property name="completion_key" value="comleteSoldier"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>
+			<objective type="RandomGoto" value="200-300" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<action type="SpawnEnemy" id="BossTavoSoldier" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="zombieGunner" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="EliteSolider" value="6" phase="3"/>
+			<action type="SpawnEnemy" id="EliteDemo" value="3" phase="3"/>
+			<objective type="ZombieKill" id="BossTavoSoldier" value="1" phase="3"/>
+			<objective type="ZombieKill" id="EliteSolider" value="3" phase="3"/>
+			<reward type="Quest" id="bossRewardQuest"/>
+		</quest>
+		<quest id="q_KillMummy">
+			<property name="name" value="Elimina a la Momia" />
+			<property name="description_key" value="KillMummy1" />
+			<property name="subtitle_key" value="KillMummy" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="true" />
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="MummyQuest1"/>
+			<property name="completion_key" value="comleteMummy"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>
+			<objective type="RandomGoto" value="200-300" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<action type="SpawnEnemy" id="BossMummy" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="zombieScarecrow" value="4" phase="3"/>
+			<action type="SpawnEnemy" id="TAVOzombieWightRAINBOW" value="4" phase="3"/>
+			<action type="SpawnEnemy" id="TAVOanimalSnakeFeral" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="zombieMummyDog" value="4" phase="3"/>
+			<action type="SpawnEnemy" id="zombieBanshee" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="TAVOzombieFire" value="2" phase="3"/>
+			<objective type="ZombieKill" id="BossMummy" value="1" phase="3"/>
+			<objective type="ZombieKill" id="TAVOzombieWightRAINBOW" value="1" phase="3"/>
+
+			<reward type="Quest" id="bossRewardQuest"/>
+		</quest>
+		<quest id="q_KillMx">
+			<property name="name" value="Enemigos de Mexico" />
+			<property name="description_key" value="KillMx" />
+			<property name="subtitle_key" value="Enemigos de Mexico" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="true" />
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="MxQuest2"/>
+			<property name="completion_key" value="comleteMx"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>
+			<objective type="RandomGoto" value="200-300" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<action type="SpawnEnemy" id="BossGladiador" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="MxGritonaRadiactiva" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="MxZombieQuemado" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="MxZombieHerido" value="3" phase="3"/>
+			<action type="SpawnEnemy" id="mxGeistElectrico" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="mxGeistDark" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="mxGeistACIDO" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="mxGeistHIELO" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="mxGeistFuego" value="1" phase="3"/>
+			<objective type="ZombieKill" id="BossGladiador" value="1" phase="3"/>
+			<objective type="ZombieKill" id="MxZombieHerido" value="1" phase="3"/>
+
+			<reward type="Quest" id="bossRewardQuest"/>
+		</quest>
+		<quest id="EnemigosdeT4VO">
+			<property name="name" value="Enemigos de T4VO" />
+			<property name="description_key" value="TAVOQUESTDesc" />
+			<property name="subtitle_key" value="Venganza para T4VO" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="true" />
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="T4voQuestLongDesc"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>
+			<objective type="RandomGoto" value="200-300" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<action type="SpawnEnemy" id="zombieScreamer" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="BossMineralSpider" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="BossPractoSpider" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="TAVOZombieROPA" value="4" phase="3"/>
+			<action type="SpawnEnemy" id="TAVOzombieWightRAINBOW" value="3" phase="3"/>
+			<action type="SpawnEnemy" id="TAVOzombieFootballPlayerFeral" value="7" phase="3"/>
+			<action type="SpawnEnemy" id="TAVOzombieFire" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="TAVOzombieBolt" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="zombieGunner" value="1" phase="3"/>
+			<objective type="ZombieKill" id="TAVOZombieROPA" value="2" phase="3"/>
+			<objective type="ZombieKill" id="TAVOzombieWightRAINBOW" value="2" phase="3"/>
+			<objective type="ZombieKill" id="BossMineralSpider" value="1" phase="3"/>
+			<reward type="Quest" id="t4voRewardQuest"/>
+		</quest>
+
+		<!--Tier 3-->
+		<quest id="q_HF">
+			<property name="name" value="Hooligan Force" />
+			<property name="description_key" value="Hooligan Force" />
+			<property name="subtitle_key" value="KillBosses" />
+			<property name="icon" value="ui_game_symbol_trophy"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="HFQuest1"/>
+			<property name="completion_key" value="comleteHF"/>
+			<property name="difficulty" value="insane"/>
+			<property name="completiontype" value="TurnIn"/>
+			<objective type="RandomGoto" value="200-300" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+
+			<action type="SpawnEnemy" id="BossTavoSoldier" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="zombieGunner" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="EliteSolider" value="5" phase="3"/>
+			<action type="SpawnEnemy" id="EliteDemo" value="2" phase="3"/>
+			<objective type="ZombieKill" id="BossTavoSoldier" value="1" phase="3"/>
+
+			<action type="SpawnEnemy" id="BossMummy" value="2" phase="4"/>
+			<action type="SpawnEnemy" id="zombieScarecrow" value="2" phase="4"/>
+			<action type="SpawnEnemy" id="TAVOzombieWightRAINBOW" value="2" phase="4"/>
+			<action type="SpawnEnemy" id="TAVOanimalSnakeFeral" value="1" phase="4"/>
+			<action type="SpawnEnemy" id="TAVOzombieFire" value="2" phase="4"/>
+			<action type="SpawnEnemy" id="zombieMummyDog" value="2" phase="4"/>
+			<objective type="ZombieKill" id="BossMummy" value="1" phase="4"/>
+
+			<action type="SpawnEnemy" id="BossGladiador" value="2" phase="5"/>
+			<action type="SpawnEnemy" id="MxGritonaRadiactiva" value="1" phase="5"/>
+			<action type="SpawnEnemy" id="MxZombieQuemado" value="1" phase="5"/>
+			<action type="SpawnEnemy" id="MxZombieHerido" value="3" phase="5"/>
+			<action type="SpawnEnemy" id="mxGeistDark" value="1" phase="5"/>
+			<objective type="ZombieKill" id="BossGladiador" value="1" phase="5"/>
+
+
+			<action type="SpawnEnemy" id="BossZombieJuggernaut" value="2" phase="6"/>
+			<action type="SpawnEnemy" id="zombieGunner" value="1" phase="6"/>
+			<action type="SpawnEnemy" id="ZombieBomber" value="2" phase="6"/>
+			<action type="SpawnEnemy" id="TAVOzombieFire" value="2" phase="6"/>
+			<action type="SpawnEnemy" id="EliteDemo" value="2" phase="6"/>
+			<objective type="ZombieKill" id="BossZombieJuggernaut" value="1" phase="6"/>
+
+			<action type="SpawnEnemy" id="BosszombieSiren" value="2" phase="7"/>
+			<action type="SpawnEnemy" id="zombieBanshee" value="1" phase="7"/>
+			<action type="SpawnEnemy" id="zombieMantis" value="2" phase="7"/>
+			<action type="SpawnEnemy" id="zombieScarecrow" value="3" phase="7"/>
+			<action type="SpawnEnemy" id="ZombieBomber" value="4" phase="7"/>
+			<objective type="ZombieKill" id="BosszombieSiren" value="2" phase="7"/>
+
+			<action type="SpawnEnemy" id="BossDemoHF" value="1" phase="8"/>
+			<action type="SpawnEnemy" id="BossPractoSpider" value="1" phase="8"/>
+			<action type="SpawnEnemy" id="BossMineralSpider" value="1" phase="8"/>
+			<action type="SpawnEnemy" id="TAVOZombieROPA" value="1" phase="8"/>
+			<objective type="ZombieKill" id="BossDemoHF" value="1" phase="8"/>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="8"/>
+			</objective>
+			<reward type="Exp" value="380000"/>
+			<reward type="Item" id="casinoCoinD" value="5"/>
+			<reward type="Item" id="bossTokenAncient" value="1"/>
+			<reward type="LootItem" id="sQuestHFloot1" ischosen="true" isfixed="true" value="6"/>
+			<reward type="LootItem" id="sQuestHFloot2" ischosen="true" value="6"/>
+			<reward type="LootItem" id="sQuestHFloot3" ischosen="true" value="6"/>
+			<reward type="LootItem" id="sQuestHFloot4" ischosen="true" value="6"/>
+			<reward type="LootItem" id="sQuestHFloot5" ischosen="true" value="6"/>
+
+		</quest>
+		<quest id="q_KillBosses">
+			<property name="name" value="Hooligan Force" />
+			<property name="description_key" value="Hooligan Force" />
+			<property name="subtitle_key" value="HFKillBosses" />
+			<property name="icon" value="ui_game_symbol_trophy"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="HFBRQuest1"/>
+			<property name="completion_key" value="comleteHF"/>
+			<property name="difficulty" value="insane"/>
+			<property name="completiontype" value="TurnIn"/>
+			<objective type="RandomGoto" value="200-300" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<action type="SpawnEnemy" id="BossTavoSoldier" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="BossMummy" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="BosszombieSiren" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="BossZombieJuggernaut" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="BossGladiador" value="2" phase="3"/>
+			<objective type="ZombieKill" id="BossGladiador" value="1" phase="3"/>
+			<objective type="ZombieKill" id="BossTavoSoldier" value="1" phase="3"/>
+			<objective type="ZombieKill" id="BossMummy" value="1" phase="3"/>
+			<objective type="ZombieKill" id="BosszombieSiren" value="1" phase="3"/>
+			<objective type="ZombieKill" id="BossZombieJuggernaut" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="BossDemoHF" value="1" phase="4"/>
+			<action type="SpawnEnemy" id="BossMineralSpider" value="1" phase="4"/>
+			<action type="SpawnEnemy" id="BossPractoSpider" value="1" phase="4"/>
+			<objective type="ZombieKill" id="BossDemoHF" value="1" phase="4"/>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="5"/>
+			</objective>
+			<reward type="Exp" value="373582"/>
+			<reward type="Item" id="casinoCoinD" value="5"/>
+			<reward type="Item" id="bossTokenAncient" value="1"/>
+			<reward type="LootItem" id="sQuestHFloot1" ischosen="true" isfixed="true" value="6"/>
+			<reward type="LootItem" id="sQuestHFloot2" ischosen="true" value="6"/>
+			<reward type="LootItem" id="sQuestHFloot3" ischosen="true" value="6"/>
+			<reward type="LootItem" id="sQuestHFloot4" ischosen="true" value="6"/>
+			<reward type="LootItem" id="sQuestHFloot5" ischosen="true" value="6"/>
+		</quest>
+		<quest id="q_KillTaco">
+			<property name="name" value="The Taco Quest" />
+			<property name="description_key" value="KillTaco" />
+			<property name="subtitle_key" value="The Taco Quest" />
+			<property name="icon" value="ui_game_symbol_adventure"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="TacoQuest2"/>
+			<property name="completion_key" value="comleteTaco"/>
+			<property name="difficulty" value="insane"/>
+			<property name="completiontype" value="TurnIn"/>
+			<objective type="ZombieKill" id="BossTavoSoldier" value="1" phase="1"/>
+			<objective type="ZombieKill" id="BosszombieSiren" value="1" phase="1"/>
+			<objective type="ZombieKill" id="BossZombieJuggernaut" value="1" phase="1"/>
+			<objective type="ZombieKill" id="BossMummy" value="1" phase="1"/>
+			<objective type="ZombieKill" id="BossMineralSpider" value="1" phase="1"/>
+			<objective type="ZombieKill" id="BossPractoSpider" value="1" phase="1"/>
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Exp" value="70000"/>
+			<reward type="Item" id="casinoCoinD" value="5"/>
+			<reward type="LootItem" id="tQuestloot1" ischosen="true" isfixed="true" value="6"/>
+			<reward type="LootItem" id="tQuestloot2" ischosen="true" value="6"/>
+			<reward type="LootItem" id="tQuestloot3" ischosen="true" value="6"/>
+			<reward type="LootItem" id="tQuestloot4" ischosen="true" value="6"/>
+			<reward type="LootItem" id="tQuestloot5" ischosen="true" value="6"/>
+		</quest>
+		<quest id="q_KillTacoS">
+			<property name="name" value="The Taco Special Quest" />
+			<property name="description_key" value="KillTacoS" />
+			<property name="subtitle_key" value="The Taco Special Quest" />
+			<property name="icon" value="ui_game_symbol_twitch_special"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="TacoQuestS2"/>
+			<property name="completion_key" value="comleteTacoS"/>
+			<property name="difficulty" value="insane"/>
+			<property name="completiontype" value="TurnIn"/>
+			<objective type="ZombieKill" id="SpecialBossTavoSoldier" value="1" phase="1"/>
+			<objective type="ZombieKill" id="SpecialBosszombieSiren" value="1" phase="1"/>
+			<objective type="ZombieKill" id="SpecialBossZombieJuggernaut" value="1" phase="1"/>
+			<objective type="ZombieKill" id="SpecialBossMummy" value="1" phase="1"/>
+			<objective type="ZombieKill" id="BossNighSpider" value="1" phase="1"/>
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Exp" value="300000"/>
+			<reward type="Item" id="casinoCoinD" value="15"/>
+			<reward type="LootItem" id="tsQuestloot1" ischosen="true" isfixed="true" value="6"/>
+			<reward type="LootItem" id="sQuestHFloot2" ischosen="true" value="6"/>
+			<reward type="LootItem" id="tsQuestloot3" ischosen="true" value="6"/>
+			<reward type="LootItem" id="tsQuestloot4" ischosen="true" value="6"/>
+			<reward type="LootItem" id="tsQuestloot5" ischosen="true" value="6"/>
+		</quest>
+		<!--Lucky Quest-->
+		<quest id="q_killLucky">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="QuestLucky" />
+			<property name="subtitle_key" value="Suerte" />
+			<property name="icon" value="ui_game_symbol_lightbulb"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="QuestLucky2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-150" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewLucky"/>
+		</quest>
+		<quest id="q_RewLucky">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision de la suerte" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="zombieArlene,zombieDarlene,zombieMarlene,TAVOzombieFire,zombieMummyDog,HellLion,NighCop,NighSolider,NighHawai,NighSkater,NighFeral,NighBoomer,NighSnow,NighSpider,NighNurse,NighMaleHazmat,NighScreamer,VenSpiritu,HeadZombiePonky,MiniRopaJoel,mxGladiador,BossCrawler,zombieBanshee,zombieMantis,zombieScarecrow,zombiePsycho,ZombieBomber,zombieCowhead,zombieWendigo,TAVOanimalChickenDemonFeral,TAVOanimalChickenDemonFeralBOLT,zombieNurseFeral,TAVOZombieROPA,zombieGunner,TAVOzombieWightRAINBOW,ZombieEliteBomber,EliteDemo,EliteSolider,EliteHawai,EliteCop,EliteFeral,TAVOIronSpider,TAVOzombieBolt,EliteCop,zombieMarlene,zombieBoe,zombieMoe,zombieYo" value="12-14"/>
+			<action type="SpawnEnemy" id="BossMummy,BossPractoSpider,BossMineralSpider,Gallinazilla,BossTavoSoldier,BossGladiador,BosszombieSiren,BossZombieJuggernaut,TAVOanimalChickenDemonFeralBOSS,TAVOanimalZombieBearLEGENDARY" value="1-3"/>
+			<reward type="Item" id="casinoCoin" value="5500"/>
+			<reward type="Exp" value="4000"/>
+		</quest>	
+		<quest id="q_killGacha">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="QuestGacha" />
+			<property name="subtitle_key" value="Gacha" />
+			<property name="icon" value="ui_game_symbol_treasure"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="QuestGacha2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+
+			<action type="SpawnEnemy" id="zombieArlene,zombieWightFeral,zombieWightRadiated,zombieBoe,zombieBoeFeral,zombieBoeRadiated,zombieFemaleFat,zombieFemaleFatFeral,zombieFemaleFatRadiated,zombieJoe,zombieJoeFeral,zombieJoeRadiated,zombieJanitor,zombieJanitorFeral,zombieJanitorRadiated,zombieArleneRadiated,zombieLab,zombieLabRadiated,zombieScreamer,zombieScreamerRadiated,zombieDarleneRadiated,zombieYoRadiated,zombieSteveFeral,zombieSteveCrawlerFeral,zombieBusinessMan,legendaryZombieBusinessMan,zombieSnow,zombieSpider,zombieBurnt,zombieNurse,zombieFatHawaiian,zombieUtilityWorker,zombieSoldierFeral,zombieSoldierRadiated,zombieDemolition,zombieSkateboarderRadiated,zombieOldTimerFeral,zombieBikerFeral,zombieStripper,zombieDarlene,zombieMarlene,TAVOzombieFire,zombieMummyDog,HellLion,NighCop,NighSolider,NighHawai,NighSkater,NighFeral,NighBoomer,NighSnow,NighSpider,NighNurse,NighMaleHazmat,NighScreamer,VenSpiritu,HeadZombiePonky,MiniRopaJoel,mxGladiador,SpecialBossDemoHF,SpecialBossGladiador,SpecialBossMummy,BossDemoHF,BossNighSpider,SpecialBosszombieSiren,SpecialBossZombieJuggernaut,SpecialBossTavoSoldier,BossCrawler,zombieBanshee,zombieMantis,zombieScarecrow,zombiePsycho,ZombieBomber,zombieCowhead,zombieWendigo,TAVOanimalChickenDemonFeral,TAVOanimalChickenDemonFeralBOLT,zombieNurseFeral,TAVOZombieROPA,zombieGunner,TAVOzombieWightRAINBOW,ZombieEliteBomber,EliteDemo,EliteSolider,EliteHawai,EliteCop,EliteFeral,TAVOIronSpider,TAVOzombieBolt,EliteCop,zombieMarlene,zombieBoe,zombieMoe,zombieYo,BossMummy,BossPractoSpider,BossMineralSpider,Gallinazilla,BossTavoSoldier,BossGladiador,BosszombieSiren,BossZombieJuggernaut,TAVOanimalChickenDemonFeralBOSS,TAVOanimalZombieBearLEGENDARY," value="1"/>
+			<reward type="Item" id="casinoCoin" value="1"/>
+			<reward type="Exp" value="1"/>
+		</quest>
+		<quest id="q_killGachaPREM">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="QuestGacha" />
+			<property name="subtitle_key" value="Gacha" />
+			<property name="icon" value="ui_game_symbol_treasure"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="QuestGacha2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+
+			<action type="SpawnEnemy" id="zombieArlene,zombieWightFeral,zombieWightRadiated,zombieBoe,zombieBoeFeral,zombieBoeRadiated,zombieFemaleFat,zombieFemaleFatFeral,zombieFemaleFatRadiated,zombieJoe,zombieJoeFeral,zombieJoeRadiated,zombieJanitor,zombieJanitorFeral,zombieJanitorRadiated,zombieArleneRadiated,zombieLab,zombieLabRadiated,zombieScreamer,zombieScreamerRadiated,zombieDarleneRadiated,zombieYoRadiated,zombieSteveFeral,zombieSteveCrawlerFeral,zombieBusinessMan,legendaryZombieBusinessMan,zombieSnow,zombieSpider,zombieBurnt,zombieNurse,zombieFatHawaiian,zombieUtilityWorker,zombieSoldierFeral,zombieSoldierRadiated,zombieDemolition,zombieSkateboarderRadiated,zombieOldTimerFeral,zombieBikerFeral,zombieStripper,zombieDarlene,zombieMarlene,TAVOzombieFire,zombieMummyDog,HellLion,NighCop,NighSolider,NighHawai,NighSkater,NighFeral,NighBoomer,NighSnow,NighSpider,NighNurse,NighMaleHazmat,NighScreamer,VenSpiritu,HeadZombiePonky,MiniRopaJoel,mxGladiador,SpecialBossDemoHF,SpecialBossGladiador,SpecialBossMummy,BossDemoHF,BossNighSpider,SpecialBosszombieSiren,SpecialBossZombieJuggernaut,SpecialBossTavoSoldier,BossCrawler,zombieBanshee,zombieMantis,zombieScarecrow,zombiePsycho,ZombieBomber,zombieCowhead,zombieWendigo,TAVOanimalChickenDemonFeral,TAVOanimalChickenDemonFeralBOLT,zombieNurseFeral,TAVOZombieROPA,zombieGunner,TAVOzombieWightRAINBOW,ZombieEliteBomber,EliteDemo,EliteSolider,EliteHawai,EliteCop,EliteFeral,TAVOIronSpider,TAVOzombieBolt,EliteCop,zombieMarlene,zombieBoe,zombieMoe,zombieYo,BossMummy,BossPractoSpider,BossMineralSpider,Gallinazilla,BossTavoSoldier,BossGladiador,BosszombieSiren,BossZombieJuggernaut,TAVOanimalChickenDemonFeralBOSS,TAVOanimalZombieBearLEGENDARY," value="1"/>
+			<reward type="Item" id="casinoCoin" value="2000"/>
+			<reward type="Exp" value="5000"/>
+		</quest>
+		<!--RandomQuests-->
+		<quest id="q_killrandmo1">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo1"/>
+		</quest>
+		<quest id="q_RewRandmo1">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="BossDemoHF" value="1" />
+			<action type="SpawnEnemy" id="NighScreamer" value="2" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>
+		<quest id="q_killrandmo2">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo2"/>
+		</quest>
+		<quest id="q_RewRandmo2">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="MiniSiren" value="2" />
+			<action type="SpawnEnemy" id="zombieSteveCrawler" value="8" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>
+
+		<quest id="q_killrandmo3">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo3"/>
+		</quest>
+		<quest id="q_RewRandmo3">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="TAVOZombieROPA" value="3" />
+			<action type="SpawnEnemy" id="MiniRopaJoel" value="6" />
+			<action type="SpawnEnemy" id="ZombieEliteBomber" value="2" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>
+		<quest id="q_killrandmo4">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo4"/>
+		</quest>
+		<quest id="q_RewRandmo4">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="BossZombieJuggernaut" value="2" />
+			<action type="SpawnEnemy" id="NighBoomer" value="2" />
+			<action type="SpawnEnemy" id="TAVOanimalChickenDemonFeralBOLT" value="2" />
+			<action type="SpawnEnemy" id="TAVOzombieFire" value="2" />
+			<action type="SpawnEnemy" id="TAVOZombieROPA" value="1" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>
+		<quest id="q_killrandmo5">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo5"/>
+		</quest>
+		<quest id="q_RewRandmo5">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="BossTavoSoldier" value="2" />
+			<action type="SpawnEnemy" id="EliteSolider" value="4" />
+			<action type="SpawnEnemy" id="zombieBanshee" value="2" />
+			<action type="SpawnEnemy" id="ZombieBomber" value="2" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>
+		<quest id="q_killrandmo6">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo6"/>
+		</quest>
+		<quest id="q_RewRandmo6">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="BosszombieSiren" value="2" />
+			<action type="SpawnEnemy" id="zombieMantis" value="3" />
+			<action type="SpawnEnemy" id="VenSpiritu" value="2" />
+			<action type="SpawnEnemy" id="TAVOZombieROPA" value="1" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>
+		<quest id="q_killrandmo7">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo7"/>
+		</quest>
+		<quest id="q_RewRandmo7">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="BossMummy" value="2" />
+			<action type="SpawnEnemy" id="HeadZombiePonky" value="2" />
+			<action type="SpawnEnemy" id="ZombieEliteBomber" value="2" />
+			<action type="SpawnEnemy" id="zombieBanshee" value="2" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>
+		<quest id="q_killrandmo8">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo8"/>
+		</quest>
+		<quest id="q_RewRandmo8">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="BossMineralSpider" value="1" />
+			<action type="SpawnEnemy" id="BossPractoSpider" value="1" />
+			<action type="SpawnEnemy" id="TAVOzombieWightRAINBOW" value="4" />
+			<action type="SpawnEnemy" id="HeadZombiePonky" value="2" />
+			<action type="SpawnEnemy" id="MiniSiren" value="2" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>
+		<quest id="q_killrandmo9">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo9"/>
+		</quest>
+		<quest id="q_RewRandmo9">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="BossMineralSpider" value="1" />
+			<action type="SpawnEnemy" id="ZombieEliteBomber" value="12" />
+			<action type="SpawnEnemy" id="ZombieBomber" value="2" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>
+		<quest id="q_killrandmo10">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo10"/>
+		</quest>
+		<quest id="q_RewRandmo10">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="BossZombieJuggernaut" value="1" />
+			<action type="SpawnEnemy" id="BosszombieSiren" value="1" />
+			<action type="SpawnEnemy" id="BossMummy" value="1" />
+			<action type="SpawnEnemy" id="BossTavoSoldier" value="1" />
+			<action type="SpawnEnemy" id="BossMineralSpider" value="1" />
+			<action type="SpawnEnemy" id="MiniRopaJoel" value="3" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>
+		<quest id="q_killrandmo11">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo11"/>
+		</quest>
+		<quest id="q_RewRandmo11">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="TAVOanimalZombieBearLEGENDARY" value="1" />
+			<action type="SpawnEnemy" id="animalStag" value="4" />
+			<action type="SpawnEnemy" id="animalDoe" value="2" />
+			<action type="SpawnEnemy" id="animalRabbit" value="4" />
+			<action type="SpawnEnemy" id="animalChicken" value="4" />
+			<action type="SpawnEnemy" id="animalBoar" value="2" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>
+		<quest id="q_killrandmo12">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo12"/>
+		</quest>
+		<quest id="q_RewRandmo12">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="zombieWightFeral" value="3" />
+			<action type="SpawnEnemy" id="zombieSpider" value="2" />
+			<action type="SpawnEnemy" id="zombieMarlene" value="4" />
+			<action type="SpawnEnemy" id="zombieBoe" value="2" />
+			<action type="SpawnEnemy" id="zombieBikerRadiated" value="3" />
+			<action type="SpawnEnemy" id="zombieStripper" value="2" />
+			<action type="SpawnEnemy" id="zombieBusinessMan" value="2" />
+			<action type="SpawnEnemy" id="zombieJanitor" value="3" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>
+		<quest id="q_killrandmo13">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo13"/>
+		</quest>
+		<quest id="q_RewRandmo13">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="NighScreamer" value="2" />
+			<action type="SpawnEnemy" id="NighBoomer" value="2" />
+			<action type="SpawnEnemy" id="NighSolider" value="2" />
+			<action type="SpawnEnemy" id="NighSpider" value="2" />
+			<action type="SpawnEnemy" id="EliteDemo" value="2" />
+			<action type="SpawnEnemy" id="ZombieEliteBomber" value="2" />
+			<action type="SpawnEnemy" id="EliteSolider" value="2" />
+			<action type="SpawnEnemy" id="EliteFeral" value="2" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>		
+		<quest id="q_killrandmo14">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo14"/>
+		</quest>
+		<quest id="q_RewRandmo14">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="Gallinazilla" value="1" />
+			<action type="SpawnEnemy" id="NighScreamer" value="1" />
+			<action type="SpawnEnemy" id="VenSpiritu" value="2" />
+			<action type="SpawnEnemy" id="MiniRopaJoel" value="2" />
+			<action type="SpawnEnemy" id="HeadZombiePonky" value="2" />
+			<action type="SpawnEnemy" id="TAVOanimalChickenDemonFeralBOLT" value="2" />
+			<action type="SpawnEnemy" id="zombieMantis" value="2" />
+			<action type="SpawnEnemy" id="zombieBanshee" value="1" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>	
+		<quest id="q_killrandmo15">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo15"/>
+		</quest>
+		<quest id="q_RewRandmo15">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="zombieMummyDog" value="4" />
+			<action type="SpawnEnemy" id="BossMummy" value="1" />
+			<action type="SpawnEnemy" id="MiniSiren" value="2" />
+			<action type="SpawnEnemy" id="TAVOzombieWightRAINBOW" value="2" />
+			<action type="SpawnEnemy" id="ZombieEliteBomber" value="2" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>	
+		<quest id="q_killrandmo16">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo16"/>
+		</quest>
+		<quest id="q_RewRandmo16">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="BossTavoSoldier" value="1" />
+			<action type="SpawnEnemy" id="zombieBanshee" value="2" />
+			<action type="SpawnEnemy" id="zombieMantis" value="3" />
+			<action type="SpawnEnemy" id="TAVOzombieFire" value="2" />
+			<action type="SpawnEnemy" id="NighScreamer" value="1" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>		
+		<quest id="q_killrandmo17">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo17"/>
+		</quest>
+		<quest id="q_RewRandmo17">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="BossCrawler" value="4" />
+			<action type="SpawnEnemy" id="BosszombieSiren" value="1" />
+			<action type="SpawnEnemy" id="NighSolider" value="2" />
+			<action type="SpawnEnemy" id="NighFeral" value="2" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>		
+		<quest id="q_killrandmo18">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo18"/>
+		</quest>
+		<quest id="q_RewRandmo18">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="TAVOanimalChickenDemon" value="2" />
+			<action type="SpawnEnemy" id="TAVOanimalChickenDemonFeral" value="2" />
+			<action type="SpawnEnemy" id="TAVOanimalChickenDemonFeralFUEGO" value="1" />
+			<action type="SpawnEnemy" id="TAVOanimalChickenDemonFeralBOLT" value="4" />
+			<action type="SpawnEnemy" id="TAVOanimalChickenDemonFeralBlackChamuscada" value="2" />
+			<action type="SpawnEnemy" id="TAVOanimalChickenDemonFeralTANK" value="2" />
+			<action type="SpawnEnemy" id="TAVOanimalChickenDemonFeralBOSS" value="1" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>		
+		<quest id="q_killrandmo19">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo19"/>
+		</quest>
+		<quest id="q_RewRandmo19">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="BossZombieJuggernaut" value="1" />
+			<action type="SpawnEnemy" id="TAVOZombieROPA" value="2" />
+			<action type="SpawnEnemy" id="ZombieEliteBomber" value="4" />
+			<action type="SpawnEnemy" id="NighScreamer" value="1" />
+			<action type="SpawnEnemy" id="EliteDemo" value="2" />
+			<action type="SpawnEnemy" id="TAVOanimalChickenDemonFeralBOSS" value="1" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>		
+		<quest id="q_killrandmo20">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo20"/>
+		</quest>
+		<quest id="q_RewRandmo20">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="BosszombieSiren" value="1" />
+			<action type="SpawnEnemy" id="MiniRopaJoel" value="8" />
+			<action type="SpawnEnemy" id="NighScreamer" value="1" />
+			<action type="SpawnEnemy" id="TAVOzombieFire" value="2" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>	
+		<quest id="q_killrandmo21">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo21"/>
+		</quest>
+		<quest id="q_RewRandmo21">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="TAVOzombieFire" value="1" />
+			<action type="SpawnEnemy" id="MiniRopaJoel" value="1" />
+			<action type="SpawnEnemy" id="ZombieEliteBomber" value="2" />
+			<action type="SpawnEnemy" id="TAVOanimalChickenDemonFeralBOLT" value="1" />
+			<action type="SpawnEnemy" id="EliteDemo" value="2" />
+			<action type="SpawnEnemy" id="TAVOzombieFire" value="2" />
+			<action type="SpawnEnemy" id="NighFeral" value="2" />
+			<action type="SpawnEnemy" id="BossCrawler" value="2" />
+			<action type="SpawnEnemy" id="zombieMantis" value="2" />
+			<action type="SpawnEnemy" id="zombieBikerRadiated" value="2" />
+			<action type="SpawnEnemy" id="zombieWightFeral" value="2" />
+			<action type="SpawnEnemy" id="animalBoar" value="1" />
+			<action type="SpawnEnemy" id="ZombieBomber" value="2" />
+			<action type="SpawnEnemy" id="TAVOzombieWightRAINBOW" value="2" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>
+		<quest id="q_killrandmo22">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo22"/>
+		</quest>
+		<quest id="q_RewRandmo22">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>
+			<action type="SpawnEnemy" id="MxMUTANTE" value="1" />
+			<action type="SpawnEnemy" id="MxFUEGO" value="1" />
+			<action type="SpawnEnemy" id="MxZombieQuemado" value="1" />
+			<action type="SpawnEnemy" id="MxZombieEscupeFuego" value="2" />
+			<action type="SpawnEnemy" id="mxGeistHIELO" value="1" />
+			<action type="SpawnEnemy" id="mxGeistDark" value="1" />
+			<action type="SpawnEnemy" id="mxGeistElectrico" value="1" />
+			<action type="SpawnEnemy" id="MxZombieHerido" value="3" />
+			<action type="SpawnEnemy" id="MxGritonaRadiactiva" value="1" />
+			<action type="SpawnEnemy" id="mxGeistElectrico" value="2" />
+			<action type="SpawnEnemy" id="MxCriatura" value="2" />
+			<action type="SpawnEnemy" id="mxGladiador" value="2" />
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>
+		<quest id="q_killrandmo23">
+			<property name="name_key" value="Buena suerte" />
+			<property name="description_key" value="Questrandom" />
+			<property name="subtitle_key" value="Random" />
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="completion_key" value="comleterandom"/>
+			<property name="offer_key" value="Questrandom2"/>
+			<property name="difficulty" value="insane"/>
+			<action type="TrackQuest"/>		
+			<objective type="RandomGoto" value="100-200" phase="1">
+				<property name="completion_distance" value="50"/>
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+			</objective>
+			<reward type="Quest" id="q_RewRandmo23"/>
+		</quest>
+		<quest id="q_RewRandmo23">
+			<property name="name_key" value="Recompensa de mision" />
+			<property name="description_key" value="Recompensa por haber leido una mision random" />
+			<property name="subtitle_key" value="Recompensa" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="Recompensa"/>
+			<property name="difficulty" value="easy"/>	
+			<action type="SpawnEnemy" id="BossGladiador" value="2"/>
+			<action type="SpawnEnemy" id="MiniRopaJoel" value="2"/>
+			<action type="SpawnEnemy" id="mxGladiador" value="2"/>
+			<action type="SpawnEnemy" id="MxZombieEscupeFuego" value="2"/>
+			<action type="SpawnEnemy" id="MxMUTANTE" value="2"/>
+			<action type="SpawnEnemy" id="MxZombieQuemado" value="2"/>
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="Item" id="questFrag" value="1"/>
+			<reward type="Exp" value="10000"/>
+		</quest>
+		<quest id="tierUnlock">
+			<property name="name_key" value="unlockTierName1" />
+			<property name="subtitle_key" value="unlockTierSub1" />
+			<property name="description_key" value="unlockTierDesc" />
+			<property name="icon" value="ui_game_symbol_star" />
+			<property name="repeatable" value="false" />
+			<property name="category_key" value="challenge" />
+			<property name="offer_key" value="unlockTierOffer" />
+			<property name="difficulty" value="easy" />
+			<property name="difficulty_tier" value="10"/>
+			<reward type="Exp" value="1"/>
+		</quest>
+		<quest id="tierUnlock2">
+			<property name="name_key" value="unlockTierName2" />
+			<property name="subtitle_key" value="unlockTierSub2" />
+			<property name="description_key" value="unlockTierDesc" />
+			<property name="icon" value="ui_game_symbol_star" />
+			<property name="repeatable" value="false" />
+			<property name="category_key" value="challenge" />
+			<property name="offer_key" value="unlockTierOffer" />
+			<property name="difficulty" value="easy" />
+			<property name="difficulty_tier" value="20"/>
+			<reward type="Exp" value="2"/>
+		</quest>
+		<quest id="tierUnlock3">
+			<property name="name_key" value="unlockTierName3" />
+			<property name="subtitle_key" value="unlockTierSub3" />
+			<property name="description_key" value="unlockTierDesc" />
+			<property name="icon" value="ui_game_symbol_star" />
+			<property name="repeatable" value="false" />
+			<property name="category_key" value="challenge" />
+			<property name="offer_key" value="unlockTierOffer" />
+			<property name="difficulty" value="easy" />
+			<property name="difficulty_tier" value="30"/>
+			<reward type="Exp" value="3"/>
+		</quest>
+		<quest id="tierUnlock4">
+			<property name="name_key" value="unlockTierName4" />
+			<property name="subtitle_key" value="unlockTierSub4" />
+			<property name="description_key" value="unlockTierDesc" />
+			<property name="icon" value="ui_game_symbol_star" />
+			<property name="repeatable" value="false" />
+			<property name="category_key" value="challenge" />
+			<property name="offer_key" value="unlockTierOffer" />
+			<property name="difficulty" value="easy" />
+			<property name="difficulty_tier" value="40"/>
+			<reward type="Exp" value="4"/>
+		</quest>
+		<quest id="tierUnlock5">
+			<property name="name_key" value="unlockTierName5" />
+			<property name="subtitle_key" value="unlockTierSub5" />
+			<property name="description_key" value="unlockTierDesc" />
+			<property name="icon" value="ui_game_symbol_star" />
+			<property name="repeatable" value="false" />
+			<property name="category_key" value="challenge" />
+			<property name="offer_key" value="unlockTierOffer" />
+			<property name="difficulty" value="easy" />
+			<property name="difficulty_tier" value="50"/>
+			<reward type="Exp" value="5"/>
+		</quest>
+		<quest id="tierUnlockALL">
+			<property name="name_key" value="unlockTierNameALL" />
+			<property name="subtitle_key" value="unlockTierSubALL" />
+			<property name="description_key" value="unlockTierDesc" />
+			<property name="icon" value="ui_game_symbol_star" />
+			<property name="repeatable" value="false" />
+			<property name="category_key" value="challenge" />
+			<property name="offer_key" value="unlockTierOfferALL" />
+			<property name="difficulty" value="easy" />
+			<property name="difficulty_tier" value="150"/>
+			<reward type="Exp" value="6"/>
+		</quest>
+	</insertAfter>
+</configs>

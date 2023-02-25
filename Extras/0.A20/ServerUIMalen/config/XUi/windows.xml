@@ -1,0 +1,352 @@
+<MalenSUI>
+
+    <setattribute xpath="/windows/window[@name='ingameDebugMenu']" name="depth">6</setattribute>
+    <setattribute xpath="/windows/window[@name='editorPanelSelector']" name="depth">6</setattribute>
+    <setattribute xpath="/windows/window[@name='levelTools']" name="depth">6</setattribute>
+    <setattribute xpath="/windows/window[@name='levelTools2']" name="depth">6</setattribute>
+    <setattribute xpath="/windows/window[@name='prefabList']" name="depth">6</setattribute>
+    <setattribute xpath="/windows/window[@name='chatoutput']" name='depth'>0</setattribute>
+    <append xpath="/windows/window[@name='ingameMenu']">
+        <sprite depth="-2" name="backgroundMain" sprite="menu_empty3px" pos="-20,20" height="1080" width="1920" color="[black]" type="sliced" fillcenter="true" globalopacity="true" globalopacitymod="1.2"/>
+
+        <!--EVENTS Encabezado-->
+        <panel name="evecheader" pos="602,0" height="46" width="955" depth="0" disableautobackground="true">
+            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="42" width="951" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+            <label pos="10, -5" width="935" height="36" name="encabezadocomandos" text="Eventos Del Servidor" justify="center" style="hover,header.name" font_size="30" upper_case="false" />
+        </panel>
+        <!--EVENTS Contenido-->
+        <panel name="evecontent" pos="602,-43" height="46" width="955" depth="0" disableautobackground="true">
+            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="42" width="951" color="[darkGrey]" type="sliced" fillcenter="true" globalopacity="true" globalopacitymod="0.80"/>
+            <label pos="10, -5" width="935" height="36" name="Contenidoeventos" text_key="evekey" justify="center" style="hover,header.name" font_size="30" upper_case="false" />
+        </panel>
+        <!--Discord encabvezado -->
+        <panel name="discheader" pos="278,0" height="46" width="300" depth="0" disableautobackground="true">
+            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="42" width="296" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+            <label pos="10, -5" width="280" height="36" name="encavezadidiscord" text="Discord del Servidor" justify="center" style="hover,header.name" font_size="30" upper_case="false" />
+        </panel>
+        <!--Discord contenido -->
+        <panel name="discontent" pos="278,-43" height="46" width="300" depth="0" disableautobackground="true">
+            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="42" width="296" color="[darkGrey]" type="sliced" fillcenter="true" globalopacity="true" globalopacitymod="0.80"/>
+            <label pos="10, -5" width="280" height="36" name="ServerWebsiteURL" text="https://discord.gg/fCQ6tPD" justify="center" style="press, hover, select,header.name" font_size="30" upper_case="false" />
+        </panel>
+
+        <!--MINI COMANDOS encabezado-->
+        <panel name="cmdheader" pos="-5,-196" height="46" width="260" depth="0" disableautobackground="true">
+            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+            <label style="header.name" pos="6,-6" height="34" width="248" justify="Center" text_key="Comandos" />
+            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="256" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+        </panel>
+        <!--MINI COMANDOS contenido-->
+        <panel name="cmdcontent" pos="-5,-239" width="260" height="600" depth="0" pivot="center" disableautobackground="true">
+            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="596" width="256" color="[darkGrey]" type="sliced" fillcenter="true" globalopacity="true" globalopacitymod="1" />
+            <label style="header.name" pos="5,-5" width="240" height="590" text_key="lolazo"/>
+        </panel>
+        <!--Encabezado de tabulacion-->
+        <panel name="rheader" pos="278,-112" height="46" width="1280" depth="0" disableautobackground="true">
+            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1276" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+            <label style="header.name" pos="6,-6" height="34" width="1268" justify="Center" text_key="hfserlab" />
+        </panel>
+        <!--Tabulacion-->
+        <rect name="tabs" controller="TabSelector" pos="278,-155" pivot="center" height="750" width="1280">
+            <sprite depth="10" name="border" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="0.9"/>
+            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+            <sprite depth="8" sprite="menu_empty2px" pos="1,-2" width="12" height="37" color="[black]" globalopacity="false"/>
+            <sprite depth="8" sprite="menu_empty2px" pos="1269,-2" width="10" height="37" color="[black]" globalopacity="false"/>
+
+            <rect name="tabsHeader" height="39" depth="0">
+                <sprite depth="0" name="backgroundMainTabs" sprite="menu_empty3px" color="0,0,0,150" type="sliced" fillcenter="true" globalopacity="true"/>
+                <grid name="tabButtons" pos="13,-2" depth="2" rows="1" cols="6" cell_width="210" cell_height="36" repeat_content="true" arrangement="horizontal">
+                    <rect>
+                        <simplebutton name="tabButton" depth="2" pos="-1,0" width="210" height="36" font_size="25" caption_key="xuiBack" bordercolor="[transparent]" defaultcolor="[darkGrey]" selectedsprite="menu_empty" selectedcolor="[mediumGrey]" foregroundlayer="false"/>
+                        <sprite depth="8" sprite="menu_empty2px" pos="208,0" width="3" height="36" color="[black]" globalopacity="false"/>
+                    </rect>
+                </grid>
+            </rect>
+            <!--Contenido de la tabulacion-->
+            <rect name="tabsContents" depth="2" pos="0,-37" height="761">
+                <sprite depth="0" pos="2,0" width="1276" height="711" name="backgroundMain" sprite="menu_empty3px" color="[mediumGrey]" type="sliced" fillcenter="true"/>
+                <!--Reglas del servidor-->
+                <rect tab_key="HeaderR">
+                    <sprite name="border" sprite="menu_empty3px" height="713" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                    <table columns="2" depth="3" padding="5,5" pos="3,-10">
+                        <label parse_actions="true" width="20" font_size="26" overflow="resizeheight" justify="right" pivot="topleft" text_key="R1N"/>
+                        <label width="1230" overflow="resizeheight" font_size="26" justify="left" pivot="topleft" text_key="R1SCR"/>
+                        <label parse_actions="true" width="20" font_size="26" overflow="resizeheight" justify="right" pivot="topleft" text_key="R2N"/>
+                        <label width="1230" overflow="resizeheight" font_size="26" justify="left" pivot="topleft" text_key="R2SCR"/>
+                        <label parse_actions="true" width="20" font_size="26" overflow="resizeheight" justify="right" pivot="topleft" text_key="R3N"/>
+                        <label width="1230" overflow="resizeheight" font_size="26" justify="left" pivot="topleft" text_key="R3SCR"/>
+                        <label parse_actions="true" width="20" font_size="26" overflow="resizeheight" justify="right" pivot="topleft" text_key="R4N"/>
+                        <label width="1230" overflow="resizeheight" font_size="26" justify="left" pivot="topleft" text_key="R4SCR"/>
+                        <label parse_actions="true" width="20" font_size="26" overflow="resizeheight" justify="right" pivot="topleft" text_key="R5N"/>
+                        <label width="1230" overflow="resizeheight" font_size="26" justify="left" pivot="topleft" text_key="R5SCR"/>
+                        <label parse_actions="true" width="20" font_size="26" overflow="resizeheight" justify="right" pivot="topleft" text_key="R6N"/>
+                        <label width="1230" overflow="resizeheight" font_size="26" justify="left" pivot="topleft" text_key="R6SCR"/>
+                        <label parse_actions="true" width="20" font_size="26" overflow="resizeheight" justify="right" pivot="topleft" text_key="R7N"/>
+                        <label width="1230" overflow="resizeheight" font_size="26" justify="left" pivot="topleft" text_key="R7SCR"/>
+                        <label parse_actions="true" width="20" font_size="26" overflow="resizeheight" justify="right" pivot="topleft" text_key="R8N"/>
+                        <label width="1230" overflow="resizeheight" font_size="26" justify="left" pivot="topleft" text_key="R8SCR"/>
+                        <label parse_actions="true" width="20" font_size="26" overflow="resizeheight" justify="right" pivot="topleft" text_key="R9N"/>
+                        <label width="1230" overflow="resizeheight" font_size="26" justify="left" pivot="topleft" text_key="R9SCR"/>
+                        <label parse_actions="true" width="30" font_size="26" overflow="resizeheight" justify="right" pivot="topleft" text_key="R10N"/>
+                        <label width="1230" overflow="resizeheight" font_size="26" justify="left" pivot="topleft" text_key="R10SCR"/>
+                        <label parse_actions="true" width="30" font_size="26" overflow="resizeheight" justify="right" pivot="topleft" text_key="R11N"/>
+                        <label width="1230" overflow="resizeheight" font_size="26" justify="left" pivot="topleft" text_key="R11SCR"/>
+                        <label parse_actions="true" width="30" font_size="26" overflow="resizeheight" justify="right" pivot="topleft" text_key="R12N"/>
+                        <label width="1230" overflow="resizeheight" font_size="26" justify="left" pivot="topleft" text_key="R12SCR"/>
+                        <label parse_actions="true" width="30" font_size="26" overflow="resizeheight" justify="right" pivot="topleft" text_key="R13N"/>
+                        <label width="1230" overflow="resizeheight" font_size="26" justify="left" pivot="topleft" text_key="R13SCR"/>
+                    </table>
+                </rect>
+                <!--Avisos-->
+                <rect tab_key="HeaderA">
+                    <sprite name="border" sprite="menu_empty3px" height="713" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                    <!--<label parse_actions="true" pos="6,-6" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text_key="hfserlab"/>-->
+                    <label style="header.name" pos="3,-10" height="34" width="1240" justify="Center" text_key="AVEN" />
+                    <table columns="1" depth="3" padding="20,5" pos="3,-50">
+                        <label style="header.name" font_size="27" overflow="resizeheight" width="1240" justify="Center" text_key="A1N" />
+                        <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A1SCR" />
+
+                        <label style="header.name" font_size="27" overflow="resizeheight" width="1240" justify="Center" text_key="A2N" />
+                        <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A2SCR" />
+
+                        <label style="header.name" font_size="27" overflow="resizeheight" width="1240" justify="Center" text_key="A6N" />
+                        <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A6SCR" />
+
+                        <label parse_actions="true" width="160" font_size="25" overflow="resizeheight" justify="right" pivot="topleft" text_key="AEN"/>
+
+                        <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A7N" />
+                        <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A7SCR" />
+
+                        <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A3N" />
+                        <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A3SCR" />
+
+
+                        <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A4N" />
+                        <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A4SCR" />
+
+                        <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A5N" />
+                        <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A5SCR" />
+
+                    </table>
+                </rect>
+                <!--Comandos-->
+                <rect tab_key="HeaderC">
+                    <sprite name="border" sprite="menu_empty3px" height="713" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                    <table columns="2" depth="3" padding="5,5" pos="3,-10">
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C1N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C1SCR"/>
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C2N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C2SCR"/>
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C3N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C3SCR"/>
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C4N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C4SCR"/>
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C5N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C5SCR"/>
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C6N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C6SCR"/>
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C7N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C7SCR"/>
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C8N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C8SCR"/>
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C9N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C9SCR"/>
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C10N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C10SCR"/>
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C11N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C11SCR"/>
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C12N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C12SCR"/>
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C13N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C13SCR"/>
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C14N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C14SCR"/>
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C15N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C15SCR"/>
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C16N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C16SCR"/>
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C17N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C17SCR"/>
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C18N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C18SCR"/>
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C19N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C19SCR"/>
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C20N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C20SCR"/>
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C21N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C21SCR"/>
+                        <label parse_actions="true" width="90" font_size="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="C22N"/>
+                        <label width="1160" overflow="resizeheight" font_size="20" justify="left" pivot="topleft" text_key="C22SCR"/>
+
+                    </table>
+                </rect>
+                <!--Reglas de mercado-->
+                <rect tab_key="HeaderRM">
+                    <sprite name="border" sprite="menu_empty3px" height="713" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                    <table columns="2" depth="3" padding="5,5" pos="3,-10">
+                        <label parse_actions="true" width="20" font_size="25" overflow="resizeheight" justify="right" pivot="topleft" text_key="R1N"/>
+                        <label width="1230" overflow="resizeheight" font_size="25" justify="left" pivot="topleft" text_key="M1SCR"/>
+                        <label parse_actions="true" font_size="25" width="20" overflow="resizeheight" justify="right" pivot="topleft" text_key="R2N"/>
+                        <label width="1230" overflow="resizeheight" font_size="25" justify="left" pivot="topleft" text_key="M2SCR"/>
+                        <label parse_actions="true" width="20" font_size="25" overflow="resizeheight" justify="right" pivot="topleft" text_key="R3N"/>
+                        <label width="1230" overflow="resizeheight" font_size="25" justify="left" pivot="topleft" text_key="M3SCR"/>
+                        <label parse_actions="true" width="20" font_size="25" overflow="resizeheight" justify="right" pivot="topleft" text_key="R4N"/>
+                        <label width="1230" overflow="resizeheight" font_size="25" justify="left" pivot="topleft" text_key="M4SCR"/>
+                        <label parse_actions="true" width="20" font_size="25" overflow="resizeheight" justify="right" pivot="topleft" text_key="R5N"/>
+                        <label width="1230" overflow="resizeheight" font_size="25" justify="left" pivot="topleft" text_key="M5SCR"/>
+                        <label parse_actions="true" width="20" font_size="25" overflow="resizeheight" justify="right" pivot="topleft" text_key="R6N"/>
+                        <label width="1230" overflow="resizeheight" font_size="25" justify="left" pivot="topleft" text_key="M6SCR"/>
+                        <label parse_actions="true" width="20" font_size="25" overflow="resizeheight" justify="right" pivot="topleft" text_key="R7N"/>
+                        <label width="1230" overflow="resizeheight" font_size="25" justify="left" pivot="topleft" text_key="M7SCR"/>
+                        <label parse_actions="true" width="20" font_size="25" overflow="resizeheight" justify="right" pivot="topleft" text_key="R8N"/>
+                        <label width="1230" overflow="resizeheight" font_size="25" justify="left" pivot="topleft" text_key="M8SCR"/>
+                        <label parse_actions="true" width="20" font_size="25" overflow="resizeheight" justify="right" pivot="topleft" text_key="R9N"/>
+                        <label width="1230" overflow="resizeheight" font_size="25" justify="left" pivot="topleft" text_key="M9SCR"/>
+                        <label parse_actions="true" width="30" font_size="25" overflow="resizeheight" justify="right" pivot="topleft" text_key="R10N"/>
+                        <label width="1230" overflow="resizeheight" font_size="25" justify="left" pivot="topleft" text_key="M10SCR"/>
+                        <label parse_actions="true" width="30" font_size="25" overflow="resizeheight" justify="right" pivot="topleft" text_key="R11N"/>
+                        <label width="1230" overflow="resizeheight" font_size="25" justify="left" pivot="topleft" text_key="M11SCR"/>
+                        <label parse_actions="true" width="30" font_size="25" overflow="resizeheight" justify="right" pivot="topleft" text_key="R12N"/>
+                        <label width="1230" overflow="resizeheight" font_size="25" justify="left" pivot="topleft" text_key="M12SCR"/>
+                        <label parse_actions="true" width="30" font_size="25" overflow="resizeheight" justify="right" pivot="topleft" text_key="R13N"/>
+                        <label width="1230" overflow="resizeheight" font_size="25" justify="left" pivot="topleft" text_key="M13SCR"/>
+                        <label parse_actions="true" width="30" font_size="25" overflow="resizeheight" justify="right" pivot="topleft" text_key="R14N"/>
+                        <label width="1230" overflow="resizeheight" font_size="25" justify="left" pivot="topleft" text_key="M14SCR"/>
+                    </table>
+                </rect>
+                <!--Construccion-->
+                <rect tab_key="HeaderR2">
+                    <sprite nawsme="border" sprite="menu_empty3px" height="713" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                    <table columns="1" depth="3" padding="5,5" pos="3,-20">
+                        <label style="header.name" pos="20,5" font_size="27" overflow="resizeheight" width="1240" justify="Center" text_key="LMH1" />
+                        <label style="header.name" pos="20,5" font_size="27" overflow="resizeheight" width="1240" justify="Center" text_key="LMH2" />
+                    </table>
+                    <table columns="2" depth="3" padding="5,5" pos="3,-170">
+                        <!--Limites-->
+                        <!--Arboles-->
+                        <label parse_actions="true" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text_key="L1R"/>
+                        <label width="1090" overflow="resizeheight" font_size="27" justify="left" pivot="topleft" text_key="L1RInf"/>
+                        <label parse_actions="true" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text_key="L2R"/>
+                        <label width="1090" overflow="resizeheight" font_size="27" justify="left" pivot="topleft" text_key="L2RInf"/>
+                        <label parse_actions="true" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text_key="L3R"/>
+                        <label width="1090" overflow="resizeheight" font_size="27" justify="left" pivot="topleft" text_key="L3RInf"/>
+                        <label parse_actions="true" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text_key="L4R"/>
+                        <label width="1090" overflow="resizeheight" font_size="27" justify="left" pivot="topleft" text_key="L4RInf"/>
+                        <label parse_actions="true" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text_key="L5R"/>
+                        <label width="1090" overflow="resizeheight" font_size="27" justify="left" pivot="topleft" text_key="L5RInf"/>
+                        <label parse_actions="true" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text_key="L6R"/>
+                        <label width="1090" overflow="resizeheight" font_size="27" justify="left" pivot="topleft" text_key="L6RInf"/>
+                        <label parse_actions="true" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text=" "/>
+                        <label width="1090" overflow="resizeheight" font_size="27" justify="left" pivot="topleft" text=" "/>
+                        <label parse_actions="true" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text_key="L7R"/>
+                        <label width="1090" overflow="resizeheight" font_size="27" justify="left" pivot="topleft" text_key="L7RInf"/>
+                        <label parse_actions="true" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text_key="L8R"/>
+                        <label width="1090" overflow="resizeheight" font_size="27" justify="left" pivot="topleft" text_key="L8RInf"/>
+                    </table>
+                </rect>
+                <!--Donaciones-->
+                <rect tab_key="HeadDon">
+                    <sprite name="border" sprite="menu_empty3px" height="713" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                    <label style="header.name" pos="3,-10" font_size="20" overflow="resizeheight" width="1240" justify="Center" text_key="Dontxt" />
+
+                    <rect name="tabs" controller="TabSelector" pos="0,-75" pivot="center" height="638" width="1280">
+                        <sprite depth="10" name="border" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="0.9"/>
+                        <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+
+                        <sprite depth="8" sprite="menu_empty2px" pos="1,-2" width="12" height="31" color="[black]" globalopacity="false"/>
+                        <sprite depth="8" sprite="menu_empty2px" pos="1269,-2" width="10" height="31" color="[black]" globalopacity="false"/>
+
+                        <rect name="tabsHeader" height="33" depth="0">
+                            <grid name="tabButtons" pos="13,-2" depth="2" rows="1" cols="2" cell_width="630" cell_height="30" repeat_content="true" arrangement="horizontal">
+                                <rect>
+                                    <simplebutton name="tabButton" depth="2" pos="-1,0" width="630" height="30" font_size="25" caption_key="xuiBack" bordercolor="[transparent]" defaultcolor="[darkGrey]" selectedsprite="menu_empty" selectedcolor="[mediumGrey]" foregroundlayer="false"/>
+                                    <sprite depth="8" sprite="menu_empty2px" pos="628,0" width="3" height="30" color="[black]" globalopacity="false"/>
+                                </rect>
+                            </grid>
+                        </rect>
+
+                        <rect name="tabsContents" depth="2" pos="0,-31" height="713">
+                            <!--Avisos-->
+                            <rect tab_key="DonItN">
+                                <sprite name="border" sprite="menu_empty3px" height="607" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                <!--<label parse_actions="true" pos="6,-6" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text_key="hfserlab"/>-->
+                                <label style="header.name" pos="3,-8" font_size="20" overflow="resizeheight" width="1240" justify="Center" text_key="DonItT" />
+                                <table columns="3" depth="3" padding="10,5" pos="20,-65">
+                                    <label style="header.name" font_size="20" overflow="resizeheight" width="406" justify="left" text_key="DonIt1" />
+                                    <label style="header.name" font_size="20" overflow="resizeheight" width="406" justify="left" text_key="DonIt2" />
+                                    <label style="header.name" font_size="20" overflow="resizeheight" width="406" justify="left" text_key="DonIt3" />
+
+                                    <label style="header.name" font_size="20" overflow="resizeheight" width="406" justify="left" text_key="DonItC1" />
+                                    <label style="header.name" font_size="20" overflow="resizeheight" width="406" justify="left" text_key="DonItC2" />
+                                    <label style="header.name" font_size="20" overflow="resizeheight" width="406" justify="left" text_key="DonItC3" />
+
+                                    <label style="header.name" font_size="20" overflow="resizeheight" width="406" justify="left" text_key="DonIt4" />
+                                    <label style="header.name" font_size="20" overflow="resizeheight" width="406" justify="left" text_key="DonIt5" />
+                                    <label style="header.name" font_size="20" overflow="resizeheight" width="406" justify="left" text_key="DonIt6" />
+
+                                    <label style="header.name" font_size="20" overflow="resizeheight" width="406" justify="left" text_key="DonItC4" />
+                                    <label style="header.name" font_size="20" overflow="resizeheight" width="406" justify="left" text_key="DonItC5" />
+                                    <label style="header.name" font_size="20" overflow="resizeheight" width="406" justify="left" text_key="DonItC6" />
+
+                                    <label style="header.name" font_size="20" overflow="resizeheight" width="406" justify="left" text=" " />
+                                    <label style="header.name" font_size="20" overflow="resizeheight" width="406" justify="left" text_key="DonIt7" />
+                                    <label style="header.name" font_size="20" overflow="resizeheight" width="406" justify="left" text=" " />
+
+                                    <label style="header.name" font_size="20" overflow="resizeheight" width="406" justify="left" text=" " />
+                                    <label style="header.name" font_size="20" overflow="resizeheight" width="406" justify="left" text_key="DonItC7" />
+                                </table>
+                            </rect>
+                            <!--Reglas del servidor-->
+                            <rect tab_key="DonSvN">
+                                <sprite name="border" sprite="menu_empty3px" height="607" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                                <!--<label parse_actions="true" pos="6,-6" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text_key="hfserlab"/>-->
+                                <label style="header.name" pos="3,-8" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="DonSvT" />
+                                <table columns="1" depth="3" padding="20,20" pos="20,-65">
+                                    <label style="header.name" font_size="20" overflow="resizeheight" width="1240" justify="left" text_key="DonSvT1" />
+                                    <label style="header.name" font_size="20" overflow="resizeheight" width="1240" justify="left" text_key="DonSvT2" />
+                                    <label style="header.name" font_size="20" overflow="resizeheight" width="1240" justify="left" text_key="DonSvT3" />
+                                    <label style="header.name" font_size="20" overflow="resizeheight" width="1240" justify="left" text_key="DonSvT4" />
+
+                                </table>
+                            </rect>
+
+                        </rect>
+                    </rect>
+
+                </rect>
+            </rect>
+        </rect>
+        <!--Antiguo de Anuncios ya no se usa-->
+        <!--<rect tab_key="HeaderA">
+                    <sprite name="border" sprite="menu_empty3px" height="713" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
+                    <table columns="2" depth="3" padding="5,5" pos="3,-10">
+                        <label parse_actions="true" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text_key="AEN"/>
+                        <label width="1090" overflow="resizeheight" font_size="27" justify="left" pivot="topleft" text_key="AESCR"/>
+                        <label parse_actions="true" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text_key="A1N"/>
+                        <label width="1090" overflow="resizeheight" font_size="27" justify="left" pivot="topleft" text_key="A1SCR"/>
+                        <label parse_actions="true" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text_key="AEN"/>
+                        <label width="1090" overflow="resizeheight" font_size="27" justify="left" pivot="topleft" text_key="AESCR"/>
+                        <label parse_actions="true" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text_key="A2N"/>
+                        <label width="1090" overflow="resizeheight" font_size="27" justify="left" pivot="topleft" text_key="A2SCR"/>
+                        <label parse_actions="true" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text_key="AEN"/>
+                        <label width="1090" overflow="resizeheight" font_size="27" justify="left" pivot="topleft" text_key="AESCR"/>
+                        <label parse_actions="true" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text_key="A6N"/>
+                        <label width="1090" overflow="resizeheight" font_size="27" justify="left" pivot="topleft" text_key="A6SCR"/>
+                        <label parse_actions="true" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text_key="AEN"/>
+                        <label width="1090" overflow="resizeheight" font_size="27" justify="left" pivot="topleft" text_key="AESCR"/>
+                        <label parse_actions="true" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text_key="A3N"/>
+                        <label width="1090" overflow="resizeheight" font_size="27" justify="left" pivot="topleft" text_key="A3SCR"/>
+                        <label parse_actions="true" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text_key="A4N"/>
+                        <label width="1090" overflow="resizeheight" font_size="27" justify="left" pivot="topleft" text_key="A4SCR"/>
+                        <label parse_actions="true" width="160" font_size="27" overflow="resizeheight" justify="right" pivot="topleft" text_key="A5N"/>
+                        <label width="1090" overflow="resizeheight" font_size="27" justify="left" pivot="topleft" text_key="A5SCR"/>
+                    </table>
+                </rect>-->
+    </append>
+</MalenSUI>

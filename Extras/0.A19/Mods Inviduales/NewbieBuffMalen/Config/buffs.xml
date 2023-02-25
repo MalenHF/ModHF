@@ -1,0 +1,25 @@
+<configs>
+	<!--Add buff at starting a game-->
+	<append xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group">
+		<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffxpst"/>
+	</append>
+	<append xpath="/buffs">
+		<!--Newbie Buff-->
+		<buff name="buffxpst" name_key="buffxpstn" description_key="buffxpstdesc" icon="ui_game_symbol_star" remove_on_death="false" icon_color="0,255,255">
+			<!--update every 5 minutes, increase it if there is lag issues max is 3275s-->
+			<update_rate value="300"/>
+			<stack_type value="ignore"/>
+			<effect_group>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".5"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffxpst">
+					<!--Change the 100 to the lvl you want the buff to remove-->
+					<requirement name="PlayerLevel" operation="GT" value="100"/>
+					<!--100 means buff will be removed at lvl 101-->
+				</triggered_effect>
+			</effect_group>
+		</buff>
+	</append>
+
+</configs>
