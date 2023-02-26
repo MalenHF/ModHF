@@ -146,6 +146,29 @@
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="35"/>
 			</effect_group>
 		</buff>
+
+		<!--Elemental Z-Normal TrueDamage-->
+		<buff name="ElementalNormalHit" hidden="true">
+			<duration value="1"/>
+			<effect_group>
+				<requirement name="NotHasBuff" buff="god"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="30"/>
+			</effect_group>
+		</buff>
+		<buff name="ElementalFrozenHit" hidden="true">
+			<duration value="1"/>
+			<effect_group>
+				<requirement name="NotHasBuff" buff="god"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="30"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="3" effect_name="Cold2"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="3" effect_name="Cold2"/>
+				<passive_effect name="WalkSpeed" operation="base_set" value="0"/>
+				<passive_effect name="RunSpeed" operation="base_set" value="0"/>
+				<passive_effect name="CrouchSpeed" operation="base_set" value="0"/>
+				<passive_effect name="JumpStrength" operation="base_set" value="0"/>				
+			</effect_group>
+		</buff>
+
 		<!--Decorativos-->
 		<buff name="FUEGO" hidden="true">
 			<effect_group>
@@ -1591,7 +1614,6 @@
 				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="0,8" value="1,1"/>
 				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="8,30" value="1,15"/>
 				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="30,250" value="20,500"/>
-
 			</effect_group>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="2" effect_name="Drunk"/>
