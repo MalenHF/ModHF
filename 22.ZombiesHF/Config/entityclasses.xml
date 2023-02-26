@@ -5895,7 +5895,7 @@
 		<entity_class name="HvToxicMiniBoss" extends="Zombie_TemplateHF">
 			<property name="Archetype" value="ToxicMiniBoss" />
 			<property name="LootDropEntityClass" value="MiniBossLootContainer"/>
-			<property name="Tags" value="entity,zombie,walker,boss,tavoR,umazombie,spobosses" />
+			<property name="Tags" value="entity,zombie,walker,boss,tavoR,umazombie,spobosses,bossrad" />
 			<property name="HandItem" value="meleeHandToxic"/>
 			<property name="ParticleOnDeath" value="blood_death"/>
 			<property name="SoundRandom" value="Enemies/Acid_Puking_Hulk/hulkroam"/>
@@ -5929,7 +5929,8 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="10"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>				
 			</effect_group>
-		</entity_class>		
+		</entity_class>
+		
 		<entity_class name="HvEnfermeraMiniBoss" extends="Zombie_TemplateHF">
 			<property name="Archetype" value="ArchMiniBossEnfermera" />
 			<property name="Mesh" value="#Entities/Zombies?Prefabs/ZArlene.prefab"/>
@@ -5962,9 +5963,9 @@
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="0"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="30"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="120"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>				
 			</effect_group>
-		</entity_class>	
+		</entity_class>
 	</append>
 </configs>

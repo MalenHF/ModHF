@@ -2287,10 +2287,9 @@
 				</property>
 				<effect_group name="meleeHandZombieStrongFeral" tiered="false">
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
-					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffAhogamiento"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffDrowned"/>
 					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="InfectionFeral"/>
 					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInfectionCatch"/>
-					<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
 				</effect_group>
 			</item>
 			<item name="meleeHandToxic">
@@ -2307,7 +2306,7 @@
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
 					<passive_effect name="BuffProcChance" operation="base_set" value=".75" tags="buffInjuryBleedingZombie"/>
 					<passive_effect name="BuffProcChance" operation="base_set" value=".3" tags="buffInjuryStunned01"/>
-					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="triggerInfection"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffPoisonRadiation"/>
 				</effect_group>
 			</item>
 			<item name="meleeHandEnfermera">
@@ -2315,7 +2314,7 @@
 				<property name="CreativeMode" value="None"/>
 				<property name="Degradation" value="99999" param1="true"/>
 				<property class="Action0">
-					<property name="Buff" value="drowsy,buffInjuryBleeding,buffInjuryBleedingTwo,buffInjuryBleedingOne"/>
+					<property name="Buff" value="drowsy,buffInjuryBleedingOne"/>
 					<property name="Range" value="3"/>
 					<property name="DamageEntity" value="40"/>
 					<property name="DamageBlock" value="1500"/>
@@ -2325,7 +2324,7 @@
 					<passive_effect name="BuffProcChance" operation="base_set" value=".6" tags="buffInfectionCatch"/>
 					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="medicalRegHealthAmount" operation="set" value="0"/>
 				</effect_group>
-			</item>	
+			</item>
 
 	</append>
 </config>
