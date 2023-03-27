@@ -158,6 +158,7 @@
 		<buff name="ElementalFrozenHit" hidden="true">
 			<duration value="1"/>
 			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
 				<requirement name="NotHasBuff" buff="god"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="30"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="3" effect_name="Cold2"/>
@@ -165,7 +166,9 @@
 				<passive_effect name="WalkSpeed" operation="base_set" value="0"/>
 				<passive_effect name="RunSpeed" operation="base_set" value="0"/>
 				<passive_effect name="CrouchSpeed" operation="base_set" value="0"/>
-				<passive_effect name="JumpStrength" operation="base_set" value="0"/>				
+				<passive_effect name="JumpStrength" operation="base_set" value="0"/>
+				<passive_effect name="DisableItem" operation="base_set" value="1" tags="ranged" />
+				<passive_effect name="DisableItem" operation="base_set" value="1" tags="melee" />
 			</effect_group>
 		</buff>
 
@@ -881,6 +884,7 @@
 			<display_value value=".TwitchHeadShotTimer"/>
 			<display_value_format value="time"/>
 			<effect_group>
+				<requirement name="NotHasBuff" buff="god"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TwitchHeadShotTimer" operation="set" value="30"/>
 				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".TwitchHeadShotTimer" operation="set" value="30"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TwitchHeadShotTimer" operation="add" value="-1"/>
@@ -1522,7 +1526,7 @@
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Commercial/bollardConcreteKnockedBPrefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="RightLeg"/>
 				
 			</effect_group>
-		</buff>	
+		</buff>
 		<buff name="DecoMiniBossToxic" hidden="true">
 			<effect_group>
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelAcidPrefab" local_offset="0,0,-0.5" local_rotation="180,0,0" parent_transform="Spine"/> -->

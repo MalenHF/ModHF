@@ -3325,7 +3325,8 @@
 		</entity_class>
 		<entity_class name="BossTavoSoldier" extends="Zombie_TemplateHF">
 			<property name="Archetype" value="SOLDIER" />
-			<property name="Tags" value="entity,zombie,walker,boss,feral,bossrad"/>
+			<!-- <property name="Tags" value="entity,zombie,walker,boss,feral,bossrad"/> -->
+			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses,bossrad" />
 			<!--<property name="ReplaceMaterial0" value="#Entities/Zombies?Zombies/Materials/feral_eye.mat"/> -->
 			<property name="Mass" value="300"/>
 			<property name="ReplaceMaterial1" value="entities/resources/materials/oreCoalBoulder"/>
@@ -3741,7 +3742,7 @@
 		<!-- END Added by HolyVentus -->
 		<!--Special Bosses-->
 		<entity_class name="SpecialBossMummy" extends="zombieTemplateMale">
-			<property name="Tags" value="entity,zombie,boss,bossrad,norail"/>
+			<property name="Tags" value="entity,zombie,boss,umazombie,bossrad,norail"/>
 			<property name="Mesh" value="#Entities/Zombies?Prefabs/ZBurnt.prefab"/>
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreCoalBoulder"/>
 			<property name="ReplaceMaterial2" value="entities/resources/materials/oreleadboulder"/>
@@ -3921,7 +3922,7 @@
 		</entity_class>
 		<entity_class name="SpecialBossTavoSoldier" extends="Zombie_TemplateHF">
 			<property name="Archetype" value="SpecialSOLDIER" />
-			<property name="Tags" value="entity,zombie,walker,boss,feral,bossrad,norail,TavoR"/>
+			<property name="Tags" value="entity,zombie,walker,boss,umazombie,feral,bossrad,norail,TavoR"/>
 			<!--<property name="ReplaceMaterial0" value="#Entities/Zombies?Zombies/Materials/feral_eye.mat"/> -->
 			<property name="Mass" value="300"/>
 			<property name="ReplaceMaterial1" value="entities/resources/materials/oreCoalBoulder"/>
@@ -4500,6 +4501,15 @@
 			<property name="ArmsExplosionDamageMultiplier" value=".85"/>
 			<property name="HeadExplosionDamageMultiplier" value=".85"/>
 			<property name="ChestExplosionDamageMultiplier" value=".85"/>
+
+			<property name="AITask-1" value="RangedAttackTarget" data="itemType=1;cooldown=3;duration=2;minRange=3;maxRange=300"/>
+			<property name="AITask-2" value="ApproachAndAttackTarget" data="class=EntityEnemyAnimal,0,EntityPlayer"/>
+			<property name="AITask-3" value="BreakBlock"/>
+			<property name="AITask-4" value="DestroyArea"/>
+			<property name="AITask-5" value="ApproachSpot"/>
+			<property name="AITask-6" value="Look"/>
+			<property name="AITask-7" value="Wander"/>		
+			
 			<property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityPlayer,0,0,EntityNPC,0,0"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="2800"/>
@@ -5042,6 +5052,15 @@
 			<property name="ArmsExplosionDamageMultiplier" value=".85"/>
 			<property name="HeadExplosionDamageMultiplier" value=".85"/>
 			<property name="ChestExplosionDamageMultiplier" value=".85"/>
+
+			<property name="AITask-1" value="RangedAttackTarget" data="itemType=1;cooldown=3;duration=2;minRange=3;maxRange=300"/>
+			<property name="AITask-2" value="ApproachAndAttackTarget" data="class=EntityEnemyAnimal,0,EntityPlayer"/>
+			<property name="AITask-3" value="BreakBlock"/>
+			<property name="AITask-4" value="DestroyArea"/>
+			<property name="AITask-5" value="ApproachSpot"/>
+			<property name="AITask-6" value="Look"/>
+			<property name="AITask-7" value="Wander"/>		
+			
 			<property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityPlayer,0,0,EntityNPC,0,0"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="2800"/>
@@ -5585,6 +5604,15 @@
 			<property name="ArmsExplosionDamageMultiplier" value=".85"/>
 			<property name="HeadExplosionDamageMultiplier" value=".85"/>
 			<property name="ChestExplosionDamageMultiplier" value=".85"/>
+
+			<property name="AITask-1" value="RangedAttackTarget" data="itemType=1;cooldown=3;duration=2;minRange=3;maxRange=300"/>
+			<property name="AITask-2" value="ApproachAndAttackTarget" data="class=EntityEnemyAnimal,0,EntityPlayer"/>
+			<property name="AITask-3" value="BreakBlock"/>
+			<property name="AITask-4" value="DestroyArea"/>
+			<property name="AITask-5" value="ApproachSpot"/>
+			<property name="AITask-6" value="Look"/>
+			<property name="AITask-7" value="Wander"/>		
+			
 			<property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityPlayer,0,0,EntityNPC,0,0"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="2500"/>
@@ -6127,6 +6155,16 @@
 			<property name="SoundFootstepModifier" value="bear_footstep"/>
 			<property name="LootDropProb" value="1"/>
 			<property name="ExperienceGain" value="10000"/>
+
+			<property name="AITask-1" value="RangedAttackTarget" data="itemType=1;cooldown=3;duration=2;minRange=3;maxRange=300"/>
+			<property name="AITask-2" value="ApproachAndAttackTarget" data="class=EntityEnemyAnimal,0,EntityPlayer"/>
+			<property name="AITask-3" value="BreakBlock"/>
+			<property name="AITask-4" value="DestroyArea"/>
+			<property name="AITask-5" value="ApproachSpot"/>
+			<property name="AITask-6" value="Look"/>
+			<property name="AITask-7" value="Wander"/>		
+			
+			<property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityPlayer,0,0,EntityNPC,0,0"/>
 			
 			<property name="KnockdownProneDamageThreshold" value="2"/>
 			<property name="KnockdownProneStunDuration" value="0"/>
@@ -6135,7 +6173,7 @@
 			<property name="KnockdownKneelStunDuration" value="0"/>
 			<property name="KnockdownKneelRefillRate" value="2"/>
 			<property name="WalkType" value="2"/>
-			<property name="MoveSpeed" value="0.6"/>
+			<property name="MoveSpeed" value="0.9"/>
 			<property name="SurfaceCategory" value="metal"/>
 			<property name="PainResistPerHit" value="5"/>
 			<property name="MoveSpeedAggro" value="1.0, 1.3"/>
