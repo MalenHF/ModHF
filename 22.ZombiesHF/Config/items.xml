@@ -1461,6 +1461,10 @@
 					<property name="LifeTime" value="3"/>
 					<property name="CollisionRadius" value="0.7"/>
 					<property name="Buff" value="buffOnlyheadshot"/>
+					<!-- <requirement name="EntityTagCompare" target="other" tags="player">
+						<requirement name="NotHasBuff" buff="god"/>
+						<property name="Buff" value="buffOnlyheadshot"/>
+					</requirement> -->
 				</property>
 				<effect_group name="PonkyGallina" tiered="false">
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
@@ -2245,7 +2249,7 @@
                     <display_value name="dExRadius" value="6"/>
                 </effect_group>
             </item>
-		<!-- Zombies hans by Holy Ventus -->
+		<!-- Zombies hands by Holy Ventus -->
 			<item name="meleeHandElementalFire">
 				<property name="Extends" value="meleeHandZombieStrong"/>
 				<property name="CreativeMode" value="None"/>
@@ -2254,7 +2258,27 @@
 					<property name="Buff" value="ElementalNormalHit"/>
 					<property name="DamageBlock" value="400"/>
 				</property>
+				<property class="Action1">
+					<property name="Class" value="Vomit"/>
+					<property name="Delay" value=".3"/>
+					<property name="Range" value="300"/>
+					<property name="Infinite_ammo" value="true"/>
+					<property name="Magazine_items" value="ammoProjectileZombieVomit"/>
+					<property name="Sound_warning" value="hulkvomitwarning"/>
+					<property name="Sound_start" value="hulkvomitattack"/>
+					<property name="Sound_repeat" value=""/>
+					<property name="Sound_end" value=""/>
+					<property name="Sound_empty" value=""/>
+					<property name="Sound_reload" value=""/>
+				</property>				
 				<effect_group name="meleeHandZombieStrongFeral" tiered="false">
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="2"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>					
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
 					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="InfectionFeral"/>
 					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInfectionCatch"/>
@@ -2270,8 +2294,31 @@
 					<property name="Buff" value="ElementalFrozenHit"/>
 					<property name="DamageBlock" value="400"/>
 				</property>
+				<property class="Action1">
+					<property name="Class" value="Vomit"/>
+					<property name="Delay" value=".3"/>
+					<property name="Range" value="300"/>
+					<property name="Infinite_ammo" value="true"/>
+					<!-- <property name="Magazine_items" value="ammoProjectileZombieVomit"/> -->
+					<property name="Magazine_items" value="projectileFrozen"/>
+					<property name="Sound_warning" value="hulkvomitwarning"/>
+					<property name="Sound_start" value="hulkvomitattack"/>
+					<property name="Sound_repeat" value=""/>
+					<property name="Sound_end" value=""/>
+					<property name="Sound_empty" value=""/>
+					<property name="Sound_reload" value=""/>
+					<!-- <property name="Buff" value="ElementalFrozenHit"/> -->
+				</property>
 				<effect_group name="meleeHandZombieStrongFeral" tiered="false">
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="2"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<!-- <passive_effect name="BuffProcChance" operation="base_set" value="0.90" tags="ElementalFrozenHit"/> -->
 					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="InfectionFeral"/>
 					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInfectionCatch"/>
 					<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
@@ -2285,7 +2332,27 @@
 					<property name="Buff" value="ElementalNormalHit"/>
 					<property name="DamageBlock" value="400"/>
 				</property>
+				<property class="Action1">
+					<property name="Class" value="Vomit"/>
+					<property name="Delay" value=".3"/>
+					<property name="Range" value="300"/>
+					<property name="Infinite_ammo" value="true"/>
+					<property name="Magazine_items" value="ammoProjectileZombieVomit"/>
+					<property name="Sound_warning" value="hulkvomitwarning"/>
+					<property name="Sound_start" value="hulkvomitattack"/>
+					<property name="Sound_repeat" value=""/>
+					<property name="Sound_end" value=""/>
+					<property name="Sound_empty" value=""/>
+					<property name="Sound_reload" value=""/>
+				</property>
 				<effect_group name="meleeHandZombieStrongFeral" tiered="false">
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="2"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
 					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffDrowned"/>
 					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="InfectionFeral"/>
@@ -2302,7 +2369,27 @@
 					<property name="DamageEntity" value="50"/>
 					<property name="DamageBlock" value="1500"/>
 				</property>
+				<property class="Action1">
+					<property name="Class" value="Vomit"/>
+					<property name="Delay" value=".3"/>
+					<property name="Range" value="300"/>
+					<property name="Infinite_ammo" value="true"/>
+					<property name="Magazine_items" value="ammoProjectileZombieVomit"/>
+					<property name="Sound_warning" value="hulkvomitwarning"/>
+					<property name="Sound_start" value="hulkvomitattack"/>
+					<property name="Sound_repeat" value=""/>
+					<property name="Sound_end" value=""/>
+					<property name="Sound_empty" value=""/>
+					<property name="Sound_reload" value=""/>
+				</property>	
 				<effect_group name="meleeHandToxic" tiered="false">
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="2"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>					
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
 					<passive_effect name="BuffProcChance" operation="base_set" value=".75" tags="buffInjuryBleedingZombie"/>
 					<passive_effect name="BuffProcChance" operation="base_set" value=".3" tags="buffInjuryStunned01"/>
@@ -2325,6 +2412,30 @@
 					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="medicalRegHealthAmount" operation="set" value="0"/>
 				</effect_group>
 			</item>
-
+			<item name="projectileFrozen">
+				<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
+				<property name="Material" value="Morganic"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action1">
+					<property name="Class" value="Projectile"/>
+					<property name="DamageEntity" value="65"/>
+					<property name="DamageBlock" value="400"/>
+					<property name="Explosion.ParticleIndex" value="7"/>
+					<property name="Velocity" value="15"/>
+					<property name="FlyTime" value="1"/>
+					<property name="LifeTime" value="3"/>
+					<property name="CollisionRadius" value="0.7"/>
+					<!-- No aplica el buffo de congelar al player (ni ninguna otra entidad) -->
+					<requirement name="EntityTagCompare" tags="player"/>
+					<requirement name="NotHasBuff" buff="god"/>
+					<property name="Buff" value="ElementalFrozenHit"/>
+				</property>
+				<effect_group name="projectilFrozen" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="metal"/>
+					<!-- <passive_effect name="BuffProcChance" operation="base_set" value="0.50" tags="ElementalFrozenHit"/> -->
+				</effect_group>
+			</item>
 	</append>
 </config>
