@@ -118,8 +118,8 @@
 				<property name="Delay" value="0.5"/>
 				<property name="Use_time" value="1"/>
 				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="juguito_de_chale,AmmoKit,RWRKIT3,newbielvl100"/>
-				<property name="Create_item_count" value="24,1,1,1"/>
+				<property name="Create_item" value="juguito_de_chale,AmmoKit,RWRKIT3,newbielvl100,friendlvl50"/>
+				<property name="Create_item_count" value="24,1,1,1,1"/>
 			</property>
 		</item>
 		<item name="newbielvl100">
@@ -139,7 +139,7 @@
 				<property name="Delay" value="0.5"/>
 				<property name="Use_time" value="1"/>
 				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="juguito_de_chale,AmmoKit,RWRKIT2,newbielvl200"/>
+				<property name="Create_item" value="juguito_de_chale,AmmoKit,RWRKIT2,newbielvl200,friendlvl100"/>
 				<property name="Create_item_count" value="25,2,1,1"/>
 			</property>
 		</item>
@@ -160,7 +160,7 @@
 				<property name="Delay" value="0.5"/>
 				<property name="Use_time" value="1"/>
 				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="juguito_de_chale,LegKit,RWRKIT1"/>
+				<property name="Create_item" value="juguito_de_chale,LegKit,RWRKIT1,friendlvl200"/>
 				<property name="Create_item_count" value="50,1,1"/>
 			</property>
 		</item>
@@ -198,6 +198,70 @@
 			<property name="Material" value="Morganic"/>
 			<property name="Stacknumber" value="400"/>
 			<property name="Group" value="Mods"/>
+		</item>
+
+		<item name="friendlvl50">
+			<property name="CustomIcon" value="bundleFarm"/>
+			<property name="ItemTypeIcon" value="twitch_special"/>
+			<property name="HoldType" value="45"/>
+			<property name="DescriptionKey" value="newbiKitDesc"/>
+			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="49"/>
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="juguito_de_chale,AmmoKit,RWRKIT3"/>
+				<property name="Create_item_count" value="24,1,1,1"/>
+			</property>
+		</item>
+		<item name="friendlvl100">
+			<property name="CustomIcon" value="bundleFarm"/>
+			<property name="ItemTypeIcon" value="twitch_special"/>
+			<property name="HoldType" value="45"/>
+			<property name="DescriptionKey" value="newbiKitDesc"/>
+			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">
+				<requirement name="PlayerLevel" operation="GT" value="99"/>
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="juguito_de_chale,AmmoKit,RWRKIT2"/>
+				<property name="Create_item_count" value="25,2,1,1"/>
+			</property>
+		</item>
+		<item name="friendlvl200">
+			<property name="CustomIcon" value="bundleFarm"/>
+			<property name="ItemTypeIcon" value="twitch_special"/>
+			<property name="HoldType" value="45"/>
+			<property name="DescriptionKey" value="newbiKitDesc"/>
+			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">
+				<requirement name="PlayerLevel" operation="GT" value="199"/>
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="juguito_de_chale,LegKit,RWRKIT1"/>
+				<property name="Create_item_count" value="50,1,1"/>
+			</property>
 		</item>
 		<!--
 		<item name="eventArbolKeys">

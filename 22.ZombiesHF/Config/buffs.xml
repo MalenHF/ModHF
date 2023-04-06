@@ -1630,9 +1630,18 @@
 			<duration value="11"/>
 			<update_rate value="1"/>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="triggerInfection">
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="triggerInfection">
 				</triggered_effect>
 			</effect_group>
 		</buff>		
+
+		<buff name="buffTestAct" name_key="dsadassa" description_key="TwitchBuff_NoVehicleDesc" tooltip_key="buffDrowning03Desc" icon="ui_game_symbol_oxygen" icon_color="255,0,0" icon_blink="true">
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffRemove" action="action_spoil"/>				
+			</effect_group>
+
+		</buff>
 	</append>
 </configs>
