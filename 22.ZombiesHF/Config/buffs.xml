@@ -1608,16 +1608,16 @@
 			</effect_group>
 		</buff>	
 
-		<buff name="buffDrowned" name_key="buffDrowning03Name" description_key="buffDrowning03Desc" tooltip_key="buffDrowning03Desc" icon="ui_game_symbol_oxygen" icon_color="255,0,0" icon_blink="true">
+		<buff name="buffDrowned" hidden="true">
 			<damage_type value="Suffocation"/>
 			<duration value="10"/>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDrowning03">
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDrowning03">
 					<requirement name="CVarCompare" cvar="_underwater" operation="NotEquals" value="1"/>
-				</triggered_effect>
-				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="0,8" value="1,1"/>
-				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="8,30" value="1,15"/>
-				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="30,250" value="20,500"/>
+				</triggered_effect> -->
+				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="0,10" value="1,20"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="10,30" value="20,50"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="30,250" value="50,500"/>
 			</effect_group>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="2" effect_name="Drunk"/>
