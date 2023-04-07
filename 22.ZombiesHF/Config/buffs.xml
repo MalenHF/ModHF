@@ -163,6 +163,8 @@
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="30"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="3" effect_name="Cold2"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="3" effect_name="Cold2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="avalanche"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="avalanche"/>
 				<passive_effect name="WalkSpeed" operation="base_set" value="0"/>
 				<passive_effect name="RunSpeed" operation="base_set" value="0"/>
 				<passive_effect name="CrouchSpeed" operation="base_set" value="0"/>
@@ -1630,10 +1632,10 @@
 			<duration value="11"/>
 			<update_rate value="1"/>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="triggerInfection">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="triggerInfection">
 				</triggered_effect>
 			</effect_group>
-		</buff>		
+		</buff>	
 
 		<buff name="buffTestAct" name_key="dsadassa" description_key="TwitchBuff_NoVehicleDesc" tooltip_key="buffDrowning03Desc" icon="ui_game_symbol_oxygen" icon_color="255,0,0" icon_blink="true">
 			<stack_type value="replace"/>
