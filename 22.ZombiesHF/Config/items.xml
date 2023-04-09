@@ -1908,7 +1908,7 @@
 					<property name="Material" value="Morganic"/>
 					<property class="Action0">
 						<property name="Class" value="Melee"/>
-						<property name="Buff" value="buffInjuryBleeding,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffArmBroken,buffLegBroken"/>
+						<property name="Buff" value="buffInjuryBleedingStrong,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffArmBroken,buffLegBroken"/>
 						<property name="Delay" value="0.2"/>
 						<property name="Range" value="4.5"/>
 						<property name="Sound_start" value="machete_swinglight"/>
@@ -1917,17 +1917,15 @@
 					</property>
 					<effect_group name="meleeHandCirujano" tiered="false">
 						<passive_effect name="ModSlots" operation="base_set" value="0"/>
-						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffInjuryBleedingZombie"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffInjuryBleedingStrong"/>
 						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffArmSprainedCHTrigger"/>
 						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffLegSprainedCHTrigger"/>
-						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffLaceration"/>
-						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffAbrasionCatch"/>
 						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffArmBroken"/>
 						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffLegBroken"/>
 						<passive_effect name="BuffProcChance" operation="base_set" value=".6" tags="buffInfectionCatch"/>
 						<passive_effect name="BuffProcChance" operation="base_set" value=".6" tags="buffInjuryStunned01"/>
 
-						<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffInjuryBleeding" weights="3"/>
+						<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffInjuryBleedingStrong" weights="3"/>
 						<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="75"/>
 						<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="medicalRegHealthAmount" operation="set" value="0"/>
 					</effect_group>
@@ -2170,7 +2168,7 @@
 					<property name="Material" value="Morganic"/>
 					<property class="Action0">
 						<property name="Class" value="Melee"/>
-						<property name="Buff" value="buffLaceration,buffInjuryBleeding,buffInjuryBleedingOne,buffInjuryBleedingTwo"/>
+						<property name="Buff" value="buffInjuryBleedingStrong"/>
 						<property name="Delay" value="0.5"/>
 						<property name="Range" value="3.5"/>
 						<property name="Sound_start" value="machete_swinglight"/>
@@ -2179,11 +2177,11 @@
 					</property>
 					<effect_group name="meleeHandCirujano" tiered="false">
 						<passive_effect name="ModSlots" operation="base_set" value="0"/>
-						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffInjuryBleedingZombie"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffInjuryBleedingStrong"/>
 						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffLaceration"/>
 						<passive_effect name="BuffProcChance" operation="base_set" value=".6" tags="buffInfectionCatch"/>
 
-						<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffInjuryBleeding" weights="3"/>
+						<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffInjuryBleedingStrong" weights="3"/>
 						<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="50"/>
 					</effect_group>
 				</item>				
@@ -2364,7 +2362,7 @@
 				<property name="CreativeMode" value="None"/>
 				<property name="Degradation" value="99999" param1="true"/>
 				<property class="Action0">
-					<property name="Buff" value="buffToxic"/>
+					<property name="Buff" value="buffToxic,buffPoisonRadiation"/>
 					<property name="Range" value="3"/>
 					<property name="DamageEntity" value="50"/>
 					<property name="DamageBlock" value="1500"/>
@@ -2393,7 +2391,7 @@
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
 					<passive_effect name="BuffProcChance" operation="base_set" value=".75" tags="buffInjuryBleedingZombie"/>
 					<passive_effect name="BuffProcChance" operation="base_set" value=".3" tags="buffInjuryStunned01"/>
-					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffPoisonRadiation"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffToxic,buffPoisonRadiation"/>
 				</effect_group>
 			</item>
 			<item name="meleeHandEnfermera">
@@ -2401,7 +2399,7 @@
 				<property name="CreativeMode" value="None"/>
 				<property name="Degradation" value="99999" param1="true"/>
 				<property class="Action0">
-					<property name="Buff" value="drowsy,buffInjuryBleedingOne"/>
+					<property name="Buff" value="drowsy,buffInjuryBleedingStrong"/>
 					<property name="Range" value="3"/>
 					<property name="DamageEntity" value="40"/>
 					<property name="DamageBlock" value="1500"/>
@@ -2425,7 +2423,6 @@
 					<property name="FlyTime" value="1"/>
 					<property name="LifeTime" value="3"/>
 					<property name="CollisionRadius" value="0.7"/>
-					<!-- No aplica el buffo de congelar al player (ni ninguna otra entidad) -->
 					<requirement name="EntityTagCompare" tags="player"/>
 					<requirement name="NotHasBuff" buff="god"/>
 					<property name="Buff" value="ElementalFrozenHit"/>

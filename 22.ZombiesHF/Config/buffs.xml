@@ -1590,7 +1590,7 @@
 				<triggered_effect trigger="onSelfDied" action="StopSound" sound="sirenweak"/>
 			</effect_group>
 		</buff>
-		<!-- Based on Banshee buff by Snufkin -->
+		
 		<buff name="buffToxic" hidden="true">
 			<stack_type value="replace"/>
 			<duration value="3"/>
@@ -1636,6 +1636,27 @@
 				</triggered_effect>
 			</effect_group>
 		</buff>	
+
+		<buff name="buffInjuryBleedingStrong" name_key="buffInjuryBleedingOne" icon="ui_game_symbol_critical" icon_color="255,255,0" icon_blink="true" hidden="true">
+			<damage_type value="bloodloss"/>
+			<duration value="4"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="bleedCounter" operation="set" value="0">
+					<!-- check for leftover counters without buff -->
+					<requirement name="!HasBuff" buff="buffInjuryBleeding"/>
+				</triggered_effect>
+
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="bleedCounter" operation="add" value="8">
+					<!-- Limit the amount of bleeding stacks that enemies can put on. -->
+					<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="1"/>
+				</triggered_effect>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInjuryBleeding">
+					<!-- They can still extend/refresh the buff. -->
+					<requirement name="CVarCompare" cvar="bleedCounter" operation="GT" value="0"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>		
 
 		<buff name="buffTestAct" name_key="dsadassa" description_key="TwitchBuff_NoVehicleDesc" tooltip_key="buffDrowning03Desc" icon="ui_game_symbol_oxygen" icon_color="255,0,0" icon_blink="true">
 			<stack_type value="replace"/>
