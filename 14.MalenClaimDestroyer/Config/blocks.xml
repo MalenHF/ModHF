@@ -49,7 +49,37 @@
             <property name="Map.Color" value="204,177,131"/>               
                 -->
 		</block>
-        <!--Dev Special Shapes iDB-->
+        <block name="invD_stainlessSteelBlock">
+            <property name="Group" value="Building,advBuilding"/>
+            <property name="DescriptionKey" value="stainlessSteelBlockGroupDesc"/>
+            <property name="DisplayType" value="blockHardened"/>
+            <!--  <property name="ImposterExchange" value="imposterBlock" param1="77"/>  -->
+            <property name="CreativeMode" value="Player"/>
+            <drop event="Harvest" name="resourceScrapIron" count="15" tag="allHarvest"/>
+            <drop event="Destroy" count="0"/>
+            <drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+
+            <property name="EconomicBundleSize" value="1"/>
+            <property name="SellableToTrader" value="false"/>
+            <property name="FilterTags" value="fbuilding,fsteel"/>
+
+            <property name="Material" value="Mbedrock"/>
+            <property name="ItemTypeIcon" value="star"/>
+            <property name="CustomIcon" value="shapeCube"/>
+            <property name="CustomIconTint" value="10,10,10"/>
+
+            <property name="CreativeMode" value="Player"/>
+            
+            <!--<property name="BuffsWhenWalkedOn" value="hfBossRoom"/>-->
+            <property name="Texture" value="62"/>
+            <property class="UpgradeBlock">
+                <property name="ToBlock" value="woodMaster"/>
+                <property name="Item" value="CD"/>
+                <property name="ItemCount" value="1"/>
+                <property name="UpgradeHitCount" value="1"/>
+            </property>
+        </block>
+        <!--Dev Special Shapes Invensible Dev Blocks-->
         <block name="iDB_stainlessSteelBlock">
             <property name="Group" value="Building,advBuilding"/>
             <property name="DescriptionKey" value="stainlessSteelBlockGroupDesc"/>
@@ -81,7 +111,7 @@
             </property>
         </block>
         <block name="iDB_stainlessSteelPlate">
-            <property name="Extends" value="invD_stainlessSteelBlock"/>
+            <property name="Extends" value="iDB_stainlessSteelBlock"/>
             <property name="CreativeMode" value="Player"/>
             <property name="Shape" value="New"/>
             <property name="CustomIcon" value="shapePlate"/>
@@ -119,36 +149,7 @@
 
 			<drop event="Destroy" name="resourceScrapIron" count="50,90"/>
 		</block>
-        <block name="invD_stainlessSteelBlock">
-            <property name="Group" value="Building,advBuilding"/>
-            <property name="DescriptionKey" value="stainlessSteelBlockGroupDesc"/>
-            <property name="DisplayType" value="blockHardened"/>
-            <!--  <property name="ImposterExchange" value="imposterBlock" param1="77"/>  -->
-            <property name="CreativeMode" value="Player"/>
-            <drop event="Harvest" name="resourceScrapIron" count="15" tag="allHarvest"/>
-            <drop event="Destroy" count="0"/>
-            <drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
-
-            <property name="EconomicBundleSize" value="1"/>
-            <property name="SellableToTrader" value="false"/>
-            <property name="FilterTags" value="fbuilding,fsteel"/>
-
-            <property name="Material" value="Mbedrock"/>
-            <property name="ItemTypeIcon" value="star"/>
-            <property name="CustomIcon" value="shapeCube"/>
-            <property name="CustomIconTint" value="10,10,10"/>
-
-            <property name="CreativeMode" value="Player"/>
-            
-            <!--<property name="BuffsWhenWalkedOn" value="hfBossRoom"/>-->
-            <property name="Texture" value="62"/>
-            <property class="UpgradeBlock">
-                <property name="ToBlock" value="woodMaster"/>
-                <property name="Item" value="CD"/>
-                <property name="ItemCount" value="1"/>
-                <property name="UpgradeHitCount" value="1"/>
-            </property>
-        </block>
+        
         <block name="invD_stainlessSteelPlate">
             <property name="Extends" value="invD_stainlessSteelBlock"/>
             <property name="CreativeMode" value="Player"/>
@@ -233,40 +234,7 @@
 			<property name="FilterTags" value="floot"/>
 		</block>
 
-        <block name="iDB_stainlessSteelPlateHalfTriangle">
-            <property name="Extends" value="invD_stainlessSteelBlock"/>
-            <property name="CustomIcon" value="shapePlateHalfTriangle"/>
-            <property name="CreativeMode" value="Player"/>
-            <property name="Shape" value="New"/>
-            <property name="Model" value="plate_half_triangle"/>
-            <property name="Texture" value="580"/>
-            <!--  SortShape  -->
-        </block>
-        <block name="iDB_metalSignLetter_i">
-            <property name="Extends" value="metalSignLetter_a"/>
-            <property name="ItemTypeIcon" value="star"/>
-            <property name="CreativeMode" value="Player"/>
-            <property name="CustomIcon" value="metalSignLetter_i"/>
-            <property name="CustomIconTint" value="10,10,10"/>
-            <property name="Model" value="font_i"/>
-            <property name="Material" value="Mbedrock"/>
-            <property class="UpgradeBlock">
-                <property name="ToBlock" value="woodMaster"/>
-                <property name="Item" value="CD"/>
-                <property name="ItemCount" value="1"/>
-                <property name="UpgradeHitCount" value="1"/>
-            </property>
-        </block>
-        <block name="iDB_metalSignLetter_t">
-            <property name="Extends" value="INVD_metalSignLetter_i"/>
-            <property name="CustomIcon" value="metalSignLetter_t"/>
-            <property name="Model" value="font_t"/>
-        </block>        
-        <block name="iDB_metalSignLetter_cross">
-            <property name="Extends" value="INVD_metalSignLetter_i"/>
-            <property name="CustomIcon" value="metalSignLetter_cross"/>
-            <property name="Model" value="font_cross"/>
-        </block>        
+                
         <block name="INVD_stainlessSteelPlateHalfTriangle">
             <property name="Extends" value="invD_stainlessSteelBlock"/>
             <property name="CustomIcon" value="shapePlateHalfTriangle"/>
@@ -300,7 +268,42 @@
             <property name="Extends" value="INVD_metalSignLetter_i"/>
             <property name="CustomIcon" value="metalSignLetter_cross"/>
             <property name="Model" value="font_cross"/>
-        </block>   
+        </block>
+
+        <block name="iDB_stainlessSteelPlateHalfTriangle">
+            <property name="Extends" value="invD_stainlessSteelBlock"/>
+            <property name="CustomIcon" value="shapePlateHalfTriangle"/>
+            <property name="CreativeMode" value="Player"/>
+            <property name="Shape" value="New"/>
+            <property name="Model" value="plate_half_triangle"/>
+            <property name="Texture" value="580"/>
+            <!--  SortShape  -->
+        </block>
+        <block name="iDB_metalSignLetter_i">
+            <property name="Extends" value="metalSignLetter_a"/>
+            <property name="ItemTypeIcon" value="star"/>
+            <property name="CreativeMode" value="Player"/>
+            <property name="CustomIcon" value="metalSignLetter_i"/>
+            <property name="CustomIconTint" value="10,10,10"/>
+            <property name="Model" value="font_i"/>
+            <property name="Material" value="Mbedrock"/>
+            <property class="UpgradeBlock">
+                <property name="ToBlock" value="woodMaster"/>
+                <property name="Item" value="CD"/>
+                <property name="ItemCount" value="1"/>
+                <property name="UpgradeHitCount" value="1"/>
+            </property>
+        </block>
+        <block name="iDB_metalSignLetter_t">
+            <property name="Extends" value="INVD_metalSignLetter_i"/>
+            <property name="CustomIcon" value="metalSignLetter_t"/>
+            <property name="Model" value="font_t"/>
+        </block>        
+        <block name="iDB_metalSignLetter_cross">
+            <property name="Extends" value="INVD_metalSignLetter_i"/>
+            <property name="CustomIcon" value="metalSignLetter_cross"/>
+            <property name="Model" value="font_cross"/>
+        </block>
         <!--    
         <block name="invD_metalSignLetter_i">
             <property name="Extends" value="metalSignLetter_a"/>
@@ -328,95 +331,7 @@
             <property name="Model" value="font_cross"/>
         </block>
         --> 
-        <block name="iDB_StairsFilledRailingLeft">
-            <property name="Extends" value="invD_stainlessSteelBlock"/>
-            <property name="CreativeMode" value="Player"/>
-            <property name="Shape" value="New"/>
-            <property name="DisplayType" value="blockMulti"/>
-            <property name="MultiBlockDim" value="1,2,1"/>
-            <property name="CustomIcon" value="woodStairsFilledRailingLeft"/>
-            <property name="Model" value="Stairs_filled_railing_left"/>
-
-            <property name="Texture" value="580"/>
-            <!--  SortShape  -->
-        </block>
-        <block name="iDB_FilledRailingRight">
-            <property name="Extends" value="invD_stainlessSteelBlock"/>
-            <property name="CreativeMode" value="Player"/>
-            <property name="Shape" value="New"/>
-            <property name="DisplayType" value="blockMulti"/>
-            <property name="MultiBlockDim" value="1,2,1"/>
-            <property name="CustomIcon" value="woodStairsFilledRailingRight"/>
-            <property name="Model" value="Stairs_filled_railing_right"/>
-
-            <property name="Texture" value="580"/>
-            <!--  SortShape  -->
-        </block>
-        <block name="iDB_StairsFilledVertical">
-            <property name="Extends" value="invD_stainlessSteelBlock"/>
-            <property name="CreativeMode" value="Player"/>
-            <property name="Shape" value="New"/>
-            <property name="CustomIcon" value="woodStairs25"/>
-            <property name="Model" value="StairsFilledVerticalUV"/>
-
-            <property name="Texture" value="580"/>
-            <!--  SortShape  -->
-        </block>        
-        <block name="iDB_StairsRailing">
-			<property name="Shape" value="New"/>
-			<property name="Model" value="stairs_railing"/>
-			<property name="Place" value="TowardsPlacerInverted"/>
-			<property name="CustomIcon" value="shapeStairsRailing"/>
-			<property name="DescriptionKey" value="scrapIronGroupDesc"/>
-			<property name="ShapeCategories" value="Stairs"/>
-			<property name="DisplayType" value="blockHardened"/>
-			<property name="Material" value="Mbedrock"/>
-			<property name="MaterialHitpointMultiplier" value="1"/>
-			<property name="UseGlobalUV" value="Local"/>
-			<property name="StabilitySupport" value="false"/>
-			<property name="MultiBlockDim" value="1,2,1"/>
-			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
-			<property name="Texture" value="191"/>
-			<drop event="Destroy" name="resourceScrapIron" count="50,90"/>
-		</block>
-        <block name="iDB_stainlessSteelRamp">
-            <property name="Extends" value="invD_stainlessSteelBlock"/>
-            <property name="CreativeMode" value="Player"/>
-            <property name="CustomIcon" value="stainlessSteelRamp"/>
-            <property name="Shape" value="New"/>
-            <property name="Model" value="ramp"/>
-            <property name="Place" value="TowardsPlacerInverted"/>
-        </block>
-        <block name="iDB_Bars">
-            <property name="CustomIcon" value="ironBarsCentered"/>
-            <property name="CustomIconTint" value="10,10,10"/>
-            <property name="DisplayType" value="blockHardened"/>
-            <property name="Material" value="Mbedrock"/>
-            <property name="ItemTypeIcon" value="star"/>
-            <property name="Shape" value="New"/>
-            <property name="LightOpacity" value="0"/>
-            <property name="Texture" value="580"/>
-            <property name="UseGlobalUV" value="Local"/>
-            <property name="Model" value="iron_bars"/>
-            <property name="ImposterExcludeAndStop" value="true"/>
-            <property name="Place" value="TowardsPlacer"/>
-            <property name="OnlySimpleRotations" value="false"/>
-            <property name="Collide" value="movement,melee,rocket"/>
-            <!--  -rocket  -->
-            <property class="RepairItems">
-                <property name="resourceForgedSteel" value="10"/>
-            </property>
-            <drop event="Harvest" name="resourceScrapIron" count="96" tag="allHarvest"/>
-            <drop event="Destroy" count="0"/>
-            <drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
-            <property name="Group" value="Building,advBuilding"/>
-            <property name="EconomicValue" value="10"/>
-            <property name="DescriptionKey" value="ironBarsDesc"/>
-            <property name="FilterTags" value="fdecor,fother,fwindows,fdoors"/>
-            <property name="SortOrder1" value="7060"/>
-            <property name="SortOrder2" value="0061"/>
-            <!--  SortDoors  -->
-        </block>
+        
 
         <block name="INVD_StairsFilledRailingLeft">
             <property name="Extends" value="invD_stainlessSteelBlock"/>
@@ -478,6 +393,96 @@
             <property name="Place" value="TowardsPlacerInverted"/>
         </block>
         <block name="INVD_Bars">
+            <property name="CustomIcon" value="ironBarsCentered"/>
+            <property name="CustomIconTint" value="10,10,10"/>
+            <property name="DisplayType" value="blockHardened"/>
+            <property name="Material" value="Mbedrock"/>
+            <property name="ItemTypeIcon" value="star"/>
+            <property name="Shape" value="New"/>
+            <property name="LightOpacity" value="0"/>
+            <property name="Texture" value="580"/>
+            <property name="UseGlobalUV" value="Local"/>
+            <property name="Model" value="iron_bars"/>
+            <property name="ImposterExcludeAndStop" value="true"/>
+            <property name="Place" value="TowardsPlacer"/>
+            <property name="OnlySimpleRotations" value="false"/>
+            <property name="Collide" value="movement,melee,rocket"/>
+            <!--  -rocket  -->
+            <property class="RepairItems">
+                <property name="resourceForgedSteel" value="10"/>
+            </property>
+            <drop event="Harvest" name="resourceScrapIron" count="96" tag="allHarvest"/>
+            <drop event="Destroy" count="0"/>
+            <drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+            <property name="Group" value="Building,advBuilding"/>
+            <property name="EconomicValue" value="10"/>
+            <property name="DescriptionKey" value="ironBarsDesc"/>
+            <property name="FilterTags" value="fdecor,fother,fwindows,fdoors"/>
+            <property name="SortOrder1" value="7060"/>
+            <property name="SortOrder2" value="0061"/>
+            <!--  SortDoors  -->
+        </block>
+
+        <block name="iDB_StairsFilledRailingLeft">
+            <property name="Extends" value="invD_stainlessSteelBlock"/>
+            <property name="CreativeMode" value="Player"/>
+            <property name="Shape" value="New"/>
+            <property name="DisplayType" value="blockMulti"/>
+            <property name="MultiBlockDim" value="1,2,1"/>
+            <property name="CustomIcon" value="woodStairsFilledRailingLeft"/>
+            <property name="Model" value="Stairs_filled_railing_left"/>
+
+            <property name="Texture" value="580"/>
+            <!--  SortShape  -->
+        </block>
+        <block name="iDB_FilledRailingRight">
+            <property name="Extends" value="invD_stainlessSteelBlock"/>
+            <property name="CreativeMode" value="Player"/>
+            <property name="Shape" value="New"/>
+            <property name="DisplayType" value="blockMulti"/>
+            <property name="MultiBlockDim" value="1,2,1"/>
+            <property name="CustomIcon" value="woodStairsFilledRailingRight"/>
+            <property name="Model" value="Stairs_filled_railing_right"/>
+
+            <property name="Texture" value="580"/>
+            <!--  SortShape  -->
+        </block>
+        <block name="iDB_StairsFilledVertical">
+            <property name="Extends" value="invD_stainlessSteelBlock"/>
+            <property name="CreativeMode" value="Player"/>
+            <property name="Shape" value="New"/>
+            <property name="CustomIcon" value="woodStairs25"/>
+            <property name="Model" value="StairsFilledVerticalUV"/>
+
+            <property name="Texture" value="580"/>
+            <!--  SortShape  -->
+        </block>        
+        <block name="iDB_StairsRailing">
+			<property name="Shape" value="New"/>
+			<property name="Model" value="stairs_railing"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="CustomIcon" value="shapeStairsRailing"/>
+			<property name="DescriptionKey" value="scrapIronGroupDesc"/>
+			<property name="ShapeCategories" value="Stairs"/>
+			<property name="DisplayType" value="blockHardened"/>
+			<property name="Material" value="Mbedrock"/>
+			<property name="MaterialHitpointMultiplier" value="1"/>
+			<property name="UseGlobalUV" value="Local"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="MultiBlockDim" value="1,2,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="Texture" value="191"/>
+			<drop event="Destroy" name="resourceScrapIron" count="50,90"/>
+		</block>
+        <block name="iDB_stainlessSteelRamp">
+            <property name="Extends" value="invD_stainlessSteelBlock"/>
+            <property name="CreativeMode" value="Player"/>
+            <property name="CustomIcon" value="stainlessSteelRamp"/>
+            <property name="Shape" value="New"/>
+            <property name="Model" value="ramp"/>
+            <property name="Place" value="TowardsPlacerInverted"/>
+        </block>
+        <block name="iDB_Bars">
             <property name="CustomIcon" value="ironBarsCentered"/>
             <property name="CustomIconTint" value="10,10,10"/>
             <property name="DisplayType" value="blockHardened"/>
