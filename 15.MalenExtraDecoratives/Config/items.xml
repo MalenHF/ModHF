@@ -1,0 +1,152 @@
+<configs>
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Cigar and Bandana mod Slot ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+		<append xpath="/items/item[@name='apparelCigar']">
+		<property name="Tags" value="head,clothing,canHaveCosmetic,noMods"/>
+			<effect_group tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="1"/>
+			</effect_group>
+		</append>
+		<append xpath="/items/item[@name='apparelBandana']">
+			<effect_group tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="1"/>
+			</effect_group>
+		</append>
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Fill Water Items ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ 
+		<insertAfter xpath="/items/item[@name='drinkJarEmpty']/property[@class='Action1']/property[@name='Focused_blockname_5']">
+			<property name="Focused_blockname_6" value="faucet02"/>
+			<property name="Focused_blockname_7" value="faucet04"/>
+			<property name="Focused_blockname_8" value="faucetBrass02"/>
+			<property name="Focused_blockname_9" value="faucetBrass04"/>
+			<property name="Focused_blockname_10" value="cntMedicineCabinetFaucetOpen"/>
+		</insertAfter>
+	-->
+
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add Garage Doors Variant to the Schematic ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ 
+		<append xpath="/items/item[@name='poweredDoorsSchematic']/effect_group" >
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="reinforRollingGarageHelper" operation="set" value="1"/>
+		</append>
+		-->
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+	<append xpath="/items">
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Craft Material ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->		
+		<item name="UVI">
+			<property name="Extends" value="partsMaster"/>
+			<property name="ItemTypeIcon" value="light_armor"/>
+			<property name="DescriptionKey" value="modvisu"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property name="CustomIcon" value="resourceSewingKit"/>
+			<property name="Material" value="Morganic"/>
+			<!-- <property name="UnlockedBy" value="modArmorPlatingReinforcedSchematic"/> -->
+			<property name="Stacknumber" value="10"/>
+			<property name="Group" value="Lmats"/>
+			<property name="UnlockedBy" value="perkNeedleAndThreadComplete"/>
+		</item>
+		<item name="modDyepaint">
+			<property name="Extends" value="partsMaster"/>
+			<property name="ItemTypeIcon" value="gunsmithing"/>
+			<property name="DescriptionKey" value="modInvDye"/>
+			<property name="Stacknumber" value="10"/>
+			<property name="CustomIcon" value="modDyeWhite"/>
+			<property name="Material" value="Morganic"/>
+			<!-- <property name="UnlockedBy" value="modArmorPlatingReinforcedSchematic"/> -->
+			<property name="Stacknumber" value="10"/>
+			<property name="Group" value="Resources"/>
+			<property name="UnlockedBy" value="perkNeedleAndThreadComplete"/>
+			<property name="Group" value="Mods"/>
+		</item>
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Master Book ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
+		<item name="PLMFa">
+			<property name="ItemTypeIcon" value="light_armor"/>
+			<property name="HoldType" value="21"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Weight" value="5"/>
+			<property name="FuelValue" value="5"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="UnlockedBy" value="perkNeedleAndThreadComplete"/>
+			<property name="CustomIcon" value="schematicMaster"/>
+			<property name="Group" value="Books"/>
+		</item>
+		<item name="PAMFa1">
+			<property name="ItemTypeIcon" value="light_armor"/>
+			<property name="HoldType" value="21"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Weight" value="5"/>
+			<property name="FuelValue" value="5"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="CustomIcon" value="questMaster"/>
+			<property name="UnlockedBy" value="perkNeedleAndThreadComplete"/>
+			<property name="Group" value="Books"/>
+		</item>
+		<item name="PAMFa2">
+			<property name="ItemTypeIcon" value="light_armor"/>
+			<property name="HoldType" value="21"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Weight" value="5"/>
+			<property name="FuelValue" value="5"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="CustomIcon" value="questMaster"/>
+			<property name="UnlockedBy" value="perkNeedleAndThreadComplete"/>
+			<property name="Group" value="Books"/>
+		</item>
+		<item name="Maestro Fashionista">
+			<property name="Extends" value="schematicMaster"/>
+			<property name="EconomicValue" value="20000"/>
+			<property name="ItemTypeIcon" value="light_armor"/>
+			<property name="Stacknumber" value="10"/>
+			<property name="Material" value="Morganic"/>
+			<property name="CustomIcon" value="bookNeedleAndThreadWinterWear"/>
+			<property name="UnlockedBy" value="perkNeedleAndThreadComplete"/>
+			<property name="Group" value="Books"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkNeedleAndThreadWinterWear" level="-1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkNeedleAndThreadLegwear" level="-1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkNeedleAndThreadFootwear" level="-1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkNeedleAndThreadDesertWear" level="-1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkNeedleAndThreadDusters" level="-1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkNeedleAndThreadPufferCoats" level="-1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkNeedleAndThreadPockets" level="-1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="5000"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkNeedleAndThreadComplete" level="-1">
+					<requirement name="PerksUnlocked" skill_name="skillNeedleAndThread" operation="GTE" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="read_skillbook_final" play_in_head="true">
+					<requirement name="PerksUnlocked" skill_name="skillNeedleAndThread" operation="GTE" value="7"/>
+				</triggered_effect>
+			</effect_group>
+		</item>
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Kits ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+		<item name="Decokit">
+			<property name="CustomIcon" value="cntCashRegister"/>
+			<property name="ItemTypeIcon" value="treasure"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="decomachine,decoVariant_KitchenFurniture,decoVariant_HomeFurniture,decoVariant_Construction,decoVariant_Technology,decoVariant_Shop,decoVariant_Cloth,decoVariant_extra,decoVariant_deco,decoVariant_chest,decoVariant_plants,decoVariant_Lights,decoVariant_scary,decoVariant_Sign,decoVariant_Pipes,decoVariant_Doors,oldCash"/>
+				<property name="Create_item_count" value="1,1,1,1,1,1,1,1,1,1,1,1,1,5,5,5,10000"/>
+			</property>
+		</item>
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+
+	</append>
+</configs>

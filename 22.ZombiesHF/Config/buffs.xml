@@ -234,28 +234,28 @@
 			<effect_group>				<!-- -.5 -->
 				<!--<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Plants/pumpkinJackoLanternPrefab" local_offset="-.3,0,0" local_rotation="0,0,90" parent_transform="Head"/> -->
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Misc/body_bag_fliesPrefab" local_offset=".2,-.35,.15" local_rotation="45,90,90" parent_transform="Spine"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/LootContainers?weapon_bags_largePrefab.prefab" local_offset=".05,-.15,-.25" local_rotation="360,0,90" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/weapon_bags_largePrefab.prefab" local_offset=".05,-.15,-.25" local_rotation="360,0,90" parent_transform="Spine"/>
 				<!--/y/  /x/  /z/-->
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Tools/pickaxe_steelPrefab.prefab" local_offset=".01,.15,-.01" local_rotation="0,-90,0" parent_transform="RightHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Lighting/lanternPlayerPrefab" local_offset=".03,0,-.01" local_rotation="90,90,0" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Tools/pickaxe_steelPrefab.prefab" local_offset=".01,.15,-.01" local_rotation="0,-90,0" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Lighting/lantern_02Prefab" local_offset=".03,0,-.01" local_rotation="90,90,0" parent_transform="LeftHand"/>
 			</effect_group>
 		</buff>
 		<buff name="OSOESQ" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Tools/augerPrefab.prefab" local_offset="-.1,0,0" local_rotation="0,-90,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Tools/Auger/augerPrefab.prefab" local_offset="-.1,0,0" local_rotation="0,-90,0" parent_transform="Head"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/cowSkullPrefab" local_offset="0,.3,.45" local_rotation="60,0,0" parent_transform="Head"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" local_offset=".24,.85,0" local_rotation="0,0,0" parent_transform="Spine"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Zombies?Zombies/halfCorpsePrefab.prefab" local_offset=".30,.2,0" local_rotation="50,0,90" parent_transform="Spine"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Zombies?Zombies/halfCorpsePrefab.prefab" local_offset="-.90,.27,-.5" local_rotation="0,25,75" parent_transform="Head"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Zombies?Zombies/corpse3Prefab.prefab" local_offset="-.10,1.2,.45" local_rotation="0,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" local_offset=".24,.85,0" local_rotation="0,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Zombies/Zombies/halfCorpsePrefab.prefab" local_offset=".30,.2,0" local_rotation="50,0,90" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Zombies/Zombies/halfCorpsePrefab.prefab" local_offset="-.90,.27,-.5" local_rotation="0,25,75" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Zombies/Zombies/corpse3Prefab.prefab" local_offset="-.10,1.2,.45" local_rotation="0,0,0" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfRangedBurstShotEnd" action="AddBuff" target="self" buff="MISIL"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffInjuryKnockdown01Cooldown"/>
 			</effect_group>
 		</buff>
 		<buff name="prueba" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Ranged/JunkTurret/junkTurret_Prefab.prefab" parent_transform="LeftShoulder" local_offset=".18,-.20,0" local_rotation="0,0,0"/>
-				<!--	<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Ranged/JunkTurret/junkTurret_Prefab.prefab" parent_transform="RightShoulder" local_offset="-.25,-.01,0" local_rotation=",0,0"/> -->
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/JunkTurret/junkTurret_Prefab.prefab" parent_transform="LeftShoulder" local_offset=".18,-.20,0" local_rotation="0,0,0"/>
+				<!--	<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/JunkTurret/junkTurret_Prefab.prefab" parent_transform="RightShoulder" local_offset="-.25,-.01,0" local_rotation=",0,0"/> -->
 				<!--<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelOilPrefab" local_offset=".275,.35,-.2" local_rotation="0,0,0" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelGasPrefab" local_offset="-.175,.35,-.2" local_rotation="0,0,0" parent_transform="Spine"/> -->
 				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" parent_transform="RightShoulder" transform_path="BaseMesh"/>
@@ -271,15 +271,15 @@
 		</buff>
 		<buff name="NURSE" hidden="true">
 			<effect_group>				<!-- puro cuchillo de weso -->
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,45" parent_transform="LeftHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.05,.1,0" local_rotation="0,0,45" parent_transform="Head"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,45" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,45" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.05,.1,0" local_rotation="0,0,45" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,45" parent_transform="Spine"/>
 				<!--NO MOVER ESTE DE SU LUGAR-->
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.2,.35,0" local_rotation="0,0,45" parent_transform="Spine1"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.05,0,0" local_rotation="0,0,45" parent_transform="LeftLeg"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.25,.2,-.050" local_rotation="0,0,45" parent_transform="Spine3"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,40" parent_transform="LeftForeArm"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,100" parent_transform="LeftShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.2,.35,0" local_rotation="0,0,45" parent_transform="Spine1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.05,0,0" local_rotation="0,0,45" parent_transform="LeftLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.25,.2,-.050" local_rotation="0,0,45" parent_transform="Spine3"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,40" parent_transform="LeftForeArm"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,100" parent_transform="LeftShoulder"/>
 			</effect_group>
 		</buff>
 		<buff name="BomberDeco1" hidden="true">
@@ -318,10 +318,11 @@
 			<effect_group>				<!-- -.5 -->
 				<!--<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Plants/pumpkinJackoLanternPrefab" local_offset="-.3,0,0" local_rotation="0,0,90" parent_transform="Head"/> -->
 				<!--<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Misc/body_bag_fliesPrefab" local_offset=".2,-.35,.15" local_rotation="45,90,90" parent_transform="Spine"/>-->
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/LootContainers?backpack03Prefab.prefab" local_offset="0,0,0" local_rotation="0,90,-90" parent_transform="Spine"/>
-				<!--/y/  /x/  /z/-->
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Melee/Candycane/candycanePrefab.prefab" local_offset=".01,.15,-.01" local_rotation="0,-90,0" parent_transform="RightHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Tools/candlePrefab.prefab" local_offset=".03,0,-.01" local_rotation="-90,90,0" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/backpack03Prefab.prefab" local_offset="0,0,0" local_rotation="0,90,-90" parent_transform="Spine"/>
+				<!--/y/  /x/  /z/-->															 
+																							   <!--#Other/Items?Weapons/Melee/Candycane/candycanePrefab.prefab-->
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Explosive/trapMineTinCan_01Prefab.prefab" local_offset=".01,.15,-.01" local_rotation="0,-90,0" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Lighting/candle_tablePrefab" local_offset=".03,0,-.01" local_rotation="-90,90,0" parent_transform="LeftHand"/>
 			</effect_group>
 		</buff>
 		<!--Bosses True damage-->
@@ -902,8 +903,8 @@
 		</buff>
 		<buff name="doblecierra" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Melee/Chainsaw/chainsawPrefab.prefab" local_offset="-.1,0,0" local_rotation="180,90,180" parent_transform="RightHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/Chainsaw/chainsawPrefab.prefab" local_offset="-.1,0,0" local_rotation="180,90,180" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Chainsaw/chainsawPrefab.prefab" local_offset="-.1,0,0" local_rotation="180,90,180" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Chainsaw/chainsawPrefab.prefab" local_offset="-.1,0,0" local_rotation="180,90,180" parent_transform="LeftHand"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="chainsaw_idle"/>
 			</effect_group>
 		</buff>
@@ -1078,24 +1079,24 @@
 		<!--Deco de Bosses Spiders-->
 		<buff name="SPIDER" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Tools/augerPrefab.prefab" local_offset="-.25,.35,-.1" local_rotation="-90,180,0" parent_transform="Spine"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Tools/augerPrefab.prefab" local_offset=".15,.35,-.1" local_rotation="-90,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Tools/Auger/augerPrefab.prefab" local_offset="-.25,.35,-.1" local_rotation="-90,180,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Tools/Auger/augerPrefab.prefab" local_offset=".15,.35,-.1" local_rotation="-90,0,0" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="Auger_Idle" />
 				<!--<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="Detonator"/>-->
 			</effect_group>
 		</buff>
 		<buff name="SPIDER2" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Tools/ChainsawPrefab.prefab" local_offset="-.25,.35,-.1" local_rotation="-90,180,0" parent_transform="Spine"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Tools/ChainsawPrefab.prefab" local_offset=".15,.35,-.1" local_rotation="-90,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Chainsaw/chainsawPrefab.prefab" local_offset="-.25,.35,-.1" local_rotation="-90,180,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Chainsaw/chainsawPrefab.prefab" local_offset=".15,.35,-.1" local_rotation="-90,0,0" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="Chainsaw_Idle" />
 				<!--<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="Detonator"/>-->
 			</effect_group>
 		</buff>
 		<buff name="SPIDER3" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" local_offset="-.25,.35,-.1" local_rotation="-90,180,0" parent_transform="Spine"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" local_offset=".15,.35,-.1" local_rotation="-90,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" local_offset="-.25,.35,-.1" local_rotation="-90,180,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" local_offset=".15,.35,-.1" local_rotation="-90,0,0" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="Chainsaw_Idle" />
 				<!--<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="Detonator"/>-->
 			</effect_group>
@@ -1106,15 +1107,15 @@
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Electrical/loudspeakerPrefab" local_offset="-.27,0,0.25" local_rotation="0,0,90" parent_transform="Spine1"/>
 				<!-- Up/Down - Side/Side - Front/Back -->
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Melee/Club/Club_Wood_Branch.FBX" local_offset="-.3,0,0" local_rotation="-45,0,-90" parent_transform="Spine1"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Melee/Club/Club_Wood_BranchPrefab.prefab" local_offset="-.55,0,0" local_rotation="0,0,-90" parent_transform="Spine1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Club/Club_Wood_Branch.FBX" local_offset="-.3,0,0" local_rotation="-45,0,-90" parent_transform="Spine1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Club/Club_Wood_BranchPrefab.prefab" local_offset="-.55,0,0" local_rotation="0,0,-90" parent_transform="Spine1"/>
 			</effect_group>
 		</buff>
 		<buff name="miniSirenDeco" hidden="true">
-			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Electrical/loudspeakerPrefab" local_offset="-.2,0,.5" local_rotation="0,0,90" parent_transform="Spine1"/>
+			<effect_group>																      <!--Entities/Electrical/loudspeakerPrefab-->
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Electrical/speakerLoudWallPrefab" local_offset="-.2,0,.5" local_rotation="0,0,90" parent_transform="Spine1"/>
 				<!--<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Melee/Club/Club_Wood_Branch.FBX" local_offset="-.3,0,0" local_rotation="-45,0,-90" parent_transform="Spine1"/>-->
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Melee/Club/Club_Wood_BranchPrefab.prefab" local_offset="-.55,0,0" local_rotation="0,0,-90" parent_transform="Spine1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Club/Club_Wood_BranchPrefab.prefab" local_offset="-.55,0,0" local_rotation="0,0,-90" parent_transform="Spine1"/>
 			</effect_group>
 		</buff>
 		<buff name="SirenPassiveA" hidden="true">
@@ -1138,8 +1139,8 @@
 		</buff>
 		<buff name="JuggernautDeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" local_offset="-.2,.13,0" local_rotation="180,0,0" parent_transform="LeftShoulder"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Tools/augerPrefab.prefab" local_offset="-.1,0,0" local_rotation="0,-90,0" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" local_offset="-.2,.13,0" local_rotation="180,0,0" parent_transform="LeftShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Tools/Auger/augerPrefab.prefab" local_offset="-.1,0,0" local_rotation="0,-90,0" parent_transform="RightHand"/>
 				<triggered_effect trigger="onSelfRangedBurstShotEnd" action="AddBuff" target="self" buff="JuggernautMuzzle"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffInjuryKnockdown01Cooldown"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="Auger_Idle" />
@@ -1157,7 +1158,7 @@
 		<!--Gunner by Robelote-->
 		<buff name="GUNNER" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Ranged/m60/m60Prefab.prefab" local_offset=".17,.05,-.2" local_rotation="0,180,-101" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/MachineGun/m60MachinegunPrefab.prefab" local_offset=".17,.05,-.2" local_rotation="0,180,-101" parent_transform="RightHand"/>
 			</effect_group>
 		</buff>
 		<buff name="buffNA1" hidden="false" icon="ui_game_symbol_near_death_trauma" icon_color="64,2,97">
@@ -1174,8 +1175,8 @@
 		<buff name="dobleCuchillo" hidden="true">
 			<effect_group>
 				<!--local_offset="Y,Z,X"-->
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Melee/Knives/machetePrefab.prefab" local_offset="-.1,0,-.02" local_rotation="180,90,180" parent_transform="RightHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Melee/Knives/machetePrefab.prefab" local_offset="-.1,0,-.02" local_rotation="180,90,0" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Knives/machetePrefab.prefab" local_offset="-.1,0,-.02" local_rotation="180,90,180" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Knives/machetePrefab.prefab" local_offset="-.1,0,-.02" local_rotation="180,90,0" parent_transform="LeftHand"/>
 				<!--<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="chainsaw_idle"/>-->
 			</effect_group>
 		</buff>
@@ -1692,17 +1693,17 @@
 		</buff>	
 		<buff name="STEVEDeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Melee/Knives/steelAxePrefab.prefab" local_offset=".4,.07,0" local_rotation="0,50,-75" parent_transform="RightForeArm"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Melee/Knives/steelAxePrefab.prefab" local_offset="-.4,-.06,0" local_rotation="0,-90,-75" parent_transform="LeftForeArm"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,45" parent_transform="LeftHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.05,.1,0" local_rotation="0,0,45" parent_transform="Head"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,45" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Axe/steelAxePrefab.prefab" local_offset=".4,.07,0" local_rotation="0,50,-75" parent_transform="RightForeArm"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Axe/steelAxePrefab.prefab" local_offset="-.4,-.06,0" local_rotation="0,-90,-75" parent_transform="LeftForeArm"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,45" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.05,.1,0" local_rotation="0,0,45" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,45" parent_transform="Spine"/>
 				<!--NO MOVER ESTE DE SU LUGAR-->
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.2,.35,0" local_rotation="0,0,45" parent_transform="Spine1"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.08,.2,0" local_rotation="0,0,45" parent_transform="LeftLeg"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.25,.2,-.050" local_rotation="0,0,45" parent_transform="Spine3"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,40" parent_transform="LeftForeArm"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,100" parent_transform="LeftShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.2,.35,0" local_rotation="0,0,45" parent_transform="Spine1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.08,.2,0" local_rotation="0,0,45" parent_transform="LeftLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.25,.2,-.050" local_rotation="0,0,45" parent_transform="Spine3"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,40" parent_transform="LeftForeArm"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,100" parent_transform="LeftShoulder"/>
 
 			</effect_group>
 		</buff>
@@ -1770,8 +1771,8 @@
 		</buff>
 		<buff name="GeistPORRAS" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Melee/meleeWeapon/TaserBatonPrefab.prefab" local_offset="-.1,0,0" local_rotation="180,90,180" parent_transform="RightHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Melee/meleeWeapon/TaserBatonPrefab.prefab" local_offset="-.4,-.06,0" local_rotation="0,-90,-75" parent_transform="LeftForeArm"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/TaserBaton/TaserBatonPrefab.prefab" local_offset="-.1,0,0" local_rotation="180,90,180" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/TaserBaton/TaserBatonPrefab.prefab" local_offset="-.4,-.06,0" local_rotation="0,-90,-75" parent_transform="LeftForeArm"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_electric_shock_small" local_offset="-.1,0,0" local_rotation="180,90,180" parent_transform="RightHand"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_electric_shock_small" local_offset="-.4,-.06,0" local_rotation="0,-90,-75" parent_transform="LeftForeArm"/>
 
@@ -1828,8 +1829,8 @@
 		<buff name="OjalataDECO" hidden="true">
 			<effect_group>
 
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/Spear/spear_iron_Prefab.prefab" local_offset="0,0,0" local_rotation="20,30,-155" parent_transform="Spine"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Ranged/Bows/Crossbow/crossbowBoltStonePrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,90" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Spear/spear_iron_Prefab.prefab" local_offset="0,0,0" local_rotation="20,30,-155" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/Bows/Arrows/bolt_stonePrefab.prefa" local_offset="-.1,0,0" local_rotation="0,0,90" parent_transform="Head"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_critical" local_offset="0,0,0" local_rotation="20,30,-155" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_critical" />
 
@@ -1901,14 +1902,14 @@
 		</buff>
 		<buff name="MILITAR" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Ranged/Rifle/tacticalAssaultRiflePrefab" local_offset="-.1,0,0" local_rotation="180,90,180" parent_transform="RightHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/LootContainers?weapon_bags_largePrefab.prefab" local_offset="-.30,.15,-.45" local_rotation="360,0,80" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/Rifle/tacticalAssaultRiflePrefab" local_offset="-.1,0,0" local_rotation="180,90,180" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/weapon_bags_largePrefab.prefab" local_offset="-.30,.15,-.45" local_rotation="360,0,80" parent_transform="Spine"/>
 			</effect_group>
 		</buff>
 		<buff name="MILITAR2" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Ranged/ak47/ak47Prefab.prefab" local_offset="-.1,0,0" local_rotation="180,90,180" parent_transform="RightHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/LootContainers?weapon_bags_largePrefab.prefab" local_offset="-.30,.15,-.45" local_rotation="360,0,80" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/ak47/ak47Prefab.prefab" local_offset="-.1,0,0" local_rotation="180,90,180" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/weapon_bags_largePrefab.prefab" local_offset="-.30,.15,-.45" local_rotation="360,0,80" parent_transform="Spine"/>
 			</effect_group>
 		</buff>
 		<buff name="FireParticle" hidden="true">
@@ -1982,35 +1983,35 @@
 		<buff name="RAIDERdeco" hidden="true">
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Plants/pumpkinJackoLanternPrefab" local_offset="-.5,0,0" local_rotation="0,0,90" parent_transform="Head"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/ClubIron/ClubIronPrefab.prefab" local_offset="-.1,0,0" local_rotation="180,90,180" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/ClubIron/ClubIronPrefab.prefab" local_offset="-.1,0,0" local_rotation="180,90,180" parent_transform="RightHand"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_fire_small" local_offset="-.1,0,.3" local_rotation="0,-60,90" parent_transform="Head"/>
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_fire_small" />
 			</effect_group>
 		</buff>
 		<buff name="TantalusTheTaintedBossDeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Ranged/Bows/Crossbow/crossbowBoltStonePrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,45" parent_transform="RightHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Ranged/Bows/Crossbow/crossbowBoltStonePrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,45" parent_transform="LeftHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/Chainsaw/chainsaw.fbx" local_offset="-.1,0,0" local_rotation="0,-90,0" parent_transform="RightHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/Chainsaw/chainsaw.fbx" local_offset="-.1,0,0" local_rotation="0,-90,0" parent_transform="LeftHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Ranged/Bows/Crossbow/crossbowBoltStonePrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,90" parent_transform="RightHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Ranged/Bows/Crossbow/crossbowBoltStonePrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,90" parent_transform="LeftHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Ranged/Bows/Crossbow/crossbowBoltStonePrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,45" parent_transform="RightForeArm"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Ranged/Bows/Crossbow/crossbowBoltStonePrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,40" parent_transform="LeftForeArm"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Ranged/Bows/Crossbow/crossbowBoltStonePrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,20" parent_transform="RightShoulder"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Ranged/Bows/Crossbow/crossbowBoltStonePrefab.prefab" local_offset="-.1,0,0" local_rotation="0,0,100" parent_transform="LeftShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Ranged/Bows/Arrows/bolt_stonePrefab.prefa" local_offset="-.1,0,0" local_rotation="0,0,45" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Ranged/Bows/Arrows/bolt_stonePrefab.prefa" local_offset="-.1,0,0" local_rotation="0,0,45" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Chainsaw/chainsaw.fbx" local_offset="-.1,0,0" local_rotation="0,-90,0" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Chainsaw/chainsaw.fbx" local_offset="-.1,0,0" local_rotation="0,-90,0" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/Bows/Arrows/bolt_stonePrefab.prefa" local_offset="-.1,0,0" local_rotation="0,0,90" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/Bows/Arrows/bolt_stonePrefab.prefa" local_offset="-.1,0,0" local_rotation="0,0,90" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Ranged/Bows/Arrows/bolt_stonePrefab.prefa" local_offset="-.1,0,0" local_rotation="0,0,45" parent_transform="RightForeArm"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Ranged/Bows/Arrows/bolt_stonePrefab.prefa" local_offset="-.1,0,0" local_rotation="0,0,40" parent_transform="LeftForeArm"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Ranged/Bows/Arrows/bolt_stonePrefab.prefa" local_offset="-.1,0,0" local_rotation="0,0,20" parent_transform="RightShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Ranged/Bows/Arrows/bolt_stonePrefab.prefa" local_offset="-.1,0,0" local_rotation="0,0,100" parent_transform="LeftShoulder"/>
 			</effect_group>
 		</buff>
 		<buff name="VaqueroDECO" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Food/bottled_waterPrefab.prefab" local_offset="-.1,0,0" local_rotation="180,90,180" parent_transform="RightHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Ranged/Magnums/magnumPrefab.prefab" local_offset="-.1,-.0,0" local_rotation="150,90,0" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Food/bottled_waterPrefab.prefab" local_offset="-.1,0,0" local_rotation="180,90,180" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Ranged/Magnums/magnumPrefab.prefab" local_offset="-.1,-.0,0" local_rotation="150,90,0" parent_transform="LeftHand"/>
 
 			</effect_group>
 		</buff>
 		<buff name="MalandroDECO" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Melee/Knives/hunting_knifePrefab.prefab" local_offset="-.1,-.0,0" local_rotation="150,90,0" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Knives/hunting_knifePrefab.prefab" local_offset="-.1,-.0,0" local_rotation="150,90,0" parent_transform="LeftHand"/>
 
 
 				<triggered_effect name="BuffProcChance" operation="base_set" value=".5" tags="buffInjuryBleedingZombie"/>
@@ -2019,9 +2020,9 @@
 		</buff>
 		<buff name="ARQUEROdeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Ranged/Bows/Crossbow/crossbowBoltSteelPrefab.prefab" local_offset="-.1,0,0" local_rotation="180,90,180" parent_transform="RightHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Ranged/Bows/CompoundBow/CompoundBowPrefab.prefab" local_offset="-.1,-.0,0" local_rotation="150,90,0" parent_transform="LeftHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#Other/Items?Weapons/Ranged/Bows/AdvancedBow/AdvancedCompoundCrossbow/AdvancedCompoundCrossbowPrefab.prefab" local_offset="0, 0,-.22" local_rotation="0,90,90" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Ranged/Bows/Crossbow/crossbowBoltSteelPrefab.prefab" local_offset="-.1,0,0" local_rotation="180,90,180" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Ranged/Bows/CompoundBow/CompoundBowPrefab.prefab" local_offset="-.1,-.0,0" local_rotation="150,90,0" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Ranged/Bows/AdvancedBow/AdvancedCompoundCrossbow/AdvancedCompoundCrossbowPrefab.prefab" local_offset="0, 0,-.22" local_rotation="0,90,90" parent_transform="Spine"/>
 
 			</effect_group>
 		</buff>

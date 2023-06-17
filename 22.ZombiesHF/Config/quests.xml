@@ -3,11 +3,12 @@
 	<remove xpath="/quests/quest[@id='tier6_clear']"/>
 
 	<append xpath="/quests/quest_list[@id='trader_quests']">
-		<quest id="tier6_clearV2"/>
-		<quest id="tier6_nexttrader" />
+		<quest id="tier6_clear"/>
+		<!--<quest id="tier6_nexttrader" />-->
 	</append>
 
 	<insertAfter xpath="/quests/quest[@id='quest_tier5complete']">
+		<!--
 		<quest id="quest_tier6complete">
 			<property name="name_key" value="quest_tier6_complete"/>
 			<property name="subtitle_key" value="quest_tier6_complete"/>
@@ -27,6 +28,7 @@
 			<reward type="LootItem" id="groupQuestWeapons" ischosen="true" value="7"/>
 			<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" value="7"/>
 		</quest>
+		-->
 		<quest id="tier6_nexttrader">
 			<property name="group_name_key" value="quest_next_trader"/>
 			<property name="name_key" value="quest_next_trader"/>
@@ -66,63 +68,7 @@
 
 			<reward type="Exp" value="500"/>
 		</quest>
-		<quest id="tier6_clear">
-			<property name="name_key" value="quest_tier6_clear"/>
-			<property name="subtitle_key" value="quest_clear_subtitle"/>
-			<property name="description_key" value="quest_clear_description"/>
-			<property name="icon" value="ui_game_symbol_quest"/>
-			<property name="repeatable" value="true"/>
-			<property name="category_key" value="quest"/>
-			<property name="offer_key" value="quest_tier6_clear_offer"/>
-			<property name="difficulty" value="medium"/>
-			<property name="difficulty_tier" value="6"/>
-			<property name="statement_key" value="quest_clear_statement"/>
-			<property name="response_key" value="6quest_clear_response"/>
-			<property name="login_rally_reset" value="true"/>
 
-			<property name="completiontype" value="TurnIn"/>
-			<property name="completion_key" value="quest_clear_completion"/>
-
-			<objective type="RandomPOIGoto">
-				<property name="phase" value="1"/>
-				<property name="nav_object" value="quest" />
-			</objective>
-
-			<objective type="RallyPoint">
-				<property name="phase" value="2"/>
-				<property name="nav_object" value="rally" />
-			</objective>
-
-			<objective type="ClearSleepers">
-				<property name="phase" value="3"/>
-				<property name="nav_object" value="sleeper_volume"/>
-			</objective>
-
-			<objective type="POIStayWithin">
-				<property name="phase" value="3"/>
-				<property name="radius" value="25"/>
-			</objective>
-
-			<objective type="ReturnToNPC">
-				<property name="phase" value="4"/>
-				<property name="nav_object" value="return_to_trader" />
-			</objective>
-
-			<objective type="InteractWithNPC">
-				<property name="phase" value="4"/>
-				<property name="nav_object" value="return_to_trader" />
-			</objective>
-
-			<reward type="Exp" value="25000"/>
-			<reward type="Item" id="casinoCoin" value="8000"/>
-
-			<reward type="LootItem" id="specialGroupQuestWeaponsRangedT3" ischosen="true" isfixed="true" value="6"/>
-			<reward type="LootItem" id="specialGroupQuestArmorT2,specialGroupQuestMedical" ischosen="true" isfixed="true" value="6"/>
-			<reward type="LootItem" id="specialGroupQuestAmmo" ischosen="true" value="6"/>
-			<reward type="LootItem" id="specialGroupQuestToolsT3" ischosen="true" value="6"/>
-			<reward type="LootItem" id="specialGroupQuestChallenge,speciaslSchematicsWeaponsArmorCommon" ischosen="true" value="6"/>
-			<reward type="LootItem" id="speciaslPiezasArmas" ischosen="true" value="6"/>
-		</quest>
 		<quest id="testtier6_clear">
 			<property name="name_key" value="quest_tier6_clear"/>
 			<property name="subtitle_key" value="quest_clear_subtitle"/>
@@ -153,10 +99,10 @@
 			<reward type="LootItem" id="specialGroupQuestArmorT2,specialGroupQuestMedical" ischosen="true" value="6"/>
 			<reward type="LootItem" id="specialGroupQuestAmmo" ischosen="true" value="6"/>
 			<reward type="LootItem" id="specialGroupQuestToolsT3" ischosen="true" value="6"/>
-			<reward type="LootItem" id="specialGroupQuestChallenge,speciaslSchematicsWeaponsArmorCommon" ischosen="true" value="6"/>
+			<reward type="LootItem" id="specialGroupQuestChallenge" ischosen="true" value="6"/>
 			<reward type="LootItem" id="speciaslPiezasArmas" ischosen="true" value="6"/>
 		</quest>
-		<quest id="tier6_clearV2">
+		<quest id="tier6_clear">
 			<property name="name_key" value="quest_tier6_clear"/>
 			<property name="subtitle_key" value="quest_clear_subtitle"/>
 			<property name="description_key" value="quest_clear_description"/>
@@ -210,7 +156,7 @@
 			<reward type="LootItem" id="specialGroupQuestArmorT2,specialGroupQuestMedical" ischosen="true" value="6"/>
 			<reward type="LootItem" id="specialGroupQuestAmmo" ischosen="true" value="6"/>
 			<reward type="LootItem" id="specialGroupQuestToolsT3" ischosen="true" value="6"/>
-			<reward type="LootItem" id="specialgroupQuestSP,speciaslSchematicsWeaponsArmorCommon" ischosen="true" value="6"/>
+			<reward type="LootItem" id="specialgroupQuestSP" ischosen="true" value="6"/>
 			<reward type="LootItem" id="speciaslPiezasArmas" ischosen="true" value="6"/>
 		</quest>
 
@@ -520,10 +466,10 @@
 			<action type="SpawnEnemy" id="zombieCowhead" value="2" phase="3"/>
 			<action type="SpawnEnemy" id="zombiePartyGirlFeral" value="4" phase="3"/>
 
-			<objective type="ZombieKill" id="zombieMantis" value="2" phase="3"/>
-			<objective type="ZombieKill" id="zombiePsycho" value="2" phase="3"/>
-			<objective type="ZombieKill" id="zombiePartyGirlFeral" value="2" phase="3"/>
-			<objective type="ZombieKill" id="TAVOZombieROPA" value="1" phase="3"/>
+			<objective type="EntityKill" id="zombieMantis" value="2" phase="3"/>
+			<objective type="EntityKill" id="zombiePsycho" value="2" phase="3"/>
+			<objective type="EntityKill" id="zombiePartyGirlFeral" value="2" phase="3"/>
+			<objective type="EntityKill" id="TAVOZombieROPA" value="1" phase="3"/>
 			<reward type="Quest" id="tier2RewardQuest2"/>
 		</quest>
 		<quest id="q_KillCriaturas">
@@ -560,10 +506,10 @@
 			<action type="SpawnEnemy" id="NighScreamer" value="1" phase="3"/>
 			<action type="SpawnEnemy" id="NighSnow" value="3" phase="3"/>
 			<action type="SpawnEnemy" id="NighFarmer" value="2" phase="3"/>
-			<objective type="ZombieKill" id="NighSolider" value="1" phase="3"/>
-			<objective type="ZombieKill" id="NighFeral" value="1" phase="3"/>
-			<objective type="ZombieKill" id="NighSnow" value="1" phase="3"/>
-			<objective type="ZombieKill" id="NighSkater" value="1" phase="3"/>
+			<objective type="EntityKill" id="NighSolider" value="1" phase="3"/>
+			<objective type="EntityKill" id="NighFeral" value="1" phase="3"/>
+			<objective type="EntityKill" id="NighSnow" value="1" phase="3"/>
+			<objective type="EntityKill" id="NighSkater" value="1" phase="3"/>
 			<reward type="Quest" id="tier2RewardQuest2"/>
 		</quest>
 		<quest id="q_venganza">
@@ -600,8 +546,8 @@
 			<action type="SpawnEnemy" id="TAVOanimalChickenDemonFeral" value="2" phase="3"/>
 			<action type="SpawnEnemy" id="animalMountainLion" value="2" phase="3"/>
 			<action type="SpawnEnemy" id="animalDireWolf" value="2" phase="3"/>
-			<objective type="AnimalKill" id="TAVOanimalZombieBearLEGENDARY" value="1" phase="3"/>
-			<objective type="AnimalKill" id="HellLion" value="1" phase="3"/>
+			<objective type="EntityKill" id="TAVOanimalZombieBearLEGENDARY" value="1" phase="3"/>
+			<objective type="EntityKill" id="HellLion" value="1" phase="3"/>
 			<reward type="Quest" id="tier2RewardQuest2"/>
 		</quest>
 		<quest id="q_elites">
@@ -636,9 +582,9 @@
 			<action type="SpawnEnemy" id="EliteFeral" value="4" phase="3"/>
 			<action type="SpawnEnemy" id="EliteDemo" value="3" phase="3"/>
 			<action type="SpawnEnemy" id="ZombieEliteBomber" value="3" phase="3"/>
-			<objective type="ZombieKill" id="EliteSolider" value="3" phase="3"/>
-			<objective type="ZombieKill" id="EliteFeral" value="2" phase="3"/>
-			<objective type="ZombieKill" id="EliteSkater" value="2" phase="3"/>
+			<objective type="EntityKill" id="EliteSolider" value="3" phase="3"/>
+			<objective type="EntityKill" id="EliteFeral" value="2" phase="3"/>
+			<objective type="EntityKill" id="EliteSkater" value="2" phase="3"/>
 
 			<reward type="Quest" id="tier2RewardQuest2"/>
 		</quest>
@@ -670,7 +616,7 @@
 			<action type="SpawnEnemy" id="MiniRopaJoel" value="4" phase="3"/>
 			<action type="SpawnEnemy" id="HeadZombiePonky" value="2" phase="3"/>
 			<action type="SpawnEnemy" id="MiniSiren" value="1" phase="3"/>
-			<objective type="ZombieKill" id="MiniRopaJoel" value="2" phase="3"/>
+			<objective type="EntityKill" id="MiniRopaJoel" value="2" phase="3"/>
 
 			<reward type="Quest" id="tier2RewardQuest2"/>
 		</quest>
@@ -704,8 +650,8 @@
 			<action type="SpawnEnemy" id="HeadZombiePonky" value="3" phase="3"/>
 			<action type="SpawnEnemy" id="MinieBomber" value="4" phase="3"/>
 			<action type="SpawnEnemy" id="MiniSiren" value="2" phase="3"/>
-			<objective type="ZombieKill" id="MiniRopaJoel" value="2" phase="3"/>
-			<objective type="ZombieKill" id="HeadZombiePonky" value="1" phase="3"/>
+			<objective type="EntityKill" id="MiniRopaJoel" value="2" phase="3"/>
+			<objective type="EntityKill" id="HeadZombiePonky" value="1" phase="3"/>
 
 			<reward type="Quest" id="tier2RewardQuest2"/>
 		</quest>
@@ -745,9 +691,9 @@
 			<action type="SpawnEnemy" id="ZombieEliteBomber" value="2" phase="3"/>
 			<action type="SpawnEnemy" id="zombieMantis" value="2" phase="3"/>
 			<action type="SpawnEnemy" id="zombieBanshee" value="1" phase="3"/>
-			<objective type="ZombieKill" id="MiniRopaJoel" value="1" phase="3"/>
-			<objective type="ZombieKill" id="TAVOZombieROPA" value="1" phase="3"/>
-			<objective type="ZombieKill" id="VenSpiritu" value="1" phase="3"/>
+			<objective type="EntityKill" id="MiniRopaJoel" value="1" phase="3"/>
+			<objective type="EntityKill" id="TAVOZombieROPA" value="1" phase="3"/>
+			<objective type="EntityKill" id="VenSpiritu" value="1" phase="3"/>
 			<reward type="Quest" id="tier2RewardQuest2"/>
 		</quest>
 		<!--Tier 2-->
@@ -784,8 +730,8 @@
 			<action type="SpawnEnemy" id="ZombieBomber" value="5" phase="3"/>
 			<action type="SpawnEnemy" id="TAVOzombieFire" value="3" phase="3"/>
 			<action type="SpawnEnemy" id="EliteDemo" value="2" phase="3"/>
-			<objective type="ZombieKill" id="BossZombieJuggernaut" value="1" phase="3"/>
-			<objective type="ZombieKill" id="TAVOzombieFire" value="1" phase="3"/>
+			<objective type="EntityKill" id="BossZombieJuggernaut" value="1" phase="3"/>
+			<objective type="EntityKill" id="TAVOzombieFire" value="1" phase="3"/>
 			<reward type="Quest" id="bossRewardQuest2"/>
 
 		</quest>
@@ -819,8 +765,8 @@
 			<action type="SpawnEnemy" id="zombieMantis" value="3" phase="3"/>
 			<action type="SpawnEnemy" id="zombieScarecrow" value="3" phase="3"/>
 			<action type="SpawnEnemy" id="ZombieBomber" value="6" phase="3"/>
-			<objective type="ZombieKill" id="BosszombieSiren" value="1" phase="3"/>
-			<objective type="ZombieKill" id="zombieMantis" value="1" phase="3"/>
+			<objective type="EntityKill" id="BosszombieSiren" value="1" phase="3"/>
+			<objective type="EntityKill" id="zombieMantis" value="1" phase="3"/>
 			<reward type="Quest" id="bossRewardQuest2"/>
 		</quest>
 		<quest id="q_KillSoldier">
@@ -852,8 +798,8 @@
 			<action type="SpawnEnemy" id="zombieGunner" value="2" phase="3"/>
 			<action type="SpawnEnemy" id="EliteSolider" value="6" phase="3"/>
 			<action type="SpawnEnemy" id="EliteDemo" value="3" phase="3"/>
-			<objective type="ZombieKill" id="BossTavoSoldier" value="1" phase="3"/>
-			<objective type="ZombieKill" id="EliteSolider" value="3" phase="3"/>
+			<objective type="EntityKill" id="BossTavoSoldier" value="1" phase="3"/>
+			<objective type="EntityKill" id="EliteSolider" value="3" phase="3"/>
 			<reward type="Quest" id="bossRewardQuest2"/>
 		</quest>
 		<quest id="q_KillMummy">
@@ -888,8 +834,8 @@
 			<action type="SpawnEnemy" id="zombieMummyDog" value="4" phase="3"/>
 			<action type="SpawnEnemy" id="zombieBanshee" value="2" phase="3"/>
 			<action type="SpawnEnemy" id="TAVOzombieFire" value="2" phase="3"/>
-			<objective type="ZombieKill" id="BossMummy" value="1" phase="3"/>
-			<objective type="ZombieKill" id="TAVOzombieWightRAINBOW" value="1" phase="3"/>
+			<objective type="EntityKill" id="BossMummy" value="1" phase="3"/>
+			<objective type="EntityKill" id="TAVOzombieWightRAINBOW" value="1" phase="3"/>
 
 			<reward type="Quest" id="bossRewardQuest2"/>
 		</quest>
@@ -927,8 +873,8 @@
 			<action type="SpawnEnemy" id="mxGeistACIDO" value="1" phase="3"/>
 			<action type="SpawnEnemy" id="mxGeistHIELO" value="1" phase="3"/>
 			<action type="SpawnEnemy" id="mxGeistFuego" value="1" phase="3"/>
-			<objective type="ZombieKill" id="BossGladiador" value="1" phase="3"/>
-			<objective type="ZombieKill" id="MxZombieHerido" value="1" phase="3"/>
+			<objective type="EntityKill" id="BossGladiador" value="1" phase="3"/>
+			<objective type="EntityKill" id="MxZombieHerido" value="1" phase="3"/>
 
 			<reward type="Quest" id="bossRewardQuest2"/>
 		</quest>
@@ -965,9 +911,9 @@
 			<action type="SpawnEnemy" id="TAVOzombieFire" value="2" phase="3"/>
 			<action type="SpawnEnemy" id="TAVOzombieBolt" value="1" phase="3"/>
 			<action type="SpawnEnemy" id="zombieGunner" value="1" phase="3"/>
-			<objective type="ZombieKill" id="TAVOZombieROPA" value="2" phase="3"/>
-			<objective type="ZombieKill" id="TAVOzombieWightRAINBOW" value="2" phase="3"/>
-			<objective type="ZombieKill" id="BossMineralSpider" value="1" phase="3"/>
+			<objective type="EntityKill" id="TAVOZombieROPA" value="2" phase="3"/>
+			<objective type="EntityKill" id="TAVOzombieWightRAINBOW" value="2" phase="3"/>
+			<objective type="EntityKill" id="BossMineralSpider" value="1" phase="3"/>
 			<reward type="Quest" id="t4voRewardQuest2"/>
 		</quest>
 		<quest id="q_KillCirujano">
@@ -1003,8 +949,8 @@
 			<action type="SpawnEnemy" id="MxZombieHerido" value="3" phase="3"/>
 			<action type="SpawnEnemy" id="zombieNurseFeral" value="5" phase="3"/>
 			<action type="SpawnEnemy" id="EliteNurse" value="3" phase="3"/>
-			<objective type="ZombieKill" id="BossCirujano" value="1" phase="3"/>
-			<objective type="ZombieKill" id="zombiePsycho" value="2" phase="3"/>
+			<objective type="EntityKill" id="BossCirujano" value="1" phase="3"/>
+			<objective type="EntityKill" id="zombiePsycho" value="2" phase="3"/>
 			<reward type="Quest" id="bossRewardQuest2"/>
 
 		</quest>
@@ -1034,14 +980,14 @@
 			<action type="SpawnEnemy" id="zombieGunner" value="2" phase="3"/>
 			<action type="SpawnEnemy" id="EliteSolider" value="5" phase="3"/>
 			<action type="SpawnEnemy" id="EliteDemo" value="2" phase="3"/>
-			<objective type="ZombieKill" id="BossTavoSoldier" value="1" phase="3"/>
+			<objective type="EntityKill" id="BossTavoSoldier" value="1" phase="3"/>
 
 			<action type="SpawnEnemy" id="BossGladiador" value="2" phase="4"/>
 			<action type="SpawnEnemy" id="MxGritonaRadiactiva" value="1" phase="4"/>
 			<action type="SpawnEnemy" id="MxZombieQuemado" value="1" phase="4"/>
 			<action type="SpawnEnemy" id="MxZombieHerido" value="3" phase="4"/>
 			<action type="SpawnEnemy" id="mxGeistDark" value="1" phase="4"/>
-			<objective type="ZombieKill" id="BossGladiador" value="1" phase="4"/>
+			<objective type="EntityKill" id="BossGladiador" value="1" phase="4"/>
 
 			<action type="SpawnEnemy" id="BossMummy" value="2" phase="5"/>
 			<action type="SpawnEnemy" id="zombieScarecrow" value="2" phase="5"/>
@@ -1049,34 +995,34 @@
 			<action type="SpawnEnemy" id="TAVOanimalSnakeFeral" value="1" phase="5"/>
 			<action type="SpawnEnemy" id="TAVOzombieFire" value="2" phase="5"/>
 			<action type="SpawnEnemy" id="zombieMummyDog" value="2" phase="5"/>
-			<objective type="ZombieKill" id="BossMummy" value="1" phase="5"/>
+			<objective type="EntityKill" id="BossMummy" value="1" phase="5"/>
 
 			<action type="SpawnEnemy" id="BossZombieJuggernaut" value="2" phase="6"/>
 			<action type="SpawnEnemy" id="zombieGunner" value="1" phase="6"/>
 			<action type="SpawnEnemy" id="ZombieBomber" value="2" phase="6"/>
 			<action type="SpawnEnemy" id="TAVOzombieFire" value="2" phase="6"/>
 			<action type="SpawnEnemy" id="EliteDemo" value="2" phase="6"/>
-			<objective type="ZombieKill" id="BossZombieJuggernaut" value="1" phase="6"/>
+			<objective type="EntityKill" id="BossZombieJuggernaut" value="1" phase="6"/>
 
 			<action type="SpawnEnemy" id="BossCirujano" value="2" phase="6"/>
 			<action type="SpawnEnemy" id="zombieGunner" value="1" phase="6"/>
 			<action type="SpawnEnemy" id="ZombieBomber" value="2" phase="6"/>
 			<action type="SpawnEnemy" id="TAVOzombieFire" value="2" phase="6"/>
 			<action type="SpawnEnemy" id="EliteDemo" value="2" phase="6"/>
-			<objective type="ZombieKill" id="BossCirujano" value="1" phase="6"/>
+			<objective type="EntityKill" id="BossCirujano" value="1" phase="6"/>
 
 			<action type="SpawnEnemy" id="BosszombieSiren" value="2" phase="7"/>
 			<action type="SpawnEnemy" id="zombieBanshee" value="1" phase="7"/>
 			<action type="SpawnEnemy" id="zombieMantis" value="2" phase="7"/>
 			<action type="SpawnEnemy" id="zombieScarecrow" value="3" phase="7"/>
 			<action type="SpawnEnemy" id="ZombieBomber" value="4" phase="7"/>
-			<objective type="ZombieKill" id="BosszombieSiren" value="1" phase="7"/>
+			<objective type="EntityKill" id="BosszombieSiren" value="1" phase="7"/>
 
 			<action type="SpawnEnemy" id="BossDemoHF" value="1" phase="8"/>
 			<action type="SpawnEnemy" id="BossPractoSpider" value="1" phase="8"/>
 			<action type="SpawnEnemy" id="BossMineralSpider" value="1" phase="8"/>
 			<action type="SpawnEnemy" id="TAVOZombieROPA" value="1" phase="8"/>
-			<objective type="ZombieKill" id="BossDemoHF" value="1" phase="8"/>
+			<objective type="EntityKill" id="BossDemoHF" value="1" phase="8"/>
 
 			<objective type="InteractWithNPC">
 				<property name="phase" value="8"/>
@@ -1119,9 +1065,9 @@
 			<action type="SpawnEnemy" id="BossZombieJuggernaut" value="2" phase="3"/>
 			<action type="SpawnEnemy" id="BossTavoSoldier" value="2" phase="3"/>
 			<action type="SpawnEnemy" id="BossGladiador" value="2" phase="3"/>
-			<objective type="ZombieKill" id="BossGladiador" value="1" phase="3"/>
-			<objective type="ZombieKill" id="BossTavoSoldier" value="1" phase="3"/>
-			<objective type="ZombieKill" id="BossZombieJuggernaut" value="1" phase="3"/>
+			<objective type="EntityKill" id="BossGladiador" value="1" phase="3"/>
+			<objective type="EntityKill" id="BossTavoSoldier" value="1" phase="3"/>
+			<objective type="EntityKill" id="BossZombieJuggernaut" value="1" phase="3"/>
 			<objective type="POIStayWithin">
 				<property name="phase" value="3"/>
 				<property name="radius" value="30"/>
@@ -1129,9 +1075,9 @@
 			<action type="SpawnEnemy" id="BossCirujano" value="2" phase="4"/>
 			<action type="SpawnEnemy" id="BosszombieSiren" value="2" phase="4"/>
 			<action type="SpawnEnemy" id="BossMummy" value="2" phase="4"/>
-			<objective type="ZombieKill" id="BossCirujano" value="1" phase="4"/>
-			<objective type="ZombieKill" id="BossMummy" value="1" phase="4"/>
-			<objective type="ZombieKill" id="BosszombieSiren" value="1" phase="4"/>
+			<objective type="EntityKill" id="BossCirujano" value="1" phase="4"/>
+			<objective type="EntityKill" id="BossMummy" value="1" phase="4"/>
+			<objective type="EntityKill" id="BosszombieSiren" value="1" phase="4"/>
 			<objective type="POIStayWithin">
 				<property name="phase" value="3"/>
 				<property name="radius" value="30"/>
@@ -1139,7 +1085,7 @@
 			<action type="SpawnEnemy" id="BossDemoHF" value="1" phase="5"/>
 			<action type="SpawnEnemy" id="BossMineralSpider" value="1" phase="5"/>
 			<action type="SpawnEnemy" id="BossPractoSpider" value="1" phase="5"/>
-			<objective type="ZombieKill" id="BossDemoHF" value="1" phase="5"/>
+			<objective type="EntityKill" id="BossDemoHF" value="1" phase="5"/>
 
 			<objective type="InteractWithNPC">
 				<property name="phase" value="6"/>
@@ -1166,12 +1112,12 @@
 			<property name="completion_key" value="comleteTaco"/>
 			<property name="difficulty" value="insane"/>
 			<property name="completiontype" value="TurnIn"/>
-			<objective type="ZombieKill" id="BossTavoSoldier" value="1" phase="1"/>
-			<objective type="ZombieKill" id="BosszombieSiren" value="1" phase="1"/>
-			<objective type="ZombieKill" id="BossZombieJuggernaut" value="1" phase="1"/>
-			<objective type="ZombieKill" id="BossMummy" value="1" phase="1"/>
-			<objective type="ZombieKill" id="BossMineralSpider" value="1" phase="1"/>
-			<objective type="ZombieKill" id="BossPractoSpider" value="1" phase="1"/>
+			<objective type="EntityKill" id="BossTavoSoldier" value="1" phase="1"/>
+			<objective type="EntityKill" id="BosszombieSiren" value="1" phase="1"/>
+			<objective type="EntityKill" id="BossZombieJuggernaut" value="1" phase="1"/>
+			<objective type="EntityKill" id="BossMummy" value="1" phase="1"/>
+			<objective type="EntityKill" id="BossMineralSpider" value="1" phase="1"/>
+			<objective type="EntityKill" id="BossPractoSpider" value="1" phase="1"/>
 			<objective type="InteractWithNPC">
 				<property name="phase" value="2"/>
 			</objective>
@@ -1196,13 +1142,13 @@
 			<property name="completion_key" value="comleteTaco"/>
 			<property name="difficulty" value="insane"/>
 			<property name="completiontype" value="TurnIn"/>
-			<objective type="ZombieKill" id="BossTavoSoldier" value="1" phase="1"/>
-			<objective type="ZombieKill" id="BosszombieSiren" value="1" phase="1"/>
-			<objective type="ZombieKill" id="BossZombieJuggernaut" value="1" phase="1"/>
-			<objective type="ZombieKill" id="BossMummy" value="1" phase="1"/>
-			<objective type="ZombieKill" id="BossMineralSpider" value="1" phase="1"/>
-			<objective type="ZombieKill" id="BossPractoSpider" value="1" phase="1"/>
-			<objective type="ZombieKill" id="BossCirujano" value="1" phase="1"/>
+			<objective type="EntityKill" id="BossTavoSoldier" value="1" phase="1"/>
+			<objective type="EntityKill" id="BosszombieSiren" value="1" phase="1"/>
+			<objective type="EntityKill" id="BossZombieJuggernaut" value="1" phase="1"/>
+			<objective type="EntityKill" id="BossMummy" value="1" phase="1"/>
+			<objective type="EntityKill" id="BossMineralSpider" value="1" phase="1"/>
+			<objective type="EntityKill" id="BossPractoSpider" value="1" phase="1"/>
+			<objective type="EntityKill" id="BossCirujano" value="1" phase="1"/>
 			<objective type="InteractWithNPC">
 				<property name="phase" value="2"/>
 			</objective>
@@ -1226,12 +1172,12 @@
 			<property name="completion_key" value="comleteTacoS"/>
 			<property name="difficulty" value="insane"/>
 			<property name="completiontype" value="TurnIn"/>
-			<objective type="ZombieKill" id="SpecialBossTavoSoldier" value="1" phase="1"/>
-			<objective type="ZombieKill" id="SpecialBosszombieSiren" value="1" phase="1"/>
-			<objective type="ZombieKill" id="SpecialBossZombieJuggernaut" value="1" phase="1"/>
-			<objective type="ZombieKill" id="SpecialBossMummy" value="1" phase="1"/>
-			<objective type="ZombieKill" id="BossNighSpider" value="1" phase="1"/>
-			<objective type="ZombieKill" id="SpecialBossCirujano" value="1" phase="1"/>
+			<objective type="EntityKill" id="SpecialBossTavoSoldier" value="1" phase="1"/>
+			<objective type="EntityKill" id="SpecialBosszombieSiren" value="1" phase="1"/>
+			<objective type="EntityKill" id="SpecialBossZombieJuggernaut" value="1" phase="1"/>
+			<objective type="EntityKill" id="SpecialBossMummy" value="1" phase="1"/>
+			<objective type="EntityKill" id="BossNighSpider" value="1" phase="1"/>
+			<objective type="EntityKill" id="SpecialBossCirujano" value="1" phase="1"/>
 			<objective type="InteractWithNPC">
 				<property name="phase" value="2"/>
 			</objective>
@@ -2393,8 +2339,8 @@
 			<action type="SpawnEnemy" id="MxZombieHerido" value="3" phase="3"/>
 			<action type="SpawnEnemy" id="zombieNurseFeral" value="5" phase="3"/>
 			<action type="SpawnEnemy" id="EliteNurse" value="3" phase="3"/>
-			<objective type="ZombieKill" id="BossCirujano" value="1" phase="3"/>
-			<objective type="ZombieKill" id="zombiePsycho" value="2" phase="3"/>
+			<objective type="EntityKill" id="BossCirujano" value="1" phase="3"/>
+			<objective type="EntityKill" id="zombiePsycho" value="2" phase="3"/>
 			<reward type="Quest" id="bossRewardQuest2"/>
 
 		</quest>

@@ -6,8 +6,8 @@
 				<property name="CustomIcon" value="resourceRawDiamond"/>
 				<property name="DescriptionKey" value="Es tu dia de suerte..."/>
 				<property name="HoldType" value="45"/>
-				<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
-				<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+				<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 				<property name="Material" value="Mpaper"/>
 				<property name="ItemTypeIcon" value="treasure"/>
 				<property name="Weight" value="0"/>
@@ -27,8 +27,8 @@
 				<property name="CustomIcon" value="backpackMedium"/>
 				<property name="DescriptionKey" value="Una mochila tomada del cuerpo de un lunatico..."/>
 				<property name="HoldType" value="45"/>
-				<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
-				<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+				<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 				<property name="Material" value="Mpaper"/>
 				<property name="Stacknumber" value="10"/>
 				<property name="ItemTypeIcon" value="treasure"/>
@@ -132,6 +132,20 @@
 					<property name="QuestGiven" value="q_KillSoldier"/>
 				</property>
 
+			</item>
+			<item name="q_Cirujano">
+				<property name="name" value="Kill the Cirujano" />
+				<property name="Group" value="Science"/>
+				<property name="Extends" value="challengeQuestMaster"/>
+				<property name="ItemTypeIcon" value="add"/>
+				<property name="CustomIconTint" value="7FDAD7"/>
+				<property name="TintColor" value="127,218,215"/>
+				<property name="Stacknumber" value="5"/>
+				<property name="DescriptionKey" value="CiruQuest"/>
+				<property class="Action0">
+					<property name="UseAnimation" value="false"/>
+					<property name="QuestGiven" value="q_KillCirujano"/>
+				</property>
 			</item>
 			<item name="q_HFRush">
 				<property name="name" value="HF" />
@@ -858,10 +872,10 @@
 				</effect_group>
 			</item>
 			<item name="ammoFUEGO">
-				<!--<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/> -->
-				<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Vomit/molotovPrefab"/>
+				<!--<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/> -->
+				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Molotov/molotovPrefab.prefab"/>
 				<property name="Meshfile" value="particleeffects/p_fire_small"/>
-				<!--<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Vomit/molotovPrefab"/> -->
+				<!--<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Molotov/molotovPrefab.prefab"/> -->
 				<property name="Material" value="Morganic"/>
 				<property name="CreativeMode" value="None"/>
 				<property class="Action1">
@@ -885,7 +899,7 @@
 					<property name="DamageBonus.earth" value="0"/>
 					<property name="Buff" value="buffBurningMolotov,buffInfectionCatch"/>
 					<!--	<property name="Buff" value="buffIsOnFire"/>-->
-					<!--<property name="StickyMeshFile" value="#Other/Items?Weapons/Ranged/Bows/WoodenBow/flamingArrowPrefab.prefab"/> -->
+					<!--<property name="StickyMeshFile" value="@:Other/Items/Weapons/Ranged/Bows/Arrows/arrow_flamingPrefab.prefab"/> -->
 				</property>
 				<effect_group name="ammoFUEGO" tiered="false">
 					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
@@ -1023,7 +1037,7 @@
 				</effect_group>
 			</item>
 			<item name="ammoProjectileZombieBolt">
-				<!--<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/> -->
+				<!--<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/> -->
 				<property name="Meshfile" value="particleeffects/p_electric_shock"/>
 				<property name="Material" value="Morganic" />
 				<property name="CreativeMode" value="None"/>
@@ -1215,7 +1229,7 @@
 				</effect_group>
 			</item>
 			<item name="eBomberProjectile">
-				<property name="Meshfile" value="#Other/Items?Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
+				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
 				<property name="Material" value="Mmetal"/>
 				<property name="CreativeMode" value="None"/>
 				<property class="Action1">
@@ -1382,7 +1396,7 @@
 				</effect_group>
 			</item>
 			<item name="VenSpiritProjectile">
-				<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
+				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
 				<property name="Material" value="Morganic"/>
 				<property name="CreativeMode" value="None"/>
 				<property class="Action1">
@@ -1447,7 +1461,7 @@
 				</effect_group>
 			</item>
 			<item name="PonkyGallina">
-				<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
+				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
 				<property name="Material" value="Morganic"/>
 				<property name="CreativeMode" value="None"/>
 				<property class="Action1">
@@ -1644,9 +1658,9 @@
 				</effect_group>
 			</item>
 			<item name="ammoBossNigh">
-				<!--<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/> -->
-				<property name="Meshfile" value="#Other/Items?Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
-				<!--<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Vomit/molotovPrefab"/> -->
+				<!--<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/> -->
+				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
+				<!--<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Molotov/molotovPrefab.prefab"/> -->
 				<property name="Material" value="Morganic"/>
 				<property name="CreativeMode" value="None"/>
 				<property class="Action1">
@@ -1670,7 +1684,7 @@
 					<property name="DamageBonus.earth" value="0"/>
 					<property name="Buff" value="buffBurningMolotov,buffInfectionCatch"/>
 					<!--	<property name="Buff" value="buffIsOnFire"/>-->
-					<!--<property name="StickyMeshFile" value="#Other/Items?Weapons/Ranged/Bows/WoodenBow/flamingArrowPrefab.prefab"/> -->
+				
 				</property>
 				<effect_group name="ammoFUEGO" tiered="false">
 					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
@@ -1802,7 +1816,7 @@
 				</effect_group>
 			</item>
 			<item name="BossHFProjectile">
-				<property name="Meshfile" value="#Other/Items?Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
+				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
 				<property name="Material" value="Mmetal"/>
 				<property name="CreativeMode" value="None"/>
 				<property class="Action1">
@@ -1871,7 +1885,7 @@
 					</effect_group>
 				</item>
 				<item name="JuggernautProjectile">
-					<property name="Meshfile" value="#Other/Items?Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
+					<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
 					<property name="Material" value="Mmetal"/>
 					<property name="CreativeMode" value="None"/>
 					<property class="Action1">
@@ -2000,7 +2014,7 @@
 				</effect_group>
 			</item>
 			<item name="SpecialJuggernautProjectile">
-				<property name="Meshfile" value="#Other/Items?Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
+				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
 				<property name="Material" value="Mmetal"/>
 				<property name="CreativeMode" value="None"/>
 				<property class="Action1">
@@ -2104,7 +2118,7 @@
 				</effect_group>
 			</item>
 			<item name="SpecialBossHFProjectile">
-				<property name="Meshfile" value="#Other/Items?Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
+				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
 				<property name="Material" value="Mmetal"/>
 				<property name="CreativeMode" value="None"/>
 				<property class="Action1">
@@ -2217,7 +2231,7 @@
                 </effect_group>
             </item>
 			<item name="MiniBomberProjectile">
-                <property name="Meshfile" value="#Other/Items?Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
+                <property name="Meshfile" value="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
                 <property name="Material" value="Mmetal"/>
                 <property name="CreativeMode" value="None"/>
                 <property class="Action1">
@@ -2410,7 +2424,7 @@
 				</effect_group>
 			</item>
 			<item name="projectileFrozen">
-				<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
+				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
 				<property name="Material" value="Morganic"/>
 				<property name="CreativeMode" value="None"/>
 				<property class="Action1">
@@ -2554,7 +2568,7 @@
 		</item>
 		<item name="ammoEXPLOSIVO">
 			<property name="Meshfile" value="particleeffects/p_torch_wall"/>
-			<!--<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Vomit/molotovPrefab"/> -->
+			<!--<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Molotov/molotovPrefab.prefab"/> -->
 			<property name="Material" value="Morganic"/>
 			<property name="CreativeMode" value="None"/>
 			<property class="Action1">
@@ -2578,7 +2592,7 @@
 				<property name="DamageBonus.earth" value="0"/>
 				<property name="Buff" value="buffBurningMolotov,buffInfectionCatch"/>
 				<!--	<property name="Buff" value="buffIsOnFire"/>-->
-				<!--<property name="StickyMeshFile" value="#Other/Items?Weapons/Ranged/Bows/WoodenBow/flamingArrowPrefab.prefab"/> -->
+			
 			</property>
 			<effect_group name="ammoEXPLOSIVO" tiered="false">
 				<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
@@ -2694,7 +2708,7 @@
 			</effect_group>
 		</item>		
 		<item name="CriaturaProyectil">
-			<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
+			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
 			<property name="Material" value="Morganic"/>
 			<property name="CreativeMode" value="None"/>
 			<property class="Action1">
@@ -3050,7 +3064,7 @@
 			</effect_group>
 		</item>
 		<item name="PiedraPROYECTIL">
-			<property name="Meshfile" value="#Other/Items?Crafting/rock_smallPrefab.prefab"/>
+			<property name="Meshfile" value="@:Other/Items/Crafting/rock_smallPrefab.prefab"/>
 			<property name="Material" value="Morganic"/>
 			<property name="CreativeMode" value="None"/>
 			<property class="Action1">
@@ -3117,7 +3131,7 @@
 			</effect_group>
 		</item>
 		<item name="VomitoGRITONA">
-			<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
+			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
 			<property name="Material" value="Morganic"/>
 			<property name="CreativeMode" value="None"/>
 			<property class="Action1">
@@ -3185,7 +3199,7 @@
 			</effect_group>
 		</item>
 		<item name="CACASvomito">
-			<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
+			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
 			<property name="Material" value="Morganic"/>
 			<property name="CreativeMode" value="None"/>
 			<property class="Action1">
@@ -3429,7 +3443,7 @@
 			</effect_group>
 		</item>
 		<item name="ARQUEROproyectil">
-			<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Bows/Crossbow/CrossbowBoltFlamingPrefab.prefab"/>
+			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Bows/Arrows/bolt_flamingPrefab.prefab"/>
 			<property name="Material" value="Morganic"/>
 			<property name="CreativeMode" value="None"/>
 			<property class="Action1">
