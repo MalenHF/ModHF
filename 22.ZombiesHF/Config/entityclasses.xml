@@ -238,8 +238,14 @@
 		<!-- END Added by HolyVentus -->
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Zombie Template ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
-		<entity_class name="Zombie_TemplateHF" extends="zombieTemplateMale">
+
+		<entity_class name="Zombie_TemplateHF" extends="zombieTemplateMale">		
 			<property name="EntityType" value="Zombie" />
+			<property name="UserSpawnType" value="Menu"/>
+
+			<property name="Tags" value="entity,zombie,walker"/>
+
+			
 			<property name="Prefab" value="Z"/>
 			<property name="HideInSpawnMenu" value="true"/>
 			<property name="Class" value="EntityZombie" />
@@ -270,11 +276,13 @@
 			<property name="AttackTimeoutDay" value="1.5" />
 			<property name="AttackTimeoutNight" value="1.1" />
 			<property name="WalkType" value="7" />
-			<property name="ModelType" value="ZombieUMA" />
+			<property name="ModelType" value="Standard" />
 			<property name="RootMotion" value="true" />
 			<property name="HasRagdoll" value="true" />
 			<!--property name="AvatarController" value="AvatarZombieUMAController" /-->
-			<property name="PhysicsBody" value="zombieUMA" />
+
+			<property name="PhysicsBody" value="UMA" />
+
 			<property name="HasDeathAnim" value="false" />
 			<property name="TimeStayAfterDeath" value="10" />
 			
@@ -369,6 +377,7 @@
 		</entity_class>
 		<!-- by T4VO Animals based on Robeloto Zombies -->
 		<entity_class name="TAVOanimalChickenDemon" extends="animalTemplateHostile">
+			<property name="HideInSpawnMenu" value="true"/>
 			<property name="Tags" value="entity,animal,zombie,hostile"/>
 			<property name="Class" value="EntityEnemyAnimal"/>
 			<property name="Prefab" value="/Entities/Animals/CHICKEN/chickenPrefab"/>
@@ -423,6 +432,7 @@
 			</effect_group>
 		</entity_class>
 		<entity_class name="TAVOanimalChickenDemonFeral" extends="animalTemplateHostile">
+			<property name="HideInSpawnMenu" value="true"/>
 			<property name="Tags" value="entity,animal,zombie,hostile"/>
 			<property name="Prefab" value="/Entities/Animals/CHICKEN/chickenPrefab"/>
 			<property name="ReplaceMaterial0" value="particleeffects/models/materials/p_gib"/>
@@ -477,6 +487,7 @@
 			</effect_group>
 		</entity_class>
 		<entity_class name="TAVOanimalChickenDemonFeralFUEGO" extends="animalTemplateHostile">
+			<property name="HideInSpawnMenu" value="true"/>
 			<property name="Tags" value="entity,animal,zombie,hostile"/>
 			<property name="Prefab" value="/Entities/Animals/CHICKEN/chickenPrefab"/>
 			<property name="ReplaceMaterial0" value="itemmodeffects/materials/melee_fire"/>
@@ -531,6 +542,7 @@
 			</effect_group>
 		</entity_class>
 		<entity_class name="TAVOanimalChickenDemonFeralBOLT" extends="animalTemplateHostile">
+			<property name="HideInSpawnMenu" value="true"/>
 			<property name="Tags" value="entity,animal,zombie,hostile"/>
 			<property name="Prefab" value="/Entities/Animals/CHICKEN/chickenPrefab"/>
 			<property name="ReplaceMaterial0" value="itemmodeffects/materials/baton_arc"/>
@@ -586,6 +598,7 @@
 			</effect_group>
 		</entity_class>
 		<entity_class name="TAVOanimalChickenDemonFeralBlackChamuscada" extends="animalTemplateHostile">
+			<property name="HideInSpawnMenu" value="true"/>
 			<property name="Tags" value="entity,animal,zombie,hostile"/>
 			<property name="Prefab" value="/Entities/Animals/CHICKEN/chickenPrefab"/>
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreCoalBoulder"/>
@@ -640,6 +653,7 @@
 			</effect_group>
 		</entity_class>
 		<entity_class name="TAVOanimalChickenDemonFeralTANK" extends="animalTemplateHostile">
+			<property name="HideInSpawnMenu" value="true"/>
 			<property name="Tags" value="entity,animal,zombie,hostile"/>
 			<property name="Prefab" value="/Entities/Animals/CHICKEN/chickenPrefab"/>
 			<property name="ReplaceMaterial1" value="materials/nightvisionmaterial"/>
@@ -695,6 +709,7 @@
 			</effect_group>
 		</entity_class>
 		<entity_class name="TAVOanimalSnakeFeral" extends="animalSnake">
+			<property name="HideInSpawnMenu" value="true"/>
 			<property name="Tags" value="entity,animal,hostile"/>
 			<property name="EntityType" value="Animal"/>
 			<property name="ReplaceMaterial0" value="entities/animals/boar/materials/grace"/>
@@ -810,6 +825,7 @@
 		</entity_class>
 		<!-- Hell Lion by oakraven Edited by T4VO -->
 		<entity_class name="HellLion" extends="animalDireWolf">
+
 			<property name="Tags" value="entity,animal,hostile,mountainlion,perkAT03"/>
 			<property name="SizeScale" value="2"/>
 			<property name="MapIcon" value="ui_game_symbol_tracking_mountain_lion"/>
@@ -928,6 +944,7 @@
 		</entity_class>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Special Zombies by Tavo Edited by Malen ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
 		<entity_class name="TAVOIronSpider" extends="zombieTemplateMale">
+			<property name="HideInSpawnMenu" value="true"/>
 			<property name="Tags" value="entity,zombie"/>
 
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSpider.prefab"/>
@@ -1000,6 +1017,7 @@
 			</effect_group>
 		</entity_class>
 		<entity_class name="TAVOzombieFire" extends="zombieTemplateMale">
+			<property name="HideInSpawnMenu" value="true"/>
 			<property name="Tags" value="entity,zombie,walker,zombieCop"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZCopFeral.prefab"/>
 
@@ -1074,6 +1092,7 @@
 		</entity_class>
 		<entity_class name="TAVOzombieFootballPlayerFeral" extends="zombieTemplateMale">
 			<property name="Tags" value="entity,zombie,walker,feral"/>
+			<property name="HideInSpawnMenu" value="true"/>
 
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZThugFeral.prefab"/>
 
@@ -1109,6 +1128,7 @@
 			</effect_group>
 		</entity_class>
 		<entity_class name="TAVOzombieBolt" extends="zombieTemplateMale">
+			<property name="HideInSpawnMenu" value="true"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<!--<property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/demoZ.mat"/>
 			<property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/rad_eye.mat"/>
@@ -1164,6 +1184,7 @@
 			<property name="TimeStayAfterDeath" value="2"/>
 		</entity_class>
 		<entity_class name="TAVOzombieWightRAINBOW" extends="zombieTemplateMale">
+			<property name="HideInSpawnMenu" value="true"/>
 			<property name="Tags" value="entity,zombie,walker,feral"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBurnt.prefab"/>
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreshaleboulder"/>
@@ -1209,6 +1230,7 @@
 			</effect_group>
 		</entity_class>
 		<entity_class name="zombieGunner" extends="zombieTemplateMale">
+			<property name="HideInSpawnMenu" value="true"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZDemolition.prefab"/>
@@ -1297,7 +1319,7 @@
 			<property name="WalkType" value="8"/>
 			<property name="Mass" value="210"/>
 			<property name="SizeScale" value="1.1"/>
-			<property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/>
+			<!--property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/-->
 			<property name="DismemberMultiplierHead" value=".7"/>
 			<property name="DismemberMultiplierArms" value=".7"/>
 			<property name="DismemberMultiplierLegs" value=".7"/>
@@ -1960,7 +1982,7 @@
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZHazmat.prefab"/>
 
-			<property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/>
+			<!--property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/-->
 			<property name="ReplaceMaterial2" value="entities/resources/materials/oreCoalBoulder"/>
 			<property name="ReplaceMaterial1" value="shapes/materials/wrought_iron_metal"/>
 			<property name="WalkType" value="2"/>
@@ -2099,7 +2121,7 @@
 			<property name="DeadBodyHitPoints" value="10000"/>
 		</entity_class>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Scouts ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-		<entity_class name="MiniSiren" extends="Zombie_TemplateHF">
+		<entity_class name="MiniSiren" extends="zombieSpiderFeral">
 			<property name="Archetype" value="archeMiniSiren"/>
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,siren"/>
 			<property name="WalkType" value="7"/>
@@ -2164,9 +2186,8 @@
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Elites by Lo-X Edited by Malen and TacoMaestro ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
 		<!-- Cop -->
 		<entity_class name="EliteCop" extends="zombieFatCop">
-
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
-			<property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/>
+			<!--property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/-->
 			<property name="ReplaceMaterial1" value="particleeffects/materials/p_spark_electricity"/>
 			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/> -->
 			<property name="DismemberMultiplierHead" value=".4"/>
@@ -2215,7 +2236,7 @@
 		<entity_class name="EliteSolider" extends="zombieSoldier">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 			<property name="ReplaceMaterial1" value="particleeffects/materials/p_spark_electricity"/>
-			<property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/>
+			<!--property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/-->
 			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 			<property name="DismemberMultiplierHead" value=".4"/>
 			<property name="DismemberMultiplierArms" value=".4"/>
@@ -2267,7 +2288,7 @@
 		<entity_class name="EliteHawai" extends="zombieFatHawaiian">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 			<property name="ReplaceMaterial1" value="particleeffects/materials/p_spark_electricity"/>
-			<property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/>
+			<!--property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/-->
 			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/> -->
 			<property name="DismemberMultiplierHead" value=".4"/>
 			<property name="DismemberMultiplierArms" value=".4"/>
@@ -2314,7 +2335,7 @@
 		<entity_class name="EliteSkater" extends="zombieSkateboarder">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 			<property name="ReplaceMaterial1" value="particleeffects/materials/p_spark_electricity"/>
-			<property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/>
+			<!--property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/-->
 			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/> -->
 			<property name="DismemberMultiplierHead" value=".4"/>
 			<property name="DismemberMultiplierArms" value=".4"/>
@@ -2361,7 +2382,7 @@
 		<entity_class name="EliteFeral" extends="zombieWightFeral">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 			<property name="ReplaceMaterial1" value="particleeffects/materials/p_spark_electricity"/>
-			<property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/>
+			<!--property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/-->
 			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/> -->
 			<property name="DismemberMultiplierHead" value=".4"/>
 			<property name="DismemberMultiplierArms" value=".4"/>
@@ -2409,7 +2430,7 @@
 		<entity_class name="EliteX8" extends="zombieWightFeral">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 			<property name="ReplaceMaterial1" value="particleeffects/materials/p_spark_electricity"/>
-			<property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/>
+			<!--property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/-->
 			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/> -->
 			<property name="DismemberMultiplierHead" value=".4"/>
 			<property name="DismemberMultiplierArms" value=".4"/>
@@ -2456,7 +2477,7 @@
 		<entity_class name="EliteX9" extends="zombieWightFeral">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 			<property name="ReplaceMaterial1" value="particleeffects/materials/p_spark_electricity"/>
-			<property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/>
+			<!--property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/-->
 			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/> -->
 			<property name="DismemberMultiplierHead" value=".4"/>
 			<property name="DismemberMultiplierArms" value=".4"/>
@@ -2503,7 +2524,7 @@
 		<entity_class name="EliteX10" extends="zombieWightFeral">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 			<property name="ReplaceMaterial1" value="particleeffects/materials/p_spark_electricity"/>
-			<property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/>
+			<!--property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/-->
 			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/> -->
 			<property name="DismemberMultiplierHead" value=".4"/>
 			<property name="DismemberMultiplierArms" value=".4"/>
@@ -2550,7 +2571,7 @@
 		<entity_class name="EliteX11" extends="zombieWightFeral">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 			<property name="ReplaceMaterial1" value="particleeffects/materials/p_spark_electricity"/>
-			<property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/>
+			<!--property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/-->
 			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/> -->
 			<property name="DismemberMultiplierHead" value=".4"/>
 			<property name="DismemberMultiplierArms" value=".4"/>
@@ -2616,7 +2637,7 @@
 			<property name="SoundSense" value="demolitionzsense"/>
 			<property name="SoundFootstepModifier" value="bear_footstep"/>
 
-			<property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/>
+			<!--property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/-->
 			<property name="ReplaceMaterial1" value="particleeffects/materials/p_spark_electricity"/>
 			<!--  Gameplay  -->
 			<property name="HandItem" value="meleeHandZombieDemolition"/>
@@ -2721,7 +2742,7 @@
 		<entity_class name="EliteNurse" extends="zombieNurse">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 			<property name="ReplaceMaterial1" value="particleeffects/materials/p_spark_electricity"/>
-			<property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/>
+			<!--property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/-->
 			<property name="DismemberMultiplierHead" value=".4"/>
 			<property name="DismemberMultiplierArms" value=".4"/>
 			<property name="DismemberMultiplierLegs" value=".4"/>
@@ -3157,7 +3178,7 @@
 			<property name="TimeStayAfterDeath" value="2"/>
 		</entity_class>
 		<!-- nightLumberjack ***-->
-		<entity_class name="NighSnow" extends="zombieLumberjackFeral">
+		<entity_class name="nighBurn" extends="zombieLumberjackFeral">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 			<property name="SizeScale" value="1.2"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBurnt.prefab"/>
@@ -4481,7 +4502,7 @@
 				<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 				<property name="SizeScale" value="1"/>			
 				<property name="MoveSpeed" value="1.1"/>
-				<property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/>
+				<!--property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/-->
 				<property name="SoundFootstepModifier" value="stepwater"/>
 				<property name="DismemberMultiplierHead" value=".4"/>
 				<property name="DismemberMultiplierArms" value=".4"/>
@@ -4524,7 +4545,7 @@
 					<passive_effect name="HealthMax" operation="base_set" value="4000"/>
 					<passive_effect name="HealthMax" operation="perc_set" value="1"/>
 					<passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/>
-					<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalWater"/>
+					<!--<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalWater"/>-->
 					<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 					<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 					<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon"/>
@@ -4536,7 +4557,7 @@
 				<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 				<property name="SizeScale" value="1"/>			
 				<property name="MoveSpeed" value="1.1"/>
-				<property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/>
+				<!--property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/-->
 				<property name="SoundFootstepModifier" value="stepwater"/>
 				<property name="DismemberMultiplierHead" value=".4"/>
 				<property name="DismemberMultiplierArms" value=".4"/>
@@ -4584,7 +4605,7 @@
 				<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 				<property name="SizeScale" value="1"/>
 				<property name="MoveSpeed" value="1.1"/>
-				<property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/>
+				<!--property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/-->
 				<property name="SoundFootstepModifier" value="stepwater"/>
 				<property name="DismemberMultiplierHead" value=".4"/>
 				<property name="DismemberMultiplierArms" value=".4"/>
@@ -4632,7 +4653,7 @@
 				<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 				<property name="SizeScale" value="1"/>			
 				<property name="MoveSpeed" value="1.1"/>
-				<property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/>
+				<!--property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/-->
 				<property name="SoundFootstepModifier" value="stepwater"/>
 				<property name="SurfaceCategory" value="water"/>
 				<property name="DismemberMultiplierHead" value=".4"/>
@@ -4682,7 +4703,7 @@
 				<property name="SizeScale" value="1"/>			
 				<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSpider.prefab"/>
 				<property name="MoveSpeed" value="1.1"/>
-				<property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/>
+				<!--property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/-->
 				<property name="SoundFootstepModifier" value="stepwater"/>
 				<property name="DismemberMultiplierHead" value=".4"/>
 				<property name="DismemberMultiplierArms" value=".4"/>
@@ -4731,7 +4752,7 @@
 				<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 				<property name="SizeScale" value="1.1"/>
 				<property name="MoveSpeed" value="1.1"/>
-				<property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/>
+				<!--property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/-->
 				<property name="SoundFootstepModifier" value="stepwater"/>
 				<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZDemolition.prefab"/>
 				<property name="Class" value="EntityZombieCop"/>
@@ -4793,7 +4814,7 @@
 				<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 				<property name="SizeScale" value="1"/>			
 				<property name="MoveSpeed" value="1.1"/>
-				<property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/>
+				<!--property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/-->
 				<property name="SoundFootstepModifier" value="stepwater"/>
 				<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZTomClark.prefab"/>
 				<property name="DismemberMultiplierHead" value=".4"/>
@@ -4844,7 +4865,7 @@
 				<property name="SizeScale" value="1"/>
 				<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBurnt.prefab"/>
 				<property name="MoveSpeed" value="1.1"/>
-				<property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/>
+				<!--property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/-->
 				<property name="SoundFootstepModifier" value="stepwater"/>
 				<property name="DismemberMultiplierHead" value=".4"/>
 				<property name="DismemberMultiplierArms" value=".4"/>
@@ -4894,7 +4915,7 @@
 				<property name="SizeScale" value="1"/>			
 				<property name="MoveSpeed" value="0.8"/>
 				<property name="JumpMaxDistance" value="2, 4"/>
-				<property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/>
+				<!--property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/-->
 				<property name="SoundFootstepModifier" value="stepwater"/>
 				<property name="DismemberMultiplierHead" value=".4"/>
 				<property name="DismemberMultiplierArms" value=".4"/>
@@ -4943,7 +4964,7 @@
 				<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 				<property name="SizeScale" value="1"/>			
 				<property name="MoveSpeed" value="1.1"/>
-				<property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/>
+				<!--property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/-->
 				<property name="SoundFootstepModifier" value="stepwater"/>
 				<property name="DismemberMultiplierHead" value=".4"/>
 				<property name="DismemberMultiplierArms" value=".4"/>
@@ -4993,7 +5014,7 @@
 				<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 				<property name="SizeScale" value="1"/>			
 				<property name="MoveSpeed" value="1.1"/>
-				<property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/>
+				<!--property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/-->
 				<property name="SoundFootstepModifier" value="stepwater"/>
 				<property name="DismemberMultiplierHead" value=".4"/>
 				<property name="DismemberMultiplierArms" value=".4"/>
@@ -5035,6 +5056,134 @@
 					<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,-.2,0" parent_transform="LOD0" shape_mesh="true"/>
 					<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon"/>
 				</effect_group>
+				<property name="TimeStayAfterDeath" value="2"/>
+			</entity_class>
+
+			<entity_class name="nighBurn" extends="zombieLumberjackFeral">
+				<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
+				
+				<property name="SizeScale" value="1.2"/>
+				<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBurnt.prefab"/>
+				<property name="MoveSpeed" value="1.1"/>
+				<property name="ReplaceMaterial0" value="entities/resources/materials/oreCoalBoulder"/>
+				<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/rad_eye.mat"/>
+
+				<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/> -->
+				<property name="DismemberMultiplierHead" value=".4"/>
+				<property name="DismemberMultiplierArms" value=".4"/>
+				<property name="DismemberMultiplierLegs" value=".4"/>
+				<!--  Radiated  -->
+				<property name="PainResistPerHit" value="1"/>
+				<!--  Radiated  -->
+				<property name="HandItem" value="meleeHandNightmare"/>
+				<property name="LegCrawlerThreshold" value="0"/>
+				<property name="LegCrippleThreshold" value="0.01"/>
+				<property name="KnockdownProneDamageThreshold" value="0.45"/>
+				<property name="KnockdownProneDamageThreshold" value=".8"/>
+				<property name="KnockdownKneelDamageThreshold" value=".8"/>
+				<property name="KnockdownProneStunDuration" value="0.5,1.8"/>
+				<property name="KnockdownProneRefillRate" value="0.045,0.045"/>
+				<property name="KnockdownKneelDamageThreshold" value="0.38"/>
+				<property name="KnockdownKneelStunDuration" value="0.5,1.8"/>
+				<property name="KnockdownKneelRefillRate" value="0.045,0.045"/>
+				<property name="LegsExplosionDamageMultiplier" value=".85"/>
+				<property name="ArmsExplosionDamageMultiplier" value=".85"/>
+				<property name="HeadExplosionDamageMultiplier" value=".85"/>
+				<property name="ChestExplosionDamageMultiplier" value=".85"/>
+				<property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityPlayer,0,0,EntityNPC,0,0"/>
+
+				<!--  Gameplay  -->
+				<!--  <property name="Buffs" value="zombieRadiatedBuff80"/>  -->
+				<property name="ExperienceGain" value="4000"/>
+				<!--  XP strong radiated  -->
+				<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+				<property name="LootDropProb" value=".4"/>
+				<!--  Radiated  -->
+				<property name="MoveSpeedAggro" value="1.5, 2"/>
+				<property name="DeadBodyHitPoints" value="1"/>
+				<effect_group name="Base Effects">
+					<passive_effect name="HealthMax" operation="base_set" value="4000"/>
+					<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+					<passive_effect name="PhysicalDamageResist" operation="base_set" value="25"/>
+					<!--  Zombie HP scale  -->
+					<!-- <passive_effect name="EntityDamage" operation="perc_add" value="0"/> -->
+					<!--  Feral damage  -->
+					<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff=""/>
+					<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
+					<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+					<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,-.2,0" parent_transform="LOD0" shape_mesh="true"/>
+				</effect_group>
+				<property name="TimeStayAfterDeath" value="2"/>
+			</entity_class>
+
+			<entity_class name="BossMummy" extends="zombieTemplateMale">
+				<property name="UserSpawnType" value="Menu"/>
+				<property name="Tags" value="entity,zombie,walker,feral,boss,bossrad"/>
+				<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBurnt.prefab"/>
+				<property name="ReplaceMaterial0" value="particleeffects/models/materials/p_wood"/>
+				<property name="SizeScale" value="1.5"/>
+				<!--
+				
+				<property name="AITask-1" value="BreakBlock"/>
+				<property name="AITask-2" value="DestroyArea"/>
+				<property name="AITask-3" value="Territorial"/>
+				<property name="AITask-4" value="ApproachAndAttackTarget" data="class=EntityPlayer,20,EntityNPC,20"/>
+				<property name="AITask-5" value="ApproachSpot"/>
+				<property name="AITask-6" value="Look"/>
+				<property name="AITask-7" value="Wander"/>-->
+
+				<property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityPlayer,0,0,EntityNPC,0,0"/>
+
+				<property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/>
+				<property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/>
+				<property name="SoundAttack" value="Enemies/Feral_Zombie/zombieferalattack"/>
+				<property name="SoundHurt" value="Enemies/Feral_Zombie/zombieferalpain"/>
+				<property name="SoundDeath" value="Enemies/Feral_Zombie/zombieferaldeath"/>
+				<property name="SoundSense" value="Enemies/Feral_Zombie/zombieferalsense"/>
+				<property name="WalkType" value="2"/>
+				<property name="StompsSpikes" value="true"/>
+				<property name="Mass" value="700"/>
+
+				<property name="PainResistPerHit" value="3"/>
+				<property name="HasRagdoll" value="true"/>
+				<property name="DismemberMultiplierHead" value="0"/>
+				<property name="DismemberMultiplierArms" value="0"/>
+				<property name="DismemberMultiplierLegs" value="0"/>
+				<property name="LegCrawlerThreshold" value="0"/>
+				<property name="LegCrippleThreshold" value="0"/>
+				<property name="KnockdownProneDamageThreshold" value="3"/>
+				<property name="KnockdownKneelDamageThreshold" value="3"/>
+				<!--  Gameplay  -->
+				<property name="MoveSpeedAggro" value="1.50, 1.80"/>
+				<property name="HandItem" value="meleeHandBOSS"/>
+				<property name="JumpMaxDistance" value="9, 16"/>
+				<property name="ExperienceGain" value="56000"/>
+				<property name="LootDropProb" value="1"/>
+				<property name="LootDropEntityClass" value="BossMummyLootContainer"/>
+				<effect_group name="Base Effects">
+					<passive_effect name="HealthMax" operation="base_set" value="4000"/>
+					<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+					<passive_effect name="PhysicalDamageResist" operation="base_set" value="25"/>
+					<!--  Zombie HP scale  -->
+					<!-- <passive_effect name="EntityDamage" operation="perc_add" value="0"/> -->
+					<!--  Feral damage  -->
+					<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff=""/>
+					<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
+					<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+					<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,-.2,0" parent_transform="LOD0" shape_mesh="true"/>
+
+					<passive_effect name="EntityDamage" operation="perc_add" value="0"/>
+					<passive_effect name="DistractionResistance" operation="base_set" value="0,0"/>					
+					<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
+
+					<passive_effect name="HealthMax" operation="base_set" value="35000"/>
+					<passive_effect name="HealthMax" operation="perc_set" value="1"/>					
+					<passive_effect name="PhysicalDamageResist" operation="base_set" value="55"/>
+					<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffmummy"/>
+					<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="10"/>
+					<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+					<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
+				</effect_group>				
 				<property name="TimeStayAfterDeath" value="2"/>
 			</entity_class>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
@@ -5283,8 +5432,11 @@
 			</effect_group>
 		</entity_class>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+
+
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Semi Bosses ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<entity_class name="Gallinazilla" extends="animalTemplateTimid">
+			<property name="HideInSpawnMenu" value="true"/>
 			<property name="Tags" value="entity,animal,chicken,perkAT01,perkAT02,perkAT03,tavoR"/>
 			<property name="MapIcon" value="ui_game_symbol_tracking_chicken"/>
 			<property name="TrackerIcon" value="ui_game_symbol_tracking_chicken"/>
@@ -5468,6 +5620,7 @@
 			</effect_group>
 		</entity_class>
 		<entity_class name="TAVOanimalChickenDemonFeralBOSS" extends="animalTemplateHostile">
+			<property name="HideInSpawnMenu" value="true"/>
 			<property name="Tags" value="entity,animal,zombie,hostile"/>
 			<property name="Prefab" value="/Entities/Animals/CHICKEN/chickenPrefab"/>
 			<property name="ReplaceMaterial0" value="entities/animals/boar/materials/grace"/>
@@ -5665,70 +5818,7 @@
 			</effect_group>
 			<property name="TimeStayAfterDeath" value="2"/>
 		</entity_class>
-		<entity_class name="BossMummy" extends="zombieTemplateMale">
-			<property name="Tags" value="entity,zombie,boss,bossrad"/>
-			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBurnt.prefab"/>
-			<property name="ReplaceMaterial0" value="particleeffects/models/materials/p_wood"/>
-			<property name="SizeScale" value="1.5"/>
-			<!--
-			<property name="AITask-3" value="ApproachAndAttackTarget" data="class=EntityPlayer,20,EntityNPC,20"/>
-			<property name="AITask-1" value="BreakBlock"/>
-			<property name="AITask-2" value="Territorial"/>			
-			<property name="AITask-4" value="ApproachSpot"/>
-			<property name="AITask-5" value="Look"/>
-			<property name="AITask-6" value="Wander"/>
-			<property name="AITask-7" value=""/>-->
-			<property name="AITask-1" value="BreakBlock"/>
-			<property name="AITask-2" value="DestroyArea"/>
-			<property name="AITask-3" value="Territorial"/>
-			<property name="AITask-4" value="ApproachAndAttackTarget" data="class=EntityPlayer,20,EntityNPC,20"/>
-			<property name="AITask-5" value="ApproachSpot"/>
-			<property name="AITask-6" value="Look"/>
-			<property name="AITask-7" value="Wander"/>
-
-			<property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityPlayer,0,0,EntityNPC,0,0"/>
-			<property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/>
-			<property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/>
-			<property name="SoundAttack" value="Enemies/Feral_Zombie/zombieferalattack"/>
-			<property name="SoundHurt" value="Enemies/Feral_Zombie/zombieferalpain"/>
-			<property name="SoundDeath" value="Enemies/Feral_Zombie/zombieferaldeath"/>
-			<property name="SoundSense" value="Enemies/Feral_Zombie/zombieferalsense"/>
-			<property name="WalkType" value="2"/>
-			<property name="StompsSpikes" value="true"/>
-			<property name="Mass" value="700"/>
-
-			<property name="PainResistPerHit" value="3"/>
-			<property name="HasRagdoll" value="true"/>
-			<property name="DismemberMultiplierHead" value="0"/>
-			<property name="DismemberMultiplierArms" value="0"/>
-			<property name="DismemberMultiplierLegs" value="0"/>
-			<property name="LegCrawlerThreshold" value="0"/>
-			<property name="LegCrippleThreshold" value="0"/>
-			<property name="KnockdownProneDamageThreshold" value="3"/>
-			<property name="KnockdownKneelDamageThreshold" value="3"/>
-			<!--  Gameplay  -->
-			<property name="MoveSpeedAggro" value="1.50, 1.80"/>
-			<property name="HandItem" value="meleeHandBOSS"/>
-			<property name="JumpMaxDistance" value="9, 16"/>
-			<property name="ExperienceGain" value="56000"/>
-			<property name="LootDropProb" value="1"/>
-			<property name="LootDropEntityClass" value="BossMummyLootContainer"/>
-			<effect_group name="Base Effects">
-				<passive_effect name="DistractionResistance" operation="base_set" value="0,0"/>
-				<passive_effect name="HealthMax" operation="base_set" value="35000"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="10"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffmummy"/>
-				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
-				<passive_effect name="EntityDamage" operation="perc_add" value="0"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="55"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
-				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
-			</effect_group>
-			<property name="DeadBodyHitPoints" value="30000"/>
-			<property name="TimeStayAfterDeath" value="2"/>
-		</entity_class>
+		
 		<entity_class name="BossPractoSpider" extends="zombieTemplateMale">
 			<property name="Tags" value="entity,zombie,boss,bossrad"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZCop.prefab"/>
@@ -6126,9 +6216,13 @@
 			<property name="TimeStayAfterDeath" value="2"/>
 		</entity_class>
 		<!--Siren and Jugger BY Snukfuking Boss EDIT by Malen-->
-		<entity_class name="BosszombieSiren" extends="Zombie_TemplateHF">
+		<entity_class name="BosszombieSiren" extends="zombieSpiderFeral">
 			<property name="Archetype" value="archeSiren"/>
+			<property name="SizeScale" value="2"/>
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,siren"/>
+			<property name="ReplaceMaterial0" value="entities/resources/materials/oreCoalBoulder"/>
+			<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/rad_eye.mat"/>
+
 			<property name="WalkType" value="7"/>
 			<property name="SoundRandomTime" value="7"/>
 			<property name="SurfaceCategory" value="organic"/>
