@@ -1,0 +1,343 @@
+<configs>
+	<append xpath="/items">
+
+		
+
+		<!--UNIQUE tech-->
+		<item name="Dre X3">
+			<property name="ItemTypeIcon" value="map_cursor"/>
+			<property name="CustomIconTint" value="139, 69, 19"/>
+			<property name="CustomIcon" value="gunExplosivesT3RocketLauncher"/>
+			<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,launcher,attPerception,perkDemolitionsExpert,canHaveCosmetic,noSilencer,perkDemolitionsExpert,barrelAttachments,noSilencer,sideAttachments"/>
+			<property name="DisplayType" value="rangedLauncher"/>
+
+			<property name="HoldType" value="60"/>
+			<property name="DescriptionKey" value="dr3desc"/>
+			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Bows/Crossbow/crossbowPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Weight" value="4"/>
+			<property name="RepairTools" value="resourceRepairKit"/>
+			<property name="DegradationBreaksAfter" value="false"/>
+			<property name="SoundJammed" value="weapon_jam"/>
+
+			<property name="LightSource" value="lightSource"/>
+			<property name="Attachments" value="meleeToolFlashlight02"/>
+			<property name="ActivateObject" value="Attachments/flashlight/lightSource"/>
+			<property name="AttachmentFlashlight" value="flashlight02"/>
+
+			<property name="CrosshairOnAim" value="true"/>
+			<property name="CrosshairUpAfterShot" value="true"/>
+			<property name="Sound_Sight_In" value="pistol_sight_in"/>
+			<property name="Sound_Sight_Out" value="pistol_sight_out"/>
+
+			<property name="Group" value="Clothing"/>
+			<property name="RepairExpMultiplier" value="10.8"/>
+			<property name="LightValue" value=".45"/>
+
+			<property name="ShowQuality" value="false"/>
+			<property name="EconomicValue" value="312500"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
+			<property class="Action0">
+				<property name="Class" value="Launcher"/>
+				<property name="Delay" value=".8"/>
+				<property name="Magazine_items" value="Dre X3 Clucker Round"/>
+				<property name="Sound_start" value="m136_fire"/>
+				<property name="Sound_repeat" value=""/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value="chickenpain"/>
+				<property name="Sound_reload" value="chickenpain"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="Zoom"/>
+				<property name="Zoom_max_out" value="55"/>
+				<property name="Zoom_max_in" value="55"/>
+				<property name="ScopeCameraOffset" value="-.00062,-.1,.055"/>
+			</property>
+			<effect_group name="Deco">
+				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="SetTransformActive" active="false" transform_path="ProjectileJoint"/>
+				<triggered_effect trigger="onSelfEquipStart" action="SetTransformActive" active="false" transform_path="crossbow_mesh"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" transform_path="ProjectileJoint"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" transform_path="crossbow_mesh"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Misc/sack_droppedPrefab.prefab" parent_transform="Handle"/>
+				<triggered_effect trigger="onSelfEquipStart" action="SetTransformActive" active="false" parent_transform="Handle" transform_path="sackMesh"/>
+				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="SetTransformActive" active="false" parent_transform="Handle" transform_path="sack_LOD1"/>
+				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="SetTransformActive" active="false" parent_transform="Handle" transform_path="sack_LOD2"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AttachPrefabToHeldItem" prefab="Entities/Electrical/power_switchPrefab" parent_transform="main1" local_offset=".45,.13,-.05" local_rotation="0,90,90"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Weapons/Ranged/blunderbuss/blunderbussPrefab.prefab" parent_transform="main1" local_offset="0.015,0.2,0.13" local_rotation="0,0,-90"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Weapons/Ranged/blunderbuss/blunderbussPrefab.prefab" parent_transform="main2" local_offset="-0.01,0.24,0.13" local_rotation="0,0,90"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Food/redTeaPrefab.prefab" parent_transform="main1" local_offset="0.15,0.1,0" local_rotation="0,0,90"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Food/redTeaPrefab.prefab" parent_transform="main2" local_offset="-0.15,0.15,0" local_rotation="0,0,-90"/>
+			</effect_group>
+			<effect_group name="Dre X3">
+				<passive_effect name="EntityDamage" operation="perc_add" value="1.2" tags="perkDemolitionsExpert"/>
+				<passive_effect name="MaxRange" operation="base_set" value="80" tags="perkDemolitionsExpert"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="60" tags="perkDemolitionsExpert"/>
+
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="100" tags="perkDemolitionsExpert"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="3" tags="perkDemolitionsExpert"/>
+
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="2" tags="perkDemolitionsExpert"/>
+				<passive_effect name="ModSlots" operation="base_set" value="5"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".05" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="3"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".15"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2"/>
+
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="2"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="5"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.25"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".25"/>
+
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2.2"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value="1"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="other" tags="player"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="-300" tags="perkDemolitionsExpert"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-1.2" tags="perkDemolitionsExpert"/>
+			</effect_group>
+
+		</item>
+		<item name="Dre X3 Clucker Round">
+			<property name="Tags" value="ammo,weapon,attPerception,perkDemolitionsExpert"/>
+			<property name="CustomIconTint" value="30, 30, 30"/>
+			<property name="TintColor" value="30,30,30"/>
+			<property name="CustomIcon" value="foodEgg"/>
+
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="DisplayType" value="ammoLauncher"/>
+			<property name="Meshfile" value="/Entities/Animals/CHICKEN/chickenPrefab"/>
+			<property name="DescriptionKey" value="dr3adesc"/>
+			<property name="HoldType" value="40"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/snowball_FP_Prefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/snowballPrefab.prefab"/>
+			<property name="Material" value="Mlead_scrap"/>
+			<property name="Stacknumber" value="300"/>
+			<property name="EconomicValue" value="250"/>
+			<property name="Group" value="Mods"/>
+
+			<property name="Explosion.ParticleIndex" value="13"/>
+			<property name="Explosion.RadiusBlocks" value="4"/>
+			<property name="Explosion.RadiusEntities" value="10"/>
+			<property name="Explosion.DamageBonus.earth" value="0"/>
+			<property name="Explosion.DamageBonus.water" value="0"/>
+			<property name="Explosion.BlastPower" value="75"/>
+			<property name="FuseTime" value="4"/>
+			<property name="FusePrimeOnActivate" value="true"/>
+			<property name="FuseStartOnDrop" value="true"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property name="IsSticky" value="true"/>
+
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="1.2"/>
+				<property name="Throw_strength_default" value="8"/>
+				<property name="Throw_strength_max" value="50"/>
+				<property name="Max_strain_time" value="1.25"/>
+				<property name="Sound_start" value="grenade_throw"/>
+				<property name="Gravity" value="-5"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Explosion.ParticleIndex" value="13"/>
+				<property name="Explosion.RadiusBlocks" value="7"/>
+				<property name="Explosion.RadiusEntities" value="7"/>
+				<property name="Explosion.DamageBonus.water" value="0"/>
+				<property name="Gravity" value="-5"/>
+				<property name="FlyTime" value=".4"/>
+				<property name="LifeTime" value="25"/>
+			</property>
+			<effect_group name="ammoRocketHE" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1" tags="perkDemolitionsExpert"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="1200" tags="perkDemolitionsExpert"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="50" tags="perkDemolitionsExpert"/>
+				<display_value name="dExRadius" value="7"/>
+			</effect_group>
+		</item>
+
+		<item name="DCLXVI Zeus">
+			<property name="ItemTypeIcon" value="map_cursor"/>
+			<property name="CustomIcon" value="meleeToolSalvageT3ImpactDriver"/>
+			<property name="CustomIconTint" value="180,180,255"/>
+			<property name="Tags" value="weapon,DCLXVI Zeus,ranged,holdBreathAiming,reloadPenalty,gun,sideAttachments,stock,magazine,selfLoading,attPerception,perkDeadEye,canHaveCosmetic"/>
+			<property name="DisplayType" value="rangedGun"/>
+			<property name="HoldType" value="44"/>
+			<property name="DescriptionKey" value="dczdesc"/>
+			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Bows/Crossbow/crossbowPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Weight" value="6"/>
+			<property name="RepairTools" value="resourceRepairKit"/>
+			<property name="DegradationBreaksAfter" value="false"/>
+			<property name="SoundJammed" value="weapon_jam"/>
+			<property name="Attachments" value="meleeToolFlashlight02"/>
+			<property name="CrosshairOnAim" value="true"/>
+			<property name="CrosshairUpAfterShot" value="true"/>
+			<property name="Sound_Sight_In" value="rifle_sight_in"/>
+			<property name="Sound_Sight_Out" value="rifle_sight_out"/>
+			<property name="LightSource" value="lightSource"/>
+			<property name="ActivateObject" value="Attachments/flashlight/lightSource"/>
+			<property name="AttachmentFlashlight" value="meleeToolFlashlight02"/>
+			<property name="Group" value="Clothing"/>
+			<property name="RepairExpMultiplier" value="10.8"/>
+
+			<!--property name="UnlockedBy" value="perkDeadEye,perkElectrocutioner"/-->			<!--These are special weapons and need an unlock or NRE crash-->
+			<property name="ShowQuality" value="false"/>
+			<property name="EconomicValue" value="312500"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
+			<property class="Action0">
+				<property name="Instantiate_on_load" value="false"/>
+				<property name="Auto_fire" value="true" />
+				<property name="Class" value="Catapult" />
+				<property name="Hitmask_override" value="Arrow"/>
+				<property name="Delay" value="0.250" />
+				<property name="Crosshair_min_distance" value="5" />
+				<property name="Crosshair_max_distance" value="30" />
+				<property name="Magazine_items" value="DCLXVI Zeus Ammo"/>
+				<property name="Throw_strength_default" value="8"/>
+				<property name="Throw_strength_max" value="50"/>
+				<property name="Max_strain_time" value="3"/>
+				<property name="Sound_start" value="laserrifle_fire"/>
+				<property name="Sound_draw" value="laserrifle_draw"/>
+				<property name="Sound_repeat" value=""/>
+				<property name="Sound_loop" value=""/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_cancel" value="laserrifle_end"/>
+				<property name="Sound_empty" value="dryfire"/>
+				<property name="Sound_reload" value="sniperrifle_reload"/>
+				<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".98"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="Zoom"/>
+				<property name="CrosshairOnAim" value="true"/>
+				<property name="Zoom_overlay" value="@:Other/Items/Weapons/HUD/sniper_zoom_overlay.tga"/>
+				<property name="Zoom_max_out" value="40"/>
+				<property name="Zoom_max_in" value="40"/>
+			</property>
+			<effect_group name="Deco">
+				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="AddPart" part="Base" prefab="@:Other/Items/Tools/impactDriverPrefab.prefab" parentTransform="Handle" localPos="0,-0.12,0" localRot="0,0,0"/>
+				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="AddPart" part="Base2" prefab="@:Other/Items/Mods/Scopes/scope_2xPrefab.prefab" parentTransform="Barrel" localPos="0,0.14,0" localRot="0,0,0"/>
+				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="AddPart" part="Base3" prefab="@:Other/Items/Weapons/Melee/TaserBaton/TaserBatonPrefab.prefab" parentTransform="Barrel" localPos="0,0.12,0" localRot="-90,180,0"/>
+				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="SetTransformActive" active="false" transform_path="ProjectileJoint"/>
+				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="SetTransformActive" active="false" transform_path="crossbow_mesh"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddPart" part="Sparks" prefab="ItemModEffects/baton_electricityPrefab" parentTransform="Barrel" localPos="0,0.12,0" localRot="90,0,0"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemovePart" part="Sparks"/>
+				<triggered_effect trigger="onSelfEquipStart" action="RemovePart" part="Sparks"/>
+				<triggered_effect trigger="onReloadStart" action="RemovePart" part="Sparks"/>
+				<triggered_effect trigger="onReloadStop" action="RemovePart" part="Sparks"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="Base"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="Base1"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="Base2"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="Sparks"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" transform_path="ProjectileJoint"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" transform_path="crossbow_mesh"/>
+			</effect_group>
+
+			<effect_group name="DCLXVI Zeus">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="PlaySound" sound="laserrifle_idle" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="StopSound" sound="laserrifle_idle" />
+				<triggered_effect trigger="onSelfEquipStop" action="StopSound" sound="laserrifle_idle" />
+				<triggered_effect trigger="onReloadStart" action="StopSound" sound="laserrifle_idle" />
+				<triggered_effect trigger="onReloadStop" action="StopSound" sound="laserrifle_idle" />
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffrailguncharging" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffrailguncharging" />
+				<triggered_effect trigger="onReloadStart" action="RemoveBuff" buff="buffrailguncharging" />
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffrailguncharging" />
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$charge" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar="$charge" operation="set" value="0"/>
+				<triggered_effect trigger="onReloadStart" action="ModifyCVar" cvar="$charge" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$chargeB" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar="$chargeB" operation="set" value="0"/>
+				<triggered_effect trigger="onReloadStart" action="ModifyCVar" cvar="$chargeB" operation="set" value="0"/>
+
+				<passive_effect name="MaxRange" operation="base_set" value="120"/>
+				<passive_effect name="ProjectileVelocity" operation="perc_subtract" value="@$charge"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="150"/>
+
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="50"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="10"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1"/>
+				<!-- 2.7s -->
+				<passive_effect name="ModSlots" operation="base_set" value="5"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".05" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+
+
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".04"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".2"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2"/>
+
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="1.75"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="3.4"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.3"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".3"/>
+
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="11"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value=".7"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
+				<passive_effect name="EntityDamage" operation="perc_subtract" value="@$chargeB"/>
+			</effect_group>
+
+		</item>
+		<item name="DCLXVI Zeus Ammo">
+			<property name="CustomIcon" value="ammoDartIron"/>
+			<property name="CustomIconTint" value="102,203,223"/>
+			<property name="ItemTypeIcon" value="star"/>
+			<property name="Tags" value="ammo,ranged"/>
+			<property name="DescriptionKey" value="dczadesc"/>
+			<property name="DisplayType" value="ammoBulletAP"/>
+			<property name="Meshfile" value="prefabs/electricshock"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="Stacknumber" value="300"/>
+			<property name="FuelValue" value="8"/>
+			<property name="EconomicValue" value="12"/>
+			<property name="EconomicBundleSize" value="5"/>
+			<!--property name="UnlockedBy" value="perkDeadEye,perkElectrocutioner"/-->			<!--These are special weapons and need an unlock or NRE crash-->
+			<property name="Group" value="Mods"/>
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Explosion.ParticleIndex" value="0"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="0"/>
+				<property name="LifeTime" value="14"/>
+			</property>
+			<effect_group name="DCLXVI Zeus Ammo" tiered="false">
+				<passive_effect name="EntityDamage" operation="base_set" value="200"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="30"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value=".1" tags="wood"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth,metal,cloth"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="180"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffShocked">
+					<requirement name="EntityTagCompare" target="other" tags="zombie"/>
+				</triggered_effect>
+				<passive_effect name="TargetArmor" operation="perc_add" value="-.50"/>
+				<passive_effect name="EntityPenetrationCount" operation="base_set" value="3"/>
+				<display_value name="dTargetPenetration" value="3"/>
+				<display_value name="dTargetArmor" value="-.50"/>
+			</effect_group>
+
+		</item>
+
+		
+
+	</append>
+</configs>
