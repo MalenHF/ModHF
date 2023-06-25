@@ -70,13 +70,16 @@
 		<window name="windowToolbelt" width="753" height="78" depth="5" anchor="CenterBottom" pos="-388, 92" backgroundcolor="[black]" controller="ToolbeltWindow" visible="{toolbeltvisible}" cursor_area="true" xp_fill_speed="2.5">
 			<!--Toolbelt Slots-->
 			<rect pos="3,-3" controller="Toolbelt">
+				
 				<grid depth="10" name="inventory" rows="1" cols="10" pos="0,-14" cell_width="75" cell_height="75" repeat_content="true">
 					<item_stack name="0"/>
 				</grid>
+				<button depth="3" name="btnClearInventory1" sprite="ui_game_symbol_trash" tooltip_key="lblClearInventory" pos="800, -32" style="icon32px, press, hover" pivot="center" sound="[paging_click]" visible="{creativewindowopen}" />
 				<!--Extra Toolbelt Prefab Editor-->
 				<grid depth="10" name="inventory2" rows="1" cols="10" pos="0,78" cell_width="75" cell_height="75" repeat_content="true" visible="{secondrow}">
 					<item_stack name="0"/>
 				</grid>
+				<button depth="3" name="btnClearInventory2" sprite="ui_game_symbol_trash" tooltip_key="lblClearInventory" pos="800, 50" style="icon32px, press, hover" pivot="center" sound="[paging_click]" visible="{# creativewindowopen and secondrow}" />
 				<!-- Toolbelt Numbers -->
 				<sprite depth="19" pos="56,-17" height="13" width="13" color="[black]" type="sliced" foregroundlayer="true" />
 				<label depth="20" name="slot#" pos="61,-17" width="10" height="12" text="[FFFFFF]1" font_size="12" color="" />

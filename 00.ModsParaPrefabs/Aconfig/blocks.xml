@@ -1,20 +1,29 @@
 <MalenEI>
 	<append xpath="/blocks">
+
 		<block name="fusebox">
-			<property name="Extends" value="corrugatedMetalNoUpgradeMaster"/>
-			<property name="Shape" value="Ext3dModel"/>
-			<property name="Texture" value="293"/>
-			<property name="Mesh" value="models"/>
-			<property name="Model" value="Industrial/fusebox" param1="main_mesh"/>
-			<property name="HandleFace" value="South"/>
-			<property name="LightOpacity" value="0"/>
-			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
-			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-			<drop event="Harvest" name="resourceElectricParts" count="2,6" tag="salvageHarvest"/>
-			<property name="EconomicValue" value="150"/>
-			<!-- disassemble value -->
-			<property name="FilterTags" value="MC_building,SC_electrical"/>
-			<property name="SortOrder1" value="70e0"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="DescriptionKey" value="awningGroupDesc"/>
+			<property name="DisplayType" value="blockHardened"/>
+			<property name="Material" value="MclothStable"/>
+			<property name="Shape" value="New"/>
+			<property name="Model" value="Cube"/>
+			<property name="Texture" value="14"/>
+			<property name="FuelValue" value="150"/>
+			<property name="EconomicValue" value="25"/>
+			<property name="FallDamage" value=".5"/>
+			<property class="RepairItems">
+				<property name="resourceCloth" value="8"/>
+				<property name="resourceWood" value="2"/>
+			</property>
+			<drop event="Harvest" name="resourceCloth" count="3" tag="allHarvest"/>
+			<drop event="Destroy" name="resourceCloth" count="1"/>
+			<drop event="Fall" name="resourceCloth" count="1" prob="0.3" stick_chance="0"/>
+			<property name="SortOrder1" value="M160"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="Group" value="Building,advBuilding"/>
+			<property name="Tags" value="wood"/>
+			<property name="FilterTags" value="MC_building"/>
 		</block>
 		<block name="cntTrashCompactor">
 			<property name="Class" value="Loot"/>

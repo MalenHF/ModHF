@@ -4900,7 +4900,8 @@
 		</entity_class>	
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Special Bosses ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-		<entity_class name="BossNighSpider" extends="zombieTemplateMale">
+	
+		<entity_class name="bossNightSpider" extends="zombieSpider">
 			<property name="SizeScale" value="2"/>
 			<property name="UserSpawnType" value="Menu"/>
 
@@ -4910,14 +4911,9 @@
 
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreCoalBoulder"/>
 			<property name="ReplaceMaterial2" value="entities/resources/materials/oreleadboulder"/>
-			
-			
-			<property name="RootMotion" value="true"/>
-			<property name="HasDeathAnim" value="true"/>
-			<property name="ModelType" value="Standard"/>
-			<property name="WalkType" value="8"/>
-			<property name="Mass" value="250"/>
 
+			<property name="HasDeathAnim" value="true"/>
+			<property name="Mass" value="250"/>
 			<property name="LookAtAngle" value="0"/>
 			<property name="SoundRandom" value="Enemies/Spider_Zombie/spiderroam"/>
 			<!--	<property name="SoundAlert" value="Enemies/Spider_Zombie/spideralert"/> -->
@@ -4938,12 +4934,12 @@
 			<property name="AIPathCostScale" value=".6, 1"/>
 
 			<property name="AITask" value="
-			Leap|
+			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|			
 			RangedAttackTarget itemType=1;cooldown=5;duration=4|
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
+			Leap|
 			BreakBlock|
 			DestroyArea|
-			Territorial|			
+			Territorial|
 			ApproachSpot|
 			Look|
 			Wander|
@@ -5054,7 +5050,7 @@
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="55"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
+
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="30000"/>
 			<property name="TimeStayAfterDeath" value="2"/>

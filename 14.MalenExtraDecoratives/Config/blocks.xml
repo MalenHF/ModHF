@@ -143,22 +143,15 @@
 
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Stations ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 			<block name="decomachine">
+				<property name="Extends" value="cntCashRegister"/>			
+
 				<property name="ItemTypeIcon" value="coin"/>
 				<property name="CustomIcon" value="cntCashRegister"/>
 				<property name="CustomIconTint" value="cc8899"/>
-				<property name="MultiBlockDim" value="1,1,1"/>
 				<property name="MaxDamage" value="1000"/>
-				<property name="Model" value="@:Entities/LootContainers/cashRegisterClosedPrefab.prefab"/>
 				<property name="Class" value="Workstation"/>
 				<property name="Material" value="Mmetal"/>
-				<property name="StabilitySupport" value="false"/>
-				<property name="Shape" value="ModelEntity"/>
-				<!--<property name="Model" value="Entities/Crafting/workbenchPrefab"/>-->
-				<!--<property name="ModelOffset" value=".5,.5,0"/>-->
-				<property name="DisplayType" value="blockMulti"/>
-				<!--<property name="UnlockedBy" value="perkAdvancedEngineering,workbenchSchematic"/>-->
-				<property name="ImposterDontBlock" value="true"/>
-				<property name="Place" value="TowardsPlacerInverted"/>
+
 				<property name="OnlySimpleRotations" value="true"/>
 				<property name="IsTerrainDecoration" value="true"/>
 				<!-- <property name="RecipeList" value="backpack, workbench"/> -->
@@ -173,16 +166,8 @@
 				<property name="CloseSound" value="close_workbench"/>
 				<property name="WorkstationJournalTip" value="workbenchTip"/>
 				<property class="RepairItems">
-					<property name="resourceForgedIron" value="25"/>
-					<property name="resourceMechanicalParts" value="20"/>
-					<property name="resourceWood" value="50"/>
+					<property name="oldCash" value="50"/>
 				</property>
-				<drop event="Harvest" name="resourceScrapIron" count="200" tag="allHarvest"/>
-				<!--<drop event="Harvest" name="resourceWood" count="20" tag="allHarvest"/>
-				<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-				<drop event="Harvest" name="resourceForgedIron" count="10" tag="salvageHarvest"/>
-				<drop event="Harvest" name="resourceMechanicalParts" count="8" tag="salvageHarvest"/>
-				<drop event="Harvest" name="resourceWood" count="20" tag="salvageHarvest"/>-->
 				<drop event="Destroy" count="0"/>
 				<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
 				<property name="TakeDelay" value="5"/>
@@ -190,7 +175,6 @@
 				<property name="EconomicValue" value="2000"/>
 				<property name="Group" value="Building,advBuilding"/>
 				<property name="FilterTags" value="fdecor,fother,ffurniture"/>
-				<property name="SortOrder1" value="70i0"/>
 				<property name="WorkstationWindow" value="workstation_workbench" />
 			</block>
 			<block name="dyestation">
@@ -201,6 +185,11 @@
 				<property name="Shape" value="ModelEntity"/>
 				<property name="Path" value="solid"/>
 				<property name="Model" value="Entities/Crafting/ChemSetDPrefab"/>
+
+				<property name="ModelOffset" value="0,0,0"/>
+				<property name="GndAlign" value="1"/>
+				<property name="WaterFlow" value="permitted"/>
+
 				<property name="Collide" value="movement,melee"/>
 				<property name="DisplayType" value="blockMulti" />
 				<property name="DescriptionKey" value="dyestationdesc"/>
@@ -227,9 +216,10 @@
 				<property name="CraftCompleteSound" value="chem_station_complete_item" />
 				<property name="WorkstationJournalTip" value="chemistryStationTip" />
 				<property class="RepairItems">
-					<property name="resourceForgedIron" value="1"/>
-					<property name="resourceMetalPipe" value="1"/>
-					<property name="resourceWood" value="5"/>
+					<property name="resourceForgedIron" value="3"/>
+					<property name="resourceMetalPipe" value="3"/>
+					<property name="resourceWood" value="10"/>
+					<property name="casinoCoin" value="1000"/>				
 				</property>
 				<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 				<drop event="Destroy" count="0"/>
@@ -272,6 +262,19 @@
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Decorative Variants ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+			<block name="decoVariant_VendingMachines">
+				<property name="Extends" value="cntVendingMachineSnacksFull"/>
+				<property name="CreativeMode" value="Player"/>
+				<property name="CustomIcon" value="cntVendingMachineSnacksFull"/>
+				<property name="ItemTypeIcon" value="all_blocks"/>
+				<property name="DescriptionKey" value="decoVariant_VendingMachinesDesc"/>
+				<property name="PickupJournalEntry" value="shapeMenuTip"/>
+				<property name="SelectAlternates" value="true"/>
+				<property name="PlaceAltBlockValue" value="cntVendingMachineSnacksFull,cntVendingMachine2,cntVendingMachineEnergy,cntVendingMachineWater"/>
+				<property name="Group" value="Science"/>
+				<property name="FilterTags" value="MC_playerBlocks,SC_decor,SC_playerHelpers"/>
+			</block>
+
 			<block name="decoVariant_Beds">
 				<property name="Extends" value="bunkBedMade"/>
 				<property name="CustomIcon" value="bunkBedMade"/>
@@ -568,8 +571,8 @@
 				<drop event="Harvest" name="resourceElectricParts" count="1,4" tag="salvageHarvest"/>
 				<drop event="Destroy" name="resourceScrapIron" count="5"/>
 				<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
-				<property name="SortOrder1" value="B202"/>
-				<property name="SortOrder2" value="2901"/>
+				<property name="SortOrder1" value="A100"/>
+				<property name="SortOrder2" value="0000"/>
 				<property name="Group" value="Science,TCScience"/>
 				
 				
@@ -655,7 +658,8 @@
 				<drop event="Destroy" name="resourceScrapIron" count="5"/>
 				<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>			
 				<property name="Group" value="Science,TCScience"/>
-				
+				<property name="SortOrder1" value="A101"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<!-- Brown -->
 			<block name="lightWallGooseneckBrown_Player">
@@ -756,6 +760,8 @@
 				<property name="TintColor" value="D9D2CF"/>
 				<property name="MultiBlockDim" value="2,1,2"/>
 				<property name="LODCullScale" value="0.5"/>
+				<property name="SortOrder1" value="A103"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<!-- Single Bulb Socket -->
 			<block name="lightCeilingBulbSocketWhite_Player">		
@@ -782,6 +788,8 @@
 				<property name="StabilitySupport" value="true"/>
 				<property name="HandleFace" value="Top"/>
 				<drop event="Destroy" count="0"/>
+				<property name="SortOrder1" value="A104"/>
+				<property name="SortOrder2" value="0000"/>
 
 			</block>
 			<!-- White 2x2-->
@@ -791,6 +799,7 @@
 				<property name="TintColor" value="D9D2CF"/>
 				<property name="MultiBlockDim" value="2,1,2"/>
 				<property name="LODCullScale" value="0.5"/>
+				<property name="SortOrder2" value="0001"/>
 			</block>
 			<!-- Ceiling Dome Light -->
 			<block name="ceilingLight02_Player">
@@ -800,11 +809,14 @@
 				<property name="WaterFlow" value="permitted"/>
 				<property name="TintColor" value="999999"/>
 				<property name="HandleFace" value="Top"/>	
+				<property name="SortOrder1" value="A102"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<!-- 2x2 -->
 			<block name="ceilingLight02_2x2_Player">
 				<property name="Extends" value="ceilingLight02_Player"/>				
 				<property name="MultiBlockDim" value="2,1,2"/>
+				<property name="SortOrder2" value="0001"/>
 			</block>
 			<!-- Brass -->
 			<block name="ceilingLight02Brass_Player">
@@ -815,11 +827,15 @@
 				<property name="TintColor" value="968C61"/>
 				<property name="HandleFace" value="Top"/>
 				<drop event="Destroy" name="resourceScrapBrass" count="10,30"/>
+				<property name="SortOrder1" value="A106"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<!-- 2x2 -->
 			<block name="ceilingLight02Brass_2x2_Player">
 				<property name="Extends" value="ceilingLight02Brass_Player"/>
 				<property name="MultiBlockDim" value="2,1,2"/>
+				<property name="SortOrder2" value="0001"/>
+
 			</block>
 			<!-- OLD Warehouse Light -->
 			<block name="ceilingLight04_Player">
@@ -827,19 +843,23 @@
 				<property name="CustomIcon" value="ceilingLight04"/>				
 				<property name="Model" value="Entities/Lighting/ceilingLight04Prefab"/>
 				<property name="WaterFlow" value="permitted"/>
-				<property name="HandleFace" value="Top"/>			
+				<property name="HandleFace" value="Top"/>	
+				<property name="SortOrder1" value="A107"/>
+				<property name="SortOrder2" value="0000"/>	
 			</block>
 			<!-- Ceiling Glass Bell Light -->
 			<block name="ceilingLight05_Player">
 				<property name="Extends" value="ceilingLight04_Player"/>
 				<property name="CustomIcon" value="ceilingLight05"/>			
 				<property name="Model" value="Entities/Lighting/ceilingLight05Prefab"/>	
+				<property name="SortOrder2" value="0001"/>
 			</block>
 			<block name="ceilingLight05Brass_Player">
 				<property name="Extends" value="ceilingLight04_Player"/>
 				<property name="CustomIcon" value="ceilingLight05Brass"/>
 				<property name="Model" value="Entities/Lighting/ceilingLight05BrassPrefab"/>			
 				<drop event="Destroy" name="resourceScrapBrass" count="10,30"/>
+				<property name="SortOrder2" value="0002"/>
 			</block>
 			<!-- *** RECESSED_LIGHTS -->
 			<block name="recessedLight_Player">
@@ -848,11 +868,15 @@
 				<property name="Model" value="Entities/Lighting/lightCanFlushPrefab"/>
 				<property name="WaterFlow" value="permitted"/>
 				<property name="HandleFace" value="Top"/>
+				<property name="SortOrder1" value="A108"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<block name="recessedLight_2x2_Player">
 				<property name="Extends" value="lightPorchWhite_Player"/>
 				<property name="CustomIcon" value="recessedLight"/>
 				<property name="MultiBlockDim" value="2,1,2"/>
+				<property name="SortOrder1" value="A109"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<block name="recessedLightOffset_Player">
 				<property name="Extends" value="lightPorchWhite_Player" param1="TintColor,Place"/>			
@@ -862,16 +886,21 @@
 				<property name="ModelOffset" value="0,1,0"/>
 				<property name="WaterFlow" value="permitted"/>
 				<property name="HandleFace" value="Top"/>
+				<property name="SortOrder1" value="A110"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<block name="recessedLight_2x2Offset_Player">
 				<property name="Extends" value="recessedLightOffset_Player"/>			
 				<property name="ItemTypeIcon" value="block_repair"/>
 				<property name="MultiBlockDim" value="2,1,2"/>
+				<property name="SortOrder2" value="0001"/>
 			</block>
 			<!-- Single Fluorescent Light 2x2-->
 			<block name="lightCeiling07_2x2_Player">
 				<property name="Extends" value="ceilingLight07_player"/>			
-				<property name="MultiBlockDim" value="2,1,2"/>	
+				<property name="MultiBlockDim" value="2,1,2"/>
+				<property name="SortOrder1" value="A111"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<!-- Long Hanging Fluorescent Light -->
 			<block name="fluorescentLight_Player">
@@ -907,6 +936,8 @@
 				<drop event="Destroy" name="resourceScrapIron" count="5"/>
 				<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 				<property name="Group" value="Science,TCScience"/>
+				<property name="SortOrder1" value="A112"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<!-- Drop Ceiling Fluorescent Light Bay -->
 			<block name="fluorescentLightBayIntact_Player">
@@ -916,7 +947,8 @@
 				<property name="Shape" value="ModelEntity"/>
 				<property name="Model" value="Entities/Lighting/fluorescentLightBayIntactPrefab"/>
 				<property name="ModelOffset" value="0,0.5,0.5"/>
-				<property name="MultiBlockDim" value="1,1,2"/>	
+				<property name="MultiBlockDim" value="1,1,2"/>
+				<property name="SortOrder2" value="0001"/>	
 			</block>
 			<!-- *** LED_PANEL_LIGHTS -->
 			<!-- White -->
@@ -955,7 +987,9 @@
 				<drop event="Harvest" name="resourceScrapPolymers" count="1,2" tag="allHarvest"/>
 				<drop event="Destroy" name="resourceScrapIron" count="5"/>
 				<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>			
-				<property name="Group" value="Science,TCScience"/>			
+				<property name="Group" value="Science,TCScience"/>	
+				<property name="SortOrder1" value="A113"/>
+				<property name="SortOrder2" value="0000"/>		
 			</block>
 			<!-- Black -->
 			<block name="lightPanelLEDBlack_Player">
@@ -963,6 +997,7 @@
 				<property name="CustomIcon" value="lightPanelLEDWhite"/>
 				<property name="CustomIconTint" value="1F1C1B"/>
 				<property name="TintColor" value="1F1C1B"/>
+				<property name="SortOrder2" value="0001"/>
 			</block>
 			<!-- Drop Ceiling LED Panel Offset -->
 			<!-- White -->
@@ -1002,13 +1037,16 @@
 				<drop event="Harvest" name="resourceScrapPolymers" count="1,2" tag="allHarvest"/>
 				<drop event="Destroy" name="resourceScrapIron" count="5"/>
 				<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>			
-				<property name="Group" value="Science,TCScience"/>			
+				<property name="Group" value="Science,TCScience"/>	
+				<property name="SortOrder1" value="A114"/>
+				<property name="SortOrder2" value="0000"/>		
 			</block>
 			<!-- Black -->
 			<block name="lightPanelLEDOffsetBlack_Player">
 				<property name="Extends" value="lightPanelLEDOffsetWhite_Player"/>
 				<property name="CustomIcon" value="lightPanelLEDWhite"/>
-				<property name="CustomIconTint" value="1F1C1B"/>		
+				<property name="CustomIconTint" value="1F1C1B"/>
+				<property name="SortOrder2" value="0001"/>		
 			</block>
 			<!-- Drop Ceiling LED Panel Offset 02 -->
 			<!-- White -->
@@ -1049,12 +1087,15 @@
 				<drop event="Destroy" name="resourceScrapIron" count="5"/>
 				<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 				<property name="Group" value="Science,TCScience"/>
+				<property name="SortOrder1" value="A115"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<!-- Black -->
 			<block name="lightPanelLEDOffset02Black_Player">
 				<property name="Extends" value="lightPanelLEDOffset02White_Player"/>			
 				<property name="CustomIconTint" value="1F1C1B"/>			
-				<property name="TintColor" value="1F1C1B"/>			
+				<property name="TintColor" value="1F1C1B"/>
+				<property name="SortOrder2" value="0001"/>			
 			</block>		
 			<!-- *** TRACK_LIGHTS -->
 			<block name="trackLight_Player">
@@ -1064,12 +1105,16 @@
 				<property name="MultiBlockDim" value="1,1,3"/>
 				<property name="DisplayType" value="blockMulti"/>
 				<property name="WaterFlow" value="permitted"/>
+				<property name="SortOrder1" value="A116"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<!-- Red Single Bulb with Industrial Cage -->
 			<block name="lightIndustrialRed_Player">
 				<property name="Extends" value="industrialLight02_player"/>
 				<property name="CustomIcon" value="lightIndustrialRed"/>			
 				<property name="Model" value="Entities/Electrical/lightIndustrialRedPrefab"/>
+				<property name="SortOrder1" value="A117"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>	
 			<!-- *** INDUSTRIAL_CAGE_LIGHTS -->	
 			<block name="lightIndustrialMountedWall_Player">
@@ -1077,12 +1122,16 @@
 				<property name="CustomIcon" value="lightIndustrialMountedWall"/>
 				<property name="Model" value="Entities/Electrical/lightIndustrialMountedWallPrefab"/>
 				<property name="HandleFace" value="South"/>
+				<property name="SortOrder1" value="A118"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<block name="lightIndustrialMountedWallRed_Player">
 				<property name="Extends" value="industrialLight02_player"/>
 				<property name="CustomIcon" value="lightIndustrialMountedWallRed"/>
 				<property name="Model" value="Entities/Electrical/lightIndustrialMountedWallRedPrefab"/>
 				<property name="HandleFace" value="South"/>
+				<property name="SortOrder1" value="A119"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<!-- *** INDUSTRIAL_WAREHOUSE_LIGHTS -->
 			<!-- White -->
@@ -1121,12 +1170,15 @@
 				<drop event="Destroy" name="resourceScrapIron" count="5"/>
 				<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>			
 				<property name="Group" value="Science,TCScience"/>
+				<property name="SortOrder1" value="A120"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<!-- Black -->
 			<block name="lightIndustrialHangingBlack_Player">
 				<property name="Extends" value="lightIndustrialHangingWhite_Player"/>
 				<property name="CustomIconTint" value="555555"/>
 				<property name="TintColor" value="555555"/>
+				<property name="SortOrder2" value="0001"/>
 			</block>
 			<!-- *** SCONCE_LIGHTS -->
 			<block name="lightSconce_Player">
@@ -1163,11 +1215,14 @@
 				<drop event="Destroy" name="resourceScrapIron" count="5"/>
 				<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 				<property name="Group" value="Science,TCScience"/>
+				<property name="SortOrder1" value="A121"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<block name="lightSconce_2x1_Player">
 				<property name="Extends" value="lightSconce_Player"/>
 				<property name="CreativeMode" value="Dev"/>			
 				<property name="MultiBlockDim" value="1,1,2"/>
+				<property name="SortOrder2" value="0001"/>
 			</block>
 			<!-- *** CEILING_FAN_LIGHT -->
 			<block name="ceilingFanLight_Player">
@@ -1203,11 +1258,14 @@
 				<drop event="Destroy" name="resourceScrapIron" count="5"/>
 				<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 				<property name="Group" value="Science,TCScience"/>
+				<property name="SortOrder1" value="A122"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<block name="ceilingFanLight2x2_Player">
 				<property name="Extends" value="ceilingFanLight_Player"/>
 				<property name="ModelOffset" value="0,0.325,0"/>
 				<property name="MultiBlockDim" value="2,2,2"/>
+				<property name="SortOrder2" value="0001"/>
 			</block>
 			<!-- *** CHANDELIER_LIGHTS -->
 			<block name="chandelierLight_Player">
@@ -1240,11 +1298,14 @@
 				<drop event="Destroy" name="resourceScrapIron" count="1,15"/>
 				<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 				<property name="Group" value="Science,Decor/Miscellaneous"/>
+				<property name="SortOrder1" value="A123"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<block name="chandelierLight2x2_Player">
 				<property name="Extends" value="chandelierLight_Player"/>
 				<property name="ModelOffset" value="0,0.325,0"/>
 				<property name="MultiBlockDim" value="2,2,2"/>
+				<property name="SortOrder2" value="0001"/>
 			</block>
 			<!-- *** END_TABLE_LIGHTS -->
 			<block name="endTableLamp_Player">
@@ -1257,31 +1318,41 @@
 				<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
 				<property name="Path" value="solid"/>			
 				<property name="Group" value="Decor/Miscellaneous"/>
+				<property name="SortOrder1" value="A124"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<!-- *** EXIT_SIGN_LIGHTS -->
 			<block name="signExitLight_Player">
 				<property name="Extends" value="lightPorchWhite_Player" param1="HandleFace"/>
 				<property name="CustomIcon" value="signExitLight"/>
 				<property name="Model" value="Entities/Lighting/signExitPrefab"/>
-				<property name="WaterFlow" value="permitted"/>			
+				<property name="WaterFlow" value="permitted"/>	
+				<property name="SortOrder1" value="A125"/>
+				<property name="SortOrder2" value="0000"/>		
 			</block>
 			<block name="signExitLightOffset_Player">
 				<property name="Extends" value="lightPorchWhite_Player" param1="HandleFace"/>
 				<property name="CustomIcon" value="signExitLightOffset"/>
 				<property name="Model" value="Entities/Lighting/signExitOffsetPrefab"/>
-				<property name="WaterFlow" value="permitted"/>			
+				<property name="WaterFlow" value="permitted"/>
+				<property name="SortOrder1" value="A125"/>
+				<property name="SortOrder2" value="0001"/>		
 			</block>
 			<block name="signExitFrameMount_Player">
 				<property name="Extends" value="lightPorchWhite_Player" param1="HandleFace"/>
 				<property name="CustomIcon" value="signExitFrameMount"/>
 				<property name="Model" value="Entities/Lighting/signExitFrameMountPrefab"/>			
 				<property name="WaterFlow" value="permitted"/>
+				<property name="SortOrder1" value="A125"/>
+				<property name="SortOrder2" value="0002"/>
 			</block>
 			<block name="signExitFrameMountHigh_Player">
 				<property name="Extends" value="lightPorchWhite_Player" param1="HandleFace"/>
 				<property name="CustomIcon" value="signExitFrameMountHigh"/>
 				<property name="Model" value="Entities/Lighting/signExitFrameMountHighPrefab"/>
 				<property name="WaterFlow" value="permitted"/>
+				<property name="SortOrder1" value="A125"/>
+				<property name="SortOrder2" value="0003"/>
 			</block>
 			<block name="signExitFrameMount2mCentered_Player">
 				<property name="Extends" value="lightPorchWhite_Player" param1="HandleFace"/>			
@@ -1290,6 +1361,8 @@
 				<property name="Model" value="Entities/Lighting/signExitFrameMountPrefab"/>
 				<property name="WaterFlow" value="permitted"/>
 				<property name="MultiBlockDim" value="2,1,1"/>
+				<property name="SortOrder1" value="A125"/>
+				<property name="SortOrder2" value="0004"/>
 			</block>
 			<block name="signExitFrameMountHigh2mCentered_Player">
 				<property name="Extends" value="lightPorchWhite_Player" param1="HandleFace"/>
@@ -1298,18 +1371,24 @@
 				<property name="Model" value="Entities/Lighting/signExitFrameMountHighPrefab"/>
 				<property name="WaterFlow" value="permitted"/>
 				<property name="MultiBlockDim" value="2,1,1"/>
+				<property name="SortOrder1" value="A125"/>
+				<property name="SortOrder2" value="0005"/>
 			</block>
 			<block name="signExitWallMount_Player">
 				<property name="Extends" value="lightPorchWhite_Player" param1="HandleFace"/>
 				<property name="CustomIcon" value="signExitWallMount"/>
 				<property name="Model" value="Entities/Lighting/signExitWallMountPrefab"/>
 				<property name="WaterFlow" value="permitted"/>
+				<property name="SortOrder1" value="A125"/>
+				<property name="SortOrder2" value="0006"/>
 			</block>
 			<block name="signExitWallMountHigh_Player">
 				<property name="Extends" value="lightPorchWhite_Player" param1="HandleFace"/>
 				<property name="CustomIcon" value="signExitWallMountHigh"/>
 				<property name="Model" value="Entities/Lighting/signExitWallMountHighPrefab"/>
 				<property name="WaterFlow" value="permitted"/>
+				<property name="SortOrder1" value="A125"/>
+				<property name="SortOrder2" value="0007"/>
 			</block>
 			<!-- *** ROAD_BARRICADE -->
 			<block name="roadBarricadeLight_Player">			
@@ -1324,7 +1403,9 @@
 				<property name="Collide" value="melee,bullet,arrow,rocket,movement"/>
 				<property name="IsTerrainDecoration" value="true"/>
 				<drop event="Destroy" name="resourceScrapIron" count="3,12"/>			
-				<property name="Group" value="Decor/Miscellaneous"/>			
+				<property name="Group" value="Decor/Miscellaneous"/>
+				<property name="SortOrder1" value="A126"/>
+				<property name="SortOrder2" value="0000"/>			
 			</block>
 			<!-- *** DESK_LAMP_01 -->
 			<block name="deskLampLight_Player">
@@ -1333,6 +1414,8 @@
 				<property name="Model" value="Entities/Lighting/desk_lampPrefab"/>
 				<property name="WaterFlow" value="permitted"/>
 				<drop event="Destroy" name="resourceScrapBrass" count="8,18"/>
+				<property name="SortOrder1" value="A127"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<!-- *** DESK_LAMP_02 -->
 			<!-- White MASTER-->
@@ -1371,6 +1454,8 @@
 				<drop event="Destroy" name="resourceScrapIron" count="5"/>
 				<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 				<property name="Group" value="Science,TCScience"/>
+				<property name="SortOrder1" value="A128"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<!-- Brown -->
 			<block name="deskLampLight02Brown_Player">
@@ -1378,6 +1463,7 @@
 				<property name="CustomIcon" value="deskLampLight02White"/>
 				<property name="CustomIconTint" value="71675D"/>
 				<property name="TintColor" value="71675D"/>
+				<property name="SortOrder2" value="0001"/>
 			</block>
 			<!-- Red -->
 			<block name="deskLampLight02Red_Player">
@@ -1385,7 +1471,7 @@
 				<property name="CustomIcon" value="deskLampLight02White"/>
 				<property name="CustomIconTint" value="8C7470"/>
 				<property name="TintColor" value="8C7470"/>
-				<property name="SortOrder2" value="2102"/>
+				<property name="SortOrder2" value="0002"/>
 			</block>
 			<!-- Orange -->
 			<block name="deskLampLight02Orange_Player">
@@ -1393,6 +1479,7 @@
 				<property name="CustomIcon" value="deskLampLight02White"/>
 				<property name="CustomIconTint" value="95836F"/>
 				<property name="TintColor" value="95836F"/>
+				<property name="SortOrder2" value="0003"/>
 			</block>
 			<!-- Yellow -->
 			<block name="deskLampLight02Yellow_Player">
@@ -1400,6 +1487,7 @@
 				<property name="CustomIcon" value="deskLampLight02White"/>
 				<property name="CustomIconTint" value="9B9875"/>
 				<property name="TintColor" value="9B9875"/>
+				<property name="SortOrder2" value="0004"/>
 			</block>
 			<!-- Green -->
 			<block name="deskLampLight02Green_Player">
@@ -1407,6 +1495,7 @@
 				<property name="CustomIcon" value="deskLampLight02White"/>
 				<property name="CustomIconTint" value="6F7D66"/>
 				<property name="TintColor" value="6F7D66"/>
+				<property name="SortOrder2" value="0005"/>
 			</block>
 			<!-- Blue -->
 			<block name="deskLampLight02Blue_Player">
@@ -1414,6 +1503,7 @@
 				<property name="CustomIcon" value="deskLampLight02White"/>
 				<property name="CustomIconTint" value="6A7C7D"/>
 				<property name="TintColor" value="6A7C7D"/>
+				<property name="SortOrder2" value="0006"/>
 			</block>
 			<!-- Purple -->
 			<block name="deskLampLight02BPurple_Player">
@@ -1421,6 +1511,7 @@
 				<property name="CustomIcon" value="deskLampLight02White"/>
 				<property name="CustomIconTint" value="6E6C78"/>
 				<property name="TintColor" value="6E6C78"/>
+				<property name="SortOrder2" value="0007"/>
 			</block>
 			<!-- Grey -->
 			<block name="deskLampLight02BGrey_Player">
@@ -1428,6 +1519,7 @@
 				<property name="CustomIcon" value="deskLampLight02White"/>
 				<property name="CustomIconTint" value="727272"/>
 				<property name="TintColor" value="727272"/>
+				<property name="SortOrder2" value="0008"/>
 			</block>
 			<!-- Black -->
 			<block name="deskLampLight02Black_Player">
@@ -1435,6 +1527,7 @@
 				<property name="CustomIcon" value="deskLampLight02White"/>
 				<property name="CustomIconTint" value="474747"/>
 				<property name="TintColor" value="474747"/>
+				<property name="SortOrder2" value="0009"/>
 			</block>
 			<!-- Pink -->
 			<block name="deskLampLight02Pink_Player">
@@ -1442,6 +1535,7 @@
 				<property name="CustomIcon" value="deskLampLight02White"/>
 				<property name="CustomIconTint" value="857480"/>
 				<property name="TintColor" value="857480"/>
+				<property name="SortOrder2" value="0010"/>
 			</block>
 			<!-- *** TABLE_LAMP_LIGHT_01 -->
 			<!-- White MASTER -->
@@ -1480,6 +1574,8 @@
 				<drop event="Destroy" name="resourceScrapIron" count="5"/>
 				<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 				<property name="Group" value="Science,TCScience"/>
+				<property name="SortOrder1" value="A129"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<!-- Black -->
 			<block name="tableLampLight01Black_Player">
@@ -1584,6 +1680,8 @@
 				<property name="MultiBlockDim" value="1,2,1"/>
 				<property name="WaterFlow" value="permitted"/>
 				<property name="Collide" value="melee,bullet,arrow,rocket,movement"/>
+				<property name="SortOrder1" value="A130"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<!-- *** STREET_LIGHTS -->
 			<block name="streetLight01_Player">
@@ -1613,21 +1711,26 @@
 				<drop event="Destroy" name="resourceScrapIron" count="1,15"/>
 				<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 				<property name="Group" value="Science"/>
+				<property name="SortOrder1" value="A131"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<block name="streetLight02_Player">
 				<property name="Extends" value="streetLight01_Player"/>
 				<property name="CustomIcon" value="streetLight02"/>
 				<property name="Model" value="Entities/Lighting/lightStreetLamp02Prefab"/>
+				<property name="SortOrder2" value="0001"/>
 			</block>
 			<block name="streetLight03_Player">
 				<property name="Extends" value="streetLight01_Player"/>
 				<property name="CustomIcon" value="streetLight03"/>
 				<property name="Model" value="Entities/Lighting/lightStreetLamp03Prefab"/>
+				<property name="SortOrder2" value="0002"/>
 			</block>
 			<block name="streetLight04_Player">
 				<property name="Extends" value="streetLight01_Player"/>
 				<property name="CustomIcon" value="streetLight04"/>
 				<property name="Model" value="Entities/Lighting/lightStreetLamp04Prefab"/>
+				<property name="SortOrder2" value="0003"/>
 			</block>
 			<block name="streetLightClassic_Player">
 				<property name="Extends" value="lightPorchWhite_Player" param1="TintColor,HandleFace"/>
@@ -1645,6 +1748,8 @@
 				<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 				<drop event="Harvest" name="resourceElectricParts" count="4,6" tag="salvageHarvest"/>
 				<drop event="Destroy" name="resourceScrapIron" count="1,15"/>
+				<property name="SortOrder1" value="A132"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 
@@ -2100,6 +2205,1205 @@
 
 			</block>
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ New Reinforced Doors ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+			<!--Exterior doors-->
+			<!--White-->
+			<block name="reinforcedExteriorHouseDoorWhite">
+				<property name="Extends" value="exteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 7000,
+					Door/DMG3, 1500,
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A300"/>
+					<property name="SortOrder2" value="0000"/>
+			</block>
+			<!-- Brown -->
+			<block name="reinforcedExteriorHouseDoorBrown">
+				<property name="Extends" value="reinforcedExteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+				<property name="CustomIconTint" value="5F4D46"/>
+				<property name="TintColor" value="5F4D46"/>
+				<property name="SortOrder2" value="0001"/>
+			</block>
+			<!-- Red -->
+			<block name="reinforcedExteriorHouseDoorRed">
+				<property name="Extends" value="reinforcedExteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+				<property name="CustomIconTint" value="935858"/>
+				<property name="TintColor" value="935858"/>
+				<property name="SortOrder2" value="0002"/>
+			</block>
+			<!-- Orange -->
+			<block name="reinforcedExteriorHouseDoorOrange">
+				<property name="Extends" value="reinforcedExteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+				<property name="CustomIconTint" value="BF967B"/>
+				<property name="TintColor" value="BF967B"/>
+				<property name="SortOrder2" value="0003"/>
+			</block>
+			<!-- Yellow -->
+			<block name="reinforcedExteriorHouseDoorYellow">
+				<property name="Extends" value="reinforcedExteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+				<property name="CustomIconTint" value="C9C8A2"/>
+				<property name="TintColor" value="C9C8A2"/>
+				<property name="SortOrder2" value="0004"/>
+			</block>
+			<!-- Green -->
+			<block name="reinforcedExteriorHouseDoorGreen">
+				<property name="Extends" value="reinforcedExteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+				<property name="CustomIconTint" value="7D8977"/>
+				<property name="TintColor" value="7D8977"/>
+				<property name="SortOrder2" value="0005"/>
+			</block>
+			<!-- Blue -->
+			<block name="reinforcedExteriorHouseDoorBlue">
+				<property name="Extends" value="reinforcedExteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+				<property name="CustomIconTint" value="8A98A6"/>
+				<property name="TintColor" value="8A98A6"/>
+				<property name="SortOrder2" value="0006"/>
+			</block>
+			<!-- Purple -->
+			<block name="reinforcedExteriorHouseDoorPurple">
+				<property name="Extends" value="reinforcedExteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+				<property name="CustomIconTint" value="756E7C"/>
+				<property name="TintColor" value="756E7C"/>
+				<property name="SortOrder2" value="0007"/>
+			</block>
+			<!-- Grey -->
+			<block name="reinforcedExteriorHouseDoorGrey">
+				<property name="Extends" value="reinforcedExteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+				<property name="CustomIconTint" value="A3A3A3"/>
+				<property name="TintColor" value="A3A3A3"/>
+				<property name="SortOrder2" value="0008"/>
+			</block>
+			<!-- Pink -->
+			<block name="reinforcedExteriorHouseDoorPink">
+				<property name="Extends" value="reinforcedExteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+				<property name="CustomIconTint" value="A595A5"/>
+				<property name="TintColor" value="A595A5"/>
+				<property name="SortOrder2" value="0010"/>
+			</block>
+			<!-- Oak -->
+			<block name="reinforcedExteriorHouseDoorOak">
+				<property name="Extends" value="reinforcedExteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+				<property name="CustomIconTint" value="765024"/>
+				<property name="TintColor" value="765024"/>
+				<property name="SortOrder2" value="00012"/>
+			</block>
+
+			<!-- Exterior Doble Doors -->
+			<!-- White -->
+			<block name="reinforcedExteriorHouseDoorDoubleWhite">
+				<property name="Extends" value="exteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorDoubleWhite"/>
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 7000,
+					Door/DMG3, 1500,
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A301"/>
+					<property name="SortOrder2" value="0000"/>
+			</block>			
+			<!-- Brown -->
+			<block name="reinforcedExteriorHouseDoorDoubleBrown">
+				<property name="Extends" value="reinforcedExteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="5F4D46"/>
+				<property name="TintColor" value="5F4D46"/>
+				<property name="SortOrder2" value="0101"/>
+			</block>
+			<!-- Red -->
+			<block name="reinforcedExteriorHouseDoorDoubleRed">
+				<property name="Extends" value="reinforcedExteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="935858"/>
+				<property name="TintColor" value="935858"/>
+				<property name="SortOrder2" value="0102"/>
+			</block>
+			<!-- Orange -->
+			<block name="reinforcedExteriorHouseDoorDoubleOrange">
+				<property name="Extends" value="reinforcedExteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="BF967B"/>
+				<property name="TintColor" value="BF967B"/>
+				<property name="SortOrder2" value="0103"/>
+			</block>
+			<!-- Yellow -->
+			<block name="reinforcedExteriorHouseDoorDoubleYellow">
+				<property name="Extends" value="reinforcedExteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="C9C8A2"/>
+				<property name="TintColor" value="C9C8A2"/>
+				<property name="SortOrder2" value="0104"/>
+			</block>
+			<!-- Green -->
+			<block name="reinforcedExteriorHouseDoorDoubleGreen">
+				<property name="Extends" value="reinforcedExteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="7D8977"/>
+				<property name="TintColor" value="7D8977"/>
+				<property name="SortOrder2" value="0105"/>
+			</block>
+			<!-- Blue -->
+			<block name="reinforcedExteriorHouseDoorDoubleBlue">
+				<property name="Extends" value="reinforcedExteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="8A98A6"/>
+				<property name="TintColor" value="8A98A6"/>
+				<property name="SortOrder2" value="0106"/>
+			</block>
+			<!-- Purple -->
+			<block name="reinforcedExteriorHouseDoorDoublePurple">
+				<property name="Extends" value="reinforcedExteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="756E7C"/>
+				<property name="TintColor" value="756E7C"/>
+				<property name="SortOrder2" value="0107"/>
+			</block>
+			<!-- Grey -->
+			<block name="reinforcedExteriorHouseDoorDoubleGrey">
+				<property name="Extends" value="reinforcedExteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="A3A3A3"/>
+				<property name="TintColor" value="A3A3A3"/>
+				<property name="SortOrder2" value="0108"/>
+			</block>
+			<!-- Pink --> 
+			<block name="reinforcedExteriorHouseDoorDoublePink">
+				<property name="Extends" value="reinforcedExteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="A595A5"/>
+				<property name="TintColor" value="A595A5"/>
+				<property name="SortOrder2" value="0110"/>
+			</block>
+			<!-- Oak --> 
+			<block name="reinforcedExteriorHouseDoorDoubleOak">
+				<property name="Extends" value="reinforcedExteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="765024"/>
+				<property name="TintColor" value="765024"/>
+				<property name="SortOrder2" value="0112"/>
+			</block>
+
+			<!-- *** EXTERIOR_DOORS_SIDE_LIGHT_SINGLE -->
+			<!-- White --> 
+			<block name="reinforcedExteriorHouseDoorSideLightSingleWhite">
+				<property name="Extends" value="exteriorHouseDoorSideLightSingleWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorSideLightWhite"/>
+				
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 7000,
+					Door/DMG3, 1500,
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A302"/>
+					<property name="SortOrder2" value="0000"/>
+			</block>
+			<!-- Brown -->
+			<block name="reinforcedExteriorHouseDoorSideLightSingleBrown">
+				<property name="Extends" value="reinforcedExteriorHouseDoorSideLightSingleWhite"/>				
+				<property name="CustomIconTint" value="5F4D46"/>
+				<property name="TintColor" value="5F4D46"/>
+				<property name="SortOrder2" value="0201"/>
+			</block>
+			<!-- Red -->
+			<block name="reinforcedExteriorHouseDoorSideLightSingleRed">
+				<property name="Extends" value="reinforcedExteriorHouseDoorSideLightSingleWhite"/>
+				<property name="CustomIconTint" value="935858"/>
+				<property name="TintColor" value="935858"/>
+				<property name="SortOrder2" value="0202"/>
+			</block>
+			<!-- Orange -->
+			<block name="reinforcedExteriorHouseDoorSideLightSingleOrange">
+				<property name="Extends" value="reinforcedExteriorHouseDoorSideLightSingleWhite"/>
+				<property name="CustomIconTint" value="BF967B"/>
+				<property name="TintColor" value="BF967B"/>
+				<property name="SortOrder2" value="0203"/>
+			</block>
+			<!-- Yellow -->
+			<block name="reinforcedExteriorHouseDoorSideLightSingleYellow">
+				<property name="Extends" value="reinforcedExteriorHouseDoorSideLightSingleWhite"/>
+				<property name="CustomIconTint" value="C9C8A2"/>
+				<property name="TintColor" value="C9C8A2"/>
+				<property name="SortOrder2" value="0204"/>
+			</block>
+			<!-- Green -->
+			<block name="reinforcedExteriorHouseDoorSideLightSingleGreen">
+				<property name="Extends" value="reinforcedExteriorHouseDoorSideLightSingleWhite"/>
+				<property name="CustomIconTint" value="7D8977"/>
+				<property name="TintColor" value="7D8977"/>
+				<property name="SortOrder2" value="0205"/>
+			</block>
+			<!-- Blue -->
+			<block name="reinforcedExteriorHouseDoorSideLightSingleBlue">
+				<property name="Extends" value="reinforcedExteriorHouseDoorSideLightSingleWhite"/>
+				<property name="CustomIconTint" value="8A98A6"/>
+				<property name="TintColor" value="8A98A6"/>
+				<property name="SortOrder2" value="0206"/>
+			</block>
+			<!-- Purple -->
+			<block name="reinforcedExteriorHouseDoorSideLightSinglePurple">
+				<property name="Extends" value="reinforcedExteriorHouseDoorSideLightSingleWhite"/>
+				<property name="CustomIconTint" value="756E7C"/>
+				<property name="TintColor" value="756E7C"/>
+				<property name="SortOrder2" value="0207"/>
+			</block>
+			<!-- Grey -->
+			<block name="reinforcedExteriorHouseDoorSideLightSingleGrey">
+				<property name="Extends" value="reinforcedExteriorHouseDoorSideLightSingleWhite"/>
+				<property name="CustomIconTint" value="A3A3A3"/>
+				<property name="TintColor" value="A3A3A3"/>
+				<property name="SortOrder2" value="0208"/>
+			</block>
+			<!-- Pink -->
+			<block name="reinforcedExteriorHouseDoorSideLightSinglePink">
+				<property name="Extends" value="reinforcedExteriorHouseDoorSideLightSingleWhite"/>
+				<property name="CustomIconTint" value="A595A5"/>
+				<property name="TintColor" value="A595A5"/>
+				<property name="SortOrder2" value="0210"/>
+			</block>
+			<!-- Oak -->
+			<block name="reinforcedExteriorHouseDoorSideLightSingleOak">
+				<property name="Extends" value="reinforcedExteriorHouseDoorSideLightSingleWhite"/>
+				<property name="CustomIconTint" value="765024"/>
+				<property name="TintColor" value="765024"/>
+				<property name="SortOrder2" value="0212"/>
+			</block>
+
+			<!-- *** EXTERIOR_DOORS_SIDE_LIGHT -->
+			<!-- White -->
+			<block name="reinforcedExteriorHouseDoorSideLightWhite">
+				<property name="Extends" value="exteriorHouseDoorSideLightWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorSideLightWhite"/>
+				
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 7000,
+					Door/DMG3, 1500,
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A303"/>
+					<property name="SortOrder2" value="0000"/>
+			</block>			
+			<!-- Brown -->
+			<block name="reinforcedExteriorHouseDoorSideLightBrown">
+				<property name="Extends" value="reinforcedExteriorHouseDoorSideLightWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorSideLightWhite"/>
+				<property name="CustomIconTint" value="5F4D46"/>
+				<property name="TintColor" value="5F4D46"/>
+				<property name="SortOrder2" value="0251"/>
+			</block>
+			<!-- Red -->
+			<block name="reinforcedExteriorHouseDoorSideLightRed">
+				<property name="Extends" value="reinforcedExteriorHouseDoorSideLightWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorSideLightWhite"/>
+				<property name="CustomIconTint" value="935858"/>
+				<property name="TintColor" value="935858"/>
+				<property name="SortOrder2" value="0252"/>
+			</block>
+			<!-- Orange -->
+			<block name="reinforcedExteriorHouseDoorSideLightOrange">
+				<property name="Extends" value="reinforcedExteriorHouseDoorSideLightWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorSideLightWhite"/>
+				<property name="CustomIconTint" value="BF967B"/>
+				<property name="TintColor" value="BF967B"/>
+				<property name="SortOrder2" value="0253"/>
+			</block>
+			<!-- Yellow -->
+			<block name="reinforcedExteriorHouseDoorSideLightYellow">
+				<property name="Extends" value="reinforcedExteriorHouseDoorSideLightWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorSideLightWhite"/>
+				<property name="CustomIconTint" value="C9C8A2"/>
+				<property name="TintColor" value="C9C8A2"/>
+				<property name="SortOrder2" value="0254"/>
+			</block>
+			<!-- Green -->
+			<block name="reinforcedExteriorHouseDoorSideLightGreen">
+				<property name="Extends" value="reinforcedExteriorHouseDoorSideLightWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorSideLightWhite"/>
+				<property name="CustomIconTint" value="7D8977"/>
+				<property name="TintColor" value="7D8977"/>
+				<property name="SortOrder2" value="0255"/>
+			</block>
+			<!-- Blue -->
+			<block name="reinforcedExteriorHouseDoorSideLightBlue">
+				<property name="Extends" value="reinforcedExteriorHouseDoorSideLightWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorSideLightWhite"/>
+				<property name="CustomIconTint" value="8A98A6"/>
+				<property name="TintColor" value="8A98A6"/>
+				<property name="SortOrder2" value="0256"/>
+			</block>
+			<!-- Purple -->
+			<block name="reinforcedExteriorHouseDoorSideLightPurple">
+				<property name="Extends" value="reinforcedExteriorHouseDoorSideLightWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorSideLightWhite"/>
+				<property name="CustomIconTint" value="756E7C"/>
+				<property name="TintColor" value="756E7C"/>
+				<property name="SortOrder2" value="0257"/>
+			</block>
+			<!-- Grey -->
+			<block name="reinforcedExteriorHouseDoorSideLightGrey">
+				<property name="Extends" value="reinforcedExteriorHouseDoorSideLightWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorSideLightWhite"/>
+				<property name="CustomIconTint" value="A3A3A3"/>
+				<property name="TintColor" value="A3A3A3"/>
+				<property name="SortOrder2" value="0258"/>
+			</block>
+			<!-- Pink -->
+			<block name="reinforcedExteriorHouseDoorSideLightPink">
+				<property name="Extends" value="reinforcedExteriorHouseDoorSideLightWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorSideLightWhite"/>
+				<property name="CustomIconTint" value="A595A5"/>
+				<property name="TintColor" value="A595A5"/>
+				<property name="SortOrder2" value="0260"/>
+			</block>
+			<!-- Oak -->
+			<block name="reinforcedExteriorHouseDoorSideLightOak">
+				<property name="Extends" value="reinforcedExteriorHouseDoorSideLightWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorSideLightWhite"/>
+				<property name="CustomIconTint" value="765024"/>
+				<property name="TintColor" value="765024"/>
+				<property name="SortOrder2" value="0262"/>
+			</block>	
+
+			<!-- *** FRENCH_DOORS -->
+			<!-- White -->
+			<block name="reinforcedFrenchDoorWhite">
+				<property name="Extends" value="frenchDoorWhite"/>
+				<property name="CustomIcon" value="frenchDoorWhite"/>
+				
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 7000,
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A304"/>
+					<property name="SortOrder2" value="0000"/>
+			</block>
+			<!-- Brown -->
+			<block name="reinforcedFrenchDoorBrown">
+				<property name="Extends" value="reinforcedFrenchDoorWhite"/>
+				<property name="CustomIcon" value="frenchDoorWhite"/>
+				<property name="CustomIconTint" value="68594D"/>
+				<property name="TintColor" value="68594D"/>
+				<property name="SortOrder2" value="0001"/>
+			</block>
+			<!-- Red -->
+			<block name="reinforcedFrenchDoorRed">
+				<property name="Extends" value="reinforcedFrenchDoorWhite"/>
+				<property name="CustomIcon" value="frenchDoorWhite"/>
+				<property name="CustomIconTint" value="864141"/>
+				<property name="TintColor" value="864141"/>
+				<property name="SortOrder2" value="0002"/>
+			</block>
+			<!-- Orange -->
+			<block name="reinforcedFrenchDoorOrange">
+				<property name="Extends" value="reinforcedFrenchDoorWhite"/>
+				<property name="CustomIcon" value="frenchDoorWhite"/>
+				<property name="CustomIconTint" value="9A8567"/>
+				<property name="TintColor" value="9A8567"/>
+				<property name="SortOrder2" value="0003"/>
+			</block>
+			<!-- Yellow -->
+			<block name="reinforcedFrenchDoorYellow">
+				<property name="Extends" value="reinforcedFrenchDoorWhite"/>
+				<property name="CustomIcon" value="frenchDoorWhite"/>
+				<property name="CustomIconTint" value="918E6F"/>
+				<property name="TintColor" value="918E6F"/>
+				<property name="SortOrder2" value="0004"/>
+			</block>
+			<!-- Green -->
+			<block name="reinforcedFrenchDoorGreen">
+				<property name="Extends" value="reinforcedFrenchDoorWhite"/>
+				<property name="CustomIcon" value="frenchDoorWhite"/>
+				<property name="CustomIconTint" value="7F9581"/>
+				<property name="TintColor" value="7F9581"/>
+				<property name="SortOrder2" value="0005"/>
+			</block>
+			<!-- Blue -->
+			<block name="reinforcedFrenchDoorBlue">
+				<property name="Extends" value="reinforcedFrenchDoorWhite"/>
+				<property name="CustomIcon" value="frenchDoorWhite"/>
+				<property name="CustomIconTint" value="6C7E8B"/>
+				<property name="TintColor" value="6C7E8B"/>
+				<property name="SortOrder2" value="0006"/>
+			</block>
+			<!-- Purple -->
+			<block name="reinforcedFrenchDoorPurple">
+				<property name="Extends" value="reinforcedFrenchDoorWhite"/>
+				<property name="CustomIcon" value="frenchDoorWhite"/>
+				<property name="CustomIconTint" value="70697D"/>
+				<property name="TintColor" value="70697D"/>
+				<property name="SortOrder2" value="0007"/>
+			</block>
+			<!-- Grey -->
+			<block name="reinforcedFrenchDoorGrey">
+				<property name="Extends" value="reinforcedFrenchDoorWhite"/>
+				<property name="CustomIcon" value="frenchDoorWhite"/>
+				<property name="CustomIconTint" value="6B6B6B"/>
+				<property name="TintColor" value="6B6B6B"/>
+				<property name="SortOrder2" value="0008"/>
+			</block>
+			<!-- Pink -->
+			<block name="reinforcedFrenchDoorPink">
+				<property name="Extends" value="reinforcedFrenchDoorWhite"/>
+				<property name="CustomIcon" value="frenchDoorWhite"/>
+				<property name="CustomIconTint" value="9E899C"/>
+				<property name="TintColor" value="9E899C"/>
+				<property name="SortOrder2" value="0010"/>
+			</block>
+			<!-- Oak -->
+			<block name="reinforcedFrenchDoorOak">
+				<property name="Extends" value="reinforcedFrenchDoorWhite"/>
+				<property name="CustomIcon" value="frenchDoorWhite"/>
+				<property name="CustomIconTint" value="765024"/>
+				<property name="TintColor" value="765024"/>
+				<property name="SortOrder2" value="0012"/>
+			</block>
+
+			<!-- FRENCH_DOUBLE_DOORS -->
+			<!-- White -->
+			<block name="reinforcedFrenchDoorDoubleWhite">
+				<property name="Extends" value="frenchDoorDoubleWhite"/>
+				<property name="CustomIcon" value="frenchDoorDoubleWhite"/>				
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 7000,
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A305"/>
+					<property name="SortOrder2" value="0000"/>
+			</block>
+			<!-- Brown -->
+			<block name="reinforcedFrenchDoorDoubleBrown">
+				<property name="Extends" value="reinforcedFrenchDoorDoubleWhite"/>
+				<property name="CustomIcon" value="frenchDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="68594D"/>
+				<property name="TintColor" value="68594D"/>
+				<property name="SortOrder2" value="0101"/>
+			</block>
+			<!-- Red -->
+			<block name="reinforcedFrenchDoorDoubleRed">
+				<property name="Extends" value="reinforcedFrenchDoorDoubleWhite"/>
+				<property name="CustomIcon" value="frenchDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="864141"/>
+				<property name="TintColor" value="864141"/>
+				<property name="SortOrder2" value="0102"/>
+			</block>
+			<!-- Orange -->
+			<block name="reinforcedFrenchDoorDoubleOrange">
+				<property name="Extends" value="reinforcedFrenchDoorDoubleWhite"/>
+				<property name="CustomIcon" value="frenchDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="9A8567"/>
+				<property name="TintColor" value="9A8567"/>
+				<property name="SortOrder2" value="0103"/>
+			</block>
+			<!-- Yellow -->
+			<block name="reinforcedFrenchDoorDoubleYellow">
+				<property name="Extends" value="reinforcedFrenchDoorDoubleWhite"/>
+				<property name="CustomIcon" value="frenchDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="918E6F"/>
+				<property name="TintColor" value="918E6F"/>
+				<property name="SortOrder2" value="0104"/>
+			</block>
+			<!-- Green -->
+			<block name="reinforcedFrenchDoorDoubleGreen">
+				<property name="Extends" value="reinforcedFrenchDoorDoubleWhite"/>
+				<property name="CustomIcon" value="frenchDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="7F9581"/>
+				<property name="TintColor" value="7F9581"/>
+				<property name="SortOrder2" value="0105"/>
+			</block>
+			<!-- Blue -->
+			<block name="reinforcedFrenchDoorDoubleBlue">
+				<property name="Extends" value="reinforcedFrenchDoorDoubleWhite"/>
+				<property name="CustomIcon" value="frenchDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="6C7E8B"/>
+				<property name="TintColor" value="6C7E8B"/>
+				<property name="SortOrder2" value="0106"/>
+			</block>
+			<!-- Purple -->
+			<block name="reinforcedFrenchDoorDoublePurple">
+				<property name="Extends" value="reinforcedFrenchDoorDoubleWhite"/>
+				<property name="CustomIcon" value="frenchDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="70697D"/>
+				<property name="TintColor" value="70697D"/>
+				<property name="SortOrder2" value="0107"/>
+			</block>
+			<!-- Grey -->
+			<block name="reinforcedFrenchDoorDoubleGrey">
+				<property name="Extends" value="reinforcedFrenchDoorDoubleWhite"/>
+				<property name="CustomIcon" value="frenchDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="6B6B6B"/>
+				<property name="TintColor" value="6B6B6B"/>
+				<property name="SortOrder2" value="0108"/>
+			</block>
+			<!-- Pink -->
+			<block name="reinforcedFrenchDoorDoublePink">
+				<property name="Extends" value="reinforcedFrenchDoorDoubleWhite"/>
+				<property name="CustomIcon" value="frenchDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="9E899C"/>
+				<property name="TintColor" value="9E899C"/>
+				<property name="SortOrder2" value="0110"/>
+			</block>
+			<!-- Oak -->
+			<block name="reinforcedFrenchDoorDoubleOak">
+				<property name="Extends" value="reinforcedFrenchDoorDoubleWhite"/>
+				<property name="CustomIcon" value="frenchDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="765024"/>
+				<property name="TintColor" value="765024"/>
+				<property name="SortOrder2" value="0112"/>
+			</block>
+
+			<!-- *** INTERIOR_DOORS -->
+			<!-- White -->
+			<block name="reinforcedInteriorHouseDoorWhite">
+				<property name="Extends" value="interiorHouseDoorWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorWhite"/>				
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 7000,
+					Door/DMG3, 1500,
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A306"/>
+					<property name="SortOrder2" value="0000"/>
+			</block>			
+			<!-- Brown -->
+			<block name="reinforcedInteriorHouseDoorBrown">
+				<property name="Extends" value="reinforcedInteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorWhite"/>
+				<property name="CustomIconTint" value="5F4D46"/>
+				<property name="TintColor" value="5F4D46"/>
+				<property name="SortOrder2" value="0001"/>
+			</block>
+			<!-- Red -->
+			<block name="reinforcedInteriorHouseDoorRed">
+				<property name="Extends" value="reinforcedInteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorWhite"/>
+				<property name="CustomIconTint" value="864C4C"/>
+				<property name="TintColor" value="864C4C"/>
+				<property name="SortOrder2" value="0002"/>
+			</block>
+			<!-- Orange -->
+			<block name="reinforcedInteriorHouseDoorOrange">
+				<property name="Extends" value="reinforcedInteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorWhite"/>
+				<property name="CustomIconTint" value="BF967B"/>
+				<property name="TintColor" value="BF967B"/>
+				<property name="SortOrder2" value="0003"/>
+			</block>
+			<!-- Yellow -->
+			<block name="reinforcedInteriorHouseDoorYellow">
+				<property name="Extends" value="reinforcedInteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorWhite"/>
+				<property name="CustomIconTint" value="C9C8A2"/>
+				<property name="TintColor" value="C9C8A2"/>
+				<property name="SortOrder2" value="0004"/>
+			</block>
+			<!-- Green -->
+			<block name="reinforcedInteriorHouseDoorGreen">
+				<property name="Extends" value="reinforcedInteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorWhite"/>
+				<property name="CustomIconTint" value="7D8977"/>
+				<property name="TintColor" value="7D8977"/>
+				<property name="SortOrder2" value="0005"/>
+			</block>
+			<!-- Blue -->
+			<block name="reinforcedInteriorHouseDoorBlue">
+				<property name="Extends" value="reinforcedInteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorWhite"/>
+				<property name="CustomIconTint" value="8A98A6"/>
+				<property name="TintColor" value="8A98A6"/>
+				<property name="SortOrder2" value="0006"/>
+			</block>
+			<!-- Purple -->
+			<block name="reinforcedInteriorHouseDoorPurple">
+				<property name="Extends" value="reinforcedInteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorWhite"/>
+				<property name="CustomIconTint" value="756E7C"/>
+				<property name="TintColor" value="756E7C"/>
+				<property name="SortOrder2" value="0007"/>
+			</block>
+			<!-- Grey -->
+			<block name="reinforcedInteriorHouseDoorGrey">
+				<property name="Extends" value="reinforcedInteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorWhite"/>
+				<property name="CustomIconTint" value="A3A3A3"/>
+				<property name="TintColor" value="A3A3A3"/>
+				<property name="SortOrder2" value="0008"/>
+			</block>
+			<!-- Pink -->
+			<block name="reinforcedInteriorHouseDoorPink">
+				<property name="Extends" value="reinforcedInteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorWhite"/>
+				<property name="CustomIconTint" value="A595A5"/>
+				<property name="TintColor" value="A595A5"/>
+				<property name="SortOrder2" value="0010"/>
+			</block>
+			<!-- Oak -->
+			<block name="reinforcedInteriorHouseDoorOak">
+				<property name="Extends" value="reinforcedInteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorWhite"/>
+				<property name="CustomIconTint" value="765024"/>
+				<property name="TintColor" value="765024"/>
+				<property name="SortOrder2" value="0012"/>
+			</block>
+			
+			<!-- *** INTERIOR_DOUBLE_DOORS -->
+			<!-- White -->
+			<block name="reinforcedInteriorHouseDoorDoubleWhite">
+				<property name="Extends" value="interiorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorDoubleWhite"/>				
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 7000,
+					Door/DMG3, 1500,
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A307"/>
+					<property name="SortOrder2" value="0000"/>
+			</block>
+			<!-- Brown -->
+			<block name="reinforcedInteriorHouseDoorDoubleBrown">
+				<property name="Extends" value="reinforcedInteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="5F4D46"/>
+				<property name="TintColor" value="5F4D46"/>
+				<property name="SortOrder2" value="0101"/>
+			</block>
+			<!-- Red -->
+			<block name="reinforcedInteriorHouseDoorDoubleRed">
+				<property name="Extends" value="reinforcedInteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="864C4C"/>
+				<property name="TintColor" value="864C4C"/>
+				<property name="SortOrder2" value="0102"/>
+			</block>
+			<!-- Orange -->
+			<block name="reinforcedInteriorHouseDoorDoubleOrange">
+				<property name="Extends" value="reinforcedInteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="BF967B"/>
+				<property name="TintColor" value="BF967B"/>
+				<property name="SortOrder2" value="0103"/>
+			</block>
+			<!-- Yellow -->
+			<block name="reinforcedInteriorHouseDoorDoubleYellow">
+				<property name="Extends" value="reinforcedInteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="C9C8A2"/>
+				<property name="TintColor" value="C9C8A2"/>
+				<property name="SortOrder2" value="0104"/>
+			</block>
+			<!-- Green -->
+			<block name="reinforcedInteriorHouseDoorDoubleGreen">
+				<property name="Extends" value="reinforcedInteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="7D8977"/>
+				<property name="TintColor" value="7D8977"/>
+				<property name="SortOrder2" value="0105"/>
+			</block>
+			<!-- Blue -->
+			<block name="reinforcedInteriorHouseDoorDoubleBlue">
+				<property name="Extends" value="reinforcedInteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="8A98A6"/>
+				<property name="TintColor" value="8A98A6"/>
+				<property name="SortOrder2" value="0106"/>
+			</block>
+			<!-- Purple -->
+			<block name="reinforcedInteriorHouseDoorDoublePurple">
+				<property name="Extends" value="reinforcedInteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="756E7C"/>
+				<property name="TintColor" value="756E7C"/>
+				<property name="SortOrder2" value="0107"/>
+			</block>
+			<!-- Grey -->
+			<block name="reinforcedInteriorHouseDoorDoubleGrey">
+				<property name="Extends" value="reinforcedInteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="A3A3A3"/>
+				<property name="TintColor" value="A3A3A3"/>
+				<property name="SortOrder2" value="0108"/>
+			</block>
+			<!-- Pink -->
+			<block name="reinforcedInteriorHouseDoorDoublePink">
+				<property name="Extends" value="reinforcedInteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="A595A5"/>
+				<property name="TintColor" value="A595A5"/>
+				<property name="SortOrder2" value="0110"/>
+			</block>
+			<!-- Oak -->
+			<block name="reinforcedInteriorHouseDoorDoubleOak">
+				<property name="Extends" value="reinforcedInteriorHouseDoorDoubleWhite"/>
+				<property name="CustomIcon" value="interiorHouseDoorDoubleWhite"/>
+				<property name="CustomIconTint" value="765024"/>
+				<property name="TintColor" value="765024"/>
+				<property name="SortOrder2" value="0112"/>
+			</block>
+
+			<!-- *** COMMERCIAL_GLASS_DOORS -->
+			<block name="reinforcedCommercialGlassDoor">
+				<property name="Extends" value="commercialGlassDoor"/>
+				<property name="CustomIcon" value="commercialGlassDoor"/>				
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 7000,
+					Door/DMG3, 1500,
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A308"/>
+					<property name="SortOrder2" value="0000"/>
+			</block>	
+			<block name="reinforcedCommercialBulletproofGlassDoor">
+				<property name="Extends" value="commercialBulletproofGlassDoor"/>
+				<property name="CustomIcon" value="commercialBulletproofGlassDoor"/>				
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 7000,
+					Door/DMG3, 1500,
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A308"/>
+					<property name="SortOrder2" value="0001"/>
+			</block>	
+			<block name="reinforcedCommercialGlassDoorDouble">
+				<property name="Extends" value="commercialGlassDoorDouble"/>
+				<property name="CustomIcon" value="commercialGlassDoorDouble"/>				
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 7000,
+					Door/DMG3, 1500,
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A309"/>
+					<property name="SortOrder2" value="0000"/>
+			</block>	
+			<block name="reinforcedCommercialBulletproofGlassDoorDouble">
+				<property name="Extends" value="commercialBulletproofGlassDoorDouble"/>
+				<property name="CustomIcon" value="commercialBulletproofGlassDoorDouble"/>				
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 7000,
+					Door/DMG3, 1500,
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A309"/>
+					<property name="SortOrder2" value="0001"/>
+			</block>
+
+			<!-- *** COMMERCIAL_SLIDNIG_DOORS -->
+			<block name="reinforcedCommercialSlidingDoor">
+				<property name="Extends" value="commercialSlidingDoor"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>				
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 2400,	
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A310"/>
+					<property name="SortOrder2" value="0000"/>
+			</block>	
+			<block name="reinforcedCommercialBulletproofSlidingDoor">
+				<property name="Extends" value="commercialBulletproofSlidingDoor"/>
+				<property name="CustomIcon" value="commercialBulletproofSlidingDoor"/>				
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 2400,
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A310"/>
+					<property name="SortOrder2" value="0001"/>
+			</block>	
+
+
+			<block name="decoVariant_ReinforcedDoors">
+				<property name="Extends" value="reinforcedExteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+				<property name="CreativeMode" value="Player"/>
+				<property name="DescriptionKey" value="metalFurnitureBlockVariantHelperDesc"/>
+				<property name="ItemTypeIcon" value="all_blocks"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="SelectAlternates" value="true" />
+				<property name="AllowAllRotations" value="true"/>
+				<property name="PlaceAltBlockValue" value="reinforcedExteriorHouseDoorWhite,reinforcedExteriorHouseDoorBrown,reinforcedExteriorHouseDoorRed,reinforcedExteriorHouseDoorOrange,reinforcedExteriorHouseDoorYellow,reinforcedExteriorHouseDoorGreen,reinforcedExteriorHouseDoorBlue,reinforcedExteriorHouseDoorPurple,reinforcedExteriorHouseDoorGrey,reinforcedExteriorHouseDoorPink,reinforcedExteriorHouseDoorOak,reinforcedExteriorHouseDoorDoubleWhite,reinforcedExteriorHouseDoorDoubleBrown,reinforcedExteriorHouseDoorDoubleRed,reinforcedExteriorHouseDoorDoubleOrange,reinforcedExteriorHouseDoorDoubleYellow,reinforcedExteriorHouseDoorDoubleGreen,reinforcedExteriorHouseDoorDoubleBlue,reinforcedExteriorHouseDoorDoublePurple,reinforcedExteriorHouseDoorDoubleGrey,reinforcedExteriorHouseDoorDoublePink,reinforcedExteriorHouseDoorDoubleOak,reinforcedExteriorHouseDoorSideLightSingleWhite,reinforcedExteriorHouseDoorSideLightSingleBrown,reinforcedExteriorHouseDoorSideLightSingleRed,reinforcedExteriorHouseDoorSideLightSingleOrange,reinforcedExteriorHouseDoorSideLightSingleYellow,reinforcedExteriorHouseDoorSideLightSingleGreen,reinforcedExteriorHouseDoorSideLightSingleBlue,reinforcedExteriorHouseDoorSideLightSinglePurple,reinforcedExteriorHouseDoorSideLightSingleGrey,reinforcedExteriorHouseDoorSideLightSinglePink,reinforcedExteriorHouseDoorSideLightSingleOak,reinforcedExteriorHouseDoorSideLightWhite,reinforcedExteriorHouseDoorSideLightBrown,reinforcedExteriorHouseDoorSideLightRed,reinforcedExteriorHouseDoorSideLightOrange,reinforcedExteriorHouseDoorSideLightYellow,reinforcedExteriorHouseDoorSideLightGreen,reinforcedExteriorHouseDoorSideLightBlue,reinforcedExteriorHouseDoorSideLightPurple,reinforcedExteriorHouseDoorSideLightGrey,reinforcedExteriorHouseDoorSideLightPink,reinforcedExteriorHouseDoorSideLightOak,reinforcedFrenchDoorWhite,reinforcedFrenchDoorBrown,reinforcedFrenchDoorRed,reinforcedFrenchDoorOrange,reinforcedFrenchDoorYellow,reinforcedFrenchDoorGreen,reinforcedFrenchDoorBlue,reinforcedFrenchDoorPurple,reinforcedFrenchDoorGrey,reinforcedFrenchDoorPink,reinforcedFrenchDoorOak,reinforcedFrenchDoorDoubleWhite,reinforcedFrenchDoorDoubleBrown,reinforcedFrenchDoorDoubleRed,reinforcedFrenchDoorDoubleOrange,reinforcedFrenchDoorDoubleYellow,reinforcedFrenchDoorDoubleGreen,reinforcedFrenchDoorDoubleBlue,reinforcedFrenchDoorDoublePurple,reinforcedFrenchDoorDoubleGrey,reinforcedFrenchDoorDoublePink,reinforcedFrenchDoorDoubleOak,reinforcedInteriorHouseDoorWhite,reinforcedInteriorHouseDoorBrown,reinforcedInteriorHouseDoorRed,reinforcedInteriorHouseDoorOrange,reinforcedInteriorHouseDoorYellow,reinforcedInteriorHouseDoorGreen,reinforcedInteriorHouseDoorBlue,reinforcedInteriorHouseDoorPurple,reinforcedInteriorHouseDoorGrey,reinforcedInteriorHouseDoorPink,reinforcedInteriorHouseDoorOak,reinforcedInteriorHouseDoorDoubleWhite,reinforcedInteriorHouseDoorDoubleBrown,reinforcedInteriorHouseDoorDoubleRed,reinforcedInteriorHouseDoorDoubleOrange,reinforcedInteriorHouseDoorDoubleYellow,reinforcedInteriorHouseDoorDoubleGreen,reinforcedInteriorHouseDoorDoubleBlue,reinforcedInteriorHouseDoorDoublePurple,reinforcedInteriorHouseDoorDoubleGrey,reinforcedInteriorHouseDoorDoublePink,reinforcedInteriorHouseDoorDoubleOak,reinforcedCommercialGlassDoor,reinforcedCommercialBulletproofGlassDoor,reinforcedCommercialGlassDoorDouble,reinforcedCommercialBulletproofGlassDoorDouble,reinforcedCommercialSlidingDoor,reinforcedCommercialBulletproofSlidingDoor,jailDoorWhite,jailDoorBrown,jailDoorYellow,jailDoorGreen,jailDoorBlue,jailDoorGrey,jailDoorDoubleWhite,jailDoorDoubleBrown,jailDoorDoubleYellow,jailDoorDoubleGreen,jailDoorDoubleBlue,jailDoorDoubleGrey,jailBarsWhite,jailBarsBrown,jailBarsYellow,jailBarsGreen,jailBarsBlue,jailBarsGrey"/>
+				<property name="Group" value="Decor/Miscellaneous"/>
+			</block>			
+			<!---->
+			<block name="decoVariant_Doors">
+				<property name="Extends" value="reinforcedExteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+				<property name="CreativeMode" value="Player"/>
+				<property name="DescriptionKey" value="metalFurnitureBlockVariantHelperDesc"/>
+				<property name="ItemTypeIcon" value="all_blocks"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="SelectAlternates" value="true" />
+				<property name="AllowAllRotations" value="true"/>
+				<property name="PlaceAltBlockValue" value="reinforcedExteriorHouseDoorWhite,reinforcedExteriorHouseDoorBrown,reinforcedExteriorHouseDoorRed,reinforcedExteriorHouseDoorOrange"/>
+				<property name="Group" value="Decor/Miscellaneous"/>
+			</block>
+
+			<!--Working ON-->
+			<block name="extraBigDoor">
+				<property name="Extends" value="commercialSlidingDoor"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>				
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 2400,	
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A310"/>
+					<property name="SortOrder2" value="0000"/>
+			</block>
+			<!--Bridge + bigdoor-->
+			<block name="extraDoorVariant1">
+				<property name="Extends" value="reinforcedExteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+				<property name="CreativeMode" value="Player"/>
+				<property name="DescriptionKey" value="metalFurnitureBlockVariantHelperDesc"/>
+				<property name="ItemTypeIcon" value="all_blocks"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="SelectAlternates" value="true" />
+				<property name="AllowAllRotations" value="true"/>
+				<property name="PlaceAltBlockValue" value="reinforcedExteriorHouseDoorWhite,reinforcedExteriorHouseDoorBrown"/>
+				<property name="Group" value="Decor/Miscellaneous"/>
+			</block>			
+			<block name="extraBigDoorPowered">
+				<property name="Extends" value="commercialSlidingDoor"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>				
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 2400,	
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A310"/>
+					<property name="SortOrder2" value="0000"/>
+			</block>
+
+			<!--Bridge + bigdoor Powered-->
+			<block name="extraDoorVariant2">
+				<property name="Extends" value="reinforcedExteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+				<property name="CreativeMode" value="Player"/>
+				<property name="DescriptionKey" value="metalFurnitureBlockVariantHelperDesc"/>
+				<property name="ItemTypeIcon" value="all_blocks"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="SelectAlternates" value="true" />
+				<property name="AllowAllRotations" value="true"/>
+				<property name="PlaceAltBlockValue" value="reinforcedExteriorHouseDoorWhite,reinforcedExteriorHouseDoorBrown"/>
+				<property name="Group" value="Decor/Miscellaneous"/>
+			</block>
+			<!--rolling special-->
+			<block name="extraDoorVariant3">
+				<property name="Extends" value="reinforcedExteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+				<property name="CreativeMode" value="Player"/>
+				<property name="DescriptionKey" value="metalFurnitureBlockVariantHelperDesc"/>
+				<property name="ItemTypeIcon" value="all_blocks"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="SelectAlternates" value="true" />
+				<property name="AllowAllRotations" value="true"/>
+				<property name="PlaceAltBlockValue" value="reinforcedExteriorHouseDoorWhite,reinforcedExteriorHouseDoorBrown"/>
+				<property name="Group" value="Decor/Miscellaneous"/>
+			</block>
+			
+			<block name="extraDoor1">
+				<property name="Extends" value="commercialSlidingDoor"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>				
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 2400,	
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A310"/>
+					<property name="SortOrder2" value="0000"/>
+			</block>
+			<block name="extraDoor2">
+				<property name="Extends" value="commercialSlidingDoor"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>				
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 2400,	
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A310"/>
+					<property name="SortOrder2" value="0000"/>
+			</block>
+			<block name="extraDoor3">
+				<property name="Extends" value="commercialSlidingDoor"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>				
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 2400,	
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A310"/>
+					<property name="SortOrder2" value="0000"/>
+			</block>
+			<!--rolling special powered-->
+			<block name="extraDoorVariant4">
+				<property name="Extends" value="reinforcedExteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+				<property name="CreativeMode" value="Player"/>
+				<property name="DescriptionKey" value="metalFurnitureBlockVariantHelperDesc"/>
+				<property name="ItemTypeIcon" value="all_blocks"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="SelectAlternates" value="true" />
+				<property name="AllowAllRotations" value="true"/>
+				<property name="PlaceAltBlockValue" value="reinforcedExteriorHouseDoorWhite,reinforcedExteriorHouseDoorBrown"/>
+				<property name="Group" value="Decor/Miscellaneous"/>
+			</block>
+
+			<block name="extraRolling3x3">
+				<property name="Extends" value="commercialSlidingDoor"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>				
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 2400,	
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A310"/>
+					<property name="SortOrder2" value="0000"/>
+			</block>
+			<block name="extraRolling3x3_1">
+				<property name="Extends" value="extraRolling3x3"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling3x3_2">
+				<property name="Extends" value="extraRolling3x3"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling3x3_3">
+				<property name="Extends" value="extraRolling3x3"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling3x3_4">
+				<property name="Extends" value="extraRolling3x3"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling3x3_5">
+				<property name="Extends" value="extraRolling3x3"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling3x3_6">
+				<property name="Extends" value="extraRolling3x3"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling3x3_7">
+				<property name="Extends" value="extraRolling3x3"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling3x3_8">
+				<property name="Extends" value="extraRolling3x3"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling3x3_9">
+				<property name="Extends" value="extraRolling3x3"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling3x3_10">
+				<property name="Extends" value="extraRolling3x3"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling5x4">
+				<property name="Extends" value="commercialSlidingDoor"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>				
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 2400,	
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A310"/>
+					<property name="SortOrder2" value="0000"/>
+			</block>
+			<block name="extraRolling5x4_1">
+				<property name="Extends" value="extraRolling5x4"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling5x4_2">
+				<property name="Extends" value="extraRolling5x4"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling5x4_3">
+				<property name="Extends" value="extraRolling5x4"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling5x4_4">
+				<property name="Extends" value="extraRolling5x4"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling5x4_5">
+				<property name="Extends" value="extraRolling5x4"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling5x4_6">
+				<property name="Extends" value="extraRolling5x4"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling5x4_7">
+				<property name="Extends" value="extraRolling5x4"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling5x4_8">
+				<property name="Extends" value="extraRolling5x4"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling5x4_9">
+				<property name="Extends" value="extraRolling5x4"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling5x4_10">
+				<property name="Extends" value="extraRolling5x4"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling7x4">
+				<property name="Extends" value="commercialSlidingDoor"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>				
+				<property name="Material" value="Msteel"/>   
+				<property name="MaxDamage" value="12000"/>     
+				<property name="MeshDamage" value="
+					Door/DMG0, 13000,
+					Door/DMG1, 12000,
+					Door/DMG2, 2400,	
+					-, 1
+					"/>
+					<property name="SortOrder1" value="A310"/>
+					<property name="SortOrder2" value="0000"/>
+			</block>
+			<block name="extraRolling7x4_1">
+				<property name="Extends" value="extraRolling7x4"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling7x4_2">
+				<property name="Extends" value="extraRolling7x4"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling7x4_3">
+				<property name="Extends" value="extraRolling7x4"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling7x4_4">
+				<property name="Extends" value="extraRolling7x4"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling7x4_5">
+				<property name="Extends" value="extraRolling7x4"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling7x4_6">
+				<property name="Extends" value="extraRolling7x4"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling7x4_7">
+				<property name="Extends" value="extraRolling7x4"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling7x4_8">
+				<property name="Extends" value="extraRolling7x4"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling7x4_9">
+				<property name="Extends" value="extraRolling7x4"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+			<block name="extraRolling7x4_10">
+				<property name="Extends" value="extraRolling7x4"/>
+				<property name="CustomIcon" value="commercialSlidingDoor"/>		
+			</block>
+
+			<!--rolling powered-->
+			<block name="extraDoorVariant4">
+				<property name="Extends" value="reinforcedExteriorHouseDoorWhite"/>
+				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+				<property name="CreativeMode" value="Player"/>
+				<property name="DescriptionKey" value="metalFurnitureBlockVariantHelperDesc"/>
+				<property name="ItemTypeIcon" value="all_blocks"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="SelectAlternates" value="true" />
+				<property name="AllowAllRotations" value="true"/>
+				<property name="PlaceAltBlockValue" value="reinforcedExteriorHouseDoorWhite,reinforcedExteriorHouseDoorBrown"/>
+				<property name="Group" value="Decor/Miscellaneous"/>
+			</block>
+
 	</append>
 
 </MalenED>
