@@ -270,7 +270,7 @@
 
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelAcidPrefab" local_offset="0,.1,-.2" local_rotation="0,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelAcidPrefab" local_offset=".2,.2,-.2" local_rotation="0,0,0" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfRangedBurstShotEnd" target="self" action="ModifyStats" stat="Health" operation="subtract" value="99999999"/>
 				<triggered_effect trigger="onSelfDamagedBlock" target="self" action="ModifyStats" stat="Health" operation="set" value="60"/>
 
@@ -291,7 +291,7 @@
 					<requirement name="!HasParticle" particle="p_twitch_zombie_radiation_right" />
 				</triggered_effect>
 
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelAcidPrefab" local_offset="0,.1,-.2" local_rotation="0,0,0" parent_transform="Spine">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelAcidPrefab" local_offset=".2,.2,-.2" local_rotation="0,0,0" parent_transform="Spine">
 					<requirement name="!HasPrefab" particle="Entities/Industrial/barrelAcidPrefab" />
 				</triggered_effect>
 
@@ -884,10 +884,11 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="3" tags="head"/>
 			</effect_group>
 		</buff>
-		<buff name="doblecierra" hidden="true">
+		<buff name="gladDeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Chainsaw/chainsawPrefab.prefab" local_offset="-.1,-.1,0" local_rotation="0,90,180" parent_transform="RightHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" particle="@:Other/Items/Weapons/Melee/Chainsaw/chainsawPrefab.prefab" local_offset="-.1,0,0" local_rotation="180,90,180" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Chainsaw/chainsawPrefab.prefab" local_offset=".1,0,-.05" local_rotation="0,90,180" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Traps/hubcapPrefab" local_offset="-.1,0,.55" local_rotation="90,0,0" parent_transform="LeftHand"/>
+				
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="chainsaw_idle"/>
 			</effect_group>
 		</buff>
@@ -1709,15 +1710,19 @@
 		</buff>
 		<buff name="BomberDeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelRadiatedPrefab" local_offset="0,.1,-.2" local_rotation="0,0,0" parent_transform="Spine"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelRadiatedPrefab" local_offset=".2,.2,-.2" local_rotation="0,0,0" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfRangedBurstShotEnd" target="self" action="ModifyStats" stat="Health" operation="subtract" value="99999999"/>
 				<triggered_effect trigger="onSelfDamagedBlock" target="self" action="ModifyStats" stat="Health" operation="set" value="60"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelRadiatedPrefab" local_offset=".2,.2,-.2" local_rotation="0,0,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" particle="Entities/Industrial/barrelAcidPrefab" />
+				</triggered_effect>
 			</effect_group>
 		</buff>
 		<buff name="cowheadDeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/cowSkullPrefab" local_offset="-.4,0,.3" local_rotation="0,30,0" parent_transform="Head"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Chainsaw/chainsawPrefab.prefab" local_offset="-.1,0,0" local_rotation="90,90,180" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/cowSkullPrefab" local_offset="0,.4,0" local_rotation="-10,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Chainsaw/chainsawPrefab.prefab" local_offset="0,0,-.05" local_rotation="0,90,180" parent_transform="RightHand"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="chainsaw_idle" />
 			</effect_group>
 		</buff>
@@ -1737,7 +1742,7 @@
 		</buff>
 		<buff name="scarecrowDeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Plants/pumpkinJackoLanternPrefab" local_offset="0,.5,0" local_rotation="0,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Plants/pumpkinJackoLanternPrefab" local_offset="0,.4,0" local_rotation="0,0,0" parent_transform="Head"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_torch_wall" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightHand"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_torch_wall" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftHand"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Tools/pickaxe_ironPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightHand"/>

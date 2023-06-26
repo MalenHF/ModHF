@@ -3,19 +3,18 @@
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Item de Temporada ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<item name="eventIT1">
 			<property name="Extends" value="partsMaster"/>
-			<property name="ItemTypeIcon" value="twitch_special"/>
 			<property name="DescriptionKey" value="eventitemdesc"/>
-			
+			<property name="ItemTypeIcon" value="twitch_special"/>
 			<!--<property name="CustomIcon" value="meleeWpnClubT1CandyClub"/> navidad-->
 			<!--<property name="CustomIcon" value="resourceForgedSteel"/> valentin-->
 			<!--<property name="CustomIcon" value="foodEgg"/> pascuas-->			
 			<!--<property name="CustomIcon" value="resourceConcreteMix"/> verano-->
 			<!--<property name="CustomIcon" value="decoPumpkinJackOLantern"/> Otoño-->
-			<property name="CustomIcon" value="resourceForgedSteel"/>
+			<property name="CustomIcon" value="resourceConcreteMix"/>
 			<!--<property name="CustomIconTint" value="FFA200"/> verano/Otoño-->
 			<!--<property name="CustomIconTint" value="2E1503"/> san valentin -->
 			<!--<property name="CustomIconTint" value="FF00E0"/> Pacua -->
-			<property name="CustomIconTint" value="2E1503"/>			
+			<property name="CustomIconTint" value="FFA200"/>			
 			<property name="Material" value="Morganic"/>
 			<property name="Stacknumber" value="400"/>
 			<property name="Group" value="Mods"/>
@@ -23,10 +22,11 @@
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Tickets de evento ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<item name="eventIT2">
 			<property name="Extends" value="partsMaster"/>
-			<property name="ItemTypeIcon" value="star"/>
+			<property name="ItemTypeIcon" value="twitch_special"/>
+			
 			<property name="DescriptionKey" value="eventitem2desc"/>
 			<!--<property name="CustomIcon" value="meleeWpnClubT1CandyClub"/>-->
-			<property name="CustomIcon" value="questMaster"/>
+			<property name="CustomIcon" value="adminQuestTicketMaster"/>
 			<property name="CustomIconTint" value="100,0,0"/>
 			<property name="Material" value="Morganic"/>
 			<!-- <property name="UnlockedBy" value="modArmorPlatingReinforcedSchematic"/> -->
@@ -38,8 +38,9 @@
 			<property name="Extends" value="partsMaster"/>
 			<property name="ItemTypeIcon" value="star"/>
 			<property name="DescriptionKey" value="eventitem3desc"/>
-			<property name="CustomIcon" value="oldCash"/>
-			<property name="CustomIconTint" value="100,0,0"/>
+			<property name="CustomIcon" value="adminQuestTicketMaster"/>
+			<property name="CustomIconTint" value="81, 209, 246"/>
+			<property name="TintColor" value="81, 209, 246"/>	
 			<property name="Material" value="Morganic"/>
 			<property name="Stacknumber" value="400"/>
 			<property name="Group" value="Mods"/>
@@ -47,7 +48,7 @@
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Dulces de evento ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<item name="eventIT4">
 			<property name="Extends" value="partsMaster"/>
-			<property name="ItemTypeIcon" value="twitch_special"/>
+			<property name="ItemTypeIcon" value="star"/>
 			<property name="DescriptionKey" value="eventitemdesc"/>
 			<property name="CustomIcon" value="drugRockBusters"/>
 			<property name="CustomIconTint" value="FFA200"/>			
@@ -57,7 +58,7 @@
 		</item>
 		<item name="eventIT5">
 			<property name="Extends" value="partsMaster"/>
-			<property name="ItemTypeIcon" value="twitch_special"/>
+			<property name="ItemTypeIcon" value="star"/>			
 			<property name="DescriptionKey" value="eventitemdesc"/>
 			<property name="CustomIcon" value="drugSugarButts"/>
 			<property name="CustomIconTint" value="FF00E0"/>			
@@ -99,154 +100,7 @@
 				<property name="Create_item_count" value="30000"/>
 			</property>
 		</item>
-	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Invite event ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-		<item name="newbielvl1">
-			<property name="CustomIcon" value="bundleFarm"/>
-			<property name="ItemTypeIcon" value="twitch_special"/>
-			<property name="HoldType" value="45"/>
-			<property name="DescriptionKey" value="newbiKitDesc"/>
-			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
-			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-			<property name="Material" value="Morganic"/>
-			<property name="Stacknumber" value="1"/>
-			<property name="Weight" value="0"/>
-			<property name="Group" value="Special Items"/>
-			<property class="Action0">
-				
-				<property name="Class" value="OpenBundle"/>
-				<property name="Delay" value="0.5"/>
-				<property name="Use_time" value="1"/>
-				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="juguito_de_chale,ammoKitMini,eventbackpack,newbielvl50"/>
-				<property name="Create_item_count" value="24,1,1"/>
-			</property>
-		</item>
-		<item name="newbielvl50">
-			<property name="CustomIcon" value="bundleFarm"/>
-			<property name="ItemTypeIcon" value="twitch_special"/>
-			<property name="HoldType" value="45"/>
-			<property name="DescriptionKey" value="newbiKitDesc"/>
-			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
-			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-			<property name="Material" value="Morganic"/>
-			<property name="Stacknumber" value="1"/>
-			<property name="Weight" value="0"/>
-			<property name="Group" value="Special Items"/>
-			<property class="Action0">				
-				<requirement name="PlayerLevel" operation="GT" value="49"/>
-				<property name="Class" value="OpenBundle"/>
-				<property name="Delay" value="0.5"/>
-				<property name="Use_time" value="1"/>
-				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="juguito_de_chale,AmmoKit,RWRKIT3,newbielvl100,friendlvl50"/>
-				<property name="Create_item_count" value="24,1,1,1,1"/>
-			</property>
-		</item>
-		<item name="newbielvl100">
-			<property name="CustomIcon" value="bundleFarm"/>
-			<property name="ItemTypeIcon" value="twitch_special"/>
-			<property name="HoldType" value="45"/>
-			<property name="DescriptionKey" value="newbiKitDesc"/>
-			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
-			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-			<property name="Material" value="Morganic"/>
-			<property name="Stacknumber" value="1"/>
-			<property name="Weight" value="0"/>
-			<property name="Group" value="Special Items"/>
-			<property class="Action0">
-				<requirement name="PlayerLevel" operation="GT" value="99"/>
-				<property name="Class" value="OpenBundle"/>
-				<property name="Delay" value="0.5"/>
-				<property name="Use_time" value="1"/>
-				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="juguito_de_chale,AmmoKit,RWRKIT2,newbielvl200,friendlvl100"/>
-				<property name="Create_item_count" value="25,2,1,1"/>
-			</property>
-		</item>
-		<item name="newbielvl200">
-			<property name="CustomIcon" value="bundleFarm"/>
-			<property name="ItemTypeIcon" value="twitch_special"/>
-			<property name="HoldType" value="45"/>
-			<property name="DescriptionKey" value="newbiKitDesc"/>
-			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
-			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-			<property name="Material" value="Morganic"/>
-			<property name="Stacknumber" value="1"/>
-			<property name="Weight" value="0"/>
-			<property name="Group" value="Special Items"/>
-			<property class="Action0">
-				<requirement name="PlayerLevel" operation="GT" value="199"/>
-				<property name="Class" value="OpenBundle"/>
-				<property name="Delay" value="0.5"/>
-				<property name="Use_time" value="1"/>
-				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="juguito_de_chale,LegKit,RWRKIT1,friendlvl200"/>
-				<property name="Create_item_count" value="50,1,1"/>
-			</property>
-		</item>
-		<item name="friendlvl50">
-			<property name="CustomIcon" value="bundleFarm"/>
-			<property name="ItemTypeIcon" value="twitch_special"/>
-			<property name="HoldType" value="45"/>
-			<property name="DescriptionKey" value="newbiKitDesc"/>
-			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
-			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-			<property name="Material" value="Morganic"/>
-			<property name="Stacknumber" value="1"/>
-			<property name="Weight" value="0"/>
-			<property name="Group" value="Special Items"/>
-			<property class="Action0">				
-				<requirement name="PlayerLevel" operation="GT" value="49"/>
-				<property name="Class" value="OpenBundle"/>
-				<property name="Delay" value="0.5"/>
-				<property name="Use_time" value="1"/>
-				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="juguito_de_chale,AmmoKit,RWRKIT3"/>
-				<property name="Create_item_count" value="24,1,1,1"/>
-			</property>
-		</item>
-		<item name="friendlvl100">
-			<property name="CustomIcon" value="bundleFarm"/>
-			<property name="ItemTypeIcon" value="twitch_special"/>
-			<property name="HoldType" value="45"/>
-			<property name="DescriptionKey" value="newbiKitDesc"/>
-			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
-			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-			<property name="Material" value="Morganic"/>
-			<property name="Stacknumber" value="1"/>
-			<property name="Weight" value="0"/>
-			<property name="Group" value="Special Items"/>
-			<property class="Action0">
-				<requirement name="PlayerLevel" operation="GT" value="99"/>
-				<property name="Class" value="OpenBundle"/>
-				<property name="Delay" value="0.5"/>
-				<property name="Use_time" value="1"/>
-				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="juguito_de_chale,AmmoKit,RWRKIT2"/>
-				<property name="Create_item_count" value="25,2,1,1"/>
-			</property>
-		</item>
-		<item name="friendlvl200">
-			<property name="CustomIcon" value="bundleFarm"/>
-			<property name="ItemTypeIcon" value="twitch_special"/>
-			<property name="HoldType" value="45"/>
-			<property name="DescriptionKey" value="newbiKitDesc"/>
-			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
-			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-			<property name="Material" value="Morganic"/>
-			<property name="Stacknumber" value="1"/>
-			<property name="Weight" value="0"/>
-			<property name="Group" value="Special Items"/>
-			<property class="Action0">
-				<requirement name="PlayerLevel" operation="GT" value="199"/>
-				<property name="Class" value="OpenBundle"/>
-				<property name="Delay" value="0.5"/>
-				<property name="Use_time" value="1"/>
-				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="juguito_de_chale,LegKit,RWRKIT1"/>
-				<property name="Create_item_count" value="50,1,1"/>
-			</property>
-		</item>
+	
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Kit municion HP ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<item name="ammoKitMini">
 			<property name="CustomIcon" value="bundleAmmo"/>
@@ -513,8 +367,9 @@
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Bundles de evento ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<item name="PVPKIT">
-			<property name="CustomIcon" value="cntGarageStorage"/>
+			<property name="CustomIcon" value="cntTraderSuperChest"/>
 			<property name="DescriptionKey" value="PVPBDesc"/>
+			<property name="CustomIconTint" value="50,50,50"/>
 			<property name="ItemTypeIcon" value="bundle"/>
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
@@ -555,7 +410,7 @@
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Bundles de recompensas ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<item name="RWRKIT1">
-			<property name="CustomIcon" value="cntGarageStorage"/>
+			<property name="CustomIcon" value="cntSteelWritableCrate"/>
 			<property name="DescriptionKey" value="PVPBDesc"/>
 			<property name="ItemTypeIcon" value="trophy"/>
 			<property name="HoldType" value="45"/>
@@ -575,7 +430,7 @@
 			</property>
 		</item>
 		<item name="RWRKIT2">
-			<property name="CustomIcon" value="cntGarageStorage"/>
+			<property name="CustomIcon" value="cntIronWritableCrate"/>
 			<property name="DescriptionKey" value="PVPBDesc"/>
 			<property name="ItemTypeIcon" value="trophy"/>
 			<property name="HoldType" value="45"/>
@@ -595,7 +450,7 @@
 			</property>
 		</item>
 		<item name="RWRKIT3">
-			<property name="CustomIcon" value="cntGarageStorage"/>
+			<property name="CustomIcon" value="cntWoodWritableCrate"/>
 			<property name="DescriptionKey" value="PVPBDesc"/>
 			<property name="ItemTypeIcon" value="trophy"/>
 			<property name="HoldType" value="45"/>
@@ -615,7 +470,7 @@
 			</property>
 		</item>
 		<item name="RWRKIT4">
-			<property name="CustomIcon" value="cntGarageStorage"/>
+			<property name="CustomIcon" value="cntLootCrateBookstore"/>
 			<property name="DescriptionKey" value="PVPBDesc"/>
 			<property name="ItemTypeIcon" value="trophy"/>
 			<property name="HoldType" value="45"/>
@@ -635,7 +490,7 @@
 			</property>
 		</item>
 		<item name="navidadKit">
-			<property name="CustomIcon" value="keystoneBlock"/>
+			<property name="CustomIcon" value="cntStorageChest_01"/>
 			<property name="DescriptionKey" value="PVPBDesc"/>
 			<property name="ItemTypeIcon" value="twitch_special"/>
 			<property name="HoldType" value="45"/>
@@ -675,7 +530,7 @@
 			<property class="Action0">
 				<requirement name="!HasBuff" buff="PPBF"/>
 				<requirement name="!HasBuff" buff="PPBF2"/>
-				<requirement name="CVarCompare" cvar="$varhflvl50" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="$varHFLvlKit" operation="LT" value="1"/>
 				<requirement name="PlayerLevel" operation="GT" value="49"/>
 				<property name="Class" value="OpenBundle"/>
 				<property name="Delay" value="0.5"/>
@@ -685,7 +540,7 @@
 				<property name="Create_item_count" value="1,1,1,3,24,1"/>
 			</property>
 			<effect_group tiered="false">				
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varhflvl50" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varHFLvlKit" operation="set" value="1"/>
 			</effect_group>
 		</item>
 		<item name="kitlvl100">
@@ -705,7 +560,7 @@
 			<property class="Action0">
 				<requirement name="!HasBuff" buff="PPBF"/>
 				<requirement name="!HasBuff" buff="PPBF2"/>
-				<requirement name="CVarCompare" cvar="$varhflvl100" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="$varHFLvlKit" operation="LT" value="2"/>
 				<requirement name="PlayerLevel" operation="GT" value="99"/>
 				<property name="Class" value="OpenBundle"/>
 				<property name="Delay" value="0.5"/>
@@ -715,7 +570,7 @@
 				<property name="Create_item_count" value="1,5,100,24,1"/>
 			</property>
 			<effect_group tiered="false">				
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varhflvl100" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varHFLvlKit" operation="set" value="2"/>
 			</effect_group>
 		</item>
 		<item name="kitlvl200">
@@ -735,17 +590,17 @@
 			<property class="Action0">
 				<requirement name="!HasBuff" buff="PPBF"/>
 				<requirement name="!HasBuff" buff="PPBF2"/>
-				<requirement name="CVarCompare" cvar="$varhflvl200" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="$varHFLvlKit" operation="LT" value="3"/>
 				<requirement name="PlayerLevel" operation="GT" value="199"/>
 				<property name="Class" value="OpenBundle"/>
 				<property name="Delay" value="0.5"/>
 				<property name="Use_time" value="1"/>
 				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="LegKit,eventIT3,q_GachaPrem,eventIT2,juguito_de_chale,kitlvl300"/>
+				<property name="Create_item" value="special_bag,eventIT3,q_GachaPrem,eventIT2,juguito_de_chale,kitlvl300"/>
 				<property name="Create_item_count" value="1,1,5,200,48,1"/>
 			</property>
 			<effect_group tiered="false">				
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varhflvl200" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varHFLvlKit" operation="set" value="3"/>
 			</effect_group>
 		</item>
 		<item name="kitlvl300">
@@ -766,7 +621,7 @@
 				<requirement name="!HasBuff" buff="PPBF"/>
 				<requirement name="!HasBuff" buff="PPBF2"/>
 				<requirement name="PlayerLevel" operation="GT" value="299"/>
-				<requirement name="CVarCompare" cvar="$varhflvl300" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="$varHFLvlKit" operation="LT" value="4"/>
 				<property name="Class" value="OpenBundle"/>
 				<property name="Delay" value="0.5"/>
 				<property name="Use_time" value="1"/>
@@ -775,11 +630,11 @@
 				<property name="Create_item_count" value="1,3,10,300,48,1"/>
 			</property>
 			<effect_group tiered="false">				
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varhflvl300" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varHFLvlKit" operation="set" value="4"/>
 			</effect_group>
 		</item>
 		<item name="kitlvl350">
-			<property name="CustomIcon" value="poiPartHelper"/>
+			<property name="CustomIcon" value="decoEntityClothMaster"/>
 			<property name="ItemTypeIcon" value="perk"/>
 			<property name="CustomIconTint" value="100,0,0"/>
 			<property name="TintColor" value="100,0,0"/>
@@ -793,7 +648,7 @@
 			<property name="Group" value="Special Items"/>
 			<property name="Candrop" value="false"/>
 			<property class="Action0">
-				<requirement name="CVarCompare" cvar="$varhprest1" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="$varHFLvlKit" operation="LT" value="5"/>
 				<requirement name="PlayerLevel" operation="GT" value="349"/>
 				<requirement name="!HasBuff" buff="PPBF"/>
 				<requirement name="!HasBuff" buff="PPBF2"/>
@@ -805,11 +660,11 @@
 				<property name="Create_item_count" value="1,1,15"/>
 			</property>
 			<effect_group tiered="false">				
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varhprest1" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varHFLvlKit" operation="set" value="5"/>
 			</effect_group>
 		</item>		    
 		<item name="kitlvl450">
-			<property name="CustomIcon" value="poiPartHelper"/>
+			<property name="CustomIcon" value="decoEntityClothMaster"/>
 			<property name="ItemTypeIcon" value="perk"/>
 			<property name="CustomIconTint" value="100,0,0"/>
 			<property name="TintColor" value="100,0,0"/>
@@ -826,7 +681,7 @@
 				<requirement name="PlayerLevel" operation="GT" value="449"/>
 				<requirement name="!HasBuff" buff="PPBF"/>
 				<requirement name="!HasBuff" buff="PPBF2"/>
-				<requirement name="CVarCompare" cvar="$varhflvlmax" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="$varhflvlmax" operation="LT" value="6"/>
 				<property name="Class" value="OpenBundle"/>
 				<property name="Delay" value="0.5"/>
 				<property name="Use_time" value="1"/>
@@ -835,12 +690,12 @@
 				<property name="Create_item_count" value="1,1,100,20"/>
 			</property>
 			<effect_group tiered="false">				
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varhflvlmax" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varHFLvlKit" operation="set" value="6"/>
 			</effect_group>
 		</item>
 
 		<item name="p_kitlvl50">
-			<property name="CustomIcon" value="decoEntityClothMaster"/>
+			<property name="CustomIcon" value="poiPartHelper"/>
 			<property name="ItemTypeIcon" value="perk"/>
 			<property name="CustomIconTint" value="100,0,0"/>
 			<property name="TintColor" value="100,0,0"/>
@@ -856,7 +711,7 @@
 			<property class="Action0">
 				<requirement name="HasBuff" buff="PPBF"/>
 				<requirement name="!HasBuff" buff="PPBF2"/>
-				<requirement name="CVarCompare" cvar="$varhflvl50" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="$varHFLvlKitPres" operation="LT" value="1"/>
 				<requirement name="PlayerLevel" operation="GT" value="49"/>
 				<property name="Class" value="OpenBundle"/>
 				<property name="Delay" value="0.5"/>
@@ -866,11 +721,11 @@
 				<property name="Create_item_count" value="3,1,5,1"/>
 			</property>
 			<effect_group tiered="false">				
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varhflvl50" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varHFLvlKitPres" operation="set" value="1"/>
 			</effect_group>
 		</item>
 		<item name="p_kitlvl100">
-			<property name="CustomIcon" value="decoEntityClothMaster"/>
+			<property name="CustomIcon" value="poiPartHelper"/>
 			<property name="ItemTypeIcon" value="perk"/>
 			<property name="CustomIconTint" value="100,0,0"/>
 			<property name="TintColor" value="100,0,0"/>
@@ -886,7 +741,7 @@
 			<property class="Action0">
 				<requirement name="HasBuff" buff="PPBF"/>
 				<requirement name="!HasBuff" buff="PPBF2"/>
-				<requirement name="CVarCompare" cvar="$varhflvl100" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="$varHFLvlKitPres" operation="LT" value="2"/>
 				<requirement name="PlayerLevel" operation="GT" value="99"/>
 				<property name="Class" value="OpenBundle"/>
 				<property name="Delay" value="0.5"/>
@@ -896,11 +751,11 @@
 				<property name="Create_item_count" value="1,10,150,1"/>
 			</property>
 			<effect_group tiered="false">				
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varhflvl100" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varHFLvlKitPres" operation="set" value="2"/>
 			</effect_group>
 		</item>
 		<item name="p_kitlvl200">
-			<property name="CustomIcon" value="decoEntityClothMaster"/>
+			<property name="CustomIcon" value="poiPartHelper"/>
 			<property name="ItemTypeIcon" value="perk"/>
 			<property name="CustomIconTint" value="100,0,0"/>
 			<property name="TintColor" value="100,0,0"/>
@@ -916,21 +771,21 @@
 			<property class="Action0">
 				<requirement name="HasBuff" buff="PPBF"/>
 				<requirement name="!HasBuff" buff="PPBF2"/>
-				<requirement name="CVarCompare" cvar="$varhflvl200" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="$varHFLvlKitPres" operation="LT" value="3"/>
 				<requirement name="PlayerLevel" operation="GT" value="199"/>
 				<property name="Class" value="OpenBundle"/>
 				<property name="Delay" value="0.5"/>
 				<property name="Use_time" value="1"/>
 				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="LegKit,eventIT3,q_GachaPrem,eventIT2,p_kitlvl300"/>
+				<property name="Create_item" value="special_bag,eventIT3,q_GachaPrem,eventIT2,p_kitlvl300"/>
 				<property name="Create_item_count" value="1,3,15,250,1"/>
 			</property>
 			<effect_group tiered="false">				
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varhflvl200" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varHFLvlKitPres" operation="set" value="3"/>
 			</effect_group>
 		</item>
 		<item name="p_kitlvl300">
-			<property name="CustomIcon" value="decoEntityClothMaster"/>
+			<property name="CustomIcon" value="poiPartHelper"/>
 			<property name="ItemTypeIcon" value="perk"/>
 			<property name="CustomIconTint" value="100,0,0"/>
 			<property name="TintColor" value="100,0,0"/>
@@ -947,7 +802,7 @@
 				<requirement name="HasBuff" buff="PPBF"/>
 				<requirement name="!HasBuff" buff="PPBF2"/>
 				<requirement name="PlayerLevel" operation="GT" value="299"/>
-				<requirement name="CVarCompare" cvar="$varhflvl300" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="$varHFLvlKitPres" operation="LT" value="4"/>
 				<property name="Class" value="OpenBundle"/>
 				<property name="Delay" value="0.5"/>
 				<property name="Use_time" value="1"/>
@@ -956,7 +811,7 @@
 				<property name="Create_item_count" value="1,5,20,350,1"/>
 			</property>
 			<effect_group tiered="false">				
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varhflvl300" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varHFLvlKitPres" operation="set" value="4"/>
 			</effect_group>
 		</item>
 		<!--CHANGES-->
@@ -976,7 +831,7 @@
 			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<requirement name="PlayerLevel" operation="GT" value="349"/>
-				<requirement name="CVarCompare" cvar="$varhprest1" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="$varHFLvlKitPres" operation="LT" value="5"/>
 				<requirement name="HasBuff" buff="PPBF"/>
 				<requirement name="!HasBuff" buff="PPBF2"/>
 				<property name="Class" value="OpenBundle"/>
@@ -987,7 +842,7 @@
 				<property name="Create_item_count" value="1,1,25"/>
 			</property>
 			<effect_group tiered="false">				
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varhprest1" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varHFLvlKitPres" operation="set" value="5"/>
 			</effect_group>
 		</item>		    
 		<item name="p_kitlvl450">
@@ -1006,7 +861,7 @@
 			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<requirement name="PlayerLevel" operation="GT" value="449"/>				
-				<requirement name="CVarCompare" cvar="$varhflvlmax" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="$varHFLvlKitPres" operation="LT" value="6"/>
 				<requirement name="HasBuff" buff="PPBF"/>
 				<requirement name="!HasBuff" buff="PPBF2"/>
 				<property name="Class" value="OpenBundle"/>
@@ -1017,9 +872,181 @@
 				<property name="Create_item_count" value="1,40"/>
 			</property>
 			<effect_group tiered="false">				
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varhflvlmax" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varHFLvlKitPres" operation="set" value="6"/>
 			</effect_group>
 		</item>
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Invite event ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+		<item name="newbielvl1">
+			<property name="CustomIcon" value="bundleFarm"/>
+			<property name="ItemTypeIcon" value="twitch_special"/>
+			<property name="HoldType" value="45"/>
+			<property name="DescriptionKey" value="newbiKitDesc"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">
+				<requirement name="CVarCompare" cvar="$varNewbie" operation="LT" value="1"/>				
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="juguito_de_chale,ammoKitMini,eventbackpack,newbielvl50"/>
+				<property name="Create_item_count" value="24,1,1"/>
+			</property>
+			<effect_group tiered="false">				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varNewbie" operation="set" value="1"/>
+			</effect_group>
+		</item>
+		<item name="newbielvl50">
+			<property name="CustomIcon" value="bundleFarm"/>
+			<property name="ItemTypeIcon" value="twitch_special"/>
+			<property name="HoldType" value="45"/>
+			<property name="DescriptionKey" value="newbiKitDesc"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">				
+				<requirement name="CVarCompare" cvar="$varNewbie" operation="LT" value="2"/>	
+				<requirement name="PlayerLevel" operation="GT" value="49"/>
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="juguito_de_chale,AmmoKit,RWRKIT3,newbielvl100,friendlvl50"/>
+				<property name="Create_item_count" value="24,1,1,1,1"/>
+			</property>
+			<effect_group tiered="false">				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varNewbie" operation="set" value="2"/>
+			</effect_group>
+		</item>
+		<item name="newbielvl100">
+			<property name="CustomIcon" value="bundleFarm"/>
+			<property name="ItemTypeIcon" value="twitch_special"/>
+			<property name="HoldType" value="45"/>
+			<property name="DescriptionKey" value="newbiKitDesc"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">
+				<requirement name="CVarCompare" cvar="$varNewbie" operation="LT" value="3"/>	
+				<requirement name="PlayerLevel" operation="GT" value="99"/>
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="juguito_de_chale,AmmoKit,RWRKIT2,newbielvl200,friendlvl100"/>
+				<property name="Create_item_count" value="25,2,1,1"/>
+			</property>
+			<effect_group tiered="false">				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varNewbie" operation="set" value="3"/>
+			</effect_group>
+		</item>
+		<item name="newbielvl200">
+			<property name="CustomIcon" value="bundleFarm"/>
+			<property name="ItemTypeIcon" value="twitch_special"/>
+			<property name="HoldType" value="45"/>
+			<property name="DescriptionKey" value="newbiKitDesc"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">
+				<requirement name="CVarCompare" cvar="$varNewbie" operation="LT" value="4"/>	
+				<requirement name="PlayerLevel" operation="GT" value="199"/>
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="juguito_de_chale,special_bag,RWRKIT1,friendlvl200"/>
+				<property name="Create_item_count" value="50,1,1"/>
+			</property>
+			<effect_group tiered="false">				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varNewbie" operation="set" value="4"/>
+			</effect_group>
+		</item>
+		<item name="friendlvl50">
+			<property name="CustomIcon" value="bundleFarm"/>
+			<property name="ItemTypeIcon" value="twitch_special"/>
+			<property name="HoldType" value="45"/>
+			<property name="DescriptionKey" value="friendKitDesc"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">
+				<requirement name="CVarCompare" cvar="$varNewbie" operation="LT" value="1"/>				
+				<requirement name="PlayerLevel" operation="GT" value="49"/>
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="juguito_de_chale,AmmoKit,RWRKIT3"/>
+				<property name="Create_item_count" value="24,1,1,1"/>
+			</property>
+			<effect_group tiered="false">				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varFriend" operation="set" value="1"/>
+			</effect_group>
+		</item>
+		<item name="friendlvl100">
+			<property name="CustomIcon" value="bundleFarm"/>
+			<property name="ItemTypeIcon" value="twitch_special"/>
+			<property name="HoldType" value="45"/>
+			<property name="DescriptionKey" value="friendKitDesc"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">
+				<requirement name="CVarCompare" cvar="$varNewbie" operation="LT" value="1"/>	
+				<requirement name="CVarCompare" cvar="$varFriend" operation="Equals" value="1"/>	
+				<requirement name="PlayerLevel" operation="GT" value="99"/>
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="juguito_de_chale,AmmoKit,RWRKIT2"/>
+				<property name="Create_item_count" value="25,2,1,1"/>
+			</property>
+		</item>
+		<item name="friendlvl200">
+			<property name="CustomIcon" value="bundleFarm"/>
+			<property name="ItemTypeIcon" value="twitch_special"/>
+			<property name="HoldType" value="45"/>
+			<property name="DescriptionKey" value="friendKitDesc"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">
+				<requirement name="CVarCompare" cvar="$varNewbie" operation="LT" value="1"/>	
+				<requirement name="CVarCompare" cvar="$varFriend" operation="Equals" value="1"/>
+				<requirement name="PlayerLevel" operation="GT" value="199"/>
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="juguito_de_chale,special_bag,RWRKIT1"/>
+				<property name="Create_item_count" value="50,1,1"/>
+			</property>
+		</item>
+
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Quest de Navidad ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
 		<item name="q_xmas">
 			<property name="Extends" value="challengeQuestMaster"/>
@@ -1056,7 +1083,6 @@
                 <property name="QuestGiven" value="q_eventPascua"/>
             </property>
         </item>
-
 		<item name="kitDeCom">
 			<property name="CustomIcon" value="bundleAmmo"/>
 			<property name="ItemTypeIcon" value="treasure"/>
@@ -1074,7 +1100,7 @@
 				<property name="Use_time" value="1"/>
 				<property name="Sound_start" value="wrench_harvest"/>
 				<property name="Create_item" value="ResourceForgedPlatinum,ResourceForgedPractonium,agua_divina,gunLSHF,lsUnlockBundle,q_Gallinazilla,q_GachaPrem,bammoBundle9mmBulletBall,bammoBundle762mmBulletBall,bammoBundle44MagnumBulletBall,bammoBundleShotgunShell,resourceClayLumpBundle15k,resourceRockSmallBundle10k,resourceWoodBundle10k,resourceScrapIronBundle10k,resourcePotassiumNitratePowderBundle10k,resourceLeadBundle10k,resourceCoalBundle10k,resourceOilShaleBundle10k,resourceCrushedSandBundle10k"/>
-				<property name="Create_item_count" value="1,2,3,1,1,20,10,5,5,5,5,7,5,6,6,5,5,5,5,5"/>
+				<property name="Create_item_count" value="1,2,3,1,1,10,5,3,3,3,3,5,3,4,4,3,3,3,3,3"/>
 			</property>
 		</item>
 

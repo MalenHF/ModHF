@@ -245,6 +245,7 @@
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Zombie Template ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
 		<!-- TODO: arriba la esperanza que los ZombieUMA revivan -->
+		<!--
 		<entity_class name="Zombie_TemplateHF" extends="zombieTemplateMale">		
 			<property name="EntityType" value="Zombie" />
 			<property name="UserSpawnType" value="Menu"/>
@@ -276,16 +277,16 @@
 			<property name="AITask-7" value=""/>
 			<property name="AITask-8" value=""/>
 
-			<!-- Radiated -->
+
 			<property name="PainResistPerHit" value=".8"/>
-			<!-- Radiated -->
+
 			<property name="AttackTimeoutDay" value="1.5" />
 			<property name="AttackTimeoutNight" value="1.1" />
 			<property name="WalkType" value="7" />
 			<property name="ModelType" value="Standard" />
 			<property name="RootMotion" value="true" />
 			<property name="HasRagdoll" value="true" />
-			<!--property name="AvatarController" value="AvatarZombieUMAController" /-->
+
 
 			<property name="PhysicsBody" value="UMA" />
 
@@ -293,7 +294,7 @@
 			<property name="TimeStayAfterDeath" value="10" />
 			
 		</entity_class>
-		
+		-->		
 		<entity_class name="TemplateHF_Zombie_Special_Cop" extends="zombieFatCopFeral">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 
@@ -332,7 +333,6 @@
 			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="2"/>
 		</entity_class>
-
 		<entity_class name="TemplateHF_Zombie_Special_Soldier" extends="zombieSoldierFeral">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 
@@ -1881,6 +1881,7 @@
 		<!--EliteBomber-->
 		<entity_class name="ZombieEliteBomber" extends="TemplateHF_Zombie_Special_Hazmat">
 			<property name="Archetype" value="BomberElite" />
+			
 			<property name="Tags" value="entity,zombie,walker,boss,bomber,umazombie,bomber,feral" />
 			<property name="HandItem" value="meleeHandBomberelite"/>
 
@@ -3665,10 +3666,11 @@
 		<!-- Head Spirit -->
 		<entity_class name="HeadZombiePonky" extends="zombieScreamer">
 			<property name="SizeScale" value=".5"/>
-			<property name="Archetype" value="HeadZombie" />
-			
+			<property name="Archetype" value="HeadZombie" />			
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreshaleboulder"/>
-			<property name="ReplaceMaterial1" value="entities/resources/materials/oreshaleboulder"/>
+
+			<property name="SkinTexture" value="11"/>
+
 
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,mantis" />
@@ -4011,7 +4013,7 @@
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="12000"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="30"/>
-				<!--<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="doblecierra"/>-->
+				<!--<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="gladDeco"/>-->
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryBleedingTwo"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->				<!-- Feral damage -->
@@ -4362,8 +4364,8 @@
 			<property name="TimeStayAfterDeath" value="300"/>
 		</entity_class>			
 		<entity_class name="BossZombieSoldier" extends="bossZombieTemplate">
-			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSoldier.prefab"/>
 			<property name="UserSpawnType" value="Menu"/>
+			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSoldier.prefab"/>
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses,bossrad" />
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreCoalBoulder"/>
 			<property name="ReplaceMaterial0" value="entities/animals/boar/materials/grace"/>
@@ -4388,12 +4390,12 @@
 			<property name="TimeStayAfterDeath" value="2"/>
 		</entity_class>
 		<entity_class name="BossGladiador" extends="bossZombieTemplate">
+			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses,bossrad" />
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZThug.prefab"/>
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreLeadBoulder"/>
 			<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/rad_eye.mat"/>
 
-			<property name="UserSpawnType" value="Menu"/>
 			<property name="LootDropEntityClass" value="BossGladiadorLootContainer"/>			
 			<property name="HandItem" value="meleeHandGladBOSS"/>
 			<property name="ExperienceGain" value="60000"/>
@@ -4413,7 +4415,7 @@
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="45000"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="50"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="doblecierra"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="gladDeco"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="30"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffglad"/>
@@ -4455,6 +4457,7 @@
 		</entity_class>
 		<!--Siren and Jugger BY Malen Boss idea by Snufking-->
 		<entity_class name="BosszombieSiren" extends="bossZombieTemplate">
+			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,siren"/>			
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSpider.prefab"/>
 			<property name="SizeScale" value="1.7"/>			
@@ -4560,6 +4563,7 @@
 		</entity_class>
 		<!-- Added by HolyVentus -->
 		<entity_class name="BossCirujano" extends="bossZombieTemplate">
+			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses,bossrad" />
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZLab.prefab"/>
 			<property name="SoundRandom" value="Enemies/Base_Zombie_Female/zombiefemaleroam"/>
@@ -4733,6 +4737,7 @@
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Special Bosses ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 	
 		<entity_class name="bossNightSpider" extends="zombieSpider">
+
 			<property name="SizeScale" value="2"/>
 			<property name="UserSpawnType" value="Menu"/>
 
@@ -4824,24 +4829,19 @@
 			</effect_group>
 			<property name="TimeStayAfterDeath" value="350"/>
 		</entity_class>	
-		<entity_class name="SpecialBossMummy" extends="BossMummy">
+		<entity_class name="SpecialBossMummy" extends="bossZombieTemplate">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="SizeScale" value="1.8"/>
 			<property name="SizeScale" value="2"/>
+			
 			<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>
 			<property name="Tags" value="entity,zombie,boss,umazombie,bossrad,norail"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBurnt.prefab"/>
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreCoalBoulder"/>
 			<property name="ReplaceMaterial2" value="entities/resources/materials/oreleadboulder"/>
-			<property name="SizeScale" value="1.8"/>
+			
 
-			<property name="AITask-1" value="ApproachAndAttackTarget" data="class=EntityPlayer,20,EntityNPC,20"/>
-			<property name="AITask-2" value="BreakBlock"/>
-			<property name="AITask-3" value="DestroyArea"/>
-			<property name="AITask-4" value="ApproachSpot"/>
-			<property name="AITask-5" value="Look"/>
-			<property name="AITask-6" value="Wander"/>
-			<property name="AITask-7" value=""/>
 
-			<property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityPlayer,0,0,EntityNPC,0,0"/>
 			<property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/>
 			<property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/>
 			<property name="SoundAttack" value="Enemies/Feral_Zombie/zombieferalattack"/>
@@ -4850,24 +4850,12 @@
 			<property name="SoundSense" value="Enemies/Feral_Zombie/zombieferalsense"/>
 			<property name="WalkType" value="2"/>
 			<property name="StompsSpikes" value="true"/>
-			<property name="Mass" value="700"/>
-
-			<property name="PainResistPerHit" value="3"/>
-			<property name="HasRagdoll" value="true"/>
-			<property name="DismemberMultiplierHead" value="0"/>
-			<property name="DismemberMultiplierArms" value="0"/>
-			<property name="DismemberMultiplierLegs" value="0"/>
-			<property name="LegCrawlerThreshold" value="0"/>
-			<property name="LegCrippleThreshold" value="0"/>
-			<property name="KnockdownProneDamageThreshold" value="3"/>
-			<property name="KnockdownKneelDamageThreshold" value="3"/>
-			<!--  Gameplay  -->
+			<property name="Mass" value="170"/>
+		
 			<property name="MoveSpeedAggro" value="1.6,2"/>
 			<property name="HandItem" value="meleeHandSpecialBOSS"/>
 			<property name="JumpMaxDistance" value="9, 16"/>
 			<property name="ExperienceGain" value="110000"/>
-			<property name="LootDropProb" value="1"/>
-
 			<property name="LootDropEntityClass" value="BossMummyLootContainerS"/>
 			<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>
 			<effect_group name="Base Effects">
@@ -4886,7 +4874,8 @@
 			<property name="DeadBodyHitPoints" value="30000"/>
 			<property name="TimeStayAfterDeath" value="2"/>
 		</entity_class>
-		<entity_class name="SpecialBosszombieSiren" extends="bossZombieTemplate">	
+		<entity_class name="SpecialBosszombieSiren" extends="bossZombieTemplate">
+			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,siren,norail"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSpider.prefab"/>
 			<property name="SizeScale" value="2"/>
@@ -5009,6 +4998,7 @@
 			</effect_group>
 		</entity_class>
 		<entity_class name="SpecialBossGladiador" extends="bossZombieTemplate">
+			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses,bossrad,norail" />
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZThug.prefab"/>
 			<property name="SizeScale" value="2"/>
@@ -5036,7 +5026,7 @@
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="75000"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="60"/>
-				<!--<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="doblecierra"/>-->
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="gladDeco"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="50"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryBleedingTwo"/>
@@ -5049,6 +5039,8 @@
 		</entity_class>			
 		<!-- Added by HolyVentus -->
 		<entity_class name="SpecialBossCirujano" extends="bossZombieTemplate">			
+			<property name="UserSpawnType" value="Menu"/>
+
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses" />
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZLab.prefab"/>
 			<property name="SizeScale" value="2"/>
@@ -5230,7 +5222,7 @@
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="45000"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="50"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="doblecierra"/>				
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="gladDeco"/>				
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->				<!-- Feral damage -->
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
@@ -5273,7 +5265,7 @@
 		</entity_class>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->					
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ WORKING ON ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
-		<entity_class name="zombieLowDef" extends="Zombie_TemplateHF">
+		<entity_class name="zombieLowDef" extends="TemplateHF_Zombie_Special_Cop">
 			<property name="UserSpawnType" value="None"/>
 			<property name="Archetype" value="SOLDIER" />
 			<property name="Tags" value="entity,zombie,walker,boss,feral,bossrad"/>
@@ -5424,9 +5416,10 @@
 			</effect_group>
 		</entity_class>
 		<entity_class name="zombieBanshee" extends="zombieBoeFeral">
-			<property name="SizeScale" value="1"/>
+			<property name="SizeScale" value=".8"/>
 			<property name="Tags" value="entity,zombie,walker,boss,banshee" />
-			<property name="Mesh" value="#Entities/Zombies?Zombies/zombieStandardScreamerRagdoll.prefab"/>
+			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZLab.prefab"/>
+			
 
 			<property name="ReplaceMaterial0" value="particleeffects/models/materials/p_glass"/>
 			<property name="SoundRandom" value=""/>
@@ -5436,8 +5429,7 @@
 			<property name="SoundDeath" value="Enemies/Base_Zombie_Female/zombiefemalescoutdeath"/>
 			<property name="SoundSense" value=""/>
 			<property name="ExperienceGain" value="1500"/>
-			<!-- XP strong -->
-			<property name="WalkType" value="8"/>
+			<property name="WalkType" value="22"/>
 			<property name="HandItem" value="meleeHandBanshee"/>
 			<property name="LootDropProb" value=".15"/>
 			<effect_group name="Base Effects">
@@ -5448,6 +5440,32 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
 		</entity_class>
+		<entity_class name="zombieBanshee5" extends="zombieBoeFeral">
+			<property name="SizeScale" value=".8"/>
+			<property name="Tags" value="entity,zombie,walker,boss,banshee" />
+			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZDarlene.prefab"/>
+			
+
+			<property name="ReplaceMaterial0" value="particleeffects/models/materials/p_glass"/>
+			<property name="SoundRandom" value=""/>
+			<property name="SoundAlert" value=""/>
+			<property name="SoundAttack" value="Enemies/Base_Zombie_Female/zombiefemalescoutattack"/>
+			<property name="SoundHurt" value="Enemies/Base_Zombie_Female/zombiefemalescoutpain"/>
+			<property name="SoundDeath" value="Enemies/Base_Zombie_Female/zombiefemalescoutdeath"/>
+			<property name="SoundSense" value=""/>
+			<property name="ExperienceGain" value="1500"/>
+			<property name="WalkType" value="22"/>
+			<property name="HandItem" value="meleeHandBanshee"/>
+			<property name="LootDropProb" value=".15"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="1000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffBansheeScream"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="5"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+			</effect_group>
+		</entity_class>
+
 
 		<!--
 		<entity_class name="zombieMantis" extends="Zombie_Template">
@@ -5603,7 +5621,7 @@
 			</effect_group>
 		</entity_class>
 		<entity_class name="ZombieBomber" extends="zombieMaleHazmat">
-
+			<property name="SizeScale" value=".8"/>
 			<property name="Tags" value="entity,zombie,walker,boss,bomber,umazombie,bomber" />
 			<property name="HandItem" value="meleeHandBomber"/>
 			<property name="ExperienceGain" value="1200"/>
