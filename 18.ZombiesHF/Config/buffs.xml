@@ -1749,6 +1749,15 @@
 				</triggered_effect>
 			</effect_group>
 		</buff>
+		<buff name="MiniBomberDeco" hidden="true">
+			<effect_group>				
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelGasPrefab" local_offset=".2,.2,-.2" local_rotation="0,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfDamagedBlock" target="self" action="ModifyStats" stat="Health" operation="set" value="60"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelGasPrefab" local_offset=".2,.2,-.2" local_rotation="0,0,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" particle="Entities/Industrial/barrelAcidPrefab" />
+				</triggered_effect>
+			</effect_group>
+		</buff>
 		<buff name="cowheadDeco" hidden="true">
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/cowSkullPrefab" local_offset="0,.4,0" local_rotation="-10,0,0" parent_transform="Head"/>
