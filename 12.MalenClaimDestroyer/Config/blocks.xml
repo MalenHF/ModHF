@@ -44,10 +44,12 @@
 			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
 			<property name="DisplayType" value="blockTerrain"/>
 			<property name="CustomIcon" value="terrStone"/>
+
+            <property name="StabilityFull" value="true"/>
 			<!--
             <property name="Texture" value="10"/>  
             <property name="Map.Color" value="204,177,131"/>               
-                -->
+            -->
 		</block>        
         <block name="iDBSecStorage">
 			<property name="CreativeMode" value="Player"/>
@@ -68,17 +70,24 @@
 			<property name="PassThroughDamage" value="false"/>
 			<property name="Texture" value="62,64,64,64,64,64"/>
 			<property name="UseGlobalUV" value="L,L,L,L,L,L"/>
-			<property class="RepairItems">
-				<property name="resourceForgedSteel" value="15"/>
-			</property>			
 			<drop event="Destroy" count="0"/>
 			<property name="Group" value="Building,advBuilding"/>
 			<property name="EconomicValue" value="690"/>
 			<property name="FilterTags" value="floot"/>
+            <property class="UpgradeBlock">
+				<property name="ToBlock" value="cntHardenedChestSecure"/>
+				<property name="Item" value="CD"/>
+				<property name="ItemCount" value="1"/>
+				<property name="UpgradeHitCount" value="1"/>
+			</property>
 		</block>
         <block name="eventMetalCatwalkTrap">
             <property name="Extends" value="metalCatwalk"/>
-            <property name="CustomIcon" value="metalCatwalk"/>
+            <property name="Model" value="Plate" />
+            <property name="CustomIcon" value="shapePlate"/>
+
+            <property name="StabilityFull" value="true"/>
+
             <property name="CustomIconTint" value="ff8000"/>
             <property name="CreativeMode" value="Dev"/>
             <property name="Class" value="TrapDoor"/>
@@ -97,11 +106,13 @@
             <property name="Group" value="Building,advBuilding"/>
             <property name="DescriptionKey" value="stainlessSteelBlockGroupDesc"/>
             <property name="DisplayType" value="blockHardened"/>
+            <property name="StabilityFull" value="true"/>
             <!--  <property name="ImposterExchange" value="imposterBlock" param1="77"/>  -->
             <property name="CreativeMode" value="Player"/>
             <drop event="Harvest" name="resourceScrapIron" count="15" tag="allHarvest"/>
             <drop event="Destroy" count="0"/>
             <drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+             
 
             <property name="EconomicBundleSize" value="1"/>
             <property name="SellableToTrader" value="false"/>
@@ -129,7 +140,7 @@
             <property name="Shape" value="New"/>
             <property name="CustomIcon" value="shapePlate"/>
             <property name="Model" value="Plate"/>
-
+            
             <property name="Texture" value="580"/>
             <!--  SortShape  -->
         </block>
@@ -144,6 +155,7 @@
 			<!-- <property name="HandleFace" value="South"/> -->
 			<property name="SortOrder2" value="0181"/>
 
+            <property name="WaterFlow" value="permitted"/>
 			<property name="StabilitySupport" value="false"/>
             <property name="BuffsWhenWalkedOn" value="hfBossRoom"/>
 
@@ -162,6 +174,15 @@
 
 			<drop event="Destroy" name="resourceScrapIron" count="50,90"/>
 		</block>
+        <block name="iDB_stainlessSteelPlateHalfTriangle">
+            <property name="Extends" value="iDB_stainlessSteelBlock"/>
+            <property name="CustomIcon" value="shapePlateHalfTriangle"/>
+            <property name="CreativeMode" value="Player"/>
+            <property name="Shape" value="New"/>
+            <property name="Model" value="plate_half_triangle"/>
+            <property name="Texture" value="580"/>
+            <!--  SortShape  -->
+        </block>
 
         <block name="invD_stainlessSteelBlock">
             <property name="Group" value="Building,advBuilding"/>
@@ -232,8 +253,6 @@
 
 			<drop event="Destroy" name="resourceScrapIron" count="50,90"/>
 		</block>
-        
-                
         <block name="INVD_stainlessSteelPlateHalfTriangle">
             <property name="Extends" value="invD_stainlessSteelBlock"/>
             <property name="CustomIcon" value="shapePlateHalfTriangle"/>
@@ -243,6 +262,9 @@
             <property name="Texture" value="580"/>
             <!--  SortShape  -->
         </block>
+
+        
+
         <!--
         <block name="INVD_metalSignLetter_i">
             <property name="Extends" value="metalSignLetter_a"/>
@@ -271,15 +293,6 @@
         </block>
         -->
 
-        <block name="iDB_stainlessSteelPlateHalfTriangle">
-            <property name="Extends" value="invD_stainlessSteelBlock"/>
-            <property name="CustomIcon" value="shapePlateHalfTriangle"/>
-            <property name="CreativeMode" value="Player"/>
-            <property name="Shape" value="New"/>
-            <property name="Model" value="plate_half_triangle"/>
-            <property name="Texture" value="580"/>
-            <!--  SortShape  -->
-        </block>
         <!--
         <block name="iDB_metalSignLetter_i">
             <property name="Extends" value="metalSignLetter_a"/>
@@ -333,8 +346,7 @@
             <property name="CustomIcon" value="metalSignLetter_cross"/>
             <property name="Model" value="font_cross"/>
         </block>
-        --> 
-        
+        -->
 
         <block name="INVD_StairsFilledRailingLeft">
             <property name="Extends" value="invD_stainlessSteelBlock"/>
@@ -427,19 +439,18 @@
         </block>
 
         <block name="iDB_StairsFilledRailingLeft">
-            <property name="Extends" value="invD_stainlessSteelBlock"/>
+            <property name="Extends" value="iDB_stainlessSteelBlock"/>
             <property name="CreativeMode" value="Player"/>
             <property name="Shape" value="New"/>
             <property name="DisplayType" value="blockMulti"/>
             <property name="MultiBlockDim" value="1,2,1"/>
             <property name="CustomIcon" value="woodStairsFilledRailingLeft"/>
             <property name="Model" value="Stairs_filled_railing_left"/>
-
             <property name="Texture" value="580"/>
             <!--  SortShape  -->
         </block>
         <block name="iDB_FilledRailingRight">
-            <property name="Extends" value="invD_stainlessSteelBlock"/>
+            <property name="Extends" value="iDB_stainlessSteelBlock"/>
             <property name="CreativeMode" value="Player"/>
             <property name="Shape" value="New"/>
             <property name="DisplayType" value="blockMulti"/>
@@ -451,7 +462,7 @@
             <!--  SortShape  -->
         </block>
         <block name="iDB_StairsFilledVertical">
-            <property name="Extends" value="invD_stainlessSteelBlock"/>
+            <property name="Extends" value="iDB_stainlessSteelBlock"/>
             <property name="CreativeMode" value="Player"/>
             <property name="Shape" value="New"/>
             <property name="CustomIcon" value="woodStairs25"/>
@@ -478,7 +489,7 @@
 			<drop event="Destroy" name="resourceScrapIron" count="50,90"/>
 		</block>
         <block name="iDB_stainlessSteelRamp">
-            <property name="Extends" value="invD_stainlessSteelBlock"/>
+            <property name="Extends" value="iDB_stainlessSteelBlock"/>
             <property name="CreativeMode" value="Player"/>
             <property name="CustomIcon" value="stainlessSteelRamp"/>
             <property name="Shape" value="New"/>
@@ -516,138 +527,8 @@
             <!--  SortDoors  -->
         </block>
         <!---->
+
         <!-- Dev Doors-->
-        <block name="iDBVaultDoor01">
-            <property name="CustomIcon" value="vaultDoor01"/>
-            <property name="Material" value="Mbedrock"/>      
-
-            <!-- Class -->
-            <property name="Class" value="DoorSecure"/>
-            <property name="OpenSound" value="open_door_vault"/>
-            <property name="CloseSound" value="close_door_vault"/>
-            <property name="IndexName" value="TraderOnOff"/>
-            <!-- UI_Info -->
-            <property name="DisplayType" value="blockHardenedMulti"/>
-            <property name="DescriptionKey" value="doorGroupDesc"/>
-            <property name="Stacknumber" value="500"/>
-            <!-- Visual -->           
-            <property name="Shape" value="ModelEntity"/>
-            <property name="Model" value="Entities/Doors/vaultDoor/vaultDoorPrefab"/>
-            <property name="ModelOffset" value="0,0,0"/>
-            <property name="MultiBlockDim" value="1,2,1"/>
-            <property name="ImposterExchange" value="imposterBlock" param1="77"/>
-            <property name="LightOpacity" value="1"/>
-            <property name="WaterFlow" value="permitted"/>
-            <!-- Placement -->
-            <property name="Place" value="Door"/>
-            <property name="PlaceEverywhere" value="true"/>
-            <property name="AllowAllRotations" value="true"/>
-            <property name="StabilitySupport" value="false"/>
-            <!-- Value -->
-            <property name="SellableToTrader" value="false"/>
-            <!-- Interaction -->
-            <property name="MaxDamage" value="15000"/>
-            <property name="StartDamage" value="0"/>
-            <property name="PassThroughDamage" value="true"/>
-            <property name="Stage2Health" value="1"/>
-            <property name="MeshDamage" value="
-                Door/DMG0, 15000,
-                Door/DMG1, 10000,
-                Door/DMG2, 5000,
-                -, 1
-                "/>
-            <property class="RepairItems">
-                <property name="resourceForgedSteel" value="11"/>
-            </property>
-            <property class="RepairItemsMeshDamage">
-                <property name="resourceForgedSteel" value="1"/>
-            </property>
-            <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-            <drop event="Harvest" name="resourceScrapIron" count="96" tag="allHarvest"/>
-            <drop event="Destroy" count="0"/>
-            <drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
-            <!-- Sorting -->
-            <property name="SortOrder1" value="B303"/>
-            <property name="SortOrder2" value="000"/>
-            <property name="Group" value="Building,advBuilding"/>
-            <property name="Tags" value="door"/>
-            <property name="BlockTag" value="Door"/>
-            <property name="FilterTags" value="MC_building,SC_doors,A21_NEW"/>
-
-            <property class="UpgradeBlock">
-				<property name="ToBlock" value="vaultDoor01"/>
-				<property name="Item" value="CD"/>
-				<property name="ItemCount" value="1"/>
-				<property name="UpgradeHitCount" value="1"/>
-			</property>
-            
-        </block>
-        <block name="invDevVaultDoor03">
-            <property name="CustomIcon" value="vaultDoor01"/>
-            <property name="Material" value="Mbedrock"/>      
-
-            <!-- Class -->
-            <property name="Class" value="DoorSecure"/>
-            <property name="OpenSound" value="open_door_vault"/>
-            <property name="CloseSound" value="close_door_vault"/>
-            <property name="IndexName" value="TraderOnOff"/>
-            <!-- UI_Info -->
-            <property name="DisplayType" value="blockHardenedMulti"/>
-            <property name="DescriptionKey" value="doorGroupDesc"/>
-            <property name="Stacknumber" value="500"/>
-            <!-- Visual -->           
-            <property name="Shape" value="ModelEntity"/>
-            <property name="Model" value="Entities/Doors/vaultDoor/vaultDoorPrefab"/>
-            <property name="ModelOffset" value="0,0,0"/>
-            <property name="MultiBlockDim" value="1,2,1"/>
-            <property name="ImposterExchange" value="imposterBlock" param1="77"/>
-            <property name="LightOpacity" value="1"/>
-            <property name="WaterFlow" value="permitted"/>
-            <!-- Placement -->
-            <property name="Place" value="Door"/>
-            <property name="PlaceEverywhere" value="true"/>
-            <property name="AllowAllRotations" value="true"/>
-            <property name="StabilitySupport" value="false"/>
-            <!-- Value -->
-            <property name="SellableToTrader" value="false"/>
-            <!-- Interaction -->
-            <property name="MaxDamage" value="15000"/>
-            <property name="StartDamage" value="0"/>
-            <property name="PassThroughDamage" value="true"/>
-            <property name="Stage2Health" value="1"/>
-            <property name="MeshDamage" value="
-                Door/DMG0, 15000,
-                Door/DMG1, 10000,
-                Door/DMG2, 5000,
-                -, 1
-                "/>
-            <property class="RepairItems">
-                <property name="resourceForgedSteel" value="11"/>
-            </property>
-            <property class="RepairItemsMeshDamage">
-                <property name="resourceForgedSteel" value="1"/>
-            </property>
-            <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-            <drop event="Harvest" name="resourceScrapIron" count="96" tag="allHarvest"/>
-            <drop event="Destroy" count="0"/>
-            <drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
-            <!-- Sorting -->
-            <property name="SortOrder1" value="B303"/>
-            <property name="SortOrder2" value="000"/>
-            <property name="Group" value="Building,advBuilding"/>
-            <property name="Tags" value="door"/>
-            <property name="BlockTag" value="Door"/>
-            <property name="FilterTags" value="MC_building,SC_doors,A21_NEW"/>
-
-            <property class="UpgradeBlock">
-				<property name="ToBlock" value="vaultDoor01"/>
-				<property name="Item" value="CD"/>
-				<property name="ItemCount" value="1"/>
-				<property name="UpgradeHitCount" value="1"/>
-			</property>
-            
-        </block>
-
         <block name="invDevRollUpDoor3x3White">
             <property name="Extends" value="rollUpDoor3x3White"/>
             <property name="CustomIcon" value="rollUpDoor3x3White"/>
@@ -687,11 +568,9 @@
 			</property>
         </block>
         <block name="invDevRollUpDoor5x4Black">
-            <property name="Extends" value="rollUpDoor5x4White"/>   
-            <property name="CustomIcon" value="rollUpDoor5x4White"/>    
+            <property name="Extends" value="invDevrollUpDoor5x4White"/> 
             <property name="CustomIconTint" value="000000"/>
-            <property name="TintColor" value="000000"/>      
-            <property name="Material" value="Mbedrock"/>
+            <property name="TintColor" value="000000"/>
             <property name="StabilitySupport" value="false"/>
             <property class="UpgradeBlock">
 				<property name="ToBlock" value="rollUpDoor5x4White"/>
@@ -700,6 +579,7 @@
 				<property name="UpgradeHitCount" value="1"/>
 			</property>
         </block>
+        
         <block name="invDevRollUpDoor7x4White">
             <property name="Extends" value="rollUpDoor7x4White"/>   
             <property name="CustomIcon" value="rollUpDoor7x4White"/>
@@ -726,73 +606,165 @@
 				<property name="UpgradeHitCount" value="1"/>
 			</property>
         </block>
-        <block name="iDBVaultHatch01">
-            <property name="Extends" value="iDBVaultDoor01"/>\
-            <property name="Material" value="Mbedrock"/>
-            <property name="CustomIcon" value="vaultHatch01"/>
-            <property name="StabilitySupport" value="false"/>            
-            <property name="OpenSound" value="open_hatch_vault"/>
-            <property name="CloseSound" value="close_hatch_vault"/>
-            <property name="Model" value="Entities/Doors/vaultHatch/vaultHatchPrefab"/>
-            <property name="ModelOffset" value="0,0.5,0"/>
-            <property name="MultiBlockDim" value="1,1,1"/>
-            <property name="ImposterExchange" value="imposterPlate" param1="77"/>
-            <property name="WaterFlow" value="permitted"/>
-            <property name="MaxDamage" value="30000"/>
-            <property name="StartDamage" value="0"/>
-            <property name="SortOrder1" value="B334"/>
-            <property name="SortOrder2" value="0000"/>
-            <!-- build restriction -->
-            <property class="UpgradeBlock">
-				<property name="ToBlock" value="vaultHatch01"/>
-				<property name="Item" value="CD"/>
-				<property name="ItemCount" value="1"/>
-				<property name="UpgradeHitCount" value="1"/>
-			</property>   
-        </block>
 
-        <block name="invDevVaultHatch_v3">
-            <property name="Extends" value="iDBVaultDoor01"/>
-
+        <block name="iDBRollUpDoor3x3White">
+            <property name="Extends" value="rollUpDoor3x3White"/>
+            <property name="CustomIcon" value="rollUpDoor3x3White"/>
             <property name="Material" value="Mbedrock"/>
-            <property name="CustomIcon" value="vaultHatch01"/>
             <property name="StabilitySupport" value="false"/>
-            
-            <property name="OpenSound" value="open_hatch_vault"/>
-
-            <property name="CloseSound" value="close_hatch_vault"/>
-            <property name="Model" value="Entities/Doors/vaultHatch/vaultHatchPrefab"/>
-            <property name="ModelOffset" value="0,0.5,0"/>
-            <property name="MultiBlockDim" value="1,1,1"/>
-            <property name="ImposterExchange" value="imposterPlate" param1="77"/>
-            <property name="WaterFlow" value="permitted"/>
-
-            <property name="MaxDamage" value="21000"/>
-            <property name="StartDamage" value="0"/>
-            <property name="PassThroughDamage" value="true"/>
-            <property name="Stage2Health" value="1"/>
-
-            <property name="SortOrder1" value="B334"/>
-            <property name="SortOrder2" value="0000"/>
-            <!-- build restriction -->
             <property class="UpgradeBlock">
-				<property name="ToBlock" value="vaultHatch01"/>
-				<property name="Item" value="CD"/>
-				<property name="ItemCount" value="1"/>
-				<property name="UpgradeHitCount" value="1"/>
-			</property>   
-        </block>  
-        <block name="iDBWoodHatch">
-			<property name="Extends" value="woodHatch"/>
-            <property name="CustomIcon" value="woodHatch"/>            
-            <property name="Material" value="Mbedrock"/>
-			<property class="UpgradeBlock">
-				<property name="ToBlock" value="woodHatch"/>
+				<property name="ToBlock" value="rollUpDoor3x3White"/>
 				<property name="Item" value="CD"/>
 				<property name="ItemCount" value="1"/>
 				<property name="UpgradeHitCount" value="1"/>
 			</property>
-		</block>     
+        </block>
+        <block name="iDBRollUpDoor3x3Black">
+            <property name="Extends" value="rollUpDoor3x3White"/>            
+            <property name="Material" value="Mbedrock"/>
+            <property name="CustomIcon" value="rollUpDoor3x3White"/>
+            <property name="CustomIconTint" value="000000"/>
+            <property name="TintColor" value="000000"/>
+            <property name="StabilitySupport" value="false"/>
+            <property class="UpgradeBlock">
+				<property name="ToBlock" value="rollUpDoor3x3White"/>
+				<property name="Item" value="CD"/>
+				<property name="ItemCount" value="1"/>
+				<property name="UpgradeHitCount" value="1"/>
+			</property>
+        </block>
+        <block name="iDBrollUpDoor5x4White">
+            <property name="Extends" value="rollUpDoor5x4White"/>   
+            <property name="CustomIcon" value="rollUpDoor5x4White"/>          
+            <property name="Material" value="Mbedrock"/>
+            <property name="StabilitySupport" value="false"/>
+            <property class="UpgradeBlock">
+				<property name="ToBlock" value="rollUpDoor5x4White"/>
+				<property name="Item" value="CD"/>
+				<property name="ItemCount" value="1"/>
+				<property name="UpgradeHitCount" value="1"/>
+			</property>
+        </block>
+        <block name="iDBRollUpDoor5x4Black">
+            <property name="Extends" value="iDBrollUpDoor5x4White"/>   
+            <property name="CustomIconTint" value="000000"/>
+            <property name="TintColor" value="000000"/>
+        </block>
+        <block name="iDBRollUpDoor5x4BlackLobby">
+            <property name="Extends" value="iDBRollUpDoor5x4Black"/>              
+            <property name="StabilitySupport" value="true"/>
+        </block>
+        <block name="iDBRollUpDoor7x4White">
+            <property name="Extends" value="rollUpDoor7x4White"/>   
+            <property name="CustomIcon" value="rollUpDoor7x4White"/>
+            <property name="Material" value="Mbedrock"/>            
+            <property name="StabilitySupport" value="false"/>
+            <property class="UpgradeBlock">
+				<property name="ToBlock" value="rollUpDoor7x4White"/>
+				<property name="Item" value="CD"/>
+				<property name="ItemCount" value="1"/>
+				<property name="UpgradeHitCount" value="1"/>
+			</property>
+        </block>
+        <block name="iDBRollUpDoor7x4Black">
+            <property name="Extends" value="iDBRollUpDoor7x4White"/>
+            <property name="CustomIconTint" value="000000"/>
+            <property name="TintColor" value="000000"/>          
+        </block>
+        
+        <block name="invDevVaultDoor03">
+            <property name="CustomIcon" value="vaultDoor01"/>
+
+            <property name="Material" value="Mbedrock"/>      
+
+            <!-- Class -->
+            <property name="Class" value="DoorSecure"/>
+            <property name="OpenSound" value="open_door_vault"/>
+            <property name="CloseSound" value="close_door_vault"/>
+            <property name="IndexName" value="TraderOnOff"/>
+            <!-- UI_Info -->
+            <property name="DisplayType" value="blockHardenedMulti"/>
+            <property name="DescriptionKey" value="doorGroupDesc"/>
+            <property name="Stacknumber" value="500"/>
+            <!-- Visual -->           
+            <property name="Shape" value="ModelEntity"/>
+            <property name="Model" value="Entities/Doors/vaultDoor/vaultDoorPrefab"/>
+            <property name="ModelOffset" value="0,0,0"/>
+            <property name="MultiBlockDim" value="1,2,1"/>
+            <property name="ImposterExchange" value="imposterBlock" param1="77"/>
+            <property name="LightOpacity" value="1"/>
+            <property name="WaterFlow" value="permitted"/>
+            <!-- Placement -->
+            <property name="Place" value="Door"/>
+            <property name="PlaceEverywhere" value="true"/>
+            <property name="AllowAllRotations" value="true"/>
+            <property name="StabilitySupport" value="false"/>
+            <!-- Value -->
+            <property name="SellableToTrader" value="false"/>
+            <!-- Interaction -->
+            <property name="MaxDamage" value="15000"/>
+            <property name="StartDamage" value="0"/>
+            <property name="PassThroughDamage" value="true"/>
+            <property name="Stage2Health" value="1"/>
+            <property name="MeshDamage" value="
+                Door/DMG0, 15000,
+                Door/DMG1, 10000,
+                Door/DMG2, 5000,
+                -, 1
+                "/>
+            <property class="RepairItems">
+                <property name="resourceForgedSteel" value="11"/>
+            </property>
+            <property class="RepairItemsMeshDamage">
+                <property name="resourceForgedSteel" value="1"/>
+            </property>
+            <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+            <drop event="Harvest" name="resourceScrapIron" count="96" tag="allHarvest"/>
+            <drop event="Destroy" count="0"/>
+            <drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+            <!-- Sorting -->
+            <property name="SortOrder1" value="B303"/>
+            <property name="SortOrder2" value="000"/>
+            <property name="Group" value="Building,advBuilding"/>
+            <property name="Tags" value="door"/>
+            <property name="BlockTag" value="Door"/>
+            <property name="FilterTags" value="MC_building,SC_doors,A21_NEW"/>
+
+            <property class="UpgradeBlock">
+				<property name="ToBlock" value="vaultDoor01"/>
+				<property name="Item" value="CD"/>
+				<property name="ItemCount" value="1"/>
+				<property name="UpgradeHitCount" value="1"/>
+			</property>
+            
+        </block>
+        <block name="invDevVaultHatch_v3">
+            <property name="Extends" value="vaultHatch01"/>
+            <property name="CustomIcon" value="vaultHatch01"/>
+            <property name="Material" value="Mbedrock"/>
+            <property name="SortOrder1" value="A000"/>
+	        <property name="SortOrder2" value="0000"/>
+            <property class="UpgradeBlock">
+				<property name="ToBlock" value="vaultHatch01"/>
+				<property name="Item" value="CD"/>
+				<property name="ItemCount" value="1"/>
+				<property name="UpgradeHitCount" value="1"/>
+			</property>   
+        </block>      
+        <block name="invScrapHatch_v2">
+			<property name="Extends" value="ironHatchWhite"/>
+            <property name="CustomIcon" value="ironHatchWhite"/>
+	        <property name="CustomIconTint" value="6A6A6A"/>
+            <property name="TintColor" value="6A6A6A"/>
+            <property name="SortOrder2" value="0008"/>
+			<property name="Material" value="Mbedrock"/>
+			<property class="UpgradeBlock">
+				<property name="ToBlock" value="ironHatchWhite"/>
+				<property name="Item" value="CD"/>
+				<property name="ItemCount" value="1"/>
+				<property name="UpgradeHitCount" value="1"/>
+			</property>
+		</block>       
         <block name="invWoodHatch1_v2">
 			<property name="Extends" value="woodHatch"/>
             <property name="CustomIcon" value="woodHatch"/>            
@@ -804,6 +776,59 @@
 				<property name="UpgradeHitCount" value="1"/>
 			</property>
 		</block>
+
+        <block name="iDBVaultDoor01">
+            <property name="Extends" value="vaultDoor01"/>
+            <property name="CustomIcon" value="vaultDoor01"/>
+            <property name="Material" value="Mbedrock"/>
+            <property name="AllowAllRotations" value="true"/>
+            <property name="StabilitySupport" value="false"/>            
+            <property name="MaxDamage" value="30000"/>
+            <property name="MeshDamage" value="
+                Door/DMG0, 30000,
+                Door/DMG1, 10000,
+                Door/DMG2, 5000,
+                -, 1
+                "/>
+                <property class="UpgradeBlock">
+				<property name="ToBlock" value="vaultDoor01"/>
+				<property name="Item" value="CD"/>
+				<property name="ItemCount" value="1"/>
+				<property name="UpgradeHitCount" value="1"/>
+			</property>            
+        </block>
+        <block name="iDBVaultHatch01">
+            <property name="Extends" value="vaultHatch01"/>\
+            <property name="Material" value="Mbedrock"/>
+            <property name="CustomIcon" value="vaultHatch01"/>           
+            <property name="MaxDamage" value="30000"/>
+            <property name="SortOrder1" value="B334"/>
+            <property name="SortOrder2" value="0000"/>
+            <!-- build restriction -->
+            <property class="UpgradeBlock">
+				<property name="ToBlock" value="vaultHatch01"/>
+				<property name="Item" value="CD"/>
+				<property name="ItemCount" value="1"/>
+				<property name="UpgradeHitCount" value="1"/>
+			</property>   
+        </block>
+        <block name="iDBWoodHatch">
+			<property name="Extends" value="woodHatch"/>
+            <property name="CustomIcon" value="woodHatch"/>            
+            <property name="Material" value="Mbedrock"/>
+			<property class="UpgradeBlock">
+				<property name="ToBlock" value="woodHatch"/>
+				<property name="Item" value="CD"/>
+				<property name="ItemCount" value="1"/>
+				<property name="UpgradeHitCount" value="1"/>
+			</property>
+            <property name="MaxDamage" value="30000"/>
+            <property name="MeshDamage" value="
+                Door/DMG0, 40000,
+                Door/DMG1, 3000,
+                -, 1
+                "/>
+		</block> 
         <block name="iDBIronHatchWhite">
 			<property name="Extends" value="ironHatchWhite"/>
             <property name="CustomIcon" value="ironHatchWhite"/>
@@ -811,28 +836,20 @@
             <property name="TintColor" value="6A6A6A"/>
             <property name="SortOrder2" value="0008"/>
 			<property name="Material" value="Mbedrock"/>
+            <property name="MaxDamage" value="30000"/>
+            <property name="MeshDamage" value="
+                Door/DMG0, 40000,
+                Door/DMG1, 3000,
+                -, 1
+                "/>
 			<property class="UpgradeBlock">
 				<property name="ToBlock" value="ironHatchWhite"/>
 				<property name="Item" value="CD"/>
 				<property name="ItemCount" value="1"/>
 				<property name="UpgradeHitCount" value="1"/>
 			</property>
-		</block> 
-		<block name="invScrapHatch_v2">
-			<property name="Extends" value="ironHatchWhite"/>
-            <property name="CustomIcon" value="ironHatchWhite"/>
-	        <property name="CustomIconTint" value="6A6A6A"/>
-            <property name="TintColor" value="6A6A6A"/>
-            <property name="SortOrder2" value="0008"/>
-			<property name="Material" value="Mbedrock"/>
-			<property class="UpgradeBlock">
-				<property name="ToBlock" value="ironHatchWhite"/>
-				<property name="Item" value="CD"/>
-				<property name="ItemCount" value="1"/>
-				<property name="UpgradeHitCount" value="1"/>
-			</property>
-		</block> 
-
+		</block>
+		
         <block name="invDevgarageDoorMetal_v1">
             <property name="Extends" value="ironGarageDoorWhite"/>
             <property name="CustomIcon" value="ironGarageDoorWhite"/>
@@ -846,56 +863,60 @@
 				<property name="ItemCount" value="1"/>
 				<property name="UpgradeHitCount" value="1"/>
 			</property>            
-        </block>
-        <!--        
-        <block name="invDevgarageDoorHousePlayer">
-            <property name="CreativeMode" value="Player"/>
-            <property name="StabilitySupport" value="false"/>
-            <property name="CustomIcon" value="garageDoorHouse"/>
-            <property name="Material" value="Mbedrock"/>
-            <property name="UnlockedBy" value="perkAdvancedEngineering,poweredDoorsSchematic"/>
-            <property name="Class" value="DoorSecure"/>
-            <property name="CreativeMode" value="Player"/>
-            <property name="LightOpacity" value="1"/>
-            <property name="Shape" value="ModelEntity"/>
-            <property name="Tags" value="door"/>
-            <property name="BlockTag" value="Door"/>
-            <property name="Model" value="Entities/Doors/garage_housePrefab"/>
-            <property name="Place" value="TowardsPlacerInverted"/>
-            <property name="PlaceEverywhere" value="true"/>
-            <property name="ModelOffset" value="0,0,0"/>
-            <property name="MeshDamage" value="Door/Box1, 99999"/>
-            <property name="MultiBlockDim" value="5,3,1"/>
-            <property name="DisplayType" value="blockMulti"/>
-            <property name="ActivationDistance" value="6"/>
-            <property name="ImposterExchange" value="imposterBlock" param1="43"/>
-            <property name="OnlySimpleRotations" value="false"/>
-            <property name="OpenSound" value="open_garageindustrial"/>
-            <property name="CloseSound" value="close_garageindustrial"/>
-            <property class="RepairItems">
-                <property name="resourceForgedIron" value="48"/>
-            </property>
-            <drop event="Harvest" name="resourceScrapIron" count="200" tag="allHarvest"/>
-            <drop event="Destroy" count="0"/>
-            <drop event="Destroy" name="resourceSpring" count="4,8" tag="allHarvest"/>
-            <drop event="Destroy" name="resourceMechanicalParts" count="4,8" tag="allHarvest"/>
-            <drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
-            <property name="Group" value="Building,advBuilding"/>
-            <property name="DescriptionKey" value="garageDoorHousePlayerDesc"/>
-            <property name="FilterTags" value="MC_building,SC_doors"/>
-            <property name="SortOrder1" value="7060"/>
-            <property name="SortOrder2" value="0400"/>
-        </block>
+        </block> 
         <block name="invDevgarageDoorHouse3x3">
-            <property name="Extends" value="garageDoorIndustrial"/>
-            <property name="Class" value="DoorSecure"/>
-            <property name="CustomIcon" value="garageDoorHouse3x3"/>
+            <property name="Extends" value="woodenGarageDoor3x3White"/> 
+            <property name="CustomIcon" value="woodenGarageDoor3x3White"/>
             <property name="Material" value="Mbedrock"/>
             <property name="CreativeMode" value="Dev"/>
-            <property name="Model" value="Entities/Doors/garage_house_3x3Prefab"/>
-            <property name="MultiBlockDim" value="3,3,1"/>
+            <property name="SortOrder1" value="A000"/>
+            <property name="SortOrder2" value="0000"/>
+            <property class="UpgradeBlock">
+				<property name="ToBlock" value="woodenGarageDoor3x3White"/>
+				<property name="Item" value="CD"/>
+				<property name="ItemCount" value="1"/>
+				<property name="UpgradeHitCount" value="1"/>
+			</property> 
         </block>
-        -->
+        <block name="invDevgarageDoorHouseBrown3x3">			
+			<property name="Extends" value="invDevgarageDoorHouse3x3"/>
+            <property name="CustomIcon" value="woodenGarageDoor3x3White"/>                      
+            <property name="CustomIconTint" value="5E5146"/>
+            <property name="TintColor" value="5E5146"/>
+            <property name="Material" value="Mbedrock"/>           
+            
+		</block>            
+        <block name="invDevgarageDoorHousePlayer">
+            <property name="Extends" value="woodenGarageDoor5x3White"/>
+            <property name="CustomIcon" value="woodenGarageDoor5x3White"/>
+			<property name="Material" value="Mbedrock"/>
+            <property name="MaxDamage" value="30000"/>
+            <property name="CreativeMode" value="Dev"/>
+            <property name="StabilitySupport" value="false"/>
+
+            <property class="UpgradeBlock">
+				<property name="ToBlock" value="woodenGarageDoor5x3White"/>
+				<property name="Item" value="CD"/>
+				<property name="ItemCount" value="1"/>
+				<property name="UpgradeHitCount" value="1"/>
+			</property>
+        </block>
+        
+        
+        <block name="invDevCellarDoorDoubleSteel">
+            <property name="Extends" value="cellarDoorDoubleSteel"/>
+            <property name="Material" value="Mbedrock"/>
+            <property name="CustomIcon" value="cellarDoorDoubleSteel"/>
+              <property name="SortOrder2" value="A000"/>
+    
+            <property name="Material" value="Mbedrock"/>
+            <property class="UpgradeBlock">
+				<property name="ToBlock" value="cellarDoorDoubleSteel"/>
+				<property name="Item" value="CD"/>
+				<property name="ItemCount" value="1"/>
+				<property name="UpgradeHitCount" value="1"/>
+			</property>  
+        </block>        
         <block name="invDevMetalReinforcedWoodDrawBridge">
             <property name="Extends" value="metalReinforcedWoodDrawBridge"/>            
             <property name="Material" value="Mbedrock"/>
@@ -919,17 +940,16 @@
 			</property>  
         </block>
         <block name="invDevShuttersSteel01">
-            <property name="Extends" value="cellarDoorDoubleSteel"/>
-            <property name="CustomIcon" value="cellarDoorDoubleSteel"/>            
+            <property name="Extends" value="shuttersSteel01"/>
+            <property name="CustomIcon" value="shuttersSteel01"/>            
             <property name="Material" value="Mbedrock"/>
             <property class="UpgradeBlock">
-				<property name="ToBlock" value="cellarDoorDoubleSteel"/>
+				<property name="ToBlock" value="shuttersSteel01"/>
 				<property name="Item" value="CD"/>
 				<property name="ItemCount" value="1"/>
 				<property name="UpgradeHitCount" value="1"/>
 			</property> 
         </block>
-
 		<block name="indDevShuttersWood01">
 			<property name="Extends" value="shuttersWood01"/>
 			<property name="CustomIcon" value="shuttersWood01" />
@@ -992,30 +1012,101 @@
 			</property> 
             
 		</block>
-        <block name="invDevgarageDoorIndustrial3x3">
-			<property name="Extends" value="rollUpDoor3x3White"/>
-	        <property name="CustomIcon" value="rollUpDoor3x3White"/>
+
+        <block name="iDBCellarDoorDoubleSteel">
+            <property name="Extends" value="cellarDoorDoubleSteel"/>
+            <property name="Material" value="Mbedrock"/>
+            <property name="CustomIcon" value="cellarDoorDoubleSteel"/>
+              <property name="SortOrder2" value="A000"/>
+    
+            <property name="Material" value="Mbedrock"/>
+            <property class="UpgradeBlock">
+				<property name="ToBlock" value="cellarDoorDoubleSteel"/>
+				<property name="Item" value="CD"/>
+				<property name="ItemCount" value="1"/>
+				<property name="UpgradeHitCount" value="1"/>
+			</property>  
+        </block>        
+        <block name="iDBMetalReinforcedWoodDrawBridge">
+            <property name="Extends" value="metalReinforcedWoodDrawBridge"/>            
+            <property name="Material" value="Mbedrock"/>
+            <property name="CustomIcon" value="metalReinforcedWoodDrawBridge"/>
+            <property class="UpgradeBlock">
+				<property name="ToBlock" value="metalReinforcedWoodDrawBridge"/>
+				<property name="Item" value="CD"/>
+				<property name="ItemCount" value="1"/>
+				<property name="UpgradeHitCount" value="1"/>
+			</property>            
+        </block>
+        <block name="iDBManholeHatch">
+            <property name="CustomIcon" value="manholeHatch"/>
+            <property name="Extends" value="manholeHatch"/>     
+            <property name="Material" value="Mbedrock"/>
+            <property class="UpgradeBlock">
+				<property name="ToBlock" value="manholeHatch"/>
+				<property name="Item" value="CD"/>
+				<property name="ItemCount" value="1"/>
+				<property name="UpgradeHitCount" value="1"/>
+			</property>  
+        </block>        
+		<block name="iDBShuttersWood01">
+			<property name="Extends" value="shuttersWood01"/>
+			<property name="CustomIcon" value="shuttersWood01" />
 			<property name="Material" value="Mbedrock"/>
             <property class="UpgradeBlock">
-				<property name="ToBlock" value="rollUpDoor3x3White"/>
+				<property name="ToBlock" value="shuttersWood01"/>
 				<property name="Item" value="CD"/>
 				<property name="ItemCount" value="1"/>
 				<property name="UpgradeHitCount" value="1"/>
 			</property> 
 		</block>
-        <block name="invDevgarageDoorHouseBrown3x3">			
-			<property name="Extends" value="rollUpDoor3x3White"/>
-            <property name="CustomIcon" value="rollUpDoor3x3White"/>                      
-            <property name="CustomIconTint" value="5E5146"/>
-            <property name="TintColor" value="5E5146"/>
-            <property name="Material" value="Mbedrock"/>           
+		<block name="iDBShuttersWood02">
+			<property name="Extends" value="shuttersWood02"/>
+			<property name="CustomIcon" value="shuttersWood02" />
+			<property name="Material" value="Mbedrock"/>
             <property class="UpgradeBlock">
-				<property name="ToBlock" value="rollUpDoor3x3White"/>
+				<property name="ToBlock" value="shuttersWood02"/>
+				<property name="Item" value="CD"/>
+				<property name="ItemCount" value="1"/>
+				<property name="UpgradeHitCount" value="1"/>
+			</property>
+		</block>
+        <block name="iDBShuttersSteel01">
+            <property name="Extends" value="shuttersSteel01"/>
+            <property name="CustomIcon" value="shuttersSteel01"/>            
+            <property name="Material" value="Mbedrock"/>
+            <property class="UpgradeBlock">
+				<property name="ToBlock" value="shuttersSteel01"/>
 				<property name="Item" value="CD"/>
 				<property name="ItemCount" value="1"/>
 				<property name="UpgradeHitCount" value="1"/>
 			</property> 
-		</block>        
+        </block>
+		<block name="iDBexteriorHouseDoorWhitePristine">
+            <property name="Extends" value="exteriorHouseDoorWhite"/>
+            <property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+			<property name="Material" value="Mbedrock"/>        
+            <property name="MeshDamage" value="
+                Door/DMG0, 31000,
+                Door/DMG1, 30000,
+                Door/DMG2, 120,
+                Door/DMG3, 80,
+                -, 1
+                "/>
+            <property class="UpgradeBlock">
+				<property name="ToBlock" value="exteriorHouseDoorWhite"/>
+				<property name="Item" value="CD"/>
+				<property name="ItemCount" value="1"/>
+				<property name="UpgradeHitCount" value="1"/>
+			</property>            
+		</block>
+		<block name="iDBexteriorHouseDoorBrownPristine">
+			<property name="Extends" value="iDBexteriorHouseDoorWhitePristine"/>
+            <property name="CustomIcon" value="exteriorHouseDoorWhite"/>            
+            <property name="CustomIconTint" value="5F4D46"/>
+	        <property name="TintColor" value="5F4D46"/>           
+		</block>
+
         <!---->
         <!-- Dev Switches and lights-->
         <block name="indDevPowerSwitch01">
@@ -1082,8 +1173,80 @@
 			<property name="Shape" value="New"/>
 			<property name="Model" value="pillar50_plate"/>
 		</block>
+
+
+        <block name="iDBPowerSwitch01">
+            <property name="Extends" value="pushButtonSwitch01"/>            
+			<property name="CustomIcon" value="powerSwitch01" />
+			<property name="Material" value="Mbedrock" />			
+			<property name="Model" value="Entities/Industrial/powerSwitchOff_01Prefab" />
+		</block>
+		<block name="iDBPowerSwitch02">
+			<property name="Extends" value="iDBPowerSwitch01"/>            
+			<property name="CustomIcon" value="powerSwitch01" />		
+			<property name="Model" value="Entities/Industrial/powerSwitchOff_02Prefab" />
+		</block>
+		<block name="iDBPushButtonSwitch01">
+			<property name="Extends" value="iDBPowerSwitch01"/>
+			<property name="CustomIcon" value="pushButtonSwitch01" />
+			<property name="Model" value="Entities/Industrial/powerSwitchButton_01Prefab"/>
+		</block>
+		<block name="iDBPushButtonSwitch02">
+			<property name="Extends" value="iDBPowerSwitch01" />
+			<property name="CustomIcon" value="pushButtonSwitch02" />
+			<property name="Model" value="Entities/Industrial/powerSwitchButton_02Prefab"/>
+		</block>
+		<block name="iDBKeyRackBoxMetal01">
+			<property name="Extends" value="iDBPowerSwitch01" />
+			<property name="CustomIcon" value="keyRackBoxMetal01" />
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="Entities/Commercial/keyRackBoxMetal_01Prefab"/>
+			<property name="ActivateSound" value="keyrack"/>
+		</block>
+		<block name="iDBKeyRackWood01">
+			<property name="Extends" value="iDBPowerSwitch01" />
+			<property name="CustomIcon" value="keyRackWood01" />
+			<property name="ActivateSound" value="keyrack"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="Entities/Commercial/keyRackWood_01Prefab"/>
+		</block>
+        <block name="iDBCircularButtonHelper">
+			<property name="Extends" value="iDBPowerSwitch01" />
+			<property name="Texture" value="596"/>
+			<property name="CustomIcon" value="shapepillar50Plate" />
+			<property name="Powered" value="false"/>
+			<property name="Material" value="Mbedrock" />
+			<property name="Shape" value="New"/>
+			<property name="Model" value="pillar50_plate"/>
+		</block>
+		<block name="iDBCircularButton">
+			<property name="Extends" value="iDBPowerSwitch01" />
+			<property name="Texture" value="596"/>
+			<property name="CustomIcon" value="shapepillar50Plate" />
+			<property name="Powered" value="false"/>
+			<property name="Material" value="Mbedrock" />
+			<property name="Shape" value="New"/>
+			<property name="Model" value="pillar50_plate"/>
+		</block>
+        <block name="iDBPushButtonSwitch01InfestedHelper">
+			<property name="Extends" value="iDBPowerSwitch01"/>
+			<property name="CustomIcon" value="pushButtonSwitch01" />
+			<property name="Model" value="Entities/Industrial/powerSwitchButton_01Prefab"/>
+		</block>
+        <block name="iDBPushButtonSwitch01Infested">
+			<property name="Extends" value="iDBPowerSwitch01"/>
+			<property name="CustomIcon" value="pushButtonSwitch01" />
+			<property name="Model" value="Entities/Industrial/powerSwitchButton_01Prefab"/>
+		</block>
+        <block name="iDBCircularButtonInfestedHelper">
+			<property name="Extends" value="iDBCircularButton" />			
+		</block>
+        <block name="iDBCircularButtonInfested">
+			<property name="Extends" value="iDBCircularButton" />			
+		</block>
+
         <block name="iDBExtra1">
-			<property name="Extends" value="indDevPowerSwitch01" />
+			<property name="Extends" value="iDBPowerSwitch01" />
 			<property name="Texture" value="596"/>
 			<property name="CustomIcon" value="shapepillar50Plate" />
 			<property name="Powered" value="false"/>
@@ -1092,7 +1255,7 @@
 			<property name="Model" value="pillar50_plate"/>
 		</block>
         <block name="iDBExtra2">
-			<property name="Extends" value="indDevPowerSwitch01" />
+			<property name="Extends" value="iDBPowerSwitch01" />
 			<property name="Texture" value="596"/>
 			<property name="CustomIcon" value="shapepillar50Plate" />
 			<property name="Powered" value="false"/>
@@ -1101,7 +1264,7 @@
 			<property name="Model" value="pillar50_plate"/>
 		</block>
         <block name="iDBExtra3">
-			<property name="Extends" value="indDevPowerSwitch01" />
+			<property name="Extends" value="iDBPowerSwitch01" />
 			<property name="Texture" value="596"/>
 			<property name="CustomIcon" value="shapepillar50Plate" />
 			<property name="Powered" value="false"/>
@@ -1110,7 +1273,7 @@
 			<property name="Model" value="pillar50_plate"/>
 		</block>
         <block name="iDBExtra4">
-			<property name="Extends" value="indDevPowerSwitch01" />
+			<property name="Extends" value="iDBPowerSwitch01" />
 			<property name="Texture" value="596"/>
 			<property name="CustomIcon" value="shapepillar50Plate" />
 			<property name="Powered" value="false"/>
@@ -1119,19 +1282,21 @@
 			<property name="Model" value="pillar50_plate"/>
 		</block>
 
+        <!--TO DELETE-->
         <block name="invDevWallTorchLight">            
             <property name="Extends" value="wallTorchLight"/>
             <property name="CustomIcon" value="wallTorchLight"/>
 			<property name="CreativeMode" value="Dev"/>
             <property name="Material" value="Mbedrock"/>
-		</block>
+		</block>        
 		<block name="invDevSconce1Light">
 			<property name="Extends" value="lightSconce"/>
 			<property name="CreativeMode" value="Dev"/>
 			<property name="CustomIcon" value="lightSconce"/>
-			<property name="Material" value="Mbedrock"/>
-			
+			<property name="Material" value="Mbedrock"/>			
 		</block>
+        <!---->
+
          <block name="iDBWallTorchLight">
 			<property name="Extends" value="wallTorchLight"/>
             <property name="CustomIcon" value="wallTorchLight"/>
@@ -1145,9 +1310,9 @@
 			<property name="CustomIcon" value="lightSconce"/>
 			<property name="Material" value="Mbedrock"/>
 			
-		</block>
+		</block>        
         <!---->
-        <!-- Glass-->
+        <!-- Glass TO DELETE-->
         <block name="INV_stainedGlassPlate">
             <property name="Extends" value="glassBusinessPlate"/>
             <!--<property name="CustomIcon" value="glassBusinessBlock"/>-->
@@ -1224,10 +1389,87 @@
 			<property name="Texture" value="285"/>
 			<property name="CustomIconTint" value="B2FFFF"/>
 		</block>
-		
+        <!-- Glass -->
+        <block name="iDBstainedGlassPlateDecorated">
+            <property name="Extends" value="glassBusinessPlate"/>
+            <!--<property name="CustomIcon" value="glassBusinessBlock"/>-->
+            <property name="Material" value="Mbedrock"/>
+            <property name="ItemTypeIcon" value="star"/>
+            <property name="Texture" value="596"/>
+            <property name="LightOpacity" value="4"/>
+        </block>
+		<block name="iDBGlassBulletproofBlock">
+			<property name="Extends" value="glassBulletproofBlock"/>
+			<property name="CustomIcon" value="glassBulletproofMaster" />
+			<property name="Material" value="Mbedrock"/>
+		</block>
+		<block name="iDBGlassBulletproofPlate">
+			<property name="Extends" value="glassBulletproofPlate"/>
+			<property name="CustomIcon" value="glassBulletproofPlate" />
+			<property name="Material" value="Mbedrock"/>
+		</block>
+		<block name="iDBGlassBulletproofCTRPlate">
+			<property name="Extends" value="glassBulletproofCTRPlate"/>
+			<property name="CustomIcon" value="glassBulletproofCTRPlate" />
+			<property name="Material" value="Mbedrock"/>
+		</block>
+		<block name="iDBGlassBulletproofRamp">
+			<property name="Extends" value="glassBulletproofRamp"/>
+			<property name="CustomIcon" value="glassBulletproofRamp" />
+			<property name="Material" value="Mbedrock"/>
+		</block>
+		<block name="iDBGlassBulletproofPlateCurved">
+			<property name="Extends" value="glassBulletproofPlateCurved"/>
+			<property name="CustomIcon" value="glassBulletproofPlateCurved" />
+			<property name="Material" value="Mbedrock"/>
+		</block>		
+		<block name="iDBGlassTransparentBlockTransparent">
+			<property name="Extends" value="glassBulletproofBlock"/>
+			<property name="CustomIcon" value="glassBulletproofMaster" />
+			<property name="Material" value="Mbedrock"/>
+			<property name="Texture" value="285"/>
+			<property name="CustomIconTint" value="B2FFFF"/>
+		</block>
+		<block name="iDBGlassTransparentPlate">
+			<property name="Extends" value="glassBulletproofPlate"/>
+			<property name="CustomIcon" value="glassBulletproofPlate" />
+			<property name="Material" value="Mbedrock"/>
+			<property name="Texture" value="285"/>
+			<property name="CustomIconTint" value="B2FFFF"/>
+		</block>
+		<block name="iDBGlassTransparentCTRPlate">
+			<property name="Extends" value="glassBulletproofCTRPlate"/>
+			<property name="CustomIcon" value="glassBulletproofCTRPlate" />
+			<property name="Material" value="Mbedrock"/>
+			<property name="Texture" value="285"/>
+			<property name="CustomIconTint" value="B2FFFF"/>
+		</block>
+		<block name="iDBGlassTransparentRamp">
+			<property name="Extends" value="glassBulletproofRamp"/>
+			<property name="CustomIcon" value="glassBulletproofRamp" />
+			<property name="Material" value="Mbedrock"/>
+			<property name="Texture" value="285"/>
+			<property name="CustomIconTint" value="B2FFFF"/>
+		</block>
+		<block name="iDBGlassTransparentPlateCurved">
+			<property name="Extends" value="glassBulletproofPlateCurved"/>
+			<property name="CustomIcon" value="glassBulletproofPlateCurved" />
+			<property name="Material" value="Mbedrock"/>
+			<property name="Texture" value="285"/>
+			<property name="CustomIconTint" value="B2FFFF"/>
+		</block>
+        <block name="iDBTransparentPlateNoSupport">
+			<property name="Extends" value="glassBulletproofPlate"/>
+			<property name="CustomIcon" value="glassBulletproofPlate" />
+			<property name="Material" value="Mbedrock"/>
+            <property name="StabilitySupport" value="false"/>
+			<property name="Texture" value="285"/>
+			<property name="CustomIconTint" value="B2FFFF"/>
+		</block>		
         <!---->
 
-        <block name="iDBVariantHelper">
+
+        <block name="iDevBlocksVariantHelper">
              <property name="Extends" value="invDevVaultDoor03"/>          
              <property name="CreativeMode" value="Dev"/> 
             <property name="DescriptionKey" value="blockVariantHelperGroupDesc"/>
@@ -1237,23 +1479,24 @@
             <property name="PlaceAltBlockValue" value="invDevVaultDoor03,invDevVaultHatch_v3,invDevShuttersSteel01,invWoodHatch1_v2,invScrapHatch_v2,invDevManholeHatch,invDevMetalReinforcedWoodDrawBridge,invDevgarageDoorMetal_v1,invDevRollUpDoor3x3White,invDevRollUpDoor3x3Black,invDevrollUpDoor5x4White,invDevRollUpDoor5x4Black,invDevRollUpDoor7x4White,invDevRollUpDoor7x4Black,invDevgarageDoorHouseBrown3x3,invDevgarageDoorIndustrial3x3,indDevHouseFrontDoor1_v1,indDevHouseFrontDoor2_v1,indDevShuttersWood01,indDevShuttersWood02,indDevPowerSwitch01,indDevPowerSwitch02,indDevPushButtonSwitch01,indDevPushButtonSwitch02,indDevKeyRackBoxMetal01,indDevKeyRackWood01,indDevCircularButton,invD_steelSheet,invDevWallTorchLight,invDevSconce1Light,iDBSecStorage,eventMetalCatwalkTrap"/>
             <property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
         </block>
-        <block name="iDBBulletproofBlockVariantHelper">
+        <block name="iDevBlocksBulletproofBlockVariantHelper">
 			<property name="Extends" value="indDevGlassBulletproofBlock"/>            
 			<property name="CustomIcon" value="glassBulletproofMaster"/>
 			<property name="DescriptionKey" value="blockVariantHelperGroupDesc"/>
 			<property name="ItemTypeIcon" value="all_blocks"/>
 			<property name="SelectAlternates" value="true"/>
-			<property name="PlaceAltBlockValue" value="indDevGlassBulletproofBlock,indDevGlassBulletproofPlate,indDevGlassBulletproofCTRPlate,indDevGlassBulletproofRamp,indDevGlassBulletproofPlateCurved,indDevGlassBulletproofBlock2,indDevGlassBulletproofPlate2,indDevGlassBulletproofCTRPlate2,indDevGlassBulletproofRamp2,indDevGlassBulletproofPlateCurved2"/>
+			<property name="PlaceAltBlockValue" value="iDBstainedGlassPlateDecorated,iDBGlassBulletproofBlock,iDBGlassBulletproofPlate,iDBGlassBulletproofCTRPlate,iDBGlassBulletproofRamp,iDBGlassBulletproofPlateCurved,iDBGlassTransparentBlockTransparent,iDBGlassTransparentPlate,iDBGlassTransparentCTRPlate,iDBGlassTransparentRamp,iDBGlassTransparentPlateCurved,iDBTransparentPlateNoSupport"/>
 			<property name="Stacknumber" value="500"/>
 			<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
-		</block>       
-
+		</block>
         <block name="iDBShapes" shapes="All">
             <property name="DescriptionKey" value="steelBlockGroupDesc"/>            
             <property name="DisplayType" value="blockHardened"/>
             <property name="Material" value="Mbedrock"/>
             <property name="Shape" value="New"/>
             <property name="Texture" value="62"/>
+            <property name="WaterFlow" value="permitted"/>
+            <property name="StabilityFull" value="true"/>
             <property name="UiBackgroundTexture" value="62"/>   
             <drop event="Destroy" count="0"/>
             <drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
@@ -1268,7 +1511,6 @@
                 <property name="UpgradeHitCount" value="1"/>
             </property>
         </block>
-
         
         <!--
         <block name="invDevShapes" shapes="All">
@@ -1296,6 +1538,7 @@
                 <property name="UpgradeHitCount" value="1"/>
             </property>
         </block>
+
         
         <block name="invDShapes" shapes="All">
             <property name="Group" value="Building,advBuilding"/>
@@ -1325,6 +1568,8 @@
     </append>
 
     <!--
+
+
     <append xpath="/blocks/block[@name='invDShapes:VariantHelper']">
         <property name="CreativeMode" value="Dev"/>
     </append>
