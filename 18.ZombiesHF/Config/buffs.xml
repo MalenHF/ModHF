@@ -1201,6 +1201,34 @@
 				<!--<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="chainsaw_idle"/>-->
 			</effect_group>
 		</buff>
+		
+		<buff name="DecoBossCirujano" hidden="true">
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Knives/machetePrefab.prefab" local_offset="0,0,0" local_rotation="90,90,180" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Knives/hunting_knifePrefab.prefab" local_offset="0.1,0.05,0" local_rotation="0,90,-90" parent_transform="RightHand"/>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Gore/animalRemainsGorePrefab" local_offset="0.1,0,0.2" local_rotation="180,90,90" parent_transform="Spine"/> -->
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Gore/humanSkeletonGorePrefab" local_offset="0,0,-0.65" local_rotation="90,0,180" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Gore/humanSkullGorePrefab" local_offset="0,0.5,0" local_rotation="0,0,0" parent_transform="Head"/>
+			</effect_group>			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Knives/machetePrefab.prefab" local_offset="0,0,0" local_rotation="90,90,180" parent_transform="LeftHand">
+					<requirement name="!HasPrefab" prefab="@:Other/Items/Weapons/Melee/Knives/machetePrefab.prefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Knives/hunting_knifePrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightHand">
+					<requirement name="!HasPrefab" prefab="@:Other/Items/Weapons/Melee/Knives/hunting_knifePrefab.prefab" />
+				</triggered_effect>
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Gore/animalRemainsGorePrefab" local_offset="0.1,0,0.2" local_rotation="180,90,90" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="Entities/Gore/animalRemainsGorePrefab" />
+				</triggered_effect> -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Gore/humanSkeletonGorePrefab" local_offset="0,0,-0.65" local_rotation="90,0,180" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="Entities/Gore/humanSkeletonGorePrefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Gore/humanSkullGorePrefab" local_offset="0,0.5,0" local_rotation="0,0,0" parent_transform="Head">
+					<requirement name="!HasPrefab" prefab="Entities/Gore/humanSkullGorePrefab" />
+				</triggered_effect>				
+			</effect_group>				
+		</buff>
+
 		<buff name="DrowsyCD" hidden="true">
 			<stack_type value="ignore"/>
 			<duration value="20"/>
@@ -1548,12 +1576,22 @@
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelPlasticPrefab" local_offset="0.15,0.25,-0.25" local_rotation="0,0,0" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Commercial/bollardConcreteKnockedBPrefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="LeftLeg"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Commercial/bollardConcreteKnockedBPrefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="RightLeg"/>
-				
 			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelPlasticPrefab" local_offset="0.15,0.25,-0.25" local_rotation="0,0,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="Entities/Industrial/barrelPlasticPrefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Commercial/bollardConcreteKnockedBPrefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="LeftLeg">
+					<requirement name="!HasPrefab" prefab="Entities/Commercial/bollardConcreteKnockedBPrefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Commercial/bollardConcreteKnockedBPrefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="RightLeg">
+					<requirement name="!HasPrefab" prefab="Entities/Commercial/bollardConcreteKnockedBPrefab" />
+				</triggered_effect>								
+			</effect_group>			
 		</buff>
 		<buff name="DecoMiniBossToxic" hidden="true">
 			<effect_group>
-				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelAcidPrefab" local_offset="0,0,-0.5" local_rotation="180,0,0" parent_transform="Spine"/> -->
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelAcidPrefab" local_offset="-0.1,0,-0.3" local_rotation="90,-90,0" parent_transform="Spine"/>
 			
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_left" parent_transform="Head" />
 				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_left" parent_transform="Head" />
@@ -1568,9 +1606,9 @@
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_twitch_zombie_radiation_right"/>
 			</effect_group>
 			<effect_group>
-				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" particle="Entities/Industrial/barrelAcidPrefab" parent_transform="Spine"> -->
-					<!-- <requirement name="!HasPrefab" particle="Entities/Industrial/barrelAcidPrefab" /> -->
-				<!-- </triggered_effect> -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" particle="Entities/Industrial/barrelAcidPrefab" local_offset="-0.1,0,-0.3" local_rotation="90,-90,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" particle="Entities/Industrial/barrelAcidPrefab" />
+				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_left" parent_transform="Head">
 					<requirement name="!HasParticle" particle="p_twitch_zombie_radiation_left" />
 				</triggered_effect>
@@ -1864,6 +1902,33 @@
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Plants/pumpkinJackoLanternPrefab" local_offset="0,0.54,0.33" local_rotation="30,0,0" parent_transform="Spine"/>
 			</effect_group>
 		</buff>
+		
+		<buff name="DecoSBNurse" hidden="true">
+			<effect_group>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/pill_case_closedPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftHand"/> -->
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Electrical/lightDisplayXRayFullPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine"/>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/duffle01Prefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine"/> -->
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Traps/woodSpikesTrap2BloodPrefab" local_offset="0.2,0,0" local_rotation="0,0,-60" parent_transform="LeftLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Traps/woodSpikesTrap2BloodPrefab" local_offset="0.2,0,0" local_rotation="0,0,-60" parent_transform="RightLeg"/>
+			</effect_group>
+			<effect_group>
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/pill_case_closedPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftHand">
+					<requirement name="!HasPrefab" prefab="@:Entities/LootContainers/pill_case_closedPrefab.prefab" />
+				</triggered_effect> -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Electrical/lightDisplayXRayFullPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="Entities/Electrical/lightDisplayXRayFullPrefab" />
+				</triggered_effect>
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/duffle01Prefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="@:Entities/LootContainers/duffle01Prefab.prefab" />
+				</triggered_effect> -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Traps/woodSpikesTrap2BloodPrefab" local_offset="0.2,0,0" local_rotation="0,0,-60" parent_transform="LeftLeg">
+					<requirement name="!HasPrefab" prefab="Entities/Traps/woodSpikesTrap2BloodPrefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Traps/woodSpikesTrap2BloodPrefab" local_offset="0.2,0,0" local_rotation="0,0,-60" parent_transform="RightLeg">
+					<requirement name="!HasPrefab" prefab="Entities/Traps/woodSpikesTrap2BloodPrefab" />
+				</triggered_effect>
+			</effect_group>
+		</buff>		
 
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Not used ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
