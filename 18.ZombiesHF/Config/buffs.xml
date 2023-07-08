@@ -922,7 +922,8 @@
 				<requirement name="NotHasBuff" buff="god"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="hearthbeat"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" target_tags="player" range="25" buff="buffCirujano2"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="positionAOE" target_tags="player" range="10" buff="RandomStatusEffectCD"/>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="positionAOE" target_tags="player" range="10" buff="RandomStatusEffectCD"/> -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" target_tags="player" range="20" buff="Cirujano_RandomStatusEffect"/>
 			</effect_group>
 		</buff>
 		<buff name="buffCirujano2" hidden="false" description_key="cirujanocalldesc" name_key="cirujanonamecall" tooltip_key="cirujanocall" icon="ui_game_symbol_add" icon_color="0, 0, 0">
@@ -934,10 +935,47 @@
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="medicalRegHealthAmount" operation="set" value="0"/> -->
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="foodHealthAmount" operation="set" value="0"/> -->
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfNoVehicle"/>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="CirujanoBuffHurt"/> -->
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="DrowsyCD"/>
 				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffCirujano2"/>
 			</effect_group>
 		</buff>
+		
+		<buff name="Cirujano_RandomStatusEffect" hidden="true">
+			<stack_type value="ignore"/>
+			<!-- ESTO ES CADA 10 SEGUNDOS -->
+			<!-- <duration value="7"/>
+			<update_rate value="12"/> -->
+
+			<!-- ESTO ES CADA 14 SEGUNDOS -->
+			<duration value="10.5"/>
+			<update_rate value="11"/>			
+			<effect_group>
+				<requirement name="NotHasBuff" buff="god"/>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" fireOneBuff="false" 
+					buff="triggerInfection,CirujanoBuffHurt,buffInjuryConcussion,triggerAbrasion,buffFatigued,buffLegSprained,buffArmSprained,triggerLaceration,CirujanoBuffPuking,buffLegBroken,buffArmBroken,buffInjuryKnockdown01" 
+					weights="1,11,11,9,8,10,10,9,8,3,2,1"/>
+			</effect_group>
+		</buff>
+		<!-- ESTO ES CADA 7 SEGUNDOS -->
+		<buff name="SP_Cirujano_RandomStatusEffect" hidden="true">
+			<stack_type value="ignore"/>
+			<!-- ESTO ES CADA 7 SEGUNDOS -->
+			<!-- <duration value="5"/>
+			<update_rate value="15"/> -->
+
+			<!-- ESTO ES CADA 10.5 SEGUNDOS -->
+			<duration value="7"/>
+			<update_rate value="7.5"/>			
+			<effect_group>
+				<requirement name="NotHasBuff" buff="god"/>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" fireOneBuff="false" 
+					buff="triggerInfection,CirujanoBuffHurt,buffInjuryConcussion,triggerAbrasion,buffFatigued,buffLegSprained,buffArmSprained,triggerLaceration,CirujanoBuffPuking,buffLegBroken,buffArmBroken,buffInjuryKnockdown01" 
+					weights="5,11,11,9,8,10,10,9,8,5,5,1"/>
+			</effect_group>
+		</buff>		
 		<buff name="buffHolyAura" hidden="true">
 			<update_rate value="25"/>
 			<effect_group>
@@ -1011,16 +1049,18 @@
 				<requirement name="NotHasBuff" buff="god"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="hearthbeat"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" target_tags="player" range="50" buff="buffCirujanoSP2"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="positionAOE" target_tags="player" range="10" buff="RandomStatusEffectCDSP"/>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="positionAOE" target_tags="player" range="10" buff="RandomStatusEffectCDSP"/> -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" target_tags="player" range="40" buff="SP_Cirujano_RandomStatusEffect"/>
 			</effect_group>
 		</buff>
 		<buff name="buffCirujanoSP2" hidden="false" description_key="cirujanocalldesc" name_key="cirujanonamecall" tooltip_key="cirujanocall" icon="ui_game_symbol_add" icon_color="0, 0, 0">
-			<stack_type value="replace"/>
+			<stack_type value="ignore"/>
 			<duration value="5"/>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffchaleDuration" operation="set" value="0"/>
 				<requirement name="NotHasBuff" buff="god"/>
 				<requirement name="EntityTagCompare" tags="player"/>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="CirujanoBuffHurt"/> -->
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="DrowsyCD"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="medicalRegHealthAmount" operation="set" value="0"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="foodHealthAmount" operation="set" value="0"/>
@@ -1459,9 +1499,30 @@
 				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="CirujanoBuffHurt"/>
 			</effect_group>
 			<effect_group>
-				<passive_effect name="HealthMaxBlockage" operation="base_add" value="50"/>
+				<passive_effect name="HealthMaxBlockage" operation="base_add" value="25"/>
 			</effect_group>
 		</buff>
+
+		<!-- Buffo que puede entrar para AOE de aura de boss (como el que reduce armadura) -->
+		<!-- <buff name="NuevoBuffHurt" name_key="" description_key="TwitchBuff_HurtDesc" icon="ui_game_symbol_twitch_hurt" icon_color="255,175,175" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="10"/>
+			<display_value value=".CirujanoBuffHurtTimer"/>
+			<display_value_format value="time"/>
+
+			<effect_group>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="CirujanoBuffHurt"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".CirujanoBuffHurtTimer" operation="set" value="10"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".CirujanoBuffHurtTimer" operation="set" value="10"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".CirujanoBuffHurtTimer" operation="add" value="-1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".CirujanoBuffHurtTimer" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="CirujanoBuffHurt"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthMaxBlockage" operation="base_add" value="75"/>
+			</effect_group>
+		</buff> -->
+
 		<!-- END Added by HolyVentus -->
 		<buff name="hfNoVehicle" name_key="No Vehicle" description_key="TwitchBuff_NoVehicleDesc">
 			<stack_type value="replace"/>
