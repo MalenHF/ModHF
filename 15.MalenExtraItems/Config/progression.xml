@@ -24,15 +24,28 @@
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add 6k minerals bundles unlock ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
     <append xpath="/progression/perks/book[@name='perkArtOfMiningPallets']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,resourceClayLumpBundle,resourceCrushedSandBundle</append>
     
-    <append xpath="/progression/perks/perk[@name='perkMasterChef']/effect_group">
-      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,5" value="1"	tags="chefTier1"/>
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ New Food Unlock ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/display_entry[@icon='drinkYuccaJuiceSmoothie,foodHoboStew,foodFishTacos,foodChiliDog,foodShamChowder']/unlock_entry[@unlock_tier='5']/@item">,foodCanTuna,foodCanSalmon,foodCanPeas,foodCanChicken,foodCanLamb,foodCanBeef,foodCanChili,foodCanStock,foodCanPasta,foodCanMiso,foodCanPears,foodCanSoup</append>
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/display_entry[@icon='foodTunaFishGravyToast,foodShepardsPie,drinkJarGrandpasLearningElixir,foodSpaghetti,foodGumboStew']/unlock_entry[@unlock_tier='3']/@item">,foodCanDogfood,foodCanCatfood</append>
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/display_entry[@icon='foodTunaFishGravyToast,foodShepardsPie,drinkJarGrandpasLearningElixir,foodSpaghetti,foodGumboStew']/unlock_entry[@unlock_tier='5']/@item">,foodSPEMomasSoup,foodSPEGrandmaSoup,foodSPETaquitos,foodSPEComercialCake,drinkSPEGrandmaTe</append>
+    
+
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/effect_group/passive_effect[@level='59,100']/@tags">,chefTier3</append>
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/effect_group/passive_effect[@level='80,100']/@tags">,chefTier4</append>
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/effect_group/passive_effect[@level='100,100']/@tags">,chefTier5</append>
+
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ New Chemical Unlock ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/display_entry[@icon='medicalFirstAidKit,drugAntibiotics,drugSteroids']/unlock_entry[@unlock_tier='1']/@item">,medicalSpecialBandage</append>
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/effect_group/passive_effect[@level='50,100']/@tags">,chemiTier2</append>
+
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/display_entry[@icon='medicalFirstAidKit,drugAntibiotics,drugSteroids']/@name_key">,medicalT4-4</append>
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/display_entry[@icon='medicalFirstAidKit,drugAntibiotics,drugSteroids']">
+      <unlock_entry item="drinkSPESupaCola,drugSPEUwuProfen,drugSPEAdrenaline" unlock_tier="4" />
     </append>
-    <!--
-    <append xpath="/progression/perks/perk[@name='perkMasterChef']/effect_group/passive_effect[@level='3,5']/@tags">,chefTier3</append>
-    <append xpath="/progression/perks/perk[@name='perkMasterChef']/effect_group/passive_effect[@level='5,5']/@tags">,chefTier5</append>
-    <append xpath="/progression/perks/perk[@name='perkPhysician']/effect_group/passive_effect[@level='2,4']/@tags">,chemiTier2</append>
-    <append xpath="/progression/perks/perk[@name='perkPhysician']/effect_group/passive_effect[@level='4']/@tags">,chemiTier4</append>
-    -->
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/effect_group">
+      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100,100" value="1"	tags="chemiTier4"/>
+    </append>
+
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add 10k minerals bundles unlock ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
     <append xpath="/progression/perks/book[@name='perkArtOfMiningComplete']">
       <effect_group>

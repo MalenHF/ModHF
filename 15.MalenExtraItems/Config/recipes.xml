@@ -161,8 +161,10 @@
 				<ingredient name="foodCornMeal" count="3"/>
 				<ingredient name="resourceCropHopsFlower" count="1"/>
 			</recipe>
-			<recipe name="foodSPENisin" count="1" craft_area="campfire" craft_time="3" craft_tool="toolCookingPot" tags="learnable,perkMasterChef,chefTier1">
-				<ingredient name="foodCornMeal" count="1"/>
+
+			
+			<recipe name="foodSPENisin" count="1" craft_area="campfire" craft_time="30" craft_tool="toolCookingPot" tags="perkMasterChef">
+				<ingredient name="foodSPENisinNP" count="1"/>
 				<ingredient name="foodRawChicken" count="1"/>
 				<ingredient name="drinkJarBoiledWater" count="1"/>
 			</recipe>
@@ -201,23 +203,23 @@
 				<ingredient name="medicalAloeCream" count="1"/>
 				<ingredient name="medicalBandage" count="2"/>
 			</recipe>				
-			<recipe name="foodBoiledChicken" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable,foodBoiledMeat">
+			<recipe name="foodBoiledChicken" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
 				<ingredient name="foodRawChicken" count="5"/>
 				<ingredient name="drinkJarBoiledWater" count="1"/>
 				<effect_group>
-					<passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-1" tags="foodRawChicken"/>
+					<passive_effect name="CraftingIngredientCount" level="3" operation="base_add" value="-1" tags="foodRawChicken"/>
 				</effect_group>
 			</recipe>
 		<!---->
 		<!--Can Food-->
-			<recipe name="foodCanDogfood" count="1" craft_time="30" craft_area="workbench" tags="learnable,perkMasterChef,chefTier5">
+			<recipe name="foodCanDogfood" count="1" craft_time="30" craft_area="workbench" tags="learnable,perkMasterChef,chefTier4">
 				<ingredient name="resourceScrapIron" count="5"/>			
 				<ingredient name="foodRawChicken" count="1"/>
 				<ingredient name="foodRottingFlesh" count="5"/>
 				<ingredient name="resourceAnimalFat" count="10"/>
 				<ingredient name="resourceAcid" count="1"/>
 			</recipe>
-			<recipe name="foodCanCatfood" count="1" craft_time="30" craft_area="workbench" tags="learnable,perkMasterChef,chefTier5">
+			<recipe name="foodCanCatfood" count="1" craft_time="30" craft_area="workbench" tags="learnable,perkMasterChef,chefTier4">
 				<ingredient name="resourceScrapIron" count="5"/>			
 				<ingredient name="foodRawMeat" count="10"/>
 				<ingredient name="foodRottingFlesh" count="5"/>
@@ -231,14 +233,14 @@
 				<ingredient name="foodCropPotato" count="3"/>
 				<ingredient name="drinkJarBoiledWater" count="1"/>
 			</recipe>
-			<recipe name="foodCanSalmon" count="1" craft_time="30" craft_area="workbench" tags="learnable,perkMasterChef">
+			<recipe name="foodCanSalmon" count="1" craft_time="30" craft_area="workbench" tags="learnable,perkMasterChef,chefTier3">
 				<ingredient name="resourceScrapIron" count="5"/>
 				<ingredient name="resourceAnimalFat" count="5"/>
 				<ingredient name="foodRawChicken" count="5"/>
 				<ingredient name="foodCropPotato" count="2"/>
 				<ingredient name="drinkJarBoiledWater" count="1"/>
 			</recipe>
-			<recipe name="foodCanPeas" count="1" craft_time="30" craft_area="workbench" tags="learnable,perkMasterChef">
+			<recipe name="foodCanPeas" count="1" craft_time="30" craft_area="workbench" tags="learnable,perkMasterChef,chefTier3">
 				<ingredient name="resourceScrapIron" count="5"/>
 				<ingredient name="foodCropGraceCorn" count="2"/>
 				<ingredient name="foodCornMeal" count="2"/>
@@ -348,10 +350,6 @@
 			</recipe>
 		<!---->
 		<!--Extra recipes-->
-			<recipe name="medicalFirstAidBandage" count="1" tags="learnable">
-				<ingredient name="medicalAloeCream" count="1"/>
-				<ingredient name="medicalBandage" count="1"/>
-			</recipe>
 			<!--
 			<recipe name="woodBarsVariantHelper" count="1">
 				<ingredient name="resourceWood" count="10"/>
@@ -394,7 +392,7 @@
 				<ingredient name="resourceForgedSteel" count="15000"/>
 				<ingredient name="casinoCoinD" count="15"/>
 			</recipe>
-			<recipe name="BetsyPlaceable" count="1" craft_area="legenstation" craft_time="60" tags="learnable,workbenchCrafting">
+			<recipe name="BetsyPlaceable" count="1" craft_area="legenstation" craft_time="60" tags="workbenchCrafting">
 				<ingredient name="SPOmotoPlaceable" count="1"/>
 				<ingredient name="ResourceForgedPlatinum" count="1"/>
 				<ingredient name="ammoGasCan" count="200000"/>
@@ -402,13 +400,22 @@
 				<ingredient name="resourceForgedSteel" count="10000"/>
 				<ingredient name="casinoCoinD" count="10"/>
 			</recipe>
-			<recipe name="Betsy2Placeable" count="1" craft_area="legenstation" craft_time="60" tags="learnable,workbenchCrafting">
+			<recipe name="Betsy2Placeable" count="1" craft_area="legenstation" craft_time="60" tags="workbenchCrafting">
 				<ingredient name="SPOmotoPlaceable" count="1"/>
 				<ingredient name="ResourceForgedPlatinum" count="1"/>
 				<ingredient name="ammoGasCan" count="200000"/>
 				<ingredient name="bookMaestroTech" count="1"/>
 				<ingredient name="resourceForgedSteel" count="10000"/>
 				<ingredient name="casinoCoinD" count="10"/>
+			</recipe>
+
+			<recipe name="BetsyPlaceable" count="1" craft_area="legenstation" craft_time="5" tags="learnable,workbenchCrafting">
+				<ingredient name="BetsyPlaceable" count="1"/>
+				<ingredient name="resourceRepairKit" count="5"/>
+			</recipe>
+			<recipe name="Betsy2Placeable" count="1" craft_area="legenstation" craft_time="5" tags="learnable,workbenchCrafting">
+				<ingredient name="Betsy2Placeable" count="1"/>
+				<ingredient name="resourceRepairKit" count="5"/>
 			</recipe>
 		<!---->
 		<!--New Mods-->

@@ -211,6 +211,7 @@
 			<property name="difficulty" value="insane"/>
 			<property name="shareable" value="false" />
 			<property name="completiontype" value="TurnIn"/>
+			<property name="add_to_tier_complete" value="false" />
 			<objective type="InteractWithNPC">
 				<property name="phase" value="1"/>
 			</objective>
@@ -233,6 +234,7 @@
 			<property name="difficulty" value="insane"/>
 			<property name="shareable" value="false" />
 			<property name="completiontype" value="TurnIn"/>
+			<property name="add_to_tier_complete" value="false" />
 			<objective type="InteractWithNPC">
 				<property name="phase" value="1"/>
 			</objective>
@@ -255,6 +257,7 @@
 			<property name="difficulty" value="insane"/>
 			<property name="shareable" value="false" />
 			<property name="completiontype" value="TurnIn"/>
+			<property name="add_to_tier_complete" value="false" />
 			<objective type="InteractWithNPC">
 				<property name="phase" value="1"/>
 			</objective>
@@ -265,6 +268,55 @@
 			<reward type="LootItem" id="groupQuestTAVO3" ischosen="true" value="6"/>
 			<reward type="LootItem" id="groupQuestTAVO4" ischosen="true" value="6"/>
 			<reward type="LootItem" id="groupQuestTAVO5" ischosen="true" value="6"/>
+		</quest>
+
+		<quest id="test_guide">
+			<property name="group_name_key" value="quest_next_trader"/>
+			<property name="name_key" value="quest_next_trader"/>
+			<property name="subtitle_key" value="quest_next_trader_subtitle"/>
+			<property name="description_key" value="quest_next_trader_description"/>
+			<property name="icon" value="ui_game_symbol_map_trader"/>
+			<property name="category_key" value="quest"/>
+			<property name="difficulty" value="medium"/>
+			<property name="shareable" value="false"/>
+
+			<property name="repeatable" value="true"/>
+			
+			<property name="difficulty" value="medium"/>
+			<property name="difficulty_tier" value="5"/>
+
+			<property name="unique_key" value="traderquest" />
+
+			<property name="offer_key" value="quest_next_trader_offer"/>
+			<property name="statement_key" value="quest_next_trader_statement"/>
+			<property name="response_key" value="quest_next_trader_response"/>
+
+			<property name="completiontype" value="TurnIn"/>
+			<property name="return_to_quest_giver" value="false" />
+			
+			<property name="quest_type" value="special" />
+
+			<objective type="Goto" id="testguide" value="5" phase="1">
+				<property name="nav_object" value="go_to_trader" />
+			</objective>
+
+			<objective type="RallyPoint">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="rally" />
+			</objective>
+
+			<objective type="POIStayWithin">
+				<property name="phase" value="3"/>
+				<property name="radius" value="25"/>
+			</objective>
+
+			<action type="SpawnEnemy" id="BossZombieSoldier" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="zombieGunner" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="EliteSolider" value="6" phase="3"/>
+			<action type="SpawnEnemy" id="EliteDemo" value="3" phase="3"/>
+			<objective type="EntityKill" id="BossZombieSoldier" value="1" phase="3"/>
+			<objective type="EntityKill" id="EliteSolider" value="3" phase="3"/>
+			<reward type="Quest" id="bossRewardQuest2"/>
 		</quest>
 
 		<quest id="tier2RewardQuest2">
@@ -279,6 +331,7 @@
 			<property name="shareable" value="true" />
 			<action type="TrackQuest"/>
 			<property name="difficulty_tier" value="7"/>
+			<property name="add_to_tier_complete" value="false" />
 			<objective type="ClosestPOIGoto">
 				<property name="phase" value="1"/>
 				<property name="nav_object" value="quest" />
@@ -305,6 +358,7 @@
 			<property name="shareable" value="false" />
 			<property name="completiontype" value="TurnIn"/>
 			<property name="difficulty_tier" value="7"/>
+			<property name="add_to_tier_complete" value="false" />
 			<objective type="InteractWithNPC">
 				<property name="phase" value="1"/>
 			</objective>
@@ -353,6 +407,7 @@
 			<property name="difficulty" value="insane"/>
 			<property name="shareable" value="false" />
 			<property name="completiontype" value="TurnIn"/>
+			<property name="reward_choices_count" value="5" />
 			<objective type="InteractWithNPC">
 				<property name="phase" value="1"/>
 			</objective>
@@ -498,19 +553,19 @@
 				<property name="phase" value="3"/>
 				<property name="radius" value="25"/>
 			</objective>
-			<action type="SpawnEnemy" id="NighSolider" value="3" phase="3"/>
-			<action type="SpawnEnemy" id="NighSkater" value="3" phase="3"/>
-			<action type="SpawnEnemy" id="NighCop" value="2" phase="3"/>
-			<action type="SpawnEnemy" id="NighHawai" value="2" phase="3"/>
-			<action type="SpawnEnemy" id="NighFeral" value="3" phase="3"/>
-			<action type="SpawnEnemy" id="NighBoomer" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="nightZombieSoldier" value="3" phase="3"/>
+			<action type="SpawnEnemy" id="nightZombieSkater" value="3" phase="3"/>
+			<action type="SpawnEnemy" id="nightZombieCop" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="nightZombieHawai" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="nightZombieFeral" value="3" phase="3"/>
+			<action type="SpawnEnemy" id="nightZombieDemolition" value="2" phase="3"/>
 			<action type="SpawnEnemy" id="NighScreamer" value="1" phase="3"/>
-			<action type="SpawnEnemy" id="nightBurn" value="3" phase="3"/>
-			<action type="SpawnEnemy" id="nightTom" value="2" phase="3"/>
-			<objective type="EntityKill" id="NighSolider" value="1" phase="3"/>
-			<objective type="EntityKill" id="NighFeral" value="1" phase="3"/>
-			<objective type="EntityKill" id="nightBurn" value="1" phase="3"/>
-			<objective type="EntityKill" id="NighSkater" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="nightZombieBurn" value="3" phase="3"/>
+			<action type="SpawnEnemy" id="nightZombieTom" value="2" phase="3"/>
+			<objective type="EntityKill" id="nightZombieSoldier" value="1" phase="3"/>
+			<objective type="EntityKill" id="nightZombieFeral" value="1" phase="3"/>
+			<objective type="EntityKill" id="nightZombieBurn" value="1" phase="3"/>
+			<objective type="EntityKill" id="nightZombieSkater" value="1" phase="3"/>
 			<reward type="Quest" id="tier2RewardQuest2"/>
 		</quest>
 		<quest id="q_venganza">
@@ -769,23 +824,34 @@
 			<objective type="EntityKill" id="EliteSpider" value="1" phase="3"/>
 			<reward type="Quest" id="bossRewardQuest2"/>
 		</quest>
-		<quest id="q_KillSoldier">
-			<property name="name" value="Honor a los caidos" />
+		<quest id="q_KillSoldier">			
+
+			
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_clear_completion"/>
+			<property name="statement_key" value="quest_clear_statement"/>
+			<property name="response_key" value="quest_clear_response"/>
+			<property name="name_key" value="Honor a los caidos" param1="name"/>
 			<property name="description_key" value="KillSoldier" />
 			<property name="subtitle_key" value="Honor a los caidos" />
 			<property name="icon" value="ui_game_symbol_skull"/>
 			<property name="repeatable" value="true"/>
 			<property name="shareable" value="false" />
 			<property name="category_key" value="quest"/>
-			<property name="offer_key" value="SoldierQuest1"/>
+			<property name="offer_key" value="SoldierQuest1" param1="offer"/>
 			<property name="completion_key" value="comleteSoldier"/>
 			<property name="difficulty" value="insane"/>
+			<property name="difficulty_tier" value="7" param1="difficulty"/>
+			<property name="reward_choices_count" value="5" />
+			<property name="extra_tags" value="" param1="extra_tags" />
 			<action type="TrackQuest"/>
-			<property name="difficulty_tier" value="7"/>
 			<objective type="RandomPOIGoto">
 				<property name="phase" value="1"/>
+				<property name="biome_filter_type" value="SameBiome" param1="biome_filter_type" />
+				<property name="biome_filter" value="burnt_forest" param1="biome_filter" />
 				<property name="nav_object" value="quest" />
-			</objective>
+				<property name="poi_tier" value="-1" param1="poi_tier" />
+			</objective>	
 			<objective type="RallyPoint">
 				<property name="phase" value="2"/>
 				<property name="nav_object" value="rally" />
@@ -794,8 +860,8 @@
 				<property name="phase" value="3"/>
 				<property name="radius" value="25"/>
 			</objective>
-			<action type="SpawnEnemy" id="BossZombieSoldier" value="2" phase="3"/>
-			<action type="SpawnEnemy" id="zombieGunner" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="BossZombieSoldier" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="zombieGunner" value="1" phase="3"/>
 			<action type="SpawnEnemy" id="EliteSolider" value="6" phase="3"/>
 			<action type="SpawnEnemy" id="EliteDemo" value="3" phase="3"/>
 			<objective type="EntityKill" id="BossZombieSoldier" value="1" phase="3"/>
@@ -869,7 +935,7 @@
 			<action type="SpawnEnemy" id="HvMortevodaSkater" value="2" phase="3"/>
 			<action type="SpawnEnemy" id="HvHoarfrostSkater" value="2" phase="3"/>
 			<action type="SpawnEnemy" id="HvInfernalSkater" value="2" phase="3"/>
-			<action type="SpawnEnemy" id="NighSkater" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="nightZombieSkater" value="2" phase="3"/>
 			<action type="SpawnEnemy" id="zombieSBKnight" value="2" phase="3"/>
 
 			<objective type="EntityKill" id="EliteSkater" value="1" phase="3"/>
@@ -988,7 +1054,7 @@
 			<action type="SpawnEnemy" id="HvMortevodaSkater" value="1" phase="3"/>
 			<action type="SpawnEnemy" id="HvHoarfrostSkater" value="1" phase="3"/>
 			<action type="SpawnEnemy" id="HvInfernalSkater" value="1" phase="3"/>
-			<action type="SpawnEnemy" id="NighSkater" value="1" phase="3"/>
+			<action type="SpawnEnemy" id="nightZombieSkater" value="1" phase="3"/>
 			<action type="SpawnEnemy" id="zombieSBKnight" value="1" phase="3"/>
 
 			<objective type="EntityKill" id="bossZombieKnight" value="1" phase="4"/>
@@ -1180,7 +1246,7 @@
 			<objective type="EntityKill" id="SpecialBosszombieSiren" value="1" phase="1"/>
 			<objective type="EntityKill" id="SpecialBossZombieJuggernaut" value="1" phase="1"/>
 			<objective type="EntityKill" id="SpecialBossMummy" value="1" phase="1"/>
-			<objective type="EntityKill" id="bossNightSpider" value="1" phase="1"/>
+			<objective type="EntityKill" id="bossnightZombieSpider" value="1" phase="1"/>
 			<objective type="EntityKill" id="SpecialBossCirujano" value="1" phase="1"/>
 			<objective type="InteractWithNPC">
 				<property name="phase" value="2"/>
@@ -1227,7 +1293,7 @@
 			<property name="offer_key" value="QuestLucky2"/>
 			<property name="category_key" value="Recompensa"/>
 			<property name="difficulty" value="easy"/>
-			<action type="SpawnEnemy" id="zombieArlene,zombieDarlene,zombieMarlene,zombieMummyDog,HellLion,NighCop,NighSolider,NighHawai,NighSkater,NighFeral,NighBoomer,nightBurn,NighSpider,NighNurse,NighMaleHazmat,NighScreamer,zombieVengeSpirit,HeadZombiePonky,MiniRopaJoel,zombieSBKnight,BossCrawler,zombieBanshee,zombieScarecrow,zombiePsycho,ZombieBomber,zombieCowhead,zombieWendigo,TAVOanimalChickenDemonFeral,TAVOanimalChickenDemonFeralBOLT,zombieNurseFeral,zombieSBRopa,zombieGunner,TAVOzombieWightRAINBOW,ZombieEliteBomber,EliteDemo,EliteSolider,EliteHawai,EliteCop,EliteFeral,TAVOIronSpider,TAVOzombieBolt,EliteCop,zombieMarlene,zombieBoe,zombieMoe,zombieYo,TAVOanimalChickenDemonFeralTANK,TAVOanimalSnakeFeral,TAVOANACONDA,TAVOanimalChickenDemonFeralBlackChamuscada,EliteNurse" value="12-14"/>
+			<action type="SpawnEnemy" id="zombieArlene,zombieDarlene,zombieMarlene,zombieMummyDog,HellLion,nightZombieCop,nightZombieSoldier,nightZombieHawai,nightZombieSkater,nightZombieFeral,nightZombieDemolition,nightZombieBurn,nightZombieSpider,nightZombieNurse,nightZombieHazmat,NighScreamer,zombieVengeSpirit,HeadZombiePonky,MiniRopaJoel,zombieSBKnight,BossCrawler,zombieBanshee,zombieScarecrow,zombiePsycho,ZombieBomber,zombieCowhead,zombieWendigo,TAVOanimalChickenDemonFeral,TAVOanimalChickenDemonFeralBOLT,zombieNurseFeral,zombieSBRopa,zombieGunner,TAVOzombieWightRAINBOW,ZombieEliteBomber,EliteDemo,EliteSolider,EliteHawai,EliteCop,EliteFeral,TAVOIronSpider,TAVOzombieBolt,EliteCop,zombieMarlene,zombieBoe,zombieMoe,zombieYo,TAVOanimalChickenDemonFeralTANK,TAVOanimalSnakeFeral,TAVOANACONDA,TAVOanimalChickenDemonFeralBlackChamuscada,EliteNurse" value="12-14"/>
 			<action type="SpawnEnemy" id="BossMummy,BossPractoSpider,BossMineralSpider,Gallinazilla,BossZombieSoldier,bossZombieKnight,BosszombieSiren,BossZombieJuggernaut,TAVOanimalChickenDemonFeralBOSS,TAVOanimalZombieBearLEGENDARY" value="1-3"/>
 			<reward type="Item" id="casinoCoin" value="5500"/>
 			<reward type="Exp" value="4000"/>
@@ -1245,7 +1311,7 @@
 			<property name="difficulty" value="insane"/>
 			<action type="TrackQuest"/>
 
-			<action type="SpawnEnemy" id="zombieArlene,zombieWightFeral,zombieWightRadiated,zombieBoe,zombieBoeFeral,zombieBoeRadiated,zombieFemaleFat,zombieFemaleFatFeral,zombieFemaleFatRadiated,zombieJoe,zombieJoeFeral,zombieJoeRadiated,zombieJanitor,zombieJanitorFeral,zombieJanitorRadiated,zombieArleneRadiated,zombieLab,zombieLabRadiated,zombieScreamer,zombieScreamerRadiated,zombieDarleneRadiated,zombieYoRadiated,zombieSteveFeral,zombieSteveCrawlerFeral,zombieBusinessMan,legendaryZombieBusinessMan,zombieSnow,zombieSpider,zombieBurnt,zombieNurse,zombieFatHawaiian,zombieUtilityWorker,zombieSoldierFeral,zombieSoldierRadiated,zombieDemolition,zombieSkateboarderRadiated,zombieOldTimerFeral,zombieBikerFeral,zombiePartyGirl,zombieDarlene,zombieMarlene,zombieMummyDog,HellLion,NighCop,NighSolider,NighHawai,NighSkater,NighFeral,NighBoomer,nightBurn,NighSpider,NighNurse,NighMaleHazmat,NighScreamer,zombieVengeSpirit,HeadZombiePonky,MiniRopaJoel,zombieSBKnight,specialBossAdminHF,specialBossZombieKnight,SpecialBossMummy,bossAdminHF,bossNightSpider,SpecialBosszombieSiren,SpecialBossZombieJuggernaut,SpecialBossZombieSoldier,BossCrawler,zombieBanshee,zombieScarecrow,zombiePsycho,ZombieBomber,zombieCowhead,zombieWendigo,TAVOanimalChickenDemonFeral,TAVOanimalChickenDemonFeralBOLT,zombieNurseFeral,zombieSBRopa,zombieGunner,TAVOzombieWightRAINBOW,ZombieEliteBomber,EliteDemo,EliteSolider,EliteHawai,EliteCop,EliteFeral,TAVOIronSpider,TAVOzombieBolt,EliteCop,zombieMarlene,zombieBoe,zombieMoe,zombieYo,BossMummy,BossPractoSpider,BossMineralSpider,Gallinazilla,BossZombieSoldier,bossZombieKnight,BosszombieSiren,BossZombieJuggernaut,TAVOanimalChickenDemonFeralBOSS,TAVOanimalZombieBearLEGENDARY,SpecialBossCirujano,BossCirujano,TAVOanimalChickenDemonFeralTANK,TAVOanimalSnakeFeral,TAVOANACONDA,TAVOanimalChickenDemonFeralBlackChamuscada,zombieMutatedRadiated,zombieMutatedFeral,zombieMutated,zombieFatCop,zombieFatCopFeral,zombieFatCopRadiated,zombieMaleHazmat,zombieMaleHazmatFeral,zombieMaleHazmatRadiated,zombieLumberjack,zombieLumberjackFeral,zombieLumberjackRadiated,zombieUtilityWorkerFeral,zombieUtilityWorkerRadiated,zombieBurntRadiated,zombieBurnt,zombieBurntFeral,zombieBusinessManFeral,zombieBusinessMan,zombieBusinessManRadiated,zombieTomClarkRadiated,zombieTomClarkFeral,zombieTomClark,zombieSteveRadiated,zombieSteveFeral,zombieSteve,zombieNurseRadiated,zombiePartyGirlRadiated,zombieMarleneRadiated,zombieMarleneFeral,zombieArleneFeral,BossCirujanoHorda,EliteNurse,HvInfernalCop,HvInfernalSolider,HvInfernalHawai,HvInfernalSkater,HvInfernalFeral,HvInfernalBoomer,HvInfernalTom,HvInfernalBurn,HvInfernalSpider,HvInfernalNurse,HvInfernalMaleHazmat,HvHoarfrostCop,HvHoarfrostSolider,HvHoarfrostHawai,HvHoarfrostSkater,HvHoarfrostFeral,HvHoarfrostBoomer,HvHoarfrostTom,HvHoarfrostBurn,HvHoarfrostSpider,HvHoarfrostNurse,HvHoarfrostMaleHazmat,HvMortevodaCop,HvMortevodaSolider,HvMortevodaHawai,HvMortevodaSkater,HvMortevodaFeral,HvMortevodaBoomer,HvMortevodaTom,HvMortevodaBurn,HvMortevodaSpider,HvMortevodaNurse,HvMortevodaMaleHazmat" value="1"/>
+			<action type="SpawnEnemy" id="zombieArlene,zombieWightFeral,zombieWightRadiated,zombieBoe,zombieBoeFeral,zombieBoeRadiated,zombieFemaleFat,zombieFemaleFatFeral,zombieFemaleFatRadiated,zombieJoe,zombieJoeFeral,zombieJoeRadiated,zombieJanitor,zombieJanitorFeral,zombieJanitorRadiated,zombieArleneRadiated,zombieLab,zombieLabRadiated,zombieScreamer,zombieScreamerRadiated,zombieDarleneRadiated,zombieYoRadiated,zombieSteveFeral,zombieSteveCrawlerFeral,zombieBusinessMan,legendaryZombieBusinessMan,zombieSnow,zombieSpider,zombieBurnt,zombieNurse,zombieFatHawaiian,zombieUtilityWorker,zombieSoldierFeral,zombieSoldierRadiated,zombieDemolition,zombieSkateboarderRadiated,zombieOldTimerFeral,zombieBikerFeral,zombiePartyGirl,zombieDarlene,zombieMarlene,zombieMummyDog,HellLion,nightZombieCop,nightZombieSoldier,nightZombieHawai,nightZombieSkater,nightZombieFeral,nightZombieDemolition,nightZombieBurn,nightZombieSpider,nightZombieNurse,nightZombieHazmat,NighScreamer,zombieVengeSpirit,HeadZombiePonky,MiniRopaJoel,zombieSBKnight,specialBossAdminHF,specialBossZombieKnight,SpecialBossMummy,bossAdminHF,bossnightZombieSpider,SpecialBosszombieSiren,SpecialBossZombieJuggernaut,SpecialBossZombieSoldier,BossCrawler,zombieBanshee,zombieScarecrow,zombiePsycho,ZombieBomber,zombieCowhead,zombieWendigo,TAVOanimalChickenDemonFeral,TAVOanimalChickenDemonFeralBOLT,zombieNurseFeral,zombieSBRopa,zombieGunner,TAVOzombieWightRAINBOW,ZombieEliteBomber,EliteDemo,EliteSolider,EliteHawai,EliteCop,EliteFeral,TAVOIronSpider,TAVOzombieBolt,EliteCop,zombieMarlene,zombieBoe,zombieMoe,zombieYo,BossMummy,BossPractoSpider,BossMineralSpider,Gallinazilla,BossZombieSoldier,bossZombieKnight,BosszombieSiren,BossZombieJuggernaut,TAVOanimalChickenDemonFeralBOSS,TAVOanimalZombieBearLEGENDARY,SpecialBossCirujano,BossCirujano,TAVOanimalChickenDemonFeralTANK,TAVOanimalSnakeFeral,TAVOANACONDA,TAVOanimalChickenDemonFeralBlackChamuscada,zombieMutatedRadiated,zombieMutatedFeral,zombieMutated,zombieFatCop,zombieFatCopFeral,zombieFatCopRadiated,zombieMaleHazmat,zombieMaleHazmatFeral,zombieMaleHazmatRadiated,zombieLumberjack,zombieLumberjackFeral,zombieLumberjackRadiated,zombieUtilityWorkerFeral,zombieUtilityWorkerRadiated,zombieBurntRadiated,zombieBurnt,zombieBurntFeral,zombieBusinessManFeral,zombieBusinessMan,zombieBusinessManRadiated,zombieTomClarkRadiated,zombieTomClarkFeral,zombieTomClark,zombieSteveRadiated,zombieSteveFeral,zombieSteve,zombieNurseRadiated,zombiePartyGirlRadiated,zombieMarleneRadiated,zombieMarleneFeral,zombieArleneFeral,BossCirujanoHorda,EliteNurse,HvInfernalCop,HvInfernalSolider,HvInfernalHawai,HvInfernalSkater,HvInfernalFeral,HvInfernalBoomer,HvInfernalTom,HvInfernalBurn,HvInfernalSpider,HvInfernalNurse,HvInfernalMaleHazmat,HvHoarfrostCop,HvHoarfrostSolider,HvHoarfrostHawai,HvHoarfrostSkater,HvHoarfrostFeral,HvHoarfrostBoomer,HvHoarfrostTom,HvHoarfrostBurn,HvHoarfrostSpider,HvHoarfrostNurse,HvHoarfrostMaleHazmat,HvMortevodaCop,HvMortevodaSolider,HvMortevodaHawai,HvMortevodaSkater,HvMortevodaFeral,HvMortevodaBoomer,HvMortevodaTom,HvMortevodaBurn,HvMortevodaSpider,HvMortevodaNurse,HvMortevodaMaleHazmat" value="1"/>
 			<reward type="Item" id="casinoCoin" value="1"/>
 			<reward type="Exp" value="1"/>
 		</quest>
@@ -1262,7 +1328,7 @@
 			<property name="difficulty" value="insane"/>
 			<action type="TrackQuest"/>
 
-			<action type="SpawnEnemy" id="zombieArlene,zombieWightFeral,zombieWightRadiated,zombieBoe,zombieBoeFeral,zombieBoeRadiated,zombieFemaleFat,zombieFemaleFatFeral,zombieFemaleFatRadiated,zombieJoe,zombieJoeFeral,zombieJoeRadiated,zombieJanitor,zombieJanitorFeral,zombieJanitorRadiated,zombieArleneRadiated,zombieLab,zombieLabRadiated,zombieScreamer,zombieScreamerRadiated,zombieDarleneRadiated,zombieYoRadiated,zombieSteveFeral,zombieSteveCrawlerFeral,zombieBusinessMan,legendaryZombieBusinessMan,zombieSnow,zombieSpider,zombieBurnt,zombieNurse,zombieFatHawaiian,zombieUtilityWorker,zombieSoldierFeral,zombieSoldierRadiated,zombieDemolition,zombieSkateboarderRadiated,zombieOldTimerFeral,zombieBikerFeral,zombiePartyGirl,zombieDarlene,zombieMarlene,zombieMummyDog,HellLion,NighCop,NighSolider,NighHawai,NighSkater,NighFeral,NighBoomer,nightBurn,NighSpider,NighNurse,NighMaleHazmat,NighScreamer,zombieVengeSpirit,HeadZombiePonky,MiniRopaJoel,zombieSBKnight,specialBossAdminHF,specialBossZombieKnight,SpecialBossMummy,bossAdminHF,bossNightSpider,SpecialBosszombieSiren,SpecialBossZombieJuggernaut,SpecialBossZombieSoldier,BossCrawler,zombieBanshee,zombieScarecrow,zombiePsycho,ZombieBomber,zombieCowhead,zombieWendigo,TAVOanimalChickenDemonFeral,TAVOanimalChickenDemonFeralBOLT,zombieNurseFeral,zombieSBRopa,zombieGunner,TAVOzombieWightRAINBOW,ZombieEliteBomber,EliteDemo,EliteSolider,EliteHawai,EliteCop,EliteFeral,TAVOIronSpider,TAVOzombieBolt,EliteCop,zombieMarlene,zombieBoe,zombieMoe,zombieYo,BossMummy,BossPractoSpider,BossMineralSpider,Gallinazilla,BossZombieSoldier,bossZombieKnight,BosszombieSiren,BossZombieJuggernaut,TAVOanimalChickenDemonFeralBOSS,TAVOanimalZombieBearLEGENDARY,SpecialBossCirujano,BossCirujano,TAVOanimalChickenDemonFeralTANK,TAVOanimalSnakeFeral,TAVOANACONDA,TAVOanimalChickenDemonFeralBlackChamuscada,zombieMutatedRadiated,zombieMutatedFeral,zombieMutated,zombieFatCop,zombieFatCopFeral,zombieFatCopRadiated,zombieMaleHazmat,zombieMaleHazmatFeral,zombieMaleHazmatRadiated,zombieLumberjack,zombieLumberjackFeral,zombieLumberjackRadiated,zombieUtilityWorkerFeral,zombieUtilityWorkerRadiated,zombieBurntRadiated,zombieBurnt,zombieBurntFeral,zombieBusinessManFeral,zombieBusinessMan,zombieBusinessManRadiated,zombieTomClarkRadiated,zombieTomClarkFeral,zombieTomClark,zombieSteveRadiated,zombieSteveFeral,zombieSteve,zombieNurseRadiated,zombiePartyGirlRadiated,zombieMarleneRadiated,zombieMarleneFeral,zombieArleneFeral,BossCirujanoHorda,EliteNurse,HvInfernalCop,HvInfernalSolider,HvInfernalHawai,HvInfernalSkater,HvInfernalFeral,HvInfernalBoomer,HvInfernalTom,HvInfernalBurn,HvInfernalSpider,HvInfernalNurse,HvInfernalMaleHazmat,HvHoarfrostCop,HvHoarfrostSolider,HvHoarfrostHawai,HvHoarfrostSkater,HvHoarfrostFeral,HvHoarfrostBoomer,HvHoarfrostTom,HvHoarfrostBurn,HvHoarfrostSpider,HvHoarfrostNurse,HvHoarfrostMaleHazmat,HvMortevodaCop,HvMortevodaSolider,HvMortevodaHawai,HvMortevodaSkater,HvMortevodaFeral,HvMortevodaBoomer,HvMortevodaTom,HvMortevodaBurn,HvMortevodaSpider,HvMortevodaNurse,HvMortevodaMaleHazmat" value="1"/>
+			<action type="SpawnEnemy" id="zombieArlene,zombieWightFeral,zombieWightRadiated,zombieBoe,zombieBoeFeral,zombieBoeRadiated,zombieFemaleFat,zombieFemaleFatFeral,zombieFemaleFatRadiated,zombieJoe,zombieJoeFeral,zombieJoeRadiated,zombieJanitor,zombieJanitorFeral,zombieJanitorRadiated,zombieArleneRadiated,zombieLab,zombieLabRadiated,zombieScreamer,zombieScreamerRadiated,zombieDarleneRadiated,zombieYoRadiated,zombieSteveFeral,zombieSteveCrawlerFeral,zombieBusinessMan,legendaryZombieBusinessMan,zombieSnow,zombieSpider,zombieBurnt,zombieNurse,zombieFatHawaiian,zombieUtilityWorker,zombieSoldierFeral,zombieSoldierRadiated,zombieDemolition,zombieSkateboarderRadiated,zombieOldTimerFeral,zombieBikerFeral,zombiePartyGirl,zombieDarlene,zombieMarlene,zombieMummyDog,HellLion,nightZombieCop,nightZombieSoldier,nightZombieHawai,nightZombieSkater,nightZombieFeral,nightZombieDemolition,nightZombieBurn,nightZombieSpider,nightZombieNurse,nightZombieHazmat,NighScreamer,zombieVengeSpirit,HeadZombiePonky,MiniRopaJoel,zombieSBKnight,specialBossAdminHF,specialBossZombieKnight,SpecialBossMummy,bossAdminHF,bossnightZombieSpider,SpecialBosszombieSiren,SpecialBossZombieJuggernaut,SpecialBossZombieSoldier,BossCrawler,zombieBanshee,zombieScarecrow,zombiePsycho,ZombieBomber,zombieCowhead,zombieWendigo,TAVOanimalChickenDemonFeral,TAVOanimalChickenDemonFeralBOLT,zombieNurseFeral,zombieSBRopa,zombieGunner,TAVOzombieWightRAINBOW,ZombieEliteBomber,EliteDemo,EliteSolider,EliteHawai,EliteCop,EliteFeral,TAVOIronSpider,TAVOzombieBolt,EliteCop,zombieMarlene,zombieBoe,zombieMoe,zombieYo,BossMummy,BossPractoSpider,BossMineralSpider,Gallinazilla,BossZombieSoldier,bossZombieKnight,BosszombieSiren,BossZombieJuggernaut,TAVOanimalChickenDemonFeralBOSS,TAVOanimalZombieBearLEGENDARY,SpecialBossCirujano,BossCirujano,TAVOanimalChickenDemonFeralTANK,TAVOanimalSnakeFeral,TAVOANACONDA,TAVOanimalChickenDemonFeralBlackChamuscada,zombieMutatedRadiated,zombieMutatedFeral,zombieMutated,zombieFatCop,zombieFatCopFeral,zombieFatCopRadiated,zombieMaleHazmat,zombieMaleHazmatFeral,zombieMaleHazmatRadiated,zombieLumberjack,zombieLumberjackFeral,zombieLumberjackRadiated,zombieUtilityWorkerFeral,zombieUtilityWorkerRadiated,zombieBurntRadiated,zombieBurnt,zombieBurntFeral,zombieBusinessManFeral,zombieBusinessMan,zombieBusinessManRadiated,zombieTomClarkRadiated,zombieTomClarkFeral,zombieTomClark,zombieSteveRadiated,zombieSteveFeral,zombieSteve,zombieNurseRadiated,zombiePartyGirlRadiated,zombieMarleneRadiated,zombieMarleneFeral,zombieArleneFeral,BossCirujanoHorda,EliteNurse,HvInfernalCop,HvInfernalSolider,HvInfernalHawai,HvInfernalSkater,HvInfernalFeral,HvInfernalBoomer,HvInfernalTom,HvInfernalBurn,HvInfernalSpider,HvInfernalNurse,HvInfernalMaleHazmat,HvHoarfrostCop,HvHoarfrostSolider,HvHoarfrostHawai,HvHoarfrostSkater,HvHoarfrostFeral,HvHoarfrostBoomer,HvHoarfrostTom,HvHoarfrostBurn,HvHoarfrostSpider,HvHoarfrostNurse,HvHoarfrostMaleHazmat,HvMortevodaCop,HvMortevodaSolider,HvMortevodaHawai,HvMortevodaSkater,HvMortevodaFeral,HvMortevodaBoomer,HvMortevodaTom,HvMortevodaBurn,HvMortevodaSpider,HvMortevodaNurse,HvMortevodaMaleHazmat" value="1"/>
 			<reward type="Item" id="casinoCoin" value="5000"/>
 			<reward type="Exp" value="10000"/>
 		</quest>
@@ -1424,7 +1490,7 @@
 			<property name="completion_key" value="comleterandom"/>
 			<property name="offer_key" value="Questrandom2"/>
 			<action type="SpawnEnemy" id="BossZombieJuggernaut" value="2" />
-			<action type="SpawnEnemy" id="NighBoomer" value="2" />
+			<action type="SpawnEnemy" id="nightZombieDemolition" value="2" />
 			<action type="SpawnEnemy" id="TAVOanimalChickenDemonFeralBOLT" value="2" />
 			-<action type="SpawnEnemy" id="HvInfernalCop" value="2" />
 			<action type="SpawnEnemy" id="zombieSBRopa" value="1" />
@@ -1811,9 +1877,9 @@
 			<property name="completion_key" value="comleterandom"/>
 			<property name="offer_key" value="Questrandom2"/>
 			<action type="SpawnEnemy" id="NighScreamer" value="2" />
-			<action type="SpawnEnemy" id="NighBoomer" value="2" />
-			<action type="SpawnEnemy" id="NighSolider" value="2" />
-			<action type="SpawnEnemy" id="NighSpider" value="2" />
+			<action type="SpawnEnemy" id="nightZombieDemolition" value="2" />
+			<action type="SpawnEnemy" id="nightZombieSoldier" value="2" />
+			<action type="SpawnEnemy" id="nightZombieSpider" value="2" />
 			<action type="SpawnEnemy" id="EliteDemo" value="2" />
 			<action type="SpawnEnemy" id="ZombieEliteBomber" value="2" />
 			<action type="SpawnEnemy" id="EliteSolider" value="2" />
@@ -1990,8 +2056,8 @@
 			<property name="offer_key" value="Questrandom2"/>
 			<action type="SpawnEnemy" id="BossCrawler" value="4" />
 			<action type="SpawnEnemy" id="BosszombieSiren" value="1" />
-			<action type="SpawnEnemy" id="NighSolider" value="2" />
-			<action type="SpawnEnemy" id="NighFeral" value="2" />
+			<action type="SpawnEnemy" id="nightZombieSoldier" value="2" />
+			<action type="SpawnEnemy" id="nightZombieFeral" value="2" />
 			<reward type="Item" id="casinoCoin" value="5000"/>
 			<reward type="Item" id="questFrag" value="1"/>
 			<reward type="Exp" value="10000"/>
@@ -2167,7 +2233,7 @@
 			<action type="SpawnEnemy" id="TAVOanimalChickenDemonFeralBOLT" value="1" />
 			<action type="SpawnEnemy" id="EliteDemo" value="2" />
 			<action type="SpawnEnemy" id="HvInfernalCop" value="2" />
-			<action type="SpawnEnemy" id="NighFeral" value="2" />
+			<action type="SpawnEnemy" id="nightZombieFeral" value="2" />
 			<action type="SpawnEnemy" id="BossCrawler" value="2" />
 			<action type="SpawnEnemy" id="EliteSpider" value="2" />
 			<action type="SpawnEnemy" id="zombieBikerRadiated" value="2" />
@@ -2290,7 +2356,7 @@
 			<property name="icon" value="ui_game_symbol_skull"/>
 			<property name="completion_key" value="comleteREnemigs"/>
 			<property name="offer_key" value="QuestREnemigs2"/>
-			<action type="SpawnEnemy" id="zombieArlene,zombieWightFeral,zombieWightRadiated,zombieBoe,zombieBoeFeral,zombieBoeRadiated,zombieFemaleFat,zombieFemaleFatFeral,zombieFemaleFatRadiated,zombieJoe,zombieJoeFeral,zombieJoeRadiated,zombieJanitor,zombieJanitorFeral,zombieJanitorRadiated,zombieArleneRadiated,zombieLab,zombieLabRadiated,zombieScreamer,zombieScreamerFeral,zombieScreamerRadiated,zombieDarleneRadiated,zombieYoRadiated,zombieSteveFeral,zombieSteveCrawlerFeral,zombieBusinessMan,legendaryZombieBusinessMan,zombieSnow,zombieSpider,zombieBurnt,zombieNurse,zombieFatHawaiian,zombieUtilityWorker,zombieSoldier,zombieSoldierFeral,zombieSoldierRadiated,zombieDemolition,zombieSkateboarderRadiated,zombieOldTimerFeral,zombieBikerFeral,zombiePartyGirl,zombieDarlene,zombieMarlene,zombieMummyDog,HellLion,NighCop,NighSolider,NighHawai,NighSkater,NighFeral,NighBoomer,nightBurn,NighSpider,NighNurse,NighMaleHazmat,NighScreamer,zombieVengeSpirit,HeadZombiePonky,MiniRopaJoel,zombieSBKnight,bossAdminHF,,BossCrawler,zombieBanshee,zombieScarecrow,zombiePsycho,ZombieBomber,zombieCowhead,zombieWendigo,TAVOanimalChickenDemonFeral,TAVOanimalChickenDemonFeralBOLT,zombieNurseFeral,zombieSBRopa,zombieGunner,TAVOzombieWightRAINBOW,ZombieEliteBomber,EliteDemo,EliteSolider,EliteHawai,EliteCop,EliteFeral,TAVOIronSpider,TAVOzombieBolt,EliteCop,zombieMarlene,zombieBoe,zombieMoe,zombieYo,BossMummy,BossPractoSpider,BossMineralSpider,Gallinazilla,BossZombieSoldier,bossZombieKnight,BosszombieSiren,BossZombieJuggernaut,TAVOanimalChickenDemonFeralBOSS,TAVOanimalZombieBearLEGENDARY,BossCirujano,MinieBomber,TAVOanimalChickenDemonFeralTANK,TAVOanimalSnakeFeral,TAVOANACONDA,TAVOanimalChickenDemonFeralBlackChamuscada,zombieMutatedRadiated,zombieMutatedFeral,zombieMutated,zombieFatCop,zombieFatCopFeral,zombieFatCopRadiated,zombieMaleHazmat,zombieMaleHazmatFeral,zombieMaleHazmatRadiated,zombieLumberjack,zombieLumberjackFeral,zombieLumberjackRadiated,zombieUtilityWorkerFeral,zombieUtilityWorkerRadiated,zombieBurntRadiated,zombieBurnt,zombieBurntFeral,zombieBusinessManFeral,zombieBusinessMan,zombieBusinessManRadiated,zombieTomClarkRadiated,zombieTomClarkFeral,zombieTomClark,zombieSteveRadiated,zombieSteveFeral,zombieSteve,zombieNurseRadiated,zombiePartyGirlRadiated,zombieMarleneRadiated,zombieMarleneFeral,zombieArleneFeral,BossCirujanoHorda,EliteNurse,HvInfernalCop,HvInfernalSolider,HvInfernalHawai,HvInfernalSkater,HvInfernalFeral,HvInfernalBoomer,HvInfernalTom,HvInfernalBurn,HvInfernalSpider,HvInfernalNurse,HvInfernalMaleHazmat,HvHoarfrostCop,HvHoarfrostSolider,HvHoarfrostHawai,HvHoarfrostSkater,HvHoarfrostFeral,HvHoarfrostBoomer,HvHoarfrostTom,HvHoarfrostBurn,HvHoarfrostSpider,HvHoarfrostNurse,HvHoarfrostMaleHazmat,HvMortevodaCop,HvMortevodaSolider,HvMortevodaHawai,HvMortevodaSkater,HvMortevodaFeral,HvMortevodaBoomer,HvMortevodaTom,HvMortevodaBurn,HvMortevodaSpider,HvMortevodaNurse,HvMortevodaMaleHazmat" value="3-8"/>
+			<action type="SpawnEnemy" id="zombieArlene,zombieWightFeral,zombieWightRadiated,zombieBoe,zombieBoeFeral,zombieBoeRadiated,zombieFemaleFat,zombieFemaleFatFeral,zombieFemaleFatRadiated,zombieJoe,zombieJoeFeral,zombieJoeRadiated,zombieJanitor,zombieJanitorFeral,zombieJanitorRadiated,zombieArleneRadiated,zombieLab,zombieLabRadiated,zombieScreamer,zombieScreamerFeral,zombieScreamerRadiated,zombieDarleneRadiated,zombieYoRadiated,zombieSteveFeral,zombieSteveCrawlerFeral,zombieBusinessMan,legendaryZombieBusinessMan,zombieSnow,zombieSpider,zombieBurnt,zombieNurse,zombieFatHawaiian,zombieUtilityWorker,zombieSoldier,zombieSoldierFeral,zombieSoldierRadiated,zombieDemolition,zombieSkateboarderRadiated,zombieOldTimerFeral,zombieBikerFeral,zombiePartyGirl,zombieDarlene,zombieMarlene,zombieMummyDog,HellLion,nightZombieCop,nightZombieSoldier,nightZombieHawai,nightZombieSkater,nightZombieFeral,nightZombieDemolition,nightZombieBurn,nightZombieSpider,nightZombieNurse,nightZombieHazmat,NighScreamer,zombieVengeSpirit,HeadZombiePonky,MiniRopaJoel,zombieSBKnight,bossAdminHF,,BossCrawler,zombieBanshee,zombieScarecrow,zombiePsycho,ZombieBomber,zombieCowhead,zombieWendigo,TAVOanimalChickenDemonFeral,TAVOanimalChickenDemonFeralBOLT,zombieNurseFeral,zombieSBRopa,zombieGunner,TAVOzombieWightRAINBOW,ZombieEliteBomber,EliteDemo,EliteSolider,EliteHawai,EliteCop,EliteFeral,TAVOIronSpider,TAVOzombieBolt,EliteCop,zombieMarlene,zombieBoe,zombieMoe,zombieYo,BossMummy,BossPractoSpider,BossMineralSpider,Gallinazilla,BossZombieSoldier,bossZombieKnight,BosszombieSiren,BossZombieJuggernaut,TAVOanimalChickenDemonFeralBOSS,TAVOanimalZombieBearLEGENDARY,BossCirujano,MinieBomber,TAVOanimalChickenDemonFeralTANK,TAVOanimalSnakeFeral,TAVOANACONDA,TAVOanimalChickenDemonFeralBlackChamuscada,zombieMutatedRadiated,zombieMutatedFeral,zombieMutated,zombieFatCop,zombieFatCopFeral,zombieFatCopRadiated,zombieMaleHazmat,zombieMaleHazmatFeral,zombieMaleHazmatRadiated,zombieLumberjack,zombieLumberjackFeral,zombieLumberjackRadiated,zombieUtilityWorkerFeral,zombieUtilityWorkerRadiated,zombieBurntRadiated,zombieBurnt,zombieBurntFeral,zombieBusinessManFeral,zombieBusinessMan,zombieBusinessManRadiated,zombieTomClarkRadiated,zombieTomClarkFeral,zombieTomClark,zombieSteveRadiated,zombieSteveFeral,zombieSteve,zombieNurseRadiated,zombiePartyGirlRadiated,zombieMarleneRadiated,zombieMarleneFeral,zombieArleneFeral,BossCirujanoHorda,EliteNurse,HvInfernalCop,HvInfernalSolider,HvInfernalHawai,HvInfernalSkater,HvInfernalFeral,HvInfernalBoomer,HvInfernalTom,HvInfernalBurn,HvInfernalSpider,HvInfernalNurse,HvInfernalMaleHazmat,HvHoarfrostCop,HvHoarfrostSolider,HvHoarfrostHawai,HvHoarfrostSkater,HvHoarfrostFeral,HvHoarfrostBoomer,HvHoarfrostTom,HvHoarfrostBurn,HvHoarfrostSpider,HvHoarfrostNurse,HvHoarfrostMaleHazmat,HvMortevodaCop,HvMortevodaSolider,HvMortevodaHawai,HvMortevodaSkater,HvMortevodaFeral,HvMortevodaBoomer,HvMortevodaTom,HvMortevodaBurn,HvMortevodaSpider,HvMortevodaNurse,HvMortevodaMaleHazmat" value="3-8"/>
 			<reward type="Item" id="casinoCoin" value="3000-7000"/>
 			<reward type="Item" id="questFrag" value="1-4"/>
 			<reward type="Exp" value="10000"/>

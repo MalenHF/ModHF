@@ -1,6 +1,6 @@
 <configs>
-	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Zombies dissapear ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ 
-		<set xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='TimeStayAfterDeath']/@value">0</set>-->
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Zombies dissapear ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+		<set xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='TimeStayAfterDeath']/@value">0</set>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Zombies Know Down player buff ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
 		<append xpath="/entity_classes/entity_class[@name='playerMale']">
 			<effect_group>
@@ -2031,32 +2031,30 @@
 
 	
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Nightmares by Malen and TacoMaestro Based on Elites ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-		<!-- NighCop -->
-		<entity_class name="NighCop" extends="TemplateHF_Zombie_Special_Cop">
+		<!-- nightZombieCop -->
+		<entity_class name="nightZombieCop" extends="TemplateHF_Zombie_Special_Cop">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 			<property name="SizeScale" value="1.2"/>
 
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreCoalBoulder"/>
 			<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/rad_eye.mat"/>
-
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/> -->
-			<property name="DismemberMultiplierHead" value=".4"/>
-			<property name="DismemberMultiplierArms" value=".4"/>
-			<property name="DismemberMultiplierLegs" value=".4"/>
-			<!--  Radiated  -->
-			<property name="PainResistPerHit" value="1"/>
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
+			<property name="DismemberMultiplierHead" value=".2"/>
+			<property name="DismemberMultiplierArms" value=".2"/>
+			<property name="DismemberMultiplierLegs" value=".2"/>
+			<property name="PainResistPerHit" value="2"/>
 			<property name="LegCrawlerThreshold" value="0"/>
-			<property name="LegCrippleThreshold" value="0.01"/>
-			<!-- <property name="KnockdownProneDamageThreshold" value="0.45"/> -->
-			<property name="KnockdownProneDamageThreshold" value="0.6"/>
-			<property name="KnockdownProneStunDuration" value="0.5,1.8"/>
-			<property name="KnockdownProneRefillRate" value="0.045,0.045"/>
-			<property name="KnockdownKneelDamageThreshold" value="0.38"/>
-			<property name="KnockdownKneelStunDuration" value="0.5,1.8"/>
-			<property name="KnockdownKneelRefillRate" value="0.045,0.045"/>
+			<property name="LegCrippleThreshold" value="0"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownProneStunDuration" value="3,0"/>
+			<property name="KnockdownProneRefillRate" value="0,0"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownKneelStunDuration" value="3,0"/>
+			<property name="KnockdownKneelRefillRate" value="0,0"/>
 			<property name="LegsExplosionDamageMultiplier" value=".85"/>
 			<property name="ArmsExplosionDamageMultiplier" value=".85"/>
 			<property name="HeadExplosionDamageMultiplier" value=".85"/>
@@ -2085,8 +2083,8 @@
 			</effect_group>
 			<property name="TimeStayAfterDeath" value="2"/>
 		</entity_class>
-		<!-- NighSolider -->
-		<entity_class name="NighSolider" extends="TemplateHF_Zombie_Special_Soldier">
+		<!-- nightZombieSoldier -->
+		<entity_class name="nightZombieSoldier" extends="TemplateHF_Zombie_Special_Soldier">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 			<property name="SizeScale" value="1.2"/>
 			<property name="MoveSpeed" value="1.1"/>
@@ -2095,26 +2093,25 @@
 			<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/rad_eye.mat"/>
 
 			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/> -->
-			<property name="DismemberMultiplierHead" value=".4"/>
-			<property name="DismemberMultiplierArms" value=".4"/>
-			<property name="DismemberMultiplierLegs" value=".4"/>
+			<property name="DismemberMultiplierHead" value=".2"/>
+			<property name="DismemberMultiplierArms" value=".2"/>
+			<property name="DismemberMultiplierLegs" value=".2"/>
 			<!--  Radiated  -->
-			<property name="PainResistPerHit" value="1"/>
+			
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
+
+			<property name="PainResistPerHit" value="2"/>
 			<property name="LegCrawlerThreshold" value="0"/>
-			<property name="LegCrippleThreshold" value="0.01"/>
-			<property name="KnockdownProneDamageThreshold" value="0.45"/>
-			<property name="KnockdownProneDamageThreshold" value=".8"/>
-			<property name="KnockdownKneelDamageThreshold" value=".8"/>
-			<property name="KnockdownProneStunDuration" value="0.5,1.8"/>
-			<property name="KnockdownProneRefillRate" value="0.045,0.045"/>
-			<property name="KnockdownKneelDamageThreshold" value="0.38"/>
-			<property name="KnockdownKneelStunDuration" value="0.5,1.8"/>
-			<property name="KnockdownKneelRefillRate" value="0.045,0.045"/>
-
-			
-
+			<property name="LegCrippleThreshold" value="0"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownProneStunDuration" value="3,0"/>
+			<property name="KnockdownProneRefillRate" value="0,0"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownKneelStunDuration" value="3,0"/>
+			<property name="KnockdownKneelRefillRate" value="0,0"/>
 			<property name="LegsExplosionDamageMultiplier" value=".85"/>
 			<property name="ArmsExplosionDamageMultiplier" value=".85"/>
 			<property name="HeadExplosionDamageMultiplier" value=".85"/>
@@ -2141,8 +2138,8 @@
 			</effect_group>
 			<property name="TimeStayAfterDeath" value="2"/>
 		</entity_class>
-		<!-- NighHawai -->
-		<entity_class name="NighHawai" extends="TemplateHF_Zombie_Special_Hawaiian">
+		<!-- nightZombieHawai -->
+		<entity_class name="nightZombieHawai" extends="TemplateHF_Zombie_Special_Hawaiian">
 
 
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
@@ -2153,23 +2150,24 @@
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreCoalBoulder"/>
 			<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/rad_eye.mat"/>
 			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/> -->
-			<property name="DismemberMultiplierHead" value=".4"/>
-			<property name="DismemberMultiplierArms" value=".4"/>
-			<property name="DismemberMultiplierLegs" value=".4"/>
-			<!--  Radiated  -->
-			<property name="PainResistPerHit" value="1"/>
+			
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
+			
+			<property name="DismemberMultiplierHead" value=".2"/>
+			<property name="DismemberMultiplierArms" value=".2"/>
+			<property name="DismemberMultiplierLegs" value=".2"/>
+			<property name="PainResistPerHit" value="2"/>
 			<property name="LegCrawlerThreshold" value="0"/>
-			<property name="LegCrippleThreshold" value="0.01"/>
-			<property name="KnockdownProneDamageThreshold" value="0.45"/>
-			<property name="KnockdownProneDamageThreshold" value=".8"/>
-			<property name="KnockdownKneelDamageThreshold" value=".8"/>
-			<property name="KnockdownProneStunDuration" value="0.5,1.8"/>
-			<property name="KnockdownProneRefillRate" value="0.045,0.045"/>
-			<property name="KnockdownKneelDamageThreshold" value="0.38"/>
-			<property name="KnockdownKneelStunDuration" value="0.5,1.8"/>
-			<property name="KnockdownKneelRefillRate" value="0.045,0.045"/>
+			<property name="LegCrippleThreshold" value="0"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownProneStunDuration" value="3,0"/>
+			<property name="KnockdownProneRefillRate" value="0,0"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownKneelStunDuration" value="3,0"/>
+			<property name="KnockdownKneelRefillRate" value="0,0"/>
 			<property name="LegsExplosionDamageMultiplier" value=".85"/>
 			<property name="ArmsExplosionDamageMultiplier" value=".85"/>
 			<property name="HeadExplosionDamageMultiplier" value=".85"/>
@@ -2197,8 +2195,8 @@
 			</effect_group>
 			<property name="TimeStayAfterDeath" value="2"/>
 		</entity_class>
-		<!-- NighSkater -->
-		<entity_class name="NighSkater" extends="TemplateHF_Zombie_Special_Skater">
+		<!-- nightZombieSkater -->
+		<entity_class name="nightZombieSkater" extends="TemplateHF_Zombie_Special_Skater">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 			<property name="SizeScale" value="1.2"/>
 			<property name="MoveSpeed" value="1.1"/>
@@ -2206,23 +2204,25 @@
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreCoalBoulder"/>
 			<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/rad_eye.mat"/>
 			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/> -->
-			<property name="DismemberMultiplierHead" value=".4"/>
-			<property name="DismemberMultiplierArms" value=".4"/>
-			<property name="DismemberMultiplierLegs" value=".4"/>
-			<!--  Radiated  -->
-			<property name="PainResistPerHit" value="1"/>
+
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
+			
+			<property name="PainResistPerHit" value="2"/>
+			<property name="DismemberMultiplierHead" value=".2"/>
+			<property name="DismemberMultiplierArms" value=".2"/>
+			<property name="DismemberMultiplierLegs" value=".2"/>
+			<property name="PainResistPerHit" value="2"/>
 			<property name="LegCrawlerThreshold" value="0"/>
-			<property name="LegCrippleThreshold" value="0.01"/>
-			<property name="KnockdownProneDamageThreshold" value="0.45"/>
-			<property name="KnockdownProneDamageThreshold" value=".8"/>
-			<property name="KnockdownKneelDamageThreshold" value=".8"/>
-			<property name="KnockdownProneStunDuration" value="0.5,1.8"/>
-			<property name="KnockdownProneRefillRate" value="0.045,0.045"/>
-			<property name="KnockdownKneelDamageThreshold" value="0.38"/>
-			<property name="KnockdownKneelStunDuration" value="0.5,1.8"/>
-			<property name="KnockdownKneelRefillRate" value="0.045,0.045"/>
+			<property name="LegCrippleThreshold" value="0"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownProneStunDuration" value="3,0"/>
+			<property name="KnockdownProneRefillRate" value="0,0"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownKneelStunDuration" value="3,0"/>
+			<property name="KnockdownKneelRefillRate" value="0,0"/>
 			<property name="LegsExplosionDamageMultiplier" value=".85"/>
 			<property name="ArmsExplosionDamageMultiplier" value=".85"/>
 			<property name="HeadExplosionDamageMultiplier" value=".85"/>
@@ -2250,8 +2250,8 @@
 			</effect_group>
 			<property name="TimeStayAfterDeath" value="2"/>
 		</entity_class>
-		<!-- nightTom -->
-		<entity_class name="nightTom" extends="TemplateHF_Zombie_Special_TomClark">
+		<!-- nightZombieTom -->
+		<entity_class name="nightZombieTom" extends="TemplateHF_Zombie_Special_TomClark">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 			<property name="SizeScale" value="1.2"/>
 			<property name="MoveSpeed" value="1.1"/>
@@ -2261,23 +2261,24 @@
 
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZTomClark.prefab"/>
 			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/> -->
-			<property name="DismemberMultiplierHead" value=".4"/>
-			<property name="DismemberMultiplierArms" value=".4"/>
-			<property name="DismemberMultiplierLegs" value=".4"/>
-			<!--  Radiated  -->
-			<property name="PainResistPerHit" value="1"/>
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
+
+			<property name="PainResistPerHit" value="2"/>
+			<property name="DismemberMultiplierHead" value=".2"/>
+			<property name="DismemberMultiplierArms" value=".2"/>
+			<property name="DismemberMultiplierLegs" value=".2"/>
+			<property name="PainResistPerHit" value="2"/>
 			<property name="LegCrawlerThreshold" value="0"/>
-			<property name="LegCrippleThreshold" value="0.01"/>
-			<property name="KnockdownProneDamageThreshold" value="0.45"/>
-			<property name="KnockdownProneDamageThreshold" value=".8"/>
-			<property name="KnockdownKneelDamageThreshold" value=".8"/>
-			<property name="KnockdownProneStunDuration" value="0.5,1.8"/>
-			<property name="KnockdownProneRefillRate" value="0.045,0.045"/>
-			<property name="KnockdownKneelDamageThreshold" value="0.38"/>
-			<property name="KnockdownKneelStunDuration" value="0.5,1.8"/>
-			<property name="KnockdownKneelRefillRate" value="0.045,0.045"/>
+			<property name="LegCrippleThreshold" value="0"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownProneStunDuration" value="3,0"/>
+			<property name="KnockdownProneRefillRate" value="0,0"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownKneelStunDuration" value="3,0"/>
+			<property name="KnockdownKneelRefillRate" value="0,0"/>
 			<property name="LegsExplosionDamageMultiplier" value=".85"/>
 			<property name="ArmsExplosionDamageMultiplier" value=".85"/>
 			<property name="HeadExplosionDamageMultiplier" value=".85"/>
@@ -2306,33 +2307,32 @@
 			</effect_group>
 			<property name="TimeStayAfterDeath" value="2"/>
 		</entity_class>
-		<!-- nightBurnack ***-->
-		<entity_class name="nightBurn" extends="TemplateHF_Zombie_Special_Burn">
+		<!-- nightZombieBurnack ***-->
+		<entity_class name="nightZombieBurn" extends="TemplateHF_Zombie_Special_Burn">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 			<property name="SizeScale" value="1.2"/>			
 			<property name="MoveSpeed" value="1.1"/>
 			
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreCoalBoulder"/>
-			
 
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/> -->
-			<property name="DismemberMultiplierHead" value=".4"/>
-			<property name="DismemberMultiplierArms" value=".4"/>
-			<property name="DismemberMultiplierLegs" value=".4"/>
-			<!--  Radiated  -->
-			<property name="PainResistPerHit" value="1"/>
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
+
+			<property name="PainResistPerHit" value="2"/>
+			<property name="DismemberMultiplierHead" value=".2"/>
+			<property name="DismemberMultiplierArms" value=".2"/>
+			<property name="DismemberMultiplierLegs" value=".2"/>
+			<property name="PainResistPerHit" value="2"/>
 			<property name="LegCrawlerThreshold" value="0"/>
-			<property name="LegCrippleThreshold" value="0.01"/>
-			<property name="KnockdownProneDamageThreshold" value="0.45"/>
-			<property name="KnockdownProneDamageThreshold" value=".8"/>
-			<property name="KnockdownKneelDamageThreshold" value=".8"/>
-			<property name="KnockdownProneStunDuration" value="0.5,1.8"/>
-			<property name="KnockdownProneRefillRate" value="0.045,0.045"/>
-			<property name="KnockdownKneelDamageThreshold" value="0.38"/>
-			<property name="KnockdownKneelStunDuration" value="0.5,1.8"/>
-			<property name="KnockdownKneelRefillRate" value="0.045,0.045"/>
+			<property name="LegCrippleThreshold" value="0"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownProneStunDuration" value="3,0"/>
+			<property name="KnockdownProneRefillRate" value="0,0"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownKneelStunDuration" value="3,0"/>
+			<property name="KnockdownKneelRefillRate" value="0,0"/>
 			<property name="LegsExplosionDamageMultiplier" value=".85"/>
 			<property name="ArmsExplosionDamageMultiplier" value=".85"/>
 			<property name="HeadExplosionDamageMultiplier" value=".85"/>
@@ -2362,8 +2362,8 @@
 			</effect_group>
 			<property name="TimeStayAfterDeath" value="2"/>
 		</entity_class>
-		<!--NightSpider-->
-		<entity_class name="NighSpider" extends="TemplateHF_Zombie_Special_Spider">
+		<!--nightZombieSpider-->
+		<entity_class name="nightZombieSpider" extends="TemplateHF_Zombie_Special_Spider">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 			<property name="SizeScale" value="1.2"/>
 			<property name="MoveSpeed" value="0.8"/>
@@ -2371,25 +2371,23 @@
 
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreCoalBoulder"/>
 			<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/rad_eye.mat"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/> -->
-			<property name="DismemberMultiplierHead" value=".4"/>
-			<property name="DismemberMultiplierArms" value=".4"/>
-			<property name="DismemberMultiplierLegs" value=".4"/>
-			<!--  Radiated  -->
-			<property name="PainResistPerHit" value="1"/>
 
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
+			<property name="DismemberMultiplierHead" value=".2"/>
+			<property name="DismemberMultiplierArms" value=".2"/>
+			<property name="DismemberMultiplierLegs" value=".2"/>
+			<property name="PainResistPerHit" value="2"/>
 			<property name="LegCrawlerThreshold" value="0"/>
-			<property name="LegCrippleThreshold" value="0.01"/>
-			<property name="KnockdownProneDamageThreshold" value="0.45"/>
-			<property name="KnockdownProneDamageThreshold" value=".8"/>
-			<property name="KnockdownKneelDamageThreshold" value=".8"/>
-			<property name="KnockdownProneStunDuration" value="0.5,1.8"/>
-			<property name="KnockdownProneRefillRate" value="0.045,0.045"/>
-			<property name="KnockdownKneelDamageThreshold" value="0.38"/>
-			<property name="KnockdownKneelStunDuration" value="0.5,1.8"/>
-			<property name="KnockdownKneelRefillRate" value="0.045,0.045"/>
+			<property name="LegCrippleThreshold" value="0"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownProneStunDuration" value="3,0"/>
+			<property name="KnockdownProneRefillRate" value="0,0"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownKneelStunDuration" value="3,0"/>
+			<property name="KnockdownKneelRefillRate" value="0,0"/>
 			<property name="LegsExplosionDamageMultiplier" value=".85"/>
 			<property name="ArmsExplosionDamageMultiplier" value=".85"/>
 			<property name="HeadExplosionDamageMultiplier" value=".85"/>
@@ -2418,33 +2416,29 @@
 			</effect_group>
 			<property name="TimeStayAfterDeath" value="2"/>
 		</entity_class>
-		<!-- NighNurse -->
-		<entity_class name="NighNurse" extends="TemplateHF_Zombie_Special_Nurse">
+		<!-- nightZombieNurse -->
+		<entity_class name="nightZombieNurse" extends="TemplateHF_Zombie_Special_Nurse">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 			<property name="SizeScale" value="1.2"/>
 			<property name="MoveSpeed" value="1.1"/>
-
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreCoalBoulder"/>
 			<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/rad_eye.mat"/>
 
-			<property name="DismemberMultiplierHead" value=".4"/>
-			<property name="DismemberMultiplierArms" value=".4"/>
-			<property name="DismemberMultiplierLegs" value=".4"/>
-
-			<property name="PainResistPerHit" value="1"/>
-			
-
 			<property name="HandItem" value="meleeHandNightmare"/>
+			<property name="DismemberMultiplierHead" value=".2"/>
+			<property name="DismemberMultiplierArms" value=".2"/>
+			<property name="DismemberMultiplierLegs" value=".2"/>
+			<property name="PainResistPerHit" value="2"/>
 			<property name="LegCrawlerThreshold" value="0"/>
-			<property name="LegCrippleThreshold" value="0.01"/>
-			<property name="KnockdownProneDamageThreshold" value="0.45"/>
-			<property name="KnockdownProneDamageThreshold" value=".8"/>
-			<property name="KnockdownKneelDamageThreshold" value=".8"/>
-			<property name="KnockdownProneStunDuration" value="0.5,1.8"/>
-			<property name="KnockdownProneRefillRate" value="0.045,0.045"/>
-			<property name="KnockdownKneelDamageThreshold" value="0.38"/>
-			<property name="KnockdownKneelStunDuration" value="0.5,1.8"/>
-			<property name="KnockdownKneelRefillRate" value="0.045,0.045"/>
+			<property name="LegCrippleThreshold" value="0"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownProneStunDuration" value="3,0"/>
+			<property name="KnockdownProneRefillRate" value="0,0"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownKneelStunDuration" value="3,0"/>
+			<property name="KnockdownKneelRefillRate" value="0,0"/>
 			<property name="LegsExplosionDamageMultiplier" value=".85"/>
 			<property name="ArmsExplosionDamageMultiplier" value=".85"/>
 			<property name="HeadExplosionDamageMultiplier" value=".85"/>
@@ -2468,7 +2462,7 @@
 			<property name="TimeStayAfterDeath" value="2"/>
 		</entity_class>
 		<!-- NighHazmat -->
-		<entity_class name="NighMaleHazmat" extends="TemplateHF_Zombie_Special_Hazmat">
+		<entity_class name="nightZombieHazmat" extends="TemplateHF_Zombie_Special_Hazmat">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 			<property name="SizeScale" value="1.2"/>
 
@@ -2476,26 +2470,22 @@
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreCoalBoulder"/>
 			<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/rad_eye.mat"/>
 
-			<!--  <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>  -->
-			<property name="DismemberMultiplierHead" value=".4"/>
-			<property name="DismemberMultiplierArms" value=".4"/>
-			<property name="DismemberMultiplierLegs" value=".4"/>
-			<!--   Radiated   -->
-			<property name="PainResistPerHit" value="1"/>
-
 			<!--   Radiated   -->
 			<property name="HandItem" value="meleeHandNightmare"/>
+			<property name="DismemberMultiplierHead" value=".2"/>
+			<property name="DismemberMultiplierArms" value=".2"/>
+			<property name="DismemberMultiplierLegs" value=".2"/>
+			<property name="PainResistPerHit" value="2"/>
 			<property name="LegCrawlerThreshold" value="0"/>
-			<property name="LegCrippleThreshold" value="0.01"/>
-			<property name="KnockdownProneDamageThreshold" value="0.45"/>
-			<property name="KnockdownProneDamageThreshold" value=".8"/>
-			<property name="KnockdownKneelDamageThreshold" value=".8"/>
-			<property name="KnockdownProneStunDuration" value="0.5,1.8"/>
-			<property name="KnockdownProneRefillRate" value="0.045,0.045"/>
-			<property name="KnockdownKneelDamageThreshold" value="0.38"/>
-			<property name="KnockdownKneelStunDuration" value="0.5,1.8"/>
-			<property name="KnockdownKneelRefillRate" value="0.045,0.045"/>
-
+			<property name="LegCrippleThreshold" value="0"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownProneStunDuration" value="3,0"/>
+			<property name="KnockdownProneRefillRate" value="0,0"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownKneelStunDuration" value="3,0"/>
+			<property name="KnockdownKneelRefillRate" value="0,0"/>
 			<property name="LegsExplosionDamageMultiplier" value=".85"/>
 			<property name="ArmsExplosionDamageMultiplier" value=".85"/>
 			<property name="HeadExplosionDamageMultiplier" value=".85"/>
@@ -2523,8 +2513,8 @@
 			</effect_group>
 			<property name="TimeStayAfterDeath" value="2"/>
 		</entity_class>
-		<!-- NighFeral *** -->
-		<entity_class name="NighFeral" extends="TemplateHF_Zombie_Special_Wight">
+		<!-- nightZombieFeral *** -->
+		<entity_class name="nightZombieFeral" extends="TemplateHF_Zombie_Special_Wight">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 			<property name="SizeScale" value="1.2"/>
 
@@ -2533,24 +2523,22 @@
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreCoalBoulder"/>
 			<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/rad_eye.mat"/>
 
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/> -->
-			<property name="DismemberMultiplierHead" value=".4"/>
-			<property name="DismemberMultiplierArms" value=".4"/>
-			<property name="DismemberMultiplierLegs" value=".4"/>
-			<!--  Radiated  -->
-			<property name="PainResistPerHit" value="1"/>
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
+			<property name="DismemberMultiplierHead" value=".2"/>
+			<property name="DismemberMultiplierArms" value=".2"/>
+			<property name="DismemberMultiplierLegs" value=".2"/>
+			<property name="PainResistPerHit" value="2"/>
 			<property name="LegCrawlerThreshold" value="0"/>
-			<property name="LegCrippleThreshold" value="0.01"/>
-			<property name="KnockdownProneDamageThreshold" value="0.45"/>
-			<property name="KnockdownProneDamageThreshold" value=".8"/>
-			<property name="KnockdownKneelDamageThreshold" value=".8"/>
-			<property name="KnockdownProneStunDuration" value="0.5,1.8"/>
-			<property name="KnockdownProneRefillRate" value="0.045,0.045"/>
-			<property name="KnockdownKneelDamageThreshold" value="0.38"/>
-			<property name="KnockdownKneelStunDuration" value="0.5,1.8"/>
-			<property name="KnockdownKneelRefillRate" value="0.045,0.045"/>
+			<property name="LegCrippleThreshold" value="0"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownProneStunDuration" value="3,0"/>
+			<property name="KnockdownProneRefillRate" value="0,0"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownKneelStunDuration" value="3,0"/>
+			<property name="KnockdownKneelRefillRate" value="0,0"/>
 			<property name="LegsExplosionDamageMultiplier" value=".85"/>
 			<property name="ArmsExplosionDamageMultiplier" value=".85"/>
 			<property name="HeadExplosionDamageMultiplier" value=".85"/>
@@ -2579,8 +2567,8 @@
 			</effect_group>
 			<property name="TimeStayAfterDeath" value="2"/>
 		</entity_class>
-		<!-- NighBoomer -->
-		<entity_class name="NighBoomer" extends="TemplateHF_Zombie_Special_Demolition">
+		<!-- nightZombieDemolition -->
+		<entity_class name="nightZombieDemolition" extends="TemplateHF_Zombie_Special_Demolition">
 			<property name="Tags" value="entity,zombie,walker,boss"/>
 			<property name="SizeScale" value="1.1"/>
 			<property name="MoveSpeed" value="1.1"/>
@@ -2602,10 +2590,29 @@
 			<property name="SoundSense" value="demolitionzsense"/>
 			<property name="SoundFootstepModifier" value="bear_footstep"/>
 
+
+			<property name="DismemberMultiplierHead" value=".2"/>
+			<property name="DismemberMultiplierArms" value=".2"/>
+			<property name="DismemberMultiplierLegs" value=".2"/>
+			<property name="PainResistPerHit" value="2"/>
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownProneStunDuration" value="3,0"/>
+			<property name="KnockdownProneRefillRate" value="0,0"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownKneelStunDuration" value="3,0"/>
+			<property name="KnockdownKneelRefillRate" value="0,0"/>
+			<property name="LegsExplosionDamageMultiplier" value=".85"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".85"/>
+			<property name="HeadExplosionDamageMultiplier" value=".85"/>
+			<property name="ChestExplosionDamageMultiplier" value=".85"/>
+
 			<!--  Gameplay  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
 			<property name="JumpMaxDistance" value="1, 2"/>
-			<property name="PainResistPerHit" value=".5"/>
 			<property name="Explosion.ParticleIndex" value="2"/>
 			<property name="Explosion.RadiusBlocks" value="5"/>
 			<property name="Explosion.RadiusEntities" value="8"/>
@@ -4319,6 +4326,7 @@
 			<property name="ParticleOnDeath" value="blood_death"/>
 			<property name="StompsSpikes" value="true"/>
 			<property name="SightRange" value="30"/>
+			<property name="CanClimbVertical" value="true"/>
 
 			<property name="SoundRandom" value="Enemies/Base_Zombie_Male2/zombiemale2roam"/>
 			<property name="SoundAlert" value="Enemies/Base_Zombie_Male2/zombiemale2alert"/>
@@ -4410,7 +4418,6 @@
 			<property name="JumpMaxDistance" value="1.5, 1.7"/>
 
 			<property name="ExperienceGain" value="45000"/>
-			<property name="DeadBodyHitPoints" value="4500"/>
 
 			<property name="HandItem" value="meleeHandZombieIronSpiderFeral"/>
 			<property name="LootDropEntityClass" count="1" value="MineralLootContainer"/>
@@ -4428,6 +4435,7 @@
 			<drop event="Harvest" name="resourceRawDiamond" prob=".20" count="3" tag="artOfMiningLuckyStrikeHarvest"/>
 			<drop event="Harvest" name="resourceGoldNugget" prob=".30" count="3" tag="artOfMiningLuckyStrikeHarvest"/>
 			<drop event="Harvest" name="resourceSilverNugget" prob=".40" count="3" tag="artOfMiningLuckyStrikeHarvest"/>
+			<property name="DeadBodyHitPoints" value="300000"/>
 			<effect_group name="Base Effects">
 				<!--<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="SPIDER2"/>-->
 				<passive_effect name="HealthMax" operation="base_set" value="35000"/>
@@ -4464,7 +4472,7 @@
 			<property name="CanClimbVertical" value="true"/>
 			<property name="JumpMaxDistance" value="1.5, 1.7"/>
 			<property name="ExperienceGain" value="32000"/>
-			<property name="DeadBodyHitPoints" value="4500"/>
+			<property name="DeadBodyHitPoints" value="300000"/>
 			<property name="HandItem" value="meleeHandZombieIronSpiderFeral"/>
 			<property name="LootDropEntityClass" count="1" value="MineralLootContainer"/>
 			<property name="LootDropProb" value="0"/>
@@ -4507,6 +4515,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="TimeStayAfterDeath" value="300"/>
+
 		</entity_class>			
 		<entity_class name="BossZombieSoldier" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
@@ -4884,7 +4893,7 @@
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Special Bosses ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 	
-		<entity_class name="bossNightSpider" extends="zombieSpider">
+		<entity_class name="bossnightZombieSpider" extends="zombieSpider">
 
 			<property name="SizeScale" value="2"/>
 			<property name="UserSpawnType" value="Menu"/>

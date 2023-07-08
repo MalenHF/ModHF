@@ -7416,7 +7416,7 @@
 			<property name="ItemTypeIcon" value="computer"/>
 			<property name="Tags" value="vehicle,vengine,vfuel,vlight,vseat,canHaveCosmetic"/>
 			<property name="Meshfile" value="@:Entities/Vehicles/motorcycle_Prefab.prefab"/>
-			<property name="CustomIcon" value="vehicleGyrocopterPlaceable"/>
+			<property name="CustomIcon" value="vehicleMotorcyclePlaceable"/>
 			<property name="CustomIconTint" value="255,255,0"/>
 			<property name="TintColor" value="255,255,0"/>
 			<property name="Tags" value="vehicle,usesGas"/>
@@ -9117,7 +9117,7 @@
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="EconomicValue" value="1000"/>
 			<property name="Stacknumber" value="50"/>
-			<property name="UnlockedBy" value="perkMasterChef"/>
+			<property name="UnlockedBy" value="craftingFood"/>
 			<property name="DisplayType" value="foodMoma"/>
 
 			<effect_group tiered="false" name="Food Tier 4">
@@ -9148,7 +9148,7 @@
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="EconomicValue" value="900"/>
 			<property name="Stacknumber" value="50"/>
-			<property name="UnlockedBy" value="perkMasterChef"/>
+			<property name="UnlockedBy" value="craftingFood"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
@@ -9167,7 +9167,7 @@
 			<property name="EconomicBundleSize" value="1"/>			
 			<property name="EconomicValue" value="160"/>
 			<property name="Stacknumber" value="50"/>
-			<property name="UnlockedBy" value="perkMasterChef"/>
+			<property name="UnlockedBy" value="craftingFood"/>
 			<effect_group tiered="false" name="Food Tier 3">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="50"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="40"/>
@@ -9175,6 +9175,21 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 			</effect_group>
 		</item>
+		<item name="foodSPENisinNP">
+			<property name="Tags" value="food,foodSkill"/>
+			<property name="HoldType" value="31"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="100"/> <!-- STK food -->
+			<property name="EconomicValue" value="5"/>
+			<property name="CustomIcon" value="foodCanChicken"/>
+			<property name="CustomIconTint" value="D7B82B"/>
+			<property name="TintColor" value="D7B82B"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="DisplayType" value="foodWater"/>
+		</item>
+
 		<item name="foodSPENisin">
 			<property name="Extends" value="foodCanBeef"/>
 			<property name="CustomIcon" value="foodCanChicken"/>
@@ -9184,7 +9199,7 @@
 			<property name="DisplayType" value="foodWater"/>
 			<property name="EconomicValue" value="25"/>
 			<property name="Stacknumber" value="25"/>
-			<property name="UnlockedBy" value="perkMasterChef"/>
+			<property name="UnlockedBy" value="craftingFood"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<display_value name="foodHealthAmount" value="-20"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="50"/>
@@ -9203,7 +9218,7 @@
 			<property name="EconomicValue" value="900"/>
 			<property name="Stacknumber" value="50"/>			
 			<property name="DisplayType" value="foodComercialcake"/>			
-			<property name="UnlockedBy" value="perkMasterChef"/>			
+			<property name="UnlockedBy" value="craftingFood"/>			
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
@@ -9234,7 +9249,7 @@
 			<property name="TintColor" value="8AE614"/>
 			<property name="EconomicValue" value="400"/>
 			<property name="Stacknumber" value="50"/>			
-			<property name="UnlockedBy" value="perkMasterChef"/>
+			<property name="UnlockedBy" value="craftingFood"/>
 			<effect_group tiered="false" name="Drink Tier 5">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="30"/>
 				<display_value name="dStaminaRegen" value=".15"/>
@@ -9444,7 +9459,7 @@
 			<property name="TintColor" value="ff9f9f"/>
 			<property name="DescriptionKey" value="foodBoiledMeatDesc"/>
 			<property name="EconomicValue" value="15"/>
-			<property name="UnlockedBy" value="perkMasterChef,foodBoiledMeatSchematic"/>
+			<property name="UnlockedBy" value="craftingFood"/>
 			<property name="Stacknumber" value="500"/>
 
 			<effect_group tiered="false" name="Food Tier 1">

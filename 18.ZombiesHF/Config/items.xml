@@ -58,8 +58,9 @@
 					<property name="Stacknumber" value="10"/>
 					<property name="TintColor" value="255,214,7"/>
 					<property class="Action0">
+						<requirement name="PlayerLevel" operation="GT" value="500"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="LosLunaticos"/>
 					</property>
 					<effect_group tiered="false">
@@ -77,8 +78,9 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="VZQuest"/>
 					<property class="Action0">
+						<requirement name="PlayerLevel" operation="GT" value="500"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_venganza"/>
 					</property>
 					<effect_group tiered="false">
@@ -96,8 +98,9 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="ElitesQuest"/>
 					<property class="Action0">
+						<requirement name="PlayerLevel" operation="GT" value="500"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_Mutants"/>
 					</property>
 					<effect_group tiered="false">
@@ -115,8 +118,9 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="MinisQuest"/>
 					<property class="Action0">
+						<requirement name="PlayerLevel" operation="GT" value="500"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_NewKillMinis"/>
 					</property>
 					<effect_group tiered="false">
@@ -134,8 +138,9 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="SpecialQuest"/>
 					<property class="Action0">
+						<requirement name="PlayerLevel" operation="GT" value="500"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_KillSpecial"/>
 					</property>
 					<effect_group tiered="false">
@@ -156,11 +161,11 @@
 					<property name="DescriptionKey" value="Killzilla"/>
 					<property class="Action0">
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_killGallinazilla"/>
 					</property>				
 					<effect_group tiered="false">
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="5"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="10"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
 					</effect_group>
 
@@ -175,8 +180,9 @@
 					<property name="Group" value="Science"/>
 					<property name="DescriptionKey" value="TAVOQUESTDesc"/>
 					<property class="Action0">
+						<requirement name="PlayerLevel" operation="GT" value="500"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="EnemigosdeT4VO"/>
 					</property>
 					<effect_group tiered="false">
@@ -195,7 +201,7 @@
 					<property name="DescriptionKey" value="TacoQuest"/>
 					<property class="Action0">
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_NewKillTaco"/>
 					</property>
 					<effect_group tiered="false">
@@ -214,7 +220,7 @@
 					<property name="DescriptionKey" value="TacoQuestS"/>
 					<property class="Action0">
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_KillTacoS"/>
 					</property>
 					<effect_group tiered="false">
@@ -233,8 +239,9 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="ElitesQuest"/>
 					<property class="Action0">
+						<requirement name="PlayerLevel" operation="GT" value="500"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_Mutants"/>
 					</property>
 					<effect_group tiered="false">
@@ -254,7 +261,7 @@
 						<property name="DescriptionKey" value="ElitesQuest"/>
 						<property class="Action0">
 							<requirement name="!HasBuff" buff="buffQuestCD"/>
-							<property name="UseAnimation" value="false"/>
+							<property name="UseAnimation" value="true"/>
 							<property name="QuestGiven" value="q_Mutants"/>
 						</property>
 						<effect_group tiered="false">
@@ -273,7 +280,7 @@
 						<property name="DescriptionKey" value="ElitesQuest"/>
 						<property class="Action0">
 							<requirement name="!HasBuff" buff="buffQuestCD"/>
-							<property name="UseAnimation" value="false"/>
+							<property name="UseAnimation" value="true"/>
 							<property name="QuestGiven" value="q_Mutants"/>
 						</property>
 						<effect_group tiered="false">
@@ -292,7 +299,7 @@
 						<property name="DescriptionKey" value="ElitesQuest"/>
 						<property class="Action0">
 							<requirement name="!HasBuff" buff="buffQuestCD"/>
-							<property name="UseAnimation" value="false"/>
+							<property name="UseAnimation" value="true"/>
 							<property name="QuestGiven" value="q_Mutants"/>
 						</property>
 						<effect_group tiered="false">
@@ -311,8 +318,9 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="CriaturasQuest"/>
 					<property class="Action0">
+						<requirement name="PlayerLevel" operation="GT" value="500"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_KillCriaturas"/>
 					</property>
 					<effect_group tiered="false">
@@ -332,8 +340,9 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="SirenQuest"/>
 					<property class="Action0">
+						<requirement name="PlayerLevel" operation="GT" value="500"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_KillSiren"/>
 					</property>
 					<effect_group tiered="false">
@@ -351,8 +360,9 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="JugQuest"/>
 					<property class="Action0">
+						<requirement name="PlayerLevel" operation="GT" value="500"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_KillJuggernaut"/>
 					</property>
 					<effect_group tiered="false">
@@ -370,15 +380,16 @@
 					<property name="Group" value="Science"/>
 					<property name="DescriptionKey" value="SoldierQuest"/>
 					<property class="Action0">
+						<requirement name="PlayerLevel" operation="GT" value="500"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_KillSoldier"/>
 					</property>
-					<effect_group tiered="false">
+					<effect_group tiered="false">						
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
 					</effect_group>
-
+			
 				</item>
 				<item name="q_Momia">
 					<property name="name" value="Kill the Mummy" />
@@ -390,8 +401,9 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="MummyQuest"/>
 					<property class="Action0">
+						<requirement name="PlayerLevel" operation="GT" value="500"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_KillMummy"/>
 					</property>
 					<effect_group tiered="false">
@@ -409,8 +421,9 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="MxQuest"/>
 					<property class="Action0">
+						<requirement name="PlayerLevel" operation="GT" value="500"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_KillMx"/>
 					</property>
 					<effect_group tiered="false">
@@ -428,8 +441,9 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="CiruQuest"/>
 					<property class="Action0">
+						<requirement name="PlayerLevel" operation="GT" value="500"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_KillCirujano"/>
 					</property>
 					<effect_group tiered="false">
@@ -447,8 +461,9 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="HFBRQuest"/>
 					<property class="Action0">
+						<requirement name="PlayerLevel" operation="GT" value="500"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_HFRush"/>
 					</property>
 					<effect_group tiered="false">
@@ -467,8 +482,9 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="HFQuest"/>
 					<property class="Action0">
+						<requirement name="PlayerLevel" operation="GT" value="500"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_HF"/>
 					</property>
 					<effect_group tiered="false">
@@ -488,7 +504,7 @@
 					<property name="DescriptionKey" value="q_luckyDesc"/>
 					<property class="Action0">
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_RewLucky"/>
 					</property>
 					<effect_group tiered="false">
@@ -507,7 +523,7 @@
 					<property name="DescriptionKey" value="KillREnemigs"/>
 					<property class="Action0">
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_TotalRandom"/>
 					</property>
 					<effect_group tiered="false">
@@ -526,7 +542,7 @@
 					<property name="DescriptionKey" value="KillGacha"/>
 					<property class="Action0">
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_killGacha"/>
 					</property>
 					<effect_group tiered="false">
@@ -545,11 +561,11 @@
 					<property name="DescriptionKey" value="KillGacha"/>
 					<property class="Action0">
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="false"/>
+						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_killGachaPREM"/>
 					</property>
 					<effect_group tiered="false">
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="5"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="10"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
 					</effect_group>
 				</item>
@@ -566,7 +582,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo1"/>
 				</property>
 				<effect_group tiered="false">
@@ -585,7 +601,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo2"/>
 				</property>
 				<effect_group tiered="false">
@@ -604,7 +620,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo3"/>
 				</property>
 				<effect_group tiered="false">
@@ -623,7 +639,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo4"/>
 				</property>
 				<effect_group tiered="false">
@@ -642,7 +658,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo5"/>
 				</property>
 				<effect_group tiered="false">
@@ -661,7 +677,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo6"/>
 				</property>
 				<effect_group tiered="false">
@@ -680,7 +696,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo7"/>
 				</property>
 				<effect_group tiered="false">
@@ -699,7 +715,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo8"/>
 				</property>
 				<effect_group tiered="false">
@@ -718,7 +734,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo9"/>
 				</property>
 				<effect_group tiered="false">
@@ -737,7 +753,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo10"/>
 				</property>
 				<effect_group tiered="false">
@@ -756,7 +772,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo11"/>
 				</property>
 				<effect_group tiered="false">
@@ -775,7 +791,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo12"/>
 				</property>
 				<effect_group tiered="false">
@@ -794,7 +810,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo13"/>
 				</property>
 				<effect_group tiered="false">
@@ -813,7 +829,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo14"/>
 				</property>
 				<effect_group tiered="false">
@@ -832,7 +848,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo15"/>
 				</property>
 				<effect_group tiered="false">
@@ -851,7 +867,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo16"/>
 				</property>
 				<effect_group tiered="false">
@@ -870,7 +886,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo17"/>
 				</property>
 				<effect_group tiered="false">
@@ -889,7 +905,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo18"/>
 				</property>
 				<effect_group tiered="false">
@@ -908,7 +924,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo19"/>
 				</property>
 				<effect_group tiered="false">
@@ -927,7 +943,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo20"/>
 				</property>
 				<effect_group tiered="false">
@@ -946,7 +962,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo21"/>
 				</property>
 				<effect_group tiered="false">
@@ -965,7 +981,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo22"/>
 				</property>
 				<effect_group tiered="false">
@@ -984,7 +1000,7 @@
 				<property name="DescriptionKey" value="Killrandom"/>
 				<property class="Action0">
 					<requirement name="!HasBuff" buff="buffQuestCD"/>
-					<property name="UseAnimation" value="false"/>
+					<property name="UseAnimation" value="true"/>
 					<property name="QuestGiven" value="q_RewRandmo23"/>
 				</property>
 				<effect_group tiered="false">

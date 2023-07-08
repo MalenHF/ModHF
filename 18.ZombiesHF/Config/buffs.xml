@@ -23,16 +23,22 @@
 
 	<append xpath="/buffs">
 		<!--Survivor skill-->
-		<buff name="buffQuestCD" name_key="buffSurviveName" description_key="INDNDesc" tooltip_key="Juggernaut!!" icon="ui_game_symbol_add" icon_color="253,238,0">
+		<buff name="buffQuestCD" name_key="questCDName" description_key="INDNDesc" tooltip_key="Juggernaut!!" icon="ui_game_symbol_add" icon_color="253,238,0">
 			<stack_type value="replace"/>
-			<duration value="0"/>
+			<duration value="60"/>
 			<display_value value=".varQuestCDDysplay"/>
 			<display_value_format value="time"/>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$varQuestCD" operation="subtract" value="@$MetabolismDuration"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".varQuestCDDysplay" operation="set" value="@$varQuestCD"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".varQuestCDDysplay" operation="divide" value="@$MetabolismDuration"/>
-				
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffQuestCD">
+					<requirement name="CVarCompare" cvar="$varQuestCD" operation="LTE" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".varQuestCDDysplay" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffQuestCD" operation="set" value="0"/>
 			</effect_group>
 		</buff>
 		<buff name="buffSurvive" name_key="buffSurviveName" description_key="INDNDesc" tooltip_key="Juggernaut!!" icon="ui_game_symbol_add" icon_color="253,238,0">
