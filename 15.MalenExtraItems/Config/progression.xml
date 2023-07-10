@@ -35,12 +35,15 @@
     <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/effect_group/passive_effect[@level='100,100']/@tags">,chefTier5</append>
 
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ New Chemical Unlock ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+    <set xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/@max_level">100</set>
     <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/display_entry[@icon='medicalFirstAidKit,drugAntibiotics,drugSteroids']/unlock_entry[@unlock_tier='1']/@item">,medicalSpecialBandage</append>
     <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/effect_group/passive_effect[@level='50,100']/@tags">,chemiTier2</append>
 
     <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/display_entry[@icon='medicalFirstAidKit,drugAntibiotics,drugSteroids']/@name_key">,medicalT4-4</append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/display_entry[@icon='medicalFirstAidKit,drugAntibiotics,drugSteroids']">
-      <unlock_entry item="drinkSPESupaCola,drugSPEUwuProfen,drugSPEAdrenaline" unlock_tier="4" />
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']">
+      <display_entry icon="drugSteroids" name_key="medicalT4-1" has_quality="false" unlock_level="100" >
+        <unlock_entry item="drinkSPESupaCola,drugSPEUwuProfen,drugSPEAdrenaline" unlock_tier="1" />
+      </display_entry>
     </append>
     <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/effect_group">
       <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100,100" value="1"	tags="chemiTier4"/>
