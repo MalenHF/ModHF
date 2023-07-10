@@ -25,6 +25,7 @@
     <append xpath="/progression/perks/book[@name='perkArtOfMiningPallets']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,resourceClayLumpBundle,resourceCrushedSandBundle</append>
     
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ New Food Unlock ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/display_entry[@icon='foodCornOnTheCob,foodCornBread,foodGrilledMeat,foodBoiledMeat,foodBaconAndEggs']/unlock_entry[@unlock_tier='4']/@item">,foodBoiledChicken</append>
     <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/display_entry[@icon='drinkYuccaJuiceSmoothie,foodHoboStew,foodFishTacos,foodChiliDog,foodShamChowder']/unlock_entry[@unlock_tier='5']/@item">,foodCanTuna,foodCanSalmon,foodCanPeas,foodCanChicken,foodCanLamb,foodCanBeef,foodCanChili,foodCanStock,foodCanPasta,foodCanMiso,foodCanPears,foodCanSoup</append>
     <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/display_entry[@icon='foodTunaFishGravyToast,foodShepardsPie,drinkJarGrandpasLearningElixir,foodSpaghetti,foodGumboStew']/unlock_entry[@unlock_tier='3']/@item">,foodCanDogfood,foodCanCatfood</append>
     <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/display_entry[@icon='foodTunaFishGravyToast,foodShepardsPie,drinkJarGrandpasLearningElixir,foodSpaghetti,foodGumboStew']/unlock_entry[@unlock_tier='5']/@item">,foodSPEMomasSoup,foodSPEGrandmaSoup,foodSPETaquitos,foodSPEComercialCake,drinkSPEGrandmaTe</append>
@@ -35,10 +36,19 @@
     <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/effect_group/passive_effect[@level='100,100']/@tags">,chefTier5</append>
 
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ New Chemical Unlock ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+    <set xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/@max_level">100</set>
+    
     <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/display_entry[@icon='medicalFirstAidKit,drugAntibiotics,drugSteroids']/unlock_entry[@unlock_tier='1']/@item">,medicalSpecialBandage</append>
     <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/effect_group/passive_effect[@level='50,100']/@tags">,chemiTier2</append>
 
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']">
+      <display_entry icon="medicalFirstAidKit,drugAntibiotics,drugSteroids" name_key="medicalT3-1,medicalT3-2,medicalT3-3" has_quality="false" unlock_level="50,60,75" >
+			  <unlock_entry item="medicalFirstAidKit" unlock_tier="1" />			
+		  </display_entry>
+    </append>
     <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/display_entry[@icon='medicalFirstAidKit,drugAntibiotics,drugSteroids']/@name_key">,medicalT4-4</append>
+    
+    
     <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/display_entry[@icon='medicalFirstAidKit,drugAntibiotics,drugSteroids']">
       <unlock_entry item="drinkSPESupaCola,drugSPEUwuProfen,drugSPEAdrenaline" unlock_tier="4" />
     </append>

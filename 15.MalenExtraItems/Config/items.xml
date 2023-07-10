@@ -1622,46 +1622,20 @@
 			</item>
 		<!-- ▼▲ LegendT2 ▲▼ -->
 			<item name="legendToolT2_DestornilladorDeImpacto">
-				<property name="Tags" value="blunt,melee,grunting,light,tool,attPerception,perkSalvageOperations,canHaveCosmetic,salvageHarvest"/>
-				<property name="DisplayType" value="melee"/>
-				<property name="HoldType" value="74"/>
-				<property name="Meshfile" value="@:Other/Items/Tools/impactDriverPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="6"/>
+				<property name="Extends" value="meleeToolSalvageT3ImpactDriver"/>
 				<property name="CustomIcon" value="meleeToolSalvageT3ImpactDriver"/>
-				<property name="SoundJammed" value="ItemNeedsRepair"/>
 				<property name="CustomIconTint" value="255,255,0"/>
 				<property name="TintColor" value="255,255,0"/>
-				<property name="SoundDestroy" value="metaldestroy"/>
 				<property name="EconomicValue" value="1500"/>
 				<property name="Stacknumber" value="1"/>
-				<property name="Material" value="Morganic"/>
 				<property name="CreativeMode" value="Dev"/>
 				<property name="ShowQuality" value="false"/>
+				<property name="Material" value="Morganic"/>
 				<property name="ItemTypeIcon" value="star"/>
 				<property name="UnlockedBy" value="HML"/>
 				<property name="Group" value="Tools/Traps"/>
 				<property name="DescriptionKey" value="LTDesc"/>
 				<property name="Candrop" value="false"/>
-
-				<property class="Action0">
-					<property name="Class" value="DynamicMelee"/>
-					<property name="Sound_start" value="swoosh"/>
-					<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
-					<property name="ToolCategory.Disassemble" value="1" param1="1"/>
-					<property name="Particle_harvesting" value="true" param1="metal"/>
-					<property name="UseGrazingHits" value="true"/>
-					<property name="GrazeStart" value=".25"/>
-					<property name="GrazeEnd" value=".3"/>
-					<property name="SwingDegrees" value="50"/>
-					<property name="SwingAngle" value="180"/>
-				</property>
-				<property class="Action1">
-					<property name="Class" value="DynamicMelee"/>
-					<property name="Sound_start" value="swoosh"/>
-					<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
-					<!--  <property name="UsePowerAttackAnimation" value="true"/>  -->
-				</property>
 				<effect_group>
 					<passive_effect name="AttacksPerMinute" operation="base_set" value="150"/>
 					<passive_effect name="EntityDamage" operation="base_set" value="1"/>
@@ -8377,7 +8351,7 @@
 				<passive_effect name="BuffResistance" operation="base_add" value=".0700" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
-				<passive_effect name="Mobility" operation="perc_add" value=".10"/>
+				<passive_effect name="Mobility" operation="perc_add" value=".05"/>
 				<passive_effect name="WalkSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="RunSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".05" tags="walking"/>
@@ -8418,7 +8392,7 @@
 				<passive_effect name="BuffResistance" operation="base_add" value=".0700" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
-				<passive_effect name="Mobility" operation="perc_add" value=".10"/>
+				<passive_effect name="Mobility" operation="perc_add" value=".05"/>
 				<passive_effect name="WalkSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="RunSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".05" tags="walking"/>
@@ -8460,7 +8434,7 @@
 				<passive_effect name="BuffResistance" operation="base_add" value=".0700" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
-				<passive_effect name="Mobility" operation="perc_add" value=".10"/>
+				<passive_effect name="Mobility" operation="perc_add" value=".05"/>
 				<passive_effect name="WalkSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="RunSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".05" tags="walking"/>
@@ -8502,7 +8476,7 @@
 				<passive_effect name="BuffResistance" operation="base_add" value=".0700" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
-				<passive_effect name="Mobility" operation="perc_add" value=".10"/>
+				<passive_effect name="Mobility" operation="perc_add" value=".05"/>
 				<passive_effect name="WalkSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="RunSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".05" tags="walking"/>
@@ -8544,7 +8518,7 @@
 				<passive_effect name="BuffResistance" operation="base_add" value=".0700" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
-				<passive_effect name="Mobility" operation="perc_add" value=".10"/>
+				<passive_effect name="Mobility" operation="perc_add" value=".05"/>
 				<passive_effect name="WalkSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="RunSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="CarryCapacity" operation="base_add" value="3"/>
@@ -9276,7 +9250,7 @@
 			<property name="Stacknumber" value="250"/>			
 			<property name="DisplayType" value="supaColaD"/>		
 			<property name="Group" value="Science,Medical"/>
-			<property name="UnlockedBy" value="perkPhysician"/>
+			<property name="UnlockedBy" value="craftingMedical"/>
 			<effect_group tiered="false" name="Drink Tier 5">
 				<display_value name="dHarvestMining" value=".35"/>				
 				<display_value name="dStaminaRegen" value=".25"/>
@@ -9304,7 +9278,7 @@
 			<property name="EconomicValue" value="700"/>
 			<property name="Stacknumber" value="50"/>
 			<property name="DisplayType" value="uwuprofen"/>
-			<property name="UnlockedBy" value="perkPhysician"/>
+			<property name="UnlockedBy" value="craftingMedical"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
@@ -9336,7 +9310,7 @@
 			<property name="EconomicValue" value="1000"/>
 			<property name="Stacknumber" value="50"/>
 			<property name="DisplayType" value="adrenalineD"/>
-			<property name="UnlockedBy" value="perkPhysician"/>
+			<property name="UnlockedBy" value="craftingMedical"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
@@ -9364,7 +9338,7 @@
 			<property name="EconomicValue" value="25"/>
 			<property name="Stacknumber" value="50"/>
 			<property name="DescriptionKey" value="medicalSpecialBandageDesc"/>
-			<property name="UnlockedBy" value="perkPhysician"/>
+			<property name="UnlockedBy" value="craftingMedical"/>
 			<property name="DisplayType" value="medicalSpecial"/>
 			<effect_group tiered="false">
 				<!-- used on self -->
@@ -10117,7 +10091,7 @@
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add Acid Unlock ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<append xpath="/items/item[@name='resourceAcid']">
-			<property name="UnlockedBy" value="perkPhysician"/>
+			<property name="UnlockedBy" value="craftingMedical"/>
 			<property name="Group" value="Resources,Chemicals,CFChemicals"/>
 		</append>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->

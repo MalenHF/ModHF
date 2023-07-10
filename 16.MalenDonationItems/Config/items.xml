@@ -95,46 +95,21 @@
 			</effect_group>
 		</item>
 		<item name="donacion_DestornilladorDeImpacto">
-			<property name="Tags" value="blunt,melee,grunting,light,tool,attPerception,perkSalvageOperations,canHaveCosmetic,salvageHarvest"/>
-			<property name="DisplayType" value="melee"/>
-			<property name="HoldType" value="74"/>
-			<property name="Meshfile" value="@:Other/Items/Tools/impactDriverPrefab.prefab"/>
-			<property name="Material" value="Morganic"/>
-			<property name="Weight" value="6"/>
-			<property name="CustomIcon" value="meleeToolSalvageT3ImpactDriver"/>
-			<property name="SoundJammed" value="ItemNeedsRepair"/>
-			<property name="CustomIconTint" value="255,255,0"/>
-			<property name="TintColor" value="255,255,0"/>
-			<property name="SoundDestroy" value="metaldestroy"/>
-			<property name="EconomicValue" value="1500"/>
-			<property name="Stacknumber" value="1"/>
-			<property name="Material" value="Morganic"/>
-			<property name="CreativeMode" value="Dev"/>
-			<property name="ShowQuality" value="false"/>
-			<property name="ItemTypeIcon" value="star"/>
-			<property name="UnlockedBy" value="HML"/>
-			<property name="Group" value="Tools/Traps"/>
-			<property name="DescriptionKey" value="LTDesc"/>
-			<property name="Candrop" value="false"/>
-
-			<property class="Action0">
-				<property name="Class" value="DynamicMelee"/>
-				<property name="Sound_start" value="swoosh"/>
-				<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
-				<property name="ToolCategory.Disassemble" value="1" param1="1"/>
-				<property name="Particle_harvesting" value="true" param1="metal"/>
-				<property name="UseGrazingHits" value="true"/>
-				<property name="GrazeStart" value=".25"/>
-				<property name="GrazeEnd" value=".3"/>
-				<property name="SwingDegrees" value="50"/>
-				<property name="SwingAngle" value="180"/>
-			</property>
-			<property class="Action1">
-				<property name="Class" value="DynamicMelee"/>
-				<property name="Sound_start" value="swoosh"/>
-				<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
-				<!--  <property name="UsePowerAttackAnimation" value="true"/>  -->
-			</property>
+			<property name="Extends" value="meleeToolSalvageT3ImpactDriver"/>
+				<property name="CustomIcon" value="meleeToolSalvageT3ImpactDriver"/>
+				<property name="CustomIconTint" value="255,255,0"/>
+				<property name="TintColor" value="255,255,0"/>
+				<property name="EconomicValue" value="1500"/>
+				<property name="Stacknumber" value="1"/>
+				<property name="CreativeMode" value="Dev"/>
+				<property name="ShowQuality" value="false"/>
+				<property name="Material" value="Morganic"/>
+				<property name="ItemTypeIcon" value="star"/>
+				<property name="UnlockedBy" value="HML"/>
+				<property name="Group" value="Tools/Traps"/>
+				<property name="DescriptionKey" value="LTDesc"/>
+				<property name="Candrop" value="false"/>
+				
 			<effect_group>
 				<passive_effect name="AttacksPerMinute" operation="base_set" value="150"/>
 				<passive_effect name="EntityDamage" operation="base_set" value="1"/>
@@ -1583,7 +1558,7 @@
 				<passive_effect name="BuffResistance" operation="base_add" value=".0700" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
-				<passive_effect name="Mobility" operation="perc_add" value=".10"/>
+				<passive_effect name="Mobility" operation="perc_add" value=".05"/>
 				<passive_effect name="WalkSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="RunSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".05" tags="walking"/>
@@ -1624,7 +1599,7 @@
 				<passive_effect name="BuffResistance" operation="base_add" value=".0700" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
-				<passive_effect name="Mobility" operation="perc_add" value=".10"/>
+				<passive_effect name="Mobility" operation="perc_add" value=".05"/>
 				<passive_effect name="WalkSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="RunSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".05" tags="walking"/>
@@ -1666,7 +1641,7 @@
 				<passive_effect name="BuffResistance" operation="base_add" value=".0700" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
-				<passive_effect name="Mobility" operation="perc_add" value=".10"/>
+				<passive_effect name="Mobility" operation="perc_add" value=".05"/>
 				<passive_effect name="WalkSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="RunSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".05" tags="walking"/>
@@ -1708,7 +1683,7 @@
 				<passive_effect name="BuffResistance" operation="base_add" value=".0700" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
-				<passive_effect name="Mobility" operation="perc_add" value=".10"/>
+				<passive_effect name="Mobility" operation="perc_add" value=".05"/>
 				<passive_effect name="WalkSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="RunSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".05" tags="walking"/>
@@ -1750,7 +1725,7 @@
 				<passive_effect name="BuffResistance" operation="base_add" value=".0700" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
-				<passive_effect name="Mobility" operation="perc_add" value=".10"/>
+				<passive_effect name="Mobility" operation="perc_add" value=".05"/>
 				<passive_effect name="WalkSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="RunSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="CarryCapacity" operation="base_add" value="3"/>
