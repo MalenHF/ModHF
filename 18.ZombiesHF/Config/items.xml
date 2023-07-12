@@ -503,6 +503,7 @@
 					<property name="Stacknumber" value="10"/>
 					<property name="DescriptionKey" value="q_luckyDesc"/>
 					<property class="Action0">
+						<requirement name="PlayerLevel" operation="GT" value="500"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_RewLucky"/>
@@ -522,6 +523,7 @@
 					<property name="Stacknumber" value="20"/>
 					<property name="DescriptionKey" value="KillREnemigs"/>
 					<property class="Action0">
+						<requirement name="PlayerLevel" operation="GT" value="500"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_TotalRandom"/>
@@ -541,6 +543,7 @@
 					<property name="Stacknumber" value="20"/>
 					<property name="DescriptionKey" value="KillGacha"/>
 					<property class="Action0">
+						<requirement name="PlayerLevel" operation="GT" value="500"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_killGacha"/>
@@ -560,6 +563,7 @@
 					<property name="Stacknumber" value="20"/>
 					<property name="DescriptionKey" value="KillGacha"/>
 					<property class="Action0">
+						<requirement name="PlayerLevel" operation="GT" value="500"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_killGachaPREM"/>
@@ -569,7 +573,6 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
 					</effect_group>
 				</item>
-				
 			<!--Extra Quest-->
 			<item name="q_rand1">
 				<property name="name" value="Randoms" />

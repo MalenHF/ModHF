@@ -36,24 +36,6 @@
     <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/effect_group/passive_effect[@level='100,100']/@tags">,chefTier5</append>
 
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ New Chemical Unlock ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-    <set xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/@max_level">100</set>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/display_entry[@icon='medicalFirstAidKit,drugAntibiotics,drugSteroids']/unlock_entry[@unlock_tier='1']/@item">,medicalSpecialBandage</append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/effect_group/passive_effect[@level='50,100']/@tags">,chemiTier2</append>
-
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']">
-      <display_entry icon="medicalFirstAidKit,drugAntibiotics,drugSteroids" name_key="medicalT3-1,medicalT3-2,medicalT3-3" has_quality="false" unlock_level="50,60,75" >
-			  <unlock_entry item="medicalFirstAidKit" unlock_tier="1" />			
-		  </display_entry>
-    </append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/display_entry[@icon='medicalFirstAidKit,drugAntibiotics,drugSteroids']/@name_key">,medicalT4-4</append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']">
-      <display_entry icon="drugSteroids" name_key="medicalT4-1" has_quality="false" unlock_level="100" >
-        <unlock_entry item="drinkSPESupaCola,drugSPEUwuProfen,drugSPEAdrenaline" unlock_tier="1" />
-      </display_entry>
-    </append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/effect_group">
-      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100,100" value="1"	tags="chemiTier4"/>
-    </append>
 
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add 10k minerals bundles unlock ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
     <append xpath="/progression/perks/book[@name='perkArtOfMiningComplete']">
@@ -73,6 +55,47 @@
     <append xpath="/progression/perks/book[@name='perkShotgunMessiahComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,bammoBundleShotgunShell,bammoBundleShotgunSlug,bammoBundleShotgunBreachingSlug</append>
     <append xpath="/progression/perks/book[@name='perkPistolPeteComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,bammoBundle9mmBulletBall,bammoBundle9mmBulletAP,bammoBundle9mmBulletHP</append>
     <append xpath="/progression/perks/book[@name='perkEnforcerComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,bammoBundle44MagnumBulletBall,bammoBundle44MagnumBulletHP,bammoBundle44MagnumBulletAP</append>
+
+    <remove xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']"/>
+    
+    <insertAfter xpath="/progression/crafting_skills/crafting_skill[@name='craftingArmor']">
+      <crafting_skill name="craftingMedical" max_level="100" parent="attCrafting" name_key="craftingMedicalName" desc_key="craftingMedicalDesc" long_desc_key="craftingMedicalLongDesc" icon="ui_game_symbol_medical">
+
+        <display_entry icon="medicalFirstAidBandage,drugFortBites" name_key="medicalT1-1,medicalT1-2" has_quality="false" unlock_level="5,10" >
+          <unlock_entry item="medicalFirstAidBandage" unlock_tier="1" />
+          <unlock_entry item="drugFortBites" unlock_tier="2" />
+        </display_entry>
+        <display_entry icon="medicalPlasterCast,drugHerbalAntibiotics,drugRecog" name_key="medicalT2-1,medicalT2-2,medicalT2-3" has_quality="false" unlock_level="20,30,40" >
+          <unlock_entry item="medicalPlasterCast" unlock_tier="1" />
+          <unlock_entry item="drugHerbalAntibiotics" unlock_tier="2" />
+          <unlock_entry item="drugRecog" unlock_tier="3" />
+        </display_entry>
+        <display_entry icon="medicalFirstAidKit,drugAntibiotics,drugSteroids" name_key="medicalT3-1,medicalT3-2,medicalT3-3" has_quality="false" unlock_level="50,60,75" >
+          <unlock_entry item="medicalFirstAidKit,medicalSpecialBandage" unlock_tier="1" />
+          <unlock_entry item="drugAntibiotics" unlock_tier="2" />
+          <unlock_entry item="drugSteroids" unlock_tier="3" />
+        </display_entry>
+        <display_entry icon="drugSteroids" name_key="medicalT4-1" has_quality="false" unlock_level="100" >
+          <unlock_entry item="drinkSPESupaCola,drugSPEUwuProfen,drugSPEAdrenaline" unlock_tier="1" />
+        </display_entry>
+
+        <effect_group>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,100" value="1" tags="medicalFirstAidBandage"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="drugFortBites"/>
+
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="20,100" value="1" tags="medicalPlasterCast"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="30,100" value="1" tags="drugHerbalAntibiotics"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="40,100" value="1" tags="drugRecog"/>
+
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="medicalFirstAidKit,chemiTier2"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="60,100" value="1" tags="drugAntibiotics"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="75,100" value="1" tags="drugSteroids"/>
+
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100,100" value="1"	tags="chemiTier4"/>
+        </effect_group>
+      </crafting_skill>
+    </insertAfter>
+
 
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add Special SKILLS! ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
     <insertAfter xpath="/progression/attributes/attribute[@name='attIntellect']">
