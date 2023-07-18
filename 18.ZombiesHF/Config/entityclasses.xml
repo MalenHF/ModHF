@@ -1409,7 +1409,7 @@
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Special Zombies ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
 		
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Scouts ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-		<entity_class name="zombiSBMiniSiren" extends="zombieSpider">
+		<entity_class name="zombiSBMiniSiren" extends="zombieBurnt">
 			<property name="Archetype" value="archezombiSBMiniSiren"/>
 			<property name="SizeScale" value=".5"/>
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,siren"/>
@@ -2768,54 +2768,6 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon"/>
 			</effect_group>
 		</entity_class>		
-		<!-- ElementalFireFeral *** -->
-		<entity_class name="HvInfernalFeral" extends="TemplateHF_Zombie_Special_Wight">		
-			<property name="SizeScale" value="1"/>
-			<property name="MoveSpeed" value="1.1"/>
-			<property name="SoundSpawn" value="Ambient_Loops/a_fire_embersmoke_sm_lp"/>
-			<property name="ReplaceMaterial0" value="entities/animals/vulture/materials/vulture_v2"/>				
-			<property name="HandItem" value="meleeHandElementalFire"/>
-			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
-			<!--  XP strong radiated  -->
-			<property name="LootDropProb" value=".25"/>
-			<!--  Radiated  -->
-			<property name="MoveSpeedAggro" value="1.5, 1.9"/>
-			<effect_group name="Base Effects">
-				<passive_effect name="HealthMax" operation="base_set" value="3000"/>
-				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalFire"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,-.2,0" parent_transform="LOD0" shape_mesh="true"/>
-				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon"/>
-			</effect_group>
-		</entity_class>		
-		<!-- ElementalFireBoomer -->
-		<entity_class name="HvInfernalBoomer" extends="TemplateHF_Zombie_Special_Demolition">
-			<property name="SizeScale" value="1.1"/>
-			<property name="MoveSpeed" value="1.1"/>
-			<property name="SoundSpawn" value="Ambient_Loops/a_fire_embersmoke_sm_lp"/>
-			<property name="ReplaceMaterial0" value="entities/animals/vulture/materials/vulture_v2"/>
-			<!--  Gameplay  -->
-			<property name="HandItem" value="meleeHandElementalFire"/>
-			<!--  Disable Health explosion  -->
-			<property name="ExperienceGain" value="2800"/>
-			<property name="LootDropProb" value=".25"/>
-			<property name="MoveSpeedAggro" value="1.5, 1.9"/>
-			<effect_group name="Base Effects">
-				<passive_effect name="HealthMax" operation="base_set" value="3000"/>
-				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
-				<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="head"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="60"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalFire"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,-.2,0" parent_transform="LOD0" shape_mesh="true"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
-				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon"/>
-			</effect_group>
-		</entity_class>
 		<!-- ElementalFireTom -->
 		<entity_class name="HvInfernalTom" extends="TemplateHF_Zombie_Special_TomClark">			
 			<property name="SizeScale" value="1"/>
@@ -2934,6 +2886,54 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon"/>
 			</effect_group>
 		</entity_class>
+		<!-- ElementalFireFeral *** -->
+		<entity_class name="HvInfernalFeral" extends="TemplateHF_Zombie_Special_Wight">		
+			<property name="SizeScale" value="1"/>
+			<property name="MoveSpeed" value="1.1"/>
+			<property name="SoundSpawn" value="Ambient_Loops/a_fire_embersmoke_sm_lp"/>
+			<property name="ReplaceMaterial0" value="entities/animals/vulture/materials/vulture_v2"/>				
+			<property name="HandItem" value="meleeHandElementalFire"/>
+			<!--  Gameplay  -->
+			<property name="ExperienceGain" value="2800"/>
+			<!--  XP strong radiated  -->
+			<property name="LootDropProb" value=".25"/>
+			<!--  Radiated  -->
+			<property name="MoveSpeedAggro" value="1.5, 1.9"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="3000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalFire"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,-.2,0" parent_transform="LOD0" shape_mesh="true"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon"/>
+			</effect_group>
+		</entity_class>		
+		<!-- ElementalFireBoomer -->
+		<entity_class name="HvInfernalBoomer" extends="TemplateHF_Zombie_Special_Demolition">
+			<property name="SizeScale" value="1.1"/>
+			<property name="MoveSpeed" value="1.1"/>
+			<property name="SoundSpawn" value="Ambient_Loops/a_fire_embersmoke_sm_lp"/>
+			<property name="ReplaceMaterial0" value="entities/animals/vulture/materials/vulture_v2"/>
+			<!--  Gameplay  -->
+			<property name="HandItem" value="meleeHandElementalFire"/>
+			<!--  Disable Health explosion  -->
+			<property name="ExperienceGain" value="2800"/>
+			<property name="LootDropProb" value=".25"/>
+			<property name="MoveSpeedAggro" value="1.5, 1.9"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="3000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="head"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="60"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalFire"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,-.2,0" parent_transform="LOD0" shape_mesh="true"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon"/>
+			</effect_group>
+		</entity_class>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ FROZEN ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
 		<!-- ElementalFrozenCop -->
 		<entity_class name="HvHoarfrostCop" extends="TemplateHF_Zombie_Special_Cop">
@@ -3019,51 +3019,6 @@
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="15"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalFrozen"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
-			</effect_group>
-		</entity_class>		
-		<!-- ElementalFrozenFeral *** -->
-		<entity_class name="HvHoarfrostFeral" extends="TemplateHF_Zombie_Special_Wight">
-			<property name="SizeScale" value="1.2"/>
-			<property name="MoveSpeed" value="1.1"/>
-			<property name="ReplaceMaterial0" value="entities/resources/materials/oreNitrateBoulder"/>
-			<property name="SurfaceCategory" value="snow"/>
-			<property name="HandItem" value="meleeHandElementalFrozen"/>
-			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
-			<!--  XP strong radiated  -->
-			<property name="LootDropProb" value=".28"/>
-			<!--  Radiated  -->
-			<property name="MoveSpeedAggro" value="1.5, 1.6"/>
-			<effect_group name="Base Effects">
-				<passive_effect name="HealthMax" operation="base_set" value="3200"/>
-				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="15"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalFrozen"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,-.2,0" parent_transform="LOD0" shape_mesh="true"/>
-			</effect_group>
-		</entity_class>		
-		<!-- ElementalFrozenBoomer -->
-		<entity_class name="HvHoarfrostBoomer" extends="TemplateHF_Zombie_Special_Demolition">
-			<property name="SizeScale" value="1.1"/>
-			<property name="MoveSpeed" value="1.1"/>
-			<property name="ReplaceMaterial0" value="entities/resources/materials/oreNitrateBoulder"/>
-			<property name="SurfaceCategory" value="snow"/>				
-			<property name="HandItem" value="meleeHandElementalFrozen"/>
-			<property name="ExperienceGain" value="2800"/>
-			<property name="LootDropProb" value=".28"/>
-			<property name="MoveSpeedAggro" value="1.5, 1.6"/>
-			<effect_group name="Base Effects">
-				<passive_effect name="HealthMax" operation="base_set" value="3200"/>
-				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
-				<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="head"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="15"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalFrozen"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,-.2,0" parent_transform="LOD0" shape_mesh="true"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
@@ -3183,7 +3138,52 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,-.2,0" parent_transform="LOD0" shape_mesh="true"/>
 			</effect_group>
-		</entity_class>				
+		</entity_class>			
+		<!-- ElementalFrozenFeral *** -->
+		<entity_class name="HvHoarfrostFeral" extends="TemplateHF_Zombie_Special_Wight">
+			<property name="SizeScale" value="1.2"/>
+			<property name="MoveSpeed" value="1.1"/>
+			<property name="ReplaceMaterial0" value="entities/resources/materials/oreNitrateBoulder"/>
+			<property name="SurfaceCategory" value="snow"/>
+			<property name="HandItem" value="meleeHandElementalFrozen"/>
+			<!--  Gameplay  -->
+			<property name="ExperienceGain" value="2800"/>
+			<!--  XP strong radiated  -->
+			<property name="LootDropProb" value=".28"/>
+			<!--  Radiated  -->
+			<property name="MoveSpeedAggro" value="1.5, 1.6"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="3200"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="15"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalFrozen"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,-.2,0" parent_transform="LOD0" shape_mesh="true"/>
+			</effect_group>
+		</entity_class>
+		<!-- ElementalFrozenBoomer -->
+		<entity_class name="HvHoarfrostBoomer" extends="TemplateHF_Zombie_Special_Demolition">
+			<property name="SizeScale" value="1.1"/>
+			<property name="MoveSpeed" value="1.1"/>
+			<property name="ReplaceMaterial0" value="entities/resources/materials/oreNitrateBoulder"/>
+			<property name="SurfaceCategory" value="snow"/>				
+			<property name="HandItem" value="meleeHandElementalFrozen"/>
+			<property name="ExperienceGain" value="2800"/>
+			<property name="LootDropProb" value=".28"/>
+			<property name="MoveSpeedAggro" value="1.5, 1.6"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="3200"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="head"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="15"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalFrozen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,-.2,0" parent_transform="LOD0" shape_mesh="true"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+			</effect_group>
+		</entity_class>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ DROWNED | Morte de Croatian para Muerte y Voda de Croatian para Agua, muerte por agua o Ahogado ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<!-- HvDrownedCop -->
 		<entity_class name="HvMortevodaCop" extends="TemplateHF_Zombie_Special_Cop">
@@ -3284,61 +3284,6 @@
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalWater"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
-				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon"/>
-			</effect_group>
-		</entity_class>		
-		<!-- HvDrownedFeral *** -->
-		<entity_class name="HvMortevodaFeral" extends="TemplateHF_Zombie_Special_Wight">
-			<property name="SizeScale" value="1"/>
-			<property name="MoveSpeed" value="1.1"/>
-			<!--property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/-->
-			<property name="ReplaceMaterial0" value="materials/waterinbucket"/>
-			<property name="ReplaceMaterial2" value="particleeffects/materials/waterfallslope"/>
-			<property name="SoundFootstepModifier" value="stepwater"/>
-			<property name="SurfaceCategory" value="water"/>
-			<property name="HandItem" value="meleeHandElementalWater"/>
-			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2500"/>
-			<!--  XP strong radiated  -->
-			<property name="LootDropProb" value=".25"/>
-			<!--  Radiated  -->
-			<property name="MoveSpeedAggro" value="1.1, 1.5"/>
-			<effect_group name="Base Effects">
-				<passive_effect name="HealthMax" operation="base_set" value="4000"/>
-				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalWater"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,-.2,0" parent_transform="LOD0" shape_mesh="true"/>
-				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon"/>
-			</effect_group>
-		</entity_class>		
-		<!-- HvDrownedBoomer -->
-		<entity_class name="HvMortevodaBoomer" extends="TemplateHF_Zombie_Special_Demolition">
-			<property name="SizeScale" value="1.1"/>
-			<property name="MoveSpeed" value="1.1"/>
-			<!--property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/-->
-			<property name="ReplaceMaterial0" value="materials/waterinbucket"/>
-			<property name="ReplaceMaterial2" value="particleeffects/materials/waterfallslope"/>
-			<property name="SoundFootstepModifier" value="stepwater"/>
-			<property name="SurfaceCategory" value="water"/>
-			<!--  Gameplay  -->
-			<property name="HandItem" value="meleeHandElementalWater"/>
-			<property name="ExperienceGain" value="2500"/>
-			<property name="LootDropProb" value=".25"/>
-			<property name="MoveSpeedAggro" value="1.3, 1.7"/>
-			<effect_group name="Base Effects">
-				<passive_effect name="HealthMax" operation="base_set" value="4000"/>
-				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/>
-				<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="head"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="60"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalWater"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,-.2,0" parent_transform="LOD0" shape_mesh="true"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon"/>
@@ -3479,6 +3424,61 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,-.2,0" parent_transform="LOD0" shape_mesh="true"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon"/>
+			</effect_group>
+		</entity_class>
+		<!-- HvDrownedFeral *** -->
+		<entity_class name="HvMortevodaFeral" extends="TemplateHF_Zombie_Special_Wight">
+			<property name="SizeScale" value="1"/>
+			<property name="MoveSpeed" value="1.1"/>
+			<!--property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/-->
+			<property name="ReplaceMaterial0" value="materials/waterinbucket"/>
+			<property name="ReplaceMaterial2" value="particleeffects/materials/waterfallslope"/>
+			<property name="SoundFootstepModifier" value="stepwater"/>
+			<property name="SurfaceCategory" value="water"/>
+			<property name="HandItem" value="meleeHandElementalWater"/>
+			<!--  Gameplay  -->
+			<property name="ExperienceGain" value="2500"/>
+			<!--  XP strong radiated  -->
+			<property name="LootDropProb" value=".25"/>
+			<!--  Radiated  -->
+			<property name="MoveSpeedAggro" value="1.1, 1.5"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="4000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalWater"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,-.2,0" parent_transform="LOD0" shape_mesh="true"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon"/>
+			</effect_group>
+		</entity_class>		
+		<!-- HvDrownedBoomer -->
+		<entity_class name="HvMortevodaBoomer" extends="TemplateHF_Zombie_Special_Demolition">
+			<property name="SizeScale" value="1.1"/>
+			<property name="MoveSpeed" value="1.1"/>
+			<!--property name="ReplaceMaterial0" value="shapes/materials/wrought_iron_metal"/-->
+			<property name="ReplaceMaterial0" value="materials/waterinbucket"/>
+			<property name="ReplaceMaterial2" value="particleeffects/materials/waterfallslope"/>
+			<property name="SoundFootstepModifier" value="stepwater"/>
+			<property name="SurfaceCategory" value="water"/>
+			<!--  Gameplay  -->
+			<property name="HandItem" value="meleeHandElementalWater"/>
+			<property name="ExperienceGain" value="2500"/>
+			<property name="LootDropProb" value=".25"/>
+			<property name="MoveSpeedAggro" value="1.3, 1.7"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="4000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="head"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="60"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalWater"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,-.2,0" parent_transform="LOD0" shape_mesh="true"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon"/>
 			</effect_group>
 		</entity_class>
@@ -4656,7 +4656,7 @@
 		<entity_class name="zombieBossSiren" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,siren"/>			
-			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSpider.prefab"/>
+			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBurnt.prefab"/>
 			<property name="SizeScale" value="1.7"/>			
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreCoalBoulder"/>
 			<property name="ReplaceMaterial0" value="entities/electrical/materials/solarpanel"/>
@@ -5081,7 +5081,7 @@
 		<entity_class name="zombieSpecialBossSiren" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,siren,norail"/>
-			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSpider.prefab"/>
+			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBurnt.prefab"/>
 			<property name="SizeScale" value="2"/>
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreCoalBoulder"/>
 			<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/rad_eye.mat"/>
