@@ -367,44 +367,8 @@
 			</effect_group>
 		</item>		
 		<item name="donacion_Martillo_Divino">
-			<property name="Extends" value="meleeToolRepairT1ClawHammer"/>
+			<property name="Extends" value="myth_MartilloDivino"/>
 			<property name="Tags" value="melee,light,tool,attStrength,perkMiner69r,perkMotherLode,admin,canHaveCosmetic,miningTool"/>
-			<property name="DisplayType" value="meleeRepairTool"/>
-			<property name="CustomIcon" value="meleeToolRepairT1ClawHammer"/>
-			<property name="CustomIconTint" value="00AAE4"/>
-			<property name="TintColor" value="00AAE4"/>
-			<property name="CreativeMode" value="Dev"/>
-			<property name="ShowQuality" value="false"/>
-			<property name="ItemTypeIcon" value="star"/>
-			<property name="Material" value="Morganic"/>
-			<property name="SellableToTrader" value="false"/>
-			<property name="DescriptionKey" value="MDDesc"/>
-			<property name="UnlockedBy" value="HML"/>
-			<property name="Group" value="MSeries"/>
-			<property name="Candrop" value="false"/>
-			<property class="Action0">
-				<property name="Class" value="DynamicMelee"/>
-				<property name="Sphere" value=".1"/>
-				<property name="Sound_start" value="swoosh"/>
-				<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
-				<property name="GrazeStart" value=".12"/>
-				<property name="GrazeEnd" value=".3"/>
-				<property name="SwingDegrees" value="45"/>
-				<property name="SwingAngle" value="135"/>
-				<property name="UseGrazingHits" value="true"/>
-			</property>
-			<property class="Action1">
-				<property name="Range" value="15"/>
-				<property name="Sound_start" value="swoosh"/>
-				<property name="Class" value="Repair"/>
-				<property name="Delay" value=".10"/>
-				<property name="Repair_amount" value="7000"/>
-				<property name="Upgrade_hit_offset" value="-5"/>
-				<property name="Sound_start" value="repair_block"/>
-				<property name="Allowed_upgrade_items" value="resourceWood,resourceClayLump,resourceSnowBall,resourceScrapIron,resourceForgedIron,resourceForgedSteel,resourceConcreteMix,resourceCobblestones,ironDoor1_v1,vaultDoor01,scrapHatch_v1,vaultHatch_v1,resourceYuccaFibers,resourceCloth,resourceScrapPolymers,resourceNail"/>
-				<property name="UsePowerAttackAnimation" value="false"/>
-			</property>
-			<property name="RepairExpMultiplier" value="15"/>
 			<effect_group>
 				<passive_effect name="AttacksPerMinute" operation="base_set" value="300"/>
 				<passive_effect name="EntityDamage" operation="base_set" value="1"/>
@@ -412,7 +376,6 @@
 				<passive_effect name="MaxRange" operation="base_set" value="20"/>
 				<passive_effect name="MaxRange" operation="base_set" value="20" tags="secondary"/>
 				<passive_effect name="BlockRange" operation="base_set" value="20"/>
-				<!--<passive_effect name="PlayerExpGain" operation="perc_add" value="-.33"/>-->				<!--Regulate exp-->
 				<passive_effect name="StaminaLoss" operation="base_set" value="1" tags="primary"/>
 				<passive_effect name="PlayerExpGain" operation="base_set" value="10" tags="Harvesting"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1.5" tags="oreWoodHarvest"/>

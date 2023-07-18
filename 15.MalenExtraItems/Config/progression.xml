@@ -12,52 +12,34 @@
         <passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,5" value="1" tags="SPWK"/>
       </effect_group>
     </append>
-    
-  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Unlock Acid Recipe ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-    <append xpath="/progression/perks/perk[@name='perkPhysician']/effect_group">
-      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,4" value="1" tags="resourceAcid"/>
-    </append>
+      
+      <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add Acid Unlock ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+		<append xpath="/items/item[@name='resourceAcid']">
+			<property name="UnlockedBy" value="craftingMedical"/>
+			<property name="Group" value="Resources,Chemicals,CFChemicals"/>
+		</append>
 
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add Art of mining key for localitation ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
     <setattribute xpath="/progression/perks/book[@name='perkArtOfMiningComplete']" name="name_key">bafcom</setattribute>
 
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add 6k minerals bundles unlock ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
     <append xpath="/progression/perks/book[@name='perkArtOfMiningPallets']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,resourceClayLumpBundle,resourceCrushedSandBundle</append>
-    
+  
+
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ New Food Unlock ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/display_entry[@icon='foodCornOnTheCob,foodCornBread,foodGrilledMeat,foodBoiledMeat,foodBaconAndEggs']/unlock_entry[@unlock_tier='4']/@item">,foodBoiledChicken</append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/display_entry[@icon='drinkYuccaJuiceSmoothie,foodHoboStew,foodFishTacos,foodChiliDog,foodShamChowder']/unlock_entry[@unlock_tier='5']/@item">,foodCanTuna,foodCanSalmon,foodCanPeas,foodCanChicken,foodCanLamb,foodCanBeef,foodCanChili,foodCanStock,foodCanPasta,foodCanMiso,foodCanPears,foodCanSoup</append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/display_entry[@icon='foodTunaFishGravyToast,foodShepardsPie,drinkJarGrandpasLearningElixir,foodSpaghetti,foodGumboStew']/unlock_entry[@unlock_tier='3']/@item">,foodCanDogfood,foodCanCatfood</append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/display_entry[@icon='foodTunaFishGravyToast,foodShepardsPie,drinkJarGrandpasLearningElixir,foodSpaghetti,foodGumboStew']/unlock_entry[@unlock_tier='5']/@item">,foodSPEMomasSoup,foodSPEGrandmaSoup,foodSPETaquitos,foodSPEComercialCake,drinkSPEGrandmaTe</append>
-    
-
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/effect_group/passive_effect[@level='59,100']/@tags">,chefTier3</append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/effect_group/passive_effect[@level='80,100']/@tags">,chefTier4</append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/effect_group/passive_effect[@level='100,100']/@tags">,chefTier5</append>
-
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/display_entry[@icon='medicalFirstAidKit,drugAntibiotics,drugSteroids']/unlock_entry[@unlock_tier='3']/@item">,foodBoiledChicken</append>
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/effect_group/passive_effect[@level='100']/@tags">,chefTier5</append>
+  
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']">
+      <display_entry icon="bucketRiverWater" name_key="foodT5-1" has_quality="false" unlock_level="100" >
+        <unlock_entry item="agua_divina,foodSPEMomasSoup,foodSPEGrandmaSoup,foodSPETaquitos,foodSPEComercialCake,drinkSPEGrandmaTe" unlock_tier="1" />
+      </display_entry>
+    </append>
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingRobotics']/effect_group">
+      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="roboticsSkillMagazine"/>
+    </append>
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ New Chemical Unlock ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-
-  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add 10k minerals bundles unlock ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-    <append xpath="/progression/perks/book[@name='perkArtOfMiningComplete']">
-      <effect_group>
-        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="resourceClayLumpBundle15k,resourceRockSmallBundle10k,resourceWoodBundle10k,resourceScrapIronBundle10k,resourcePotassiumNitratePowderBundle10k,resourceLeadBundle10k,resourceCoalBundle10k,resourceOilShaleBundle10k,casinoCoinD,resourceCrushedSandBundle10k"/>
-      </effect_group>
-    </append>
-  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add 10k Gunpowder unlock to Demolition Expert ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-    <append xpath="/progression/perks/perk[@name='perkDemolitionsExpert']">
-      <effect_group>
-        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="5" value="1" tags="resourceGunPowderBundle10k"/>
-      </effect_group>
-    </append>
-
-  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add 1k ammo bundles unlock to their perks ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-    <append xpath="/progression/perks/book[@name='perkSniperComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,bammoBundle762mmBulletBall,bammoBundle762mmBulletHP,bammoBundle762mmBulletAP</append>
-    <append xpath="/progression/perks/book[@name='perkShotgunMessiahComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,bammoBundleShotgunShell,bammoBundleShotgunSlug,bammoBundleShotgunBreachingSlug</append>
-    <append xpath="/progression/perks/book[@name='perkPistolPeteComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,bammoBundle9mmBulletBall,bammoBundle9mmBulletAP,bammoBundle9mmBulletHP</append>
-    <append xpath="/progression/perks/book[@name='perkEnforcerComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,bammoBundle44MagnumBulletBall,bammoBundle44MagnumBulletHP,bammoBundle44MagnumBulletAP</append>
-
     <remove xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']"/>
-    
     <insertAfter xpath="/progression/crafting_skills/crafting_skill[@name='craftingArmor']">
       <crafting_skill name="craftingMedical" max_level="100" parent="attCrafting" name_key="craftingMedicalName" desc_key="craftingMedicalDesc" long_desc_key="craftingMedicalLongDesc" icon="ui_game_symbol_medical">
 
@@ -91,12 +73,29 @@
           <passive_effect name="RecipeTagUnlocked" operation="base_set" level="60,100" value="1" tags="drugAntibiotics"/>
           <passive_effect name="RecipeTagUnlocked" operation="base_set" level="75,100" value="1" tags="drugSteroids"/>
 
-          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100,100" value="1"	tags="chemiTier4"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1"	tags="chemiTier4"/>
         </effect_group>
       </crafting_skill>
     </insertAfter>
 
-
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add 10k minerals bundles unlock ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+    <append xpath="/progression/perks/book[@name='perkArtOfMiningComplete']">
+      <effect_group>
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="resourceClayLumpBundle15k,resourceRockSmallBundle10k,resourceWoodBundle10k,resourceScrapIronBundle10k,resourcePotassiumNitratePowderBundle10k,resourceLeadBundle10k,resourceCoalBundle10k,resourceOilShaleBundle10k,casinoCoinD,resourceCrushedSandBundle10k"/>
+      </effect_group>
+    </append>
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add 10k Gunpowder unlock to Demolition Expert ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/display_entry[@icon='gunExplosivesT3RocketLauncher']">
+      <unlock_entry item="resourceGunPowderBundle10k" unlock_tier="5"/>
+    </append>
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/effect_group">    
+      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="resourceGunPowderBundle10k"/>
+    </append>
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add 1k ammo bundles unlock to their perks ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+    <append xpath="/progression/perks/book[@name='perkSniperComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,bammoBundle762mmBulletBall,bammoBundle762mmBulletHP,bammoBundle762mmBulletAP</append>
+    <append xpath="/progression/perks/book[@name='perkShotgunMessiahComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,bammoBundleShotgunShell,bammoBundleShotgunSlug,bammoBundleShotgunBreachingSlug</append>
+    <append xpath="/progression/perks/book[@name='perkPistolPeteComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,bammoBundle9mmBulletBall,bammoBundle9mmBulletAP,bammoBundle9mmBulletHP</append>
+    <append xpath="/progression/perks/book[@name='perkEnforcerComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,bammoBundle44MagnumBulletBall,bammoBundle44MagnumBulletHP,bammoBundle44MagnumBulletAP</append>
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add Special SKILLS! ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
     <insertAfter xpath="/progression/attributes/attribute[@name='attIntellect']">
       <!--Attribute Special-->

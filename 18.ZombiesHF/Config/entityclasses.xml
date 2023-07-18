@@ -4398,11 +4398,7 @@
 			<property name="HandItem" value="meleeHandBOSS"/>
 			<property name="ExperienceGain" value="50000"/>
 			<property name="LootDropEntityClass" value="EntityLootContainerRegular"/>
-			<effect_group name="Base Effects">
-				<passive_effect name="HealthMax" operation="base_set" value="35000"/>
-				<passive_effect name="HealthMax" operation="perc_set" value="1"/>				
-				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
+			<effect_group name="Base Effects">	
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="TimeStayAfterDeath" value="0"/>
