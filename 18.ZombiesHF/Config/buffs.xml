@@ -1601,6 +1601,17 @@
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="p_fire_small"/>
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="p_burning_barrel"/>
 			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" target="self" particle="p_fire_small" local_offset="0,0,0" local_rotation="0,0,-50" parent_transform="LeftHand">
+					<requirement name="!HasParticle" particle="p_fire_small" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" target="self" particle="p_fire_small" local_offset="0,0,0" local_rotation="0,0,100" parent_transform="RightHand">
+					<requirement name="!HasParticle" particle="p_fire_small" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" target="self" particle="p_burning_barrel" local_offset="-0.1,0.6,0">
+					<requirement name="!HasParticle" particle="p_burning_barrel" />
+				</triggered_effect>								
+			</effect_group>					
 		</buff>
 		<buff name="ElementalFireSoldier" hidden="true">
 			<effect_group>
@@ -1610,6 +1621,17 @@
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="p_burning_barrel"/>
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="p_fire_small"/>
 			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" target="self" particle="p_fire_small" local_offset="0,0,0" local_rotation="0,0,-50" parent_transform="LeftHand">
+					<requirement name="!HasParticle" particle="p_fire_small" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" target="self" particle="p_fire_small" local_offset="0,0,0" local_rotation="0,0,100" parent_transform="RightHand">
+					<requirement name="!HasParticle" particle="p_fire_small" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" target="self" particle="p_burning_barrel" local_offset="-0.1,-1,1.50">
+					<requirement name="!HasParticle" particle="p_burning_barrel" />
+				</triggered_effect>								
+			</effect_group>				
 		</buff>
 		<buff name="ElementalFireSpider" hidden="true">
 			<effect_group>
@@ -1619,6 +1641,17 @@
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="p_burning_barrel"/>
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="p_fire_small"/>
 			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" target="self" particle="p_fire_small" local_offset="0,0,0" local_rotation="0,0,-50" parent_transform="LeftHand">
+					<requirement name="!HasParticle" particle="p_fire_small" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" target="self" particle="p_fire_small" local_offset="0,0,0" local_rotation="0,0,100" parent_transform="RightHand">
+					<requirement name="!HasParticle" particle="p_fire_small" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" target="self" particle="p_burning_barrel" local_offset="0,-0.25,0">
+					<requirement name="!HasParticle" particle="p_burning_barrel" />
+				</triggered_effect>								
+			</effect_group>				
 		</buff>
 		<buff name="ElementalFrozen" hidden="true">
 			<effect_group>
@@ -1656,6 +1689,24 @@
 				</triggered_effect>								
 			</effect_group>			
 		</buff>
+		<buff name="ElementalElectrical" hidden="true">
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_electric_shock" local_offset="0,0,0" local_rotation="0,0,-90" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_electric_shock" local_offset="0,0,0" local_rotation="0,0,-90" parent_transform="LeftHand"/>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/utilityElectricalBox_01Prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Head"/> -->
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_electric_shock" />
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_electric_shock" parent_transform="RightHand">
+					<requirement name="!HasParticle" particle="p_twitch_zombie_radiation_left" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_electric_shock" parent_transform="LeftHand">
+					<requirement name="!HasParticle" particle="p_twitch_zombie_radiation_left" />
+				</triggered_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_electric_shock" />
+			</effect_group>				
+		</buff>		
 		<buff name="DecoMiniBossToxic" hidden="true">
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelAcidPrefab" local_offset="-0.1,0,-0.3" local_rotation="90,-90,0" parent_transform="Spine"/>
