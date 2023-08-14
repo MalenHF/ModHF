@@ -1,3 +1,4 @@
+
 <configs>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Zombies dissapear ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<set xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='TimeStayAfterDeath']/@value">0</set>
@@ -165,6 +166,18 @@
 			<property name="LootListOnDeath" value="cirujanoBossCoutainer"/>
 			<property name="Faction" value="none"/>
 		</entity_class>
+		<entity_class name="zombieBossSpartanLootContainer">
+			<property name="HideInSpawnMenu" value="true"/>
+			<property name="Mesh" value="@:Entities/LootContainers/safeGunLargeFullPrefab.prefab"/>
+			<property name="ModelType" value="Custom"/>
+			<property name="Prefab" value="Backpack"/>
+			<property name="Class" value="EntityLootContainer"/>
+			<property name="Parent" value="Backpack"/>
+			<property name="IsEnemyEntity" value="false"/>
+			<property name="TimeStayAfterDeath" value="1500"/>
+			<property name="LootListOnDeath" value="spartanBossContainer"/>
+			<property name="Faction" value="none"/>
+		</entity_class>
 		<!-- END Added by HolyVentus -->
 		<!--Special Containers-->
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Special Bosses Containers ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
@@ -263,6 +276,18 @@
 			<property name="IsEnemyEntity" value="false"/>
 			<property name="TimeStayAfterDeath" value="1500"/>
 			<property name="LootListOnDeath" value="cirujanoShinyBossCoutainer"/>
+			<property name="Faction" value="none"/>
+		</entity_class>
+		<entity_class name="zombieBossSpartanLootContainerS">
+			<property name="HideInSpawnMenu" value="true"/>
+			<property name="Mesh" value="@:Entities/LootContainers/super_chestPrefab.prefab"/>
+			<property name="ModelType" value="Custom"/>
+			<property name="Prefab" value="Backpack"/>
+			<property name="Class" value="EntityLootContainer"/>
+			<property name="Parent" value="Backpack"/>
+			<property name="IsEnemyEntity" value="false"/>
+			<property name="TimeStayAfterDeath" value="1500"/>
+			<property name="LootListOnDeath" value="spartanShinyBossContainer"/>
 			<property name="Faction" value="none"/>
 		</entity_class>
 		<!-- END Added by HolyVentus -->
@@ -1505,7 +1530,7 @@
 			<property name="ArmsExplosionDamageMultiplier" value=".85"/>
 			<property name="HeadExplosionDamageMultiplier" value=".85"/>
 			<property name="ChestExplosionDamageMultiplier" value=".85"/>
-			<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>
+			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/> -->
 			<!--  Gameplay  -->
 			<!--  <property name="Buffs" value="zombieRadiatedBuff80"/>  -->
 			<property name="ExperienceGain" value="2500"/>
@@ -2940,7 +2965,7 @@
 			<property name="SizeScale" value="1.2"/>			
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreNitrateBoulder"/>
-			<property name="SurfaceCategory" value="snow"/>
+			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="2800"/>
@@ -2962,7 +2987,7 @@
 			<property name="SizeScale" value="1.2"/>			
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreNitrateBoulder"/>
-			<property name="SurfaceCategory" value="snow"/>
+			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="2800"/>
@@ -2984,7 +3009,7 @@
 			<property name="SizeScale" value="1.2"/>
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreNitrateBoulder"/>
-			<property name="SurfaceCategory" value="snow"/>
+			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="2800"/>
@@ -3006,7 +3031,7 @@
 			<property name="SizeScale" value="1.2"/>			
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreNitrateBoulder"/>
-			<property name="SurfaceCategory" value="snow"/>
+			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="2800"/>
@@ -3028,7 +3053,7 @@
 			<property name="SizeScale" value="1.2"/>
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreNitrateBoulder"/>
-			<property name="SurfaceCategory" value="snow"/>
+			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="2800"/>
@@ -3051,7 +3076,7 @@
 			<property name="SizeScale" value="1.2"/>
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreNitrateBoulder"/>
-			<property name="SurfaceCategory" value="snow"/>
+			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="2800"/>
@@ -3074,7 +3099,7 @@
 			<property name="SizeScale" value="1.2"/>			
 			<property name="MoveSpeed" value="0.8"/>
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreNitrateBoulder"/>
-			<property name="SurfaceCategory" value="snow"/>
+			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="2800"/>
@@ -3097,7 +3122,7 @@
 			<property name="SizeScale" value="1.2"/>			
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreNitrateBoulder"/>
-			<property name="SurfaceCategory" value="snow"/>
+			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="2800"/>
@@ -3121,7 +3146,7 @@
 			<property name="SizeScale" value="1.2"/>			
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreNitrateBoulder"/>
-			<property name="SurfaceCategory" value="snow"/>
+			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
 			<!--   Gameplay   -->
 			<property name="ExperienceGain" value="2800"/>
@@ -3144,7 +3169,7 @@
 			<property name="SizeScale" value="1.2"/>
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreNitrateBoulder"/>
-			<property name="SurfaceCategory" value="snow"/>
+			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="2800"/>
@@ -3167,7 +3192,7 @@
 			<property name="SizeScale" value="1.1"/>
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreNitrateBoulder"/>
-			<property name="SurfaceCategory" value="snow"/>				
+			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
 			<property name="ExperienceGain" value="2800"/>
 			<property name="LootDropProb" value=".28"/>
@@ -4117,6 +4142,48 @@
 			</effect_group>
 			<property name="TimeStayAfterDeath" value="0"/>
 		</entity_class>
+		<entity_class name="BossAngryCrawler" extends="zombieSteveCrawlerFeral">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie"/>
+			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZCrawlerFeral.prefab"/>
+			<property name="SizeScale" value="1.2"/>
+
+
+			<property name="AITask" value="
+			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
+			BreakBlock|
+			DestroyArea|			
+			ApproachSpot|
+			Look|
+			Wander|
+			Territorial|
+			"/>
+
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".7"/>
+			<property name="DismemberMultiplierArms" value=".7"/>
+			<property name="DismemberMultiplierLegs" value=".7"/>
+			<!-- Feral -->
+			<property name="PainResistPerHit" value="3"/>
+			<!-- Feral -->
+			<property name="HandItem" value="meleeHandBossCrawler"/>
+
+			<property name="ExperienceGain" value="2000"/>
+			<!-- XP grunt feral -->
+			<property name="LootDropProb" value="1"/>
+			<!-- Feral -->
+
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="70"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="30"/>
+				<!-- Zombie HP scale -->
+				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->				<!-- Feral damage -->
+			</effect_group>
+			<property name="TimeStayAfterDeath" value="0"/>
+		</entity_class>
 		<entity_class name="TAVOanimalChickenDemonFeralBOSS" extends="animalTemplateHostile">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="HideInSpawnMenu" value="true"/>
@@ -4613,6 +4680,7 @@
 			<property name="TimeStayAfterDeath" value="0"/>
 		</entity_class>
 		<entity_class name="zombieBossZombieKnight" extends="bossZombieTemplate">
+			<!-- vaultHatch01 probar ponerlo como escudo -->
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses,bossrad" />
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZThug.prefab"/>
@@ -4849,6 +4917,42 @@
 			<property name="DeadBodyHitPoints" value="30000"/>
 			<property name="TimeStayAfterDeath" value="0"/>
 		</entity_class>
+		<entity_class name="zombieBossSpartan" extends="bossZombieTemplate">			
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,feral,boss,bossrad"/>
+			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZWightFeral.prefab"/>
+			
+			<!-- INTERESANTE ESTE -->
+			<!-- <property name="ReplaceMaterial0" value="entities/buildings/materials/chimney"/> -->
+
+			<property name="SizeScale" value="1.5"/>
+			<property name="SizeScale" value="1.7"/>
+
+			<property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/>
+			<property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/>
+			<property name="SoundAttack" value="Enemies/Feral_Zombie/zombieferalattack"/>
+			<property name="SoundHurt" value="Enemies/Feral_Zombie/zombieferalpain"/>
+			<property name="SoundDeath" value="Enemies/Feral_Zombie/zombieferaldeath"/>
+			<property name="SoundSense" value="Enemies/Feral_Zombie/zombieferalsense"/>
+			<property name="WalkType" value="2"/>
+			<property name="MoveSpeedAggro" value="1.50, 1.80"/>
+			<property name="HandItem" value="meleeHandBOSS"/>
+			<property name="JumpMaxDistance" value="9, 16"/>
+			<property name="ExperienceGain" value="56000"/>
+			<property name="LootDropEntityClass" value="zombieBossSpartanLootContainer"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="35000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>					
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="55"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="spartanDeco"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffSpartan"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
+			</effect_group>
+			<property name="TimeStayAfterDeath" value="0"/>
+		</entity_class>	
 		<entity_class name="zombieBossSamurai" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="None"/>
 			<property name="SizeScale" value="1.7"/>
@@ -4913,18 +5017,23 @@
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="30000"/>
 			<property name="TimeStayAfterDeath" value="0"/>
-		</entity_class>
+		</entity_class>	
 		<!-- END Added by HolyVentus -->
 		<entity_class name="zombieBossAdminHF" extends="bossZombieTemplate">
-			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBiker.prefab"/>
+			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZLumberjackFeral.prefab"/>	
+			<property name="ReplaceMaterial0" value="particleeffects/models/materials/p_gib"/>
+			<property name="ReplaceMaterial1" value="particleeffects/models/materials/p_gib"/>
+			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZCopFeral.prefab"/>	 -->
+			<!-- <property name="ReplaceMaterial0" value="particleeffects/models/materials/p_gib"/>
+			<property name="ReplaceMaterial1" value="particleeffects/models/materials/p_gib"/> -->
+			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBiker.prefab"/> -->
+			<!-- <property name="ReplaceMaterial0" value="entities/resources/materials/oreCoalBoulder"/> -->
+			<!-- <property name="ReplaceMaterial0" value="MresourceScrapBrassSmall"/> -->
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="SizeScale" value="1.8"/>
 			<property name="Tags" value="entity,zombie,walker,boss,feral,bossrad"/>			
 			<property name="WalkType" value="2"/>
 			<property name="HasRagdoll" value="true"/>
-			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZLumberjackFeral.prefab"/>	
-			<property name="ReplaceMaterial0" value="particleeffects/models/materials/p_gib"/>
-			<property name="ReplaceMaterial1" value="particleeffects/models/materials/p_gib"/>
 			<property name="AITask" value="
 			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal,0,EntityAnimal|
 			RangedAttackTarget itemType=1;cooldown=5;duration=4|
@@ -4959,6 +5068,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffmummy"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffglad"/>		-->
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="adminDeco"/>
+				<!-- <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="adminDeco2_test1"/> -->
 
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
@@ -5303,6 +5413,46 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffHolyAuraSP"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
+			<property name="TimeStayAfterDeath" value="0"/>
+		</entity_class>	
+		<entity_class name="zombieSpecialzombieBossSpartan" extends="bossZombieTemplate">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="SizeScale" value="1.8"/>
+			<property name="SizeScale" value="2"/>
+			
+			<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>
+			<property name="Tags" value="entity,zombie,boss,umazombie,bossrad,norail"/>
+			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZWightFeral.prefab"/>
+
+			<property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/>
+			<property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/>
+			<property name="SoundAttack" value="Enemies/Feral_Zombie/zombieferalattack"/>
+			<property name="SoundHurt" value="Enemies/Feral_Zombie/zombieferalpain"/>
+			<property name="SoundDeath" value="Enemies/Feral_Zombie/zombieferaldeath"/>
+			<property name="SoundSense" value="Enemies/Feral_Zombie/zombieferalsense"/>
+			<property name="WalkType" value="2"/>
+			<property name="StompsSpikes" value="true"/>
+			<property name="Mass" value="170"/>
+		
+			<property name="MoveSpeedAggro" value="1.6,2"/>
+			<property name="HandItem" value="meleeHandSpecialBOSS"/>
+			<property name="JumpMaxDistance" value="9, 16"/>
+			<property name="ExperienceGain" value="110000"/>
+			<property name="LootDropEntityClass" value="zombieBossSpartanLootContainerS"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="DistractionResistance" operation="base_set" value="0,0"/>
+				<passive_effect name="HealthMax" operation="base_set" value="70000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="55"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="0"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="20"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="spartanDeco"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffSpartan"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
+			</effect_group>
+			<property name="DeadBodyHitPoints" value="30000"/>
 			<property name="TimeStayAfterDeath" value="0"/>
 		</entity_class>
 		<entity_class name="zombieSpecialzombieBossSamurai" extends="bossZombieTemplate">
