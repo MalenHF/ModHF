@@ -1,6 +1,6 @@
 <configs>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Zombies dissapear ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-		<set xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='TimeStayAfterDeath']/@value">0</set>
+		<set xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='TimeStayAfterDeath']/@value">1</set>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Zombies Know Down player buff ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
 		<append xpath="/entity_classes/entity_class[@name='playerMale']">
 			<effect_group>
@@ -343,10 +343,11 @@
 			
 			<!-- IA -->
 			<property name="AITask" value="
+			BreakBlock|
+			DestroyArea|
+			Territorial|
 			RangedAttackTarget itemType=1;cooldown=4;duration=5|
 			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
-			BreakBlock|			
-			DestroyArea|	
 			ApproachSpot|
 			Look|
 			Wander|
@@ -362,7 +363,7 @@
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
-			<property name="DeadBodyHitPoints" value="30000000"/>
+			
 		</entity_class>
 		<entity_class name="TemplateHF_Zombie_Special_Soldier" extends="zombieSoldierFeral">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
@@ -396,7 +397,6 @@
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
-			<property name="DeadBodyHitPoints" value="30000000"/>
 		</entity_class>
 
 		<entity_class name="TemplateHF_Zombie_Special_Hawaiian" extends="zombieFatHawaiian">
@@ -431,7 +431,7 @@
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
-			<property name="DeadBodyHitPoints" value="30000000"/>
+
 		</entity_class>
 
 		<entity_class name="TemplateHF_Zombie_Special_Skater" extends="zombieSkateboarderFeral">
@@ -466,7 +466,7 @@
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
-			<property name="DeadBodyHitPoints" value="30000000"/>
+
 		</entity_class>		
 
 		<entity_class name="TemplateHF_Zombie_Special_TomClark" extends="zombieTomClarkFeral">
@@ -502,7 +502,7 @@
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
-			<property name="DeadBodyHitPoints" value="30000000"/>
+
 		</entity_class>
 
 		<entity_class name="TemplateHF_Zombie_Special_Burn" extends="zombieBurnt">
@@ -539,7 +539,7 @@
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
-			<property name="DeadBodyHitPoints" value="30000000"/>
+			
 		</entity_class>
 
 		<entity_class name="TemplateHF_Zombie_Special_Spider" extends="zombieSpiderFeral">
@@ -575,7 +575,7 @@
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
-			<property name="DeadBodyHitPoints" value="30000000"/>
+			
 		</entity_class>
 
 		<entity_class name="TemplateHF_Zombie_Special_Nurse" extends="zombieNurse">
@@ -611,7 +611,7 @@
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
-			<property name="DeadBodyHitPoints" value="30000000"/>
+			
 		</entity_class>
 
 		<entity_class name="TemplateHF_Zombie_Special_Hazmat" extends="zombieMaleHazmatFeral">
@@ -647,7 +647,7 @@
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
-			<property name="DeadBodyHitPoints" value="30000000"/>
+			
 		</entity_class>
 
 		<entity_class name="TemplateHF_Zombie_Special_Wight" extends="zombieWightFeral">
@@ -683,7 +683,7 @@
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
-			<property name="DeadBodyHitPoints" value="30000000"/>
+			
 		</entity_class>
 
 		<entity_class name="TemplateHF_Zombie_Special_Demolition" extends="zombieDemolition">
@@ -741,7 +741,7 @@
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
-			<property name="DeadBodyHitPoints" value="30000000"/>
+			
 		</entity_class>
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
@@ -764,6 +764,7 @@
 
 			<property name="AITask" value="
 			BreakBlock|
+			DestroyArea|
 			Territorial|			
 			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 			ApproachSpot|
@@ -847,7 +848,7 @@
 			<property name="MoveSpeedAggro" value="2.7, 3.7"/>
 			<property name="MoveSpeedPanic" value="3.5"/>
 			<property name="ExperienceGain" value="1200"/>
-			<property name="DeadBodyHitPoints" value="300"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="25"/>
 			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="50"/>
@@ -875,6 +876,7 @@
 			<property name="PhysicsBody" value="chicken"/>
 			<property name="AITask" value="
 			BreakBlock|
+			DestroyArea|
 			Territorial|			
 			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 			ApproachSpot|
@@ -906,7 +908,7 @@
 			<property name="MoveSpeedAggro" value="2.9, 3.9"/>
 			<property name="MoveSpeedPanic" value="3.5"/>
 			<property name="ExperienceGain" value="1200"/>
-			<property name="DeadBodyHitPoints" value="300"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="25"/>
 			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="50"/>
@@ -934,6 +936,7 @@
 			<property name="PhysicsBody" value="chicken"/>
 			<property name="AITask" value="
 			BreakBlock|
+			DestroyArea|
 			Territorial|			
 			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 			ApproachSpot|
@@ -965,7 +968,7 @@
 			<property name="MoveSpeedAggro" value="2.9, 3.9"/>
 			<property name="MoveSpeedPanic" value="3.5"/>
 			<property name="ExperienceGain" value="1200"/>
-			<property name="DeadBodyHitPoints" value="300"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="25"/>
 			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="50"/>
@@ -994,6 +997,7 @@
 			<property name="PhysicsBody" value="chicken"/>
 			<property name="AITask" value="
 			BreakBlock|
+			DestroyArea|
 			Territorial|			
 			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 			ApproachSpot|
@@ -1025,7 +1029,7 @@
 			<property name="MoveSpeedAggro" value="2.9, 3.9"/>
 			<property name="MoveSpeedPanic" value="3.5"/>
 			<property name="ExperienceGain" value="1200"/>
-			<property name="DeadBodyHitPoints" value="300"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="25"/>
 			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="50"/>
@@ -1053,6 +1057,7 @@
 			<property name="PhysicsBody" value="chicken"/>
 			<property name="AITask" value="
 			BreakBlock|
+			DestroyArea|
 			Territorial|			
 			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 			ApproachSpot|
@@ -1084,7 +1089,7 @@
 			<property name="MoveSpeedAggro" value="2.9, 3.9"/>
 			<property name="MoveSpeedPanic" value="3.5"/>
 			<property name="ExperienceGain" value="1200"/>
-			<property name="DeadBodyHitPoints" value="300"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="25"/>
 			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="50"/>
@@ -1113,6 +1118,7 @@
 			<property name="PhysicsBody" value="chicken"/>
 			<property name="AITask" value="
 			BreakBlock|
+			DestroyArea|
 			Territorial|			
 			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 			ApproachSpot|
@@ -1143,7 +1149,7 @@
 			<property name="MoveSpeedAggro" value="2.9, 3.9"/>
 			<property name="MoveSpeedPanic" value="3.5"/>
 			<property name="ExperienceGain" value="1200"/>
-			<property name="DeadBodyHitPoints" value="300"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="25"/>
 			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="50"/>
@@ -1202,7 +1208,7 @@
 			<property name="AttackTimeoutNight" value="1.1"/>
 
 			<property name="ExperienceGain" value="5900"/>
-			<property name="DeadBodyHitPoints" value="350"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="80"/>
 			<!-- animalSnake -->
@@ -1260,7 +1266,7 @@
 			<property name="AttackTimeoutNight" value="1.1"/>
 
 			<property name="ExperienceGain" value="4000"/>
-			<property name="DeadBodyHitPoints" value="2000"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="300"/>
 			<!-- animalZombieSNAKE -->
@@ -1297,6 +1303,7 @@
 			<property name="AITask" value="
 			Leap|
 			BreakBlock|
+			DestroyArea|
 			Territorial|			
 			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 			ApproachSpot|
@@ -1353,15 +1360,7 @@
 			<property name="AvatarController" value="AvatarAnimalController"/>
 			<property name="SoundRandom" value="demolitionzroam"/>
 			<property name="SoundAlert" value="demolitionzalert"/>
-			<property name="AITask-1" value="BreakBlock"/>
-			<property name="AITask-2" value="DestroyArea"/>
-			<property name="AITask-3" value="Territorial"/>
-			<property name="AITask-4" value="ApproachDistraction"/>
-			<property name="AITask-5" value="ApproachAndAttackTarget" data="class=EntityAnimalStag,40,EntityPlayer,0,EntityNPC,0"/>
-			<property name="AITask-6" value="ApproachSpot"/>
-			<property name="AITask-7" value="Look"/>
-			<property name="AITask-8" value="Wander"/>
-			<property name="AITask-9" value=""/>
+
 			<property name="AITask" value="
 			BreakBlock|
 			DestroyArea|
@@ -1386,7 +1385,7 @@
 			<property name="HandItem" value="meleeHandAnimalZombieBearLEGENDARY"/>
 			<property name="ExperienceGain" value="30000"/>
 			<!-- XP strong -->
-			<property name="DeadBodyHitPoints" value="1500"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="200"/>
 			<drop event="Harvest" name="resourceLeather" tag="allToolsHarvest" count="100"/>
@@ -1448,10 +1447,11 @@
 			<property name="MoveSpeedAggro" value=".7, 1.0"/>
 			<!--  chasing a target min/max (like day or night) -->
 			<property name="AITask" value="
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal,0,EntityAnimal|
-			Leap|
 			BreakBlock|
 			DestroyArea|
+			Territorial|
+			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal,0,EntityAnimal|
+			Leap|			
 			ApproachSpot|
 			Territorial|
 			Look|
@@ -1472,7 +1472,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="DeadBodyHitPoints" value="1000"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
 		</entity_class>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
@@ -2003,10 +2003,12 @@
 			<property name="WalkType" value="3"/>
 			<property name="Class" value="EntityZombieCop"/>
 
-			<property name="AITask" value="			
+			<property name="AITask" value="	
+			BreakBlock|
+			DestroyArea|
+			Territorial|		
 			RangedAttackTarget itemType=1;cooldown=3;duration=3|
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
-			BreakBlock|			
+			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|		
 			ApproachSpot|
 			Look|
 			Wander|
@@ -3551,9 +3553,11 @@
 			<property name="WalkType" value="5"/>
 
 			<property name="AITask" value="			
+			BreakBlock|
+			DestroyArea|
+			Territorial|
 			RangedAttackTarget itemType=1;cooldown=4;duration=4|
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
-			BreakBlock|			
+			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|		
 			ApproachSpot|
 			Look|
 			Wander|
@@ -3644,6 +3648,8 @@
 
 			<property name="AITask" value="
 			BreakBlock|
+			DestroyArea|
+			Territorial|
 			RangedAttackTarget itemType=1;cooldown=4;duration=20|
 			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 			ApproachSpot|
@@ -3776,6 +3782,8 @@
 			<property name="AITask" value="
 			Leap|
 			BreakBlock|
+			DestroyArea|
+			Territorial|
 			RangedAttackTarget itemType=1;cooldown=4;duration=4|
 			ApproachAndAttackTarget class=EntityPlayer,10,EntityBandit,0,EntityEnemyAnimal|
 			ApproachSpot|
@@ -3828,6 +3836,8 @@
 			<property name="AITask" value="
 			Leap|
 			BreakBlock|
+			DestroyArea|
+			Territorial||
 			RangedAttackTarget itemType=1;cooldown=4;duration=8|
 			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 			ApproachSpot|
@@ -3898,7 +3908,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="2"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="DeadBodyHitPoints" value="1000"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
 		</entity_class>
 		<!-- MiniBomber -->
@@ -3915,6 +3925,8 @@
 
 			<property name="AITask" value="
 			BreakBlock|
+			DestroyArea|
+			Territorial|
 			RangedAttackTarget itemType=1;cooldown=3;duration=3|
 			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 			ApproachSpot|
@@ -3999,13 +4011,13 @@
 
 
 			<property name="AITask" value="
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 			BreakBlock|
-			DestroyArea|			
+			DestroyArea|
+			Territorial|
+			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 			ApproachSpot|
 			Look|
 			Wander|
-			Territorial|
 			"/>
 
 			<property name="AITarget" value="
@@ -4035,7 +4047,7 @@
 			<property name="MoveSpeedAggro" value="0.7, 1"/>
 			<property name="MoveSpeedPanic" value="1, 1.5"/>
 			<property name="ExperienceGain" value="45000"/>
-			<property name="DeadBodyHitPoints" value="300"/>
+
 
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="10000"/>
@@ -4045,7 +4057,7 @@
 
 			<property name="NavObject" value="animaltracking_chicken" />
 			<property name="TimeStayAfterDeath" value="0"/>
-			<property name="DeadBodyHitPoints" value="90000"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 		</entity_class>
 		<entity_class name="BossCrawler" extends="zombieSteveCrawler">
 			<property name="UserSpawnType" value="Menu"/>
@@ -4055,13 +4067,13 @@
 
 
 			<property name="AITask" value="
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 			BreakBlock|
-			DestroyArea|			
+			DestroyArea|
+			Territorial|
+			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|	
 			ApproachSpot|
 			Look|
 			Wander|
-			Territorial|
 			"/>
 
 			<!-- Gameplay -->
@@ -4104,6 +4116,7 @@
 	
 			<property name="AITask" value="
 			BreakBlock|
+			DestroyArea|
 			Territorial|
 			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|						
 			ApproachSpot|
@@ -4136,7 +4149,7 @@
 			<property name="MoveSpeedAggro" value="2.9, 3.9"/>
 			<property name="MoveSpeedPanic" value="3.5"/>
 			<property name="ExperienceGain" value="3000"/>
-			<property name="DeadBodyHitPoints" value="300"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="25"/>
 			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="50"/>
@@ -4271,10 +4284,11 @@
 			<property name="ExperienceGain" value="10000"/>
 		
 			<property name="AITask" value="
-			RangedAttackTarget itemType=1;cooldown=4;duration=5|
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 			BreakBlock|
-			DestroyArea|									
+			DestroyArea|
+			Territorial|
+			RangedAttackTarget itemType=1;cooldown=4;duration=5|
+			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|									
 			ApproachSpot|
 			Look|
 			Wander|	
@@ -4366,7 +4380,7 @@
 			<property name="KnockdownProneDamageThreshold" value="3"/>
 			<property name="KnockdownKneelDamageThreshold" value="3"/>
 			<property name="LootDropProb" value="1"/>
-			<property name="DeadBodyHitPoints" value="30000"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="3"/>
 			<property name="ParticleOnDeath" value="blood_death"/>
 			<property name="StompsSpikes" value="true"/>
@@ -4381,9 +4395,10 @@
 			<property name="SoundSense" value="Enemies/Base_Zombie_Male2/zombiemale2sense"/>
 
 			<property name="AITask" value="
-			ApproachAndAttackTarget class=EntityPlayer,30,EntityBandit,0,EntityEnemyAnimal,0,EntityAnimal|
 			BreakBlock|
 			DestroyArea|
+			Territorial|
+			ApproachAndAttackTarget class=EntityPlayer,30,EntityBandit,0,EntityEnemyAnimal,0,EntityAnimal|		
 			ApproachSpot|
 			Look|
 			Wander|
@@ -4402,7 +4417,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="TimeStayAfterDeath" value="0"/>
-			<property name="DeadBodyHitPoints" value="30000000"/>
+			
 		</entity_class>
 		<entity_class name="zombieBossPractoSpider" extends="zombieSpider">
 			<property name="UserSpawnType" value="Menu"/>
@@ -4436,10 +4451,10 @@
 
 			<property name="AITask" value="
 			Leap|
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 			BreakBlock|
 			DestroyArea|
-			Territorial|			
+			Territorial|
+			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 			ApproachSpot|
 			Look|
 			Wander|
@@ -4462,9 +4477,10 @@
 			<property name="ExperienceGain" value="45000"/>
 
 			<property name="HandItem" value="meleeHandZombieIronSpiderFeral"/>
+
 			<property name="LootDropEntityClass" count="1" value="PractoLootContainer"/>
 			<property name="LootDropProb" value="1"/>
-
+			<!--
 			<drop event="Harvest" name="resourceRawDiamond" count="0" tool_category="Disassemble"/>
 			<drop event="Harvest" name="resourceSteelPolishR" tag="allToolsHarvest" count="1,10"/>
 			<drop event="Harvest" name="oldCash" tag="allToolsHarvest" count="10,35"/>
@@ -4477,7 +4493,8 @@
 			<drop event="Harvest" name="resourceRawDiamond" prob=".20" count="3" tag="artOfMiningLuckyStrikeHarvest"/>
 			<drop event="Harvest" name="resourceGoldNugget" prob=".30" count="3" tag="artOfMiningLuckyStrikeHarvest"/>
 			<drop event="Harvest" name="resourceSilverNugget" prob=".40" count="3" tag="artOfMiningLuckyStrikeHarvest"/>
-			<property name="DeadBodyHitPoints" value="300000"/>
+			-->
+			<property name="DeadBodyHitPoints" value="1"/>
 			<effect_group name="Base Effects">
 				<!--<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="SPIDER2"/>-->
 				<passive_effect name="HealthMax" operation="base_set" value="35000"/>
@@ -4514,18 +4531,17 @@
 			<property name="CanClimbVertical" value="true"/>
 			<property name="JumpMaxDistance" value="1.5, 1.7"/>
 			<property name="ExperienceGain" value="32000"/>
-			<property name="DeadBodyHitPoints" value="300000"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="HandItem" value="meleeHandZombieIronSpiderFeral"/>
 			<property name="LootDropEntityClass" count="1" value="MineralLootContainer"/>
 			<property name="LootDropProb" value="1"/>
 			
 			<property name="AITask" value="
 			Leap|
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 			BreakBlock|
 			DestroyArea|
 			Territorial|
-			ApproachDistraction|			
+			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 			ApproachSpot|
 			Look|
 			Wander|
@@ -4535,7 +4551,7 @@
 			BlockingTargetTask|
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>
-
+			<!--
 			<drop event="Harvest" name="resourceRawDiamond" count="0" tool_category="Disassemble"/>
 			<drop event="Harvest" name="resourceSteelPolishR" tag="allToolsHarvest" count="1,10"/>
 			<drop event="Harvest" name="oldCash" tag="allToolsHarvest" count="10,35"/>
@@ -4547,6 +4563,7 @@
 			<drop event="Harvest" name="resourceRawDiamond" prob=".20" count="3" tag="artOfMiningLuckyStrikeHarvest"/>
 			<drop event="Harvest" name="resourceGoldNugget" prob=".30" count="3" tag="artOfMiningLuckyStrikeHarvest"/>
 			<drop event="Harvest" name="resourceSilverNugget" prob=".40" count="3" tag="artOfMiningLuckyStrikeHarvest"/>
+			-->
 			<effect_group name="Base Effects">
 				<!--<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="SPIDER"/>-->
 				<passive_effect name="HealthMax" operation="base_set" value="35000"/>
@@ -4581,7 +4598,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="DeadBodyHitPoints" value="30000"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
 		</entity_class>
 		<entity_class name="zombieBossZombieKnight" extends="bossZombieTemplate">
@@ -4683,9 +4700,10 @@
 
 			<property name="AITask" value="
 			Leap|
-			ApproachAndAttackTarget class=EntityPlayer,30,EntityBandit,0,EntityEnemyAnimal|			
 			BreakBlock|
-			DestroyArea|			
+			DestroyArea|
+			Territorial|
+			ApproachAndAttackTarget class=EntityPlayer,30,EntityBandit,0,EntityEnemyAnimal|			
 			ApproachSpot|
 			Look|
 			Wander|
@@ -4711,7 +4729,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="DeadBodyHitPoints" value="15000"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
 		</entity_class>
 		<entity_class name="zombieBossJuggernaut" extends="bossZombieTemplate">
@@ -4722,6 +4740,8 @@
 			<property name="WalkType" value="2"/>
 			<property name="AITask" value="
 			BreakBlock|
+			DestroyArea|
+			Territorial|
 			RangedAttackTarget itemType=1;cooldown=5;duration=4|
 			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 			ApproachSpot|
@@ -4788,7 +4808,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffHolyAura"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="DeadBodyHitPoints" value="30000"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
 		</entity_class>
 		<entity_class name="zombierBossCirujanoHorda" extends="bossZombieTemplate">
@@ -4818,7 +4838,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffHolyAuraHorda"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="DeadBodyHitPoints" value="30000"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
 		</entity_class>
 		<entity_class name="zombieBossSamurai" extends="bossZombieTemplate">
@@ -4840,10 +4860,10 @@
 			<property name="ExperienceGain" value="24000"/>
 
 			<property name="AITask" value="
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal,0,EntityAnimal|
 			BreakBlock|
 			DestroyArea|
-			Territorial|			
+			Territorial|
+			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal,0,EntityAnimal|
 			ApproachSpot|
 			Look|
 			Wander|
@@ -4883,7 +4903,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffSamurai"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="DeadBodyHitPoints" value="30000"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
 		</entity_class>
 		<!-- END Added by HolyVentus -->
@@ -4898,10 +4918,11 @@
 			<property name="ReplaceMaterial0" value="particleeffects/models/materials/p_gib"/>
 			<property name="ReplaceMaterial1" value="particleeffects/models/materials/p_gib"/>
 			<property name="AITask" value="
+			BreakBlock|
+			DestroyArea|
+			Territorial|
 			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal,0,EntityAnimal|
 			RangedAttackTarget itemType=1;cooldown=5;duration=4|
-			BreakBlock|
-			DestroyArea|			
 			ApproachSpot|
 			Look|
 			Wander|
@@ -4974,12 +4995,12 @@
 			<property name="AIPathCostScale" value=".6, 1"/>
 
 			<property name="AITask" value="
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|			
-			RangedAttackTarget itemType=1;cooldown=5;duration=4|
-			Leap|
 			BreakBlock|
 			DestroyArea|
 			Territorial|
+			RangedAttackTarget itemType=1;cooldown=5;duration=4|
+			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|			
+			Leap|
 			ApproachSpot|
 			Look|
 			Wander|
@@ -5004,7 +5025,7 @@
 			<property name="CanClimbVertical" value="true"/>
 			<property name="JumpMaxDistance" value="3, 5"/>
 			<property name="ExperienceGain" value="68000"/>
-			<property name="DeadBodyHitPoints" value="4500000"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 
 			<drop event="Harvest" name="resourceRawDiamond" count="0" tool_category="Disassemble"/>
 			<drop event="Harvest" name="oldCash" tag="allToolsHarvest" count="50,120"/>
@@ -5075,7 +5096,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 
 			</effect_group>
-			<property name="DeadBodyHitPoints" value="30000"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
 		</entity_class>
 		<entity_class name="zombieSpecialBossSiren" extends="bossZombieTemplate">
@@ -5116,7 +5137,7 @@
 			<property name="LootDropEntityClass" count="1" value="SirenLootContainerS"/>
 			<drop event="Harvest" name="resourceRawDiamond" count="0" tool_category="Disassemble"/>
 			<drop event="Harvest" name="resourceSteelPolishR" tag="allToolsHarvest" count="10"/>
-			<property name="DeadBodyHitPoints" value="15000"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="60000"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="60"/>				
@@ -5139,6 +5160,8 @@
 			<property name="WalkType" value="2"/>
 			<property name="AITask" value="
 			BreakBlock|
+			DestroyArea|
+			Territorial|
 			RangedAttackTarget itemType=1;cooldown=5;duration=4|
 			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 			ApproachSpot|
@@ -5241,7 +5264,7 @@
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->				<!-- Feral damage -->
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="DeadBodyHitPoints" value="30000"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
 		</entity_class>			
 		<!-- Added by HolyVentus -->
@@ -5324,7 +5347,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffSamuraiSP"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="DeadBodyHitPoints" value="30000"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
 		</entity_class>
 		<!-- END Added by HolyVentus -->
@@ -5337,10 +5360,11 @@
 			<property name="SizeScale" value="2.1"/>
 			<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>
 			<property name="AITask" value="
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal,0,EntityAnimal|
-			RangedAttackTarget itemType=1;cooldown=5;duration=4|
 			BreakBlock|
-			DestroyArea|			
+			DestroyArea|
+			Territorial|
+			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal,0,EntityAnimal|
+			RangedAttackTarget itemType=1;cooldown=5;duration=4|			
 			ApproachSpot|
 			Look|
 			Wander|
@@ -5450,7 +5474,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="DeadBodyHitPoints" value="30000"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
 		</entity_class>
 		<entity_class name="zombieBossAdminHFLobby" extends="bossZombieTemplate">
@@ -5464,10 +5488,11 @@
 			<property name="ReplaceMaterial0" value="particleeffects/models/materials/p_gib"/>
 			<property name="ReplaceMaterial1" value="particleeffects/models/materials/p_gib"/>
 			<property name="AITask" value="
+			BreakBlock|
+			DestroyArea|
+			Territorial|
 			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal,0,EntityAnimal|
 			RangedAttackTarget itemType=1;cooldown=5;duration=4|
-			BreakBlock|
-			DestroyArea|			
 			ApproachSpot|
 			Look|
 			Wander|
@@ -5540,7 +5565,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="DeadBodyHitPoints" value="30000"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
 		</entity_class>
 		<entity_class name="animalDiamonChicken" extends="animalTemplateTimid">
@@ -5568,7 +5593,7 @@
 			<!-- Gameplay  -->
 			<property name="MoveSpeedPanic" value="1.7"/>
 			<property name="ExperienceGain" value="5000"/>
-			<property name="DeadBodyHitPoints" value="175"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="q_Gallinazilla" tag="allToolsHarvest" count="1"/>
 			<effect_group name="Base Effects">
@@ -5591,9 +5616,10 @@
 			
 			<property name="AITask" value="
 			BreakBlock|
+			DestroyArea|
+			Territorial|
 			RangedAttackTarget itemType=1;cooldown=4;duration=5|
 			ApproachAndAttackTarget class=EntityPlayer,30,EntityBandit,0,EntityEnemyAnimal,0,EntityAnimal|
-			DestroyArea|
 			ApproachSpot|
 			Look|
 			Wander|
@@ -5721,9 +5747,10 @@
 			<property name="MaxTurnSpeed" value="150"/>
 
 			<property name="AITask" value="
-			ApproachAndAttackTarget class=EntityPlayer,200,EntityBandit,0,EntityEnemyAnimal,0,EntityAnimal|
 			BreakBlock|
 			DestroyArea|
+			Territorial|
+			ApproachAndAttackTarget class=EntityPlayer,200,EntityBandit,0,EntityEnemyAnimal,0,EntityAnimal|
 			ApproachSpot|	
 			Wander|
 			"/>
@@ -5773,7 +5800,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="5"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="DeadBodyHitPoints" value="100"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="0"/>
 		</entity_class>
 		<entity_class name="zombiePsycho" extends="zombieLumberjackRadiated">			<!-- + 10% hits and gains -->
@@ -5817,6 +5844,8 @@
 
 			<property name="AITask" value="
 			BreakBlock|
+			DestroyArea|
+			Territorial|
 			RangedAttackTarget itemType=1;cooldown=5;duration=4|
 			ApproachAndAttackTarget class=EntityPlayer,30,EntityBandit,0,EntityEnemyAnimal,0,EntityAnimal|			
 			ApproachSpot|

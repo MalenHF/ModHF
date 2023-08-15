@@ -37,16 +37,17 @@
 			<property name="Material" value="Mbedrock"/>
 			<property name="Shape" value="Terrain"/>
 			<property name="Mesh" value="terrain"/>
-			<property name="Texture" value="1"/>
+			<property name="Texture" value="10"/>  
+            <property name="Map.Color" value="204,177,131"/>   
 			<property name="ImposterExclude" value="true"/>
 			<drop event="Destroy" count="0"/>
 			<property name="CanMobsSpawnOn" value="false"/>
 			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
 			<property name="DisplayType" value="blockTerrain"/>
 			<property name="CustomIcon" value="terrStone"/>
-            <property name="StabilityFull" value="true"/>
-            <property name="Texture" value="1"/>            
+            <property name="StabilityFull" value="true"/>            
 			<!--
+                <property name="Texture" value="1"/>
             <property name="Texture" value="10"/>  
             <property name="Map.Color" value="204,177,131"/>               
             -->
@@ -1245,14 +1246,10 @@
 			<property name="Extends" value="iDBCircularButton" />			
 		</block>
 
-        <block name="iDBExtra1">
-			<property name="Extends" value="iDBPowerSwitch01" />
-			<property name="Texture" value="596"/>
-			<property name="CustomIcon" value="shapepillar50Plate" />
-			<property name="Powered" value="false"/>
-			<property name="Material" value="Mbedrock" />
-			<property name="Shape" value="New"/>
-			<property name="Model" value="pillar50_plate"/>
+        <block name="iDBQuestBlock">
+			<property name="Extends" value="iDB_stainlessSteelBlock" />
+            <property name="BuffsWhenWalkedOn" value="buffQuest"/>  			
+			
 		</block>
         <block name="iDBExtra2">
 			<property name="Extends" value="iDBPowerSwitch01" />

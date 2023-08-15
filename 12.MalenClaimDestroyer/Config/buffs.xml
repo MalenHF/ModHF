@@ -24,6 +24,19 @@
 				<passive_effect name="BuffBlink" operation="base_set" value="2" tags="twitch_buffNoDriving"/>
 			</effect_group>
 		</buff>
+		<buff name="buffQuest" name_key="buffQuestName" description_key="buffQuestDesc" icon="ui_game_symbol_adventure">
+			<stack_type value="ignore"/>
+			<duration value="5"/>
+			<effect_group>
+				<passive_effect name="NoVehicle" operation="base_set" value="1" />
+			</effect_group>
+			<effect_group>
+				<requirement name="StatCompareCurrent" stat="Health" operation="GTE" value="5"/>
+				<requirement name="IsAttachedToEntity" />
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="10"/>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" tags="twitch_buffNoDriving"/>
+			</effect_group>
+		</buff>
 		<buff name="hfEventRoom" name_key="Event Buff" description_key="Event debuff" icon="ui_game_twitch_special" icon_color="217,255,4">
 			<stack_type value="ignore"/>
 			<duration value="5"/>

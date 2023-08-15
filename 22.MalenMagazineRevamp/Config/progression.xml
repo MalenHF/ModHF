@@ -1,6 +1,6 @@
 <configs>
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Unlock Acid Recipe ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/display_entry[@icon='medicalFirstAidKit,drugAntibiotics,drugSteroids']/unlock_entry[@unlock_tier='3']/@item">,resourceAcid</append>
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/display_entry[@name_key='medicalT3-1,medicalT3-2,medicalT3-3']/unlock_entry[@unlock_tier='3']/@item">,resourceAcid</append>
     <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/effect_group/passive_effect[@level='75,100']/@tags">,resourceAcid</append>
   
 
@@ -26,125 +26,191 @@
       <passive_effect name="RecipeTagUnlocked" operation="base_set" level="50" value="1" tags="repairToolsSkillMagazine"/>
     </append>
     <!--Salvage-->
-    <set  xpath="/progression/crafting_skills/crafting_skill[@name='craftingSalvageTools']/@max_level">100</set>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSalvageTools']">
-      <display_entry item="salvageToolsSkillMagazine" unlock_level="100" />
-    </append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSalvageTools']/effect_group">
-      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="salvageToolsSkillMagazine"/>
-    </append>
+      <set  xpath="/progression/crafting_skills/crafting_skill[@name='craftingSalvageTools']/@max_level">100</set>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSalvageTools']">
+        <display_entry item="salvageToolsSkillMagazine" unlock_level="100" />
+      </append>
+      <remove xpath="/progression/crafting_skills/crafting_skill[@name='craftingSalvageTools']/effect_group"/>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSalvageTools']">      
+        <effect_group>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,100" value="1" tags="meleeToolSalvageT1Wrench"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="22,100" value="1" tags="meleeToolSalvageT2Ratchet"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="47,100" value="1" tags="meleeToolSalvageT3ImpactDriver"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="salvageToolsSkillMagazine"/>
+          <passive_effect name="CraftingTier" operation="base_add" level="6,11,16,21,75" value="1,2,3,4,4" tags="meleeToolSalvageT1Wrench"/>
+          <passive_effect name="CraftingTier" operation="base_add" level="28,34,40,46,75" value="1,2,3,4,4" tags="meleeToolSalvageT2Ratchet"/>
+          <passive_effect name="CraftingTier" operation="base_add" level="54,61,68,75" value="1,2,3,4" tags="meleeToolSalvageT3ImpactDriver"/>
+          </effect_group>
+      </append>
     <!--Knuckles-->
-    <set  xpath="/progression/crafting_skills/crafting_skill[@name='craftingKnuckles']/@max_level">100</set>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingKnuckles']">
-      <display_entry item="knucklesSkillMagazine" unlock_level="100" />
-    </append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingKnuckles']/effect_group">
-      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="knucklesSkillMagazine"/>
-    </append>
+      <set  xpath="/progression/crafting_skills/crafting_skill[@name='craftingKnuckles']/@max_level">100</set>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingKnuckles']">
+        <display_entry item="knucklesSkillMagazine" unlock_level="100" />
+      </append>
+      <remove xpath="/progression/crafting_skills/crafting_skill[@name='craftingKnuckles']/effect_group"/>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingKnuckles']">      
+        <effect_group>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,100" value="1" tags="meleeWpnKnucklesT0LeatherKnuckles"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,100" value="1" tags="meleeWpnKnucklesT1IronKnuckles"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="39,100" value="1" tags="meleeWpnKnucklesT3SteelKnuckles"/>
+
+          <passive_effect name="CraftingTier" operation="base_add" level="3,5,7,10,75" value="1,2,3,4,4" tags="meleeWpnKnucklesT0LeatherKnuckles"/>
+          <passive_effect name="CraftingTier" operation="base_add" level="17,24,31,38,75" value="1,2,3,4,4" tags="meleeWpnKnucklesT1IronKnuckles"/>
+          <passive_effect name="CraftingTier" operation="base_add" level="48,57,66,75" value="1,2,3,4" tags="meleeWpnKnucklesT3SteelKnuckles"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="knucklesSkillMagazine"/>
+        </effect_group>
+      </append>
     <!--Blades-->
-    <set  xpath="/progression/crafting_skills/crafting_skill[@name='craftingBlades']/@max_level">100</set>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingBlades']">
-      <display_entry item="bladesSkillMagazine" unlock_level="100" />
-    </append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingBlades']/effect_group">
-      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="bladesSkillMagazine"/>
-    </append>
+      <set  xpath="/progression/crafting_skills/crafting_skill[@name='craftingBlades']/@max_level">100</set>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingBlades']">
+        <display_entry item="bladesSkillMagazine" unlock_level="100" />
+      </append>
+      <remove xpath="/progression/crafting_skills/crafting_skill[@name='craftingBlades']/effect_group"/>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingBlades']">
+        
+        <effect_group>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,100" value="1" tags="meleeWpnBladeT0BoneKnife"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,100" value="1" tags="meleeWpnBladeT1HuntingKnife"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="39,100" value="1" tags="meleeWpnBladeT3Machete"/>
+
+          <passive_effect name="CraftingTier" operation="base_add" level="3,5,7,10,75" value="1,2,3,4,4" tags="meleeWpnBladeT0BoneKnife"/>
+          <passive_effect name="CraftingTier" operation="base_add" level="17,24,31,38,75" value="1,2,3,4,4" tags="meleeWpnBladeT1HuntingKnife"/>
+          <passive_effect name="CraftingTier" operation="base_add" level="48,57,66,75" value="1,2,3,4" tags="meleeWpnBladeT3Machete"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="bladesSkillMagazine"/>
+        </effect_group>
+      </append>
     <!--Clubs-->
-    <set  xpath="/progression/crafting_skills/crafting_skill[@name='craftingClubs']/@max_level">100</set>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingClubs']">
-      <display_entry item="clubsSkillMagazine" unlock_level="100" />
-    </append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingClubs']/effect_group">
-      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="clubsSkillMagazine"/>
-    </append>
+      <set  xpath="/progression/crafting_skills/crafting_skill[@name='craftingClubs']/@max_level">100</set>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingClubs']">
+        <display_entry item="clubsSkillMagazine" unlock_level="100" />
+      </append>
+      <remove xpath="/progression/crafting_skills/crafting_skill[@name='craftingClubs']/effect_group"/>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingClubs']">
+      
+        <effect_group>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,100" value="1" tags="meleeWpnClubT0WoodenClub"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,100" value="1" tags="meleeWpnClubT1BaseballBat"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="39,100" value="1" tags="meleeWpnClubT3SteelClub"/>
+
+          <passive_effect name="CraftingTier" operation="base_add" level="3,5,7,10,75" value="1,2,3,4,4" tags="meleeWpnClubT0WoodenClub"/>
+          <passive_effect name="CraftingTier" operation="base_add" level="17,24,31,38,75" value="1,2,3,4,4" tags="meleeWpnClubT1BaseballBat"/>
+          <passive_effect name="CraftingTier" operation="base_add" level="48,57,66,75" value="1,2,3,4" tags="meleeWpnClubT3SteelClub"/>
+            <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="clubsSkillMagazine"/>
+        </effect_group>
+      </append>
     <!--sledgehammers-->
-    <set  xpath="/progression/crafting_skills/crafting_skill[@name='craftingSledgehammers']/@max_level">100</set>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSledgehammers']">
-      <display_entry item="sledgehammersSkillMagazine" unlock_level="100" />
-    </append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSledgehammers']/effect_group">
-      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="sledgehammersSkillMagazine"/>
-    </append>
+      <set  xpath="/progression/crafting_skills/crafting_skill[@name='craftingSledgehammers']/@max_level">100</set>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSledgehammers']">
+        <display_entry item="sledgehammersSkillMagazine" unlock_level="100" />
+      </append>
+      <remove xpath="/progression/crafting_skills/crafting_skill[@name='craftingSledgehammers']/effect_group"/>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSledgehammers']">
+        
+        <effect_group>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,100" value="1" tags="meleeWpnSledgeT0StoneSledgehammer"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,100" value="1" tags="meleeWpnSledgeT1IronSledgehammer"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="39,100" value="1" tags="meleeWpnSledgeT3SteelSledgehammer"/>
+
+          <passive_effect name="CraftingTier" operation="base_add" level="3,5,7,10,75" value="1,2,3,4,4" tags="meleeWpnSledgeT0StoneSledgehammer"/>
+          <passive_effect name="CraftingTier" operation="base_add" level="17,24,31,38,75" value="1,2,3,4,4" tags="meleeWpnSledgeT1IronSledgehammer"/>
+          <passive_effect name="CraftingTier" operation="base_add" level="48,57,66,75" value="1,2,3,4" tags="meleeWpnSledgeT3SteelSledgehammer"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="sledgehammersSkillMagazine"/>
+        </effect_group>
+      </append>
     <!--Spears-->
-    <set  xpath="/progression/crafting_skills/crafting_skill[@name='craftingSpears']/@max_level">100</set>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSpears']">
-      <display_entry item="spearsSkillMagazine" unlock_level="100" />
-    </append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSpears']/effect_group">
-      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="spearsSkillMagazine"/>
-    </append>
-    <!--Spears-->
-    <set  xpath="/progression/crafting_skills/crafting_skill[@name='craftingSpears']/@max_level">100</set>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSpears']">
-      <display_entry item="spearsSkillMagazine" unlock_level="100" />
-    </append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSpears']/effect_group">
-      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="spearsSkillMagazine"/>
-    </append>
+      <set  xpath="/progression/crafting_skills/crafting_skill[@name='craftingSpears']/@max_level">100</set>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSpears']">
+        <display_entry item="spearsSkillMagazine" unlock_level="100" />
+      </append>
+      <remove xpath="/progression/crafting_skills/crafting_skill[@name='craftingSpears']/effect_group"/>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSpears']">
+        
+        <effect_group>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,100" value="1" tags="meleeWpnSpearT0StoneSpear"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,100" value="1" tags="meleeWpnSpearT1IronSpear"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="39,100" value="1" tags="meleeWpnSpearT3SteelSpear"/>
+
+          <passive_effect name="CraftingTier" operation="base_add" level="3,5,7,10,75" value="1,2,3,4,4" tags="meleeWpnSpearT0StoneSpear"/>
+          <passive_effect name="CraftingTier" operation="base_add" level="17,24,31,38,75" value="1,2,3,4,4" tags="meleeWpnSpearT1IronSpear"/>
+          <passive_effect name="CraftingTier" operation="base_add" level="48,57,66,75" value="1,2,3,4" tags="meleeWpnSpearT3SteelSpear"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="spearsSkillMagazine"/>
+        </effect_group>
+      </append>
     <!--Bow-->
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingBows']">
-      <display_entry item="bowsSkillMagazine" unlock_level="100" />
-    </append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingBows']/effect_group">
-      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="handgunsSkillMagazine"/>
-    </append>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingBows']">
+        <display_entry item="bowsSkillMagazine" unlock_level="100" />
+      </append>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingBows']/effect_group">
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="bowsSkillMagazine"/>
+      </append>
     <!--Guns-->
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingHandguns']">
-      <display_entry item="bowsSkillMagazine" unlock_level="100" />
-    </append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingHandguns']/effect_group">
-      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="shotgunsSkillMagazine"/>
-    </append>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingHandguns']">
+        <display_entry item="handgunsSkillMagazine" unlock_level="100" />
+      </append>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingHandguns']/effect_group">
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="handgunsSkillMagazine"/>
+      </append>
     <!--Shotguns-->
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingShotguns']">
-      <display_entry item="shotgunsSkillMagazine" unlock_level="100" />
-    </append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingShotguns']/effect_group">
-      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="shotgunsSkillMagazine"/>
-    </append>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingShotguns']">
+        <display_entry item="shotgunsSkillMagazine" unlock_level="100" />
+      </append>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingShotguns']/effect_group">
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="shotgunsSkillMagazine"/>
+      </append>
     <!--Rifle-->
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingRifles']">
-      <display_entry item="riflesSkillMagazine" unlock_level="100" />
-    </append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingRifles']/effect_group">
-      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="riflesSkillMagazine"/>
-    </append>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingRifles']">
+        <display_entry item="riflesSkillMagazine" unlock_level="100" />
+      </append>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingRifles']/effect_group">
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="riflesSkillMagazine"/>
+      </append>
     <!--Machinegun-->
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMachineGuns']">
-      <display_entry item="machineGunsSkillMagazine" unlock_level="100" />
-    </append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMachineGuns']/effect_group">
-      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="explosivesSkillMagazine"/>
-    </append>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMachineGuns']">
+        <display_entry item="machineGunsSkillMagazine" unlock_level="100" />
+      </append>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMachineGuns']/effect_group">
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="machineGunsSkillMagazine"/>
+      </append>
     <!--Explosives-->
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']">
-      <display_entry item="machineGunsSkillMagazine" unlock_level="100" />
-    </append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/effect_group">
-      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="explosivesSkillMagazine"/>
-    </append>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']">
+        <display_entry item="explosivesSkillMagazine" unlock_level="100" />
+      </append>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/effect_group">
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="explosivesSkillMagazine"/>
+      </append>
     <!--Robotic-->
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingRobotics']">
-      <display_entry item="roboticsSkillMagazine" unlock_level="100" />
-    </append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingRobotics']/effect_group">
-      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="roboticsSkillMagazine"/>
-    </append>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingRobotics']">
+        <display_entry item="roboticsSkillMagazine" unlock_level="100" />
+      </append>
+      <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingRobotics']/effect_group">
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="roboticsSkillMagazine"/>
+      </append>
     <!--Armor-->
     <set  xpath="/progression/crafting_skills/crafting_skill[@name='craftingArmor']/@max_level">100</set>
     <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingArmor']">
       <display_entry item="armorSkillMagazine" unlock_level="100" />
     </append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingArmor']/effect_group">
-      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="armorSkillMagazine"/>
+    <remove xpath="/progression/crafting_skills/crafting_skill[@name='craftingArmor']/effect_group"/>
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingArmor']">
+      
+      <effect_group>
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,100" value="1" tags="armorClothMaster,armorClothHat,armorClothJacket,armorClothGloves,armorClothPants,armorClothBoots,armorScrapMaster,armorScrapHelmet,armorScrapChest,armorScrapGloves,armorScrapLegs,armorScrapBoots"/>
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,100" value="1" tags="armorLeatherMaster,armorLeatherHood,armorLeatherChest,armorLeatherGloves,armorLeatherPants,armorLeatherBoots,armorIronMaster,armorIronHelmet,armorIronChest,armorIronGloves,armorIronLegs,armorIronBoots"/>
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="39,100" value="1" tags="armorMilitaryMaster,armorMilitaryHelmet,armorMilitaryVest,armorMilitaryGloves,armorMilitaryLegs,armorMilitaryBoots,armorSteelMaster,armorSteelHelmet,armorSteelChest,armorSteelGloves,armorSteelLegs,armorSteelBoots,resourceMilitaryFiber"/>
+
+        <passive_effect name="CraftingTier" operation="base_add" level="3,5,7,10,75" value="1,2,3,4,4" tags="armorClothMaster,armorClothHat,armorClothJacket,armorClothGloves,armorClothPants,armorClothBoots,armorScrapMaster,armorScrapHelmet,armorScrapChest,armorScrapGloves,armorScrapLegs,armorScrapBoots,armorMiningHelmet,armorFirefightersHelmet"/>
+        <passive_effect name="CraftingTier" operation="base_add" level="17,24,31,38,75" value="1,2,3,4,4" tags="armorLeatherMaster,armorLeatherHood,armorLeatherChest,armorLeatherGloves,armorLeatherPants,armorLeatherBoots,armorIronMaster,armorIronHelmet,armorIronChest,armorIronGloves,armorIronLegs,armorIronBoots"/>
+        <passive_effect name="CraftingTier" operation="base_add" level="48,57,66,75" value="1,2,3,4" tags="armorMilitaryMaster,armorMilitaryHelmet,armorMilitaryVest,armorMilitaryGloves,armorMilitaryLegs,armorMilitaryBoots,armorSteelMaster,armorSteelHelmet,armorSteelChest,armorSteelGloves,armorSteelLegs,armorSteelBoots,resourceMilitaryFiber,armorMilitaryStealthBoots"/>
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="armorSkillMagazine"/>
+      </effect_group>
     </append>
     <!--Medical-->
     <set  xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/@max_level">100</set>
     <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']">
       <display_entry item="medicalSkillMagazine" unlock_level="100" />
     </append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/effect_group">
-      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="medicalSkillMagazine"/>
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/effect_grou">
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="medicalSkillMagazine"/>
     </append>
     <!--Food-->
     <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']">
@@ -158,8 +224,23 @@
     <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSeeds']">
       <display_entry item="seedSkillMagazine" unlock_level="25" />
     </append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSeeds']/effect_group">
-      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="25" value="1" tags="seedSkillMagazine"/>
+    <remove xpath="/progression/crafting_skills/crafting_skill[@name='craftingSeeds']/effect_group"/>
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSeeds']">
+      
+      <effect_group>
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,100" value="1" tags="plantedCotton1"/>
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,100" value="1" tags="plantedGoldenrod1,plantedChrysanthemum1"/>
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="6,100" value="1" tags="plantedCoffee1"/>
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="8,100" value="1" tags="plantedYucca1"/>
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="plantedAloe1"/>
+
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="12,100" value="1" tags="plantedBlueberry1,plantedHop1"/>
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="14,100" value="1" tags="plantedPumpkin1"/>
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="16,100" value="1" tags="plantedMushroom1"/>
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="18,100" value="1" tags="plantedCorn1"/>
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="20,100" value="1" tags="plantedPotato1"/>
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="seedSkillMagazine"/>
+      </effect_group>
     </append>
     <!--Electrician-->    
     <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingElectrician']">

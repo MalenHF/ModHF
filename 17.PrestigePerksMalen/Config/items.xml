@@ -6,7 +6,7 @@
 			<item name="PR1">
 				<property name="CreativeMode" value="Dev"/>
 				<property name="CustomIcon" value="casinoCoin"/>
-				<property name="CustomIconTint" value="0049FF"/>
+				<property name="CustomIconTint" value="F0EA4C"/>
 				<property name="DescriptionKey" value="PR1Desc"/>	
 				<property name="ItemTypeIcon" value="perk"/>
 				<property name="HoldType" value="31"/>
@@ -20,6 +20,7 @@
 				<property name="ShowQuality" value="false"/>				
 				
 				<property class="Action0">
+					<requirement name="HasBuff" buff="PPBF"/>
 					<property name="Class" value="Eat"/>
 					<property name="Delay" value="1"/>	
 					<property name="Sound_start" value="read_mod"/>					
@@ -35,10 +36,10 @@
 		<!-- ▼▲Prestige Medal 2▲▼ -->
 			<item name="PR2">
 				<property name="Extends" value="PR1"/>
-				<property name="CustomIconTint" value="60100B"/>
+				<property name="CustomIconTint" value="EA4224"/>
 				<property name="DescriptionKey" value="PR2Desc"/>
 				<property class="Action0">
-					<requirement name="HasBuff" buff="PPBF"/>					
+					<requirement name="HasBuff" buff="PPBF2"/>					
 					<property name="Class" value="Eat"/>
 					<property name="Delay" value="1.0"/>
 					<property name="Sound_start" value="read_mod"/>
@@ -61,7 +62,7 @@
 				<property name="Stacknumber" value="1"/>
 				<property name="Material" value="Morganic"/>
 				<property name="CustomIcon" value="casinoCoin"/>
-				<property name="CustomIconTint" value="60100B"/>
+				<property name="CustomIconTint" value="EA4224"/>
 				<property name="DescriptionKey" value="PR2Desc"/>
 				<property name="Group" value="Books"/>
 
@@ -101,7 +102,7 @@
 				<property name="CustomIcon" value="cntHardenedChestSecure"/>
 				<property name="ItemTypeIcon" value="bundle"/>
 				<property name="DescriptionKey" value="PrkitDesc"/>
-				<property name="CustomIconTint" value="0049FF"/>
+				<property name="CustomIconTint" value="F0EA4C"/>
 				<property name="ItemTypeIcon" value="perk"/>
 				<property name="Weight" value="0"/>
 				<property name="Group" value="Special Items"/>
@@ -121,13 +122,14 @@
 			<item name="PrkitQuest">
 				<property name="Extends" value="questMaster"/>
 				<property name="CustomIcon" value="cntBookPile13"/>
+				<property name="CustomIconTint" value="F0EA4C"/>
 				<property name="ItemTypeIcon" value="bundle"/>
 				<property name="CreativeMode" value="Dev"/>
 				<property name="Stacknumber" value="10"/>
 				<property name="Material" value="Morganic"/>
-				<property name="PickupJournalEntry" value="noobiTip"/>
-				<property name="SellableToTrader" value="true"/>
-				<property name="EconomicValue" value="5000"/>
+				<property name="PickupJournalEntry" value="prestigioTip"/>
+				<property name="SellableToTrader" value="true"/>				
+				<property name="EconomicValue" value="1"/>
 				<property name="Group" value="Books"/>
 				<property class="Action0">
 					<requirement name="PlayerLevel" operation="GT" value="349"/>
@@ -136,14 +138,15 @@
 			</item>
 			<item name="PrkitQuest2">
 				<property name="Extends" value="questMaster"/>
-				<property name="CustomIcon" value="cntBookPile13"/>
+				<property name="CustomIcon" value="cntBookPile14"/>
 				<property name="ItemTypeIcon" value="bundle"/>
 				<property name="CreativeMode" value="Dev"/>
 				<property name="Stacknumber" value="10"/>
 				<property name="Material" value="Morganic"/>
+				<property name="CustomIconTint" value="EA4224"/>
 				<property name="PickupJournalEntry" value="noobiTip"/>
 				<property name="SellableToTrader" value="true"/>
-				<property name="EconomicValue" value="5000"/>
+				<property name="EconomicValue" value="1"/>
 				<property name="Group" value="Books"/>
 				<property class="Action0">
 					<requirement name="HasBuff" buff="PPBF"/>
@@ -152,14 +155,14 @@
 				</property>
 			</item>
 
-
 			<item name="Prkit">
-				<property name="CustomIcon" value="cntHardenedChestSecure"/>
+				<property name="CustomIcon" value="cntQuestTestLoot"/>
 				<property name="DescriptionKey" value="PrkitDesc"/>
 				<property name="HoldType" value="45"/>
-				<property name="CustomIconTint" value="0049FF"/>
+				<property name="CustomIconTint" value="F0EA4C"/>
 				<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
 				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+				
 				<property name="Material" value="Morganic"/>
 				<property name="Stacknumber" value="1"/>
 				<property name="ItemTypeIcon" value="perk"/>
@@ -177,6 +180,8 @@
 					<property name="Create_item_count" value="1,1,1,2,1"/>
 				</property>
 				<effect_group tiered="false">
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="PPBF"/>
+
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffxpst"/>
 
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ResetProgression" reset_skills="true" reset_levels="true" reset_books="true" reset_crafting="true"/>
@@ -195,9 +200,9 @@
 			</item>
 		<!-- ▼▲Prestige Kit 2▲▼ -->
 			<item name="Prkit2">
-				<property name="CustomIcon" value="cntHardenedChestSecure"/>
+				<property name="CustomIcon" value="cntQuestTestLoot"/>
 				<property name="ItemTypeIcon" value="perk"/>
-				<property name="CustomIconTint" value="60100B"/>
+				<property name="CustomIconTint" value="EA4224"/>
 				<property name="TintColor" value="100,0,0"/>
 				<property name="DescriptionKey" value="Prkit2Desc"/>
 				<property name="HoldType" value="45"/>
@@ -222,7 +227,7 @@
 					<property name="Create_item_count" value="1,2,1,1,4"/>
 				</property>
 				<effect_group tiered="false">
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffxpst"/>			
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="PPBF2"/>			
 
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ResetProgression" reset_skills="true" reset_levels="true" reset_books="true" reset_crafting="true"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$PlayerLevelBonus" operation="set" value="0"/>

@@ -1,0 +1,23 @@
+<config>
+    <remove xpath="/buffs/buff[@name='pvp_zone']"/> 
+    <append xpath="/buffs">
+        <buff name="pvp_zone" name_key="PvP_Zone" description_key="Estas dentro de zona PVP extra loot y XP" tooltip_key="PvP_Zone" icon="ui_game_symbol_twitch_no_ranged" icon_color="204,0,0">
+            <display_value_key value="PvP Zone"/>
+            <display_value value="xxx"/>
+            <stack_type value="replace"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfDied" target="self" action="RemoveBuff" buff="pvp_zone"/>
+                <triggered_effect trigger="onSelfPrimaryActionRayHit" target="other" action="AddBuff" buff="pvp_damage">
+                    <requirement name="EntityTagCompare" target="other" tags="player"/>
+                </triggered_effect>
+                <triggered_effect trigger="onSelfSecondaryActionRayHit" target="other" action="AddBuff" buff="pvp_damage">
+                    <requirement name="EntityTagCompare" target="other" tags="player"/>
+                </triggered_effect>                
+            </effect_group>
+            <effect_group>
+                <passive_effect name="PlayerExpGain" operation="perc_add" value=".25"/>
+                <passive_effect name="LootStage" operation="base_add" value="20"/>            
+            </effect_group>
+        </buff>
+    </append>
+</config>

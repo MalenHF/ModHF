@@ -14,10 +14,9 @@
     </append>
       
       <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add Acid Unlock ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-		<append xpath="/items/item[@name='resourceAcid']">
-			<property name="UnlockedBy" value="craftingMedical"/>
-			<property name="Group" value="Resources,Chemicals,CFChemicals"/>
-		</append>
+		
+
+    
 
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add Art of mining key for localitation ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
     <setattribute xpath="/progression/perks/book[@name='perkArtOfMiningComplete']" name="name_key">bafcom</setattribute>
@@ -27,16 +26,13 @@
   
 
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ New Food Unlock ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/display_entry[@icon='medicalFirstAidKit,drugAntibiotics,drugSteroids']/unlock_entry[@unlock_tier='3']/@item">,foodBoiledChicken</append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/effect_group/passive_effect[@level='100']/@tags">,chefTier5</append>
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/display_entry[@icon='foodCornOnTheCob,foodCornBread,foodGrilledMeat,foodBoiledMeat,foodBaconAndEggs']/unlock_entry[@unlock_tier='4']/@item">,foodBoiledChicken</append>
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/effect_group/passive_effect[@level='100,100']/@tags">,chefTier5</append>
   
     <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']">
       <display_entry icon="bucketRiverWater" name_key="foodT5-1" has_quality="false" unlock_level="100" >
         <unlock_entry item="agua_divina,foodSPEMomasSoup,foodSPEGrandmaSoup,foodSPETaquitos,foodSPEComercialCake,drinkSPEGrandmaTe" unlock_tier="1" />
       </display_entry>
-    </append>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingRobotics']/effect_group">
-      <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1" tags="roboticsSkillMagazine"/>
     </append>
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ New Chemical Unlock ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
     <remove xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']"/>
@@ -52,7 +48,7 @@
           <unlock_entry item="drugHerbalAntibiotics" unlock_tier="2" />
           <unlock_entry item="drugRecog" unlock_tier="3" />
         </display_entry>
-        <display_entry icon="medicalFirstAidKit,drugAntibiotics,drugSteroids" name_key="medicalT3-1,medicalT3-2,medicalT3-3" has_quality="false" unlock_level="50,60,75" >
+        <display_entry icon="medicalFirstAidKit,drugAntibiotics,drugSteroids,resourceAcid" name_key="medicalT3-1,medicalT3-2,medicalT3-3" has_quality="false" unlock_level="50,60,75" >
           <unlock_entry item="medicalFirstAidKit,medicalSpecialBandage" unlock_tier="1" />
           <unlock_entry item="drugAntibiotics" unlock_tier="2" />
           <unlock_entry item="drugSteroids" unlock_tier="3" />
@@ -71,7 +67,7 @@
 
           <passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="medicalFirstAidKit,chemiTier2"/>
           <passive_effect name="RecipeTagUnlocked" operation="base_set" level="60,100" value="1" tags="drugAntibiotics"/>
-          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="75,100" value="1" tags="drugSteroids"/>
+          <passive_effect name="RecipeTagUnlocked" operation="base_set" level="75,100" value="1" tags="drugSteroidsm,resourceAcid"/>
 
           <passive_effect name="RecipeTagUnlocked" operation="base_set" level="100" value="1"	tags="chemiTier4"/>
         </effect_group>

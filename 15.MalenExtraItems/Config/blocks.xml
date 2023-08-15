@@ -570,8 +570,7 @@
 					<property name="resourceElectricParts" value="20"/>
 					<property name="resourceScrapPolymers" value="20"/>
 				</property>
-				<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-				<drop event="Harvest" name="" count="0" tag="salvageHarvest"/>
+				<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>				
 				<drop event="Destroy" count="0"/>
 				<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 				<property name="Stacknumber" value="1"/>
@@ -1269,7 +1268,7 @@
 		</append>	
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲  BookSelf Protection ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<append xpath="/blocks/block[starts-with(@name,'cntBook')]">
-			<property name="Collide" value="melee"/>
+			<property name="Collide" value="movement,melee"/>
 			<property name="MaxDamage" value="1000"/>
 		</append>
 	<!--▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼-->

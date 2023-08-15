@@ -648,7 +648,7 @@
 			<property name="Group" value="Special Items"/>
 			<property name="Candrop" value="false"/>
 			<property class="Action0">
-				<requirement name="CVarCompare" cvar="$varHFLvlKit" operation="LT" value="5"/>
+				<!--<requirement name="CVarCompare" cvar="$varHFLvlKit" operation="LT" value="5"/>-->
 				<requirement name="PlayerLevel" operation="GT" value="349"/>
 				<requirement name="!HasBuff" buff="PPBF"/>
 				<requirement name="!HasBuff" buff="PPBF2"/>
@@ -656,7 +656,7 @@
 				<property name="Delay" value="0.5"/>
 				<property name="Use_time" value="1"/>
 				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="Prkit,kitlvl450,q_GachaPrem"/>
+				<property name="Create_item" value="PrkitQuest,kitlvl450,q_GachaPrem"/>
 				<property name="Create_item_count" value="1,1,15"/>
 			</property>
 			<effect_group tiered="false">				
@@ -686,8 +686,8 @@
 				<property name="Delay" value="0.5"/>
 				<property name="Use_time" value="1"/>
 				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="ResourceForgedPlatinum,ResourceForgedPractonium,juguito_de_chale,q_GachaPrem"/>
-				<property name="Create_item_count" value="1,1,100,20"/>
+				<property name="Create_item" value="ResourceForgedPlatinum,allSkillMagazineHF,ResourceForgedPractonium,juguito_de_chale,q_GachaPrem"/>
+				<property name="Create_item_count" value="1,1,1,100,20"/>
 			</property>
 			<effect_group tiered="false">				
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varHFLvlKit" operation="set" value="6"/>
@@ -838,7 +838,7 @@
 				<property name="Delay" value="0.5"/>
 				<property name="Use_time" value="1"/>
 				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="Prkit2,p_kitlvl450,q_GachaPrem"/>
+				<property name="Create_item" value="PrkitQuest2,p_kitlvl450,q_GachaPrem"/>
 				<property name="Create_item_count" value="1,1,25"/>
 			</property>
 			<effect_group tiered="false">				
@@ -868,8 +868,8 @@
 				<property name="Delay" value="0.5"/>
 				<property name="Use_time" value="1"/>
 				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="bossTokenAncient,q_GachaPrem"/>
-				<property name="Create_item_count" value="1,40"/>
+				<property name="Create_item" value="bossTokenAncient,allSkillMagazineHF,q_GachaPrem"/>
+				<property name="Create_item_count" value="2,1,40"/>
 			</property>
 			<effect_group tiered="false">				
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varHFLvlKitPres" operation="set" value="6"/>

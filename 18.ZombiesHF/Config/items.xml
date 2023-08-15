@@ -58,7 +58,7 @@
 					<property name="Stacknumber" value="10"/>
 					<property name="TintColor" value="255,214,7"/>
 					<property class="Action0">
-						<requirement name="PlayerLevel" operation="GT" value="500"/>
+						<requirement name="HasBuff" buff="buffQuest"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="LosLunaticos"/>
@@ -66,6 +66,7 @@
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item>
 				<item name="q_VZ">
@@ -78,7 +79,7 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="VZQuest"/>
 					<property class="Action0">
-						<requirement name="PlayerLevel" operation="GT" value="500"/>
+						<requirement name="HasBuff" buff="buffQuest"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_venganza"/>
@@ -86,6 +87,7 @@
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item>
 				<item name="q_Mutants">
@@ -98,7 +100,7 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="ElitesQuest"/>
 					<property class="Action0">
-						<requirement name="PlayerLevel" operation="GT" value="500"/>
+						<requirement name="HasBuff" buff="buffQuest"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_Mutants"/>
@@ -106,6 +108,7 @@
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item>
 				<item name="q_Minis">
@@ -118,7 +121,7 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="MinisQuest"/>
 					<property class="Action0">
-						<requirement name="PlayerLevel" operation="GT" value="500"/>
+						<requirement name="HasBuff" buff="buffQuest"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_NewKillMinis"/>
@@ -126,6 +129,7 @@
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item>
 				<item name="q_Special">
@@ -138,7 +142,7 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="SpecialQuest"/>
 					<property class="Action0">
-						<requirement name="PlayerLevel" operation="GT" value="500"/>
+						<requirement name="HasBuff" buff="buffQuest"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_KillSpecial"/>
@@ -146,6 +150,7 @@
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item>			
 			<!--Specials-->
@@ -167,6 +172,7 @@
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="10"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 
 				</item>	
@@ -180,7 +186,7 @@
 					<property name="Group" value="Science"/>
 					<property name="DescriptionKey" value="TAVOQUESTDesc"/>
 					<property class="Action0">
-						<requirement name="PlayerLevel" operation="GT" value="500"/>
+						<requirement name="HasBuff" buff="buffQuest"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="EnemigosdeT4VO"/>
@@ -188,6 +194,7 @@
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item>
 				<item name="q_Taco">
@@ -207,6 +214,7 @@
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item>
 				<item name="q_TacoS">
@@ -226,6 +234,7 @@
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item>
 			<!--By Type-->
@@ -239,7 +248,7 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="ElitesQuest"/>
 					<property class="Action0">
-						<requirement name="PlayerLevel" operation="GT" value="500"/>
+						<requirement name="HasBuff" buff="buffQuest"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_Mutants"/>
@@ -247,6 +256,7 @@
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item>
 				<!--Working ON-->
@@ -267,6 +277,7 @@
 						<effect_group tiered="false">
 							<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 							<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 						</effect_group>
 					</item>
 					<item name="q_Infernal">
@@ -286,6 +297,7 @@
 						<effect_group tiered="false">
 							<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 							<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 						</effect_group>
 					</item>
 					<item name="q_Frozen">
@@ -305,6 +317,7 @@
 						<effect_group tiered="false">
 							<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 							<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 						</effect_group>
 					</item>
 				<!---->	
@@ -318,7 +331,7 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="CriaturasQuest"/>
 					<property class="Action0">
-						<requirement name="PlayerLevel" operation="GT" value="500"/>
+						<requirement name="HasBuff" buff="buffQuest"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_KillCriaturas"/>
@@ -326,6 +339,7 @@
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item>
 				
@@ -340,7 +354,7 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="SirenQuest"/>
 					<property class="Action0">
-						<requirement name="PlayerLevel" operation="GT" value="500"/>
+						<requirement name="HasBuff" buff="buffQuest"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_KillSiren"/>
@@ -348,6 +362,7 @@
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item>
 				<item name="q_Jugger">
@@ -360,7 +375,7 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="JugQuest"/>
 					<property class="Action0">
-						<requirement name="PlayerLevel" operation="GT" value="500"/>
+						<requirement name="HasBuff" buff="buffQuest"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_KillJuggernaut"/>
@@ -368,6 +383,7 @@
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item>			
 				<item name="q_Honor">
@@ -380,7 +396,7 @@
 					<property name="Group" value="Science"/>
 					<property name="DescriptionKey" value="SoldierQuest"/>
 					<property class="Action0">
-						<requirement name="PlayerLevel" operation="GT" value="500"/>
+						<requirement name="HasBuff" buff="buffQuest"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_KillSoldier"/>
@@ -388,6 +404,7 @@
 					<effect_group tiered="false">						
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 			
 				</item>
@@ -401,7 +418,7 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="MummyQuest"/>
 					<property class="Action0">
-						<requirement name="PlayerLevel" operation="GT" value="500"/>
+						<requirement name="HasBuff" buff="buffQuest"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_KillMummy"/>
@@ -409,6 +426,7 @@
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item>	
 				<item name="q_Gladiator">
@@ -421,7 +439,7 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="MxQuest"/>
 					<property class="Action0">
-						<requirement name="PlayerLevel" operation="GT" value="500"/>
+						<requirement name="HasBuff" buff="buffQuest"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_KillMx"/>
@@ -429,6 +447,7 @@
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item>
 				<item name="q_Cirujano">
@@ -441,7 +460,7 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="CiruQuest"/>
 					<property class="Action0">
-						<requirement name="PlayerLevel" operation="GT" value="500"/>
+						<requirement name="HasBuff" buff="buffQuest"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_KillCirujano"/>
@@ -449,6 +468,7 @@
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item>
 				<item name="q_HFRush">
@@ -461,7 +481,7 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="HFBRQuest"/>
 					<property class="Action0">
-						<requirement name="PlayerLevel" operation="GT" value="500"/>
+						<requirement name="HasBuff" buff="buffQuest"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_HFRush"/>
@@ -469,6 +489,7 @@
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="300"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 
 				</item>
@@ -482,14 +503,17 @@
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="HFQuest"/>
 					<property class="Action0">
-						<requirement name="PlayerLevel" operation="GT" value="500"/>
+						<requirement name="HasBuff" buff="buffQuest"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
-						<property name="QuestGiven" value="q_HF"/>
+						<property name="QuestGiven" value="q_HFRush"/>
 					</property>
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="300"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						
+							
 					</effect_group>
 				</item>
 			<!--Randoms-->
@@ -503,7 +527,7 @@
 					<property name="Stacknumber" value="10"/>
 					<property name="DescriptionKey" value="q_luckyDesc"/>
 					<property class="Action0">
-						<requirement name="PlayerLevel" operation="GT" value="500"/>
+						
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_RewLucky"/>
@@ -511,6 +535,7 @@
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item>	
 				<item name="q_EnemigsRandom">
@@ -523,7 +548,7 @@
 					<property name="Stacknumber" value="20"/>
 					<property name="DescriptionKey" value="KillREnemigs"/>
 					<property class="Action0">
-						<requirement name="PlayerLevel" operation="GT" value="500"/>
+						
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_TotalRandom"/>
@@ -531,6 +556,7 @@
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="10"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item>
 				<item name="q_Gacha">
@@ -543,14 +569,15 @@
 					<property name="Stacknumber" value="20"/>
 					<property name="DescriptionKey" value="KillGacha"/>
 					<property class="Action0">
-						<requirement name="PlayerLevel" operation="GT" value="500"/>
+						
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_killGacha"/>
 					</property>
 					<effect_group tiered="false">
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="5"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item>
 				<item name="q_GachaPrem">
@@ -563,14 +590,15 @@
 					<property name="Stacknumber" value="20"/>
 					<property name="DescriptionKey" value="KillGacha"/>
 					<property class="Action0">
-						<requirement name="PlayerLevel" operation="GT" value="500"/>
+						
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
 						<property name="QuestGiven" value="q_killGachaPREM"/>
 					</property>
 					<effect_group tiered="false">
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="10"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="5"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item>
 			<!--Extra Quest-->
@@ -591,6 +619,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand2">
@@ -610,6 +639,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand3">
@@ -629,6 +659,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand4">
@@ -648,6 +679,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand5">
@@ -667,6 +699,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand6">
@@ -686,6 +719,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand7">
@@ -705,6 +739,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand8">
@@ -724,6 +759,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand9">
@@ -743,6 +779,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand10">
@@ -762,6 +799,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand11">
@@ -781,6 +819,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand12">
@@ -800,6 +839,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand13">
@@ -819,6 +859,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand14">
@@ -838,6 +879,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand15">
@@ -857,6 +899,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand16">
@@ -876,6 +919,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand17">
@@ -895,6 +939,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand18">
@@ -914,6 +959,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand19">
@@ -933,6 +979,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand20">
@@ -952,6 +999,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand21">
@@ -971,6 +1019,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand22">
@@ -990,6 +1039,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 			<item name="q_rand23">
@@ -1009,6 +1059,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				</effect_group>
 			</item>
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
