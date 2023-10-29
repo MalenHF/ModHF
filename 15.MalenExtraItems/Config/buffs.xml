@@ -812,7 +812,7 @@
 			<effect_group>
 				<requirement name="!HasBuff" buff="buffInjuryConcussion"/>
 				<requirement name="CVarCompare" cvar="$buffDrugPainkillersHealed" operation="Equals" value="0"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="add" value="40"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="add" value="40"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffDrugPainkillersHealed" operation="set" value="1"/>
 			</effect_group>
 
@@ -820,8 +820,7 @@
 				<passive_effect name="CarryCapacity" operation="base_set" value="60"/>
 				<passive_effect name="RunSpeed" operation="perc_add" value=".2"/>
 				<passive_effect name="WalkSpeed" operation="perc_add" value=".2"/>
-				<passive_effect name="GeneralDamageResist" operation="base_add" value="0.2"/>
-				<passive_effect name="WaterChangeOT" operation="base_subtract" value="0.218"/>
+				<passive_effect name="GeneralDamageResist" operation="base_add" value="0.1"/>				
 				<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInjuryStunned01CHTrigger,buffInjuryStunned00,buffInjuryStunned01,buffInjuryStunned01Shotgun,buffInjuryStunned02,buffInjuryStunned02Shotgun,buffInjuryStunned03,buffInjuryStunned03Shotgun"/>
 			</effect_group>
 		</buff>

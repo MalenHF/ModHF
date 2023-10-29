@@ -1,0 +1,393 @@
+<configs>
+
+<!--Liqour Loot Group-->
+<insertAfter xpath="lootcontainers/lootgroup[@name='schematicsVehiclesT2']" >
+	<lootgroup name="groupAlcohols">
+		<item name="drinkSmertJuice"/>
+		<item name="drinkTequila"/>
+		<item name="drinkMilkshake"/>
+		<item name="drinkBlueberryWine"/>
+		<item name="drinkWhisky"/>
+		<item name="drinkVodka"/>
+		<item name="drinkGin"/>
+		<item name="drinkHuntmaster"/>
+	</lootgroup>	
+</insertAfter>
+
+<!--Skill magazines-->
+<append xpath="/lootcontainers/lootgroup[@name='skillMagazines']">
+	<item name="drinkSkillMagazine"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupQuestRewardSkillMagazinesAll01']">
+	<item name="drinkSkillMagazine" count="2"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupCupboard02']">
+	<item name="drinkSkillMagazine" loot_prob_template="veryLow"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupBuriedSuppliesT1_03']">
+	<item name="drinkSkillMagazine" loot_prob_template="med"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupShamwayCooler01']">
+	<item name="drinkSkillMagazine" loot_prob_template="low"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupFoodPileSmall']">
+	<item name="drinkSkillMagazine" count="0,1" loot_prob_template="low"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupFoodPileMed']">
+	<item name="drinkSkillMagazine" count="0,1" loot_prob_template="low"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupFoodPileLarge']">
+	<item name="drinkSkillMagazine" count="0,1" loot_prob_template="medLow"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupShamwayCrate02']">
+	<item name="drinkSkillMagazine" loot_prob_template="high"/>
+</append>
+
+<!--Food-->
+<append xpath="/lootcontainers/lootgroup[@name='rareFoodDrink']">
+	<item name="drinkSmertJuice"/>
+	<item name="drinkAppleJuice"/>
+	<item name="drinkTequila"/>
+	<item name="drinkMilkshake"/>
+	<item name="drinkBlueberryWine"/>
+	<item name="drinkWhisky"/>
+	<item name="drinkVodka"/>
+	<item name="drinkGin"/>
+	<item name="drinkHuntmaster"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='cannedfood']">
+	<item name="foodFlour"/>
+	<item name="foodBagRice"/>
+	<item name="foodCanTomato"/>
+	<item name="foodCanSalsa"/>
+	<item name="foodPemmican"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupDumpsterFood']">
+	<item name="foodBagRice"/>
+	<item name="foodCanTomato"/>
+	<item name="foodCanSalsa"/>
+	<item name="foodCornMeal" count="1,2"/>
+	<item name="foodFlour" count="1,2"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupFoodTrashUncommon']">
+	<item name="foodFlour" count="1,2" loot_prob_template="medLow"/>
+	<item name="foodCropCabbage" count="1,2" loot_prob_template="low"/>
+	<item name="foodCropWheat" count="1,2" loot_prob_template="low"/>
+	<item name="foodCropTomato" count="1,2" loot_prob_template="low"/>
+	<item name="foodCropOnion" count="1,2" loot_prob_template="low"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupIngredientsCommon']">
+	<item name="foodFlour" count="1,2"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupIngredientsUncommon']">
+	<item name="foodCropCabbage" count="1,2"/>
+	<item name="foodCropWheat" count="1,2"/>
+	<item name="foodCropTomato" count="1,2"/>
+	<item name="foodCropOnion" count="1,2"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupIngredientsRare']">
+	<item name="foodCheese" count="1,2"/>
+	<item name="foodButter" count="1,2"/>
+	<item name="drinkJarMilk"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupFoodRare']">
+	<item name="foodKimchi" count="1,2"/>
+	<item name="foodReserveChicken" count="1,2"/>
+	<item name="foodAppleJam" count="1,2"/>
+	<item name="foodBlueberryJam" count="1,2"/>
+	<item name="drinkJarMilk"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='airdropfood']">
+	<item name="foodReserveChicken" loot_prob_template="low"/>
+	<item name="foodBurrito"/>
+	<item name="foodAppleJam" count="1,2"/>
+	<item name="foodPemmican" count="5,8"/>
+	<item name="foodBlueberryJam" count="1,2"/>
+	<item name="drinkJarMilk" count="1,4"/>
+</append>
+
+<!--Seeds-->
+<append xpath="/lootcontainers/lootgroup[@name='seeds']">
+	<item name="seedApple"/>
+	<item name="seedWheat"/>
+	<item name="seedTomato"/>
+	<item name="seedOnion"/>
+	<item name="seedCabbage"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='seedsNoFlowers']">
+	<item name="seedApple"/>
+	<item name="seedWheat"/>
+	<item name="seedTomato"/>
+	<item name="seedOnion"/>
+	<item name="seedCabbage"/>
+</append>
+
+<!--Drinks-->
+<append xpath="/lootcontainers/lootgroup[@name='groupDrinksUncommon']">
+	<item name="drinkAppleJuice"/>
+	<item name="drinkAppleCider"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupDrinksRare']">
+	<item name="drinkSmertJuice"/>
+	<item name="drinkTequila"/>
+	<item name="drinkMilkshake"/>
+	<item name="drinkBlueberryWine"/>
+	<item name="drinkWhisky"/>
+	<item name="drinkVodka"/>
+	<item name="drinkGin"/>
+	<item name="drinkHuntmaster"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupBeerCooler01']">
+	<item name="drinkTequila" loot_prob_template="low"/>
+	<item name="drinkBlueberryWine" loot_prob_template="veryLow"/>
+	<item name="drinkWhisky" loot_prob_template="medHigh"/>
+	<item name="drinkVodka" loot_prob_template="low"/>
+	<item name="drinkSmertJuice" loot_prob_template="low"/>
+	<item name="drinkHuntmaster" loot_prob_template="medHigh"/>
+	<item name="drinkGin" loot_prob_template="low"/>
+	<item name="drinkSkillMagazine" loot_prob_template="low"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='airdropdrink']">
+	<item name="drinkAppleJuice"/>
+	<item name="drinkAppleCider"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupHardenedChestT5_08']">
+	<item name="questRewardT4DrinkBundle" count="1"/>
+</append>
+
+<!--Liqour Pile-->
+<append xpath="/lootcontainers/lootgroup[@name='groupLiquorSmall01']">
+	<item group="groupAlcohols" loot_prob_template="med"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupLiquorMed01']">
+	<item name="drinkAppleCider" loot_prob_template="low"/>
+	<item group="groupAlcohols" count="1,2" loot_prob_template="med"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupLiquorLarge01']">
+	<item name="drinkAppleCider" loot_prob_template="low"/>
+	<item group="groupAlcohols" count="2,3" loot_prob_template="med"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupLiquorBonus']">
+	<item group="groupAlcohols" loot_prob_template="high"/>
+	<item name="drinkSkillMagazine" loot_prob_template="med"/>
+</append>
+
+<!--Oven & Mods-->
+<append xpath="/lootcontainers/lootgroup[@name='workstationToolsScaled']">
+	<item name="toolKitchenTools" loot_prob_template="med"/>
+	<item name="toolCookSet" loot_prob_template="ProbT1Cap"/>
+	<item name="toolKitchenMixer" loot_prob_template="ProbT1Cap"/>		
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupCookingTools']">
+	<item name="toolKitchenTools" loot_prob_template="low"/>
+	<item name="toolCookSet" loot_prob_template="veryLow"/>
+	<item name="toolKitchenMixer" loot_prob_template="veryLow"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='workstations']">
+	<item name="workingOven"/>
+	<item name="wineBarrelworkbench"/>
+</append>
+
+<!--Twitch-->
+<append xpath="/lootcontainers/lootgroup[@name='twitch_foodT0']">
+	<item name="foodCanTomato" count="3,4"/>
+	<item name="foodBagRice" count="3,4"/>
+	<item name="foodCanSalsa" count="3,4"/>
+	<item name="foodPemmican" count="6,12"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='twitch_foodT1']">
+	<item name="foodBlueberryJam" count="2,4"/>
+	<item name="foodAppleJam" count="2,4"/>
+	<item name="foodBread" count="2,4"/>
+	<item name="foodArrozConPollo" count="2,3"/>
+	<item name="foodApplepie" count="2,4"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='twitch_foodT2']">
+	<item name="foodBurrito" count="2,4"/>
+	<item name="foodKimchi" count="2,4"/>
+	<item name="foodGrilledSalad" count="2,4"/>
+	<item name="foodBLT" count="2,3"/>
+	<item name="foodFruitPlatter" count="2,4"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='twitch_foodT3']">
+	<item name="foodFullEnglish" count="2,3"/>
+	<item name="foodBOC" count="2,3"/>
+	<item name="foodKFC" count="2,3"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='twitch_drink']">
+	<item name="drinkAppleJuice" count="2,3"/>
+	<item name="drinkAppleCider" count="2,3"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='twitch_drinkspecial2']">
+	<item group="groupAlcohols" count="1,3"/>
+</append>
+
+<!--Canned Food Tier reversal-->
+<remove xpath="lootcontainers/lootgroup[@name='groupFoodCommon']"/>
+<remove xpath="lootcontainers/lootgroup[@name='groupFoodPileCommon']"/>
+<remove xpath="lootcontainers/lootgroup[@name='groupFoodUncommon']"/>
+<insertAfter xpath="lootcontainers/lootgroup[@name='groupIngredientsRare']" >
+	<lootgroup name="groupFoodUncommon">
+		<item name="foodCanBeef" count="1,2"/>
+		<item name="foodCanCatfood" count="1,2"/>
+		<item name="foodCanChicken" count="1,2"/>
+		<item name="foodCanChili" count="1,2"/>
+		<item name="foodCanDogfood" count="1,2"/>
+		<item name="foodCanSham" count="1,2"/>
+		<item name="foodCanLamb" count="1,2"/>
+		<item name="foodCanMiso" count="1,2"/>
+		<item name="foodCanPasta" count="1,2"/>
+		<item name="foodCanPeas" count="1,2"/>
+		<item name="foodCanSalmon" count="1,2"/>
+		<item name="foodCanSoup" count="1,2"/>
+		<item name="foodCanStock" count="1,2"/>
+		<item name="foodCanTuna" count="1,2"/>
+		<item name="foodCanPears" count="1,2"/>
+		<item name="foodBagRice" count="1,2"/>
+		<item name="foodCanTomato" count="1,2"/>
+		<item name="foodCanSalsa" count="1,2"/>
+		<item name="foodCharredMeat"/>
+	
+	</lootgroup>	
+	<lootgroup name="groupFoodPileCommon">
+		<item name="foodCanBeef"/>
+		<item name="foodCanCatfood"/>
+		<item name="foodCanChicken"/>
+		<item name="foodCanChili"/>
+		<item name="foodCanDogfood"/>
+		<item name="foodCanSham"/>
+		<item name="foodCanLamb"/>
+		<item name="foodCanMiso"/>
+		<item name="foodCanPasta"/>
+		<item name="foodCanPeas"/>
+		<item name="foodCanSalmon"/>
+		<item name="foodCanSoup"/>
+		<item name="foodCanStock"/>
+		<item name="foodCanTuna"/>
+		<item name="foodCanPears"/>
+		<item name="foodBagRice"/>
+		<item name="foodCanTomato"/>
+		<item name="foodCanSalsa"/>
+		<item name="foodFlour"/>
+		<item name="foodCornMeal"/>
+		<item name="foodPemmican"/>
+	</lootgroup>
+	<lootgroup name="groupFoodCommon">
+		<item name="foodCanBeef"/>
+		<item name="foodCanCatfood"/>
+		<item name="foodCanChicken"/>
+		<item name="foodCanChili"/>
+		<item name="foodCanDogfood"/>
+		<item name="foodCanSham"/>
+		<item name="foodCanLamb"/>
+		<item name="foodCanMiso"/>
+		<item name="foodCanPasta"/>
+		<item name="foodCanPeas"/>
+		<item name="foodCanSalmon"/>
+		<item name="foodCanSoup"/>
+		<item name="foodCanStock"/>
+		<item name="foodCanTuna"/>
+		<item name="foodCanPears"/>
+		<item name="foodBagRice"/>
+		<item name="foodCanTomato"/>
+		<item name="foodCanSalsa"/>
+		<item name="foodCharredMeat"/>
+		<item name="foodPemmican"/>
+	</lootgroup>
+	<!--Quest-->
+<lootgroup name="groupQuestOven" count="all">
+	<item name="workingOven"/>
+</lootgroup>
+
+<lootgroup name="groupQuestWineBarrel" count="all">
+	<item name="wineBarrelworkbench"/>
+</lootgroup>
+</insertAfter>
+
+<!--Gold Bar-->
+<append xpath="/lootcontainers/lootgroup[@name='rareOres']">
+	<item name="goldBar" count="1,3" loot_prob_template="low"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupValuablesMed']">
+	<item name="goldBar" count="1" loot_prob_template="low"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupValuablesLarge']">
+	<item name="goldBar" count="1" loot_prob_template="low"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupValuablesExtraLarge']">
+	<item name="goldBar" count="1" loot_prob_template="low"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupHardenedChestT4_09']">
+	<item name="goldBar" count="1" loot_prob_template="low"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupHardenedChestT5_07']">
+	<item name="goldBar" count="1" loot_prob_template="low"/>
+</append>
+
+<!--Toilet paper-->
+<append xpath="/lootcontainers/lootgroup[@name='groupToilet01']">
+	<item name="Tpaper" count="1,3" loot_prob_template="med"/>
+</append>
+
+<!--Grain Alcohol-->
+<append xpath="/lootcontainers/lootgroup[@name='groupChem01']">
+	<item name="drinkJarGrainAlcohol" count="1,3" loot_prob_template="med"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupMedicalUncommon']">
+	<item name="drinkJarGrainAlcohol" count="1,3"/>
+</append>
+
+<!-- Apple Tree, Bee Hive, Bird Nest-->
+<insertAfter xpath="/lootcontainers/lootcontainer[@name='mopowerTruck']" >
+	<lootcontainer name="appletree" count="1" size="5,1" sound_open="UseActions/open_garbage" sound_close="UseActions/close_garbage" destroy_on_close="true" loot_quality_template="qualBaseTemplate" ignore_loot_abundance="true">
+		<item name="foodCropApple" count="1,2" prob="1"/>
+	</lootcontainer>
+	
+	<lootcontainer name="BeeHive" count="1" size="5,1" sound_open="UseActions/open_garbage" sound_close="UseActions/close_garbage" destroy_on_close="true" loot_quality_template="qualBaseTemplate" ignore_loot_abundance="true">
+		<item name="foodHoney" count="1" prob="1"/>
+	</lootcontainer>
+	
+	<lootcontainer name="BirdNestPlayer" count="1,3" size="5,1" sound_open="UseActions/open_garbage" sound_close="UseActions/close_garbage" destroy_on_close="true" loot_quality_template="qualBaseTemplate" ignore_loot_abundance="true">
+		<item name="foodEgg" count="1"/>
+		<item name="resourceFeather" count="1,5"/>
+	</lootcontainer>
+</insertAfter>
+
+</configs>

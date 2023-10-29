@@ -164,7 +164,27 @@
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="35"/>
 			</effect_group>
 		</buff>
+		<buff name="NigtDeco" hidden="true">
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_supply_crate_gib_Prefab" parent_transform="LeftHand" />
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="p_supply_crate_gib_Prefab" parent_transform="LeftHand" />
 
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_supply_crate_gib_Prefab" parent_transform="RightHand" />
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="p_supply_crate_gib_Prefab" parent_transform="RightHand" />
+
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_supply_crate_gib_Prefab"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_supply_crate_gib_Prefab"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_supply_crate_gib_Prefab" parent_transform="LeftHand">
+					<requirement name="!HasParticle" particle="p_campfire" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_supply_crate_gib_Prefab" parent_transform="RightHand">
+					<requirement name="!HasParticle" particle="p_supply_crate_gib_Prefab" />
+				</triggered_effect>
+
+			</effect_group>
+		</buff>
 		<!--Elemental Z-Normal TrueDamage-->
 		<buff name="ElementalNormalHit" hidden="true">
 			<duration value="1"/>
@@ -541,6 +561,28 @@
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="SirenPassiveA"/>
 			</effect_group>
 		</buff>
+
+		<buff name="buffNerfXP" hidden="false" icon="ui_game_symbol_near_death_trauma" icon_color="255,5,5">
+			<update_rate value="4"/>
+			<effect_group>				
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" target_tags="player" range="10" buff="buffNerfXP2"/>
+			</effect_group>
+		</buff>
+		<buff name="buffNerfXP2" hidden="false" name_key="DIE" tooltip_key="DIE" icon="ui_game_symbol_barter" icon_color="0,0,0">
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="NotHasBuff" buff="god"/>
+				<requirement name="EntityTagCompare" tags="player"/>
+				
+				<passive_effect name="PlayerExpGain" operation="perc_set" value=".5">
+					<requirement name="!HasBuff" buff="PPBF"/>
+					<requirement name="!HasBuff" buff="PPBF2"/>
+				</passive_effect>
+				
+			</effect_group>
+		</buff>
+
 		<buff name="buffDark1" hidden="false" icon="ui_game_symbol_near_death_trauma" icon_color="255,5,5">
 			<update_rate value="4.5"/>
 			<effect_group>

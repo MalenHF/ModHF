@@ -1,0 +1,738 @@
+<configs>
+<!--old removal-->
+
+<remove xpath="recipes/recipe[@name='foodCharredMeat']"/>
+<remove xpath="recipes/recipe[@name='foodGrilledMeat']"/>
+<remove xpath="recipes/recipe[@name='foodBoiledMeat']"/>
+<remove xpath="recipes/recipe[@name='foodBaconAndEggs']"/>
+<remove xpath="recipes/recipe[@name='foodMeatStew']"/>
+<remove xpath="recipes/recipe[@name='foodSteakAndPotato']"/>
+<remove xpath="recipes/recipe[@name='foodPumpkinBread']"/>
+<remove xpath="recipes/recipe[@name='foodBlueberryPie']"/>
+<remove xpath="recipes/recipe[@name='foodPumpkinPie']"/>
+<remove xpath="recipes/recipe[@name='foodPumpkinCheesecake']"/>
+<remove xpath="recipes/recipe[@name='foodCornBread']"/>
+<remove xpath="recipes/recipe[@name='foodChiliDog']"/>
+<remove xpath="recipes/recipe[@name='foodFishTacos']"/>
+<remove xpath="recipes/recipe[@name='foodShamChowder']"/>
+<remove xpath="recipes/recipe[@name='foodGumboStew']"/>
+<remove xpath="recipes/recipe[@name='foodShepardsPie']"/>
+<remove xpath="recipes/recipe[@name='foodSpaghetti']"/>
+<remove xpath="recipes/recipe[@name='foodTunaFishGravyToast']"/>
+<remove xpath="recipes/recipe[@name='foodVegetableStew']"/>
+
+<remove xpath="recipes/recipe[@name='drinkJarBlackStrapCoffee']"/>
+<remove xpath="recipes/recipe[@name='drinkJarGrandpasAwesomeSauce']"/>
+<remove xpath="recipes/recipe[@name='drinkJarGrandpasLearningElixir']"/>
+<remove xpath="recipes/recipe[@name='drinkJarGrandpasMoonshine']"/>
+<remove xpath="recipes/recipe[@name='drinkJarPureMineralWater']"/>
+<remove xpath="recipes/recipe[@name='drinkYuccaJuiceSmoothie']"/>
+
+<remove xpath="recipes/recipe[@name='medicalFirstAidKit']"/>
+<!--New recipes-->
+<append xpath="recipes">
+
+<!--Oven-->
+<recipe name="toolCookSet" count="1" craft_area="workbench" tags="learnable">
+	<ingredient name="resourceForgedSteel" count="15"/>
+	<ingredient name="resourceForgedIron" count="35"/>
+	<ingredient name="resourceScrapPolymers" count="10"/>
+	<ingredient name="resourceBrokenGlass" count="15"/>
+</recipe>
+
+<recipe name="toolKitchenTools" count="1" craft_area="workbench" tags="learnable">
+	<ingredient name="resourceForgedIron" count="35"/>
+	<ingredient name="resourceForgedSteel" count="5"/>
+	<ingredient name="resourceScrapPolymers" count="50"/>
+	<ingredient name="resourceWood" count="50"/>
+	<ingredient name="toolBeaker" count="1"/>
+</recipe>
+
+<recipe name="toolKitchenMixer" count="1" craft_area="workbench" tags="learnable">
+	<ingredient name="resourceForgedIron" count="50"/>
+	<ingredient name="resourceElectricParts" count="30"/>
+	<ingredient name="resourceScrapPolymers" count="20"/>
+	<ingredient name="resourceMechanicalParts" count="15"/>
+</recipe>
+
+<recipe name="workingOven" count="1" craft_area="workbench" tags="perkMasterChef,learnable">
+	<ingredient name="resourceForgedIron" count="50"/>
+	<ingredient name="resourceMetalPipe" count="30"/>
+	<ingredient name="resourceElectricParts" count="10"/>
+	<ingredient name="toolCookingPot" count="5"/>
+	<ingredient name="toolCookingGrill" count="3"/>
+</recipe>
+
+<recipe name="wineBarrelworkbench" count="1" craft_area="workbench" tags="perkMasterChef,learnable">
+	<ingredient name="resourceForgedIron" count="30"/>
+	<ingredient name="resourceWood" count="250"/>
+	<ingredient name="resourceGlue" count="10"/>
+</recipe>
+
+<!--Seeds-->
+<recipe name="seedApple" count="1" tags="learnable" craft_time="1">
+	<ingredient name="foodCropApple" count="5"/>
+</recipe>
+
+<recipe name="seedWheat" count="1" tags="learnable" craft_time="1">
+	<ingredient name="foodCropWheat" count="5"/>
+</recipe>
+
+<recipe name="seedTomato" count="1" tags="learnable" craft_time="1">
+	<ingredient name="foodCropTomato" count="5"/>
+</recipe>
+
+<recipe name="seedOnion" count="1" tags="learnable" craft_time="1">
+	<ingredient name="foodCropOnion" count="5"/>
+</recipe>
+
+<recipe name="seedCabbage" count="1" tags="learnable" craft_time="1">
+	<ingredient name="foodCropCabbage" count="5"/>
+</recipe>
+
+<recipe name="NestEmpty" count="1" tags="learnable">
+	<ingredient name="resourceWood" count="30"/>
+	<ingredient name="resourceCloth" count="15"/>
+	<ingredient name="resourceYuccaFibers" count="50"/>
+	<ingredient name="foodEgg" count="5"/>
+	<ingredient name="foodCornMeal" count="1"/>
+</recipe>
+
+<recipe name="BeeHiveEmpty" count="1" tags="learnable">
+	<ingredient name="resourceWood" count="60"/>
+	<ingredient name="resourceNail" count="15"/>
+	<ingredient name="resourceForgedSteel" count="15"/>
+	<ingredient name="foodHoney" count="5"/>
+</recipe>
+
+<!--Drink-->
+<recipe name="drinkAppleJuice" count="1" tags="perkMasterChef,learnable">
+	<ingredient name="foodCropApple" count="2"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="drinkAppleCider" count="1" craft_area="Barrel" tags="learnable,perkMasterChef">
+	<ingredient name="drinkAppleJuice" count="1"/>
+	<ingredient name="drinkJarGrainAlcohol" count="1"/>
+</recipe>
+
+<recipe name="drinkAppleCider" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable,perkMasterChef">
+	<ingredient name="drinkAppleJuice" count="2"/>
+	<ingredient name="drinkJarGrainAlcohol" count="2"/>
+</recipe>
+
+<recipe name="drinkTequila" count="1" craft_area="Barrel" tags="perkMasterChef,learnable" craft_time="80">
+	<ingredient name="foodCropYuccaFruit" count="5"/>
+	<ingredient name="drinkJarGrainAlcohol" count="1"/>
+	<ingredient name="resourcePotassiumNitratePowder" count="35"/>
+</recipe>
+
+<recipe name="drinkMilkshake" count="1" tags="perkMasterChef,learnable">
+	<ingredient name="drinkJarMilk" count="2"/>
+	<ingredient name="drugRockBusters" count="1"/>
+	<ingredient name="resourceSnowBall" count="25"/>
+</recipe>
+
+<recipe name="drinkBlueberryWine" count="1" craft_area="Barrel" tags="learnable,perkMasterChef" craft_time="300">
+	<ingredient name="drinkJarGrainAlcohol" count="3"/>
+	<ingredient name="foodCropBlueberries" count="10"/>
+</recipe>
+
+<recipe name="drinkWhisky" count="1" craft_area="Barrel" tags="learnable,perkMasterChef" craft_time="180">
+	<ingredient name="drinkJarGrainAlcohol" count="1"/>
+	<ingredient name="resourceWood" count="50"/>
+	<ingredient name="resourceCoal" count="10"/>
+</recipe>
+
+<recipe name="drinkVodka" count="1" craft_area="Barrel" tags="learnable,perkMasterChef" craft_time="150">
+	<ingredient name="drinkJarGrainAlcohol" count="3"/>
+	<ingredient name="foodCropPotato" count="5"/>
+</recipe>
+
+<recipe name="drinkGin" count="1" craft_area="Barrel" tags="learnable,perkMasterChef" craft_time="150">
+	<ingredient name="drinkJarGrainAlcohol" count="5"/>
+	<ingredient name="resourceCropGoldenrodPlant" count="10"/>
+	<ingredient name="resourceCropChrysanthemumPlant" count="5"/>
+</recipe>
+
+<recipe name="drinkHuntmaster" count="1" craft_area="Barrel" tags="learnable,perkMasterChef" craft_time="150">
+	<ingredient name="drinkJarGrainAlcohol" count="2"/>
+	<ingredient name="resourceYuccaFibers" count="15"/>
+	<ingredient name="resourceCropGoldenrodPlant" count="5"/>
+	<ingredient name="resourceBone" count="5"/>
+</recipe>
+
+<recipe name="drinkSmertJuice" count="2" craft_area="Barrel" tags="learnable,perkMasterChef" craft_time="150">
+	<ingredient name="drinkJarGrainAlcohol" count="5"/>
+	<ingredient name="drinkJarCoffee" count="3"/>
+	<ingredient name="drugVitamins" count="1"/>
+</recipe>
+
+<!-- Ingredients -->
+<recipe name="foodFlour" count="1">
+	<ingredient name="foodCropWheat" count="1"/>
+</recipe>
+
+<recipe name="foodButter" count="1" tags="perkMasterChef">
+	<ingredient name="drinkJarMilk" count="1"/>
+	<ingredient name="resourceCloth" count="5"/>
+</recipe>
+
+<recipe name="foodGravy" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef">
+	<ingredient name="foodFlour" count="1"/>
+	<ingredient name="foodRawMeat" count="5"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodRichBroth" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef">
+	<ingredient name="foodRawMeat" count="4"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>	
+	<ingredient name="resourceBone" count="7"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodCheese" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef">
+	<ingredient name="drinkJarMilk" count="1"/>
+	<ingredient name="resourceCloth" count="5"/>	
+	<ingredient name="resourceAnimalFat" count="1"/>
+</recipe>
+<!-- Tier 1 -->
+<recipe name="foodPorridge" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
+	<ingredient name="foodCropWheat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="foodRice" count="3" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
+	<ingredient name="foodBagRice" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="2"/>
+</recipe>
+
+<recipe name="foodPemmican" count="1" tags="perkMasterChef,learnable" craft_time="15">
+	<ingredient name="foodRawMeat" count="5"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="resourceYuccaFibers" count="20"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+
+<!-- Tier 2 -->
+<recipe name="foodMashedPotato" count="1" craft_area="oven" craft_tool="toolKitchenTools" tags="perkMasterChef,learnable">
+	<ingredient name="foodCropPotato" count="2"/>
+	<ingredient name="foodButter" count="1"/>
+</recipe>
+
+<recipe name="foodAppleJam" count="1" craft_area="oven" tags="learnable,perkMasterChef">
+	<ingredient name="foodCropApple" count="4"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="foodBlueberryJam" count="1" craft_area="oven" tags="learnable,perkMasterChef">
+	<ingredient name="foodCropBlueberries" count="4"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="foodBread" count="2" craft_area="oven" craft_tool="toolKitchenTools" tags="perkMasterChef,learnable">
+	<ingredient name="foodFlour" count="3"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="foodBiscuit" count="3" craft_area="oven" craft_tool="toolKitchenTools" tags="perkMasterChef,learnable">
+	<ingredient name="foodFlour" count="2"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+	<ingredient name="foodButter" count="1"/>
+</recipe>
+
+<recipe name="foodHoneyham" count="5" craft_area="oven" craft_tool="toolCookingGrill" tags="perkMasterChef,learnable">
+	<ingredient name="foodRawMeat" count="35"/>
+	<ingredient name="resourceCoal" count="15"/>
+	<ingredient name="foodHoney" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-7,-14" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodArrozConPollo" count="1" craft_area="campfire" craft_tool="toolCookingGrill" tags="learnable,perkMasterChef">
+	<ingredient name="foodRawMeat" count="7"/>
+	<ingredient name="foodRice" count="1"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodFrenchToast" count="1" craft_area="oven" craft_tool="toolKitchenTools" tags="learnable,perkMasterChef">
+	<ingredient name="foodEgg" count="1"/>
+	<ingredient name="foodBread" count="1"/>
+	<ingredient name="foodCropBlueberries" count="2"/>
+</recipe>
+
+<recipe name="foodOmelette" count="1" craft_area="oven" craft_tool="toolCookSet" tags="learnable,perkMasterChef">
+	<ingredient name="foodRawMeat" count="5"/>
+	<ingredient name="foodEgg" count="2"/>
+	<ingredient name="foodCropMushrooms" count="2"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodEggSandwich" count="1" craft_area="oven" craft_tool="toolKitchenTools" tags="learnable,perkMasterChef">
+	<ingredient name="foodRawMeat" count="8"/>
+	<ingredient name="foodEgg" count="1"/>
+	<ingredient name="foodBiscuit" count="1"/>
+	<ingredient name="foodCheese" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodColeslaw" count="1" tags="perkMasterChef,learnable" craft_time="10">
+	<ingredient name="foodCropCabbage" count="1"/>
+	<ingredient name="foodCropOnion" count="1"/>
+</recipe>
+
+<!-- Tier 3 -->
+<recipe name="foodFruitPlatter" count="1" craft_area="oven" tags="perkMasterChef,learnable">
+	<ingredient name="foodCanPears" count="1"/>
+	<ingredient name="foodCropBlueberries" count="2"/>
+	<ingredient name="foodCropApple" count="1"/>
+	<ingredient name="foodCropYuccaFruit" count="1"/>
+</recipe>
+
+<recipe name="foodApplepie" count="1" craft_area="oven" craft_tool="toolKitchenTools" tags="learnable,perkMasterChef">
+	<ingredient name="foodCropApple" count="2"/>
+	<ingredient name="foodButter" count="1"/>
+	<ingredient name="foodEgg" count="1"/>
+	<ingredient name="foodFlour" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="foodHamburger" count="1" craft_area="campfire" craft_tool="toolCookingGrill" tags="learnable,perkMasterChef">
+	<ingredient name="foodRawMeat" count="8"/>
+	<ingredient name="foodBread" count="1"/>
+	<ingredient name="foodCropTomato" count="1"/>
+	<ingredient name="foodCropPotato" count="1"/>
+	<ingredient name="foodCropOnion" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodPizza" count="1" craft_area="oven" craft_tool="toolCookSet" tags="learnable,perkMasterChef">
+	<ingredient name="foodFlour" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+	<ingredient name="foodCheese" count="1"/>
+	<ingredient name="foodCanTomato" count="1"/>
+	<ingredient name="foodRawMeat" count="5"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodFriedRice" count="1" craft_area="oven" craft_tool="toolKitchenTools" tags="learnable,perkMasterChef">
+	<ingredient name="foodEgg" count="1"/>
+	<ingredient name="foodRice" count="1"/>
+	<ingredient name="foodCanSham" count="1"/>
+	<ingredient name="foodCanPeas" count="1"/>
+</recipe>
+
+<recipe name="foodBurrito" count="1" craft_area="oven" craft_tool="toolKitchenTools" tags="learnable,perkMasterChef">
+	<ingredient name="foodFlour" count="1"/>
+	<ingredient name="foodCropOnion" count="1"/>
+	<ingredient name="foodCheese" count="1"/>
+	<ingredient name="foodCanSalsa" count="1"/>
+	<ingredient name="foodRawMeat" count="8"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodBiscuitsandgravy" count="1" craft_area="oven" tags="learnable,perkMasterChef">
+	<ingredient name="foodBiscuit" count="1"/>
+	<ingredient name="foodRawMeat" count="7"/>
+	<ingredient name="foodGravy" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodKimchi" count="1" tags="learnable,perkMasterChef" >
+	<ingredient name="foodCropCabbage" count="1"/>
+	<ingredient name="foodCropOnion" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+	<ingredient name="resourcePotassiumNitratePowder" count="15"/>
+</recipe>
+
+<recipe name="foodBLT" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable,perkMasterChef">
+	<ingredient name="foodRawMeat" count="8"/>
+	<ingredient name="foodCropCabbage" count="1"/>
+	<ingredient name="foodCropTomato" count="1"/>
+	<ingredient name="foodBread" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodCapreseSalad" craft_area="campfire" count="1" tags="learnable,perkMasterChef">
+	<ingredient name="foodCheese" count="1"/>
+	<ingredient name="foodCropCabbage" count="2"/>
+	<ingredient name="foodCropTomato" count="1"/>
+</recipe>
+
+<recipe name="foodGrilledSalad" count="1" craft_area="campfire" craft_tool="toolCookingGrill" tags="learnable,perkMasterChef">
+	<ingredient name="foodRawMeat" count="8"/>
+	<ingredient name="foodCropCabbage" count="2"/>
+	<ingredient name="foodCropTomato" count="1"/>
+	<ingredient name="foodCropOnion" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+
+<!-- Tier 3 -->
+<recipe name="foodTonjiru" count="1" craft_area="oven" craft_tool="toolCookSet" tags="learnable,perkMasterChef">
+	<ingredient name="foodCanMiso" count="1"/>
+	<ingredient name="foodRawMeat" count="10"/>
+	<ingredient name="foodCropMushrooms" count="2"/>	
+	<ingredient name="foodCropOnion" count="1"/>
+	<ingredient name="foodCanStock" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodReserveChicken" count="1" craft_area="campfire" tags="learnable,perkMasterChef">
+	<ingredient name="foodCanSoup" count="1"/>
+	<ingredient name="foodRawMeat" count="10"/>
+	<ingredient name="foodCropPotato" count="1"/>	
+	<ingredient name="resourceAnimalFat" count="3"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodHuevos" count="1" craft_area="oven" craft_tool="toolCookSet" tags="learnable,perkMasterChef">
+	<ingredient name="foodEgg" count="2"/>
+	<ingredient name="foodCheese" count="1"/>
+	<ingredient name="foodCanSalsa" count="1"/>	
+	<ingredient name="foodCornMeal" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="foodJambalaya" count="1" craft_area="oven" craft_tool="toolCookSet" tags="learnable,perkMasterChef">
+	<ingredient name="foodRice" count="1"/>
+	<ingredient name="foodCanTomato" count="1"/>
+	<ingredient name="foodRawMeat" count="10"/>	
+	<ingredient name="foodRichBroth" count="1"/>
+	<ingredient name="foodCropOnion" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-2,-4" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodKimchijjigae" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable,perkMasterChef">
+	<ingredient name="foodKimchi" count="1"/>
+	<ingredient name="foodRawMeat" count="15"/>	
+	<ingredient name="foodCropOnion" count="1"/>
+	<ingredient name="foodEgg" count="1"/>
+	<ingredient name="foodRichBroth" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-3,-6" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+
+
+<!-- Tier 4 -->
+<recipe name="foodBOC" count="1" craft_area="oven" craft_tool="toolCookSet" tags="learnable,perkMasterChef">
+	<ingredient name="foodHoneyham" count="1"/>
+	<ingredient name="foodBiscuit" count="1"/>
+	<ingredient name="foodEgg" count="3"/>	
+	<ingredient name="foodCropApple" count="1"/>
+	<ingredient name="foodGravy" count="1"/>
+</recipe>
+
+<recipe name="foodKFC" count="1" craft_area="oven" craft_tool="toolKitchenTools" tags="learnable,perkMasterChef">
+	<ingredient name="foodCanChicken" count="1"/>
+	<ingredient name="foodBiscuit" count="1"/>
+	<ingredient name="foodMashedPotato" count="1"/>	
+	<ingredient name="foodCropCorn" count="1"/>
+	<ingredient name="foodFlour" count="1"/>
+</recipe>
+
+<recipe name="foodFullEnglish" count="1" craft_area="oven" craft_tool="toolKitchenTools" tags="learnable,perkMasterChef">
+	<ingredient name="foodCanChili" count="1"/>
+	<ingredient name="foodCropTomato" count="1"/>
+	<ingredient name="foodCropMushrooms" count="3"/>	
+	<ingredient name="foodEgg" count="2"/>
+	<ingredient name="foodRawMeat" count="20"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-4,-8" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<!--old food-->
+<recipe name="foodCharredMeat" count="1" craft_area="campfire" tags="perkMasterChef">
+	<ingredient name="foodRawMeat" count="7"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-4,-8" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodGrilledMeat" count="1" craft_area="campfire" craft_tool="toolCookingGrill" tags="perkMasterChef,learnable">
+	<ingredient name="foodRawMeat" count="7"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodBoiledMeat" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
+	<ingredient name="foodRawMeat" count="7"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodBaconAndEggs" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
+	<ingredient name="foodRawMeat" count="10"/>
+	<ingredient name="foodEgg" count="2"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-2,-4" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodMeatStew" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
+	<ingredient name="foodRawMeat" count="10"/>
+	<ingredient name="foodCropPotato" count="2"/>
+	<ingredient name="foodCropOnion" count="2"/>
+	<ingredient name="foodRichBroth" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-2,-4" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodSteakAndPotato" count="1" craft_area="campfire" craft_tool="toolCookingGrill" tags="perkMasterChef,learnable">
+	<ingredient name="foodRawMeat" count="15"/>
+	<ingredient name="foodCropPotato" count="2"/>
+	<ingredient name="foodCropMushrooms" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-3,-6" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodPumpkinBread" count="1" craft_area="oven" craft_tool="toolKitchenTools" tags="perkMasterChef,learnable">
+	<ingredient name="foodCropPumpkin" count="1"/>
+	<ingredient name="foodFlour" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="foodBlueberryPie" count="1" craft_area="oven" craft_tool="toolKitchenTools" tags="perkMasterChef,learnable">
+	<ingredient name="foodCropBlueberries" count="5"/>
+	<ingredient name="foodEgg" count="1"/>
+	<ingredient name="foodButter" count="1"/>
+	<ingredient name="foodFlour" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodCropBlueberries"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodPumpkinPie" count="1" craft_area="oven" craft_tool="toolKitchenTools" tags="perkMasterChef,learnable">
+	<ingredient name="foodCropPumpkin" count="2"/>
+	<ingredient name="foodEgg" count="1"/>
+	<ingredient name="foodButter" count="1"/>
+	<ingredient name="foodFlour" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="foodPumpkinCheesecake" count="1" craft_area="oven" craft_tool="toolKitchenTools" tags="perkMasterChef,learnable">
+	<ingredient name="foodCropPumpkin" count="2"/>
+	<ingredient name="foodButter" count="2"/>
+	<ingredient name="foodFlour" count="1"/>
+	<ingredient name="foodEgg" count="1"/>
+	<ingredient name="drinkJarGrainAlcohol" count="1"/>
+</recipe>
+
+<recipe name="foodCornBread" count="1" craft_area="oven" craft_tool="toolKitchenTools" tags="perkMasterChef, learnable">
+	<ingredient name="foodCornMeal" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+</recipe>
+
+<recipe name="foodChiliDog" count="1" craft_area="oven" craft_tool="toolCookingGrill" tags="perkMasterChef,learnable">
+	<ingredient name="foodCanChili" count="1"/>
+	<ingredient name="foodCheese" count="1"/>
+	<ingredient name="foodRawMeat" count="7"/>
+	<ingredient name="foodBread" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodRawMeat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodFishTacos" count="1" craft_area="oven" craft_tool="toolCookSet" tags="perkMasterChef,learnable">
+	<ingredient name="foodCanSalmon" count="1"/>
+	<ingredient name="foodCheese" count="1"/>
+	<ingredient name="foodCornMeal" count="2"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+	<ingredient name="foodCropOnion" count="1"/>
+</recipe>
+
+<recipe name="foodShamChowder" count="1" craft_area="oven" craft_tool="toolCookSet" tags="perkMasterChef,learnable">
+	<ingredient name="foodCanSham" count="1"/>
+	<ingredient name="foodCropPotato" count="2"/>
+	<ingredient name="foodCropOnion" count="2"/>
+	<ingredient name="foodRichBroth" count="1"/>
+	<ingredient name="foodFlour" count="1"/>
+</recipe>
+
+<recipe name="foodGumboStew" count="1" craft_area="oven" craft_tool="toolCookSet" tags="perkMasterChef,learnable">
+	<ingredient name="foodCanBeef" count="1"/>
+	<ingredient name="foodCanPeas" count="1"/>
+	<ingredient name="foodRichBroth" count="1"/>
+	<ingredient name="resourceAnimalFat" count="3"/>
+	<ingredient name="foodCropOnion" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1" tags="resourceAnimalFat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodShepardsPie" count="1" craft_area="oven" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
+	<ingredient name="foodCanLamb" count="1"/>
+	<ingredient name="foodCanPeas" count="1"/>
+	<ingredient name="foodCropCorn" count="1"/>
+	<ingredient name="resourceAnimalFat" count="3"/>
+	<ingredient name="foodMashedPotato" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1" tags="resourceAnimalFat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodSpaghetti" count="1" craft_area="oven" craft_tool="toolKitchenTools" tags="perkMasterChef,learnable">
+	<ingredient name="foodCanBeef" count="1"/>
+	<ingredient name="foodCanPasta" count="1"/>
+	<ingredient name="foodCropMushrooms" count="5"/>
+	<ingredient name="foodCropOnion" count="2"/>
+	<ingredient name="foodBread" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1" tags="resourceAnimalFat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodTunaFishGravyToast" count="1" craft_area="oven" craft_tool="toolCookSet" tags="perkMasterChef,learnable">
+	<ingredient name="foodCanTuna" count="1"/>
+	<ingredient name="foodGravy" count="1"/>
+	<ingredient name="foodBiscuit" count="1"/>
+	<ingredient name="resourceAnimalFat" count="3"/>
+	<ingredient name="foodCornMeal" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1" tags="resourceAnimalFat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="drinkJarPureMineralWater" count="1" craft_area="oven" craft_tool="toolCookSet" tags="perkMasterChef,learnable">
+	<ingredient name="drinkJarRiverWater" count="1"/>
+	<ingredient name="resourceCoal" count="1"/>
+	<ingredient name="resourceCropGoldenrodPlant" count="1"/>
+	<ingredient name="resourceCropChrysanthemumPlant" count="1"/>
+</recipe>
+
+<recipe name="drinkJarBlackStrapCoffee" count="1" craft_area="oven" tags="perkMasterChef,learnable">
+	<ingredient name="resourceCropCoffeeBeans" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+	<ingredient name="resourceGunPowder" count="5"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="resourceGunPowder"/>
+	</effect_group>
+</recipe>
+
+<recipe name="drinkJarGrandpasAwesomeSauce" count="1" craft_area="wineBarrelworkbench" craft_tool="toolCookSet" tags="perkMasterChef,learnable">
+	<ingredient name="casinoCoin" count="50"/>
+	<ingredient name="foodHoney" count="5"/>
+	<ingredient name="foodCropMushrooms" count="5"/>
+	<ingredient name="ammoGasCan" count="10"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="perc_add" value="-.2,-.4" tags="casinoCoin,foodHoney,foodCropMushrooms,ammoGasCan"/>
+	</effect_group>
+</recipe>
+
+<recipe name="drinkJarGrandpasLearningElixir" count="1" craft_area="wineBarrelworkbench" craft_tool="toolCookSet" tags="perkMasterChef,learnable">
+	<ingredient name="foodCanDogfood" count="2"/>
+	<ingredient name="drinkJarRedTea" count="2"/>
+	<ingredient name="resourceAcid" count="1"/>
+	<ingredient name="drinkJarBeer" count="1"/>
+</recipe>
+
+<recipe name="drinkJarGrandpasMoonshine" count="1" craft_area="wineBarrelworkbench" craft_tool="toolCookSet" tags="perkMasterChef,learnable">
+	<ingredient name="foodCornMeal" count="5"/>
+	<ingredient name="drinkJarGrainAlcohol" count="1"/>
+	<ingredient name="foodCropBlueberries" count="5"/>
+	<ingredient name="resourceAcid" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodCornMeal,foodCropBlueberries"/>
+	</effect_group>
+</recipe>
+
+<recipe name="drinkYuccaJuiceSmoothie" count="1" craft_area="campfire" tags="perkMasterChef,learnable">
+	<ingredient name="drinkJarYuccaJuice" count="1"/>
+	<ingredient name="foodCropBlueberries" count="4"/>
+	<ingredient name="resourceSnowBall" count="10"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodCropBlueberries"/>
+	</effect_group>
+</recipe>
+
+<recipe name="foodVegetableStew" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
+	<ingredient name="foodCropPotato" count="2"/>
+	<ingredient name="foodCropCabbage" count="2"/>
+	<ingredient name="foodCropMushrooms" count="2"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<!--Misc-->
+<recipe name="goldBar" count="1" craft_exp_gain="0" craft_time="10">
+	<ingredient name="casinoCoin" count="20000"/>
+</recipe>
+
+<recipe name="casinoCoin" count="20000" craft_time="10">
+	<ingredient name="goldBar" count="1"/>
+</recipe>
+
+<recipe name="drinkJarBeer" count="5" craft_area="wineBarrelworkbench" tags="perkMasterChef,learnable">
+	<ingredient name="resourceCropHopsFlower" count="20"/>
+	<ingredient name="drinkJarBoiledWater" count="5"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-4,-8" tags="resourceCropHopsFlower"/>
+	</effect_group>
+</recipe>
+
+<recipe name="drinkJarGrainAlcohol" craft_area="campfire" count="1" craft_tool="toolBeaker" tags="perkMasterChef,learnable">
+	<ingredient name="foodCropCorn" count="1"/>
+	<ingredient name="drinkJarRiverWater" count="2"/>
+</recipe>
+
+<recipe name="drinkJarGrainAlcohol" craft_area="oven" count="10" craft_time="100" craft_tool="toolBeaker" tags="perkMasterChef,learnable">
+	<ingredient name="foodCropWheat" count="25"/>
+	<ingredient name="drinkJarRiverWater" count="5"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-5,-10" tags="foodCropWheat"/>
+	</effect_group>
+</recipe>
+
+<recipe name="medicalFirstAidKit" count="1" craft_area="chemistryStation" tags="learnable,chemStationCrafting" >
+	<ingredient name="medicalBloodBag" count="1"/>
+	<ingredient name="drinkJarGrainAlcohol" count="1"/>
+	<ingredient name="medicalBandage" count="1"/>
+	<ingredient name="resourceSewingKit" count="1"/>
+</recipe>
+
+</append>
+</configs>

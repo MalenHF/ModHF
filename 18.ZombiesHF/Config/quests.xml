@@ -76,7 +76,6 @@
 			<property name="icon" value="ui_game_symbol_quest"/>
 			<property name="repeatable" value="true"/>
 			<property name="category_key" value="quest"/>
-			<property name="shareable" value="true"/>
 			<property name="offer_key" value="quest_tier6_clear_offer"/>
 			<property name="difficulty" value="medium"/>
 			<property name="difficulty_tier" value="6"/>
@@ -111,6 +110,7 @@
 			<property name="icon" value="ui_game_symbol_quest"/>
 			<property name="repeatable" value="true"/>
 			<property name="category_key" value="quest"/>
+			<property name="shareable" value="true"/>
 			<property name="offer_key" value="quest_tier6_clear_offer"/>
 			<property name="difficulty" value="medium"/>
 			<property name="difficulty_tier" value="6"/>
@@ -905,21 +905,112 @@
 			<action type="SpawnEnemy" id="EliteSolider" value="5" phase="3"/>
 			<action type="SpawnEnemy" id="EliteDemo" value="2" phase="3"/>
 			<objective type="EntityKill" id="zombieBossSoldier" value="1" phase="3"/>
-			<action type="SpawnEnemy" id="zombieBossZombieKnight" value="2" phase="4"/>
-			<action type="SpawnEnemy" id="zombieBossZombieKnight" value="21" phase="3"/>
-			<action type="SpawnEnemy" id="EliteSkater" value="1" phase="3"/>
-			<action type="SpawnEnemy" id="HvMortevodaSkater" value="1" phase="3"/>
-			<action type="SpawnEnemy" id="HvHoarfrostSkater" value="1" phase="3"/>
-			<action type="SpawnEnemy" id="HvInfernalSkater" value="1" phase="3"/>
-			<action type="SpawnEnemy" id="nightZombieSkater" value="1" phase="3"/>
-			<action type="SpawnEnemy" id="zombieSBKnight" value="1" phase="3"/>
 
+			<action type="SpawnEnemy" id="zombieBossZombieKnight" value="2" phase="4"/>
+			<action type="SpawnEnemy" id="zombieBossZombieKnight" value="21" phase="4"/>
+			<action type="SpawnEnemy" id="EliteSkater" value="1" phase="4"/>
+			<action type="SpawnEnemy" id="HvMortevodaSkater" value="1" phase="4"/>
+			<action type="SpawnEnemy" id="HvHoarfrostSkater" value="1" phase="4"/>
+			<action type="SpawnEnemy" id="HvInfernalSkater" value="1" phase="4"/>
+			<action type="SpawnEnemy" id="nightZombieSkater" value="1" phase="4"/>
+			<action type="SpawnEnemy" id="zombieSBKnight" value="1" phase="4"/>
 			<objective type="EntityKill" id="zombieBossZombieKnight" value="1" phase="4"/>
 
 			<action type="SpawnEnemy" id="zombieBossMummy" value="2" phase="5"/>
 			<action type="SpawnEnemy" id="zombieScarecrow" value="2" phase="5"/>
 			<action type="SpawnEnemy" id="TAVOzombieWightRAINBOW" value="2" phase="5"/>
 			<action type="SpawnEnemy" id="TAVOanimalSnakeFeral" value="1" phase="5"/>
+			<action type="SpawnEnemy" id="HvInfernalCop" value="2" phase="5"/>
+			<action type="SpawnEnemy" id="zombieMummyDog" value="2" phase="5"/>
+			<objective type="EntityKill" id="zombieBossMummy" value="1" phase="5"/>
+
+			<action type="SpawnEnemy" id="zombieBossJuggernaut" value="2" phase="6"/>
+			<action type="SpawnEnemy" id="zombieGunner" value="1" phase="6"/>
+			<action type="SpawnEnemy" id="ZombieBomber" value="2" phase="6"/>
+			<action type="SpawnEnemy" id="HvInfernalCop" value="2" phase="6"/>
+			<action type="SpawnEnemy" id="EliteDemo" value="2" phase="6"/>
+			<objective type="EntityKill" id="zombieBossJuggernaut" value="1" phase="6"/>
+
+			<action type="SpawnEnemy" id="zombierBossCirujano" value="2" phase="7"/>
+			<action type="SpawnEnemy" id="zombieGunner" value="1" phase="7"/>
+			<action type="SpawnEnemy" id="ZombieBomber" value="2" phase="7"/>
+			<action type="SpawnEnemy" id="HvInfernalCop" value="2" phase="7"/>
+			<action type="SpawnEnemy" id="EliteDemo" value="2" phase="7"/>
+			<objective type="EntityKill" id="zombierBossCirujano" value="1" phase="7"/>
+
+			<action type="SpawnEnemy" id="zombieBossSiren" value="2" phase="8"/>
+			<action type="SpawnEnemy" id="zombieBanshee" value="1" phase="8"/>
+			<action type="SpawnEnemy" id="EliteSpider" value="2" phase="8"/>
+			<action type="SpawnEnemy" id="zombieScarecrow" value="3" phase="8"/>
+			<action type="SpawnEnemy" id="ZombieBomber" value="4" phase="8"/>
+			<objective type="EntityKill" id="zombieBossSiren" value="1" phase="8"/>
+
+			<action type="SpawnEnemy" id="zombieBossAdminHF" value="1" phase="9"/>
+			<action type="SpawnEnemy" id="zombieBossPractoSpider" value="1" phase="9"/>
+			<action type="SpawnEnemy" id="ZombieBossMineralSpider" value="1" phase="9"/>
+			<action type="SpawnEnemy" id="zombieSBRopa" value="1" phase="9"/>
+			<objective type="EntityKill" id="zombieBossAdminHF" value="1" phase="9"/>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="8"/>
+			</objective>
+			<reward type="Exp" value="300000"/>
+			<reward type="Item" id="casinoCoinD" value="5"/>
+			<reward type="Item" id="bossTokenAncient" value="1"/>
+			<reward type="LootItem" id="sQuestHFloot1" ischosen="true" isfixed="true" value="6"/>
+			<reward type="LootItem" id="sQuestHFloot2" ischosen="true" value="6"/>
+			<reward type="LootItem" id="sQuestHFloot3" ischosen="true" value="6"/>
+			<reward type="LootItem" id="sQuestHFloot4" ischosen="true" value="6"/>
+			<reward type="LootItem" id="sQuestHFloot5" ischosen="true" value="6"/>
+
+		</quest>
+		<quest id="q_HF2">
+			<property name="name" value="Hooligan Force" />
+			<property name="description_key" value="Hooligan Force" />
+			<property name="subtitle_key" value="KillBosses" />
+			<property name="icon" value="ui_game_symbol_trophy"/>
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false" />
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="HFQuest1"/>
+			<property name="completion_key" value="comleteHF"/>
+			<property name="difficulty" value="insane"/>
+			<property name="completiontype" value="TurnIn"/>
+			<property name="reward_choices_count" value="5" />
+			<property name="difficulty_tier" value="7"/>
+			<objective type="ClosestPOIGoto">
+				<property name="phase" value="1"/>
+				<property name="nav_object" value="quest" />
+			</objective>
+			<objective type="RallyPoint">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="rally" />
+			</objective>
+			<objective type="ClearSleepers">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="sleeper_volume"/>
+			</objective>
+
+			<action type="SpawnEnemy" id="zombieBossSoldier" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="zombieGunner" value="2" phase="3"/>
+			<action type="SpawnEnemy" id="EliteSolider" value="5" phase="3"/>
+			<action type="SpawnEnemy" id="EliteDemo" value="2" phase="3"/>
+			<objective type="EntityKill" id="zombieBossSoldier" value="1" phase="3"/>
+
+			<action type="SpawnEnemy" id="zombieBossZombieKnight" value="2" phase="4"/>			
+			<action type="SpawnEnemy" id="EliteSkater" value="1" phase="4"/>
+			<action type="SpawnEnemy" id="HvMortevodaSkater" value="1" phase="4"/>
+			<action type="SpawnEnemy" id="HvHoarfrostSkater" value="1" phase="4"/>
+			<action type="SpawnEnemy" id="HvInfernalSkater" value="1" phase="4"/>
+			<action type="SpawnEnemy" id="nightZombieSkater" value="1" phase="4"/>
+			<action type="SpawnEnemy" id="zombieSBKnight" value="1" phase="4"/>
+
+			<objective type="EntityKill" id="zombieBossZombieKnight" value="1" phase="4"/>
+
+			<action type="SpawnEnemy" id="zombieBossMummy" value="2" phase="5"/>
+			<action type="SpawnEnemy" id="zombieScarecrow" value="2" phase="5"/>
+			<action type="SpawnEnemy" id="TAVOzombieWightRAINBOW" value="2" phase="5"/>
+			<action type="SpawnEnemy" id="TAVOanimalSnakeFeral" value="2" phase="5"/>
 			<action type="SpawnEnemy" id="HvInfernalCop" value="2" phase="5"/>
 			<action type="SpawnEnemy" id="zombieMummyDog" value="2" phase="5"/>
 			<objective type="EntityKill" id="zombieBossMummy" value="1" phase="5"/>
@@ -962,8 +1053,8 @@
 			<reward type="LootItem" id="sQuestHFloot3" ischosen="true" value="6"/>
 			<reward type="LootItem" id="sQuestHFloot4" ischosen="true" value="6"/>
 			<reward type="LootItem" id="sQuestHFloot5" ischosen="true" value="6"/>
-
 		</quest>
+
 		<quest id="q_HFRush">
 			<property name="name" value="Hooligan Force" />
 			<property name="description_key" value="Hooligan Force" />

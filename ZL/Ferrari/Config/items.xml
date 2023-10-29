@@ -1,0 +1,34 @@
+<configs>
+	<append xpath="/items">
+
+		<item name="Ferrari Evo Body">
+			<property name="Extends" value="vehicleBicycleHandlebars"/>
+			<property name="CustomIcon" value="ferrarievobody" />
+			<property name="SellableToTrader" value="True"/>
+			<property name="DescriptionKey" value="Ferrari Evo Body"/>
+			<property name="EconomicValue" value="9000"/>
+			<property name="UnlockedBy" value="craftingVehicles"/>
+		</item>
+		
+
+		<item name="vehicleFerrariEvoplaceable">
+			<property name="CustomIcon" value="ferrarrievoicon" />
+			<property name="Extends" value="vehicleMinibikePlaceable"/>
+			<property name="Tags" value="vehicle,vfuel,vlight"/>
+			<property name="Meshfile" value="#@modfolder:Resources/FerrariFXXKEvo.unity3d?FerrariFXX"/>
+			<property name="EconomicValue" value="35000"/>
+			<property class="Action1">
+				<property name="Vehicle" value="vehicleFerrariEvo"/>
+				<property name="VehicleSize" value="4.7, 4.8, 5"/>
+			</property>
+			<effect_group name="Base Effects">
+				<passive_effect name="ModSlots" operation="base_set" value="4"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="10000"/>
+			</effect_group>
+		</item>
+
+		
+		
+	</append>
+</configs>

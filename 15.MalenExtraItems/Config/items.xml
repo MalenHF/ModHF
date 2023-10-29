@@ -125,10 +125,12 @@
 			<property name="CustomIcon" value="cntBathTubEmpty"/>
 			<property name="CustomIconTint" value="81, 209, 246"/>
 			<property name="TintColor" value="81, 209, 246"/>
+			<property name="SellableToTrader" value="false"/>
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="DescriptionKey" value="practoniumdesc"/>
 			<property name="EconomicValue" value="5000"/>
-			<property name="Stacknumber" value="100"/>
+			<property name="Stacknumber" value="10"/>
+			<property name="EconomicBundleSize" value="11"/>
 			<property name="Group" value="Lmats"/>
 		</item>
 		<item name="practoniumMould">
@@ -138,10 +140,12 @@
 			<property name="CustomIcon" value="cntBathTubEmpty"/>			
 			<property name="CustomIconTint" value="B65FCF"/>
 			<property name="TintColor" value="B65FCF"/>
+			<property name="SellableToTrader" value="false"/>
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="DescriptionKey" value="practoniumdesc"/>
 			<property name="EconomicValue" value="5000"/>
-			<property name="Stacknumber" value="100"/>
+			<property name="Stacknumber" value="10"/>
+			<property name="EconomicBundleSize" value="11"/>
 			<property name="Group" value="Lmats"/>
 		</item>
 		<item name="ResourceForgedPlatinum">
@@ -152,6 +156,7 @@
 			<property name="TintColor" value="81, 209, 246"/>
 			<property name="Stacknumber" value="10"/>
 			<property name="DescriptionKey" value="platinumdesc"/>
+			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Lmats"/>
 			<property name="EconomicValue" value="250000"/>
 			<property name="EconomicBundleSize" value="1"/>
@@ -163,11 +168,13 @@
 			<property name="CustomIcon" value="resourceForgedSteel"/>
 			<property name="CustomIconTint" value="B65FCF"/>
 			<property name="TintColor" value="B65FCF"/>
+			<property name="SellableToTrader" value="false"/>
 			<property name="Stacknumber" value="10"/>
 			<property name="DescriptionKey" value="practoIngotdesc"/>
 			<property name="Group" value="Lmats"/>
 			<property name="EconomicValue" value="375000"/>>
-			<property name="EconomicBundleSize" value="1"/>
+			
+			<property name="EconomicBundleSize" value="11"/>
 			<property name="ItemTypeIcon" value="diamond"/>
 		</item>
 		<item name="Practonium">
@@ -178,8 +185,9 @@
 			<property name="CustomIcon" value="orePotassiumNitrateBoulder"/>
 			<property name="CustomIconTint" value="B65FCF"/>
 			<property name="TintColor" value="B65FCF"/>
-			<property name="EconomicBundleSize" value="1"/>
+			<property name="EconomicBundleSize" value="101"/>
 			<property name="DescriptionKey" value="practoniumdesc"/>
+			<property name="SellableToTrader" value="false"/>
 			<property name="EconomicValue" value="5000"/>
 			<property name="Stacknumber" value="100"/>
 			<property name="ItemTypeIcon" value="diamond"/>
@@ -196,7 +204,9 @@
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="DescriptionKey" value="mithrilDesc"/>
 			<property name="EconomicValue" value="5000"/>
-			<property name="Stacknumber" value="100"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Stacknumber" value="25"/>
+			<property name="EconomicBundleSize" value="26"/>
 			<property name="Group" value="Lmats"/>
 			<property name="SellableToTrader" value="false"/>
 		</item>
@@ -209,6 +219,7 @@
 			<property name="DisplayType" value="divinewater"/>
 			<property name="ItemTypeIcon" value="twitch_special"/>
 			<property name="Material" value="Morganic"/>
+			<property name="SellableToTrader" value="false"/>
 			<property name="DescriptionKey" value="aguaDivinaDesc"/>			
 			<property name="UnlockedBy" value="craftingFood"/>
 			<property name="Group" value="Lmats"/>
@@ -247,6 +258,7 @@
 			<property name="CustomIconTint" value="00AAE4"/>
 			<property name="UnlockedBy" value="perkArtOfMiningComplete"/>
 			<property name="Stacknumber" value="100"/>
+			<property name="EconomicBundleSize" value="101"/>
 			<property class="Action0">
 				<property name="Create_item" value="casinoCoin"/>
 				<property name="Create_item_count" value="20000"/>
@@ -271,7 +283,8 @@
 			<property name="CustomIcon" value="modRadiationReady"/>
 			<property name="CustomIconTint" value="100,0,0"/>
 			<property name="TintColor" value="100,0,0"/>
-			<property name="EconomicBundleSize" value="1"/>
+			<property name="EconomicBundleSize" value="6"/>
+
 			<property name="UnlockedBy" value="perkprestige2"/>
 			<property name="DescriptionKey" value="aPartDesc"/>
 			<property name="EconomicValue" value="1"/>
@@ -789,7 +802,7 @@
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkArtOfMiningBlackStrap" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkArtOfMiningPallets" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkArtOfMiningAvalanche" level="-1"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkArtOfMiningLantern" level="-1"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkArtOfMiningDamage" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="20000"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkArtOfMiningComplete" level="-1">
 						<requirement name="PerksUnlocked" skill_name="skillArtOfMining" operation="GTE" value="7"/>
@@ -1114,12 +1127,12 @@
 				<property name="Group" value="Books"/>
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkBatterUpBigHits" level="-1"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkBatterUpMetalChain" level="-1"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkBatterUpGear" level="-1"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkBatterUpStealingBases" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkBatterUpSlowPitch" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkBatterUpKnockdown" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkBatterUpMaintenance" level="-1"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkBatterUpBaseballBats" level="-1"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkBatterUpFoulBalls" level="-1"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkBatterUpMetalChain" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="20000"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkBatterUpComplete" level="-1">
 						<requirement name="PerksUnlocked" skill_name="skillBatterUp" operation="GTE" value="7"/>
@@ -1313,7 +1326,7 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkGreatHeistSafes" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkGreatHeistGems" level="-1"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkGreatHeistTimedCharge" level="-1"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkGreatHeistGoldRush" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkGreatHeistClaimed" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkGreatHeistAdrenalineFall" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkGreatHeistSprintSneak" level="-1"/>
@@ -1511,10 +1524,10 @@
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkSpearHunter1Damage" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkSpearHunter2Maintenance" level="-1"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkSpearHunter3SteelSpears" level="-1"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkSpearHunter4StrongArm" level="-1"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkSpearHunter3Bleed" level="-1"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkSpearHunter4KillMove" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkSpearHunter5RapidStrike" level="-1"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkSpearHunter6PuncturedLung" level="-1"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkSpearHunter6PenetratingShaft" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkSpearHunter7QuickStrike" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="20000"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkSpearHunter8Complete" level="-1">
@@ -1540,6 +1553,7 @@
 				<property name="ShowQuality" value="false"/>
 				<property name="ItemTypeIcon" value="star"/>
 				<property name="Material" value="Morganic"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="UnlockedBy" value="HML"/>
 				<property name="DescriptionKey" value="LTDesc"/>
 				<effect_group>
@@ -1569,6 +1583,7 @@
 				<property name="EconomicValue" value="93750"/>
 				<property name="ShowQuality" value="false"/>
 				<property name="ItemTypeIcon" value="star"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="UnlockedBy" value="HML"/>
 				<property name="Material" value="Morganic"/>
 				<property name="DescriptionKey" value="LTDesc"/>
@@ -1601,6 +1616,7 @@
 				<property name="ShowQuality" value="false"/>
 				<property name="ItemTypeIcon" value="star"/>
 				<property name="UnlockedBy" value="HML"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="EconomicValue" value="93750"/>
 				<property name="Material" value="Morganic"/>
 				<property name="DescriptionKey" value="LTDesc"/>
@@ -1633,6 +1649,7 @@
 				<property name="Material" value="Morganic"/>
 				<property name="ItemTypeIcon" value="star"/>
 				<property name="UnlockedBy" value="HML"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="Group" value="Tools/Traps"/>
 				<property name="DescriptionKey" value="LTDesc"/>
 				<property name="Candrop" value="false"/>
@@ -1668,6 +1685,7 @@
 				<property name="Material" value="Morganic"/>
 				<property name="EconomicValue" value="93750"/>
 				<property name="UnlockedBy" value="PBMT"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="DisplayType" value="legendNailgun"/>
 				<property name="DescriptionKey" value="LTDesc"/>
 				<property class="Action0">
@@ -1760,6 +1778,7 @@
 				<property name="ShowQuality" value="false"/>
 				<property name="EconomicValue" value="165000"/>
 				<property name="CreativeMode" value="Dev"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="UnlockedBy" value="HML"/>
 				<property name="DescriptionKey" value="LTDesc"/>
 				<property name="Candrop" value="false"/>
@@ -1908,6 +1927,7 @@
 				<property name="DescriptionKey" value="MDDesc"/>
 				<property name="UnlockedBy" value="HML"/>
 				<property name="Group" value="MSeries"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="Candrop" value="false"/>
 				<property class="Action0">
 					<property name="Class" value="DynamicMelee"/>
@@ -1964,7 +1984,7 @@
 				<property name="Material" value="Morganic"/>
 				<property name="SellableToTrader" value="false"/>
 				<property name="Candrop" value="false"/>
-
+				
 				<property name="DescriptionKey" value="aDescHammer"/>
 				<property name="UnlockedBy" value="perkprestige2"/>
 				<property name="Group" value="aSeries"/>
@@ -2081,6 +2101,7 @@
 				<property name="SellableToTrader" value="false"/>
 				<property name="SoundJammed" value="ItemNeedsRepair"/>
 				<property name="SoundDestroy" value="wooddestroy1"/>
+
 				<property name="Group" value="Tools/Traps"/>
 				<property name="ShowQuality" value="false"/>
 				<property class="Action0">
@@ -2135,12 +2156,11 @@
 				<property name="CustomIcon" value="gunHandgunT0PipePistol"/>
 				<property name="DescriptionKey" value="LWDS"/>
 				<property name="Material" value="Morganic"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="UnlockedBy" value="HML"/>
 				<property name="ShowQuality" value="false"/>
 				<property name="EconomicValue" value="125000"/>
-				<effect_group name="gunPistol">
-	
-					
+				<effect_group name="gunPistol">					
 					<passive_effect name="EntityDamage" operation="base_add" value="50">
 						<requirement name="PlayerLevel" operation="GT" value="49"/>
 					</passive_effect>
@@ -2237,6 +2257,7 @@
 				<property name="DescriptionKey" value="LWDS"/>
 				<property name="EconomicValue" value="125000"/>
 				<property name="UnlockedBy" value="HML"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="ShowQuality" value="false"/>
 				<effect_group name="gunHuntingRifle">
 
@@ -2294,6 +2315,7 @@
 				<property name="Material" value="Morganic"/>
 				<property name="EconomicValue" value="125000"/>
 				<property name="UnlockedBy" value="HML"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="ShowQuality" value="false"/>
 				<effect_group name="gunAK47">
 				
@@ -9366,7 +9388,7 @@
 			</property>
 			<effect_group tiered="false" name="Drug Tier 3">
 				<display_value name="dInstantHealth" value="40"/>
-				<display_value name="dHealthLoss" value=".2"/>
+				<display_value name="dHealthLoss" value=".1"/>
 				<display_value name="dCarryCapacity" value="60"/>
 				<display_value name="dRunSpeed" value=".2"/>
 				<display_value name="$waterAmountAdd" value="-30"/>
@@ -9914,6 +9936,7 @@
 			<property name="Material" value="MresourceDiamondNugget"/>
 			<property name="Weight" value="120"/>
 			<property name="MeltTimePerUnit" value=".2244"/>
+			<property name="EconomicBundleSize" value="251"/>
 		</append>
 		<append xpath="/items/item[@name='resourceGoldNugget']">
 			<property name="Stacknumber" value="500"/>
@@ -9922,6 +9945,7 @@
 			<property name="Material" value="MresourceGoldNugget"/>
 			<property name="Weight" value="60"/>
 			<property name="MeltTimePerUnit" value=".2244"/>
+			<property name="EconomicBundleSize" value="501"/>
 		</append>
 		<append xpath="/items/item[@name='resourceSilverNugget']">
 			<property name="Stacknumber" value="1000"/>
@@ -9930,6 +9954,7 @@
 			<property name="Material" value="MresourceSilverNugget"/>
 			<property name="Weight" value="30"/>
 			<property name="MeltTimePerUnit" value=".1496"/>
+			<property name="EconomicBundleSize" value="1001"/>
 		</append>		
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	
