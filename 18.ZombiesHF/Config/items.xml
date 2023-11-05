@@ -1931,12 +1931,12 @@
 					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3"/>
 					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
-					<!-- <triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffDrowned"/> -->
 					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffShocked"/>
 					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="InfectionFeral"/>
 					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInfectionCatch"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="CallGameEvent" target="other" event="HelicopterHelicopteeer"/>
 				</effect_group>
-			</item>			
+			</item>	
 			<item name="projectileFrozen">
 				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
 				<property name="Material" value="Morganic"/>

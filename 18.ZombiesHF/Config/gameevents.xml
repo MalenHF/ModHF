@@ -1,0 +1,47 @@
+<configs>
+	<append xpath="/gameevents">
+	
+		<action_sequence name="DisarmPlayer">
+			<property name="allow_while_dead" value="false" />         		
+			<requirement class="HasHeld" />
+			
+			<action class="PlaySound">
+				 <property name="sound" value="zombiefemalescoutalert" />
+				<!--<property name="inside_head" value="true" />-->
+				 <property name="phase" value="1" />
+			 </action>
+			
+			<action class="DropHeldItem">
+				<property name="phase" value="1"/>
+				<property name="drop_sound" value="itemdropped" />
+			</action>
+		</action_sequence>	
+		
+		
+		<action_sequence name="RoottingFood">
+			<action class="ReplaceItems">
+				<property name="phase" value="1" />
+				<property name="items_location" value="Toolbelt,Backpack" />
+				<property name="replaced_by_item" value="foodRottingFlesh" />
+				<property name="items_tags" value="food" />
+				<!-- <property name="target_group" value="players" /> -->
+			</action>
+		</action_sequence>
+
+		<action_sequence name="HelicopterHelicopteeer">
+			<loop class="For">
+				<property name="min_loop_count" value="1" />
+				<property name="max_loop_count" value="10" />
+				<property name="phase" value="3" />
+			
+				<action class="Delay">
+					<property name="time" value="0.3" />
+				</action>
+				
+				<action class="RandomizeRotation">
+					<property name="phase" value="2" />
+				</action>
+			</loop>			
+		</action_sequence>
+	</append>
+</configs>

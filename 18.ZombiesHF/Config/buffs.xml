@@ -650,7 +650,7 @@
 		</buff>
 		<buff name="buffSpartan2" hidden="false" description_key="spartancalldesc" name_key="spartannamecall" tooltip_key="spartancall" icon="ui_game_symbol_deep_cuts" icon_color="163,16,16">
 			<stack_type value="ignore"/>
-			<duration value="2.5"/>
+			<duration value="4"/>
 			<effect_group>
 				<requirement name="EntityTagCompare" tags="player,zombies"/>
 				<requirement name="NotHasBuff" buff="god"/>
@@ -660,7 +660,7 @@
 				<passive_effect name="StaminaLoss" operation="perc_add" value="-0.9">
 					<requirement name="HoldingItemHasTags" tags="melee"/>
 				</passive_effect>
-				<passive_effect name="EntityDamage" operation="perc_add" value="-95">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-200">
 					<requirement name="HoldingItemHasTags" tags="ranged"/>
 				</passive_effect>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfNoVehicle"/>
@@ -1126,10 +1126,13 @@
 
 		<buff name="spartanDeco" hidden="true">
 			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/flagHonorDutyPrefab" local_offset="-0.25, -.2, -1.25" local_rotation="-40, 180, 90" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Spear/spear_steel_Prefab.prefab" local_offset="0.14,0.06,-.05" local_rotation="0,-90,90" parent_transform="RightHand"/>
-				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Buildings/capChimneyPrefab" local_offset="-.1,0,.55" local_rotation="90,0,0" parent_transform="LeftHand"/> -->
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Buildings/capChimneyLargePrefab" local_offset="-.1,0,.45" local_rotation="90,0,0" parent_transform="LeftHand"/>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Buildings/capChimneyPrefab" local_offset="-.1,0,.55" local_rotation="90,0,0" parent_transform="LeftHand"/> -->
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Vehicles/Car/car_radiator_uprightPrefab.prefab" local_offset="-.1,0,.55" local_rotation="90,0,0" parent_transform="LeftHand"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Buildings/TarpHangingRedPrefab" local_offset="0, 0, 0" local_rotation="0, 0, 0" parent_transform="Spine"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/flagHonorDutyPrefab" local_offset="-0.25, 0, -1.25" local_rotation="90, 90, 0" parent_transform="Spine"/> -->
 			</effect_group>
 		</buff>	
 
@@ -1816,22 +1819,24 @@
 		</buff>
 		<buff name="ElementalElectrical" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_electric_shock" local_offset="0,0,0" local_rotation="0,0,-90" parent_transform="RightHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_electric_shock" local_offset="0,0,0" local_rotation="0,0,-90" parent_transform="LeftHand"/>
-				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/utilityElectricalBox_01Prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Head"/> -->
-				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_electric_shock" />
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" target="self"  particle="p_electric_shock" local_offset="0.2,1.1,-0.40" local_rotation="0,0,90" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Electrical/utilityTransformerPrefab" local_offset="0,0.3,-0.2" local_rotation="0,0,0" parent_transform="Spine"/>
+				
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="p_electric_shock" />
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabToEntity" prefab="Entities/Electrical/utilityTransformerPrefab" />
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_electric_shock" parent_transform="RightHand">
-					<requirement name="!HasParticle" particle="p_twitch_zombie_radiation_left" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_electric_shock" parent_transform="Spine">
+					<requirement name="!HasParticle" particle="p_electric_shock" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_electric_shock" parent_transform="LeftHand">
-					<requirement name="!HasParticle" particle="p_twitch_zombie_radiation_left" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Electrical/utilityTransformerPrefab" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="Entities/Electrical/utilityTransformerPrefab" />
 				</triggered_effect>
 
-				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_electric_shock" />
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="p_electric_shock" />
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabToEntity" prefab="Entities/Electrical/utilityTransformerPrefab" />
 			</effect_group>				
-		</buff>		
+		</buff>
 		<buff name="DecoMiniBossToxic" hidden="true">
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelAcidPrefab" local_offset="-0.1,0,-0.3" local_rotation="90,-90,0" parent_transform="Spine"/>
