@@ -1742,61 +1742,83 @@
 		</buff>
 		<buff name="ElementalFrozen" hidden="true">
 			<effect_group>
-			<!-- Entities/Crafting/sodaVendingMachineWaterBrokenPrefab -->
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,90" parent_transform="RightHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,-90" parent_transform="LeftHand"/>
-			<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="concrete_destroyed01" local_offset="0,-0.25,-0.55" local_rotation="0,180,0" parent_transform="Spine"/> -->
+			<!-- Entities/Crafting/sodaVendingMachineWaterBrokenPrefab -->			
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" target="self" particle="Smoke_Unlit" local_offset="0,0,0" local_rotation="0,-1,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="Smoke_Unlit" />
+
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,90" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,-90" parent_transform="LeftHand"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="concrete_destroyed01" local_offset="0,-0.25,-0.55" local_rotation="0,180,0" parent_transform="Spine"/> -->
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="concrete_half_destroyed09" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine"/> -->
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" target="self" particle="p_blockdestroy_snow" local_offset="0,0,0" local_rotation="0,0,0"/> -->
-
-
-
 				
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="Entities/OutdoorDecor/iceMachinePrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine"/> -->
 
 				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" target="self" particle="p_impact_bullet_on_snow" local_offset="0,1,0" local_rotation="0,0,0"/> -->
 
-				<!-- <triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="p_impact_bullet_on_snow" />					 -->
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,90" parent_transform="RightHand">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="Smoke_Unlit" local_offset="0,0,0" local_rotation="0,-1,0" parent_transform="Spine">
+					<requirement name="!HasParticle" particle="Smoke_Unlit" />
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="Smoke_Unlit" />
+
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,90" parent_transform="RightHand">
 					<requirement name="!HasPrefab" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" />
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,-90" parent_transform="LeftHand">
 					<requirement name="!HasPrefab" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" />
-				</triggered_effect>
-			</effect_group>					
+				</triggered_effect> -->
+			</effect_group>
 		</buff>
 		<buff name="ElementalFrozenSoldier" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,90" parent_transform="RightHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,-90" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" target="self" particle="Smoke_Unlit" local_offset="0,0,0" local_rotation="0,-1,0" parent_transform="Spine"/>			
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="Smoke_Unlit" />
+
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,90" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,-90" parent_transform="LeftHand"/> -->
 				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" target="self" particle="p_impact_bullet_on_snow" local_offset="0,0,1" local_rotation="0,0,0"/>
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="p_impact_bullet_on_snow" />					 -->
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,90" parent_transform="RightHand">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="Smoke_Unlit" local_offset="0,0,0" local_rotation="0,-1,0" parent_transform="Spine">
+					<requirement name="!HasParticle" particle="Smoke_Unlit" />
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="Smoke_Unlit" />
+				
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,90" parent_transform="RightHand">
 					<requirement name="!HasPrefab" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" />
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,-90" parent_transform="LeftHand">
 					<requirement name="!HasPrefab" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" />
-				</triggered_effect>
+				</triggered_effect> -->
 			</effect_group>				
 		</buff>
 		<buff name="ElementalFrozenSpider" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,90" parent_transform="RightHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,-90" parent_transform="LeftHand"/>						
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" target="self" particle="Smoke_Unlit" local_offset="0,0,0" local_rotation="0,-1,0" parent_transform="Spine"/>			
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="Smoke_Unlit" />
+
+
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,90" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,-90" parent_transform="LeftHand"/> -->
 				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" target="self" particle="p_impact_bullet_on_snow" local_offset="0,0,0" local_rotation="0,0,0"/>
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="p_impact_bullet_on_snow" />					 -->
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,90" parent_transform="RightHand">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="Smoke_Unlit" local_offset="0,0,0" local_rotation="0,-1,0" parent_transform="Spine">
+					<requirement name="!HasParticle" particle="Smoke_Unlit" />
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="Smoke_Unlit" />
+
+
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,90" parent_transform="RightHand">
 					<requirement name="!HasPrefab" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" />
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,-90" parent_transform="LeftHand">
 					<requirement name="!HasPrefab" prefab="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab" />
-				</triggered_effect>
+				</triggered_effect> -->
 			</effect_group>					
 		</buff>
 		<buff name="ElementalWater" hidden="true">
