@@ -1,6 +1,7 @@
 <config>
 
 	<append xpath="/items">
+		<!--
 		<item name="downgradeKitGun">
 			<property name="CustomIcon" value="cntWeaponsBagSmall"/>
 			<property name="ItemTypeIcon" value="treasure"/>
@@ -155,6 +156,27 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="craftingWorkstations" level="100" show_message="false"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="craftingVehicles" level="100" show_message="false"/>
 			</effect_group>
+		</item>
+		-->
+		<item name="kitResuourses">
+			<property name="CustomIcon" value="bundleMiningHelmet"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="DescriptionKey" value="donatio_ForgeKitDesc"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="resourceWoodBundle10k,resourceClayLumpCompres,resourceCrushedSandCompres,resourceRockSmallCompres,resourceScrapIronCompres,resourceLeadCompres,resourceScrapBrassCompres"/>
+				<property name="Create_item_count" value="3,1,1,1,1,1,1"/>
+			</property>
 		</item>
 		
 		
