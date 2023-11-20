@@ -2,7 +2,7 @@
 	<!-- ====================================Agregar quest al loot==================================== -->
 	<!--Gallinazila-->
 		<append xpath="/lootcontainers/lootgroup[@name='groupBirdNest02']">
-			<item name="q_Gallinazilla" prob="0.014"/>
+			<item name="q_Gallinazilla" prob="0.03"/>
 		</append>
 	<!---->
 	<append xpath="/lootcontainers">
@@ -386,24 +386,22 @@
 		</lootcontainer>
 	<!-- END Added by HolyVentus -->
 		
-		<lootcontainer id="415" name="semiBossCoutainer" count="4,6" size="6,3" destroy_on_close="true" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="0" loot_quality_template="qualPlus1Template">
-			<item group="booksRareOnlyScaled" prob="2.5"/>
-			<item name="resourceForgedSteel" count="6,15" prob="1.25"/>
-			<item group="groupRareToolsTiered" prob=".2"/>
-			<item group="groupArmorScaled" prob="3.75"/>
-			<item name="armorSwatHelmet" mods="modArmorHelmetLight" mod_chance=".8" prob="2.5"/>
-			<item group="groupApparelHazmat" prob="1.25"/>
-			<!--<item group="groupAmmoRegular" count="3" prob="8"/>-->
-			<item group="groupWeaponsAllScaled" prob="14"/>
-			<item name="oldCash" count="500,900" prob="2.5"/>
+		<lootcontainer id="415" name="semiBossCoutainer" count="5,6" size="6,3" destroy_on_close="true" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="0" loot_quality_template="speciallootmod">
+			<item group="booksRareOnlyScaled"/>
+			<item group="groupWeaponsAllScaled"/>
+			<item group="groupRareToolsTiered"/>
+			<item group="groupArmorScaled"/>
+			<item group="groupApparelHazmat"/>
+			<item name="resourceForgedSteel" count="12,30"/>			
+			<item name="oldCash" count="250,450"/>
 			<item name="resourceRawDiamond" count="1,2"/>
 			<item name="resourceGoldNugget" count="2,4"/>
 			<item name="resourceSilverNugget" count="4,8"/>
-			<item name="drugVitamins" prob="1.75"/>
-			<item name="drugSteroids" prob="1.75"/>
+			<item name="drugVitamins"/>
+			<item name="drugSteroids"/>
 			<item group="groupTreasureMaps" prob="0.5"/>
-			<item group="groupModAllScaled" prob="1"/>
-			<item group="vehiclePartsTiered" loot_prob_template="probTemplate1.0"/>
+			<item group="groupModAllScaled"/>
+			<item group="vehiclePartsTiered"/>
 			<!---->
 		</lootcontainer>
 		<!---->
@@ -566,9 +564,13 @@
 			<item name="q_Momia" count="1" loot_prob_template="QuestT3Prob"/>
 			<item name="q_Pesadilla" count="1" loot_prob_template="QuestT3Prob"/>
 			<item name="q_Jugger" count="1" loot_prob_template="QuestT3Prob"/>
-			<!--<item name="q_Gladiator" count="1" loot_prob_template="QuestT3Prob"/>-->
+			<item name="q_Gladiator" count="1" loot_prob_template="QuestT3Prob"/>
+			<item name="q_Cirujano" count="1" loot_prob_template="QuestT3Prob"/>
+
+			
 			<item name="q_TacoS" count="1" loot_prob_template="QuestT3Prob"/>
 			<item name="EnemigosdeT4VO" count="1" loot_prob_template="QuestT3Prob"/>
+			<item name="q_EnemigsRandom" prob="0.14"/>
 		</lootgroup>
 		<lootgroup name="tQuestloot3">
 			<item name="drugRecog" count="25" loot_prob_template="QuestT3Prob"/>
@@ -701,8 +703,9 @@
 			<item name="q_Minis" prob="0.5"/>
 			<item name="q_Special" prob="0.4"/>			
 			<item name="q_EnemigsRandom" prob="0.4"/>	
+			<item name="q_Cirujano" prob="0.5"/>
 					
-			<!--<item name="q_Gladiator" prob="0.2"/>-->
+			<item name="q_Gladiator" prob="0.2"/>
 			<item name="q_Taco" prob="0.04"/>
 			<item name="q_Lucky" prob="0.6"/>
 			<item name="q_Gacha" prob="0.8" count="1,3"/>
@@ -1184,8 +1187,9 @@
 			<item name="q_Pesadilla" prob=".07"/>
 			<item name="q_Honor" prob=".07"/>			
 			<item name="q_Momia" prob=".07"/>
-            <!--<item name="q_Gladiator" prob=".07"/>-->
-			
+			<item name="q_EnemigsRandom" prob="0.07"/>
+            <item name="q_Gladiator" prob=".07"/>
+			<item name="q_Cirujano" prob="0.5"/>
 			<!--
 			<item name="q_rand1" prob="0.01"/>
             <item name="q_Taco" prob="0.015"/>
