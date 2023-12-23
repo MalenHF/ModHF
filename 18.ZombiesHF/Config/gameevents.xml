@@ -28,20 +28,136 @@
 			</action>
 		</action_sequence>
 
+		<action_sequence name="bossSirenBehavior">
+			<action class="Delay">
+				<property name="phase" value="1" />
+				<property name="time" value="2" />
+			</action>
+			<action class="RandomizeRotation">
+				<property name="phase" value="2" />
+			</action>
+		</action_sequence>
+
 		<action_sequence name="HelicopterHelicopteeer">
-			<loop class="For">
-				<property name="min_loop_count" value="1" />
-				<property name="max_loop_count" value="10" />
-				<property name="phase" value="3" />
-			
-				<action class="Delay">
-					<property name="time" value="0.3" />
-				</action>
+			<property name="category" value="twitch_actions" />
 				
-				<action class="RandomizeRotation">
-					<property name="phase" value="2" />
-				</action>
-			</loop>			
+			<action class="RandomizeRotation">
+				<property name="phase" value="1" />
+			</action>				
+			<action class="Delay">
+				<property name="phase" value="1" />
+				<property name="time" value="1" />
+			</action>
+
+			<action class="RandomizeRotation">
+				<property name="phase" value="2" />
+			</action>
+			<action class="Delay">
+				<property name="phase" value="2" />
+				<property name="time" value="1" />
+			</action>
+
+			<action class="RandomizeRotation">
+				<property name="phase" value="3" />
+			</action>
+			<action class="Delay">
+				<property name="phase" value="3" />
+				<property name="time" value="1" />
+			</action>
+
+			<action class="RandomizeRotation">
+				<property name="phase" value="4" />
+			</action>
+			<action class="Delay">
+				<property name="phase" value="4" />
+				<property name="time" value="1" />
+			</action>
+
+			<action class="RandomizeRotation">
+				<property name="phase" value="5" />
+			</action>		
+		</action_sequence>
+	
+		<action_sequence name="BossInfernalExplosion">
+			<requirement class="NearbyEntities">
+				<property name="max_distance" value="15" />
+			</requirement>
+
+			<action class="Delay">
+				<property name="time" value="1" />
+				<property name="phase" value="1" />
+			</action>
+
+			<action class="AddBuff">
+				<property name="phase" value="1" />
+				<property name="buff_name" value="twitch_blastresist" />
+				<property name="target_group" value="zombies" />
+			</action>
+
+			<action class="PlaySound">
+				<property name="phase" value="2" />
+				<property name="sound" value="twitch_kaboom" />
+			</action>
+
+			<action class="Explode">
+				<property name="phase" value="2" />
+				<property name="blast_power" value="50" />
+				<property name="block_damage" value="1" />
+				<property name="block_radius" value="1" />
+				<property name="entity_damage" value="3000" />
+				<property name="entity_radius" value="1" />
+			</action>
+
+			<action class="Delay">
+				<property name="time" value="1" />
+				<property name="phase" value="3" />
+			</action>
+
+			<action class="RemoveBuff">
+				<property name="phase" value="4" />
+				<property name="buff_name" value="twitch_blastresist" />
+			</action>
+		</action_sequence>
+	
+		<action_sequence name="BossInfernalShinyExplosion">
+			<requirement class="NearbyEntities">
+				<property name="max_distance" value="20" />
+			</requirement>
+
+			<action class="Delay">
+				<property name="time" value="1" />
+				<property name="phase" value="1" />
+			</action>
+
+			<action class="AddBuff">
+				<property name="phase" value="1" />
+				<property name="buff_name" value="twitch_blastresist" />
+				<property name="target_group" value="zombies" />
+			</action>
+
+			<action class="PlaySound">
+				<property name="phase" value="2" />
+				<property name="sound" value="twitch_kaboom" />
+			</action>
+
+			<action class="Explode">
+				<property name="phase" value="2" />
+				<property name="blast_power" value="50" />
+				<property name="block_damage" value="1" />
+				<property name="block_radius" value="1" />
+				<property name="entity_damage" value="3500" />
+				<property name="entity_radius" value="1" />
+			</action>
+
+			<action class="Delay">
+				<property name="time" value="1" />
+				<property name="phase" value="3" />
+			</action>
+
+			<action class="RemoveBuff">
+				<property name="phase" value="4" />
+				<property name="buff_name" value="twitch_blastresist" />
+			</action>
 		</action_sequence>
 	</append>
 </configs>
