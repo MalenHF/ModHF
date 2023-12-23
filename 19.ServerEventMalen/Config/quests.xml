@@ -14,15 +14,19 @@
       <property name="difficulty_tier" value="8"/>
       <action type="ShowTip" value="tutorialTipQuest02"/>
       <action type="TrackQuest"/>
+
       <objective type="RandomPOIGoto">
-        <property name="phase" value="1"/>
-        <property name="nav_object" value="quest"/>
-      </objective>
-      <objective type="RallyPoint">
-        <property name="phase" value="2"/>
-        <property name="nav_object" value="rally"/>
-      </objective>
-      <objective type="EntityKill" id="animalChicken" value="1" phase="3"/>
+				<property name="phase" value="1"/>
+				<property name="nav_object" value="quest" />
+			</objective>
+			<objective type="RallyPoint">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="rally" />
+			</objective>
+			<objective type="ClearSleepers">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="sleeper_volume"/>
+			</objective>
       <reward type="Quest" id="xmas2"/>
     </quest>
 
@@ -89,7 +93,7 @@
       <property name="difficulty" value="easy"/>
       <property name="completiontype" value="TurnIn"/>
 
-      <objective type="EntityKill" value="333" phase="1"/>
+      <objective type="EntityKill" value="10" phase="1"/>
       <objective type="EntityKill" id="animalChicken" value="3" phase="2"/>
 
       <objective type="InteractWithNPC">
