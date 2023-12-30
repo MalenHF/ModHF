@@ -2200,7 +2200,7 @@
 				<passive_effect name="HealthMax" operation="base_set" value="4500"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="65"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BomberDeco1"/>
-				<triggered_effect trigger="onSelfAttackedOther" action="Explode" blast_power="0" block_damage="0" block_radius="5" entity_damage="13000" entity_radius="5" />
+				<triggered_effect trigger="onSelfAttackedOther" action="Explode" blast_power="0" block_damage="0" block_radius="5" entity_damage="13000" entity_radius="6" />
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyStats" stat="Health" operation="set" value="0" />
 				<!-- <triggered_effect trigger="onSelfDamagedBlock" action="Explode" blast_power="0" block_damage="1000" block_radius="5" entity_damage="13000" entity_radius="4"/> -->
 				<!--triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffNoiseAOE01"/-->
@@ -2811,7 +2811,7 @@
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="8000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="25"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="30"/>
 				<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="head"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
@@ -3059,6 +3059,7 @@
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="5000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="10"/>
 				<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="head"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalFire"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
@@ -3312,7 +3313,7 @@
 				<passive_effect name="HealthMax" operation="base_set" value="5000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
 				<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="head"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="15"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="25"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalFrozen"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
@@ -3601,9 +3602,10 @@
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="6000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="30"/>
 				<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="head"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="60"/>
+				<!-- ORIGINAL -->
+				<!-- <passive_effect name="PhysicalDamageResist" operation="base_set" value="60"/> -->
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalWater"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
@@ -3838,7 +3840,7 @@
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="5000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="15"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="25"/>
 				<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="head"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalElectrical"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
@@ -3847,27 +3849,6 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffShocked"/>
 			</effect_group>
 		</entity_class>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Special Zombies by Malen and TacoMaestro ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<!--By TAV0-->
@@ -4492,6 +4473,7 @@
 			<property name="Tags" value="entity,zombie"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZCrawlerFeral.prefab"/>
 			<property name="SizeScale" value="1.2"/>
+			<property name="MoveSpeedAggro" value="1.4, 1.6"/>
 
 
 			<property name="AITask" value="
@@ -5051,7 +5033,7 @@
 
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="70000"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="50"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="55"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffglad"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="gladDeco"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="30"/>
@@ -5269,12 +5251,9 @@
 		</entity_class>
 		<entity_class name="zombieBossSpartan" extends="bossZombieTemplate">			
 			<property name="UserSpawnType" value="Menu"/>
+			<property name="SizeScale" value="1.7"/>
 			<property name="Tags" value="entity,zombie,walker,feral,boss,bossrad"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZWightFeral.prefab"/>
-
-			<property name="SizeScale" value="1.5"/>
-			<property name="SizeScale" value="1.7"/>
-
 			<property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/>
 			<property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/>
 			<property name="SoundAttack" value="Enemies/Feral_Zombie/zombieferalattack"/>
@@ -5289,7 +5268,7 @@
 			<property name="LootDropEntityClass" value="zombieBossSpartanLootContainer"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="50000"/>
-				<passive_effect name="HealthMax" operation="perc_set" value="1"/>					
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="55"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="spartanDeco"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffSpartan"/>
@@ -5305,6 +5284,7 @@
 		<!-- MORTEVODA/VODJANOJ -->
 		<entity_class name="zombieBossMortevoda" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
+			<property name="SizeScale" value="1.7"/>
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses,bossrad" />
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZHawaiian.prefab"/>
 			<property name="SoundRandom" value="Enemies/Acid_Puking_Hulk/hulkroam"/>
@@ -5337,6 +5317,7 @@
 		<!-- INFERNAL/BERIAL -->
 		<entity_class name="zombieBossInfernal" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
+			<property name="SizeScale" value="1.7"/>
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses,bossrad" />
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBurnt.prefab"/>
 			<property name="SoundRandom" value="Enemies/Burnt_Zombie/zombieburntroam"/>
@@ -5350,6 +5331,7 @@
 			<property name="LootDropEntityClass" value="zombieBossInfernalLootContainer"/>
 			<property name="HandItem" value="meleeHandBOSS"/>
 			<property name="ExperienceGain" value="60000"/>
+			<property name="SurfaceCategory" value="metal"/>
 			<property name="WalkType" value="2"/>
 			<property name="MoveSpeedAggro" value="1.20, 1.40"/>
 			<effect_group name="Base Effects">
@@ -5369,6 +5351,7 @@
 		<!-- HOARFROST/JACK TORRANCE -->
 		<entity_class name="zombieBossHoarfrost" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
+			<property name="SizeScale" value="1.7"/>
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses,bossrad" />
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZLumberjack.prefab"/>
 			<property name="SoundRandom" value="zombielumberjack_roam"/>
@@ -5382,17 +5365,84 @@
 			<property name="LootDropEntityClass" value="zombieBossHoarfrostLootContainer"/>
 			<property name="HandItem" value="meleeHandBOSS"/>
 			<property name="ExperienceGain" value="60000"/>
+			<property name="SurfaceCategory" value="metal"/>
 			<property name="WalkType" value="2"/>
-			<property name="MoveSpeedAggro" value="1.20, 1.60"/>
+			<property name="MoveSpeedAggro" value="1.20, 1.50"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="70000"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="50"/>
-				<!-- TODO DECO -->
-				<!-- <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="DecoBossHoarfrost"/> -->
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="DecoBossHoarfrost"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="10"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buff_AOE_BossHoarfrost"/>
-				<!-- <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buff_AOE_BossInfernalExplosion"/> -->
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
+			</effect_group>
+			<property name="DeadBodyHitPoints" value="1"/>
+			<property name="TimeStayAfterDeath" value="2"/>
+		</entity_class>
+
+		<!-- SHOCKER/RAIJIN -->
+		<entity_class name="zombieBossShocker" extends="bossZombieTemplate">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="SizeScale" value="1.7"/>
+			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses,bossrad" />
+			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZWightFeral.prefab"/>
+			<property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/>
+			<property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/>
+			<property name="SoundAttack" value="Enemies/Feral_Zombie/zombieferalattack"/>
+			<property name="SoundHurt" value="Enemies/Feral_Zombie/zombieferalpain"/>
+			<property name="SoundDeath" value="Enemies/Feral_Zombie/zombieferaldeath"/>
+			<property name="SoundSense" value="Enemies/Feral_Zombie/zombieferalsense"/>
+			<property name="SoundFootstepModifier" value="bear_footstep"/>
+
+			<property name="LootDropEntityClass" value="zombieBossShockerLootContainer"/>
+			<property name="HandItem" value="meleeHandBOSS"/>
+			<property name="ExperienceGain" value="60000"/>
+			<property name="SurfaceCategory" value="metal"/>
+			<property name="WalkType" value="2"/>
+			<property name="MoveSpeedAggro" value="1.30, 1.50"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="70000"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="55"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="DecoBossShocker"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="10"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buff_AOE_BossShocker"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buff_AOE_BossShockerRandomCamera"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
+			</effect_group>
+			<property name="DeadBodyHitPoints" value="1"/>
+			<property name="TimeStayAfterDeath" value="2"/>
+		</entity_class>
+
+		<!-- TOXIC/PATIENT 0 -->
+		<entity_class name="zombieBossToxic" extends="bossZombieTemplate">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="SizeScale" value="1.7"/>
+			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses,bossrad" />
+			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZMutatedRadiated.prefab"/>
+			<property name="SoundRandom" value="Enemies/Acid_Puking_Hulk/hulkroam"/>
+			<property name="SoundAlert" value="Enemies/Acid_Puking_Hulk/hulkalert"/>
+			<property name="SoundAttack" value="Enemies/Acid_Puking_Hulk/hulkattack"/>
+			<property name="SoundHurt" value="Enemies/Acid_Puking_Hulk/hulkpain"/>
+			<property name="SoundDeath" value="Enemies/Acid_Puking_Hulk/hulkdeath"/>
+			<property name="SoundSense" value="Enemies/Acid_Puking_Hulk/hulksense"/>
+			<property name="SoundFootstepModifier" value="bear_footstep"/>
+
+			<property name="LootDropEntityClass" value="zombieBossToxicLootContainer"/>
+			<property name="HandItem" value="meleeHandBOSS"/>
+			<property name="ExperienceGain" value="60000"/>
+			<property name="SurfaceCategory" value="metal"/>
+			<property name="WalkType" value="2"/>
+			<property name="MoveSpeedAggro" value="1.10, 1.30"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="70000"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="60"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="DecoBossToxic"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="20"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buff_AOE_BossToxic"/>
+				<!-- <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buff_AOE_BossToxicRadioactiveSound"/> -->
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
@@ -5720,7 +5770,7 @@
 			<effect_group name="Base Effects">
 				<passive_effect name="DistractionResistance" operation="base_set" value="0,0"/>
 				<passive_effect name="HealthMax" operation="base_set" value="110000"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="20"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="50"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffmummySP"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="mummyDeco"/>
@@ -5780,7 +5830,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffDark1SP"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffNoiseAOE01"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="20"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="50"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="TimeStayAfterDeath" value="2"/>
@@ -5826,7 +5876,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="JuggernautDeco"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffJuggerSP"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="20"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="50"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
@@ -5851,7 +5901,7 @@
 				<passive_effect name="HealthMax" operation="base_set" value="120000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
 				<!-- Zombie HP scale -->
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="65"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="60"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="soldierDeco"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffSoldierSP"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="50"/>
@@ -5889,7 +5939,7 @@
 			
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="140000"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="60"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="65"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="gladDeco"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="50"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
@@ -5935,14 +5985,11 @@
 			<property name="TimeStayAfterDeath" value="2"/>
 		</entity_class>	
 		<entity_class name="zombieSpecialzombieBossSpartan" extends="bossZombieTemplate">
-			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.8"/>
-			<property name="SizeScale" value="2"/>
-			
+			<property name="UserSpawnType" value="Menu"/>			
 			<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>
+			<property name="SizeScale" value="2"/>
 			<property name="Tags" value="entity,zombie,boss,umazombie,bossrad,norail"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZWightFeral.prefab"/>
-
 			<property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/>
 			<property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/>
 			<property name="SoundAttack" value="Enemies/Feral_Zombie/zombieferalattack"/>
@@ -5957,6 +6004,7 @@
 			<property name="HandItem" value="meleeHandSpecialBOSS"/>
 			<property name="JumpMaxDistance" value="9, 16"/>
 			<property name="ExperienceGain" value="100000"/>
+			<property name="SurfaceCategory" value="metal"/>
 			<property name="LootDropEntityClass" value="zombieBossSpartanLootContainerS"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="DistractionResistance" operation="base_set" value="0,0"/>
@@ -5964,7 +6012,7 @@
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="55"/>
 				<passive_effect name="EntityDamage" operation="perc_add" value="0"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="20"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="50"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="spartanDeco"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffSpartan"/>
@@ -5978,7 +6026,7 @@
 			<property name="SizeScale" value="2"/>
 			<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>
 			<property name="UserSpawnType" value="None"/>
-			<property name="Archetype" value="Cirujano" />
+			<!-- <property name="Archetype" value="Cirujano" /> -->
 			<property name="LootDropEntityClass" value="zombierBossCirujanoLootContainer"/>
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses,bossrad" />
 			<property name="HandItem" value="meleeHandSamuraiSP"/>
@@ -6016,7 +6064,7 @@
 				<passive_effect name="HealthMax" operation="base_set" value="90000"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="50"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="dobleCuchillo"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="30"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="50"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffSamuraiSP"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
@@ -6025,9 +6073,11 @@
 			<property name="TimeStayAfterDeath" value="2"/>
 		</entity_class>
 
+		<!-- MORTEVODA/VODJANOJ -->
 		<entity_class name="zombieSpecialBossMortevoda" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>
+			<property name="SizeScale" value="2"/>
 			<property name="Tags" value="entity,zombie,boss,umazombie,bossrad,norail"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZHawaiian.prefab"/>
 			<property name="SoundRandom" value="Enemies/Acid_Puking_Hulk/hulkroam"/>
@@ -6050,7 +6100,7 @@
 				<passive_effect name="HealthMax" operation="base_set" value="140000"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="60"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="DecoBossMortevoda"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="10"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="50"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buff_AOE_BossMortevodaShiny"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
@@ -6063,6 +6113,7 @@
 		<entity_class name="zombieSpecialBossInfernal" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>
+			<property name="SizeScale" value="2"/>
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses,bossrad" />
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBurnt.prefab"/>
 			<property name="SoundRandom" value="Enemies/Burnt_Zombie/zombieburntroam"/>
@@ -6077,13 +6128,14 @@
 			<property name="HandItem" value="meleeHandBOSS"/>
 			<property name="SoundFootstepModifier" value="bear_footstep"/>
 			<property name="ExperienceGain" value="120000"/>
+			<property name="SurfaceCategory" value="metal"/>
 			<property name="WalkType" value="2"/>
 			<property name="MoveSpeedAggro" value="1.50, 1.70"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="140000"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="55"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="DecoBossInfernal"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="10"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="50"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buff_AOE_BossInfernalShiny"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buff_AOE_BossInfernalShinyExplosion"/>
@@ -6091,7 +6143,112 @@
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="TimeStayAfterDeath" value="2"/>
-		</entity_class>			
+		</entity_class>
+		
+		<!-- HOARFROST/JACK TORRANCE -->
+		<entity_class name="zombieSpecialBossHoarfrost" extends="bossZombieTemplate">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>
+			<property name="SizeScale" value="2"/>
+			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses,bossrad" />
+			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZLumberjack.prefab"/>
+			<property name="SoundRandom" value="zombielumberjack_roam"/>
+			<property name="SoundAlert" value="zombielumberjack_alert"/>
+			<property name="SoundAttack" value="zombielumberjack_attack"/>
+			<property name="SoundHurt" value="zombielumberjack_pain"/>
+			<property name="SoundDeath" value="zombielumberjack_death"/>
+			<property name="SoundSense" value="zombielumberjack_sense"/>
+			<property name="SoundFootstepModifier" value="bear_footstep"/>
+
+			<property name="LootDropEntityClass" value="zombieBossHoarfrostLootContainerS"/>
+			<property name="HandItem" value="meleeHandBOSS"/>
+			<property name="ExperienceGain" value="120000"/>
+			<property name="SurfaceCategory" value="metal"/>
+			<property name="WalkType" value="2"/>
+			<property name="MoveSpeedAggro" value="1.40, 1.60"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="140000"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="60"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="DecoBossHoarfrost"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="20"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buff_AOE_BossHoarfrost"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
+			</effect_group>
+			<property name="DeadBodyHitPoints" value="1"/>
+			<property name="TimeStayAfterDeath" value="2"/>
+		</entity_class>
+
+		<!-- SHOCKER/RAIJIN -->
+		<entity_class name="zombieSpecialBossShocker" extends="bossZombieTemplate">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>
+			<property name="SizeScale" value="2"/>
+			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses,bossrad" />
+			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZWightFeral.prefab"/>
+			<property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/>
+			<property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/>
+			<property name="SoundAttack" value="Enemies/Feral_Zombie/zombieferalattack"/>
+			<property name="SoundHurt" value="Enemies/Feral_Zombie/zombieferalpain"/>
+			<property name="SoundDeath" value="Enemies/Feral_Zombie/zombieferaldeath"/>
+			<property name="SoundSense" value="Enemies/Feral_Zombie/zombieferalsense"/>
+			<property name="SoundFootstepModifier" value="bear_footstep"/>
+
+			<property name="LootDropEntityClass" value="zombieBossShockerLootContainerS"/>
+			<property name="HandItem" value="meleeHandBOSS"/>
+			<property name="ExperienceGain" value="120000"/>
+			<property name="SurfaceCategory" value="metal"/>
+			<property name="WalkType" value="2"/>
+			<property name="MoveSpeedAggro" value="1.40, 1.60"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="140000"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="60"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="DecoBossShocker"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="50"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buff_AOE_BossShocker"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buff_AOE_BossShockerRandomCamera"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
+			</effect_group>
+			<property name="DeadBodyHitPoints" value="1"/>
+			<property name="TimeStayAfterDeath" value="2"/>
+		</entity_class>
+
+		<!-- TOXIC/PATIENT 0 -->
+		<entity_class name="zombieSpecialBossToxic" extends="bossZombieTemplate">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>
+			<property name="SizeScale" value="2"/>
+			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses,bossrad" />
+			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZMutatedRadiated.prefab"/>
+			<property name="SoundRandom" value="Enemies/Acid_Puking_Hulk/hulkroam"/>
+			<property name="SoundAlert" value="Enemies/Acid_Puking_Hulk/hulkalert"/>
+			<property name="SoundAttack" value="Enemies/Acid_Puking_Hulk/hulkattack"/>
+			<property name="SoundHurt" value="Enemies/Acid_Puking_Hulk/hulkpain"/>
+			<property name="SoundDeath" value="Enemies/Acid_Puking_Hulk/hulkdeath"/>
+			<property name="SoundSense" value="Enemies/Acid_Puking_Hulk/hulksense"/>
+			<property name="SoundFootstepModifier" value="bear_footstep"/>
+
+			<property name="LootDropEntityClass" value="zombieBossToxicLootContainerS"/>
+			<property name="HandItem" value="meleeHandBOSS"/>
+			<property name="ExperienceGain" value="120000"/>
+			<property name="SurfaceCategory" value="metal"/>
+			<property name="WalkType" value="2"/>
+			<property name="MoveSpeedAggro" value="1.20, 1.40"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="140000"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="65"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="DecoBossToxic"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="60"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buff_AOE_BossToxic"/>
+				<!-- <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buff_AOE_BossToxicRadioactiveSound"/> -->
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
+			</effect_group>
+			<property name="DeadBodyHitPoints" value="1"/>
+			<property name="TimeStayAfterDeath" value="2"/>
+		</entity_class>
+
 		<!-- END Added by HolyVentus -->
 		<entity_class name="zombieSpecialzombieBossAdminHF" extends="bossZombieTemplate">			
 			<property name="UserSpawnType" value="Menu"/>

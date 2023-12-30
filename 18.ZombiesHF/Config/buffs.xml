@@ -217,101 +217,6 @@
 
 
 
-		<!-- TEST SHOCKER -->
-		<buff name="buffShockedElectric" description_key="buffShockedDesc" tooltip_key="buffShockedTooltip" icon="ui_game_symbol_electric_power" name_key="buffShockedName" icon_color="255,0,0">
-			<damage_type value="electrical"/>
-			<stack_type value="duration"/>
-			<duration value="5"/>
-			<update_rate value="1"/>
-			<display_value value="$buffShockedDisplay"/>
-			<display_value_format value="time"/>
-
-			<effect_group>
-				<!-- Blinks the display -->
-				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffShocked"/>
-				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="HelicopterHelicopteeer"/>
-				<triggered_effect trigger="onSelfBuffStart" action="GetBuffDuration" reference="$shockDurationMax"/>
-				<triggered_effect trigger="onSelfBuffStart" action="GetBuffDuration" reference="$buffShockedDisplay"/>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffShockedDisplay" operation="set" value="4">
-					<requirement name="CVarCompare" cvar="$buffShockedDisplay" operation="LTE" value="0"/>
-				</triggered_effect>
-
-				<triggered_effect trigger="onSelfBuffStack" action="GetBuffDuration" reference="$buffShockedDisplay"/>
-
-				<passive_effect name="HealthChangeOT" operation="base_add" value="-6"/>
-
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffShockedDisplay" operation="add" value="-1"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffShockedDisplay" operation="set" value="0"/>
-
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_electric_shock" parent_transform="Spine1" local_offset="0,-.2,0"/>
-				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="p_electric_shock" parent_transform="Spine1" local_offset="0,-.2,0"/>
-
-				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
-
-				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="ETrapHit" operation="set" value="0"/>
-				<triggered_effect trigger="onSelfLeaveGame" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
-
-				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="electric_fence_impact"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" sound="electric_fence_impact"/>
-				<triggered_effect trigger="onSelfLeaveGame" action="StopSound" sound="electric_fence_impact"/>
-			</effect_group>
-
-			<!-- <effect_group>
-				<requirement name="CVarCompare" cvar="$shockDurationMax" operation="GTE" value="4"/>
-					<passive_effect name="RunSpeed" operation="perc_subtract" value=".9,.05" duration="0,4"/>
-					<passive_effect name="WalkSpeed" operation="perc_subtract" value=".9,.05" duration="0,4"/>
-					<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".9,.05" duration="0,4"/>
-					<passive_effect name="JumpStrength" operation="perc_subtract" value=".9,.05" duration="0,4"/>
-			</effect_group>
-
-			<effect_group>
-				<requirement name="CVarCompare" cvar="$shockDurationMax" operation="GTE" value="5"/>
-					<passive_effect name="RunSpeed" operation="perc_subtract" value=".9,.05" duration="0,5"/>
-					<passive_effect name="WalkSpeed" operation="perc_subtract" value=".9,.05" duration="0,5"/>
-					<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".9,.05" duration="0,5"/>
-					<passive_effect name="JumpStrength" operation="perc_subtract" value=".9,.05" duration="0,5"/>
-			</effect_group>
-
-			<effect_group>
-				<requirement name="CVarCompare" cvar="$shockDurationMax" operation="GTE" value="6"/>
-					<passive_effect name="RunSpeed" operation="perc_subtract" value=".9,.05" duration="0,6"/>
-					<passive_effect name="WalkSpeed" operation="perc_subtract" value=".9,.05" duration="0,6"/>
-					<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".9,.05" duration="0,6"/>
-					<passive_effect name="JumpStrength" operation="perc_subtract" value=".9,.05" duration="0,6"/>
-			</effect_group>
-
-			<effect_group>
-				<requirement name="CVarCompare" cvar="$shockDurationMax" operation="GTE" value="7"/>
-					<passive_effect name="RunSpeed" operation="perc_subtract" value=".9,.05" duration="0,7"/>
-					<passive_effect name="WalkSpeed" operation="perc_subtract" value=".9,.05" duration="0,7"/>
-					<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".9,.05" duration="0,7"/>
-					<passive_effect name="JumpStrength" operation="perc_subtract" value=".9,.05" duration="0,7"/>
-			</effect_group>
-
-			<effect_group>
-				<requirement name="CVarCompare" cvar="$shockDurationMax" operation="GTE" value="8"/>
-					<passive_effect name="RunSpeed" operation="perc_subtract" value=".9,.05" duration="0,8"/>
-					<passive_effect name="WalkSpeed" operation="perc_subtract" value=".9,.05" duration="0,8"/>
-					<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".9,.05" duration="0,8"/>
-					<passive_effect name="JumpStrength" operation="perc_subtract" value=".9,.05" duration="0,8"/>
-			</effect_group>
-
-			<effect_group>
-				<requirement name="CVarCompare" cvar="$shockDurationMax" operation="GTE" value="9"/>
-					<passive_effect name="RunSpeed" operation="perc_subtract" value=".9,.05" duration="0,9"/>
-					<passive_effect name="WalkSpeed" operation="perc_subtract" value=".9,.05" duration="0,9"/>
-					<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".9,.05" duration="0,9"/>
-					<passive_effect name="JumpStrength" operation="perc_subtract" value=".9,.05" duration="0,9"/>
-			</effect_group> -->
-		</buff>
-
-
-
-
-
 
 		<!--Decorativos-->
 		<buff name="FUEGO" hidden="true">
@@ -2217,6 +2122,125 @@
 				</triggered_effect>
 			</effect_group>
 		</buff>
+		<buff name="DecoBossHoarfrost" hidden="true">
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Resources/oreNitrateBoulderPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Resources/oreNitrateBoulderPrefab" local_offset="0,-0.4,0" local_rotation="0,0,0" parent_transform="LeftLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Resources/oreNitrateBoulderPrefab" local_offset="0,-0.4,0" local_rotation="0,0,0" parent_transform="RightLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Axe/fireaxe_ironPrefab.prefab" local_offset="0.1,0.08,-0.35" local_rotation="-90,0,0" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" target="self" particle="Smoke_Unlit" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="Smoke_Unlit" />
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Resources/oreNitrateBoulderPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="Entities/Resources/oreNitrateBoulderPrefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Resources/oreNitrateBoulderPrefab" local_offset="0,-0.4,0" local_rotation="0,0,0" parent_transform="LeftLeg">
+					<requirement name="!HasPrefab" prefab="Entities/Resources/oreNitrateBoulderPrefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Resources/oreNitrateBoulderPrefab" local_offset="0,-0.4,0" local_rotation="0,0,0" parent_transform="RightLeg">
+					<requirement name="!HasPrefab" prefab="Entities/Resources/oreNitrateBoulderPrefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Axe/fireaxe_ironPrefab.prefab" local_offset="0.1,0.08,-0.35" local_rotation="-90,0,0" parent_transform="RightHand">
+					<requirement name="!HasPrefab" prefab="@:Other/Items/Weapons/Melee/Axe/fireaxe_ironPrefab.prefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="Smoke_Unlit" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine">
+					<requirement name="!HasParticle" particle="Smoke_Unlit" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="Smoke_Unlit" />
+			</effect_group>
+		</buff>
+		<buff name="DecoBossShocker" hidden="true">
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/cowSkullPrefab" local_offset="0,0.4,0" local_rotation="0,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_electric_shock" local_offset="0,0,0" local_rotation="0,0,90" parent_transform="LeftHand" />
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_electric_shock" local_offset="0,0,0" local_rotation="0,0,90" parent_transform="RightHand"  />
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Lighting/lightCeilingPrefab" local_offset="-0.25,1.2,-1" local_rotation="90,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Lighting/lightCeilingPrefab" local_offset="-0.75,-0.3,-1" local_rotation="90,0,0" parent_transform="LeftShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Lighting/lightCeilingPrefab" local_offset="0.75,0.3,1" local_rotation="-90,0,0" parent_transform="RightShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Bandits/BanditSupportBroken1mPrefab" local_offset="0,0.3,-0.45" local_rotation="0,0,140" parent_transform="LeftShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Bandits/BanditSupportBroken1mPrefab" local_offset="0,-0.3,0.45" local_rotation="-45,-90,0" parent_transform="RightShoulder"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_electric_shock" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_electric_shock" parent_transform="RightHand"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/cowSkullPrefab" local_offset="0,0.4,0" local_rotation="0,0,0" parent_transform="Head">
+					<requirement name="!HasPrefab" prefab="Entities/OutdoorDecor/cowSkullPrefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Lighting/lightCeilingPrefab" local_offset="-0.25,1.2,-1" local_rotation="90,0,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="Entities/Lighting/lightCeilingPrefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Lighting/lightCeilingPrefab" local_offset="-0.75,-0.3,-1" local_rotation="90,0,0" parent_transform="LeftShoulder">
+					<requirement name="!HasPrefab" prefab="Entities/Lighting/lightCeilingPrefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Lighting/lightCeilingPrefab" local_offset="0.75,0.3,1" local_rotation="-90,0,0" parent_transform="RightShoulder">
+					<requirement name="!HasPrefab" prefab="Entities/Lighting/lightCeilingPrefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Bandits/BanditSupportBroken1mPrefab" local_offset="0,0.3,-0.45" local_rotation="0,0,140" parent_transform="LeftShoulder">
+					<requirement name="!HasPrefab" prefab="Entities/Bandits/BanditSupportBroken1mPrefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Bandits/BanditSupportBroken1mPrefab" local_offset="0,-0.3,0.45" local_rotation="-45,-90,0" parent_transform="RightShoulder">
+					<requirement name="!HasPrefab" prefab="Entities/Bandits/BanditSupportBroken1mPrefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_electric_shock" local_offset="0,0,0" local_rotation="0,0,90" parent_transform="LeftHand">
+					<requirement name="!HasParticle" particle="p_electric_shock" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_electric_shock" local_offset="0,0,0" local_rotation="0,0,90" parent_transform="RightHand">
+					<requirement name="!HasParticle" particle="p_electric_shock" />
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_electric_shock" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_electric_shock" parent_transform="RightHand"/>
+			</effect_group>
+		</buff>		
+		<buff name="DecoBossToxic" hidden="true">
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelAcidQuadBPrefab" local_offset="0,0.25,-0.75" local_rotation="0,0,0" parent_transform="Spine"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_left" local_offset="0,0,0.15" local_rotation="0,0,90" parent_transform="Head" />
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_left" local_offset="0,0,0.15" local_rotation="0,0,90" parent_transform="Head" />
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_left" parent_transform="LeftHand" />
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_left" parent_transform="LeftHand" />
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_right" parent_transform="RightHand" />
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_right" parent_transform="RightHand" />
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_left" local_offset="0,-0.3,0" local_rotation="0,0,90" parent_transform="LeftLeg" />
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_left" local_offset="0,-0.3,0" local_rotation="0,0,90" parent_transform="LeftLeg" />
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_right" local_offset="0,0,0" local_rotation="0,0,90" parent_transform="RightLeg" />
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_right" local_offset="0,0,0" local_rotation="0,0,90" parent_transform="RightLeg" />
+
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_twitch_zombie_radiation_left"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_twitch_zombie_radiation_right"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" particle="Entities/Industrial/barrelAcidQuadBPrefab" local_offset="0,0.25,-0.75" local_rotation="0,0,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" particle="Entities/Industrial/barrelAcidQuadBPrefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_left" local_offset="0,0,0.15" local_rotation="0,0,90" parent_transform="Head">
+					<requirement name="!HasParticle" particle="p_twitch_zombie_radiation_left" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_left" parent_transform="LeftHand">
+					<requirement name="!HasParticle" particle="p_twitch_zombie_radiation_left" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_right" parent_transform="RightHand">
+					<requirement name="!HasParticle" particle="p_twitch_zombie_radiation_right" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_left" local_offset="0,-0.3,0" local_rotation="0,0,90" parent_transform="LeftLeg">
+					<requirement name="!HasParticle" particle="p_twitch_zombie_radiation_left" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_right" local_offset="0,-0.3,0" local_rotation="0,0,90" parent_transform="RightLeg">
+					<requirement name="!HasParticle" particle="p_twitch_zombie_radiation_right" />
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_twitch_zombie_radiation_left"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_twitch_zombie_radiation_right"/>
+			</effect_group>
+		</buff>
 
 
 		<!-- BUFFOS BOSSES ELEMENTALES -->
@@ -2245,6 +2269,8 @@
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="horde_spawn_warning" play_in_head="true"/>
 			</effect_group>
 			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="NotHasBuff" buff="god"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="0.5" fade="3" effect_name="Distortion"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="3" effect_name="Distortion"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetAudioMixerState" state="Deafened" enabled="true"/>
@@ -2275,6 +2301,8 @@
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="horde_spawn_warning" play_in_head="true"/>
 			</effect_group>
 			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="NotHasBuff" buff="god"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="0.5" effect_name="Distortion"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" effect_name="Distortion"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetAudioMixerState" state="Deafened" enabled="true"/>
@@ -2381,7 +2409,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" target_tags="player" range="30" buff="buff_AOE_BossHoarfrost2"/>
 			</effect_group>
 		</buff>
-		<buff name="buff_AOE_BossHoarfrost2" hidden="true" description_key="hoarfrostcalldesc" name_key="hoarfrostnamecall" tooltip_key="hoarfrostcall" icon="ui_game_symbol_cold" icon_color="33,58,179">
+		<buff name="buff_AOE_BossHoarfrost2" hidden="false" description_key="hoarfrostcalldesc" name_key="hoarfrostnamecall" tooltip_key="hoarfrostcall" icon="ui_game_symbol_cold" icon_color="33,58,179">
 			<stack_type value="replace"/>
 			<update_rate value="2.5"/>
 			<duration value="5"/>
@@ -2399,13 +2427,107 @@
 			<effect_group>
 
 			</effect_group>
-		</buff>		
+		</buff>
+		
+		<!-- SHOCKER -->
+		<buff name="buff_AOE_BossShocker" hidden="true" icon="ui_game_symbol_electric_power" icon_color="163,16,16">
+			<update_rate value="4.5"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="horde_spawn_warning"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" target_tags="player" range="30" buff="buff_AOE_BossShocker2"/>
+			</effect_group>
+		</buff>
+		<buff name="buff_AOE_BossShocker2" hidden="false" description_key="shockercalldesc" name_key="shockernamecall" tooltip_key="shockercall" icon="ui_game_symbol_electric_power" icon_color="163,16,16">
+			<stack_type value="replace"/>
+			<duration value="3.5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="NotHasBuff" buff="god"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffShockerShockedEntities"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfNoVehicle"/>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="horde_spawn_warning" play_in_head="true"/>
+			</effect_group>
+			<effect_group>
+
+			</effect_group>
+		</buff>
+		<buff name="buff_AOE_BossShockerRandomCamera" hidden="true">
+			<stack_type value="ignore"/>
+			<update_rate value="25"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AnimatorFireTrigger" property="SpecialAttack" value="true"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" target_tags="player" range="15" buff="buff_AOE_BossShockerRandomCamera2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="demolitionzalert"/>
+			</effect_group>
+		</buff>
+		<buff name="buff_AOE_BossShockerRandomCamera2" hidden="true">
+			<duration value="1"/>
+			<stack_type value="ignore"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="NotHasBuff" buff="god"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" target="self" event="Event_BossShockerRandomCamera"/>
+			</effect_group>
+		</buff>
+		
+		<!-- TOXIC -->
+		<buff name="buff_AOE_BossToxic" hidden="true" icon="ui_game_symbol_radiation" icon_color="138,0,216">
+			<update_rate value="4.5"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="horde_spawn_warning"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" target_tags="player" range="30" buff="buff_AOE_BossToxic2"/>
+			</effect_group>
+		</buff>
+		<buff name="buff_AOE_BossToxic2" hidden="false" remove_on_death="true" description_key="toxiccalldesc" name_key="toxicnamecall" tooltip_key="toxiccall" icon="ui_game_symbol_radiation" icon_color="138,0,216">
+			<stack_type value="replace"/>
+			<!-- <update_rate value="3"/> -->
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="NotHasBuff" buff="god"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffBossToxicScreenRadiated"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffBossToxicScreenRadiated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffPoisonBossToxic"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffPoisonBossToxic"/>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sirenstrong" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="sirenstrong" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="StopSound" sound="sirenstrong" />
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffFinish" action="StopSound" sound="sirenstrong" />
+			</effect_group>
+		</buff>
+		<!-- FIN BUFFOS BOSSES ELEMENTALES -->		
 
 		<buff name="buffRadioctiveMiniBossToxic" hidden="true">
 			<update_rate value=".1"/>
 			<effect_group>
 				<requirement name="NotHasBuff" buff="god"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" range="8" buff="RadioactiveSound2">
+					<requirement name="EntityTagCompare" target="other" tags="player"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buff_AOE_BossToxicRadioactiveSound" hidden="true">
+			<update_rate value=".1"/>
+			<effect_group>
+				<requirement name="NotHasBuff" buff="god"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" range="30" buff="RadioactiveSound">
+					<requirement name="EntityTagCompare" target="other" tags="player"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group>
+				<requirement name="HasBuff" buff="god"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="RadioactiveSound">
+					<requirement name="EntityTagCompare" target="other" tags="player"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buff_AOE_BossToxicShinyRadioactiveSound" hidden="true">
+			<update_rate value=".1"/>
+			<effect_group>
+				<requirement name="NotHasBuff" buff="god"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" range="50" buff="RadioactiveSound">
 					<requirement name="EntityTagCompare" target="other" tags="player"/>
 				</triggered_effect>
 			</effect_group>
@@ -2928,8 +3050,48 @@
 	-->
 
 		<!-- CUSTOM BUFFOS -->
+		<buff name="buffShockedElectric" hidden="true" description_key="buffShockedDesc" tooltip_key="buffShockedTooltip" icon="ui_game_symbol_electric_power" name_key="buffShockedName" icon_color="255,0,0">
+			<stack_type value="duration"/>
+			<duration value="5"/>
+			<update_rate value="1"/>
+			<display_value value="$buffShockedDisplay"/>
+			<display_value_format value="time"/>
+
+			<effect_group>
+				<!-- Blinks the display -->
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffShocked"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="HelicopterHelicopteeer"/>
+				<triggered_effect trigger="onSelfBuffStart" action="GetBuffDuration" reference="$shockDurationMax"/>
+				<triggered_effect trigger="onSelfBuffStart" action="GetBuffDuration" reference="$buffShockedDisplay"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffShockedDisplay" operation="set" value="4">
+					<requirement name="CVarCompare" cvar="$buffShockedDisplay" operation="LTE" value="0"/>
+				</triggered_effect>
+
+				<triggered_effect trigger="onSelfBuffStack" action="GetBuffDuration" reference="$buffShockedDisplay"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_add" value="-6"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffShockedDisplay" operation="add" value="-1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffShockedDisplay" operation="set" value="0"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_electric_shock" parent_transform="Spine1" local_offset="0,-.2,0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="p_electric_shock" parent_transform="Spine1" local_offset="0,-.2,0"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
+
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="ETrapHit" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfLeaveGame" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="electric_fence_impact"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" sound="electric_fence_impact"/>
+				<triggered_effect trigger="onSelfLeaveGame" action="StopSound" sound="electric_fence_impact"/>
+			</effect_group>
+		</buff>
 		<buff name="buffBurningBossInfernal" hidden="true">
-			<damage_type value="heat"/>
+			<!-- <damage_type value="heat"/> -->
 			<stack_type value="replace"/>
 			<!-- Setup or clear duration -->
 			<effect_group>
@@ -2969,7 +3131,7 @@
 			</effect_group>		
 		</buff>
 		<buff name="buffBurningBossInfernalShiny" hidden="true">
-			<damage_type value="heat"/>
+			<!-- <damage_type value="heat"/> -->
 			<stack_type value="replace"/>
 			<!-- Setup or clear duration -->
 			<effect_group>
@@ -3009,7 +3171,6 @@
 			</effect_group>		
 		</buff>
 
-		<!-- TODO: SE QUITA POR EL AGUA DIVINA Y NO SE VUELVE A PONER SI SE TE ACABA EL BUFFO, ARREGLARLO -->
 		<buff name="buffFreezingBossHoarfrost" hidden="false" icon="ui_game_symbol_cold" icon_color="33,58,179">
 			<update_rate value="1"/>
 			<!-- <damage_type value="cold"/> -->
@@ -3076,6 +3237,263 @@
 				<passive_effect name="JumpStrength" operation="base_set" value="0"/>
 				<passive_effect name="DisableItem" operation="base_set" value="1" tags="ranged" />
 				<passive_effect name="DisableItem" operation="base_set" value="1" tags="melee" />
+			</effect_group>
+		</buff>
+		<buff name="buffShockerShockedEntities" hidden="true" description_key="buffShockedDesc" tooltip_key="buffShockedTooltip" icon="ui_game_symbol_electric_power" name_key="buffShockedName" icon_color="255,0,0">
+			<stack_type value="duration"/>
+			<duration value="5"/>
+			<update_rate value="1"/>
+			<!-- <display_value value="$buffShockedDisplay"/>
+			<display_value_format value="time"/> -->
+
+			<effect_group>
+				<!-- <passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffShocked"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="GetBuffDuration" reference="$shockDurationMax"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="GetBuffDuration" reference="$buffShockedDisplay"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffShockedDisplay" operation="set" value="4">
+					<requirement name="CVarCompare" cvar="$buffShockedDisplay" operation="LTE" value="0"/>
+				</triggered_effect> -->
+
+				<!-- <triggered_effect trigger="onSelfBuffStack" action="GetBuffDuration" reference="$buffShockedDisplay"/> -->
+
+				<passive_effect name="HealthChangeOT" operation="base_add" value="-6"/>
+
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffShockedDisplay" operation="add" value="-1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffShockedDisplay" operation="set" value="0"/> -->
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_electric_shock" parent_transform="Spine1" local_offset="0,-.2,0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="p_electric_shock" parent_transform="Spine1" local_offset="0,-.2,0"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
+
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
+				<!-- <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="ETrapHit" operation="set" value="0"/> -->
+				<triggered_effect trigger="onSelfLeaveGame" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="electric_fence_impact"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" sound="electric_fence_impact"/>
+				<triggered_effect trigger="onSelfLeaveGame" action="StopSound" sound="electric_fence_impact"/>
+			</effect_group>
+		</buff>
+		<buff name="buffShockerShinyShockedEntities" hidden="true" description_key="buffShockedDesc" tooltip_key="buffShockedTooltip" icon="ui_game_symbol_electric_power" name_key="buffShockedName" icon_color="255,0,0">
+			<stack_type value="duration"/>
+			<duration value="5"/>
+			<update_rate value="1"/>
+			<!-- <display_value value="$buffShockedDisplay"/>
+			<display_value_format value="time"/> -->
+
+			<effect_group>
+				<!-- <passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffShocked"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="GetBuffDuration" reference="$shockDurationMax"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="GetBuffDuration" reference="$buffShockedDisplay"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffShockedDisplay" operation="set" value="4">
+					<requirement name="CVarCompare" cvar="$buffShockedDisplay" operation="LTE" value="0"/>
+				</triggered_effect> -->
+
+				<!-- <triggered_effect trigger="onSelfBuffStack" action="GetBuffDuration" reference="$buffShockedDisplay"/> -->
+
+				<passive_effect name="HealthChangeOT" operation="base_add" value="-10"/>
+
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffShockedDisplay" operation="add" value="-1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffShockedDisplay" operation="set" value="0"/> -->
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_electric_shock" parent_transform="Spine1" local_offset="0,-.2,0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="p_electric_shock" parent_transform="Spine1" local_offset="0,-.2,0"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
+
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
+				<!-- <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="ETrapHit" operation="set" value="0"/> -->
+				<triggered_effect trigger="onSelfLeaveGame" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="electric_fence_impact"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" sound="electric_fence_impact"/>
+				<triggered_effect trigger="onSelfLeaveGame" action="StopSound" sound="electric_fence_impact"/>
+			</effect_group>
+		</buff>
+
+		<!-- 
+			BUG: al morir la variable no se pone en 0.
+			BUG: el sonido de radiacion no se reproduce al quitarte GOD dentro del aura y no se quita al salir del aura estando como GOD
+		 -->
+		<buff name="buffPoisonBossToxic" hidden="false" icon="ui_game_symbol_radiation" icon_color="138,0,216">
+			<!-- <update_rate value="5"/> -->
+			<stack_type value="replace"/>
+			<display_value value="$buffPoisionToxic"/>
+			<display_value_key value="{0}%"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="NotHasBuff" buff="god"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="10"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffPoisionToxic" operation="add" value="1">
+						<requirement name="HasBuff" buff="buff_AOE_BossToxic2"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffPoisionToxic" operation="add" value="-1">
+						<requirement name="NotHasBuff" buff="buff_AOE_BossToxic2"/>
+					</triggered_effect>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$buffPoisionToxic" operation="LT" value="1"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPoisonBossToxic"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$buffPoisionToxic" operation="GT" value="100"/>
+					<passive_effect name="HealthChangeOT" operation="base_add" value="-10000"/>
+			</effect_group>
+		</buff>	
+
+		<buff name="buffPoisonBossToxic" hidden="false" icon="ui_game_symbol_radiation" icon_color="138,0,216">
+			<update_rate value=".25"/>
+			<stack_type value="replace"/>
+			<display_value value="$buffPoisionToxic"/>
+			<display_value_key value="{0}%"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="HasBuff" buff="god"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPoisonBossToxic"/>
+			</effect_group>	
+			<!-- <effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="HasBuff" buff="god"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffPoisonBossToxic"/>
+			</effect_group>			 -->
+
+			<!-- Setup or clear duration -->
+			<effect_group>
+				<!-- <triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffPoisonBossToxic"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/> -->
+				<requirement name="EntityTagCompare" tags="player"/>				
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPoisonCureBossToxic"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffPoisionToxic" operation="add" value="5"/>
+			</effect_group>
+
+			<!-- If duration is GT 100, set or stack the duration -->
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$buffPoisionToxic" operation="GT" value="100"/>
+					<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/> -->
+					<!-- <triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffPoisonBossToxic"/> -->
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPoisonCureBossToxic"/>
+
+					<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffPoisonCureBossToxic"/>					
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffPoisonDeathBossToxic"/>
+
+					<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$hoarfrostFreezeMovilityPerc" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$hoarfrostFreezeMovilityPerc" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$hoarfrostFreezePerc" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$hoarfrostFreezePerc" operation="set" value="0"/> -->
+			</effect_group>
+
+			<!-- If buffPoisionToxic Grather Than 95 set buff paralysis -->
+			<!-- <effect_group>
+				<requirement name="CVarCompare" cvar="$buffPoisionToxic" operation="GT" value="95"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="BossHoarfrostFrozenEntities"/>
+			</effect_group> -->
+		</buff>
+		<buff name="buffPoisonCureBossToxic" hidden="false" icon="ui_game_symbol_radiation" icon_color="138,0,216">
+			<duration value="100"/>
+			<update_rate value=".25"/>
+			<stack_type value="replace"/>
+			<display_value value="$buffPoisionToxic"/>
+			<display_value_key value="{0}%"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="HasBuff" buff="god"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPoisonCureBossToxic"/>
+			</effect_group>	
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffPoisonCureBossToxic"/>
+			</effect_group>			
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<!-- <requirement name="NotHasBuff" buff="god"/> -->
+				<requirement name="CVarCompare" cvar="$buffPoisionToxic" operation="GT" value="-1"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffPoisionToxic" operation="add" value="-5"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<!-- <requirement name="NotHasBuff" buff="god"/> -->
+				<requirement name="CVarCompare" cvar="$buffPoisionToxic" operation="LT" value="0"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPoisonCureBossToxic"/>
+			</effect_group>
+
+				<!-- REDUCIR VENENO CON EL TIEMPO -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="2" effect_name="Cold2"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" effect_name="Cold2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="avalanche"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="avalanche"/>
+				<passive_effect name="Mobility" operation="base_set" value="0"/>
+				<passive_effect name="WalkSpeed" operation="base_set" value="0"/>
+				<passive_effect name="RunSpeed" operation="base_set" value="0"/>
+				<passive_effect name="CrouchSpeed" operation="base_set" value="0"/>
+				<passive_effect name="JumpStrength" operation="base_set" value="0"/>
+				<passive_effect name="DisableItem" operation="base_set" value="1" tags="ranged" />
+				<passive_effect name="DisableItem" operation="base_set" value="1" tags="melee" /> -->
+		</buff>
+		<buff name="buffPoisonFullCureBossToxic" hidden="true" icon="ui_game_symbol_radiation" icon_color="138,0,216">
+			<display_value value="$buffPoisionToxic"/>
+			<display_value_key value="{0}%"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffPoisonCureBossToxic"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPoisonCureBossToxic"/>
+
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffPoisonCureBossToxic"/>
+			</effect_group>
+		</buff>		
+		<buff name="buffPoisonDeathBossToxic" hidden="true" icon="ui_game_symbol_radiation" icon_color="138,0,216">
+			<stack_type value="replace"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffPosionToxic" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPoisonBossToxic"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPoisonCureBossToxic"/>
+				
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPosionToxic" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffPoisonBossToxic"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffPoisonCureBossToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_add" value="-10000"/>
+			</effect_group>	
+			<!-- <effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="NotHasBuff" buff="god"/>
+			</effect_group>	 -->
+			<!-- <effect_group>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffPoisonDeathBossToxic"/>
+			</effect_group>	 -->
+		</buff>
+
+		<buff name="buffBossToxicScreenRadiated" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="3"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="NotHasBuff" buff="god"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="2" fade="1" effect_name="Blur"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity=".5" fade="1" effect_name="Radiation" />
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" effect_name="Drunk" fade="1"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Blur"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Radiation" />
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" effect_name="Drunk" fade="1"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Blur"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Radiation" />
+				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" intensity="0" effect_name="Drunk" fade="1"/>
 			</effect_group>
 		</buff>		
 	</append>
