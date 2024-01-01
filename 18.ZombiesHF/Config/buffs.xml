@@ -2453,7 +2453,7 @@
 		</buff>
 		<buff name="buff_AOE_BossShockerRandomCamera" hidden="true">
 			<stack_type value="ignore"/>
-			<update_rate value="25"/>
+			<update_rate value="15"/>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AnimatorFireTrigger" property="SpecialAttack" value="true"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" target_tags="player" range="15" buff="buff_AOE_BossShockerRandomCamera2"/>
@@ -3256,7 +3256,7 @@
 
 				<!-- <triggered_effect trigger="onSelfBuffStack" action="GetBuffDuration" reference="$buffShockedDisplay"/> -->
 
-				<passive_effect name="HealthChangeOT" operation="base_add" value="-6"/>
+				<passive_effect name="HealthChangeOT" operation="base_add" value="-3"/>
 
 				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffShockedDisplay" operation="add" value="-1"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffShockedDisplay" operation="set" value="0"/> -->
@@ -3294,7 +3294,7 @@
 
 				<!-- <triggered_effect trigger="onSelfBuffStack" action="GetBuffDuration" reference="$buffShockedDisplay"/> -->
 
-				<passive_effect name="HealthChangeOT" operation="base_add" value="-10"/>
+				<passive_effect name="HealthChangeOT" operation="base_add" value="-5"/>
 
 				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffShockedDisplay" operation="add" value="-1"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffShockedDisplay" operation="set" value="0"/> -->
@@ -3328,7 +3328,7 @@
 			<effect_group>
 				<requirement name="EntityTagCompare" tags="player"/>
 				<requirement name="NotHasBuff" buff="god"/>
-					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="10"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="1"/>
 					<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
 					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffPoisionToxic" operation="add" value="1">
 						<requirement name="HasBuff" buff="buff_AOE_BossToxic2"/>
@@ -3352,6 +3352,13 @@
 			<stack_type value="replace"/>
 			<display_value value="$buffPoisionToxic"/>
 			<display_value_key value="{0}%"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffPoisonBossToxic"/>				
+				<triggered_effect trigger="onSelfLeaveGame" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="buffPoisonBossToxic"/>
+			</effect_group>	
+
 			<effect_group>
 				<requirement name="EntityTagCompare" tags="player"/>
 				<requirement name="HasBuff" buff="god"/>
@@ -3458,6 +3465,10 @@
 		<buff name="buffPoisonDeathBossToxic" hidden="true" icon="ui_game_symbol_radiation" icon_color="138,0,216">
 			<stack_type value="replace"/>
 			<effect_group>
+				<triggered_effect trigger="onSelfDied" action="ModifyCVar" cvar="$buffPosionToxic" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffPoisonBossToxic"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffPoisonCureBossToxic"/>
+
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffPosionToxic" operation="set" value="0"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPoisonBossToxic"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPoisonCureBossToxic"/>
@@ -3467,6 +3478,11 @@
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffPoisonCureBossToxic"/>
 				<passive_effect name="HealthChangeOT" operation="base_add" value="-10000"/>
 			</effect_group>	
+			<effect_group>
+				<triggered_effect trigger="onSelfDied" action="ModifyCVar" cvar="$buffPosionToxic" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffPoisonBossToxic"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffPoisonCureBossToxic"/>
+			</effect_group>				
 			<!-- <effect_group>
 				<requirement name="EntityTagCompare" tags="player"/>
 				<requirement name="NotHasBuff" buff="god"/>
