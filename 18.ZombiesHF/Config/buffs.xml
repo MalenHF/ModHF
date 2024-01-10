@@ -1737,6 +1737,15 @@
 				<triggered_effect trigger="onSelfEnteredGame" action="PlaySound" sound="buff_stunned" play_in_head="true"/>
 			</effect_group>
 		</buff>
+
+
+		<buff name="buffSummonTest" name_key="buffInjuryUnconsciousName" description_key="buffInjuryUnconsciousDesc" tooltip_key="buffInjuryUnconsciousTooltip" icon="ui_game_symbol_critical">
+			<duration value="1"/>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" target="self" event="note_hf_test"/>
+			</effect_group>
+		</buff>
 		<!-- Buffo que puede entrar para AOE de aura de boss (como el que reduce armadura) -->
 		<!-- <buff name="NuevoBuffHurt" name_key="" description_key="TwitchBuff_HurtDesc" icon="ui_game_symbol_twitch_hurt" icon_color="255,175,175" hidden="true">
 			<stack_type value="replace"/>
@@ -2311,45 +2320,138 @@
 		</buff>
 
 		<!-- INFERNAL -->
-		<buff name="buff_AOE_BossInfernal" hidden="false" icon="ui_game_symbol_fire" icon_color="163,16,16">
-			<update_rate value="4.5"/>
-			<effect_group>
+		<buff name="buff_AOE_BossInfernal" hidden="false" icon="ui_game_symbol_fire" icon_color="163,16,16">			
+			<effect_group>			
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="horde_spawn_warning"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" target_tags="player" range="30" buff="buff_AOE_BossInfernal2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" target_tags="player" range="20" buff="buffAOEBossInf2"/>
 			</effect_group>
 		</buff>
-		<buff name="buff_AOE_BossInfernal2" hidden="false" description_key="infernalcalldesc" name_key="infernalnamecall" tooltip_key="infernalcall" icon="ui_game_symbol_fire" icon_color="163,16,16">
+		<buff name="buffAOEBossInf2" hidden="true" icon="ui_game_symbol_fire" icon_color="163,16,16">
+			<duration value="1.2"/>	
 			<stack_type value="replace"/>
-			<duration value="3.5"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="horde_spawn_warning"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffInfExplo"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff"  buff="buffInfExplo"/>
+			</effect_group>
+		</buff>	
+		<buff name="buffInfExplo" hidden="false" description_key="infernalcalldesc" name_key="infernalnamecall" tooltip_key="infernalcall" icon="ui_game_symbol_fire" icon_color="163,16,16">
+			<stack_type value="ignore"/>
+			<display_value value="$buffBurningInfernal"/>
 			<effect_group>
 				<requirement name="EntityTagCompare" tags="player"/>
-				<requirement name="NotHasBuff" buff="god"/>
-				<!-- <passive_effect name="HealthChangeOT" operation="base_subtract" duration="0,5" value="1,10"/> -->
-				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,0,0" parent_transform="LOD0" shape_mesh="true"/> -->
-				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffBurningBossInfernal"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfNoVehicle"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="hfNoVehicle"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="horde_spawn_warning" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffBurningInfernal" operation="set" value="15"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffBurningInfernal" operation="set" value="15">
+					<requirement name="CVarCompare" cvar="$buffBurningInfernal" operation="Equals" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffBurningInfernal" operation="add" value="-1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffBurningInfernal" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffInfExplo">
+					<requirement name="HasBuff" buff="god"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffInfExplo">
+					<requirement name="NotHasBuff" buff="buffAOEBossInf2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffInfExplo"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_onFire"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_onFire"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffInfExplo"/>				
 			</effect_group>
 			<effect_group>
-
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="NotHasBuff" buff="god"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1"/>
+				<passive_effect name="WaterChangeOT" operation="base_subtract" value="0.5"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,0,0" parent_transform="LOD0" shape_mesh="true"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="NotHasBuff" buff="god"/>
+				<requirement name="CVarCompare" cvar="$buffBurningInfernal" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" target="self" event="BossInfernalExplosion"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="BuffInjuryUnconscious"/>				
+			</effect_group>
+			<effect_group>
+				<requirements compare_type="or">
+					<requirement name="CVarCompare" cvar="$buffBurningInfernal" operation="Equals" value="5"/>
+					<requirement name="CVarCompare" cvar="$buffBurningInfernal" operation="Equals" value="10"/>
+					<requirement name="CVarCompare" cvar="$buffBurningInfernal" operation="Equals" value="15"/>
+				</requirements>
+					<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,0,0" parent_transform="LOD0" shape_mesh="true"/>
 			</effect_group>
 		</buff>
-		<buff name="buff_AOE_BossInfernalShiny" hidden="false" icon="ui_game_symbol_fire" icon_color="163,16,16">
-			<update_rate value="4.5"/>
+		<buff name="buff_AOE_BossInfernalShiny" hidden="false" icon="ui_game_symbol_fire" icon_color="163,16,16">			
+			<effect_group>			
+				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="horde_spawn_warning"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" target_tags="player" range="40" buff="buffAOEBossShinyInf2"/>
+			</effect_group>
+		</buff>
+		<buff name="buffAOEBossShinyInf2" hidden="true" icon="ui_game_symbol_fire" icon_color="163,16,16">
+			<duration value="1.2"/>	
+			<stack_type value="replace"/>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="horde_spawn_warning"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" target_tags="player" range="50" buff="buff_AOE_BossInfernalShiny2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffInfExploShiny"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff"  buff="buffInfExploShiny"/>
+			</effect_group>
+		</buff>	
+		<buff name="buffInfExploShiny" hidden="false" description_key="infernalcalldesc" name_key="infernalnamecall" tooltip_key="infernalcall" icon="ui_game_symbol_fire" icon_color="163,16,16">
+			<stack_type value="ignore"/>
+			<display_value value="$buffBurningInfernalShiny"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfNoVehicle"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="hfNoVehicle"/>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="horde_spawn_warning" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffBurningInfernalShiny" operation="set" value="15"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffBurningInfernalShiny" operation="set" value="15">
+					<requirement name="CVarCompare" cvar="$buffBurningInfernalShiny" operation="Equals" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffBurningInfernalShiny" operation="add" value="-1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffBurningInfernalShiny" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffInfExploShiny">
+					<requirement name="HasBuff" buff="god"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffInfExploShiny">
+					<requirement name="NotHasBuff" buff="buffAOEBossShinyInf2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffInfExploShiny"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_onFire"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_onFire"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffInfExploShiny"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="NotHasBuff" buff="god"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2"/>
+				<passive_effect name="WaterChangeOT" operation="base_subtract" value="0.5"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,0,0" parent_transform="LOD0" shape_mesh="true"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="NotHasBuff" buff="god"/>
+				<requirement name="CVarCompare" cvar="$buffBurningInfernalShiny" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" target="self" event="BossInfernalExplosion"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="BuffInjuryUnconscious"/>				
+			</effect_group>
+			<effect_group>
+				<requirements compare_type="or">
+					<requirement name="CVarCompare" cvar="$buffBurningInfernalShiny" operation="Equals" value="5"/>
+					<requirement name="CVarCompare" cvar="$buffBurningInfernalShiny" operation="Equals" value="10"/>
+					<requirement name="CVarCompare" cvar="$buffBurningInfernalShiny" operation="Equals" value="15"/>
+				</requirements>
+					<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,0,0" parent_transform="LOD0" shape_mesh="true"/>
 			</effect_group>
 		</buff>
-		<buff name="buff_AOE_BossInfernalShiny2" hidden="false" description_key="infernalcalldesc" name_key="infernalnamecall" tooltip_key="infernalcall" icon="ui_game_symbol_fire" icon_color="163,16,16">
+		<!-- <buff name="buff_AOE_BossInfernalShiny2" hidden="false" description_key="infernalcalldesc" name_key="infernalnamecall" tooltip_key="infernalcall" icon="ui_game_symbol_fire" icon_color="163,16,16">
 			<stack_type value="replace"/>
 			<duration value="3.5"/>
 			<effect_group>
 				<requirement name="EntityTagCompare" tags="player"/>
 				<requirement name="NotHasBuff" buff="god"/>
-				<!-- <passive_effect name="HealthChangeOT" operation="base_subtract" duration="0,5" value="1,10"/> -->
-				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,0,0" parent_transform="LOD0" shape_mesh="true"/> -->
-				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffBurningBossInfernalShiny"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfNoVehicle"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="horde_spawn_warning" play_in_head="true"/>
 			</effect_group>
@@ -2359,29 +2461,68 @@
 		</buff>
 		<buff name="buff_AOE_BossInfernalExplosion" hidden="true" icon="ui_game_symbol_fire" icon_color="163,16,16">
 			<stack_type value="ignore"/>
-			<!-- <update_rate value="45"/> -->
-			<update_rate value="20"/>
+					
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AnimatorFireTrigger" property="SpecialAttack" value="true"/>
+				
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" target_tags="player" range="15" buff="buff_AOE_BossInfernalExplosion2"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="demolitionzalert"/>
 			</effect_group>
 		</buff>
-		<buff name="buff_AOE_BossInfernalExplosion2" hidden="true">
-			<duration value="1"/>
-			<stack_type value="ignore"/>
+		<buff name="buff_AOE_BossInfernalExplosion2" description_key="infernalcalldesc" name_key="infernalnamecall" tooltip_key="infernalcall" icon="ui_game_symbol_fire" icon_color="0,0,0">
+			<duration value="10"/>
+			<display_value value="$varExplo"/>
+			<stack_type value="ignore"/>			
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="horde_spawn_warning" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$varExplo" operation="set" value="10"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$varExplo" operation="add" value="-1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$varExplo" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buff_AOE_BossInfernalExplosion2">
+					<requirement name="HasBuff" buff="god"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buff_AOE_BossInfernalExplosion2"/>
+			</effect_group>
 			<effect_group>
 				<requirement name="EntityTagCompare" tags="player"/>
 				<requirement name="NotHasBuff" buff="god"/>
-				<!-- <triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" target="self" event="BossInfernalExplosion"/> -->
-				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" target="self" event="BossInfernalExplosion"/>
-				
-				<!-- <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="BuffInjuryUnconscious"/> -->
+				<requirement name="CVarCompare" cvar="$varExplo" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" target="self" event="BossInfernalExplosion"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="BuffInjuryUnconscious"/>
 			</effect_group>
+
+
+
+		</buff>
+		<buff name="buffInfExploTest" description_key="infernalcalldesc" name_key="infernalnamecall" tooltip_key="infernalcall" icon="ui_game_symbol_fire" icon_color="0,0,0">
+			<duration value="10"/>
+			<display_value value="$varExplo"/>
+			<stack_type value="ignore"/>			
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="horde_spawn_warning" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$varExplo" operation="set" value="10"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$varExplo" operation="add" value="-1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$varExplo" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buff_AOE_BossInfernalExplosion2">
+					<requirement name="HasBuff" buff="god"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buff_AOE_BossInfernalExplosion2"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="NotHasBuff" buff="god"/>
+				<requirement name="CVarCompare" cvar="$varExplo" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" target="self" event="BossInfernalExplosion"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="BuffInjuryUnconscious"/>
+			</effect_group>
+
+
+
 		</buff>
 		<buff name="buff_AOE_BossInfernalShinyExplosion" hidden="true" icon="ui_game_symbol_fire" icon_color="163,16,16">
 			<stack_type value="ignore"/>
-			<!-- <update_rate value="45"/> -->
+			
 			<update_rate value="25"/>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AnimatorFireTrigger" property="SpecialAttack" value="true"/>
@@ -2395,11 +2536,11 @@
 			<effect_group>
 				<requirement name="EntityTagCompare" tags="player"/>
 				<requirement name="NotHasBuff" buff="god"/>
-				<!-- <triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" target="self" event="BossInfernalExplosion"/> -->
+				
 				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" target="self" event="BossInfernalShinyExplosion"/>				
 				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="BuffInjuryUnconscious"/>
 			</effect_group>
-		</buff>
+		</buff> -->
 		
 		<!-- HOARFROST -->
 		<buff name="buff_AOE_BossHoarfrost" hidden="true" icon="ui_game_symbol_cold" icon_color="33,58,179">
@@ -2453,10 +2594,14 @@
 		</buff>
 		<buff name="buff_AOE_BossShockerRandomCamera" hidden="true">
 			<stack_type value="ignore"/>
-			<update_rate value="15"/>
+			<update_rate value="12"/>
 			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AnimatorFireTrigger" property="SpecialAttack" value="true"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="positionAOE" target_tags="player" range="20" buff="buff_AOE_BossShockerRandomCamera2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="demolitionzalert"/>
+
 				<triggered_effect trigger="onSelfBuffUpdate" action="AnimatorFireTrigger" property="SpecialAttack" value="true"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" target_tags="player" range="15" buff="buff_AOE_BossShockerRandomCamera2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" target_tags="player" range="20" buff="buff_AOE_BossShockerRandomCamera2"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="demolitionzalert"/>
 			</effect_group>
 		</buff>
@@ -3090,44 +3235,36 @@
 				<triggered_effect trigger="onSelfLeaveGame" action="StopSound" sound="electric_fence_impact"/>
 			</effect_group>
 		</buff>
-		<buff name="buffBurningBossInfernal" hidden="true">
+		<buff name="buffBurningBossInfernal"  hidden="false" description_key="infernalcalldesc" name_key="infernalnamecall" tooltip_key="infernalcall" icon="ui_game_symbol_fire" icon_color="163,16,16">
 			<!-- <damage_type value="heat"/> -->
 			<stack_type value="replace"/>
+			
+			<!-- <duration value="6"/> -->
 			<!-- Setup or clear duration -->
 			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffBurningInfernal" operation="set" value="5"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffBurningInfernal" operation="set" value="5"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffBurningInfernal" operation="add" value="-1"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffBurningInfernal" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBurningBossInfernal">
+					<requirement name="HasBuff" buff="god"/>
+				</triggered_effect>
 			</effect_group>
-
-			<!-- If duration is LT 5, set or stack the duration -->
 			<effect_group>
-				<requirement name="CVarCompare" cvar="$buffBurningInfernal" operation="LT" value="5"/>
-					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffBurningInfernal" operation="set" value="5"/>
-					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffBurningInfernal" operation="set" value="5"/>
-			</effect_group>
-
-			<!-- If duration LT 0, remove the buff and clear duration -->
-			<effect_group>
-				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBurningBossInfernal">
-					<requirement name="CVarCompare" cvar="$buffBurningInfernal" operation="LTE" value="0"/>
-				</triggered_effect> -->
-				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffBurningInfernal" operation="set" value="0"/>
-			</effect_group>
-
-			<effect_group>
-				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="0,5" value="0,1">
-					<requirement name="EntityTagCompare" tags="player"/>
-				</passive_effect>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="0,5" value="0,1"/>
 				<passive_effect name="WaterChangeOT" operation="base_subtract" value="0.5"/>
 			</effect_group>
 			<effect_group>
-				<requirement name="CVarCompare" cvar="$buffBurningInfernal" operation="GT" value="0"/>
-					<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,0,0" parent_transform="LOD0" shape_mesh="true"/>
+				<requirement name="CVarCompare" cvar="$buffBurningInfernal" operation="GT" value="0"/>					
+					<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,0,0" parent_transform="LOD0" shape_mesh="true"/>
+					<triggered_effect trigger="onSelfBuffStack" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,0,0" parent_transform="LOD0" shape_mesh="true"/>
 			</effect_group>	
 			<effect_group>
 				<requirement name="CVarCompare" cvar="$buffBurningInfernal" operation="LTE" value="0"/>
 					<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_onFire"/>
-					<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_onFire"/>			
+					<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_onFire"/>	
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBurningBossInfernal"/>		
 			</effect_group>		
 		</buff>
 		<buff name="buffBurningBossInfernalShiny" hidden="true">
@@ -3171,58 +3308,54 @@
 			</effect_group>		
 		</buff>
 
-		<buff name="buffFreezingBossHoarfrost" hidden="false" icon="ui_game_symbol_cold" icon_color="33,58,179">
-			<update_rate value="1"/>
+		<buff name="buffFreezingBossHoarfrost" hidden="false" icon="ui_game_symbol_cold" icon_color="33,58,179">			
+			<duration value="10"/>
 			<!-- <damage_type value="cold"/> -->
 			<stack_type value="replace"/>
 			<display_value value="$buffFreezingHoarfrost"/>
 			<display_value_key value="{0}%"/>
-
 			<!-- Setup or clear duration -->
 			<effect_group>
-				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffFreezingBossHoarfrost"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$hoarfrostFreezeMovilityPerc" operation="set" value="0"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$hoarfrostFreezePerc" operation="set" value="0"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffFreezingHoarfrost" operation="set" value="0"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$hoarfrostFreezeMovilityPerc" operation="set" value="2"/>
+				<requirement name="NotHasBuff" buff="BossHoarfrostFrozenEntities"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$hoarfrostFreezePerc" operation="add" value="0.05"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffFreezingHoarfrost" operation="add" value="5"/>
-
+			</effect_group>	
+			<effect_group>	
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$hoarfrostFreezePerc" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffFreezingHoarfrost" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffFreezingBossHoarfrost"/>
 				<passive_effect name="FoodChangeOT" operation="base_subtract" value="0.5"/>
 			</effect_group>
-
 			<!-- If duration is GT 100, set or stack the duration -->
-			<effect_group>
+			<effect_group>					
 				<requirement name="CVarCompare" cvar="$buffFreezingHoarfrost" operation="GT" value="100"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffFreezingHoarfrost" operation="set" value="0"/>
 					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffFreezingHoarfrost" operation="set" value="0"/>
-
-					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$hoarfrostFreezeMovilityPerc" operation="set" value="0"/>
-					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$hoarfrostFreezeMovilityPerc" operation="set" value="0"/>
+		
 					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$hoarfrostFreezePerc" operation="set" value="0"/>
 					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$hoarfrostFreezePerc" operation="set" value="0"/>
 			</effect_group>
-
 			<!-- If buffFreezingHoarfrost Grather Than 95 set buff paralysis -->
 			<effect_group>
 				<requirement name="CVarCompare" cvar="$buffFreezingHoarfrost" operation="GT" value="95"/>
+				<requirement name="NotHasBuff" buff="BossHoarfrostFrozenEntities"/>	
 					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="BossHoarfrostFrozenEntities"/>
 			</effect_group>
-
 			<!-- While buffFreezingHoarfrost is Less Than 100 the player speed and movility will be reduced more and more -->
 			<effect_group>
 				<requirement name="EntityTagCompare" tags="player"/>
 				<requirement name="NotHasBuff" buff="god"/>
 				<requirement name="CVarCompare" cvar="$buffFreezingHoarfrost" operation="LT" value="100"/>
-					<passive_effect name="Mobility" operation="perc_subtract" value="@$hoarfrostFreezePerc"/>
+					<!--<passive_effect name="Mobility" operation="perc_subtract" value="@$hoarfrostFreezePerc"/>-->
 					<passive_effect name="WalkSpeed" operation="perc_subtract" value="@$hoarfrostFreezePerc"/>
 					<passive_effect name="RunSpeed" operation="perc_subtract" value="@$hoarfrostFreezePerc"/>
 					<passive_effect name="CrouchSpeed" operation="perc_subtract" value="@$hoarfrostFreezePerc"/>
 					<passive_effect name="JumpStrength" operation="perc_subtract" value="@$hoarfrostFreezePerc"/>
-			</effect_group>		
+			</effect_group>	
+			
 		</buff>
 		<buff name="BossHoarfrostFrozenEntities" hidden="true" icon="ui_game_symbol_cold" icon_color="0,0,0">
-			<duration value="1.5"/>
+			<duration value="2"/>
 			<effect_group>
 				<requirement name="EntityTagCompare" tags="player"/>
 				<requirement name="NotHasBuff" buff="god"/>
@@ -3236,9 +3369,14 @@
 				<passive_effect name="CrouchSpeed" operation="base_set" value="0"/>
 				<passive_effect name="JumpStrength" operation="base_set" value="0"/>
 				<passive_effect name="DisableItem" operation="base_set" value="1" tags="ranged" />
-				<passive_effect name="DisableItem" operation="base_set" value="1" tags="melee" />
+				<passive_effect name="DisableItem" operation="base_set" value="1" tags="melee" />	
+			</effect_group>				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$hoarfrostFreezePerc" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffFreezingHoarfrost" operation="set" value="0"/>
 			</effect_group>
 		</buff>
+
 		<buff name="buffShockerShockedEntities" hidden="true" description_key="buffShockedDesc" tooltip_key="buffShockedTooltip" icon="ui_game_symbol_electric_power" name_key="buffShockedName" icon_color="255,0,0">
 			<stack_type value="duration"/>
 			<duration value="5"/>
@@ -3256,7 +3394,7 @@
 
 				<!-- <triggered_effect trigger="onSelfBuffStack" action="GetBuffDuration" reference="$buffShockedDisplay"/> -->
 
-				<passive_effect name="HealthChangeOT" operation="base_add" value="-3"/>
+				<passive_effect name="HealthChangeOT" operation="base_add" value="-1"/>
 
 				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffShockedDisplay" operation="add" value="-1"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffShockedDisplay" operation="set" value="0"/> -->
@@ -3323,12 +3461,13 @@
 		<buff name="buffPoisonBossToxic" hidden="false" icon="ui_game_symbol_radiation" icon_color="138,0,216">
 			<!-- <update_rate value="5"/> -->
 			<stack_type value="replace"/>
+			<update_rate value="2"/>
 			<display_value value="$buffPoisionToxic"/>
 			<display_value_key value="{0}%"/>
 			<effect_group>
 				<requirement name="EntityTagCompare" tags="player"/>
 				<requirement name="NotHasBuff" buff="god"/>
-					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="1"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="5"/>
 					<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
 					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffPoisionToxic" operation="add" value="1">
 						<requirement name="HasBuff" buff="buff_AOE_BossToxic2"/>
@@ -3345,67 +3484,12 @@
 				<requirement name="CVarCompare" cvar="$buffPoisionToxic" operation="GT" value="100"/>
 					<passive_effect name="HealthChangeOT" operation="base_add" value="-10000"/>
 			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthMaxBlockage" operation="base_add" value="@$buffPoisionToxic"/>
+			</effect_group>
 		</buff>	
 
-		<buff name="buffPoisonBossToxic" hidden="false" icon="ui_game_symbol_radiation" icon_color="138,0,216">
-			<update_rate value=".25"/>
-			<stack_type value="replace"/>
-			<display_value value="$buffPoisionToxic"/>
-			<display_value_key value="{0}%"/>
-			<effect_group>
-				<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
-				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffPoisonBossToxic"/>				
-				<triggered_effect trigger="onSelfLeaveGame" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
-				<triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="buffPoisonBossToxic"/>
-			</effect_group>	
 
-			<effect_group>
-				<requirement name="EntityTagCompare" tags="player"/>
-				<requirement name="HasBuff" buff="god"/>
-					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
-					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPoisonBossToxic"/>
-			</effect_group>	
-			<!-- <effect_group>
-				<requirement name="EntityTagCompare" tags="player"/>
-				<requirement name="HasBuff" buff="god"/>
-					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
-					<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffPoisonBossToxic"/>
-			</effect_group>			 -->
-
-			<!-- Setup or clear duration -->
-			<effect_group>
-				<!-- <triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffPoisonBossToxic"/> -->
-				<!-- <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/> -->
-				<requirement name="EntityTagCompare" tags="player"/>				
-					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPoisonCureBossToxic"/>
-					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffPoisionToxic" operation="add" value="5"/>
-			</effect_group>
-
-			<!-- If duration is GT 100, set or stack the duration -->
-			<effect_group>
-				<requirement name="CVarCompare" cvar="$buffPoisionToxic" operation="GT" value="100"/>
-					<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
-					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/> -->
-					<!-- <triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffPoisonBossToxic"/> -->
-					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
-					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPoisonCureBossToxic"/>
-
-					<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPoisionToxic" operation="set" value="0"/>
-					<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffPoisonCureBossToxic"/>					
-					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffPoisonDeathBossToxic"/>
-
-					<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$hoarfrostFreezeMovilityPerc" operation="set" value="0"/>
-					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$hoarfrostFreezeMovilityPerc" operation="set" value="0"/>
-					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$hoarfrostFreezePerc" operation="set" value="0"/>
-					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$hoarfrostFreezePerc" operation="set" value="0"/> -->
-			</effect_group>
-
-			<!-- If buffPoisionToxic Grather Than 95 set buff paralysis -->
-			<!-- <effect_group>
-				<requirement name="CVarCompare" cvar="$buffPoisionToxic" operation="GT" value="95"/>
-					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="BossHoarfrostFrozenEntities"/>
-			</effect_group> -->
-		</buff>
 		<buff name="buffPoisonCureBossToxic" hidden="false" icon="ui_game_symbol_radiation" icon_color="138,0,216">
 			<duration value="100"/>
 			<update_rate value=".25"/>
