@@ -385,7 +385,29 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
-				</item>			
+				</item>	
+				<!-- <item name="q_JuggerTest">
+					<property name="name" value="Kill the Juggernaut" />
+					<property name="Group" value="Science"/>
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="ItemTypeIcon" value="skull"/>
+					<property name="CustomIconTint" value="784212"/>
+					<property name="TintColor" value="120,66,18"/>
+					<property name="Stacknumber" value="5"/>
+					<property name="DescriptionKey" value="JugQuest"/>
+					<property class="Action0">						
+						<property name="UseAnimation" value="true"/>												=
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" target="self" event="note_hf_test"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item>	 -->
+
+
+				<triggered_effect trigger="onSelfBuffStart" />		
 				<item name="q_Honor">
 					<property name="name" value="Honor" />
 					<property name="Extends" value="challengeQuestMaster"/>
