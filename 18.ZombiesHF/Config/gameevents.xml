@@ -81,16 +81,10 @@
 		<action_sequence name="BossInfernalExplosion">
 			<requirement class="NearbyEntities">
 				<property name="max_distance" value="20" />
-			</requirement>			
-
-			<action class="AddBuff">
-				<property name="phase" value="1" />
-				<property name="buff_name" value="twitch_blastresist" />
-				<property name="target_group" value="zombies" />
-			</action>
+			</requirement>		
 
 			<action class="PlaySound">
-				<property name="phase" value="2" />
+				<property name="phase" value="1" />
 				<property name="sound" value="twitch_kaboom" />
 			</action>
 
@@ -101,16 +95,6 @@
 				<property name="block_radius" value="1" />
 				<property name="entity_damage" value="1000" />
 				<property name="entity_radius" value="10" />
-			</action>
-
-			<action class="Delay">
-				<property name="time" value="1" />
-				<property name="phase" value="3" />
-			</action>
-
-			<action class="RemoveBuff">
-				<property name="phase" value="4" />
-				<property name="buff_name" value="twitch_blastresist" />
 			</action>
 		</action_sequence>
 	
@@ -215,7 +199,7 @@
 				<property name="spawn_count" value="1" />
 				<property name="phase" value="0" />
 				<property name="safe_spawn" value="true" />
-				<property name="add_to_group" value="zombies,boss" />
+				<property name="add_to_group" value="zombies,testboss" />
 				<property name="add_buffs" value="twitch_immortal_boss" param1="bossbuff" />
 				<property name="spawn_type" value="Position" />
 				<property name="ignore_multiplier" value="true" />
@@ -240,12 +224,12 @@
 			<action class="AddBuff">
 				<property name="buff_name" value="twitch_immortal_boss" />
 				<property name="phase" value="3" />
-				<property name="target_group" value="boss" />
+				<property name="target_group" value="testboss" />
 			</action>
 			
 			<action class="SetupBossGroup">
-				<property name="minion_group_name" value="minions" />
-				<property name="boss_group_name" value="boss" />
+				<property name="minion_group_name" value="testboss" />
+				<property name="boss_group_name" value="minions" />
 				<property name="boss_icon1" value="" param1="bossicon1" />
 				<property name="phase" value="3" />
 				<property name="group_type" value="ImmortalBoss" />
@@ -274,7 +258,7 @@
 				<property name="replace_buff" value="twitch_immortal_boss" />
 				<property name="replace_with_buff" value="twitch_boss_nav" />
 				<property name="phase" value="5" />
-				<property name="target_group" value="boss" />
+				<property name="target_group" value="testboss" />
 			</action>
 			
 			<action class="AddBuff">
@@ -284,7 +268,7 @@
 			</action>
 			
 			<action class="WaitForDead">
-				<property name="target_group" value="boss" />
+				<property name="target_group" value="testboss" />
 				<property name="phase_on_despawn" value="10" />
 				<property name="phase" value="6" />
 			</action>
@@ -332,7 +316,7 @@
 			<action class="RemoveBuff">
 				<property name="buff_name" value="twitch_immortal_boss" />
 				<property name="phase" value="10" />
-				<property name="target_group" value="boss" />
+				<property name="target_group" value="testboss" />
 			</action>
 			
 			<action class="RemoveEntities">
@@ -341,5 +325,7 @@
 			</action>
 			
 		</action_sequence>
+
+
 	</append>
 </configs>

@@ -1746,6 +1746,16 @@
 				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" target="self" event="note_hf_test"/>
 			</effect_group>
 		</buff>
+		<buff name="buffSummonTest2" name_key="buffInjuryUnconsciousName" description_key="buffInjuryUnconsciousDesc" tooltip_key="buffInjuryUnconsciousTooltip" icon="ui_game_symbol_critical">
+			<duration value="1"/>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" target="self" event="testBoss"/>
+			</effect_group>
+		</buff>
+		
+
+		
 		<!-- Buffo que puede entrar para AOE de aura de boss (como el que reduce armadura) -->
 		<!-- <buff name="NuevoBuffHurt" name_key="" description_key="TwitchBuff_HurtDesc" icon="ui_game_symbol_twitch_hurt" icon_color="255,175,175" hidden="true">
 			<stack_type value="replace"/>
@@ -2321,18 +2331,20 @@
 
 		<!-- INFERNAL -->
 		<buff name="buff_AOE_BossInfernal" hidden="false" icon="ui_game_symbol_fire" icon_color="163,16,16">			
+			<update_rate value="3"/>
 			<effect_group>			
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="horde_spawn_warning"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" target_tags="player" range="20" buff="buffAOEBossInf2"/>
 			</effect_group>
 		</buff>
 		<buff name="buffAOEBossInf2" hidden="true" icon="ui_game_symbol_fire" icon_color="163,16,16">
-			<duration value="1.2"/>	
+			<duration value="5"/>
+			<update_rate value="3"/>	
 			<stack_type value="replace"/>
 			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffBurningInfernal" operation="set" value="15"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="horde_spawn_warning"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffInfExplo"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AddBuff"  buff="buffInfExplo"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffInfExplo"/>				
 			</effect_group>
 		</buff>	
 		<buff name="buffInfExplo" hidden="false" description_key="infernalcalldesc" name_key="infernalnamecall" tooltip_key="infernalcall" icon="ui_game_symbol_fire" icon_color="163,16,16">
@@ -2343,10 +2355,6 @@
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfNoVehicle"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="hfNoVehicle"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="horde_spawn_warning" play_in_head="true"/>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffBurningInfernal" operation="set" value="15"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffBurningInfernal" operation="set" value="15">
-					<requirement name="CVarCompare" cvar="$buffBurningInfernal" operation="Equals" value="0"/>
-				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffBurningInfernal" operation="add" value="-1"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffBurningInfernal" operation="set" value="0"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffInfExplo">
@@ -2370,9 +2378,12 @@
 			<effect_group>
 				<requirement name="EntityTagCompare" tags="player"/>
 				<requirement name="NotHasBuff" buff="god"/>
-				<requirement name="CVarCompare" cvar="$buffBurningInfernal" operation="Equals" value="0"/>
+				<requirement name="NotHasBuff" buff="buffInfExploCD"/>
+				<requirement name="CVarCompare" cvar="$buffBurningInfernal" operation="Equals" value="0"/>				
 				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" target="self" event="BossInfernalExplosion"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="BuffInjuryUnconscious"/>				
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="BuffInjuryUnconscious"/>	
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffInfExploCD"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffBurningInfernal" operation="set" value="15"/>			
 			</effect_group>
 			<effect_group>
 				<requirements compare_type="or">
@@ -2383,6 +2394,18 @@
 					<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,0,0" parent_transform="LOD0" shape_mesh="true"/>
 			</effect_group>
 		</buff>
+		<buff name="buffInfExploCD" hidden="true" description_key="infernalcalldesc" name_key="infernalnamecall" tooltip_key="infernalcall" icon="ui_game_symbol_fire" icon_color="163,16,16">
+			<stack_type value="ignore"/>
+			<duration value="5"/>					
+		</buff>
+		<buff name="buffInfExploTest" hidden="false" description_key="infernalcalldesc" name_key="infernalnamecall" tooltip_key="infernalcall" icon="ui_game_symbol_fire" icon_color="163,16,16">
+			<stack_type value="ignore"/>
+			<duration value="1"/>
+			<effect_group>			
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" target="self" event="BossInfernalExplosion"/>				
+			</effect_group>			
+		</buff>
+		
 		<buff name="buff_AOE_BossInfernalShiny" hidden="false" icon="ui_game_symbol_fire" icon_color="163,16,16">			
 			<effect_group>			
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="horde_spawn_warning"/>

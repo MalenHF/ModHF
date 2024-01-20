@@ -1,12 +1,19 @@
-<config>
-    <remove xpath="/controls/quest_objective_tracker_entry"/>
+<!-- - - - - - - - - - - -
+#########################
+####### H7SB HUD ########
+### 7 Days to Die Mod ###
+#########################
+####### Eihwaz © ########
+##### www.eihwaz.de #####F
+#### CC BY-NC-ND-SA #####
+#########################
+- - - - - - - - - - - -->
+<eihwaz.de>
+    <append xpath="/controls/item_stack">
+        <sprite depth="19" pos="0,0" height="13" width="13" color="[black]" type="sliced" foregroundlayer="true" />
+		<label depth="20" name="slot#" pos="5,0" width="10" height="12" text_key="${txtNum}" font_size="12" color="" />
+    </append>
     <append xpath="/controls">
-        <invetNum>
-            <rect>
-                <sprite depth="19" pos="0,0" height="17" width="${vwidth}" color="[black]" type="sliced" foregroundlayer="true" />
-		        <label depth="20" name="slot#" pos="4,0" width="${vwidth2}" height="16" text_key="${txtNum}" font_size="16" color="" crispness="Never" effect="outline" effect_distance="1,1"/>
-            </rect>            
-        </invetNum>
         <h7sbParty_entry>
             <rect width="200" height="42" controller="PartyEntry" visible="{partyvisible}" default_health_color="255,0,0,194" twitch_health_color="100,65,165,128">
                 <rect>
@@ -21,18 +28,16 @@
                 <rect>
                     <sprite pos="135,-3" depth="8" name="icon2" style="icon30px" sprite="{icon2}" visible="{showicon2}" />
                     <sprite pos="167,-3" depth="8" name="icon1" style="icon30px" sprite="ui_game_symbol_twitch_leaderboard" color="255,255,255,128" visible="{showicon1}" />
-                    <label depth="6" name="TextContent" pos="30, -10" font_size="24" color="{distancecolor}" justify="left" pivot="topleft" text="{name} {level}" height="30" width="100" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
+                    <label depth="6" name="TextContent" pos="30, -10" font_size="24" color="{(number(replace(distance, '  m', '')) > 100 ? '0,255,255' : '0,0,0')}" justify="left" pivot="topleft" text="{name} {level}" height="30" width="100" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
                     <label depth="6" name="TextContent" pos="202,-24" font_size="20" color="{distancecolor}" pivot="topleft" text="{distance}" height="30" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
                     <sprite depth="8" name="arrowContent" style="icon22px" pos="220,-14" size="16,16" sprite="ui_game_symbol_map_player_arrow" visible="{showarrow}" pivot="center" color="{arrowcolor}" />
                     <sprite depth="8" name="voiceStatus" style="icon22px" pos="15,-22" sprite="ui_game_symbol_noise" size="18,18" visible="{voicevisible}" pivot="center" color="{# voicemuted ? '200,0,0,255' : (voiceactive ? '255,255,255,255' : '128,128,128,255') }" />
                 </rect>
             </rect>
         </h7sbParty_entry>
-        <quest_objective_tracker_entry>
-            <rect width="300" height="26" controller="QuestTrackerObjectiveEntry" visible="{hasobjective}">
-                <sprite depth="2" name="iconTrack" style="icon22px" pos="280,2" color="{objectivecompletecolor}" sprite="{objectivecompletesprite}" visible="{objectiveshowicon}" />
-                <label depth="1" pos="0,4" text="{objectiveoptional}[{objectivephasehexcolor}]{objectivedescription}[-] [{objectivecompletehexcolor}]{objectivestate}[-]" font_size="26" justify="right" visible="{hasobjective}" width="{objectivetextwidth}" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
-            </rect>
-        </quest_objective_tracker_entry>
     </append>
-</config>
+    
+    <append xpath="/controls">
+        
+    </append>
+</eihwaz.de> 

@@ -1,7 +1,5 @@
 <MalenSUI>
-    <!-- Remover chat y mueve la chatbox-->
-    <remove xpath="/windows/window[@name='chatoutput']"/>
-    <remove xpath="/windows/window[@name='chat']"/>
+    
     <!-- Cambia la capa del editor-->
     <setattribute xpath="/windows/window[@name='ingameDebugMenu']" name="depth">6</setattribute>
     <setattribute xpath="/windows/window[@name='editorPanelSelector']" name="depth">6</setattribute>
@@ -36,7 +34,7 @@
                         <panel name="rheader" pos="0,46" height="46" width="1280" depth="0" disableautobackground="true">
                             <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
                             <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1276" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
-                            <label style="header.name" pos="6,-6" height="34" width="1268" justify="Center" text_key="Hooligans Force" />
+                            <label style="header.name" pos="6,-6" height="34" width="1268" justify="Center" text_key="Server 1 - Hooligans Force" />
                         </panel>
                         <!--PNG-->
                         <panel name="cmdcontent" pos="0,0" width="260" height="250" depth="0" pivot="center" disableautobackground="true">
@@ -1147,56 +1145,6 @@
             </rect>
         </window>
 
-        <window name="chatoutput" pos="30, -250" depth="-1" width="500" height="250" anchor="LeftTop" controller="ChatOutput" fadeout_wait_time="5" fadeout_duration="2">
-            <sprite pos="197,-739" depth="3" width="26" height="26" sprite="ui_game_symbol_x" color="[red]" />
-            <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
-                <rect name="tabsHeader" height="40">
-                    <grid name="tabButtons" pos="160,-735" rows="1" cols="2" cell_width="33" cell_height="35" repeat_content="true" arrangement="horizontal">
-                        <rect>
-                            <simplebutton depth="-3" defaultsprite="ui_game_symbol_shape_text" name="tabButton" pos="2,-2" width="30" height="30" font_size="30" caption_key="xuiBack" defaultcolor="255,255,255" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
-                            <sprite depth="-2" pos="4,-5" width="26" height="26" sprite="ui_game_symbol_shape_text" color="255,255,255" />
-                        </rect>
-                    </grid>
-                </rect>
-                <!--Contenido de la tabulacion-->
-                <rect name="tabsContents">
-                    <rect tab_key="">
-                        <textlist name="txtOutput" pos="8,-214" width="484" height="210" list_style="chat" pivot="bottomleft" depth="2" font_size="26" crispness="Never">
-                            <sprite pos="-32,23" depth="5" width="21" height="21" sprite="ui_game_symbol_x" color="[red]" />
-                            <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
-                                <rect name="tabsHeader" height="40">                                    <!--Change rows to the number of "buttons you need"-->
-                                    <grid name="tabButtons" pos="-34,55" rows="2" cols="1" cell_width="25" cell_height="30" repeat_content="true" arrangement="vertical">
-                                        <rect>
-                                            <simplebutton depth="3" name="tabButton" width="25" height="25" font_size="25" caption_key="xuiBack" defaultcolor="0,0,0,150" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
-                                            <sprite depth="4" pos="2,-2" width="21" height="21" sprite="ui_game_symbol_stealth" color="255,255,255" />
-                                        </rect>
-                                    </grid>
-                                </rect>
-                                <!--Contenido de la tabulacion-->
-                                <rect name="tabsContents">
-                                    <rect tab_key="">
-                                        <sprite depth="-1" name="border" pos="-8,212" width="500" height="218" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false"/>
-                                        <sprite depth="-1" color="[darkGrey]" pos="-8,212" width="500" height="218" type="sliced" globalopacitymod=".95" />
-                                    </rect>
-                                    <rect tab_key="">
-                                    </rect>                                    
-                                </rect>
-                            </rect>
-                        </textlist>
-                    </rect>
-                    <rect tab_key="">
-                    </rect>
-                </rect>
-            </rect>
-        </window>
-        <window name="chat" pos="30, -251" width="500" height="250" anchor="LeftTop" controller="Chat" cursor_area="true">
-            <sprite depth="3" name="border" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false" />
-            <rect name="input" depth="2" pos="0,-218" height="32">
-                <sprite depth="3" name="border" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false" />
-                <sprite color="[darkGrey]" type="sliced" globalopacitymod="0.95" />
-                <combobox name="cbxTarget" type="ComboBoxList`1[EChatType]" value_max="party" pos="2, -6" width="100" height="22" font_size="22" localization_prefix="xuiChatTarget" />
-                <textfield name="txtInput" backgroundcolor="[transparent]" depth="1" pos="110,-16" width="386" height="28" pivot="left" justify="left" overflow="ClampContent" max_line_count="1" crispness="Never" open_vk_on_open="true" />
-            </rect>
-        </window>
+        
     </append>
 </MalenSUI>
