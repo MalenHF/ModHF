@@ -47,9 +47,11 @@
 
 <!----> 
     <append xpath="/entitygroups">
-		<entitygroup name="ZombiesR">
+		<entitygroup name="ZombiesSB">
 			zombieSBRopa
 			zombieSBKnight
+            HvSBToxic
+			HvSBNurse
 		</entitygroup>
         <!-- Hv Mini Bosses--> 
         <entitygroup name="zombiesHvMiniBoss">
@@ -78,7 +80,7 @@
 		</entitygroup>
 
         <entitygroup name="ZombiesBC">
-			zombierBossCirujano
+			zombieBossCirujano
 			ZombieBossMineralSpider, .1
             zombieBossPractoSpider, .1
 		</entitygroup>
@@ -117,16 +119,24 @@
         <entitygroup name="allsnukfingroup">
             zombieScorcher
 			zombiePsycho
+            zombieWendigo
+            zombieBanshee
 			zombieCowhead
-			zombieGunner
+            zombieVengeSpirit
+			ZombieBomber
+            BossCrawler
+            BossAngryCrawler
 		</entitygroup>
         <entitygroup name="allspecial">
-            TAVOIronSpider						
-			TAVOzombieWightRAINBOW		
             zombieScorcher
 			zombiePsycho
+            zombieWendigo
+            zombieBanshee
 			zombieCowhead
-			zombieGunner
+            zombieVengeSpirit
+			ZombieBomber
+            BossCrawler
+            BossAngryCrawler
 		</entitygroup>
 		<entitygroup name="allelitesgroup">
 			EliteCop
@@ -139,8 +149,10 @@
             EliteSpider
 			EliteFeral
 			EliteDemo
+            ZombieEliteBomber
 		</entitygroup>
         <entitygroup name="allNightsGroup">
+            ZombieEliteBomber
 			nightZombieCop
             nightZombieSoldier
             nightZombieHawai
@@ -525,6 +537,11 @@
             MiniRopaJoel, .05
             HeadZombiePonky
         </entitygroup>
+        <entitygroup name="allMinisGroup">
+            zombiSBMiniSiren
+            MiniRopaJoel
+            HeadZombiePonky
+        </entitygroup>
         <entitygroup name="allMedics">
             nightZombieNurse
             zombieNurseFeral
@@ -532,6 +549,560 @@
             EliteNurse
         </entitygroup>
         <!-- END Added by HolyVentus -->
+
+
+        <!-- Quest Groups -->
+        <entitygroup name="qGroupAllZombies">
+            zombieArlene
+            zombieArleneFeral
+            zombieArleneRadiated
+            zombieMarlene
+            zombieMarleneFeral
+            zombieMarleneRadiated
+            zombiePartyGirl
+            zombiePartyGirlFeral
+            zombiePartyGirlRadiated
+            zombieNurse
+            zombieNurseFeral
+            zombieNurseRadiated
+            zombieJoe
+            zombieJoeFeral
+            zombieJoeRadiated
+            zombieSteve
+            zombieSteveFeral
+            zombieSteveRadiated
+            zombieTomClark
+            zombieTomClarkFeral
+            zombieTomClarkRadiated
+            zombieBusinessMan
+            zombieBusinessManFeral
+            zombieBusinessManRadiated
+            zombieBurnt
+            zombieBurntFeral
+            zombieBurntRadiated
+            zombieSpider
+            zombieSpiderFeral
+            zombieSpiderRadiated
+            zombieBoe
+            zombieBoeFeral
+            zombieBoeRadiated
+            zombieMaleHazmat
+            zombieMaleHazmatFeral
+            zombieMaleHazmatRadiated
+            zombieJanitor
+            zombieJanitorFeral
+            zombieJanitorRadiated
+            zombieMoe
+            zombieMoeFeral
+            zombieMoeRadiated
+            zombieLab
+            zombieLabFeral
+            zombieLabRadiated
+            zombieDarlene
+            zombieDarleneFeral
+            zombieDarleneRadiated
+            zombieYo
+            zombieYoFeral
+            zombieYoRadiated
+            zombieUtilityWorker
+            zombieUtilityWorkerFeral
+            zombieUtilityWorkerRadiated
+            zombieBiker
+            zombieBikerFeral
+            zombieBikerRadiated
+            zombieLumberjack
+            zombieLumberjackFeral
+            zombieLumberjackRadiated
+            zombieFemaleFat
+            zombieFemaleFatRadiated
+            zombieFatHawaiian
+            zombieFatHawaiianFeral
+            zombieFatHawaiianRadiated
+            zombieFatCop
+            zombieFatCopFeral
+            zombieFatCopRadiated
+            zombieSkateboarder
+            zombieSkateboarderFeral
+            zombieSkateboarderRadiated
+            zombieSoldier
+            zombieSoldierFeral
+            zombieSoldierRadiated
+            zombieWightFeral
+            zombieWightRadiated
+            zombieScreamer
+            zombieScreamerFeral
+            zombieScreamerRadiated
+            zombieMutated
+            zombieMutatedFeral
+            zombieMutatedRadiated
+            zombieDemolition
+            zombieSteveCrawler
+            zombieSteveCrawlerFeral
+            zombieMummyDog
+            HellLion
+            TAVOanimalSnakeFeral
+            TAVOANACONDA           
+            zombiSBMiniSiren
+            MiniRopaJoel
+            HeadZombiePonky
+            MinieBomber
+            zombieScorcher
+            zombieBanshee
+            zombieScarecrow
+            zombiePsycho
+            ZombieBomber
+            zombieCowhead
+            zombieWendigo
+            zombieVengeSpirit
+            zombieGunner            
+            BossCrawler
+            BossAngryCrawler
+            zombieSBRopa
+			zombieSBKnight
+            HvSBToxic
+			HvSBNurse
+            EliteCop
+			EliteSolider
+			EliteHawai
+			EliteSkater
+            EliteTomClark
+            eliteBurn
+            EliteNurse
+            EliteSpider
+			EliteFeral
+			EliteDemo
+            ZombieEliteBomber
+			nightZombieCop
+            nightZombieSoldier
+            nightZombieHawai
+            nightZombieSkater
+            nightZombieFeral
+            nightZombieDemolition
+            nightZombieTom
+            nightZombieBurn
+            nightZombieSpider
+            nightZombieNurse
+            nightZombieHazmat
+            HvMortevodaCop
+            HvMortevodaSolider
+            HvMortevodaHawai
+            HvMortevodaSkater
+            HvMortevodaFeral
+            HvMortevodaBoomer
+            HvMortevodaTom
+            HvMortevodaBurn
+            HvMortevodaSpider
+            HvMortevodaNurse
+            HvMortevodaMaleHazmat
+            HvHoarfrostCop
+            HvHoarfrostSolider
+            HvHoarfrostHawai
+            HvHoarfrostSkater
+            HvHoarfrostFeral
+            HvHoarfrostBoomer
+            HvHoarfrostBurn
+            HvHoarfrostSpider
+            HvHoarfrostNurse
+            HvHoarfrostMaleHazmat
+            HvInfernalCop
+            HvInfernalSolider
+            HvInfernalHawai
+            HvInfernalSkater
+            HvInfernalFeral
+            HvInfernalBoomer
+            HvInfernalTom
+            HvInfernalBurn
+            HvInfernalSpider
+            HvInfernalNurse
+            HvInfernalMaleHazmat           
+            HvShockerCop
+            HvShockerSolider
+            HvShockerHawai
+            HvShockerSkater
+            HvShockerTom
+            HvShockerBurn
+            HvShockerSpider
+            HvShockerNurse
+            HvShockerMaleHazmat
+            HvShockerFeral
+            HvShockerBoomer
+            TAVOanimalZombieBearLEGENDARY
+            zombieBossPractoSpider
+            ZombieBossMineralSpider
+            zombieBossSoldier
+            zombieBossZombieKnight
+            zombieBossMummy
+            zombieBossSiren
+            zombieBossJuggernaut
+            zombieBossCirujano            
+            zombieBossSpartan
+            zombieBossMortevoda
+            zombieBossInfernal
+            zombieBossHoarfrost
+            zombieBossShocker
+            zombieBossShocker
+            zombieBossToxic    
+            zombieBossAdminHF   
+            zombieSpecialBossNightSpider
+            zombieSpecialBossMummy
+            zombieSpecialBossSiren
+            zombieSpecialBossJuggernaut
+            zombieSpecialBossSoldier
+            zombieSpecialBossKnight
+            zombieSpecialBossCirujano
+            zombieSpecialBossSpartan
+            zombieSpecialBossMortevoda
+            zombieSpecialBossInfernal
+            zombieSpecialBossHoarfrost
+            zombieSpecialBossShocker
+            zombieSpecialBossToxic
+            zombieSpecialBossAdminHF
+        </entitygroup>
+        <entitygroup name="qGroupAllNormalZombies">
+            zombieArlene
+            zombieArleneFeral
+            zombieArleneRadiated
+            zombieMarlene
+            zombieMarleneFeral
+            zombieMarleneRadiated
+            zombiePartyGirl
+            zombiePartyGirlFeral
+            zombiePartyGirlRadiated
+            zombieNurse
+            zombieNurseFeral
+            zombieNurseRadiated
+            zombieJoe
+            zombieJoeFeral
+            zombieJoeRadiated
+            zombieSteve
+            zombieSteveFeral
+            zombieSteveRadiated
+            zombieTomClark
+            zombieTomClarkFeral
+            zombieTomClarkRadiated
+            zombieBusinessMan
+            zombieBusinessManFeral
+            zombieBusinessManRadiated
+            zombieBurnt
+            zombieBurntFeral
+            zombieBurntRadiated
+            zombieSpider
+            zombieSpiderFeral
+            zombieSpiderRadiated
+            zombieBoe
+            zombieBoeFeral
+            zombieBoeRadiated
+            zombieMaleHazmat
+            zombieMaleHazmatFeral
+            zombieMaleHazmatRadiated
+            zombieJanitor
+            zombieJanitorFeral
+            zombieJanitorRadiated
+            zombieMoe
+            zombieMoeFeral
+            zombieMoeRadiated
+            zombieLab
+            zombieLabFeral
+            zombieLabRadiated
+            zombieDarlene
+            zombieDarleneFeral
+            zombieDarleneRadiated
+            zombieYo
+            zombieYoFeral
+            zombieYoRadiated
+            zombieUtilityWorker
+            zombieUtilityWorkerFeral
+            zombieUtilityWorkerRadiated
+            zombieBiker
+            zombieBikerFeral
+            zombieBikerRadiated
+            zombieLumberjack
+            zombieLumberjackFeral
+            zombieLumberjackRadiated
+            zombieFemaleFat
+            zombieFemaleFatRadiated
+            zombieFatHawaiian
+            zombieFatHawaiianFeral
+            zombieFatHawaiianRadiated
+            zombieFatCop
+            zombieFatCopFeral
+            zombieFatCopRadiated
+            zombieSkateboarder
+            zombieSkateboarderFeral
+            zombieSkateboarderRadiated
+            zombieSoldier
+            zombieSoldierFeral
+            zombieSoldierRadiated
+            zombieWightFeral
+            zombieWightRadiated
+            zombieScreamer
+            zombieScreamerFeral
+            zombieScreamerRadiated
+            zombieMutated
+            zombieMutatedFeral
+            zombieMutatedRadiated
+            zombieDemolition
+            zombieSteveCrawler
+            zombieSteveCrawlerFeral
+            zombieMummyDog
+            HellLion
+            TAVOanimalSnakeFeral
+            TAVOANACONDA           
+            zombiSBMiniSiren
+            MiniRopaJoel
+            HeadZombiePonky
+            MinieBomber
+            zombieScorcher
+            zombieBanshee
+            zombieScarecrow
+            zombiePsycho
+            ZombieBomber
+            zombieCowhead
+            zombieWendigo
+            zombieVengeSpirit
+            zombieGunner            
+            BossCrawler
+            BossAngryCrawler
+            zombieSBRopa
+			zombieSBKnight
+            HvSBToxic
+			HvSBNurse
+            EliteCop
+			EliteSolider
+			EliteHawai
+			EliteSkater
+            EliteTomClark
+            eliteBurn
+            EliteNurse
+            EliteSpider
+			EliteFeral
+			EliteDemo
+            ZombieEliteBomber
+			nightZombieCop
+            nightZombieSoldier
+            nightZombieHawai
+            nightZombieSkater
+            nightZombieFeral
+            nightZombieDemolition
+            nightZombieTom
+            nightZombieBurn
+            nightZombieSpider
+            nightZombieNurse
+            nightZombieHazmat
+            HvMortevodaCop
+            HvMortevodaSolider
+            HvMortevodaHawai
+            HvMortevodaSkater
+            HvMortevodaFeral
+            HvMortevodaBoomer
+            HvMortevodaTom
+            HvMortevodaBurn
+            HvMortevodaSpider
+            HvMortevodaNurse
+            HvMortevodaMaleHazmat
+            HvHoarfrostCop
+            HvHoarfrostSolider
+            HvHoarfrostHawai
+            HvHoarfrostSkater
+            HvHoarfrostFeral
+            HvHoarfrostBoomer
+            HvHoarfrostBurn
+            HvHoarfrostSpider
+            HvHoarfrostNurse
+            HvHoarfrostMaleHazmat
+            HvInfernalCop
+            HvInfernalSolider
+            HvInfernalHawai
+            HvInfernalSkater
+            HvInfernalFeral
+            HvInfernalBoomer
+            HvInfernalTom
+            HvInfernalBurn
+            HvInfernalSpider
+            HvInfernalNurse
+            HvInfernalMaleHazmat           
+            HvShockerCop
+            HvShockerSolider
+            HvShockerHawai
+            HvShockerSkater
+            HvShockerTom
+            HvShockerBurn
+            HvShockerSpider
+            HvShockerNurse
+            HvShockerMaleHazmat
+            HvShockerFeral
+            HvShockerBoomer
+        </entitygroup>
+        <entitygroup name="qGroupAllSpecialZombies">            
+            zombieSBRopa
+			zombieSBKnight
+            HvSBToxic
+			HvSBNurse
+            EliteCop
+			EliteSolider
+			EliteHawai
+			EliteSkater
+            EliteTomClark
+            eliteBurn
+            EliteNurse
+            EliteSpider
+			EliteFeral
+			EliteDemo
+            ZombieEliteBomber
+			nightZombieCop
+            nightZombieSoldier
+            nightZombieHawai
+            nightZombieSkater
+            nightZombieFeral
+            nightZombieDemolition
+            nightZombieTom
+            nightZombieBurn
+            nightZombieSpider
+            nightZombieNurse
+            nightZombieHazmat
+            HvMortevodaCop
+            HvMortevodaSolider
+            HvMortevodaHawai
+            HvMortevodaSkater
+            HvMortevodaFeral
+            HvMortevodaBoomer
+            HvMortevodaTom
+            HvMortevodaBurn
+            HvMortevodaSpider
+            HvMortevodaNurse
+            HvMortevodaMaleHazmat
+            HvHoarfrostCop
+            HvHoarfrostSolider
+            HvHoarfrostHawai
+            HvHoarfrostSkater
+            HvHoarfrostFeral
+            HvHoarfrostBoomer
+            HvHoarfrostBurn
+            HvHoarfrostSpider
+            HvHoarfrostNurse
+            HvHoarfrostMaleHazmat
+            HvInfernalCop
+            HvInfernalSolider
+            HvInfernalHawai
+            HvInfernalSkater
+            HvInfernalFeral
+            HvInfernalBoomer
+            HvInfernalTom
+            HvInfernalBurn
+            HvInfernalSpider
+            HvInfernalNurse
+            HvInfernalMaleHazmat           
+            HvShockerCop
+            HvShockerSolider
+            HvShockerHawai
+            HvShockerSkater
+            HvShockerTom
+            HvShockerBurn
+            HvShockerSpider
+            HvShockerNurse
+            HvShockerMaleHazmat
+            HvShockerFeral
+            HvShockerBoomer
+        </entitygroup>  
+        <entitygroup name="qGroupAllNormalBosses">
+            zombieBossPractoSpider
+            ZombieBossMineralSpider
+            zombieBossSoldier
+            zombieBossZombieKnight
+            zombieBossMummy
+            zombieBossSiren
+            zombieBossJuggernaut
+            zombieBossCirujano            
+            zombieBossSpartan
+            zombieBossMortevoda
+            zombieBossInfernal
+            zombieBossHoarfrost
+            zombieBossShocker
+            zombieBossShocker
+            zombieBossToxic    
+            zombieBossAdminHF        
+        </entitygroup> 
+        <entitygroup name="qGroupAllSpecialBosses">
+            zombieSpecialBossNightSpider
+            zombieSpecialBossMummy
+            zombieSpecialBossSiren
+            zombieSpecialBossJuggernaut
+            zombieSpecialBossSoldier
+            zombieSpecialBossKnight
+            zombieSpecialBossCirujano
+            zombieSpecialBossSpartan
+            zombieSpecialBossMortevoda
+            zombieSpecialBossInfernal
+            zombieSpecialBossHoarfrost
+            zombieSpecialBossShocker
+            zombieSpecialBossToxic
+            zombieSpecialBossAdminHF
+        </entitygroup> 
+        <entitygroup name="qGroupJug">
+            zombieGunner
+            ZombieBomber
+            HvInfernalCop
+            EliteDemo
+        </entitygroup>
+        <entitygroup name="qGroupSir">
+            ZombieEliteBomber
+            zombieScarecrow
+            nightZombieCop
+            nightZombieSoldier
+            nightZombieHawai
+            nightZombieSkater
+            nightZombieFeral
+            nightZombieDemolition
+            nightZombieTom
+            nightZombieBurn
+            nightZombieSpider
+            nightZombieNurse
+            nightZombieHazmat
+        </entitygroup>
+        <entitygroup name="qGroupSol">
+            zombieGunner
+            EliteSolider
+            EliteDemo
+        </entitygroup>
+        <entitygroup name="qGroupMum">
+            zombieScarecrow
+            TAVOzombieWightRAINBOW
+            TAVOanimalSnakeFeral
+            zombieMummyDog
+            zombieBanshee
+        </entitygroup>
+        <entitygroup name="qGroupCab">
+            EliteSkater
+            HvMortevodaSkater
+            HvHoarfrostSkater
+            HvInfernalSkater
+            nightZombieSkater
+            zombieSBKnight
+        </entitygroup>
+        <entitygroup name="qGroupTav">
+            zombieScreamer
+            zombieSBRopa
+            TAVOzombieWightRAINBOW
+            HvInfernalCop
+            TAVOzombieBolt
+            zombieGunner
+        </entitygroup>
+        <entitygroup name="qGroupCir">
+            zombiePsycho
+            zombieWendigo
+            zombieNurseFeral
+            EliteNurse
+        </entitygroup>
+        <!-- <entitygroup name="qGroupX">
+            
+        </entitygroup>
+        <entitygroup name="qGroupX">
+            
+        </entitygroup>
+        <entitygroup name="qGroupX">
+            
+        </entitygroup> -->
+
 	</append>
 <!--/////////////////////////////////////Wandering Spawn///////////////////////////////////////-->
 <!--///////////////////////////////////////////////////////////////////////////////////////////-->
@@ -560,17 +1131,17 @@
         zombieBossZombieKnight, 0.01
         zombieBossSoldier, 0.01
         zombieBossMummy, 0.01
-        zombierBossCirujano, 0.01
+        zombieBossCirujano, 0.01
         zombieBossSpartan, 0.01
         zombieBossShocker, 0.01
 
         zombieSpecialBossSiren, 0.01
-        zombieSpecialzombieBossMummy, 0.005
+        zombieSpecialBossMummy, 0.005
         zombieSpecialBossJuggernaut, 0.005
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
-        zombieSpecialzombieBossSpartan, 0.005
+        zombieSpecialBossCirujano, 0.005
+        zombieSpecialBossSpartan, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -610,17 +1181,17 @@
         zombieBossZombieKnight, 0.01
         zombieBossSoldier, 0.01
         zombieBossMummy, 0.01
-        zombierBossCirujano, 0.01
+        zombieBossCirujano, 0.01
         zombieBossSpartan, 0.01
         zombieBossShocker, 0.01
 
         zombieSpecialBossSiren, 0.01
-        zombieSpecialzombieBossMummy, 0.005
+        zombieSpecialBossMummy, 0.005
         zombieSpecialBossJuggernaut, 0.005
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
-        zombieSpecialzombieBossSpartan, 0.005
+        zombieSpecialBossCirujano, 0.005
+        zombieSpecialBossSpartan, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -661,18 +1232,18 @@
         zombieBossZombieKnight, 0.01
         zombieBossSoldier, 0.01
         zombieBossMummy, 0.01
-        zombierBossCirujano, 0.01
+        zombieBossCirujano, 0.01
         zombieBossSpartan, 0.01
         zombieBossShocker, 0.01
         zombieBossMortevoda, 0.01
 
         zombieSpecialBossSiren, 0.01        
-        zombieSpecialzombieBossMummy, 0.005        
+        zombieSpecialBossMummy, 0.005        
         zombieSpecialBossJuggernaut, 0.005
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
-        zombieSpecialzombieBossSpartan, 0.005
+        zombieSpecialBossCirujano, 0.005
+        zombieSpecialBossSpartan, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -721,7 +1292,7 @@
         zombieBossZombieKnight, 0.01        
         zombieBossSoldier, 0.01
         zombieBossMummy, 0.01
-        zombierBossCirujano, 0.01
+        zombieBossCirujano, 0.01
         zombieBossSpartan, 0.01
         zombieBossShocker, 0.01
         zombieBossMortevoda, 0.01
@@ -730,12 +1301,12 @@
         zombieBossPractoSpider, 0.01
        
         zombieSpecialBossSiren, 0.01
-        zombieSpecialzombieBossMummy, 0.005
+        zombieSpecialBossMummy, 0.005
         zombieSpecialBossJuggernaut, 0.005
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
-        zombieSpecialzombieBossSpartan, 0.005
+        zombieSpecialBossCirujano, 0.005
+        zombieSpecialBossSpartan, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -767,18 +1338,18 @@
         zombieBossZombieKnight, 0.01
         zombieBossSoldier, 0.01
         zombieBossMummy, 0.01
-        zombierBossCirujano, 0.01
+        zombieBossCirujano, 0.01
         zombieBossSpartan, 0.01
         zombieBossShocker, 0.01
         zombieBossMortevoda, 0.01
         
         zombieSpecialBossSiren, 0.01
-        zombieSpecialzombieBossMummy, 0.005        
+        zombieSpecialBossMummy, 0.005        
         zombieSpecialBossJuggernaut, 0.005
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
-        zombieSpecialzombieBossSpartan, 0.005
+        zombieSpecialBossCirujano, 0.005
+        zombieSpecialBossSpartan, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -816,18 +1387,18 @@
         zombieBossZombieKnight, 0.01
         zombieBossSoldier, 0.01
         zombieBossMummy, 0.01
-        zombierBossCirujano, 0.01
+        zombieBossCirujano, 0.01
         zombieBossSpartan, 0.01
         zombieBossShocker, 0.01
         zombieBossInfernal, 0.01            
 
         zombieSpecialBossSiren, 0.01        
-        zombieSpecialzombieBossMummy, 0.005        
+        zombieSpecialBossMummy, 0.005        
         zombieSpecialBossJuggernaut, 0.005
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
-        zombieSpecialzombieBossSpartan, 0.005
+        zombieSpecialBossCirujano, 0.005
+        zombieSpecialBossSpartan, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -886,18 +1457,18 @@
         zombieBossZombieKnight, 0.01
         zombieBossSoldier, 0.01
         zombieBossMummy, 0.01
-        zombierBossCirujano, 0.01
+        zombieBossCirujano, 0.01
         zombieBossSpartan, 0.01
         zombieBossShocker, 0.01
         zombieBossHoarfrost, 0.01
 
         zombieSpecialBossSiren, 0.01
-        zombieSpecialzombieBossMummy, 0.005        
+        zombieSpecialBossMummy, 0.005        
         zombieSpecialBossJuggernaut, 0.005
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
-        zombieSpecialzombieBossSpartan, 0.005
+        zombieSpecialBossCirujano, 0.005
+        zombieSpecialBossSpartan, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -938,18 +1509,18 @@
         zombieBossZombieKnight, 0.015
         zombieBossSoldier, 0.015
         zombieBossMummy, 0.015
-        zombierBossCirujano, 0.015
+        zombieBossCirujano, 0.015
         zombieBossSpartan, 0.015
         zombieBossShocker, 0.015
         zombieBossToxic, 0.015
         
         zombieSpecialBossSiren, 0.015
-        zombieSpecialzombieBossMummy, 0.005        
+        zombieSpecialBossMummy, 0.005        
         zombieSpecialBossJuggernaut, 0.005
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
-        zombieSpecialzombieBossSpartan, 0.005
+        zombieSpecialBossCirujano, 0.005
+        zombieSpecialBossSpartan, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -993,18 +1564,18 @@
         zombieBossZombieKnight, 0.015
         zombieBossSoldier, 0.015
         zombieBossMummy, 0.015
-        zombierBossCirujano, 0.015
+        zombieBossCirujano, 0.015
         zombieBossSpartan, 0.015
         zombieBossShocker, 0.015
         zombieBossToxic, 0.015
         
         zombieSpecialBossSiren, 0.015
-        zombieSpecialzombieBossMummy, 0.005        
+        zombieSpecialBossMummy, 0.005        
         zombieSpecialBossJuggernaut, 0.005
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
-        zombieSpecialzombieBossSpartan, 0.005
+        zombieSpecialBossCirujano, 0.005
+        zombieSpecialBossSpartan, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -1057,18 +1628,18 @@
         zombieBossZombieKnight, 0.015
         zombieBossSoldier, 0.015
         zombieBossMummy, 0.015
-        zombierBossCirujano, 0.015
+        zombieBossCirujano, 0.015
         zombieBossSpartan, 0.015
         zombieBossShocker, 0.015
         zombieBossToxic, 0.015
         
         zombieSpecialBossSiren, 0.015
-        zombieSpecialzombieBossMummy, 0.005        
+        zombieSpecialBossMummy, 0.005        
         zombieSpecialBossJuggernaut, 0.005
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
-        zombieSpecialzombieBossSpartan, 0.005
+        zombieSpecialBossCirujano, 0.005
+        zombieSpecialBossSpartan, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -1113,18 +1684,18 @@
         zombieBossZombieKnight, 0.015
         zombieBossSoldier, 0.015
         zombieBossMummy, 0.015
-        zombierBossCirujano, 0.015
+        zombieBossCirujano, 0.015
         zombieBossSpartan, 0.015
         zombieBossShocker, 0.015
         zombieBossToxic, 0.015
         
         zombieSpecialBossSiren, 0.015
-        zombieSpecialzombieBossMummy, 0.005        
+        zombieSpecialBossMummy, 0.005        
         zombieSpecialBossJuggernaut, 0.005
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
-        zombieSpecialzombieBossSpartan, 0.005
+        zombieSpecialBossCirujano, 0.005
+        zombieSpecialBossSpartan, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -1169,18 +1740,18 @@
         zombieBossZombieKnight, 0.015
         zombieBossSoldier, 0.015
         zombieBossMummy, 0.015
-        zombierBossCirujano, 0.015
+        zombieBossCirujano, 0.015
         zombieBossSpartan, 0.015
         zombieBossShocker, 0.015
         zombieBossToxic, 0.015
         
         zombieSpecialBossSiren, 0.015
-        zombieSpecialzombieBossMummy, 0.005        
+        zombieSpecialBossMummy, 0.005        
         zombieSpecialBossJuggernaut, 0.005
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
-        zombieSpecialzombieBossSpartan, 0.005
+        zombieSpecialBossCirujano, 0.005
+        zombieSpecialBossSpartan, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -1223,18 +1794,18 @@
         zombieBossZombieKnight, 0.015
         zombieBossSoldier, 0.015
         zombieBossMummy, 0.015
-        zombierBossCirujano, 0.015
+        zombieBossCirujano, 0.015
         zombieBossSpartan, 0.015
         zombieBossShocker, 0.015
         zombieBossToxic, 0.015
         
         zombieSpecialBossSiren, 0.015
-        zombieSpecialzombieBossMummy, 0.005        
+        zombieSpecialBossMummy, 0.005        
         zombieSpecialBossJuggernaut, 0.005
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
-        zombieSpecialzombieBossSpartan, 0.005
+        zombieSpecialBossCirujano, 0.005
+        zombieSpecialBossSpartan, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -2083,7 +2654,7 @@
         zombieBossJuggernaut, 0.01
         zombieBossZombieKnight, 0.01
         zombieBossMummy, 0.01
-        zombierBossCirujano, 0.01
+        zombieBossCirujano, 0.01
         zombieBossMortevoda, 0.01
         zombieBossInfernal, 0.01
         zombieBossHoarfrost, 0.01
@@ -2186,7 +2757,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, 0.01
         zombieBossInfernal, 0.01
         zombieBossHoarfrost, 0.01
@@ -2289,7 +2860,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, 0.01
         zombieBossInfernal, 0.01
         zombieBossHoarfrost, 0.01
@@ -2392,7 +2963,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, 0.01
         zombieBossInfernal, 0.01
         zombieBossHoarfrost, 0.01
@@ -2495,7 +3066,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, 0.01
         zombieBossInfernal, 0.01
         zombieBossHoarfrost, 0.01
@@ -2598,7 +3169,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, 0.01
         zombieBossInfernal, 0.01
         zombieBossHoarfrost, 0.01
@@ -2701,7 +3272,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, 0.01
         zombieBossInfernal, 0.01
         zombieBossHoarfrost, 0.01
@@ -2804,7 +3375,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, 0.01
         zombieBossInfernal, 0.01
         zombieBossHoarfrost, 0.01
@@ -2907,7 +3478,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, 0.01
         zombieBossInfernal, 0.01
         zombieBossHoarfrost, 0.01
@@ -3010,7 +3581,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, 0.01
         zombieBossInfernal, 0.01
         zombieBossHoarfrost, 0.01
@@ -3113,7 +3684,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, 0.01
         zombieBossInfernal, 0.01
         zombieBossHoarfrost, 0.01
@@ -3216,7 +3787,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, 0.01
         zombieBossInfernal, 0.01
         zombieBossHoarfrost, 0.01
@@ -3319,7 +3890,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         ZombieBossMineralSpider, .005
         zombieBossPractoSpider, .005
     </csv>
@@ -3417,7 +3988,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, 0.01
         zombieBossInfernal, 0.01
         zombieBossHoarfrost, 0.01
@@ -3520,7 +4091,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, 0.01
         zombieBossInfernal, 0.01
         zombieBossHoarfrost, 0.01
@@ -3623,7 +4194,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, 0.01
         zombieBossInfernal, 0.01
         zombieBossHoarfrost, 0.01
@@ -4351,7 +4922,7 @@
         zombieBossJuggernaut, .003
         zombieBossZombieKnight, .003
         zombieBossMummy, .003
-        zombierBossCirujano, .003
+        zombieBossCirujano, .003
         ZombieBossMineralSpider, .001
         zombieBossPractoSpider, .001 
     </csv>
@@ -4388,7 +4959,7 @@
         zombieBossJuggernaut, .003
         zombieBossZombieKnight, .003
         zombieBossMummy, .003
-        zombierBossCirujano, .003
+        zombieBossCirujano, .003
         ZombieBossMineralSpider, .001
         zombieBossPractoSpider, .001
     </csv>
@@ -4425,7 +4996,7 @@
         zombieBossJuggernaut, .005
         zombieBossZombieKnight, .005
         zombieBossMummy, .005
-        zombierBossCirujano, .005
+        zombieBossCirujano, .005
         ZombieBossMineralSpider, .003
         zombieBossPractoSpider, .003
     </csv>
@@ -4462,7 +5033,7 @@
         zombieBossJuggernaut, .005
         zombieBossZombieKnight, .005
         zombieBossMummy, .005
-        zombierBossCirujano, .005
+        zombieBossCirujano, .005
         ZombieBossMineralSpider, .003
         zombieBossPractoSpider, .003
     </csv>
@@ -4499,7 +5070,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         ZombieBossMineralSpider, .005
         zombieBossPractoSpider, .005
     </csv>
@@ -4536,7 +5107,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         ZombieBossMineralSpider, .005
         zombieBossPractoSpider, .005
     </csv>
@@ -4573,7 +5144,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         ZombieBossMineralSpider, .005
         zombieBossPractoSpider, .005
     </csv>
@@ -4674,7 +5245,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -4780,7 +5351,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -4886,7 +5457,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -4992,7 +5563,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -5098,7 +5669,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -5204,7 +5775,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -5310,7 +5881,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -5416,7 +5987,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -5522,7 +6093,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -5629,7 +6200,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -5735,7 +6306,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -5842,7 +6413,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -5948,7 +6519,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         ZombieBossMineralSpider, .005
         zombieBossPractoSpider, .005
     </csv>
@@ -6049,7 +6620,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -6156,7 +6727,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -6262,7 +6833,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -6368,7 +6939,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -6474,7 +7045,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -6580,7 +7151,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -6686,7 +7257,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -6792,7 +7363,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -6898,7 +7469,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -6908,11 +7479,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -7017,7 +7588,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -7027,11 +7598,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -7136,7 +7707,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -7146,11 +7717,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -7255,7 +7826,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -7265,11 +7836,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -7375,7 +7946,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -7385,11 +7956,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -7494,7 +8065,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -7504,11 +8075,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -7613,7 +8184,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -7623,11 +8194,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -7732,7 +8303,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -7742,11 +8313,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -7851,7 +8422,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -7861,11 +8432,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -7970,7 +8541,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -7980,11 +8551,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -8089,7 +8660,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -8099,11 +8670,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -8208,7 +8779,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -8218,11 +8789,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -8327,7 +8898,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -8337,11 +8908,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -8446,7 +9017,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -8456,11 +9027,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -8565,7 +9136,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -8575,11 +9146,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -8684,7 +9255,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -8694,11 +9265,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -8803,7 +9374,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -8813,11 +9384,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -8922,7 +9493,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -8932,11 +9503,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -9041,7 +9612,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -9051,11 +9622,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -9160,7 +9731,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -9170,11 +9741,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -9279,7 +9850,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -9289,11 +9860,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -9398,7 +9969,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -9408,11 +9979,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -9517,7 +10088,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -9527,11 +10098,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -9636,7 +10207,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -9646,11 +10217,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -9755,7 +10326,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -9765,11 +10336,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -9874,7 +10445,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -9884,11 +10455,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -9993,7 +10564,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -10003,11 +10574,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -10112,7 +10683,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -10122,11 +10693,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -10231,7 +10802,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -10241,11 +10812,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -10350,7 +10921,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -10360,11 +10931,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -10469,7 +11040,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -10479,11 +11050,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -10588,7 +11159,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -10598,11 +11169,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -10707,7 +11278,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -10717,11 +11288,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -10826,7 +11397,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -10836,11 +11407,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -10933,7 +11504,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -10943,11 +11514,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -11052,7 +11623,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -11062,11 +11633,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -11171,7 +11742,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -11181,11 +11752,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -11290,7 +11861,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -11300,11 +11871,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -11409,7 +11980,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -11419,11 +11990,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -11528,7 +12099,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -11538,11 +12109,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -11647,7 +12218,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -11657,11 +12228,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -11766,7 +12337,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -11776,11 +12347,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -11885,7 +12456,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -11895,11 +12466,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -12004,7 +12575,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -12014,11 +12585,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -12123,7 +12694,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -12133,11 +12704,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -12242,7 +12813,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -12252,11 +12823,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -12361,7 +12932,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -12371,11 +12942,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -12480,7 +13051,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -12490,11 +13061,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -12599,7 +13170,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -12609,11 +13180,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -12718,7 +13289,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -12728,11 +13299,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -12837,7 +13408,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -12847,11 +13418,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -12956,7 +13527,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -12966,11 +13537,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -13075,7 +13646,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -13085,11 +13656,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -13194,7 +13765,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -13204,11 +13775,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -13313,7 +13884,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -13323,11 +13894,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -13432,7 +14003,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -13442,11 +14013,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -13551,7 +14122,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -13561,11 +14132,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -13670,7 +14241,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -13680,11 +14251,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -13789,7 +14360,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -13799,11 +14370,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -13908,7 +14479,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -13918,11 +14489,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -14027,7 +14598,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -14037,11 +14608,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -14146,7 +14717,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -14156,11 +14727,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -14265,7 +14836,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -14275,11 +14846,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -14384,7 +14955,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -14394,11 +14965,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -14503,7 +15074,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -14513,11 +15084,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -14622,7 +15193,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -14632,11 +15203,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -14741,7 +15312,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -14751,11 +15322,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -14860,7 +15431,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -14870,11 +15441,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -14979,7 +15550,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -14989,11 +15560,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -15098,7 +15669,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -15108,11 +15679,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -15217,7 +15788,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -15227,11 +15798,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -15336,7 +15907,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -15346,11 +15917,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -15455,7 +16026,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -15465,11 +16036,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -15574,7 +16145,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -15584,11 +16155,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -15693,7 +16264,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -15703,11 +16274,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -15812,7 +16383,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -15822,11 +16393,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -15931,7 +16502,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -15941,11 +16512,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -16050,7 +16621,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -16060,11 +16631,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -16169,7 +16740,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -16179,11 +16750,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -16288,7 +16859,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -16298,11 +16869,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -16407,7 +16978,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -16417,11 +16988,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -16526,7 +17097,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -16536,11 +17107,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -16645,7 +17216,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -16655,11 +17226,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -16764,7 +17335,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -16774,11 +17345,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -16883,7 +17454,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -16893,11 +17464,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -17002,7 +17573,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -17012,11 +17583,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -17121,7 +17692,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -17131,11 +17702,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -17240,7 +17811,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -17250,11 +17821,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -17359,7 +17930,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -17369,11 +17940,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -17478,7 +18049,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -17488,11 +18059,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -17597,7 +18168,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -17607,11 +18178,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -17716,7 +18287,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -17726,11 +18297,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -17835,7 +18406,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -17845,11 +18416,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -17954,7 +18525,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -17964,11 +18535,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -18073,7 +18644,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -18083,11 +18654,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -18192,7 +18763,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -18202,11 +18773,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -18311,7 +18882,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -18321,11 +18892,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -18431,7 +19002,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -18441,11 +19012,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -18550,7 +19121,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -18560,11 +19131,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -18669,7 +19240,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -18679,11 +19250,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -18788,7 +19359,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -18798,11 +19369,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -18907,7 +19478,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -18917,11 +19488,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -19026,7 +19597,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -19036,11 +19607,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -19145,7 +19716,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -19155,11 +19726,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -19264,7 +19835,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -19274,11 +19845,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -19383,7 +19954,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -19393,11 +19964,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -19502,7 +20073,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -19512,11 +20083,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -19621,7 +20192,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -19631,11 +20202,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -19740,7 +20311,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -19750,11 +20321,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -19859,7 +20430,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -19869,11 +20440,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -19978,7 +20549,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -19988,11 +20559,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -20097,7 +20668,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -20107,11 +20678,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -20216,7 +20787,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -20226,11 +20797,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -20335,7 +20906,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -20345,11 +20916,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -20454,7 +21025,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -20464,11 +21035,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -20573,7 +21144,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -20583,11 +21154,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -20692,7 +21263,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -20702,11 +21273,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -20811,7 +21382,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -20821,11 +21392,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -20930,7 +21501,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -20940,11 +21511,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -21049,7 +21620,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
         zombieBossHoarfrost, .01
@@ -21059,11 +21630,11 @@
         zombieBossPractoSpider, .005
 
         zombieSpecialBossSiren, 0.008
-        zombieSpecialzombieBossSoldier, 0.005
+        zombieSpecialBossSoldier, 0.005
         zombieSpecialBossJuggernaut, 0.005
         zombieSpecialBossKnight, 0.005
-        zombieSpecialzombieBossMummy, 0.005
-        zombieSpecialzombierBossCirujano, 0.005
+        zombieSpecialBossMummy, 0.005
+        zombieSpecialBossCirujano, 0.005
         zombieSpecialBossMortevoda, 0.005
         zombieSpecialBossInfernal, 0.005
         zombieSpecialBossHoarfrost, 0.005
@@ -22786,7 +23357,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -22891,7 +23462,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -22996,7 +23567,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -23101,7 +23672,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -23206,7 +23777,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -23311,7 +23882,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -23416,7 +23987,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -23521,7 +24092,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -23626,7 +24197,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -23731,7 +24302,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -23836,7 +24407,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -23941,7 +24512,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -24046,7 +24617,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -24152,7 +24723,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -24257,7 +24828,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -24362,7 +24933,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -24467,7 +25038,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -24572,7 +25143,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -24677,7 +25248,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -24782,7 +25353,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -24887,7 +25458,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -24992,7 +25563,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -25098,7 +25669,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -25203,7 +25774,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -25308,7 +25879,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -25413,7 +25984,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -25518,7 +26089,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -25623,7 +26194,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -25728,7 +26299,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -25833,7 +26404,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -25938,7 +26509,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -26043,7 +26614,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -26148,7 +26719,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -26253,7 +26824,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -26358,7 +26929,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -26463,7 +27034,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -26568,7 +27139,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -26673,7 +27244,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -26778,7 +27349,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -26883,7 +27454,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -26988,7 +27559,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -27093,7 +27664,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -27198,7 +27769,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -27303,7 +27874,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -27408,7 +27979,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -27513,7 +28084,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -27618,7 +28189,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -27723,7 +28294,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -27828,7 +28399,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -27933,7 +28504,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -28038,7 +28609,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -28143,7 +28714,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -28248,7 +28819,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -28353,7 +28924,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -28458,7 +29029,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -28563,7 +29134,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -28668,7 +29239,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -28773,7 +29344,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -28878,7 +29449,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -28983,7 +29554,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -29088,7 +29659,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -29193,7 +29764,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -29298,7 +29869,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -29403,7 +29974,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -29508,7 +30079,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -29613,7 +30184,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -29718,7 +30289,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -29823,7 +30394,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -29928,7 +30499,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -30033,7 +30604,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -30138,7 +30709,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -30243,7 +30814,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -30348,7 +30919,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -30453,7 +31024,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -30558,7 +31129,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -30663,7 +31234,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -30768,7 +31339,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -30873,7 +31444,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -30978,7 +31549,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -31083,7 +31654,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -31188,7 +31759,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -31293,7 +31864,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -31398,7 +31969,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -31503,7 +32074,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -31608,7 +32179,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -31713,7 +32284,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -31818,7 +32389,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -31923,7 +32494,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -32028,7 +32599,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -32133,7 +32704,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -32238,7 +32809,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -32343,7 +32914,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -32448,7 +33019,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -32553,7 +33124,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -32658,7 +33229,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -32763,7 +33334,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01
@@ -32868,7 +33439,7 @@
         zombieBossJuggernaut, .01
         zombieBossZombieKnight, .01
         zombieBossMummy, .01
-        zombierBossCirujano, .01
+        zombieBossCirujano, .01
         zombieBossSpartan, .01
         zombieBossMortevoda, .01
         zombieBossInfernal, .01

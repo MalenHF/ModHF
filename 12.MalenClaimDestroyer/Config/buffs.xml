@@ -24,9 +24,25 @@
 				<passive_effect name="BuffBlink" operation="base_set" value="2" tags="twitch_buffNoDriving"/>
 			</effect_group>
 		</buff>
+		<buff name="buffQuest0" hidden="true" icon="ui_game_symbol_adventure">
+			<duration value="5"/>			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffQuest"/>
+			</effect_group>			
+		</buff>
 		<buff name="buffQuest" name_key="buffQuestName" description_key="buffQuestDesc" icon="ui_game_symbol_adventure">
-			<stack_type value="ignore"/>
-			<duration value="5"/>
+			<stack_type value="replace"/>						
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$varQuestDispell" operation="set" value="10"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$varQuestDispell" operation="set" value="10"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$varQuestDispell" operation="subtract" value="1"/>				
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffQuest">
+					<requirement name="CVarCompare" cvar="$varQuestDispell" operation="LTE" value="0"/>
+				</triggered_effect>				
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$varQuestDispell" operation="set" value="0"/>
+			</effect_group>
 			<effect_group>
 				<passive_effect name="NoVehicle" operation="base_set" value="1" />
 			</effect_group>
@@ -51,6 +67,15 @@
 			</effect_group>
 		</buff>
 
-
+		<buff name="hfProtectZone" name_key="cpm_tooltip_ProtectedLobby_enter" description_key="Zona protegida " icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Zona Protegida[-]">
+			<display_value value="xxx"/> 
+			<display_value_key value="Zona Protegida"/> 
+			<stack_type value="ignore"/>
+            <effect_group>
+                <passive_effect name="BlockDamage" operation="perc_add" value="-1"/>
+				<passive_effect name="DisableItem" operation="base_set" value="1" tags="ranged" />
+				<passive_effect name="DisableItem" operation="base_set" value="1" tags="melee" />
+            </effect_group>
+        </buff>
 	</append>
 </configs>

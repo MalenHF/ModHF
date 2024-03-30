@@ -230,7 +230,7 @@
 				<property name="Use_time" value="..."/>
 				<property name="UseAnimation" value="false"/>
 				<property name="Sound_start" value="player_drinking"/>
-				<property name="Create_item" value="drinkJarEmpty"/>
+				
 			</property>
 			<effect_group tiered="false">
 				<display_value name="CURAA" value="1"/>
@@ -2089,7 +2089,7 @@
 			</item>
 		<!-- ▼▲ Extras ▲▼ -->			
 			<item name="Corta_Cesped">
-				<property name="Tags" value="tool"/>
+				<property name="Tags" value="tool,melee"/>
 				<property name="HoldType" value="47"/>
 				<property name="Extends" value="meleeWpnBladeT3Machete"/>
 				<property name="CustomIcon" value="meleeWpnBladeT3Machete"/>
@@ -2752,8 +2752,7 @@
 					<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="Base"/>
 					<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="Drum"/>
 				</effect_group>
-				<effect_group name="gunSMG5">
-					<requirement name="PlayerLevel" operation="GT" value="149"/>
+				<effect_group name="gunSMG5">					
 					<passive_effect name="EntityDamage" operation="base_add" value="72" tags="perkGunslinger,9mmGun">
 						<requirement name="PlayerLevel" operation="GT" value="149"/>
 					</passive_effect>
@@ -9053,7 +9052,7 @@
 				<property name="Delay" value="1"/>
 				<property name="Use_time" value="..."/>
 				<property name="Sound_start" value="player_drinking"/>
-				<property name="Create_item" value="drinkJarEmpty"/>
+				
 				<requirement name="NotHasBuff" buff="OP3!"/>
 			</property>	
 			<effect_group tiered="false" name="Drink Tier 6">
@@ -9079,7 +9078,7 @@
 				<property name="Delay" value="1"/>
 				<property name="Use_time" value="..."/>
 				<property name="Sound_start" value="player_drinking"/>
-				<property name="Create_item" value="drinkJarEmpty"/>
+				
 				<requirement name="NotHasBuff" buff="OP!"/>
 			</property>	
 			<effect_group tiered="false" name="Drink Tier 6">
@@ -9132,7 +9131,7 @@
 				<property name="Delay" value="1"/>
 				<property name="Use_time" value="..."/>
 				<property name="Sound_start" value="player_drinking"/>
-				<property name="Create_item" value="drinkJarEmpty"/>
+				
 				<requirement name="NotHasBuff" buff="OP2!"/>
 			</property>	
 			<effect_group tiered="false" name="Drink Tier 6">
@@ -9159,7 +9158,7 @@
 				<property name="Delay" value="1"/>
 				<property name="Use_time" value="..."/>
 				<property name="Sound_start" value="player_drinking"/>
-				<property name="Create_item" value="drinkJarEmpty"/>
+				
 				<requirement name="NotHasBuff" buff="OP!"/>
 			</property>	
 			<effect_group tiered="false" name="Drink Tier 6">
@@ -9804,6 +9803,28 @@
 			<property name="DescriptionKey" value="practoniumdesc"/>
 			<property name="EconomicValue" value="50000"/>
 			<property name="Stacknumber" value="50"/>
+		</item>
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼ Kit de Recursos ▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+		<item name="kitResuourses">
+			<property name="CustomIcon" value="bundleMiningHelmet"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="DescriptionKey" value="donatio_ForgeKitDesc"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="resourceWoodBundle10k,resourceClayLumpCompres,resourceCrushedSandCompres,resourceRockSmallCompres,resourceScrapIronCompres,resourceLeadCompres,resourceScrapBrassCompres"/>
+				<property name="Create_item_count" value="3,1,1,1,1,1,1"/>
+			</property>
 		</item>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 	</append>

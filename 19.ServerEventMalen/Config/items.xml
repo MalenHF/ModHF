@@ -9,12 +9,14 @@
 			<!--<property name="CustomIcon" value="resourceForgedSteel"/> valentin-->
 			<!--<property name="CustomIcon" value="foodEgg"/> pascuas-->			
 			<!--<property name="CustomIcon" value="resourceConcreteMix"/> verano-->
-			<!--<property name="CustomIcon" value="decoPumpkinJackOLantern"/> Otoño-->
-			<property name="CustomIcon" value="thrownDynamite"/>
+			<!--<property name="CustomIcon" value="decoPumpkinJackOLantern"/> Otoño
+			<property name="CustomIcon" value="thrownDynamite"/> Año nuevo-->			
+			<property name="CustomIcon" value="foodEgg"/>
 			<!--<property name="CustomIconTint" value="FFA200"/> verano/Otoño-->
 			<!--<property name="CustomIconTint" value="2E1503"/> san valentin -->
 			<!--<property name="CustomIconTint" value="FF00E0"/> Pacua -->
-			<property name="CustomIconTint" value="0CC7A8"/>			
+			<!-- <property name="CustomIconTint" value="0CC7A8"/> año nuevo  -->
+			-<property name="CustomIconTint" value="FF00E0"/>			
 			<property name="Material" value="Morganic"/>
 			<property name="Stacknumber" value="400"/>
 			<property name="Group" value="Mods"/>
@@ -70,6 +72,19 @@
 			<property name="DescriptionKey" value="eventitemdesc"/>
 			<property name="CustomIcon" value="drugSugarButts"/>
 			<property name="CustomIconTint" value="FF00E0"/>			
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="400"/>
+			<property name="Group" value="Mods"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="EconomicBundleSize" value="401"/>
+		</item>
+		<item name="eventIT6">
+			<property name="Extends" value="partsMaster"/>
+			<property name="ItemTypeIcon" value="star"/>
+			<property name="DescriptionKey" value="eventitem3desc"/>
+			<property name="CustomIcon" value="adminQuestTicketMaster"/>
+			<property name="CustomIconTint" value="152, 152, 39"/>
+			<property name="TintColor" value="152, 152, 39"/>	
 			<property name="Material" value="Morganic"/>
 			<property name="Stacknumber" value="400"/>
 			<property name="Group" value="Mods"/>
@@ -439,7 +454,7 @@
 				<property name="Delay" value="0.5"/>
 				<property name="Use_time" value="1"/>
 				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="Practonium,resourceSteelPolishR,Mineral_Bag,divineWaterEvent,EnemigosdeT4VO,drinkuwu,eventbackpack,eventIT2,casinoCoinD,oldCash"/>
+				<property name="Create_item" value="Practonium,resourceSteelPolishR,Mineral_Bag,divineWaterEvent,q_EnemigosHF,drinkuwu,eventbackpack,eventIT2,casinoCoinD,oldCash"/>
 				<property name="Create_item_count" value="10,250,1,1,1,1,1,100,3,10000"/>
 			</property>
 		</item>
@@ -479,7 +494,7 @@
 				<property name="Delay" value="0.5"/>
 				<property name="Use_time" value="1"/>
 				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="Practonium,resourceSteelPolishR,drinkuwu,eventbackpack,LosLunaticos,eventIT2,casinoCoinD,oldCash"/>
+				<property name="Create_item" value="Practonium,resourceSteelPolishR,drinkuwu,eventbackpack,eventIT6,eventIT2,casinoCoinD,oldCash"/>
 				<property name="Create_item_count" value="2,60,1,1,1,25,1,2500"/>
 			</property>
 		</item>
@@ -499,7 +514,7 @@
 				<property name="Delay" value="0.5"/>
 				<property name="Use_time" value="1"/>
 				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="Practonium,resourceSteelPolishR,eventbackpack,LosLunaticos,eventIT2,casinoCoin,oldCash"/>
+				<property name="Create_item" value="Practonium,resourceSteelPolishR,eventbackpack,eventIT6,eventIT2,casinoCoin,oldCash"/>
 				<property name="Create_item_count" value="1,30,1,1,10,5000,1000"/>
 			</property>
 		</item>
@@ -553,6 +568,69 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varHFAni" operation="set" value="1"/>
 			</effect_group>
 		</item>
+
+		<item name="constRW1">
+			<property name="CustomIcon" value="cntSteelWritableCrate"/>
+			<property name="DescriptionKey" value="PVPBDesc"/>
+			<property name="ItemTypeIcon" value="trophy"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="Decokit,q_GachaPrem,oldCash,eventIT3,kitResuourses,hooliganCoin,eventIT1,eventIT2"/>
+				<property name="Create_item_count" value="1,10,10000,1,1,10000,20,20"/>
+			</property>
+		</item>
+		<item name="constRW2">
+			<property name="CustomIcon" value="cntSteelWritableCrate"/>
+			<property name="DescriptionKey" value="PVPBDesc"/>
+			<property name="ItemTypeIcon" value="trophy"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="q_GachaPrem,oldCash,eventIT3,kitResuourses,hooliganCoin,eventIT1,eventIT2"/>
+				<property name="Create_item_count" value="10000,1,1,10000,20,20"/>
+			</property>
+		</item>
+
+		<item name="statsRW1">
+			<property name="CustomIcon" value="cntSteelWritableCrate"/>
+			<property name="DescriptionKey" value="PVPBDesc"/>
+			<property name="ItemTypeIcon" value="trophy"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="eventIT3,eventIT1,eventIT2,hooliganCoin"/>
+				<property name="Create_item_count" value="1,20,20,1500"/>
+			</property>
+		</item>
+
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Bundles de Nivel ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<item name="kitlvl50">
 			<property name="CustomIcon" value="decoEntityClothMaster"/>
@@ -667,7 +745,7 @@
 				<property name="Delay" value="0.5"/>
 				<property name="Use_time" value="1"/>
 				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="EnemigosdeT4VO,eventIT3,q_GachaPrem,eventIT2,juguito_de_chale,kitlvl350"/>
+				<property name="Create_item" value="q_EnemigosHF,eventIT3,q_GachaPrem,eventIT2,juguito_de_chale,kitlvl350"/>
 				<property name="Create_item_count" value="1,3,10,300,48,1"/>
 			</property>
 			<effect_group tiered="false">				
@@ -848,7 +926,7 @@
 				<property name="Delay" value="0.5"/>
 				<property name="Use_time" value="1"/>
 				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="EnemigosdeT4VO,eventIT3,q_GachaPrem,eventIT2,p_kitlvl350"/>
+				<property name="Create_item" value="q_EnemigosHF,eventIT3,q_GachaPrem,eventIT2,p_kitlvl350"/>
 				<property name="Create_item_count" value="1,5,20,350,1"/>
 			</property>
 			<effect_group tiered="false">				
