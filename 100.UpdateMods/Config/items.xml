@@ -1,6 +1,72 @@
 <config>
 
 	<append xpath="/items">
+		<item name="q_Hooligan_ForceTest">
+			<property name="CreativeMode" value="None"/>
+			
+			<property name="HoldType" value="31"/>
+			<property name="DescriptionKey" value="noteTixDescTierIII"/>					
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Weight" value="10"/>
+			<property name="Stacknumber" value="10"/>
+			<property name="EconomicValue" value="10000"/>
+			<property name="Group" value="Special Items"/>
+			<property name="ShowQuality" value="false"/>
+			<property name="SellableToTrader" value="false"/>
+
+			
+			<property name="CreativeMode" value="Player"/>
+			<property name="ItemTypeIcon" value="trophy"/>
+			<property name="CustomIconTint" value="000000"/>
+			<property name="TintColor" value="0,0,0"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>						
+				<property name="Sound_start" value="ui_mag_read"/>
+				<property name="PromptTitle" value="q_Hooligan_Force" />
+				<property name="PromptDescription" value="HFQuest1" />
+			</property>
+			<effect_group tiered="false">						
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteHF"/>		
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+			</effect_group>
+		</item>
+		<item name="q_Hooligan_ForceTest2">
+			<property name="CreativeMode" value="None"/>
+			
+			<property name="HoldType" value="31"/>
+			<property name="DescriptionKey" value="noteTixDescTierIII"/>					
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Weight" value="10"/>
+			<property name="Stacknumber" value="10"/>
+			<property name="EconomicValue" value="10000"/>
+			<property name="Group" value="Special Items"/>
+			<property name="ShowQuality" value="false"/>
+			<property name="SellableToTrader" value="false"/>
+
+			
+			<property name="CreativeMode" value="Player"/>
+			<property name="ItemTypeIcon" value="trophy"/>
+			<property name="CustomIconTint" value="000000"/>
+			<property name="TintColor" value="0,0,0"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>						
+				<property name="Sound_start" value="ui_mag_read"/>
+				<property name="PromptTitle" value="q_Hooligan_Force" />
+				<property name="PromptDescription" value="HFQuest1" />
+			</property>
+			<effect_group tiered="false">						
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteTest"/>		
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+			</effect_group>
+		</item>
 		<!--
 		<item name="downgradeKitGun">
 			<property name="CustomIcon" value="cntWeaponsBagSmall"/>

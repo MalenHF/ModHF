@@ -290,7 +290,7 @@
 					<property class="Action0">	
 						<requirement name="HasBuff" buff="buffQuest"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
-						<property name="PromptTitle" value="ElitesQuest" />
+						<property name="PromptTitle" value="q_Mutants" />
 						<property name="PromptDescription" value="ElitesQuest1" />
 					</property>
 					<effect_group tiered="false">
@@ -300,6 +300,7 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
 				</item>
+
 				<item name="q_Morte">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -455,7 +456,7 @@
 					<property class="Action0">
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
-						<property name="QuestGiven" value="q_NewKillTaco"/>
+						<property name="QuestGiven" value="q_KillTaco"/>
 					</property>
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
@@ -475,7 +476,7 @@
 					<property class="Action0">
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="UseAnimation" value="true"/>
-						<property name="QuestGiven" value="q_KillTacoS"/>
+						<property name="QuestGiven" value="q_killTacoSpecial"/>
 					</property>
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
@@ -590,8 +591,6 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item> -->
-				
-
 				<item name="q_Gladiator">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -633,8 +632,7 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
-				</item>	 -->				
-
+				</item>	 -->
 				<item name="q_Momia">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -676,7 +674,6 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item> -->
-
 				<item name="q_Cirujano">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -718,7 +715,6 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item> -->				
-				
 				<item name="q_Pesadilla">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -734,6 +730,102 @@
 					<effect_group tiered="false">						
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteSiren"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+
+				<item name="q_vodjaoj">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="trophy"/>
+					<property name="CustomIconTint" value="255,255,255"/>
+					<property name="TintColor" value="255,255,255"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="en_contruccion" />
+						<property name="PromptDescription" value="en_contruccion" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteVod"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>				
+				<item name="q_berial">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="trophy"/>
+					<property name="CustomIconTint" value="255,255,255"/>
+					<property name="TintColor" value="255,255,255"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="en_contruccion" />
+						<property name="PromptDescription" value="en_contruccion" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteBeri"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+				<item name="q_jack">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="trophy"/>
+					<property name="CustomIconTint" value="255,255,255"/>
+					<property name="TintColor" value="255,255,255"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="en_contruccion" />
+						<property name="PromptDescription" value="en_contruccion" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteJack"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+				<item name="q_raijin">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="trophy"/>
+					<property name="CustomIconTint" value="255,255,255"/>
+					<property name="TintColor" value="255,255,255"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="en_contruccion" />
+						<property name="PromptDescription" value="en_contruccion" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteRaijin"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+				<item name="q_patient0">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="trophy"/>
+					<property name="CustomIconTint" value="255,255,255"/>
+					<property name="TintColor" value="255,255,255"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="en_contruccion" />
+						<property name="PromptDescription" value="en_contruccion" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNotePacient"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
@@ -760,7 +852,6 @@
 					</effect_group>
 
 				</item> -->
-
 				<item name="q_HFRush">
 					<property name="name" value="HF" />
 					<property name="Extends" value="challengeQuestMaster"/>
@@ -796,8 +887,7 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>	
 					</effect_group>
-				</item> -->				
-
+				</item> -->
 				<item name="q_Hooligan_Force">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -805,6 +895,7 @@
 					<property name="CustomIconTint" value="000000"/>
 					<property name="TintColor" value="0,0,0"/>
 					<property class="Action0">	
+						<requirement name="PlayerLevel" operation="GT" value="500"/>
 						<requirement name="HasBuff" buff="buffQuest"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="PromptTitle" value="q_Hooligan_Force" />
@@ -840,7 +931,6 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item>	 -->
-
 				<item name="q_Lucky">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -882,7 +972,6 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item> -->
-
 				<item name="q_Gacha">
 					<property name="CreativeMode" value="Player"/>
 					<property name="CustomIcon" value="adminQuestTicketMaster"/>
@@ -912,7 +1001,6 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
 				</item>
-
 				<item name="q_GachaPrem">
 					<property name="Extends" value="q_Gacha"/>
 					<property class="Action0">						
@@ -943,8 +1031,7 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
-				</item> -->
-				
+				</item> -->				
 				<item name="q_EnemigsRandom">
 					<property name="Extends" value="q_Gacha"/>
 					<property name="CustomIconTint" value="FD65CD"/>

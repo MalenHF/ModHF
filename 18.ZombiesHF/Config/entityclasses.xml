@@ -1,7 +1,7 @@
 
 <configs>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Zombies dissapear ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-		<set xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='TimeStayAfterDeath']/@value">1</set>
+		<set xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='TimeStayAfterDeath']/@value">5</set>
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Zombies Know Down player buff ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
 		<append xpath="/entity_classes/entity_class[@name='playerMale']">
@@ -513,7 +513,7 @@
 
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 			
 		</entity_class>
 		<entity_class name="TemplateHF_Zombie_Special_Soldier" extends="zombieSoldierFeral">
@@ -546,7 +546,7 @@
 			
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 
 		<entity_class name="TemplateHF_Zombie_Special_Hawaiian" extends="zombieFatHawaiian">
@@ -579,7 +579,7 @@
 			
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 
 		</entity_class>
 
@@ -613,7 +613,7 @@
 			
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 
 		</entity_class>		
 
@@ -648,7 +648,7 @@
 			
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 
 		</entity_class>
 
@@ -684,7 +684,7 @@
 			
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 			
 		</entity_class>
 
@@ -719,7 +719,7 @@
 			
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 			
 		</entity_class>
 
@@ -754,7 +754,7 @@
 			
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 			
 		</entity_class>
 
@@ -789,7 +789,7 @@
 			
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 			
 		</entity_class>
 
@@ -824,7 +824,7 @@
 			
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 			
 		</entity_class>
 
@@ -881,7 +881,7 @@
 			
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 			
 		</entity_class>
 
@@ -943,6 +943,7 @@
 			<drop event="Harvest" name="foodRottingFlesh" count="3" tag="WasteTreasuresCompleteHarvest"/>
 			<drop event="Harvest" name="resourceCloth" count="3" tag="WasteTreasuresCompleteHarvest"/>
 			<drop event="Harvest" name="resourceBone" count="3" tag="WasteTreasuresCompleteHarvest"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<!--  <drop event="Destroy" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>  -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="3000"/>
@@ -1607,7 +1608,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Mutant by Malen and holyVentus ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
@@ -1661,7 +1662,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- Solider -->
 		<entity_class name="EliteSolider" extends="TemplateHF_Zombie_Special_Soldier">
@@ -1715,7 +1716,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="eliteDeco"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- Hawai -->
 		<entity_class name="EliteHawai" extends="TemplateHF_Zombie_Special_Hawaiian">
@@ -1764,7 +1765,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- Skater -->
 		<entity_class name="EliteSkater" extends="TemplateHF_Zombie_Special_Skater">
@@ -1813,7 +1814,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>	
 		<!-- Tom -->
 		<entity_class name="EliteTomClark" extends="TemplateHF_Zombie_Special_TomClark">
@@ -1862,7 +1863,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- LJ -->
 		<entity_class name="eliteBurn" extends="TemplateHF_Zombie_Special_Burn">
@@ -1920,7 +1921,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- Nurse -->
 		<entity_class name="EliteNurse" extends="TemplateHF_Zombie_Special_Nurse">
@@ -1980,7 +1981,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- Spider -->
 		<entity_class name="EliteSpider" extends="TemplateHF_Zombie_Special_Spider">
@@ -2029,7 +2030,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- Feral -->
 		<entity_class name="EliteFeral" extends="TemplateHF_Zombie_Special_Wight">
@@ -2078,7 +2079,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>		
 		<!-- Demo -->
 		<entity_class name="EliteDemo" extends="TemplateHF_Zombie_Special_Demolition">
@@ -2131,7 +2132,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!--EliteBomber-->
 		<entity_class name="ZombieEliteBomber" extends="TemplateHF_Zombie_Special_Hazmat">
@@ -2196,6 +2197,7 @@
 			<property name="MoveSpeed" value="0.6"/>
 			<property name="SurfaceCategory" value="metal"/>
 			<property name="PainResistPerHit" value="3"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="MoveSpeedAggro" value="0.7, 1.4"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="4500"/>
@@ -2265,7 +2267,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- nightZombieSoldier -->
 		<entity_class name="nightZombieSoldier" extends="TemplateHF_Zombie_Special_Soldier">
@@ -2321,7 +2323,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- nightZombieHawai -->
 		<entity_class name="nightZombieHawai" extends="TemplateHF_Zombie_Special_Hawaiian">
@@ -2378,7 +2380,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- nightZombieSkater -->
 		<entity_class name="nightZombieSkater" extends="TemplateHF_Zombie_Special_Skater">
@@ -2433,7 +2435,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- nightZombieTom -->
 		<entity_class name="nightZombieTom" extends="TemplateHF_Zombie_Special_TomClark">
@@ -2489,7 +2491,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- nightZombieBurnack ***-->
 		<entity_class name="nightZombieBurn" extends="TemplateHF_Zombie_Special_Burn">
@@ -2543,7 +2545,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!--nightZombieSpider-->
 		<entity_class name="nightZombieSpider" extends="TemplateHF_Zombie_Special_Spider">
@@ -2596,7 +2598,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- nightZombieNurse -->
 		<entity_class name="nightZombieNurse" extends="TemplateHF_Zombie_Special_Nurse">
@@ -2640,7 +2642,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="medicalRegHealthAmount" operation="set" value="0"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- NighHazmat -->
 		<entity_class name="nightZombieHazmat" extends="TemplateHF_Zombie_Special_Hazmat">
@@ -2691,7 +2693,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- nightZombieFeral *** -->
 		<entity_class name="nightZombieFeral" extends="TemplateHF_Zombie_Special_Wight">
@@ -2744,7 +2746,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- nightZombieDemolition -->
 		<entity_class name="nightZombieDemolition" extends="TemplateHF_Zombie_Special_Demolition">
@@ -2818,7 +2820,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Zombies of biome, created by HolyVentus based on Nightmares (Jan/2023) ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
@@ -3951,7 +3953,7 @@
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<entity_class name="TAVOzombieWightRAINBOW" extends="zombieTemplateMale">
 			<property name="UserSpawnType" value="Menu"/>
@@ -4038,7 +4040,7 @@
 			<property name="ExperienceGain" value="2500"/>
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".5"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="4000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
@@ -4048,7 +4050,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="GunnerPrefab"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- NighScreamer ***-->
 		<entity_class name="NighScreamer" extends="zombieScreamer">
@@ -4120,7 +4122,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffNA1"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,-.2,0" parent_transform="LOD0" shape_mesh="true"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- Venge Spirit -->
 		<entity_class name="zombieVengeSpirit" extends="zombieTemplateMale">
@@ -4173,7 +4175,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- Head Spirit -->
 		<entity_class name="HeadZombiePonky" extends="zombieScreamer">
@@ -4226,7 +4228,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="5"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- MiniRopa -->
 		<entity_class name="MiniRopaJoel" extends="zombieLumberjack">
@@ -4277,7 +4279,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- MiniBomber -->
 		<entity_class name="MinieBomber" extends="zombieMaleHazmat">
@@ -4354,7 +4356,7 @@
 				<!--<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="5"/>-->
 				<!--<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>-->
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 
@@ -4424,7 +4426,7 @@
 			</effect_group>
 
 			<property name="NavObject" value="animaltracking_chicken" />
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 			<property name="DeadBodyHitPoints" value="1"/>
 		</entity_class>
 		<entity_class name="BossCrawler" extends="zombieSteveCrawler">
@@ -4467,7 +4469,8 @@
 				<!-- Zombie HP scale -->
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->				<!-- Feral damage -->
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 		</entity_class>
 		<entity_class name="BossAngryCrawler" extends="zombieSteveCrawlerFeral">
 			<property name="UserSpawnType" value="Menu"/>
@@ -4511,7 +4514,8 @@
 				<!-- Zombie HP scale -->
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->				<!-- Feral damage -->
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 		</entity_class>
 		<entity_class name="TAVOanimalChickenDemonFeralBOSS" extends="animalTemplateHostile">
 			<property name="UserSpawnType" value="Menu"/>
@@ -4574,7 +4578,8 @@
 				<passive_effect name="HealthMax" operation="base_set" value="10000"/>
 				<passive_effect name="HealthMax" operation="perc_add" value="0"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 		</entity_class>
 		<entity_class name="zombieSBKnight" extends="zombieBikerFeral">
 			<property name="SizeScale" value="1.3"/>
@@ -4619,7 +4624,8 @@
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryBleedingTwo"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 		</entity_class>
 		<entity_class name="zombieSBRopa" extends="zombieLumberjack">
 			<property name="SizeScale" value="1.3"/>
@@ -4669,7 +4675,8 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="10"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 		</entity_class>		
 		<!-- Added by HolyVentus -->
 		<entity_class name="HvSBToxic" extends="zombieMutated">
@@ -4731,7 +4738,8 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="10"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>				
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 		</entity_class>		
 		<entity_class name="HvSBNurse" extends="zombieNurse">
 			<property name="SizeScale" value="1.3"/>
@@ -4761,6 +4769,8 @@
 			<property name="WalkType" value="3"/>
 			<property name="MoveSpeed" value="0.8"/>
 			<property name="PainResistPerHit" value="5"/>
+
+			
 			<property name="MoveSpeedAggro" value="0.9, 1.0"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="20000"/>
@@ -4771,7 +4781,8 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="120"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>				
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 		</entity_class>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Bosses ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
@@ -4789,8 +4800,6 @@
 			<property name="KnockdownProneDamageThreshold" value="3"/>
 			<property name="KnockdownKneelDamageThreshold" value="3"/>
 			<property name="LootDropProb" value="1"/>
-			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="3"/>
 			<property name="ParticleOnDeath" value="blood_death"/>
 			<property name="StompsSpikes" value="true"/>
 			<property name="SightRange" value="30"/>
@@ -4824,7 +4833,8 @@
 			<effect_group name="Base Effects">	
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			
 		</entity_class>
 		<entity_class name="zombieBossPractoSpider" extends="zombieSpider">
@@ -4911,7 +4921,7 @@
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="55"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<entity_class name="ZombieBossMineralSpider" extends="zombieSpider">
 			<property name="UserSpawnType" value="Menu"/>
@@ -4980,7 +4990,7 @@
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="50"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>			
 		<entity_class name="zombieBossSoldier" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
@@ -5007,7 +5017,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<entity_class name="zombieBossZombieKnight" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
@@ -5043,7 +5053,7 @@
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->				<!-- Feral damage -->
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>	
-			<property name="TimeStayAfterDeath" value="2"/>		
+			<property name="TimeStayAfterDeath" value="5"/>		
 		</entity_class>
 		<entity_class name="zombieBossMummy" extends="bossZombieTemplate">			
 			<property name="UserSpawnType" value="Menu"/>
@@ -5076,7 +5086,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!--Siren and Jugger BY Malen Boss idea by Snufking-->
 		<entity_class name="zombieBossSiren" extends="bossZombieTemplate">
@@ -5126,9 +5136,9 @@
 			<property name="LootDropEntityClass" count="1" value="SirenLootContainer"/>
 
 			<drop event="Harvest" name="resourceRawDiamond" count="0" tool_category="Disassemble"/>			
-			<drop event="Harvest" name="resourceRawDiamond" prob=".05" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
+			<!-- <drop event="Harvest" name="resourceRawDiamond" prob=".05" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
 			<drop event="Harvest" name="resourceGoldNugget" prob=".1" count="2" tag="artOfMiningLuckyStrikeHarvest"/>
-			<drop event="Harvest" name="resourceSilverNugget" prob=".2" count="3" tag="artOfMiningLuckyStrikeHarvest"/>
+			<drop event="Harvest" name="resourceSilverNugget" prob=".2" count="3" tag="artOfMiningLuckyStrikeHarvest"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="50000"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="15"/>
@@ -5139,7 +5149,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<entity_class name="zombieBossJuggernaut" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
@@ -5187,7 +5197,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<!-- Added by HolyVentus -->
 		<entity_class name="zombieBossCirujano" extends="bossZombieTemplate">
@@ -5219,7 +5229,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<entity_class name="zombieBossCirujanoHorda" extends="bossZombieTemplate">
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses,bossrad" />
@@ -5249,7 +5259,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<entity_class name="zombieBossSpartan" extends="bossZombieTemplate">			
 			<property name="UserSpawnType" value="Menu"/>
@@ -5279,7 +5289,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>	
 
 		<!-- BOSSES ELEMENTALES -->
@@ -5313,7 +5323,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 
 		<!-- INFERNAL/BERIAL -->
@@ -5347,7 +5357,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 
 		<!-- HOARFROST/JACK TORRANCE -->
@@ -5380,7 +5390,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 
 		<!-- SHOCKER/RAIJIN -->
@@ -5414,7 +5424,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 
 		<!-- TOXIC/PATIENT 0 -->
@@ -5448,7 +5458,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 
 
@@ -5481,7 +5491,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class> -->
 		<!-- FIN BOSSES ELEMENTALES -->
 
@@ -5519,7 +5529,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>			
 		<entity_class name="zombieBossSamurai" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="None"/>
@@ -5584,7 +5594,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>	
 		<!-- END Added by HolyVentus -->
 		<entity_class name="zombieBossAdminHF" extends="bossZombieTemplate">
@@ -5642,7 +5652,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>	
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Special Bosses ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
@@ -5714,7 +5724,7 @@
 			<property name="DeadBodyHitPoints" value="1"/>
 
 			<drop event="Harvest" name="resourceRawDiamond" count="0" tool_category="Disassemble"/>
-			<drop event="Harvest" name="oldCash" tag="allToolsHarvest" count="50,120"/>
+			<!-- <drop event="Harvest" name="oldCash" tag="allToolsHarvest" count="50,120"/>
 			<drop event="Harvest" name="bossTokenMineral" tag="allToolsHarvest" count="1"/>
 
 			<drop event="Harvest" name="resourceRawDiamond" tag="allToolsHarvest" count="50"/>
@@ -5725,7 +5735,7 @@
 			<drop event="Harvest" name="Practonium" prob=".18" count="2" tag="artOfMiningLuckyStrikeHarvest"/>
 			<drop event="Harvest" name="resourceRawDiamond" prob=".20" count="3" tag="artOfMiningLuckyStrikeHarvest"/>
 			<drop event="Harvest" name="resourceGoldNugget" prob=".30" count="3" tag="artOfMiningLuckyStrikeHarvest"/>
-			<drop event="Harvest" name="resourceSilverNugget" prob=".40" count="3" tag="artOfMiningLuckyStrikeHarvest"/>
+			<drop event="Harvest" name="resourceSilverNugget" prob=".40" count="3" tag="artOfMiningLuckyStrikeHarvest"/> -->
 
 			<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>
 			<effect_group name="Base Effects">
@@ -5738,7 +5748,7 @@
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="55"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>	
 		<entity_class name="zombieSpecialBossMummy" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
@@ -5783,7 +5793,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<entity_class name="zombieSpecialBossSiren" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
@@ -5835,7 +5845,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="50"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<entity_class name="zombieSpecialBossJuggernaut" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
@@ -5882,7 +5892,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<entity_class name="zombieSpecialBossSoldier" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
@@ -5911,7 +5921,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<entity_class name="zombieSpecialBossKnight" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
@@ -5951,7 +5961,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>			
 		<!-- Added by HolyVentus -->
 		<entity_class name="zombieSpecialBossCirujano" extends="bossZombieTemplate">			
@@ -5984,7 +5994,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffHolyAuraSP"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>	
 		<entity_class name="zombieSpecialBossSpartan" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>			
@@ -6022,7 +6032,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="30000"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<entity_class name="zombieSpecialzombieBossSamurai" extends="bossZombieTemplate">
 			<property name="SizeScale" value="2"/>
@@ -6072,7 +6082,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 
 		<!-- MORTEVODA/VODJANOJ -->
@@ -6108,7 +6118,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 
 		<!-- INFERNAL/BERIAL -->
@@ -6144,7 +6154,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		
 		<!-- HOARFROST/JACK TORRANCE -->
@@ -6178,7 +6188,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 
 		<!-- SHOCKER/RAIJIN -->
@@ -6213,7 +6223,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 
 		<!-- TOXIC/PATIENT 0 -->
@@ -6248,7 +6258,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 
 		<!-- END Added by HolyVentus -->
@@ -6296,7 +6306,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>	
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Lobby Bosses ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
@@ -6325,7 +6335,7 @@
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>					
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="55"/>		
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<entity_class name="dummyGladi" extends="bossZombieTemplate">			
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses,bossrad" />
@@ -6376,7 +6386,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<entity_class name="zombieBossAdminHFLobby" extends="bossZombieTemplate">
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBiker.prefab"/>
@@ -6420,7 +6430,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>	
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->					
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ WORKING ON ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
@@ -6452,7 +6462,7 @@
 
 			<drop event="Harvest" name="resourceRawDiamond" count="0" tool_category="Disassemble"/>
 			<drop event="Harvest" name="armorMilitarySetParts" tag="allToolsHarvest" count="10"/>
-
+			<property name="DeadBodyHitPoints" value="1"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="53000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
@@ -6467,7 +6477,7 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<entity_class name="animalDiamonChicken" extends="animalTemplateTimid">
 			<property name="Class" value="EntityAnimalRabbit"/>			
@@ -6502,7 +6512,7 @@
 			</effect_group>
 
 			<property name="NavObject" value="animaltracking_chicken" />
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 
 		<entity_class name="zombieScorcher" extends="zombieSoldier">
@@ -6552,11 +6562,10 @@
 			<property name="PainResistPerHit" value="1"/>
 			<property name="StompsSpikes" value="true"/>
 			<property name="ExplodeHealthThreshold" value="0"/>
-
 			<property name="ExperienceGain" value="5000"/>
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".3"/>
-
+			<property name="DeadBodyHitPoints" value="1"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="4000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
@@ -6565,7 +6574,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ScorcherDeco"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 
 		<entity_class name="zombieBanshee" extends="zombieBoeFeral">
@@ -6584,6 +6593,7 @@
 			<property name="ExperienceGain" value="1500"/>
 			<property name="WalkType" value="22"/>
 			<property name="HandItem" value="meleeHandBanshee"/>
+			<property name="DeadBodyHitPoints" value="1"/>
 			<property name="LootDropProb" value=".15"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1500"/>
@@ -6593,7 +6603,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="5"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 
 		<!--
@@ -6699,7 +6709,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1"/>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<entity_class name="zombiePsycho" extends="zombieLumberjackRadiated">			<!-- + 10% hits and gains -->
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
@@ -6730,7 +6740,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="psychoDeco"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<entity_class name="ZombieBomber" extends="zombieMaleHazmat">
 			<property name="SizeScale" value=".8"/>
@@ -6800,7 +6810,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="5"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<entity_class name="zombieCowhead" extends="zombieBiker">
 			<property name="Archetype" value="Cowhead" />
@@ -6816,7 +6826,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="5"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<entity_class name="zombieWendigo" extends="zombieScreamer">			
 			<property name="Tags" value="entity,zombie,walker,boss,wendigo,umazombie,wendigo" />
@@ -6849,7 +6859,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="5"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-			<property name="TimeStayAfterDeath" value="2"/>
+			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->	
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ NOT IN USE ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	

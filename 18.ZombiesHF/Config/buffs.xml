@@ -628,7 +628,7 @@
 				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.2" duration="0,7"/>
 				<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.2" duration="0,7"/>
 				<passive_effect name="JumpStrength" operation="perc_subtract" value="0.2" duration="0,7"/>
-				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="bossSirenBehavior"/>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="bossSirenBehavior"/> -->
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="2" fade="1" effect_name="FadeToBlack"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" effect_name="Drunk" fade="1"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="horde_spawn_warning" play_in_head="true"/>
@@ -1759,169 +1759,635 @@
 		</buff>
 
 		
-
+		
+		<!-- Flag Off buff -->
+		<buff name="buffNoteHFlag"  description_key="x" tooltip_key="x" icon="ui_game_symbol_add"> <!--hidden="true"-->
+			<duration value="3"/>
+			<update_rate value=".5"/>
+			<display_value value="duration"/>	
+			<effect_group>	
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="0"/>											
+			</effect_group>					
+		</buff>
+		<!-- NOTE EVENTS BUFFS --> 
+		<!-- First buff flag setter --> 
 		<buff name="buffNoteSpecials" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
 			<duration value="6"/>
 			<display_value value="duration"/>	
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_special"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteSpecials2"/> 							
 			</effect_group>		
 		</buff>
-
+		<!-- Second failsafe initator -->
+		<buff name="buffNoteSpecials2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_special"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteSpecials2"/>									
+			</effect_group>						
+		</buff>
+		
 		<buff name="buffNoteMinis" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
 			<duration value="6"/>
 			<display_value value="duration"/>	
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_minis"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteMinis2"/> 							
 			</effect_group>		
 		</buff>
+		<buff name="buffNoteMinis2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_minis"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteMinis2"/>									
+			</effect_group>						
+		</buff>
+		
 		<buff name="buffNoteSB" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
 			<duration value="6"/>
 			<display_value value="duration"/>	
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_SB"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteSB2"/> 							
 			</effect_group>		
 		</buff>
+		<buff name="buffNoteSB2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_SB"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteSB2"/>									
+			</effect_group>						
+		</buff>
+		
 		<buff name="buffNoteNight" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
 			<duration value="6"/>
 			<display_value value="duration"/>	
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_night"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteNight2"/> 							
 			</effect_group>		
 		</buff>
+		<buff name="buffNoteNight2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_night"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteNight2"/>									
+			</effect_group>						
+		</buff>
+		
 		<buff name="buffNoteMutant" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
 			<duration value="6"/>
 			<display_value value="duration"/>	
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_mutant"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteMutant2"/> 							
 			</effect_group>		
 		</buff>
+		<buff name="buffNoteMutant2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_mutant"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteMutant2"/>									
+			</effect_group>						
+		</buff>
+		
 		<buff name="buffNoteMorte" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
 			<duration value="6"/>
 			<display_value value="duration"/>	
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_morte"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteMorte2"/> 							
 			</effect_group>		
 		</buff>
+		<buff name="buffNoteMorte2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_morte"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteMorte2"/>									
+			</effect_group>						
+		</buff>
+		
 		<buff name="buffNoteFrozen" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
 			<duration value="6"/>
 			<display_value value="duration"/>	
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_frozen"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteFrozen2"/> 							
 			</effect_group>		
 		</buff>
+		<buff name="buffNoteFrozen2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_frozen"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteFrozen2"/>									
+			</effect_group>						
+		</buff>
+		
 		<buff name="buffNoteInfernal" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
 			<duration value="6"/>
 			<display_value value="duration"/>	
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_infe"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteInfernal2"/> 							
 			</effect_group>		
 		</buff>
+		<buff name="buffNoteInfernal2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_infe"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteInfernal2"/>									
+			</effect_group>						
+		</buff>
+		
 		<buff name="buffNoteShock" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
 			<duration value="6"/>
 			<display_value value="duration"/>	
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_shock"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteShock2"/> 							
 			</effect_group>		
 		</buff>
+		<buff name="buffNoteShock2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_shock"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteShock2"/>									
+			</effect_group>						
+		</buff>
+		
 		<buff name="buffNoteEnemigos" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
 			<duration value="6"/>
 			<display_value value="duration"/>	
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_enemigos"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteEnemigos2"/> 							
 			</effect_group>		
+		</buff>
+		<buff name="buffNoteEnemigos2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_enemigos"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteEnemigos2"/>									
+			</effect_group>						
 		</buff>
 
 		<buff name="buffNoteSol" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
 			<duration value="6"/>
 			<display_value value="duration"/>	
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_Sol"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteSol2"/> 							
 			</effect_group>		
 		</buff>
+		<buff name="buffNoteSol2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_Sol"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteSol2"/>									
+			</effect_group>						
+		</buff>
+		
 		<buff name="buffNoteJug" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
 			<duration value="6"/>
 			<display_value value="duration"/>	
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_Jug"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteJug2"/> 							
 			</effect_group>		
 		</buff>
+		<buff name="buffNoteJug2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_Jug"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteJug2"/>									
+			</effect_group>						
+		</buff>
+		
 		<buff name="buffNoteCab" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
 			<duration value="6"/>
 			<display_value value="duration"/>	
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_Cab"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteCab2"/> 							
 			</effect_group>		
 		</buff>
+		<buff name="buffNoteCab2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_Cab"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteCab2"/>									
+			</effect_group>						
+		</buff>
+		
 		<buff name="buffNoteMum" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
 			<duration value="6"/>
 			<display_value value="duration"/>	
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_Mum"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteMum2"/> 							
 			</effect_group>		
 		</buff>
+		<buff name="buffNoteMum2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_Mum"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteMum2"/>									
+			</effect_group>						
+		</buff>
+		
 		<buff name="buffNoteCiru" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
 			<duration value="6"/>
 			<display_value value="duration"/>	
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_Cir"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteCiru2"/> 							
 			</effect_group>		
 		</buff>
+		<buff name="buffNoteCiru2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_Cir"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteCiru2"/>									
+			</effect_group>						
+		</buff>
+		
 		<buff name="buffNoteSiren" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
 			<duration value="6"/>
 			<display_value value="duration"/>	
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_Sir"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteSiren2"/> 							
 			</effect_group>		
 		</buff>
+		<buff name="buffNoteSiren2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_Sir"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteSiren2"/>									
+			</effect_group>						
+		</buff>	
+		
+		<buff name="buffNoteVod" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
+			<duration value="6"/>
+			<display_value value="duration"/>	
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteVod2"/> 							
+			</effect_group>		
+		</buff>
+		<buff name="buffNoteVod2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_Vod"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteVod2"/>									
+			</effect_group>						
+		</buff>
+
+		<buff name="buffNoteBeri" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
+			<duration value="6"/>
+			<display_value value="duration"/>	
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteBeri2"/> 							
+			</effect_group>		
+		</buff>
+		<buff name="buffNoteBeri2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_Ber"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteBeri2"/>									
+			</effect_group>						
+		</buff>
+
+		<buff name="buffNoteJack" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
+			<duration value="6"/>
+			<display_value value="duration"/>	
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteJack2"/> 							
+			</effect_group>		
+		</buff>
+		<buff name="buffNoteJack2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_Jac"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteJack2"/>									
+			</effect_group>						
+		</buff>
+
+		<buff name="buffNoteRaijin" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
+			<duration value="6"/>
+			<display_value value="duration"/>	
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteRaijin2"/> 							
+			</effect_group>		
+		</buff>
+		<buff name="buffNoteRaijin2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_Rai"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteRaijin2"/>									
+			</effect_group>						
+		</buff>
+
+		<buff name="buffNotePacient" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
+			<duration value="6"/>
+			<display_value value="duration"/>	
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNotePacient2"/> 							
+			</effect_group>		
+		</buff>
+		<buff name="buffNotePacient2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_Pac"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNotePacient2"/>									
+			</effect_group>						
+		</buff>
+
 		<buff name="buffNoteHF" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense" icon_color="0,0,0">
 			<duration value="11"/>
 			<display_value value="duration"/>	
-			<effect_group>				
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_hf_sol"/>							
+			<effect_group>	
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteHF02"/>											
 			</effect_group>					
 		</buff>
+		<buff name="buffNoteHF02" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>						
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_hf_sol"/>													
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteHF02"/>									
+			</effect_group>						
+		</buff>		
 		<buff name="buffNoteHF2" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense" icon_color="0,0,0">
 			<duration value="11"/>
 			<display_value value="duration"/>	
-			<effect_group>				
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_hf_jug"/>							
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>	
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteHF22"/>												
 			</effect_group>					
+		</buff>
+		<buff name="buffNoteHF22" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="11"/>
+			<display_value value="duration"/>	
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_hf_jug"/>											
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteHF22"/>									
+			</effect_group>						
 		</buff>
 		<buff name="buffNoteHF3" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense" icon_color="0,0,0">
 			<duration value="11"/>
 			<display_value value="duration"/>	
-			<effect_group>				
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_hf_cab"/>							
+			<effect_group>		
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>	
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteHF32"/>										
 			</effect_group>					
+		</buff>
+		<buff name="buffNoteHF32" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="11"/>
+			<display_value value="duration"/>	
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_hf_cab"/>											
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteHF32"/>									
+			</effect_group>						
 		</buff>
 		<buff name="buffNoteHF4" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense" icon_color="0,0,0">
 			<duration value="11"/>
 			<display_value value="duration"/>	
-			<effect_group>				
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_hf_mum"/>							
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>	
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteHF42"/>										
+			</effect_group>					
+		</buff>
+		<buff name="buffNoteHF42" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="11"/>
+			<display_value value="duration"/>	
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_hf_mum"/>											
+			</effect_group>	
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteHF42"/>									
 			</effect_group>					
 		</buff>
 		<buff name="buffNoteHF5" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense" icon_color="0,0,0">
 			<duration value="11"/>
 			<display_value value="duration"/>	
 			<effect_group>				
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_hf_cir"/>							
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>	
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteHF52"/>					
+			</effect_group>					
+		</buff>
+		<buff name="buffNoteHF52" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="11"/>
+			<display_value value="duration"/>	
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_hf_cir"/>											
+			</effect_group>	
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteHF52"/>									
 			</effect_group>					
 		</buff>
 		<buff name="buffNoteHF6" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense" icon_color="0,0,0">
 			<duration value="11"/>
 			<display_value value="duration"/>	
 			<effect_group>				
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_hf_sir"/>							
-			</effect_group>					
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>	
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteHF62"/>											
+			</effect_group>								
+		</buff>
+		<buff name="buffNoteHF62" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="11"/>
+			<display_value value="duration"/>	
+			<effect_group>	
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_hf_sir"/>											
+			</effect_group>	
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteHF62"/>									
+			</effect_group>				
 		</buff>
 		<buff name="buffNoteHF7" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense" icon_color="0,0,0">
 			<duration value="11"/>
 			<display_value value="duration"/>	
-			<effect_group>				
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_hooligan"/>							
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>	
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteHF72"/>									
 			</effect_group>					
+		</buff>
+		<buff name="buffNoteHF72" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense" icon_color="0,0,0">
+			<duration value="11"/>
+			<display_value value="duration"/>	
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_hooligan"/>									
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteHF72"/>									
+			</effect_group>							
 		</buff>
 		
 		<buff name="buffHFCD" name_key="buffInjuryUnconsciousName" description_key="buffInjuryUnconsciousDesc" tooltip_key="buffInjuryUnconsciousTooltip" icon="ui_game_symbol_defense" icon_color="0,0,0">
@@ -2017,13 +2483,35 @@
 			</effect_group>		
 		</buff>
 
-		
-		<buff name="buffSummonTest2" name_key="buffInjuryUnconsciousName" description_key="buffInjuryUnconsciousDesc" tooltip_key="buffInjuryUnconsciousTooltip" icon="ui_game_symbol_defense">
+		<buff name="buffSummonTest" name_key="buffInjuryUnconsciousName" description_key="buffInjuryUnconsciousDesc" tooltip_key="buffInjuryUnconsciousTooltip" icon="ui_game_symbol_defense">
 			<duration value="5"/>
 			<display_value value="duration"/>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_Jug"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="note_hf_test"/>
 			</effect_group>
+		</buff>
+
+		<buff name="buffNoteTest" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense" icon_color="0,0,0">
+			<duration value="11"/>
+			<display_value value="duration"/>	
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>	
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteTest2"/>										
+			</effect_group>					
+		</buff>
+		<buff name="buffNoteTest2" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense" icon_color="0,0,0">
+			<duration value="11"/>
+			<display_value value="duration"/>	
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_hf_test"/>									
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoteTest2"/>									
+			</effect_group>							
 		</buff>
 		
 		
@@ -2064,7 +2552,6 @@
 				<passive_effect name="BuffBlink" operation="base_set" value="2" tags="twitch_buffNoDriving"/>
 			</effect_group>
 		</buff>
-
 		<buff name="buffSamurai" hidden="false" icon="ui_game_symbol_deep_cuts" icon_color="163, 16, 16">
 			<update_rate value="0.1"/>
 			<effect_group>
@@ -2093,7 +2580,6 @@
 				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffSamurai2"/>
 			</effect_group>
 		</buff>
-
 		<buff name="buffLowDef" hidden="false" icon="ui_game_symbol_near_death_trauma" icon_color="255,5,5">
 			<update_rate value="5"/>
 			<effect_group>
@@ -2112,7 +2598,6 @@
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="horde_spawn_warning" play_in_head="true"/>
 			</effect_group>
 		</buff>
-
 		<buff name="ElementalFire" hidden="true">
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" target="self" particle="p_fire_small" local_offset="0,0,0" local_rotation="0,0,-50" parent_transform="LeftHand"/>
