@@ -67,6 +67,26 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 			</effect_group>
 		</item>
+
+		<item name="waterBundle">
+			<property name="CustomIcon" value="cntBarrelPlasticSingle00"/>
+			<property name="ItemTypeIcon" value="water"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="collector_complete_item"/>
+				<property name="Create_item" value="drinkJarBoiledWater"/>
+				<property name="Create_item_count" value="10"/>
+			</property>
+		</item>
 		<!--
 		<item name="downgradeKitGun">
 			<property name="CustomIcon" value="cntWeaponsBagSmall"/>

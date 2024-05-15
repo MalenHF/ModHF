@@ -165,57 +165,50 @@
 
 		<!--Dar Rework-->
 		<action_sequence name="note_enemigos">
-			<property name="action_type" value="Game" />	
+			<property name="allow_user_trigger" value="false" />
+			<property name="action_type" value="TwitchVote" />
+			<property name="refund_inactivity" value="false" />
+			<property name="category" value="twitch_votes" />
+			
 			<action class="AddPartyToGroup">
 				<property name="phase" value="0" />
 				<property name="group_name" value="party" />
+				<property name="twitch_negative" value="false" />
 			</action>
-			<action class="SpawnEntity">
-				<property name="entity_names" value="zombieBossPractoSpider" param1="zombiename"/>
-				<property name="spawn_count" value="1" param1="zombiecount" />				
+			<action class="AddBuff">
+				<property name="buff_name" value="buffNoteHFlag" />
 				<property name="phase" value="0" />				
-				<property name="safe_spawn" value="true" />
-				<property name="add_to_group" value="zombies,minions" />
-				<property name="add_buffs" value="twitch_minion_nav" param1="minionbuff" />				
-				<property name="spawn_type" value="NearTarget" />
-				<property name="min_distance" value="10" />
-				<property name="max_distance" value="20" />
-				<property name="clear_position_on_complete" value="true" />
 			</action>
 			<action class="SpawnEntity">
-				<property name="entity_names" value="ZombieBossMineralSpider" param1="zombiename"/>
-				<property name="spawn_count" value="1" param1="zombiecount" />				
-				<property name="phase" value="0" />				
-				<property name="safe_spawn" value="true" />
-				<property name="add_to_group" value="zombies,minions" />
-				<property name="add_buffs" value="twitch_minion_nav" param1="minionbuff" />				
-				<property name="spawn_type" value="NearTarget" />
-				<property name="min_distance" value="10" />
-				<property name="max_distance" value="20" />
-				<property name="clear_position_on_complete" value="true" />
-			</action>
-
-			<action class="SpawnEntity">
-				<property name="entity_group" value="zombieSB"/>				
-				<property name="spawn_count" value="2" param1="zombiecount" />
-				<property name="party_addition" value="1" />
-				<property name="phase" value="1" />
-				<property name="safe_spawn" value="true" />
-				<property name="add_to_group" value="zombies,minions" />
-				<property name="add_buffs" value="twitch_minion_nav" param1="minionbuff" />
-				<property name="spawn_type" value="NearTarget" />
-				<property name="clear_position_on_complete" value="true" />
-			</action>
-			<action class="SpawnEntity">
-				<property name="entity_group" value="allsnukfin" param1="zombiename"/>				
-				<property name="spawn_count" value="8" param1="zombiecount" />
+				<property name="entity_group" value="allsnukfin" param1="zombiename" />
+				<property name="spawn_count" value="5" param1="zombiecount" />
 				<property name="party_addition" value="1" />
 				<property name="phase" value="0" />
 				<property name="safe_spawn" value="true" />
 				<property name="add_to_group" value="zombies,minions" />
 				<property name="add_buffs" value="twitch_minion_nav" param1="minionbuff" />
-				<property name="spawn_type" value="NearTarget" />
+				<property name="spawn_type" value="Position" />
 				<property name="clear_position_on_complete" value="true" />
+			</action>
+			<action class="SpawnEntity">				
+				<property name="entity_group" value="zombieSB"/>
+				<property name="spawn_count" value="1" param1="screamcount" />				
+				<property name="phase" value="0" />
+				<property name="safe_spawn" value="true" />
+				<property name="add_to_group" value="zombies,minions" />
+				<property name="add_buffs" value="twitch_minion_nav" param1="minionbuff" />
+				<property name="spawn_type" value="Position" />
+				<property name="clear_position_on_complete" value="true" />
+			</action>	
+			<action class="SpawnEntity">
+				<property name="entity_names" value="ZombieBossMineralSpider" param1="bossname" />
+				<property name="spawn_count" value="1" />
+				<property name="phase" value="0" />
+				<property name="safe_spawn" value="true" />
+				<property name="add_to_group" value="zombies,boss" />
+				<property name="add_buffs" value="twitch_immortal_boss" param1="bossbuff" />
+				<property name="spawn_type" value="Position" />
+				<property name="ignore_multiplier" value="true" />
 			</action>
 	
 			<action class="PlaySound">
@@ -226,7 +219,7 @@
 			<action class="Delay">
 				<property name="time" value="1" />
 				<property name="phase" value="2" />
-			</action>		
+			</action>
 			
 			<action class="AddBuff">
 				<property name="buff_name" value="twitch_minion_nav" />
@@ -235,124 +228,22 @@
 			</action>
 			
 			<action class="AddBuff">
-				<property name="buff_name" value="twitch_give_navobject" />
+				<property name="buff_name" value="twitch_immortal_boss" />
 				<property name="phase" value="3" />
-				<property name="target_group" value="zombies" />
-			</action>
-			
-			<action class="RageZombies">
-				<property name="target_group" value="zombies" />
-				<property name="time" value="600" />
-				<property name="speed_percent" value="1.1" />
-				<property name="phase" value="3" />
-			</action>
-			
-			<action class="WaitForDead">
-				<property name="target_group" value="zombies" />
-				<property name="phase_on_despawn" value="8" />
-				<property name="phase" value="4" />
-			</action>
-	
-			<action class="Delay">
-				<property name="time" value="3" />
-				<property name="phase" value="5" />
-			</action>
-	
-			<action class="PlaySound">
-				<property name="sound" value="twitch_vote_horde_success" />
-				<property name="phase" value="6" />
-				<property name="inside_head" value="true" />
-				<property name="target_group" value="party" />
-			</action>			
-			
-			<action class="AddQuest">
-				<property name="quest" value="bossRewardQuest3" />
-				<property name="phase" value="7" />
-				<property name="target_group" value="party" />
-				<property name="phase_on_complete" value="11" />	
-			</action>
-	
-			<action class="PlaySound">
-				<property name="sound" value="twitch_vote_horde_failed" />
-				<property name="phase" value="8" />
-				<property name="inside_head" value="true" />
-				<property name="target_group" value="party" />
-			</action>
-			
-			<action class="BeltTooltip">
-				<property name="text" value="Boss Event Failed: You let some enemies get away!" />
-				<property name="phase" value="8" />
-			</action>
-			
-			<action class="RemoveEntities">
-				<property name="target_group" value="zombies" />
-				<property name="phase" value="8" />
-			</action>
-			
-		</action_sequence>
-
-		<action_sequence name="lucky_enemigo">
-			<property name="action_type" value="Game" />
-			<requirement class="RandomRoll">
-				<property name="min_max" value="0,100" />
-				<property name="operation" value="LTE" />
-				<property name="value" value="10" />
-			</requirement>				
-			<action class="PlaySound">
-				<property name="sound" value="zombiefemalescoutalert" />			   
-				<property name="phase" value="0" />
-			</action>
-
-			<action class="Delay">
-				<property name="phase" value="1" />
-				<property name="time" value="5" />
-			</action>
-			<action class="SpawnEntity">
-				<property name="entity_names" value="zombieSpecialBossNightSpider"/>
-				<property name="spawn_count" value="1" param1="zombiecount" />
-				<property name="party_addition" value="1" />
-				<property name="phase" value="3" />				
-				<property name="safe_spawn" value="true" />
-				<property name="add_to_group" value="zombies,minions" />
-				<property name="add_buffs" value="twitch_minion_nav" param1="minionbuff" />				
-				<property name="spawn_type" value="NearTarget" />
-				<property name="min_distance" value="10" />
-				<property name="max_distance" value="20" />
-				<property name="clear_position_on_complete" value="true" />
-			</action>
-
-			<action class="PlaySound">
-				<property name="sound" value="zombiemalealert" param1="alertsound" />
-				<property name="phase" value="3" />
-			</action>
-			
-			<action class="Delay">
-				<property name="time" value="1" />
-				<property name="phase" value="4" />
-			</action>
-			
-			<action class="AddBuff">
-				<property name="buff_name" value="twitch_minion_nav" />
-				<property name="phase" value="5" />
-				<property name="target_group" value="minions" />
-			</action>
-
-			<action class="AddBuff">
-				<property name="buff_name" value="twitch_boss_nav" />
-				<property name="phase" value="5" />
 				<property name="target_group" value="boss" />
 			</action>
-
+			
 			<action class="SetupBossGroup">
 				<property name="minion_group_name" value="minions" />
 				<property name="boss_group_name" value="boss" />
 				<property name="boss_icon1" value="" param1="bossicon1" />
-				<property name="phase" value="5" />				
+				<property name="phase" value="3" />
+				<property name="group_type" value="ImmortalBoss" />
 			</action>
-
+			
 			<action class="AddBuff">
 				<property name="buff_name" value="twitch_give_navobject" />
-				<property name="phase" value="5" />
+				<property name="phase" value="3" />
 				<property name="target_group" value="zombies" />
 			</action>
 			
@@ -360,82 +251,199 @@
 				<property name="target_group" value="zombies" />
 				<property name="time" value="600" />
 				<property name="speed_percent" value="1.1" />
-				<property name="phase" value="5" />
+				<property name="phase" value="3" />
 			</action>
-
+			
 			<action class="WaitForDead">
+				<property name="target_group" value="minions" />
+				<property name="phase_on_despawn" value="10" />
+				<property name="phase" value="4" />
+			</action>
+			
+			<action class="ReplaceBuff">
+				<property name="replace_buff" value="twitch_immortal_boss" />
+				<property name="replace_with_buff" value="twitch_boss_nav" />
+				<property name="phase" value="5" />
+				<property name="target_group" value="boss" />
+			</action>
+			
+			<action class="AddBuff">
+				<property name="buff_name" value="twitch_give_navobject" />
+				<property name="phase" value="6" />
 				<property name="target_group" value="zombies" />
-				<property name="phase_on_despawn" value="9" />
+			</action>
+			
+			<action class="WaitForDead">
+				<property name="target_group" value="boss" />
+				<property name="phase_on_despawn" value="10" />
 				<property name="phase" value="6" />
 			</action>
-
+	
 			<action class="Delay">
-				<property name="time" value="3" />
+				<property name="time" value="5" />
 				<property name="phase" value="7" />
-			</action>
-
+			</action>			
+	
 			<action class="PlaySound">
 				<property name="sound" value="twitch_vote_horde_success" />
 				<property name="phase" value="8" />
 				<property name="inside_head" value="true" />
 				<property name="target_group" value="party" />
-				<property name="phase_on_complete" value="10" />
 			</action>
 
+			<action class="AddBuff">
+				<property name="buff_name" value="buffNoteEnemigos3" param1="buffname"/>
+				<property name="phase_on_complete" value="12" param1="eventphase" />
+				<property name="phase" value="9" />
+			</action>			
+
+			<action class="AddQuest">
+				<property name="quest" value="t4voRewardQuest" />
+				<property name="target_group" value="party" />
+				<property name="phase" value="10" />				
+				<property name="phase_on_complete" value="12" />	
+			</action>			
+	
 			<action class="PlaySound">
 				<property name="sound" value="twitch_vote_horde_failed" />
-				<property name="phase" value="9" />
+				<property name="phase" value="11" />
 				<property name="inside_head" value="true" />
 				<property name="target_group" value="party" />
 			</action>
 			
 			<action class="BeltTooltip">
 				<property name="text" value="Boss Event Failed: You let some enemies get away!" />
-				<property name="phase" value="9" />
+				<property name="phase" value="11" />
 			</action>
 			
 			<action class="RemoveBuff">
 				<property name="buff_name" value="twitch_immortal_boss" />
-				<property name="phase" value="9" />
+				<property name="phase" value="11" />
 				<property name="target_group" value="boss" />
 			</action>
 			
 			<action class="RemoveEntities">
 				<property name="target_group" value="zombies" />
-				<property name="phase" value="9" />
+				<property name="phase" value="11" />
+			</action>
+
+			
+		</action_sequence>
+
+		<action_sequence name="note_epart2" template="note_enemigos">			
+			<variable name="bossname" value="zombieBossPractoSpider" />
+			<variable name="buffname" value="buffNoteEnemigos5" />
+			<variable name="eventphase" value="10" />
+		</action_sequence>
+
+
+		<action_sequence name="lucky_hfroll">
+			<property name="allow_user_trigger" value="false" />
+			<property name="action_type" value="TwitchVote" />
+			<property name="refund_inactivity" value="false" />
+			<property name="category" value="twitch_votes" />			
+			<action class="AddBuff">
+				<property name="buff_name" value="buffNoteHFlag" />
+				<property name="phase" value="0" />				
+			</action>
+			<action class="CallGameEvent">
+				<property name="phase" value="0" />
+				<property name="game_events" value="lucky_enemigo" />
+			</action>			
+		</action_sequence>	
+
+		<action_sequence name="lucky_enemigo">
+			<property name="allow_user_trigger" value="false" />
+			<property name="action_type" value="TwitchVote" />
+			<property name="refund_inactivity" value="false" />
+			<property name="category" value="twitch_votes" />
+
+			<requirement class="RandomRoll">
+				<property name="min_max" value="0,100" />
+				<property name="operation" value="LTE" />
+				<property name="value" value="10" />
+			</requirement>			
+
+			<action class="PlaySound">
+				<property name="sound" value="zombiefemalescoutalert" />			   
+				<property name="phase" value="0" />
+			</action>			
+			
+			<action class="SpawnEntity">
+				<property name="entity_names" value="zombieSpecialBossNightSpider" param1="bossname" />
+				<property name="spawn_count" value="1" />
+				<property name="phase" value="1" />
+				<property name="safe_spawn" value="true" />
+				<property name="add_to_group" value="zombies,minions" />
+				<property name="add_buffs" value="twitch_minion_nav" param1="bossbuff" />
+				<property name="spawn_type" value="Position" />
+				<property name="ignore_multiplier" value="true" />
+			</action>
+
+			<action class="PlaySound">
+				<property name="sound" value="zombiemalealert" param1="alertsound" />
+				<property name="phase" value="2" />
 			</action>
 			
+			<action class="Delay">
+				<property name="time" value="1" />
+				<property name="phase" value="3" />
+			</action>
+			
+			<action class="AddBuff">
+				<property name="buff_name" value="twitch_minion_nav" />
+				<property name="phase" value="4" />
+				<property name="target_group" value="minions" />
+			</action>
+
+			<action class="AddBuff">
+				<property name="buff_name" value="twitch_give_navobject" />
+				<property name="phase" value="4" />
+				<property name="target_group" value="zombies" />
+			</action>			
+		
+			<action class="RageZombies">
+				<property name="target_group" value="zombies" />
+				<property name="time" value="600" />
+				<property name="speed_percent" value="1.1" />
+				<property name="phase" value="4" />
+			</action>			
 		</action_sequence>	
 
 		<action_sequence name="note_Lucky">
-			<property name="action_type" value="Game" />	
-
+			<property name="allow_user_trigger" value="false" />
+			<property name="action_type" value="TwitchVote" />
+			<property name="refund_inactivity" value="false" />
+			<property name="category" value="twitch_votes" />
+			<action class="AddBuff">
+				<property name="buff_name" value="buffNoteHFlag" />
+				<property name="phase" value="0" />				
+			</action>
 			<action class="AddPartyToGroup">
 				<property name="phase" value="0" />
 				<property name="group_name" value="party" />
 				<property name="twitch_negative" value="false" />
-			</action>		
+			</action>
+
 			<action class="SpawnEntity">
-				<property name="entity_group" value="allNormalZombies" param1="zombiename"/>
+				<property name="entity_group" value="allNormalZombies" param1="zombiename" />
 				<property name="spawn_count" value="6" param1="zombiecount" />
 				<property name="party_addition" value="1" />
-				<property name="phase" value="1" />				
+				<property name="phase" value="0" />
 				<property name="safe_spawn" value="true" />
 				<property name="add_to_group" value="zombies,minions" />
-				<property name="add_buffs" value="twitch_minion_nav" param1="minionbuff" />				
-				<property name="spawn_type" value="NearTarget" />
-				<property name="min_distance" value="10" />
-				<property name="max_distance" value="20" />
+				<property name="add_buffs" value="twitch_minion_nav" param1="minionbuff" />
+				<property name="spawn_type" value="Position" />
 				<property name="clear_position_on_complete" value="true" />
-			</action>
+			</action>				
 			<action class="SpawnEntity">
 				<property name="entity_group" value="allNormalBosses" param1="zombiebossname" />
 				<property name="spawn_count" value="1" />
 				<property name="phase" value="0" />
 				<property name="safe_spawn" value="true" />
 				<property name="add_to_group" value="zombies,boss" />
-				<property name="add_buffs" value="twitch_boss_nav" param1="bossbuff" />
-				<property name="spawn_type" value="NearTarget" />
+				<property name="add_buffs" value="twitch_immortal_boss" param1="bossbuff" />
+				<property name="spawn_type" value="Position" />
 				<property name="ignore_multiplier" value="true" />
 			</action>
 			
@@ -454,20 +462,21 @@
 				<property name="phase" value="3" />
 				<property name="target_group" value="minions" />
 			</action>
-
+			
 			<action class="AddBuff">
-				<property name="buff_name" value="twitch_boss_nav" />
+				<property name="buff_name" value="twitch_immortal_boss" />
 				<property name="phase" value="3" />
 				<property name="target_group" value="boss" />
 			</action>
-
+			
 			<action class="SetupBossGroup">
 				<property name="minion_group_name" value="minions" />
 				<property name="boss_group_name" value="boss" />
 				<property name="boss_icon1" value="" param1="bossicon1" />
-				<property name="phase" value="3" />				
+				<property name="phase" value="3" />
+				<property name="group_type" value="ImmortalBoss" />
 			</action>
-
+			
 			<action class="AddBuff">
 				<property name="buff_name" value="twitch_give_navobject" />
 				<property name="phase" value="3" />
@@ -480,64 +489,89 @@
 				<property name="speed_percent" value="1.1" />
 				<property name="phase" value="3" />
 			</action>
-
+			
 			<action class="WaitForDead">
-				<property name="target_group" value="zombies" />
-				<property name="phase_on_despawn" value="9" />
+				<property name="target_group" value="minions" />
+				<property name="phase_on_despawn" value="10" />
 				<property name="phase" value="4" />
 			</action>
-
-			<action class="Delay">
-				<property name="time" value="3" />
+			
+			<action class="ReplaceBuff">
+				<property name="replace_buff" value="twitch_immortal_boss" />
+				<property name="replace_with_buff" value="twitch_boss_nav" />
 				<property name="phase" value="5" />
+				<property name="target_group" value="boss" />
 			</action>
-
+			
+			<action class="AddBuff">
+				<property name="buff_name" value="twitch_give_navobject" />
+				<property name="phase" value="6" />
+				<property name="target_group" value="zombies" />
+			</action>
+			
+			<action class="WaitForDead">
+				<property name="target_group" value="boss" />
+				<property name="phase_on_despawn" value="10" />
+				<property name="phase" value="6" />
+			</action>
+	
+			<action class="Delay">
+				<property name="time" value="5" />
+				<property name="phase" value="7" />
+			</action>			
+	
 			<action class="PlaySound">
 				<property name="sound" value="twitch_vote_horde_success" />
-				<property name="phase" value="6" />
+				<property name="phase" value="8" />
 				<property name="inside_head" value="true" />
 				<property name="target_group" value="party" />
-			</action>			
-			
+			</action>
 			<action class="AddQuest">
 				<property name="quest" value="bossRewardQuest3" />				
-				<property name="target_group" value="party" />
-				<property name="phase" value="7" />				
-			</action>
+				<property name="target_group" value="party" />				
+				<property name="phase" value="9" />
+			</action>			
 			<action class="CallGameEvent">
-				<property name="phase" value="8" />				
-				<property name="phase_on_complete" value="10" />
+				<property name="phase" value="10" />				
+				<property name="phase_on_complete" value="12" />
 				<property name="game_events" value="lucky_roll" />
 			</action>
-
-
+	
 			<action class="PlaySound">
 				<property name="sound" value="twitch_vote_horde_failed" />
-				<property name="phase" value="9" />
+				<property name="phase" value="11" />
 				<property name="inside_head" value="true" />
 				<property name="target_group" value="party" />
 			</action>
 			
 			<action class="BeltTooltip">
 				<property name="text" value="Boss Event Failed: You let some enemies get away!" />
-				<property name="phase" value="9" />
+				<property name="phase" value="11" />
 			</action>
 			
 			<action class="RemoveBuff">
 				<property name="buff_name" value="twitch_immortal_boss" />
-				<property name="phase" value="9" />
+				<property name="phase" value="11" />
 				<property name="target_group" value="boss" />
 			</action>
 			
 			<action class="RemoveEntities">
 				<property name="target_group" value="zombies" />
-				<property name="phase" value="9" />
+				<property name="phase" value="10" />
 			</action>
+			
+			
+			
 			
 		</action_sequence>
 		
 		<action_sequence name="lucky_roll">
 			<property name="action_type" value="Game" />
+			<property name="allow_user_trigger" value="false" />
+			<property name="action_type" value="TwitchVote" />
+			<property name="refund_inactivity" value="false" />
+			<property name="category" value="twitch_votes" />
+
 			<requirement class="RandomRoll">
 				<property name="min_max" value="0,100" />
 				<property name="operation" value="LTE" />
@@ -546,74 +580,69 @@
 			<action class="PlaySound">
 				<property name="sound" value="zombiefemalescoutalert" />			   
 				<property name="phase" value="0" />
-			</action>
+			</action>			
+		
 			<action class="AddPartyToGroup">
-				<property name="phase" value="0" />
+				<property name="phase" value="1" />
 				<property name="group_name" value="party" />
 				<property name="twitch_negative" value="false" />
 			</action>
-			<action class="Delay">
-				<property name="phase" value="1" />
-				<property name="time" value="5" />
-			</action>
 
 			<action class="SpawnEntity">
-				<property name="entity_group" value="allsallSpecialZombie" param1="zombiename"/>
-				<property name="spawn_count" value="8" param1="zombiecount" />
+				<property name="entity_group" value="allsallSpecialZombie" param1="zombiename" />
+				<property name="spawn_count" value="6" param1="zombiecount" />
 				<property name="party_addition" value="1" />
-				<property name="phase" value="3" />				
+				<property name="phase" value="1" />
 				<property name="safe_spawn" value="true" />
 				<property name="add_to_group" value="zombies,minions" />
-				<property name="add_buffs" value="twitch_minion_nav" param1="minionbuff" />				
-				<property name="spawn_type" value="NearTarget" />
-				<property name="min_distance" value="10" />
-				<property name="max_distance" value="20" />
+				<property name="add_buffs" value="twitch_minion_nav" param1="minionbuff" />
+				<property name="spawn_type" value="Position" />
 				<property name="clear_position_on_complete" value="true" />
-			</action>
-
+			</action>				
 			<action class="SpawnEntity">
 				<property name="entity_group" value="allSpecialBosses" param1="zombiebossname" />
 				<property name="spawn_count" value="1" />
-				<property name="phase" value="2" />
+				<property name="phase" value="1" />
 				<property name="safe_spawn" value="true" />
 				<property name="add_to_group" value="zombies,boss" />
-				<property name="add_buffs" value="twitch_boss_nav" param1="bossbuff" />
-				<property name="spawn_type" value="NearTarget" />
+				<property name="add_buffs" value="twitch_immortal_boss" param1="bossbuff" />
+				<property name="spawn_type" value="Position" />
 				<property name="ignore_multiplier" value="true" />
 			</action>
 			
 			<action class="PlaySound">
 				<property name="sound" value="zombiemalealert" param1="alertsound" />
-				<property name="phase" value="3" />
+				<property name="phase" value="2" />
 			</action>
 			
 			<action class="Delay">
 				<property name="time" value="1" />
-				<property name="phase" value="4" />
+				<property name="phase" value="3" />
 			</action>
 			
 			<action class="AddBuff">
 				<property name="buff_name" value="twitch_minion_nav" />
-				<property name="phase" value="5" />
+				<property name="phase" value="4" />
 				<property name="target_group" value="minions" />
 			</action>
-
+			
 			<action class="AddBuff">
-				<property name="buff_name" value="twitch_boss_nav" />
-				<property name="phase" value="5" />
+				<property name="buff_name" value="twitch_immortal_boss" />
+				<property name="phase" value="4" />
 				<property name="target_group" value="boss" />
 			</action>
-
+			
 			<action class="SetupBossGroup">
 				<property name="minion_group_name" value="minions" />
 				<property name="boss_group_name" value="boss" />
 				<property name="boss_icon1" value="" param1="bossicon1" />
-				<property name="phase" value="5" />				
+				<property name="phase" value="4" />
+				<property name="group_type" value="ImmortalBoss" />
 			</action>
-
+			
 			<action class="AddBuff">
 				<property name="buff_name" value="twitch_give_navobject" />
-				<property name="phase" value="5" />
+				<property name="phase" value="4" />
 				<property name="target_group" value="zombies" />
 			</action>
 			
@@ -621,39 +650,52 @@
 				<property name="target_group" value="zombies" />
 				<property name="time" value="600" />
 				<property name="speed_percent" value="1.1" />
+				<property name="phase" value="4" />
+			</action>
+			
+			<action class="WaitForDead">
+				<property name="target_group" value="minions" />
+				<property name="phase_on_despawn" value="10" />
 				<property name="phase" value="5" />
 			</action>
-
-			<action class="WaitForDead">
-				<property name="target_group" value="zombies" />
-				<property name="phase_on_despawn" value="11" />
+			
+			<action class="ReplaceBuff">
+				<property name="replace_buff" value="twitch_immortal_boss" />
+				<property name="replace_with_buff" value="twitch_boss_nav" />
 				<property name="phase" value="6" />
+				<property name="target_group" value="boss" />
 			</action>
-
-			<action class="Delay">
-				<property name="time" value="3" />
+			
+			<action class="AddBuff">
+				<property name="buff_name" value="twitch_give_navobject" />
+				<property name="phase" value="7" />
+				<property name="target_group" value="zombies" />
+			</action>
+			
+			<action class="WaitForDead">
+				<property name="target_group" value="boss" />
+				<property name="phase_on_despawn" value="10" />
 				<property name="phase" value="7" />
 			</action>
-
+	
+			<action class="Delay">
+				<property name="time" value="5" />
+				<property name="phase" value="8" />
+			</action>			
+	
 			<action class="PlaySound">
 				<property name="sound" value="twitch_vote_horde_success" />
-				<property name="phase" value="8" />
+				<property name="phase" value="9" />
 				<property name="inside_head" value="true" />
 				<property name="target_group" value="party" />
-			</action>			
-			
-			<action class="AddQuest">
-				<property name="quest" value="bossRewardQuest3" />				
-				<property name="target_group" value="party" />
-				<property name="phase" value="9" />			
 			</action>
+						
 			<action class="CallGameEvent">
 				<property name="phase" value="10" />				
 				<property name="phase_on_complete" value="12" />
 				<property name="game_events" value="lucky_roll" />
 			</action>
-
-
+	
 			<action class="PlaySound">
 				<property name="sound" value="twitch_vote_horde_failed" />
 				<property name="phase" value="11" />
@@ -675,8 +717,7 @@
 			<action class="RemoveEntities">
 				<property name="target_group" value="zombies" />
 				<property name="phase" value="11" />
-			</action>
-			
+			</action>			
 		</action_sequence>	
 
 
@@ -1171,8 +1212,7 @@
 				<property name="phase" value="8" />
 				<property name="inside_head" value="true" />
 				<property name="target_group" value="party" />
-			</action>
-			
+			</action>			
 			
 			<action class="AddBuff">
 				<property name="buff_name" value="buffNoteHF2" param1="buffname"/>
@@ -1642,6 +1682,7 @@
 				<property name="speed_percent" value="1.1" />
 				<property name="phase" value="5" />
 			</action>
+
 			<action class="AddItems">
 				<property name="added_items" value="casinoCoin"  param1="item_name"/>
 				<property name="added_item_counts" value="0" param1="item_number"/>

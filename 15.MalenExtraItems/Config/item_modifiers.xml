@@ -5,6 +5,9 @@
     -->
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ --> 
   
+    <append xpath="/item_modifiers/item_modifier[@name='modArmorPlatingBasic']/@blocked_tags">,LAS</append>
+    <append xpath="/item_modifiers/item_modifier[@name='modArmorPlatingReinforced']/@blocked_tags">,LAS</append>
+    
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Militar Mods blocks ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
     <append xpath="/item_modifiers/item_modifier[@name='modArmorCustomizedFittings']/@blocked_tags">,LAM</append>
     <append xpath="/item_modifiers/item_modifier[@name='modArmorImprovedFittings']/@blocked_tags">,LAM</append>
@@ -81,8 +84,7 @@
         <passive_effect name="PlayerExpGain" operation="perc_add" value=".5"/>
         <passive_effect name="PhysicalDamageResist" operation="base_add" value="-15"/>
       </effect_group>
-      <effect_group tiered="false">
-        <requirement name="EntityTagCompare" target="other" tags="zombie"/>
+      <effect_group tiered="false">        
         <passive_effect name="EntityDamage" operation="perc_add" value="-.5"/>
       </effect_group>
       <effect_group tiered="false">

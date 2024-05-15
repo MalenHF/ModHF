@@ -245,7 +245,7 @@
 				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffInjuryConcussion,buffShocked,buffBurningElement,buffBurningEnvironment,buffBurningFlamingArrow,buffBurningMolotov,buffBurning"/>
 
 				<passive_effect name="CarryCapacity" operation="base_set" value="60"/>
-				<passive_effect name="ElementalDamageResist" operation="base_add" value="1" tags="cold,heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_set" value="96" tags="cold,heat,electrical"/>
 				<passive_effect name="HyperthermalResist" operation="base_add" value="200"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="200"/>
 				<passive_effect name="JumpStrength" operation="base_add" value=".05"/>
@@ -447,13 +447,13 @@
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffuwu">
 					<requirement name="CVarCompare" cvar="$uwuDuration" operation="LTE" value="0"/>
-				</triggered_effect>
+				</triggered_effect>				
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".uwuDisplay" operation="set" value="0"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$uwuDuration" operation="set" value="0"/>
 			</effect_group>
 			<effect_group>
-				<passive_effect name="ElementalDamageResist" operation="base_add" value="500" tags="cold,heat,electrical"/>
-				<passive_effect name="ElementalDamageResist" operation="base_add" value="500" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1" tags="cold,heat,electrical"/>				
+							
 				<passive_effect name="CarryCapacity" operation="base_set" value="60"/>
 				<passive_effect name="ExpDeficitPerDeathPercentage" operation="base_set" value="0"/>
 				<passive_effect name="ExpDeficitMaxPercentage" operation="base_set" value="0"/>
@@ -1125,14 +1125,14 @@
 	<append xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group">
 		<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="VehicleChecker2">
 			<requirement name="NotHasBuff" buff="VehicleChecker2"/>
-		</triggered_effect>
+		</triggered_effect>		
 	</append>
 	<append xpath="/buffs">
 		<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 		<!--  ///////////////////////////////////////////////////////////////Checkers/////////////////////////////////////////////////////////////////////////////////////// -->
 		<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 		<buff name="VehicleChecker2" hidden="true">
-			<stack_type value="replace"/>
+			<stack_type value="replace"/>			
 			<duration value="500"/>
 			<update_rate value=".1"/>
 			<effect_group>
@@ -1163,9 +1163,9 @@
 		<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 		<!--  //////////////////////Moto/////////////////////////// -->
-		<buff name="betsyTCheck" hidden="true">
+		<buff name="betsyTCheck" hidden="true">	
 			<stack_type value="ignore"/>
-			<stack_type value="ignore"/>
+			<damage_type value="heat"/>	
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" transform_path="headlight"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="headlight"/>
@@ -1183,23 +1183,18 @@
 		</buff>
 		<!--  //////////////////////Betsy/////////////////////////// -->
 		<buff name="betsyCheck" hidden="true">
-			<stack_type value="ignore"/>
+			<damage_type value="heat"/>			
 			<stack_type value="ignore"/>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" transform_path="headlight"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="headlight"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Traps/hubcapPrefab" local_offset="0,0.4,-0.45" local_rotation="0,0,180" parent_transform="Origin"/>
-
-
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_torch_wall" local_offset="-.11,.75,-.8" local_rotation="0,0,0" parent_transform="Origin"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="particleeffects/p_torch_wall" local_offset=".11,.75,-.8" local_rotation="0,0,0" parent_transform="Origin"/>
-
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" local_offset="-.11,.75,-.2" local_rotation="0,0,0" parent_transform="Origin"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" local_offset=".11,.75,-.2" local_rotation="0,0,0" parent_transform="Origin"/>
-
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/cowSkullPrefab" local_offset="0,.1,.5" local_rotation="45,0,0" parent_transform="Origin/handlebar_joint"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/weapon_bags_smallPrefab.prefab" local_offset="0,.9,-0.9" local_rotation="0,0,0" parent_transform="Origin"/>
-
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Spear/spear_steel_Prefab.prefab" local_offset=".24,.58,0.9" local_rotation="90,0,0" parent_transform="Origin"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/Spear/spear_steel_Prefab.prefab" local_offset="-.24,.58,0.9" local_rotation="90,0,0" parent_transform="Origin"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Vehicles/Car/motorPrefab.prefab" local_offset="0,.6,0" local_rotation="0,0,0" parent_transform="Origin"/>
@@ -1211,11 +1206,13 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="1.2" buff="buffBurningElement">
 					<requirement name="EntityTagCompare" target="other" tags="zombie,enemy"/>
 				</triggered_effect>
-			</effect_group>
+			</effect_group>			
 		</buff>
+		
 		<!--  //////////////////////4X4/////////////////////////////////// -->
 		<buff name="spo4x4Check" hidden="true">
 			<stack_type value="ignore"/>
+			<damage_type value="heat"/>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" transform_path="headlight"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_torch_wall" local_offset=".5,2,-1.15" local_rotation="0,0,0" parent_transform="headlight"/>
@@ -1235,6 +1232,7 @@
 		</buff>
 		<!--  //////////////////////Gyro////////////////////////////////// -->
 		<buff name="spogyroCheck" hidden="true">
+			<damage_type value="heat"/>
 			<stack_type value="ignore"/>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" prefab="p_torch_wall" local_offset="0,0.3,1.5" local_rotation="0,0,0" parent_transform="Origin"/>
