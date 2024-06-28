@@ -1,0 +1,1043 @@
+<config>
+   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Swat Mods blocks ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ 
+    <append xpath="/item_modifiers/item_modifier[@name='modArmorPlatingBasic']/@blocked_tags">,LAS</append>
+    <append xpath="/item_modifiers/item_modifier[@name='modArmorPlatingReinforced']/@blocked_tags">,LAS</append>
+    -->
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ --> 
+  
+    <append xpath="/item_modifiers/item_modifier[@name='modArmorPlatingBasic']/@blocked_tags">,LAS</append>
+    <append xpath="/item_modifiers/item_modifier[@name='modArmorPlatingReinforced']/@blocked_tags">,LAS</append>
+    
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Militar Mods blocks ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+    <append xpath="/item_modifiers/item_modifier[@name='modArmorCustomizedFittings']/@blocked_tags">,LAM</append>
+    <append xpath="/item_modifiers/item_modifier[@name='modArmorImprovedFittings']/@blocked_tags">,LAM</append>
+    <append xpath="/item_modifiers/item_modifier[@name='modArmorMuffledConnectors']/@blocked_tags">,LAM</append>
+    <append xpath="/item_modifiers/item_modifier[@name='modArmorAdvancedMuffledConnectors']/@blocked_tags">,LAM</append>
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ --> 
+  
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Dyes value change ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+    <append xpath="/item_modifiers/item_modifier[starts-with(@name, 'modDye')]">
+      <property name="EconomicValue" value="1000"/>
+      <property name="SellableToTrader" value="false"/>
+    </append>
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ --> 
+
+  <append xpath="/item_modifiers">
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Cursed Items ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+    <item_modifier name="modGunMeleeBlessedMetal" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
+      <property name="Extends" value="modGeneralMaster"/>
+      <property name="CustomIcon" value="resourceRawDiamond"/>
+
+      <property name="CustomIconTint" value="81, 209, 246"/>
+			<property name="TintColor" value="81, 209, 246"/>
+      <property name="UnlockedBy" value="PBMT"/>
+      <property name="Group" value="Lmats"/>
+      <!--Do double damage to evil / undead-->
+      <effect_group tiered="false">
+        <requirement name="EntityTagCompare" target="other" tags="zombie"/>
+        <passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
+      </effect_group>
+    </item_modifier>
+
+    <item_modifier name="modArmorCursed" installable_tags="armor" modifier_tags="xpmod" blocked_tags="noMods" type="attachment">
+      <property name="CustomIcon" value="modRadiationReady"/>
+      <property name="CustomIconTint" value="302929"/>
+      <property name="DisplayType" value="modUIArmorCursed"/>
+      <property name="UnlockedBy" value="HML"/>
+      <property name="Stacknumber" value="1"/>
+      <property name="DescriptionKey" value="modArmorCursedDesc"/>      
+      <property name="Group" value="Mods"/>
+      <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+      <effect_group tiered="false">
+        <display_value name="dPlayerExpGain" value=".05"/>
+        <passive_effect name="PlayerExpGain" operation="perc_add" value=".05"/>
+        <passive_effect name="PhysicalDamageResist" operation="base_add" value="-3"/>
+      </effect_group>
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="PPBF"/>
+        <passive_effect name="PlayerExpGain" operation="perc_add" value="-.025"/>
+      </effect_group>
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="PPBF2"/>
+        <passive_effect name="PlayerExpGain" operation="perc_add" value="-.0375"/>
+      </effect_group>
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="PPBF3"/>
+        <passive_effect name="PlayerExpGain" operation="perc_add" value="-.0375"/>
+      </effect_group>
+
+    </item_modifier>
+    <item_modifier name="modCursedStone" installable_tags="weapon,tool" modifier_tags="specialXpMod" blocked_tags="noMods" type="attachment">
+      <property name="Extends" value="modGeneralMaster"/>
+      <property name="ItemTypeIcon" value="gear"/>
+
+      <!--<property name="DisplayType" value="modArmor"/>-->
+      <property name="CustomIcon" value="resourceRawDiamond"/>
+      <property name="CustomIconTint" value="302929"/>
+      <property name="UnlockedBy" value="special"/>
+      <property name="DescriptionKey" value="modCursedDesc"/>
+      <property name="Stacknumber" value="1"/>
+      <property name="Group" value="MSeries"/>
+      <property name="Candrop" value="false"/>
+      <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+      <effect_group tiered="false">
+        <passive_effect name="PlayerExpGain" operation="perc_add" value=".5"/>
+        <passive_effect name="PhysicalDamageResist" operation="base_add" value="-15"/>
+      </effect_group>
+      <effect_group tiered="false">        
+        <passive_effect name="EntityDamage" operation="perc_add" value="-.5"/>
+      </effect_group>
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="PPBF"/>
+        <passive_effect name="PlayerExpGain" operation="perc_add" value="-.25"/>
+      </effect_group>
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="PPBF2"/>
+        <passive_effect name="PlayerExpGain" operation="perc_add" value="-.375"/>
+      </effect_group>
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="PPBF3"/>
+        <passive_effect name="PlayerExpGain" operation="perc_add" value="-.375"/>
+      </effect_group>
+    </item_modifier>
+    <item_modifier name="Cursed_mod" installable_tags="weapon,tool" modifier_tags="specialXpMod" blocked_tags="noMods" type="attachment">
+      <property name="ItemTypeIcon" value="gear"/>
+      <!--<property name="DisplayType" value="modArmor"/>-->
+      <property name="CustomIcon" value="modMeleeStunBatonRepulsor"/>
+      <property name="CustomIconTint" value="302929"/>
+      <property name="UnlockedBy" value="special"/>
+      <property name="DescriptionKey" value="modDPDesc"/>
+      <property name="Stacknumber" value="1"/>
+      <property name="Group" value="MSeries"/>
+      <property name="Candrop" value="false"/>
+      <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+      <effect_group tiered="false">
+        <passive_effect name="PlayerExpGain" operation="perc_add" value="1"/>
+        <passive_effect name="PhysicalDamageResist" operation="base_add" value="-30"/>
+        <passive_effect name="EntityDamage" operation="perc_add" value="-1.1"/>
+      </effect_group>
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="PPBF"/>
+        <passive_effect name="PlayerExpGain" operation="perc_add" value="-.5"/>
+      </effect_group>
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="PPBF2"/>
+        <passive_effect name="PlayerExpGain" operation="perc_add" value="-.75"/>
+      </effect_group>
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="PPBF3"/>
+        <passive_effect name="PlayerExpGain" operation="perc_add" value="-.75"/>
+      </effect_group>
+    </item_modifier>
+    <item_modifier name="modArmorTreasureHunterLegend" installable_tags="armorHead" modifier_tags="attributeBoost" blocked_tags="noMods" type="attachment">
+      <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+      <property name="CustomIcon" value="modArmorTreasureHunter"/>     
+      <property name="Material" value="Morganic"/>
+      <property name="EconomicValue" value="20000"/>			
+			<property name="DisplayType" value="LLD"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="Group" value="Tools/Traps"/>
+			<property name="UnlockedBy" value="special"/>
+			<property name="DescriptionKey" value="UGLDesc"/>
+
+      <effect_group tiered="false">
+        <passive_effect name="ModSlots" operation="base_set" value="0"/>
+        <display_value name="LDatt" value="1"/>
+        <passive_effect name="ModSlots" operation="base_set" value="1"/>
+        <passive_effect name="LootStage" operation="base_add" value="10"/>
+        <passive_effect name="TreasureBlocksPerReduction" operation="base_add" value="-2"/>
+        <passive_effect name="HypothermalResist" operation="base_add" value="10"/>
+        <passive_effect name="HyperthermalResist" operation="base_add" value="10"/>
+        <passive_effect name="AttributeLevel" tags="attStrength" operation="base_add" value="1"/>
+        <passive_effect name="AttributeLevel" tags="attIntellect" operation="base_add" value="1"/>
+        <passive_effect name="AttributeLevel" tags="attCharisma" operation="base_add" value="1"/>
+        <passive_effect name="AttributeLevel" tags="attPerception" operation="base_add" value="1"/>
+        <passive_effect name="AttributeLevel" tags="attAgility" operation="base_add" value="1"/>
+        <passive_effect name="AttributeLevel" tags="attFortitude" operation="base_add" value="1"/>
+        <passive_effect name="CraftingTime" operation="perc_add" value="-.2"/>
+        <passive_effect name="PlayerExpGain" operation="perc_add" value=".20"/>
+        <display_value name="dCraftingTime" value="-.2"/>
+        <display_value name="dPlayerExpGain" value=".2"/>
+        <display_value name="dTreasureBlocksPerReduction" value="-2"/>
+      </effect_group>
+      <effect_group>
+				<requirement name="HasBuff" buff="PPBF"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="HasBuff" buff="PPBF2"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.15"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="HasBuff" buff="PPBF3"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.15"/>
+			</effect_group>
+    </item_modifier>
+
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ --> 
+
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Uniquie Mods ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+    <item_modifier name="modUNArmorPlat" installable_tags="armor" modifier_tags="resistance" blocked_tags="noMods,LAS" type="attachment">
+      <property name="ItemTypeIcon" value="gear"/>
+      <property name="DisplayType" value="modArmor"/>
+      <property name="CustomIcon" value="modArmorPlatingReinforced"/>
+      <property name="CustomIconTint" value="50,50,50"/>
+      <property name="UnlockedBy" value="HML"/>
+      <property name="Stacknumber" value="1"/>
+      <property name="Group" value="Mods"/>
+      <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+      <property name="DescriptionKey" value="modArmouni"/>
+      <effect_group tiered="false">
+        <passive_effect name="PhysicalDamageResist" operation="base_add" value="3"/>
+      </effect_group>
+    </item_modifier>
+    <item_modifier name="modUNArmorCust" installable_tags="armor" modifier_tags="movement" blocked_tags="noMods,padded" type="attachment">
+      <property name="CustomIcon" value="modArmorCustomizedFittings"/>
+      <property name="UnlockedBy" value="modArmorCustomizedFittingsSchematic"/>
+      <property name="CustomIconTint" value="50,50,50"/>
+      <property name="DisplayType" value="modArmorMobility"/>
+      <property name="UnlockedBy" value="HML"/>
+      <property name="Stacknumber" value="1"/>
+      <property name="Group" value="Mods"/>
+      <property name="DescriptionKey" value="modUNArmorCustDesc"/>
+      <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+      <effect_group tiered="false">
+        <passive_effect name="Mobility" operation="perc_add" value=".04"/>
+        <passive_effect name="StaminaChangeOT" operation="perc_add" value=".029" tags="walking"/>
+        <passive_effect name="StaminaChangeOT" operation="perc_add" value=".059" tags="running"/>
+        <display_value name="dStaminaChangeOT" value=".6"/>
+      </effect_group>
+    </item_modifier>
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ --> 
+
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Divine Mods ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+    <item_modifier name="Divine_mod" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
+      <property name="ItemTypeIcon" value="gear"/>
+      <!--<property name="DisplayType" value="modArmor"/>-->
+      <property name="CustomIcon" value="modMeleeStunBatonRepulsor"/>
+      <property name="CustomIconTint" value="00AAE4"/>
+      <property name="UnlockedBy" value="special"/>
+      <property name="DescriptionKey" value="moddevinp"/>
+      <property name="Stacknumber" value="1"/>
+      <property name="Group" value="MSeries"/>
+      <property name="Candrop" value="false"/>
+      <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+      <effect_group tiered="false">
+        <passive_effect name="EntityDamage" operation="perc_add" value="1"/>
+        <requirement name="EntityTagCompare" target="other" tags="zombie"/>
+      </effect_group>
+      <effect_group tiered="false">
+        <passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
+        <requirement name="EntityTagCompare" target="other" tags="animal"/>        
+      </effect_group>
+      <effect_group tiered="false">
+        <requirement name="EntityTagCompare" target="other" tags="radiated"/>
+        <triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
+      </effect_group>
+      <effect_group tiered="false">
+        <requirement name="EntityTagCompare" target="other" tags="bossrad"/>
+        <triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
+      </effect_group>      
+
+    </item_modifier>
+    <!--Version de donacion-->
+
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ --> 
+
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Extra Slots ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+    <item_modifier name="modExtra1" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
+      <property name="ItemTypeIcon" value="gear"/>
+      <!--<property name="DisplayType" value="modArmor"/>-->
+      <property name="CustomIcon" value="toolAndDieSet"/>
+      <property name="CustomIconTint" value="00AAE4"/>
+      <property name="UnlockedBy" value="special"/>
+      <property name="DescriptionKey" value="moddevinp"/>
+      <property name="Stacknumber" value="1"/>
+      <property name="Group" value="MSeries"/>
+      <property name="Candrop" value="false"/>
+      <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+      <effect_group tiered="false">
+        <requirement name="EntityTagCompare" target="other" tags="zombie"/>
+        <passive_effect name="EntityDamage" operation="perc_add" value="1.1"/>
+      </effect_group>
+      <effect_group tiered="false">
+        <requirement name="EntityTagCompare" target="other" tags="player,animal"/>
+        <passive_effect name="EntityDamage" operation="perc_add" value="1.1"/>
+      </effect_group>
+      <effect_group tiered="false">
+        <requirement name="EntityTagCompare" target="other" tags="radiated"/>
+        <triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
+      </effect_group>
+      <effect_group tiered="false">
+        <requirement name="EntityTagCompare" target="other" tags="bossrad"/>
+        <triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
+      </effect_group>
+
+    </item_modifier>
+    <item_modifier name="modExtra2" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
+      <property name="ItemTypeIcon" value="gear"/>
+      <!--<property name="DisplayType" value="modArmor"/>-->
+      <property name="CustomIcon" value="toolAndDieSet"/>
+      <property name="CustomIconTint" value="00AAE4"/>
+      <property name="UnlockedBy" value="special"/>
+      <property name="DescriptionKey" value="moddevinp"/>
+      <property name="Stacknumber" value="1"/>
+      <property name="Group" value="MSeries"/>
+      <property name="Candrop" value="false"/>
+      <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+      <effect_group tiered="false">
+        <requirement name="EntityTagCompare" target="other" tags="zombie"/>
+        <passive_effect name="EntityDamage" operation="perc_add" value="1.1"/>
+      </effect_group>
+      <effect_group tiered="false">
+        <requirement name="EntityTagCompare" target="other" tags="player,animal"/>
+        <passive_effect name="EntityDamage" operation="perc_add" value="1.1"/>
+      </effect_group>
+      <effect_group tiered="false">
+        <requirement name="EntityTagCompare" target="other" tags="radiated"/>
+        <triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
+      </effect_group>
+      <effect_group tiered="false">
+        <requirement name="EntityTagCompare" target="other" tags="bossrad"/>
+        <triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
+      </effect_group>
+
+    </item_modifier>
+    <item_modifier name="modExtra3" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
+      <property name="ItemTypeIcon" value="gear"/>
+      <!--<property name="DisplayType" value="modArmor"/>-->
+      <property name="CustomIcon" value="toolAndDieSet"/>
+      <property name="CustomIconTint" value="00AAE4"/>
+      <property name="UnlockedBy" value="special"/>
+      <property name="DescriptionKey" value="moddevinp"/>
+      <property name="Stacknumber" value="1"/>
+      <property name="Group" value="MSeries"/>
+      <property name="Candrop" value="false"/>
+      <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+      <effect_group tiered="false">
+        <requirement name="EntityTagCompare" target="other" tags="zombie"/>
+        <passive_effect name="EntityDamage" operation="perc_add" value="1.1"/>
+      </effect_group>
+      <effect_group tiered="false">
+        <requirement name="EntityTagCompare" target="other" tags="player,animal"/>
+        <passive_effect name="EntityDamage" operation="perc_add" value="1.1"/>
+      </effect_group>
+      <effect_group tiered="false">
+        <requirement name="EntityTagCompare" target="other" tags="radiated"/>
+        <triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
+      </effect_group>
+      <effect_group tiered="false">
+        <requirement name="EntityTagCompare" target="other" tags="bossrad"/>
+        <triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
+      </effect_group>
+
+    </item_modifier>
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ --> 
+  </append>
+
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ New weapon Mods position ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+      <append xpath="/item_modifiers/item_modifier[@name='modGunSoundSuppressorSilencer']">
+        <item_property_overrides name="Pistola_Legendaria">
+          <property name="Sound_start" value="pistol_s_fire"/>
+          <property name="BarrelOffset" value="0,-.006,.127"/>
+          <property name="BarrelScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="Recortada_Legendaria">
+          <property name="Sound_start" value="pump_shotgun_s_fire"/>
+        </item_property_overrides>
+        <item_property_overrides name="Rifle_Legendario">
+          <property name="Sound_start" value="hunting_rifle_s_fire"/>
+          <property name="BarrelOffset" value="0,-0.009,0.551"/>
+          <property name="BarrelScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="AK47_Legendaria">
+          <property name="Sound_start" value="ak47_s_fire"/>
+          <property name="Sound_end" value="silencefiller"/>
+          <property name="Sound_loop" value="ak47_s_fire"/>
+          <property name="BarrelOffset" value="-.001,-.0197,.3197"/>
+          <property name="BarrelScale" value="1,1,1"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="SMG5_Legendaria">
+          <property name="Sound_start" value="mp5_s_fire"/>
+          <property name="Sound_end" value="silencefiller"/>
+          <property name="Sound_loop" value="mp5_s_fire"/>
+          <property name="BarrelOffset" value="0,0,0"/>
+          <property name="BarrelScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="Escopeta_Legendaria">
+          <property name="Sound_start" value="pump_shotgun_s_fire"/>
+          <property name="BarrelOffset" value="0,-0.0322,0.4516"/>
+          <property name="BarrelScale" value="1.1,1.1,1.5"/>
+        </item_property_overrides>
+        <item_property_overrides name="Francotirador_Legendario">
+          <property name="Sound_start" value="sniperrifle_s_fire"/>
+          <property name="BarrelOffset" value="0,-0.02,0.2182"/>
+          <property name="BarrelScale" value="0.88,0.88,0.88"/>
+        </item_property_overrides>
+        <item_property_overrides name="ARTactico_Legendario">
+          <property name="Sound_start" value="ak47_s_fire"/>
+          <property name="Sound_end" value="silencefiller"/>
+          <property name="Sound_loop" value="ak47_s_fire"/>
+          <property name="BarrelOffset" value="0,.005,.275"/>
+          <property name="BarrelScale" value="1,1,1"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="mitico_Delta01">
+          <property name="Sound_start" value="mp5_s_fire"/>
+          <property name="Sound_end" value="silencefiller"/>
+          <property name="Sound_loop" value="mp5_s_fire"/>
+          <property name="BarrelOffset" value="0,0,0"/>
+          <property name="BarrelScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="mitico_Peacemaker">
+          <property name="Sound_start" value="pump_shotgun_s_fire"/>
+          <property name="Sound_loop" value="pump_shotgun_s_fire"/>
+          <property name="BarrelOffset" value="0,0,0"/>
+          <property name="BarrelScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="mitico_Destroyer">
+          <property name="Sound_start" value="pump_shotgun_s_fire"/>
+          <property name="Sound_loop" value="pump_shotgun_s_fire"/>
+          <property name="BarrelOffset" value="0,-.0322,.4516"/>
+          <property name="BarrelScale" value="1.1,1.1,1.5"/>
+        </item_property_overrides>
+        <item_property_overrides name="mitico_OneShot">
+          <property name="Sound_start" value="sniperrifle_s_fire"/>
+          <property name="Sound_loop" value="sniperrifle_s_fire"/>
+          <property name="BarrelOffset" value="0,-.02,.2182"/>
+          <property name="BarrelScale" value=".88,.88,.88"/>
+        </item_property_overrides>
+        <item_property_overrides name="mitico_Dominator">
+          <property name="Sound_start" value="m60_s_fire"/>
+          <property name="Sound_end" value="silencefiller"/>
+          <property name="Sound_loop" value="m60_s_fire"/>
+          <property name="BarrelOffset" value="0,-.005,.31"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="gunAncientSmg">
+          <property name="Sound_start" value="mp5_s_fire"/>
+          <property name="Sound_end" value="silencefiller"/>
+          <property name="Sound_loop" value="mp5_s_fire"/>
+          <property name="BarrelOffset" value="0,0,0"/>
+          <property name="BarrelScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientDesert">
+          <property name="Sound_start" value="pump_shotgun_s_fire"/>
+          <property name="Sound_loop" value="pump_shotgun_s_fire"/>
+          <property name="BarrelOffset" value="0,0,0"/>
+          <property name="BarrelScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientDesert2">
+          <property name="Sound_start" value="hunting_rifle_s_fire"/>
+          <property name="BarrelOffset" value="0,-.009,.551"/>
+          <property name="BarrelScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientShotgun">
+          <property name="Sound_start" value="pump_shotgun_s_fire"/>
+          <property name="Sound_loop" value="pump_shotgun_s_fire"/>
+          <property name="BarrelOffset" value="0,-.0322,.4516"/>
+          <property name="BarrelScale" value="1.1,1.1,1.5"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientSniper">
+          <property name="Sound_start" value="sniperrifle_s_fire"/>
+          <property name="Sound_loop" value="sniperrifle_s_fire"/>
+          <property name="BarrelOffset" value="0,-.02,.2182"/>
+          <property name="BarrelScale" value=".88,.88,.88"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientAuto">
+          <property name="Sound_start" value="m60_s_fire"/>
+          <property name="Sound_end" value="silencefiller"/>
+          <property name="Sound_loop" value="m60_s_fire"/>
+          <property name="BarrelOffset" value="0,-.005,.31"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientShotgun2">
+          <property name="BarrelOffset" value="0,-.02,.1"/>
+          <property name="BarrelScale" value="1,1,1"/>
+        </item_property_overrides>
+
+        <effect_group tiered="false">
+          <triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Mods/Barrels/SilencerPrefab.prefab" local_offset="0,.02,0" parent_transform="Attachments/Barrel">
+            <requirement name="HoldingItemHasTags" tags="bizon"/>
+          </triggered_effect>
+        </effect_group>
+      </append>
+      <append xpath="/item_modifiers/item_modifier[@name='modGunLaserSight']">
+
+        <item_property_overrides name="legend_T1Ballesta">
+          <property name="SideOffset" value="0,-.038,.32"/>
+          <property name="SideScale" value="1,1,1"/>
+          <property name="SideRotation" value="0,0,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="Pistola_Legendaria">
+          <property name="SideOffset" value="0,0.0148,0.0479"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="AK47_Legendaria">
+          <property name="SideOffset" value="0,0,.31"/>
+			    <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="Recortada_Legendaria">
+          <property name="SideOffset" value="0.0,-.055,0.07"/>
+          <property name="SideScale" value=".4,.4,.4"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="legend_T2Ballesta">
+          <property name="SideOffset" value="0,0,.32"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="SMG5_Legendaria">
+          <property name="SideOffset" value="0,0.0108,0.0148"/>
+          <property name="SideScale" value="1.25,1.25,1.25"/>
+        </item_property_overrides>
+        <item_property_overrides name="Magnum44_Legendaria">
+          <property name="SideOffset" value="0,0.065,0.14"/>
+          <property name="SideScale" value="0.75,0.75,0.75"/>
+        </item_property_overrides>
+        <item_property_overrides name="Escopeta_Legendaria">
+          <property name="SideOffset" value="0,-0.0,0.41"/>
+          <property name="SideScale" value="1.12,1.12,1.12"/>
+        </item_property_overrides>
+        <item_property_overrides name="Francotirador_Legendario">
+          <property name="SideOffset" value="0,0.003,0.1674"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="ARTactico_Legendario">
+          <property name="SideOffset" value="0,0.021,0.258"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="[Mitico]_LCB">
+          <property name="SideOffset" value="0,0,.32"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="mitico_Delta01">
+          <property name="SideOffset" value="0,0.0108,0.0148"/>
+          <property name="SideScale" value="1.25,1.25,1.25"/>
+        </item_property_overrides>
+        <item_property_overrides name="mitico_Dominator">
+          <property name="SideOffset" value="-0.0386,0.0382,0.3735"/>
+          <property name="SideRotation" value="0,0,-90"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="gunAncientSmg">
+          <property name="SideOffset" value="0,0.0108,0.0148"/>
+          <property name="SideScale" value="1.25,1.25,1.25"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientAuto">
+          <property name="SideOffset" value="-0.0386,0.0382,0.3735"/>
+          <property name="SideRotation" value="0,0,-90"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientSniper2">
+          <property name="SideOffset" value="0,-0.04,.2"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientDesert2">
+          <property name="SideOffset" value="0,.0061,.2455"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientSmg2">
+          <property name="SideOffset" value="0,0,.31"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="unique_Railgun">
+          <property name="SideOffset" value="0,-0.04,.2"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="unique_Savery">
+          <property name="SideOffset" value="0,.0061,.2455"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="unique_HyperBlaster">
+          <property name="SideOffset" value="0,0,.31"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+      </append>
+      <append xpath="/item_modifiers/item_modifier[@name='modGunFlashlight']">
+        <item_property_overrides name="legend_T1Ballesta">
+          <property name="SideOffset" value="0,-.038,.32"/>
+          <property name="SideScale" value="1,1,1"/>
+          <property name="SideRotation" value="0,0,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="Escopeta_Legendaria">
+          <property name="SideOffset" value="0,-0.0,0.41"/>
+          <property name="SideScale" value="1.12,1.12,1.12"/>
+        </item_property_overrides>
+        <item_property_overrides name="Pistola_Legendaria">
+          <property name="SideOffset" value="0,0.0198,0.0475"/>
+          <property name="SideScale" value="0.75,0.75,0.75"/>
+        </item_property_overrides>
+        <item_property_overrides name="Recortada_Legendaria">
+          <property name="SideOffset" value="0.0,-.03,0.066"/>
+          <property name="SideScale" value=".4,.4,.4"/>
+        </item_property_overrides>
+        <item_property_overrides name="AK47_Legendaria">
+          <property name="SideOffset" value="0,0,.28"/>
+			    <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="legend_T2Ballesta">
+          <property name="SideOffset" value="0,0,.32"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="SMG5_Legendaria">
+          <property name="SideOffset" value="0,0.0065,0"/>
+          <property name="SideScale" value="1.5,1.5,1.5"/>
+        </item_property_overrides>
+        <item_property_overrides name="Magnum44_Legendaria">
+          <property name="SideOffset" value="0,0.0621,0.095"/>
+          <property name="SideScale" value="0.75,0.75,0.75"/>
+        </item_property_overrides>
+        <item_property_overrides name="Rifle_Legendario">
+          <property name="SideOffset" value="0,0.0061,0.2455"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="Francotirador_Legendario">
+          <property name="SideOffset" value="0,-0.0025,0.175"/>
+          <property name="SideScale" value="1.12,1.12,1.12"/>
+        </item_property_overrides>
+        <item_property_overrides name="ARTactico_Legendario">
+          <property name="SideOffset" value="0,0.0,0.23"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="[Mitico]_LCB">
+          <property name="SideOffset" value="0,0,.32"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="mitico_Delta01">
+          <property name="SideOffset" value="0,0.0065,0"/>
+          <property name="SideScale" value="1.5,1.5,1.5"/>
+        </item_property_overrides>
+        <item_property_overrides name="mitico_Dominator">
+          <property name="SideOffset" value="-.0386,.0382,.3519"/>
+          <property name="SideRotation" value="0,0,-90"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="gunAncientSmg">
+          <property name="SideOffset" value="0,0.0065,0"/>
+          <property name="SideScale" value="1.5,1.5,1.5"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientSmg2">
+          <property name="SideOffset" value="0,0,.28"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientAuto">
+          <property name="SideOffset" value="-.0386,.0382,.3519"/>
+          <property name="SideRotation" value="0,0,-90"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientDesert2">
+          <property name="SideOffset" value="0,0.0061,0.2455"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientSniper2">
+          <property name="SideOffset" value="0,-0.04,.2"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+        
+        <item_property_overrides name="unique_Savery">
+          <property name="SideOffset" value="0,0.0061,0.2455"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="unique_Railgun">
+          <property name="SideOffset" value="0,-0.04,.2"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="unique_HyperBlaster">
+          <property name="SideOffset" value="0,0,.28"/>
+          <property name="SideScale" value="1,1,1"/>
+        </item_property_overrides>
+      </append>
+      <append xpath="/item_modifiers/item_modifier[@name='modGunReflexSight']">
+        <item_property_overrides name="legend_T1Ballesta">
+          <property name="ScopeOffset" value="0,.052,-.05"/>
+          <property name="ScopeScale" value=".6,.6,.6"/>
+          <property name="ScopeCameraOffset" value=".00008,0.0025,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="Pistola_Legendaria">
+          <property name="ScopeOffset" value="0,0,0"/>
+          <property name="ScopeScale" value=".63,.63,.63"/>
+          <property name="ScopeCameraOffset" value="0,-.003,.15"/>
+        </item_property_overrides>
+        <item_property_overrides name="Rifle_Legendario">
+          <property name="ScopeOffset" value="-.0006,.06,.08"/>
+          <property name="ScopeScale" value=".7,.7,.7"/>
+          <property name="ScopeCameraOffset" value="0,-.012,-.07"/>
+        </item_property_overrides>
+        <item_property_overrides name="AK47_Legendaria">
+          <property name="ScopeOffset" value="0,.08,-.2035"/>
+			    <property name="ScopeScale" value=".63,.63,.63"/>
+		    	<property name="ScopeCameraOffset" value="0.0005,-.019,.22"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="legend_T2Ballesta">
+          <property name="ScopeOffset" value="0,0,-.2"/>
+          <property name="ScopeScale" value=".6,.6,.6"/>
+          <property name="ScopeCameraOffset" value="0,-.007,-.025"/>
+        </item_property_overrides>
+        <item_property_overrides name="SMG5_Legendaria">
+          <property name="ScopeOffset" value="0,.072,.11"/>
+          <property name="ScopeScale" value=".7,.7,.7"/>
+          <property name="ScopeCameraOffset" value="0,-.013,-.2"/>
+        </item_property_overrides>
+        <item_property_overrides name="Magnum44_Legendaria">
+          <property name="ScopeOffset" value="0,.11,.12"/>
+          <property name="ScopeScale" value=".5,.5,.5"/>
+          <property name="ScopeCameraOffset" value="0,-.015,-.03"/>
+        </item_property_overrides>
+        <item_property_overrides name="Escopeta_Legendaria">
+          <property name="ScopeOffset" value="0,.056,.05"/>
+          <property name="ScopeScale" value=".7,.7,.7"/>
+          <property name="ScopeCameraOffset" value="0,-.0255,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="Francotirador_Legendario">
+          <property name="ScopeOffset" value="0,.073,-.13"/>
+          <property name="ScopeScale" value=".7,.7,.7"/>
+          <property name="ScopeCameraOffset" value="-0.0011,-0.014,-.025"/>
+        </item_property_overrides>
+        <item_property_overrides name="ARTactico_Legendario">
+          <property name="ScopeOffset" value="0,0.097,-0.098"/>
+          <property name="ScopeScale" value=".63,.63,.63"/>
+          <property name="ScopeCameraOffset" value="0,-.018,0.0016"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="[Mitico]_LCB">
+          <property name="ScopeOffset" value="0,0.09,-0.055"/>
+          <property name="ScopeScale" value="0.6,0.6,0.6"/>
+          <property name="ScopeCameraOffset" value="0.00008,-0.021,0.03"/>
+        </item_property_overrides>
+        <item_property_overrides name="mitico_Delta01">
+          <property name="ScopeOffset" value=".0001,.1,-.15"/>
+          <property name="ScopeScale" value=".55,.55,.55"/>
+          <property name="ScopeCameraOffset" value="0,-.015,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="mitico_Peacemaker">
+			    <property name="ScopeCameraOffset" value="0,-.01,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="mitico_Destroyer">
+			    <property name="ScopeCameraOffset" value="0,-.019,.10"/>
+        </item_property_overrides>
+        <item_property_overrides name="mitico_OneShot">
+			    <property name="ScopeCameraOffset" value="0,-.0055,0"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="mitico_Dominator">
+          <property name="ScopeOffset" value="0,0,0"/>
+          <property name="ScopeScale" value=".63,.63,.63"/>
+          <property name="ScopeCameraOffset" value="0,-0.01,.1"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="gunAncientAuto">
+          <property name="ScopeOffset" value="0,0,0"/>
+          <property name="ScopeScale" value=".63,.63,.63"/>
+          <property name="ScopeCameraOffset" value="0,-0.01,.1"/>
+        </item_property_overrides>        
+
+        <item_property_overrides name="gunAncientSmg">
+          <property name="ScopeOffset" value=".0001,0.1,-0.15"/>
+          <property name="ScopeScale" value="0.55,0.55,0.55"/>
+          <property name="ScopeCameraOffset" value="-.00005,-.0214,.15"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientSmg2">
+          <property name="ScopeOffset" value="0.00015,0.1,0.025"/>
+          <property name="ScopeScale" value="0.7,0.7,0.7"/>
+          <property name="ScopeCameraOffset" value="0,-0.0345,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientDesert">
+			    <property name="ScopeCameraOffset" value="0,-.01,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientDesert2">
+          <property name="ScopeOffset" value="-.0006,.06,.08"/>
+          <property name="ScopeScale" value=".7,.7,.7"/>
+          <property name="ScopeCameraOffset" value=".0003,-.0185,.1"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="gunAncientShotgun">
+			    <property name="ScopeCameraOffset" value="0,-.019,.10"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientShotgun2">
+          <property name="ScopeOffset" value="0,0.0695,0.01"/>
+          <property name="ScopeScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientSniper">
+          <property name="ScopeCameraOffset" value="0,-.0055,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientSniper2">
+          <property name="ScopeOffset" value="-0.0006,0.08,0.08"/>
+          <property name="ScopeScale" value="0.7,0.7,0.7"/>
+          <property name="ScopeCameraOffset" value=".0003,-0.0185,0.1"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="unique_Savery">
+          <property name="ScopeOffset" value="-.0006,.06,.08"/>
+          <property name="ScopeScale" value=".7,.7,.7"/>
+          <property name="ScopeCameraOffset" value=".0003,-.0185,.1"/>
+        </item_property_overrides>
+        <item_property_overrides name="unique_Railgun">
+          <property name="ScopeOffset" value="-0.0006,0.08,0.08"/>
+          <property name="ScopeScale" value="0.7,0.7,0.7"/>
+          <property name="ScopeCameraOffset" value=".0003,-0.0185,0.1"/>
+        </item_property_overrides>
+        <item_property_overrides name="unique_KronosXII">
+          <property name="ScopeOffset" value="0,0.0695,0.01"/>
+          <property name="ScopeScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="unique_HyperBlaster">
+          <property name="ScopeOffset" value="0.00015,0.1,0.025"/>
+          <property name="ScopeScale" value="0.7,0.7,0.7"/>
+          <property name="ScopeCameraOffset" value="0,-0.0345,0"/>
+        </item_property_overrides>
+      </append>
+      <append xpath="/item_modifiers/item_modifier[@name='modGunScopeSmall']">
+        <item_property_overrides name="unique_Railgun">
+          <property name="ScopeOffset" value="0,.0936,-.1497"/>
+          <property name="ScopeScale" value=".9,.9,.9"/>
+          <property name="ScopeCameraOffset" value="0,0,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="unique_Savery">
+          <property name="ScopeOffset" value="-0.0006,0.081,0.005"/>
+          <property name="ScopeScale" value="1,1,1"/>
+          <property name="ScopeCameraOffset" value="0,-0.01,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="unique_HyperBlaster">
+          <property name="ScopeOffset" value="0,.088,-.2"/>
+          <property name="ScopeScale" value="1,1,1"/>
+          <property name="ScopeCameraOffset" value="0,-.04,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="legend_T1Ballesta">
+          <property name="ScopeOffset" value="0,.061,-.0761"/>
+          <property name="ScopeScale" value=".9,.9,.9"/>
+          <property name="ScopeCameraOffset" value="0,0,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="Pistola_Legendaria">
+          <property name="ScopeOffset" value="0,.074,.078"/>
+          <property name="ScopeScale" value="1,1,1"/>
+          <property name="ScopeCameraOffset" value="0,-.0225,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="AK47_Legendaria">
+          <property name="ScopeOffset" value="0,.088,-.2"/>
+			    <property name="ScopeScale" value="1,1,1"/>
+		    	<property name="ScopeCameraOffset" value="0,-.04,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="SMG5_Legendaria">
+          <property name="ScopeOffset" value="0,0.0999,-0.2534"/>
+          <property name="ScopeScale" value="0.9,0.9,0.9"/>
+          <property name="ScopeCameraOffset" value="0,0,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="Rifle_Legendario">
+          <property name="ScopeOffset" value="-0.0006,0.081,0.005"/>
+          <property name="ScopeScale" value="1,1,1"/>
+          <property name="ScopeCameraOffset" value="0,-0.01,0"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="legend_T2Ballesta">
+          <property name="ScopeOffset" value="0,.092,-.06"/>
+          <property name="ScopeScale" value=".9,.9,.9"/>
+        </item_property_overrides>
+        <item_property_overrides name="Magnum44_Legendaria">
+          <property name="ScopeOffset" value="0,0.1037,0.0689"/>
+          <property name="ScopeScale" value="1,1,1"/>
+          <property name="ScopeCameraOffset" value="0,0,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="Escopeta_Legendaria">
+          <property name="ScopeOffset" value="0,.056,.013"/>
+        </item_property_overrides>
+        <item_property_overrides name="Francotirador_Legendario">
+          <property name="ScopeOffset" value="0,0.0736,-0.1497"/>
+          <property name="ScopeScale" value="0.9,0.9,0.9"/>
+          <property name="ScopeCameraOffset" value="0,0,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="ARTactico_Legendario">
+          <property name="ScopeOffset" value="0,0.1047,-0.2"/>
+          <property name="ScopeScale" value="1,1,1"/>
+          <property name="ScopeCameraOffset" value="0,-.022,0"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="[Mitico]_LCB">
+          <property name="ScopeOffset" value="0,0.092,-0.06"/>
+          <property name="ScopeScale" value=".9,.9,.9"/>
+        </item_property_overrides>
+        <item_property_overrides name="mitico_Delta01">
+          <property name="ScopeOffset" value="0,0.0999,-0.2534"/>
+          <property name="ScopeScale" value="0.9,0.9,0.9"/>
+          <property name="ScopeCameraOffset" value="0,0,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="mitico_Peacemaker">
+          <property name="ScopeCameraOffset" value="0,-.03,-.2"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="gunAncientSmg">
+          <property name="ScopeOffset" value="0,0.0999,-0.2534"/>
+          <property name="ScopeScale" value="0.9,0.9,0.9"/>
+          <property name="ScopeCameraOffset" value="0,0,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientSmg2">
+          <property name="ScopeOffset" value="0,.088,-.2"/>
+          <property name="ScopeScale" value="1,1,1"/>
+          <property name="ScopeCameraOffset" value="0,-.04,0"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="gunAncientSniper2">
+          <property name="ScopeOffset" value="0,.0936,-.1497"/>
+          <property name="ScopeScale" value=".9,.9,.9"/>
+          <property name="ScopeCameraOffset" value="0,0,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientDesert">
+          <property name="ScopeCameraOffset" value="0,-.03,-.2"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientDesert2">
+          <property name="ScopeOffset" value="-0.0006,0.081,0.005"/>
+          <property name="ScopeScale" value="1,1,1"/>
+          <property name="ScopeCameraOffset" value="0,-0.01,0"/>
+        </item_property_overrides>
+
+
+      </append>
+      <append xpath="/item_modifiers/item_modifier[@name='modGunScopeMedium']">
+        <item_property_overrides name="AK47_Legendaria">
+          <property name="ScopeOffset" value="0,.085,-.14"/>
+          <property name="ScopeScale" value="1,1,1"/>
+          <property name="ScopeCameraOffset" value="0,-.022,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="Rifle_Legendario">
+          <property name="ScopeOffset" value="-0.0018,0.075,0.015"/>
+          <property name="ScopeScale" value="1,1,1"/>
+          <property name="ScopeCameraOffset" value="0,-0.0238,0"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="SMG5_Legendaria">
+          <property name="ScopeOffset" value="-.0012,.098,-.2405"/>
+          <property name="ScopeScale" value=".8,.8,.8"/>
+          <property name="ScopeCameraOffset" value="0,0,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="Francotirador_Legendario">
+          <property name="ScopeOffset" value="-0.0018,0.07,-.10"/>
+          <property name="ScopeScale" value="1.6,1.6,1.6"/>
+          <property name="ScopeCameraOffset" value="0,0,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="ARTactico_Legendario">
+          <property name="ScopeOffset" value="0,0.1,-0.117"/>
+          <property name="ScopeScale" value="1,1,1"/>
+          <property name="ScopeCameraOffset" value="0,-.022,0"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="[Mitico]_LCB">
+          <property name="ScopeOffset" value="0,0.092,-0.06"/>
+          <property name="ScopeScale" value=".9,.9,.9"/>
+        </item_property_overrides>
+        <item_property_overrides name="mitico_Delta01">
+          <property name="ScopeOffset" value="-.0012,.098,-.2405"/>
+          <property name="ScopeScale" value=".8,.8,.8"/>
+          <property name="ScopeCameraOffset" value="0,0,0"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="gunAncientSmg">
+          <property name="ScopeOffset" value="-.0012,.098,-.2405"/>
+          <property name="ScopeScale" value=".8,.8,.8"/>
+          <property name="ScopeCameraOffset" value="0,0,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientSmg2">
+          <property name="ScopeOffset" value="0,0.075,0.01"/>
+          <property name="ScopeScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientDesert">
+          <property name="ScopeCameraOffset" value="0,-0.0238,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientDesert2">
+          <property name="ScopeOffset" value="-0.0018,0.075,0.015"/>
+          <property name="ScopeScale" value="1,1,1"/>
+          <property name="ScopeCameraOffset" value="0,-0.0238,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientSniper2">
+          <property name="ScopeOffset" value="-.0018,.09,-.10"/>
+          <property name="ScopeScale" value="1.6,1.6,1.6"/>
+          <property name="ScopeCameraOffset" value="0,0,0"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="unique_HyperBlaster">
+          <property name="ScopeOffset" value="0,0.075,0.01"/>
+          <property name="ScopeScale" value="1,1,1"/>
+        </item_property_overrides>
+        <item_property_overrides name="unique_Railgun">
+          <property name="ScopeOffset" value="-.0018,.09,-.10"/>
+          <property name="ScopeScale" value="1.6,1.6,1.6"/>
+          <property name="ScopeCameraOffset" value="0,0,0"/>
+        </item_property_overrides>
+       
+
+        <item_property_overrides name="unique_Savery">
+          <property name="ScopeOffset" value="-0.0006,0.0,0.14"/>
+          <property name="ScopeScale" value="1.2,1.2,1.2"/>
+          <property name="ScopeCameraOffset" value="0,-0.022,0"/>
+        </item_property_overrides>
+
+
+      </append>
+      <append xpath="/item_modifiers/item_modifier[@name='modGunScopeLarge']">
+        <item_property_overrides name="AK47_Legendaria">
+          <property name="ScopeOffset" value="0,-.0523,.1686"/>
+			    <property name="ScopeScale" value="1,1,1"/>
+			    <property name="ScopeCameraOffset" value="0,0,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="Rifle_Legendario">
+          <property name="ScopeOffset" value="-0.0006,0.0,0.14"/>
+          <property name="ScopeScale" value="1.2,1.2,1.2"/>
+          <property name="ScopeCameraOffset" value="0,-0.022,0"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="Francotirador_Legendario">
+          <property name="ScopeOffset" value="0,0,0"/>
+          <property name="ScopeScale" value="1,1,1"/>
+          <property name="ScopeCameraOffset" value="0,0,0"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="[Mitico]_LCB">
+          <property name="ScopeOffset" value="0,0.061,-0.0761"/>
+          <property name="ScopeScale" value=".9,.9,.9"/>
+          <property name="ScopeCameraOffset" value="0,0,0"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="gunAncientDesert">
+          <property name="ScopeCameraOffset" value="0,-0.022,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientDesert2">
+          <property name="ScopeOffset" value="-0.0006,0.0,0.14"/>
+          <property name="ScopeScale" value="1.2,1.2,1.2"/>
+          <property name="ScopeCameraOffset" value="0,-0.022,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="gunAncientSniper2">
+          <property name="ScopeOffset" value="0,0.015,0"/>
+          <property name="ScopeScale" value="1,1,1"/>
+          <property name="ScopeCameraOffset" value="0,0,0"/>
+        </item_property_overrides>
+
+        <item_property_overrides name="unique_Railgun">
+          <property name="ScopeOffset" value="0,0.015,0"/>
+          <property name="ScopeScale" value="1,1,1"/>
+          <property name="ScopeCameraOffset" value="0,0,0"/>
+        </item_property_overrides>
+        <item_property_overrides name="unique_Savery">
+          <property name="ScopeOffset" value="-0.0006,0.0,0.14"/>
+          <property name="ScopeScale" value="1.2,1.2,1.2"/>
+          <property name="ScopeCameraOffset" value="0,-0.022,0"/>
+        </item_property_overrides>
+      </append>
+      <append xpath="/item_modifiers/item_modifier[@name='modGunSoundSuppressorSilencer']">
+        <item_property_overrides name="unique_KronosXII">
+          <property name="BarrelOffset" value="0,-.02,.1"/>
+          <property name="BarrelScale" value="1,1,1"/>
+        </item_property_overrides>
+
+        <effect_group tiered="false">
+          <triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Mods/Barrels/SilencerPrefab.prefab" local_offset="0,.02,0" parent_transform="Attachments/Barrel">
+            <requirement name="HoldingItemHasTags" tags="bizon"/>
+          </triggered_effect>
+        </effect_group>
+      </append>
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ --> 
+</config>

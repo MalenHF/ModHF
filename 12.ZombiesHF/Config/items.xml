@@ -1,0 +1,3090 @@
+<config>
+	<append xpath="/items">					
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Quest Items ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+		
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ Item Quest Rewardas ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+			<item name="Mineral_Bag">
+				<property name="CustomIcon" value="cntWoodWritableCrate"/>
+				<property name="DescriptionKey" value="Es tu dia de suerte..."/>
+				<property name="HoldType" value="45"/>
+				<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+				<property name="Material" value="Mpaper"/>
+				<property name="ItemTypeIcon" value="treasure"/>
+				<property name="Weight" value="0"/>
+				<property name="Stacknumber" value="10"/>
+				<property name="Group" value="Special Items"/>
+				<property class="Action0">
+
+					<property name="Class" value="OpenBundle"/>
+					<property name="Delay" value="0.5"/>
+					<property name="Use_time" value="1"/>
+					<property name="Sound_start" value="wrench_harvest"/>
+					<property name="Create_item" value="resourceRawDiamond,resourceSilverNugget,resourceGoldNugget,resourceBrokenGlass"/>
+					<property name="Create_item_count" value="10,20,30,1"/>
+				</property>
+			</item>
+			<item name="Mochila de un lunatico">
+				<property name="CustomIcon" value="backpackMedium"/>
+				<property name="DescriptionKey" value="Una mochila tomada del cuerpo de un lunatico..."/>
+				<property name="HoldType" value="45"/>
+				<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+				<property name="Material" value="Mpaper"/>
+				<property name="Stacknumber" value="10"/>
+				<property name="ItemTypeIcon" value="treasure"/>
+				<property name="Weight" value="0"/>
+				<property name="Group" value="Special Items"/>
+				<property class="Action0">
+					<property name="Class" value="OpenBundle"/>
+					<property name="Delay" value="0.5"/>
+					<property name="Use_time" value="1"/>
+					<property name="Sound_start" value="Enemies/Scout_Zombie/zombiefemalescoutalert"/>
+					<property name="Create_item" value="foodHoboStew,drinkJarPureMineralWater,medicalFirstAidKit,drinkJarGrandpasLearningElixir,drinkJarBeer,resourceBrokenGlass"/>
+					<property name="Create_item_count" value="5,5,3,3,3,1"/>
+				</property>
+			</item>
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+		
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Quest Event Tickets ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->	
+			<!--Normal-->	
+				<!-- <item name="LosLunaticos">
+					<property name="name" value="LosLunaticos" />
+					<property name="Group" value="Science"/>
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="ItemTypeIcon" value="death"/>
+					<property name="DescriptionKey" value="TAVOQUESTDesc2"/>
+					<property name="CustomIconTint" value="FFD500"/>
+					<property name="Stacknumber" value="10"/>
+					<property name="TintColor" value="255,214,7"/>
+					<property class="Action0">
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="UseAnimation" value="true"/>
+						<property name="QuestGiven" value="LosLunaticos"/>
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item> -->
+				<!-- <item name="q_VZ">
+					<property name="name" value="Naturaleza" />
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="Group" value="Science"/>
+					<property name="ItemTypeIcon" value="tree"/>
+					<property name="CustomIconTint" value="E2F70F"/>
+					<property name="TintColor" value="115,220,18"/>
+					<property name="Stacknumber" value="5"/>
+					<property name="DescriptionKey" value="VZQuest"/>
+					<property class="Action0">
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="UseAnimation" value="true"/>
+						<property name="QuestGiven" value="q_venganza"/>
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item> -->
+								
+				<!-- <item name="q_Special">
+					<property name="name" value="Nightmare" />
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="Group" value="Science"/>
+					<property name="ItemTypeIcon" value="star"/>
+					<property name="CustomIconTint" value="00E4FF"/>
+					<property name="TintColor" value="4,9,171"/>
+					<property name="Stacknumber" value="5"/>
+					<property name="DescriptionKey" value="SpecialQuest"/>
+					<property class="Action0">
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="UseAnimation" value="true"/>
+						<property name="QuestGiven" value="q_KillSpecial"/>
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item>	 -->
+
+				<item name="q_Ticket"> <!-- Template for action event notes -->					
+					<property name="CreativeMode" value="None"/>
+					<property name="CustomIcon" value="adminQuestTicketMaster"/>
+					<property name="HoldType" value="31"/>
+					<property name="DescriptionKey" value="noteTixDescTierIII"/>					
+					<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+					<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+					<property name="Material" value="Morganic"/>
+					<property name="Weight" value="10"/>
+					<property name="Stacknumber" value="10"/>
+					<property name="EconomicValue" value="10000"/>
+					<property name="Group" value="Special Items"/>
+					<property name="ShowQuality" value="false"/>
+					<property name="SellableToTrader" value="false"/>					
+					<property class="Action0">						
+						<property name="Class" value="Eat"/>						
+						<property name="Sound_start" value="ui_mag_read"/>
+						<property name="PromptTitle" value="X" />
+						<property name="PromptDescription" value="X" />
+					</property>					
+				</item>
+
+				<item name="q_Special">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="star"/>
+					<property name="CustomIconTint" value="00E4FF"/>
+					<property name="TintColor" value="4,9,171"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_Special" />
+						<property name="PromptDescription" value="SpecialQuest2" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteSpecials"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+
+				<!-- <item name="q_Minis">
+					<property name="name" value="Minis" />
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="Group" value="Science"/>
+					<property name="ItemTypeIcon" value="star"/>
+					<property name="CustomIconTint" value="E02AF9"/>
+					<property name="TintColor" value="4,9,171"/>
+					<property name="Stacknumber" value="5"/>
+					<property name="DescriptionKey" value="MinisQuest"/>
+					<property class="Action0">
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="UseAnimation" value="true"/>
+						<property name="QuestGiven" value="q_NewKillMinis"/>
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item> -->
+				
+				<item name="q_Minis">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="star"/>
+					<property name="CustomIconTint" value="E02AF9"/>
+					<property name="TintColor" value="4,9,171"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_Minis" />
+						<property name="PromptDescription" value="MinisQuest2" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteMinis"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+
+				<item name="q_SB">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="trophy"/>
+					<property name="CustomIconTint" value="7C00FF"/>
+					<property name="TintColor" value="255,255,255"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_SB" />
+						<property name="PromptDescription" value="q_SBPromp" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteSB"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+
+				<!-- <item name="q_Nightmare">
+					<property name="name" value="Criaturas" />
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="ItemTypeIcon" value="skull"/>
+					<property name="Group" value="Science"/>
+					<property name="CustomIconTint" value="400261"/>
+					<property name="TintColor" value="64,2,97"/>
+					<property name="Stacknumber" value="5"/>
+					<property name="DescriptionKey" value="CriaturasQuest"/>
+					<property class="Action0">
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="UseAnimation" value="true"/>
+						<property name="QuestGiven" value="q_KillCriaturas"/>
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item> -->				
+
+				<item name="q_Nightmare">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="near_death_trauma"/>					
+					<property name="CustomIconTint" value="400261"/>
+					<property name="TintColor" value="64,2,97"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_Nightmare" />
+						<property name="PromptDescription" value="CriaturasQuest1" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteNight"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+			
+				<!-- <item name="q_Mutants">
+					<property name="name" value="Elites" />
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="ItemTypeIcon" value="radiation"/>
+					<property name="Group" value="Science"/>
+					<property name="CustomIconTint" value="57FE18"/>
+					<property name="TintColor" value="87,254,24"/>
+					<property name="Stacknumber" value="5"/>
+					<property name="DescriptionKey" value="ElitesQuest"/>
+					<property class="Action0">
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="UseAnimation" value="true"/>
+						<property name="QuestGiven" value="q_Mutants"/>
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item> -->
+								
+				<item name="q_Mutants">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="radiation"/>
+					<property name="CustomIconTint" value="57FE18"/>
+					<property name="TintColor" value="87,254,24"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_Mutants" />
+						<property name="PromptDescription" value="ElitesQuest1" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteMutant"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+
+				<item name="q_Morte">	
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="water"/>
+					<property name="CustomIconTint" value="0099ff"/>
+					<property name="TintColor" value="255,255,255"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_Morte" />
+						<property name="PromptDescription" value="q_MortePromp" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteMorte"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+				<item name="q_Frozen">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="cold"/>
+					<property name="CustomIconTint" value="213ab3"/>
+					<property name="TintColor" value="255,255,255"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_Frozen" />
+						<property name="PromptDescription" value="q_FrozenPromp" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteFrozen"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+				<item name="q_Infernal">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="fire"/>
+					<property name="CustomIconTint" value="255,0,0"/>
+					<property name="TintColor" value="255,0,0"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_Infernal" />
+						<property name="PromptDescription" value="q_InfernalPromp" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteInfernal"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+				<item name="q_shock">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="electric_power"/>
+					<property name="CustomIconTint" value="6b08c6"/>
+					<property name="TintColor" value="255,255,255"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_shock" />
+						<property name="PromptDescription" value="q_shockPromp" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteShock"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+
+
+			<!--Specials-->
+				<!-- <item name="q_EnemigosHF">
+					<property name="name" value="q_EnemigosHF" />
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="ItemTypeIcon" value="diamond"/>
+					<property name="CustomIconTint" value="C20707"/>
+					<property name="TintColor" value="194,7,7"/>
+					<property name="Stacknumber" value="5"/>
+					<property name="Group" value="Science"/>
+					<property name="DescriptionKey" value="TAVOQUESTDesc"/>
+					<property class="Action0">
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="UseAnimation" value="true"/>
+						<property name="QuestGiven" value="q_EnemigosHF"/>
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item> -->
+				
+				<item name="q_EnemigosHF">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="diamond"/>
+					<property name="CustomIconTint" value="C20707"/>
+					<property name="TintColor" value="194,7,7"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_EnemigosHF" />
+						<property name="PromptDescription" value="q_EnemigosHFPromp" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteEnemigos"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+
+				<item name="q_Gallinazilla">
+					<property name="name" value="Gallinazilla" />
+					<property name="Group" value="Science"/>
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="CustomIcon" value="foodEgg"/>
+					<property name="ItemTypeIcon" value="tracking_chicken"/>
+					<property name="CustomIconTint" value="EFB810"/>
+					<property name="TintColor" value="218,232,9"/>
+					<property name="Stacknumber" value="10"/>
+					<property name="DescriptionKey" value="Killzilla"/>
+					<property class="Action0">
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="UseAnimation" value="true"/>
+						<property name="QuestGiven" value="q_killGallinazilla"/>
+					</property>				
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="10"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+
+				</item>					
+				<item name="q_Taco">
+					<property name="name" value="The Taco Quest" />
+					<property name="Group" value="Science"/>
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="ItemTypeIcon" value="twitch_special"/>
+					<property name="CustomIconTint" value="1F85DF"/>
+					<property name="TintColor" value="0,255,255"/>
+					<property name="Stacknumber" value="5"/>
+					<property name="DescriptionKey" value="TacoQuest"/>
+					<property class="Action0">
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="UseAnimation" value="true"/>
+						<property name="QuestGiven" value="q_killTaco2"/>
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item>
+				<item name="q_TacoS">
+					<property name="name" value="The Taco Quest" />
+					<property name="Group" value="Science"/>
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="ItemTypeIcon" value="twitch_special"/>
+					<property name="CustomIconTint" value="FFF000"/>
+					<property name="TintColor" value="0,255,255"/>
+					<property name="Stacknumber" value="5"/>
+					<property name="DescriptionKey" value="TacoQuestS"/>
+					<property class="Action0">
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="UseAnimation" value="true"/>
+						<property name="QuestGiven" value="q_killTacoSpecial"/>
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item>			
+
+			<!--Bosses-->	
+				<!-- <item name="q_Honor">
+					<property name="name" value="Honor" />
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="ItemTypeIcon" value="skull"/>
+					<property name="CustomIconTint" value="024E13"/>
+					<property name="TintColor" value="13,157,29"/>
+					<property name="Stacknumber" value="5"/>
+					<property name="Group" value="Science"/>
+					<property name="DescriptionKey" value="SoldierQuest"/>
+					<property class="Action0">
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="UseAnimation" value="true"/>
+						<property name="QuestGiven" value="q_KillSoldier"/>
+					</property>
+					<effect_group tiered="false">						
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group> 
+			
+				</item>-->
+
+				<item name="q_Honor">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="CustomIconTint" value="2, 78, 19"/>
+					<property name="TintColor" value="2,78,19"/>
+					<property name="ItemTypeIcon" value="skull"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_Honor" />
+						<property name="PromptDescription" value="SoldierQuest1" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteSol"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>		
+
+				<!-- <item name="q_Jugger">
+					<property name="name" value="Kill the Juggernaut" />
+					<property name="Group" value="Science"/>
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="ItemTypeIcon" value="skull"/>
+					<property name="CustomIconTint" value="784212"/>
+					<property name="TintColor" value="120,66,18"/>
+					<property name="Stacknumber" value="5"/>
+					<property name="DescriptionKey" value="JugQuest"/>
+					<property class="Action0">
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="UseAnimation" value="true"/>
+						<property name="QuestGiven" value="q_KillJuggernaut2"/>
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item> -->
+				<item name="q_Jugger">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="skull"/>
+					<property name="CustomIconTint" value="120,66,18"/>
+					<property name="TintColor" value="120,66,18"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_Jugger" />
+						<property name="PromptDescription" value="JugQuest1" />
+					</property>
+					<effect_group tiered="false">						
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteJug"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+
+				<!-- <item name="q_Gladiator">
+					<property name="name" value="Enemigos de Mexico" />
+					<property name="Group" value="Science"/>
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="ItemTypeIcon" value="skull"/>
+					<property name="CustomIconTint" value="029567"/>
+					<property name="TintColor" value="2,149,103"/>
+					<property name="Stacknumber" value="5"/>
+					<property name="DescriptionKey" value="MxQuest"/>
+					<property class="Action0">
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="UseAnimation" value="true"/>
+						<property name="QuestGiven" value="q_KillMx"/>
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item> -->
+				<item name="q_Gladiator">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="CustomIconTint" value="2, 78, 19"/>
+					<property name="TintColor" value="2,78,19"/>
+					<property name="ItemTypeIcon" value="skull"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_Gladiator" />
+						<property name="PromptDescription" value="MxQuest2" />
+					</property>
+					<effect_group tiered="false">						
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteCab"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+
+
+				<!-- <item name="q_Momia">
+					<property name="name" value="Kill the Mummy" />
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="Group" value="Science"/>
+					<property name="ItemTypeIcon" value="skull"/>
+					<property name="CustomIconTint" value="EFB810"/>
+					<property name="TintColor" value="218,232,9"/>
+					<property name="Stacknumber" value="5"/>
+					<property name="DescriptionKey" value="MummyQuest"/>
+					<property class="Action0">
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="UseAnimation" value="true"/>
+						<property name="QuestGiven" value="q_KillMummy"/>
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item>	 -->
+				<item name="q_Momia">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="skull"/>
+					<property name="CustomIconTint" value="EFB810"/>
+					<property name="TintColor" value="218,232,9"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_Momia" />
+						<property name="PromptDescription" value="MummyQuest1" />
+					</property>
+					<effect_group tiered="false">						
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteMum"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+
+				<!-- <item name="q_Cirujano">
+					<property name="name" value="Kill the Cirujano" />
+					<property name="Group" value="Science"/>
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="ItemTypeIcon" value="add"/>
+					<property name="CustomIconTint" value="7FDAD7"/>
+					<property name="TintColor" value="127,218,215"/>
+					<property name="Stacknumber" value="5"/>
+					<property name="DescriptionKey" value="CiruQuest"/>
+					<property class="Action0">
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="UseAnimation" value="true"/>
+						<property name="QuestGiven" value="q_KillCirujano"/>
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item> -->
+				<item name="q_Cirujano">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="add"/>
+					<property name="CustomIconTint" value="7FDAD7"/>
+					<property name="TintColor" value="127,218,215"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_Cirujano" />
+						<property name="PromptDescription" value="CiruQuest1" />
+					</property>
+					<effect_group tiered="false">						
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteCiru"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+
+				<!-- <item name="q_Pesadilla">
+					<property name="name" value="Nightmare" />
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="Group" value="Science"/>
+					<property name="ItemTypeIcon" value="skull"/>
+					<property name="CustomIconTint" value="0B0139"/>
+					<property name="TintColor" value="4,9,171"/>
+					<property name="Stacknumber" value="5"/>
+					<property name="DescriptionKey" value="SirenQuest"/>
+					<property class="Action0">
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="UseAnimation" value="true"/>
+						<property name="QuestGiven" value="q_KillSiren"/>
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item> -->				
+				<item name="q_Pesadilla">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="near_death_trauma"/>
+					<property name="CustomIconTint" value="0B0139"/>
+					<property name="TintColor" value="4,9,171"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_Pesadilla" />
+						<property name="PromptDescription" value="SirenQuest1" />
+					</property>
+					<effect_group tiered="false">						
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteSiren"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+
+				<item name="q_vodjanoj">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="skull"/>
+					<property name="CustomIconTint" value="0099ff"/>
+					<property name="TintColor" value="255,255,255"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_vodjaoj" />
+						<property name="PromptDescription" value="q_vodjaojPromp" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteVod"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>				
+				<item name="q_berial">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="skull"/>
+					<property name="CustomIconTint" value="255,0,0"/>
+					<property name="TintColor" value="255,255,255"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_berial" />
+						<property name="PromptDescription" value="q_berialPromp" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteBeri"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+				<item name="q_jack">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="skull"/>
+					<property name="CustomIconTint" value="213ab3"/>
+					<property name="TintColor" value="255,255,255"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_jack" />
+						<property name="PromptDescription" value="q_jackPromp" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteJack"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+				<item name="q_raijin">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="skull"/>
+					<property name="CustomIconTint" value="6b08c6"/>
+					<property name="TintColor" value="255,255,255"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_raijin" />
+						<property name="PromptDescription" value="q_raijinPromp" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteRaijin"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+				<item name="q_patient0">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="skull"/>
+					<property name="CustomIconTint" value="07F00D"/>
+					<property name="TintColor" value="255,255,255"/>
+					<property class="Action0">
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_patient0" />
+						<property name="PromptDescription" value="q_patient0Promp" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNotePacient"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+
+				<!-- <item name="q_HFRush">
+					<property name="name" value="HF" />
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="ItemTypeIcon" value="trophy"/>
+					<property name="Group" value="Science"/>
+					<property name="CustomIconTint" value="080008"/>
+					<property name="TintColor" value="22,22,21"/>
+					<property name="Stacknumber" value="5"/>
+					<property name="DescriptionKey" value="HFBRQuest"/>
+					<property class="Action0">
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="UseAnimation" value="true"/>
+						<property name="QuestGiven" value="q_HFRush"/>
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="300"/>						
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+
+				</item> -->
+				<item name="q_HFRush">
+					<property name="name" value="HF" />
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="ItemTypeIcon" value="trophy"/>
+					<property name="Group" value="Science"/>
+					<property name="CustomIconTint" value="080000"/>
+					<property name="TintColor" value="0,0,0"/>
+					<property name="Stacknumber" value="5"/>
+					<property name="DescriptionKey" value="HFBRQuest"/>
+					<property class="Action0">
+						<property name="QuestGiven" value="q_noteHF"/>
+					</property>
+				</item>
+				
+
+				<!-- <item name="q_Hooligan_Force">
+					<property name="name" value="Hooligan Force" />
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="Group" value="Science"/>
+					<property name="ItemTypeIcon" value="trophy"/>
+					<property name="CustomIconTint" value="3A363A"/>
+					<property name="TintColor" value="22,22,21"/>
+					<property name="Stacknumber" value="5"/>
+					<property name="DescriptionKey" value="HFQuest"/>
+					<property class="Action0">
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="UseAnimation" value="true"/>
+						<property name="QuestGiven" value="q_HF2"/>
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="300"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>	
+					</effect_group>
+				</item> -->
+				<item name="q_Hooligan_Force">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="trophy"/>
+					<property name="CustomIconTint" value="000000"/>
+					<property name="TintColor" value="0,0,0"/>
+					<property class="Action0">							
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="PromptTitle" value="q_Hooligan_Force" />
+						<property name="PromptDescription" value="HFQuest1" />
+					</property>
+					<effect_group tiered="false">						
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteHF"/>		
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>				
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>	
+				
+			<!--Randoms-->
+				<!-- <item name="q_Lucky">
+					<property name="name" value="Randoms" />
+					<property name="Group" value="Science"/>
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="ItemTypeIcon" value="lightbulb"/>
+					<property name="CustomIconTint" value="EA791A"/>
+					<property name="TintColor" value="243,253,27"/>
+					<property name="Stacknumber" value="10"/>
+					<property name="DescriptionKey" value="q_luckyDesc"/>
+					<property class="Action0">
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="UseAnimation" value="true"/>
+						<property name="QuestGiven" value="q_killLucky"/>
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item>	 -->
+				<item name="q_Lucky">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="lightbulb"/>
+					<property name="CustomIconTint" value="EA791A"/>
+					<property name="TintColor" value="243,253,27"/>
+					<property class="Action0">	
+						<requirement name="HasBuff" buff="buffQuest"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_Lucky" />
+						<property name="PromptDescription" value="QuestLucky2" />
+					</property>
+					<effect_group tiered="false">						
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteLucky"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+				
+				<!-- <item name="q_Gacha">
+					<property name="name" value="Gacha" />
+					<property name="Group" value="Science"/>
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="ItemTypeIcon" value="treasure"/>
+					<property name="CustomIconTint" value="9A41C4"/>
+					<property name="TintColor" value="234,121,26"/>
+					<property name="Stacknumber" value="20"/>
+					<property name="DescriptionKey" value="KillGacha"/>
+					<property class="Action0">
+						
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="UseAnimation" value="true"/>
+						<property name="QuestGiven"value="q_killGacha"/>
+					</property> 
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="5"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item> -->
+				<item name="q_Gacha">
+					<property name="CreativeMode" value="Player"/>
+					<property name="CustomIcon" value="adminQuestTicketMaster"/>
+					<property name="HoldType" value="31"/>
+					<property name="DescriptionKey" value="noteTixDescTierIII"/>					
+					<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+					<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+					<property name="Material" value="Morganic"/>
+					<property name="Weight" value="10"/>
+					<property name="Stacknumber" value="10"/>
+					<property name="EconomicValue" value="10000"/>
+					<property name="Group" value="Special Items"/>
+					<property name="ShowQuality" value="false"/>
+					<property name="SellableToTrader" value="false"/>
+					<property name="ItemTypeIcon" value="treasure"/>
+					<property name="CustomIconTint" value="9A41C4"/>
+					<property name="TintColor" value="234,121,26"/>					
+					<property class="Action0">	
+						<requirement name="!HasBuff" buff="buffQuestGatchaCD"/>					
+						<property name="Class" value="Eat"/>						
+						<property name="Sound_start" value="ui_mag_read"/>
+					</property>
+					<effect_group tiered="false">						
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteGatch"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestGatchaCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestGatchaCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+				<item name="q_GachaPrem">
+					<property name="Extends" value="q_Gacha"/>
+					<property class="Action0">						
+						<requirement name="!HasBuff" buff="buffQuestGatchaCD"/>
+					</property>						
+					<effect_group tiered="false">						
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteGatchPrem"/>						
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestGatchaCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestGatchaCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item>
+
+				<!-- <item name="q_EnemigsRandom">
+					<property name="name" value="Ranbom" />
+					<property name="Group" value="Science"/>
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="ItemTypeIcon" value="skull"/>
+					<property name="CustomIconTint" value="FD65CD"/>
+					<property name="TintColor" value="253,101,205"/>
+					<property name="Stacknumber" value="20"/>
+					<property name="DescriptionKey" value="KillREnemigs"/>
+					<property class="Action0">
+						<property name="UseAnimation" value="true"/>
+						<property name="QuestGiven" value="q_TotalRandom"/>
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="10"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item> -->				
+				<item name="q_EnemigsRandom">
+					<property name="Extends" value="q_Gacha"/>
+					<property name="CustomIconTint" value="FD65CD"/>
+					<property name="TintColor" value="253,101,205"/>
+					<property name="ItemTypeIcon" value="skull"/>
+					<property class="Action0">						
+						<requirement name="!HasBuff" buff="buffQuestGatchaCD"/>
+					</property>					
+					<effect_group tiered="false">						
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteTotalRandom"/>						
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestGatchaCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestGatchaCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item>
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ Quest Tokens ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+			<item name="bossTokenNatu">
+				<property name="Extends" value="gunMGT1AK47Parts"/>
+				<property name="Material" value="Morganic"/>
+				<property name="ItemTypeIcon" value="tree"/>
+				<property name="CustomIcon" value="casinoCoin"/>
+				<property name="CustomIconTint" value="E2F70F"/>
+				<property name="TintColor" value="115,220,18"/>
+				
+				<property name="DescriptionKey" value="bossTokenDesc"/>
+				<property name="Group" value="Lmats"/>
+				<property name="EconomicValue" value="5000"/>
+				<property name="EconomicBundleSize" value="1"/>
+				<property name="Stacknumber" value="50"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="EconomicBundleSize" value="51"/>
+			</item>
+			<item name="bossTokenMineral">
+				<property name="Extends" value="gunMGT1AK47Parts"/>
+				<property name="Material" value="Morganic"/>
+				<property name="CustomIcon" value="casinoCoin"/>
+				<property name="ItemTypeIcon" value="diamond"/>
+				<property name="CustomIconTint" value="194, 7, 7"/>
+				<property name="TintColor" value="194, 7, 7"/>
+				
+				<property name="DescriptionKey" value="bossTokenDesc"/>
+				<property name="Group" value="Lmats"/>
+				<property name="EconomicValue" value="5000"/>
+				<property name="Stacknumber" value="50"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="EconomicBundleSize" value="51"/>
+			</item>
+			<item name="bossTokenNight">
+				<property name="Extends" value="gunMGT1AK47Parts"/>
+				<property name="Material" value="Morganic"/>
+				<property name="ItemTypeIcon" value="skull"/>
+				<property name="CustomIcon" value="casinoCoin"/>
+				<property name="CustomIconTint" value="0B0139"/>
+				<property name="TintColor" value="4,9,171"/>
+				
+				<property name="DescriptionKey" value="bossTokenDesc"/>
+				<property name="Group" value="Lmats"/>
+				<property name="EconomicValue" value="5000"/>
+				<property name="Stacknumber" value="50"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="EconomicBundleSize" value="51"/>
+			</item>
+			<item name="bossTokenJugger">
+				<property name="Extends" value="gunMGT1AK47Parts"/>
+				<property name="Material" value="Morganic"/>
+				<property name="ItemTypeIcon" value="skull"/>
+				<property name="CustomIcon" value="casinoCoin"/>
+				<property name="CustomIconTint" value="784212"/>
+				<property name="TintColor" value="120,66,18"/>
+				
+				<property name="DescriptionKey" value="bossTokenDesc"/>
+				<property name="Group" value="Lmats"/>
+				<property name="EconomicValue" value="5000"/>
+				<property name="Stacknumber" value="50"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="EconomicBundleSize" value="51"/>
+			</item>
+			<item name="bossTokenSoldier">
+				<property name="Extends" value="gunMGT1AK47Parts"/>
+				<property name="Material" value="Morganic"/>
+				<property name="ItemTypeIcon" value="skull"/>
+				<property name="CustomIcon" value="casinoCoin"/>
+				<property name="CustomIconTint" value="024E13"/>
+				<property name="TintColor" value="13,157,29"/>
+				
+				<property name="DescriptionKey" value="bossTokenDesc"/>
+				<property name="Group" value="Lmats"/>
+				<property name="EconomicValue" value="5000"/>
+				<property name="Stacknumber" value="50"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="EconomicBundleSize" value="51"/>
+			</item>
+			<item name="bossTokenMummy">
+				<property name="Extends" value="gunMGT1AK47Parts"/>
+				<property name="Material" value="Morganic"/>
+				<property name="ItemTypeIcon" value="skull"/>
+				<property name="CustomIcon" value="casinoCoin"/>
+				<property name="CustomIconTint" value="EFB810"/>
+				<property name="TintColor" value="218,232,9"/>
+				
+				<property name="DescriptionKey" value="bossTokenDesc"/>
+				<property name="Group" value="Lmats"/>
+				<property name="EconomicValue" value="5000"/>
+				<property name="Stacknumber" value="50"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="EconomicBundleSize" value="51"/>
+			</item>
+			<item name="bossTokenGadiador">
+				<property name="Extends" value="gunMGT1AK47Parts"/>
+				<property name="Material" value="Morganic"/>
+				<property name="ItemTypeIcon" value="skull"/>
+				<property name="CustomIcon" value="casinoCoin"/>
+				<property name="CustomIconTint" value="636060"/>
+				<property name="TintColor" value="99,96,96"/>
+				
+				<property name="DescriptionKey" value="bossTokenDesc"/>
+				<property name="Group" value="Lmats"/>
+				<property name="EconomicValue" value="5000"/>
+				<property name="Stacknumber" value="50"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="EconomicBundleSize" value="51"/>
+			</item>
+			<!-- Added by HolyVentus -->
+			<item name="bossTokenCirujano">
+				<property name="Extends" value="gunMGT1AK47Parts"/>
+				<property name="Material" value="Morganic"/>
+				<property name="ItemTypeIcon" value="add"/>
+				<property name="CustomIcon" value="casinoCoin"/>
+				<property name="CustomIconTint" value="5b57a1"/>
+				<property name="TintColor" value="91,87,161"/>
+				
+				<property name="DescriptionKey" value="bossTokenDesc"/>
+				<property name="Group" value="Lmats"/>
+				<property name="EconomicValue" value="5000"/>
+				<property name="Stacknumber" value="50"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="EconomicBundleSize" value="51"/>
+			</item>
+			<item name="bossTokenSpartan">
+				<property name="Extends" value="gunMGT1AK47Parts"/>
+				<property name="Material" value="Morganic"/>
+				<property name="ItemTypeIcon" value="skull"/>
+				<property name="CustomIcon" value="casinoCoin"/>
+				<property name="CustomIconTint" value="FF0000"/>
+				<property name="TintColor" value="255,0,0"/>
+				
+				<property name="DescriptionKey" value="bossTokenDesc"/>
+				<property name="Group" value="Lmats"/>
+				<property name="EconomicValue" value="5000"/>
+				<property name="Stacknumber" value="50"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="EconomicBundleSize" value="51"/>
+			</item>
+			<item name="bossTokenMortevoda">
+				<property name="Extends" value="gunMGT1AK47Parts"/>
+				<property name="Material" value="Morganic"/>
+				<property name="ItemTypeIcon" value="skull"/>
+				<property name="CustomIcon" value="casinoCoin"/>
+				<property name="CustomIconTint" value="0099ff"/>
+				<property name="TintColor" value="255,0,0"/>
+				
+				<property name="DescriptionKey" value="bossTokenDesc"/>
+				<property name="Group" value="Lmats"/>
+				<property name="EconomicValue" value="5000"/>
+				<property name="Stacknumber" value="50"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="EconomicBundleSize" value="51"/>
+			</item>
+			<item name="bossTokenInfernal">
+				<property name="Extends" value="gunMGT1AK47Parts"/>
+				<property name="Material" value="Morganic"/>
+				<property name="ItemTypeIcon" value="skull"/>
+				<property name="CustomIcon" value="casinoCoin"/>
+				<property name="CustomIconTint" value="db7735"/>
+				<property name="TintColor" value="255,0,0"/>
+				
+				<property name="DescriptionKey" value="bossTokenDesc"/>
+				<property name="Group" value="Lmats"/>
+				<property name="EconomicValue" value="5000"/>
+				<property name="Stacknumber" value="50"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="EconomicBundleSize" value="51"/>
+			</item>
+			<item name="bossTokenHoarfrost">
+				<property name="Extends" value="gunMGT1AK47Parts"/>
+				<property name="Material" value="Morganic"/>
+				<property name="ItemTypeIcon" value="skull"/>
+				<property name="CustomIcon" value="casinoCoin"/>
+				<property name="CustomIconTint" value="213ab3"/>
+				<property name="TintColor" value="255,0,0"/>
+				
+				<property name="DescriptionKey" value="bossTokenDesc"/>
+				<property name="Group" value="Lmats"/>
+				<property name="EconomicValue" value="5000"/>
+				<property name="Stacknumber" value="50"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="EconomicBundleSize" value="51"/>
+			</item>
+			<item name="bossTokenShocker">
+				<property name="Extends" value="gunMGT1AK47Parts"/>
+				<property name="Material" value="Morganic"/>
+				<property name="ItemTypeIcon" value="skull"/>
+				<property name="CustomIcon" value="casinoCoin"/>
+				<property name="CustomIconTint" value="6b08c6"/>
+				<property name="TintColor" value="255,0,0"/>
+				
+				<property name="DescriptionKey" value="bossTokenDesc"/>
+				<property name="Group" value="Lmats"/>
+				<property name="EconomicValue" value="5000"/>
+				<property name="Stacknumber" value="50"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="EconomicBundleSize" value="51"/>
+			</item>
+			<item name="bossTokenToxic">
+				<property name="Extends" value="gunMGT1AK47Parts"/>
+				<property name="Material" value="Morganic"/>
+				<property name="ItemTypeIcon" value="skull"/>
+				<property name="CustomIcon" value="casinoCoin"/>
+				<property name="CustomIconTint" value="07F00D"/>
+				<property name="TintColor" value="255,0,0"/>
+				
+				<property name="DescriptionKey" value="bossTokenDesc"/>
+				<property name="Group" value="Lmats"/>
+				<property name="EconomicValue" value="5000"/>
+				<property name="Stacknumber" value="50"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="EconomicBundleSize" value="51"/>
+			</item>
+			<!---->
+			<item name="bossTokenAncient">
+				<property name="Extends" value="gunMGT1AK47Parts"/>
+				<property name="Material" value="Morganic"/>
+				<property name="CustomIcon" value="casinoCoin"/>
+				<property name="ItemTypeIcon" value="add"/>
+				<property name="CustomIconTint" value="100,0,0"/>
+				<property name="TintColor" value="100,0,0"/>
+				
+				<property name="DescriptionKey" value="bossTokenDesc"/>
+				<property name="Group" value="Lmats"/>
+				<property name="EconomicValue" value="5000"/>
+				<property name="Stacknumber" value="10"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="EconomicBundleSize" value="11"/>
+			</item>						
+			<item name="questFrag">
+				<property name="Extends" value="gunMGT1AK47Parts"/>
+				<property name="Material" value="Morganic"/>
+				<property name="CustomIcon" value="oreShaleBoulder"/>
+				<property name="ItemTypeIcon" value="gunsmithing"/>				
+				<property name="CustomIconTint" value="100,0,0"/>
+				<property name="TintColor" value="100,0,0"/>
+				
+				<property name="DescriptionKey" value="questfargDesc"/>
+				<property name="Group" value="Lmats"/>
+				<property name="EconomicValue" value="1000"/>
+				<property name="Stacknumber" value="50"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="EconomicBundleSize" value="51"/>
+			</item>
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Zombies Hans ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+		<!--Tavo Zombies Hans-->
+			<item name="meleeHandZombieIronSpider">
+				<property name="Extends" value="meleeHandZombie02"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="DamageEntity" value="40"/>
+					<property name="DamageBlock" value="500"/>
+				</property>
+				<effect_group name="meleeHandZombie02Feral" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="30"/>  A16 2 -->
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo" weights=".11,.07,.07,.05,.29,.36,.11"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="15">					<!--InfectionFeral-->
+						<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="2400"/>
+					<!--AbrasionFeral-->
+				</effect_group>
+			</item>
+			<item name="meleeHandAnimalAnaconda">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="HoldType" value="55"/>
+				<property class="Action0">
+					<property name="Delay" value="0.3"/>
+					<property name="Range" value="8.2"/>
+					<property name="DamageEntity" value="60"/>
+					<property name="DamageBlock" value="200"/>
+				</property>
+				<effect_group name="meleeHandAnimalAnaconda" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="0.5" tags="buffInfectionCatch"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffInjuryBleeding"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffLegSprainedCHTrigger"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="70"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo" weights=".11,.07,.100000,.05,.29,.36,.11"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffLegSprainedCHTrigger"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="3" tags="buffInjuryBleeding"/>
+				</effect_group>
+			</item>
+			<item name="meleeHandLion">
+				<property name="Extends" value="meleeHandZombieBurning"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="DamageEntity" value="40"/>
+					<property name="DamageBlock" value="100"/>
+				</property>
+				<property name="Buff" value="buffBurningMolotov,buffInjuryBleeding,buffInfectionCatch"/>
+				<effect_group name="meleeHandZombieBurningFeral" tiered="false">
+					<passive_effect name="BuffProcChance" operation="base_set" value="6" tags="buffBurningMolotov"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffBurningMolotov"></triggered_effect>
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".5" tags="buffBurningZombie"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".3" tags="buffInjuryBleedingZombie"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="45"/>
+					<!--InfectionFeral-->
+				</effect_group>
+			</item>
+			<item name="meleeHandAnimalSnakeFeral">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="HoldType" value="55"/>
+				<property class="Action0">
+					<property name="Delay" value="0.8"/>
+					<property name="Range" value="4.0"/>
+					<property name="DamageEntity" value="30"/>
+					<property name="DamageBlock" value="30"/>
+				</property>
+				<effect_group name="meleeHandAnimalSnakeFeral" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="0.4" tags="buffInfectionCatch"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="0.7" tags="buffInjuryBleeding"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="0.7" tags="buffLegSprainedCHTrigger"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="20"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo" weights=".11,.07,.11,.05,.29,.36,.11"/>
+				</effect_group>
+			</item>
+			<item name="meleehandZombieBolt">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="Degradation" value="99999" param1="true"/>
+				<property class="Action0">
+					<property name="Range" value="1.70"/>
+					<property name="DamageEntity" value="15"/>
+					<property name="DamageBlock" value="60"/>
+					<property name="Buff" value="buffInjuryStunned01,buffShocked2"/>
+				</property>
+				<property class="Action1">				<!-- UseAction -->
+					<property name="Class" value="Vomit"/>
+					<property name="Delay" value="0.3"/>
+					<!-- obsolete if rounds per minute exists -->
+					<property name="Range" value="200"/>
+					<property name="Infinite_ammo" value="true"/>
+					<property name="Magazine_items" value="ammoProjectileZombieBolt"/>
+					<property name="Sound_warning" value="shulkvomitwarning"/>
+					<property name="Sound_start" value="hulkvomitattack"/>
+					<!--	<property name="Buff" value="buffShocked2"/> -->
+				</property>
+				<effect_group name="meleehandZombieBolt" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="4"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="5"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="5"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffInjuryStunned01"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="3" tags="buffShocked"/>
+				</effect_group>
+			</item>
+			<item name="ammoProjectileZombieBolt">
+				<!--<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/> -->
+				<property name="Meshfile" value="particleeffects/p_electric_shock"/>
+				<property name="Material" value="Morganic" />
+				<property name="CreativeMode" value="None"/>
+				<property class="Action1">
+					<property name="Class" value="Projectile"/>
+					<property name="DamageEntity" value="8"/>
+					<property name="DamageBlock" value="20"/>
+					<property name="Explosion.ParticleIndex" value="12"/>
+					<!-- which Prefab/particle is used -->
+					<property name="Explosion.RadiusBlocks" value="3"/>
+					<!-- damage radius for blocks -->
+					<property name="Explosion.BlockDamage" value="20"/>
+					<!-- damage for blocks in the center of the explosion -->
+					<property name="Explosion.RadiusEntities" value="3"/>
+					<!-- damage radius for entities -->
+					<property name="Explosion.EntityDamage" value="20"/>
+					<!-- damage for entities in the center of the explosion. Zombies take 2x this damage. -->
+					<property name="Velocity" value="15"/>
+					<property name="FlyTime" value="2"/>
+					<property name="LifeTime" value="4"/>
+					<property name="DamageBonus.earth" value="20"/>
+					<property name="DamageBonus.stone" value="25"/>
+					<property name="DamageBonus.metal" value="25"/>
+					<property name="CollisionRadius" value="0.5"/>
+					<property name="Buff" value="buffShocked"/>
+				</property>
+				<effect_group name="ammoProjectileZombieBolt" tiered="false">
+					<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="metal"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffShocked"/>
+				</effect_group>
+			</item>				
+			<item name="meleeHandAnimalZombieBearLEGENDARY">
+				<property name="Extends" value="meleeHandAnimalBear"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="Range" value="4.0"/>
+					<property name="DamageEntity" value="100"/>
+					<property name="Delay" value="0.3"/>
+					<property name="DamageBlock" value="1000"/>
+					<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned"/>
+
+				</property>
+				<effect_group name="meleeHandAnimalZombieBearLEGENDARY" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="40"/>  A16 1.5 -->
+					<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffInjuryBleeding"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".99" tags="buffInfectionCatch"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".99" tags="buffInjuryStunned"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo" weights=".11,.07,.07,.05,.29,.36,.11"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/>
+					<!--AbrasionRegular-->
+				</effect_group>
+			</item>
+			<item name="meleeHandAnimalChickenDemon">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="HoldType" value="35"/>
+				<property class="Action0">
+					<property name="Range" value="2.5"/>
+					<property name="Sphere" value="0.4"/>
+					<property name="Block_range" value="5.5"/>
+					<property name="Delay" value="0.4"/>
+					<!-- obsolete if rounds per minute exists -->
+					<property name="DamageEntity" value="20"/>
+					<property name="DamageBlock" value="9"/>
+					<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch"/>
+				</property>
+				<effect_group name="meleeHandAnimalChickenDemon" tiered="false">
+					<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffBurningMolotov"></triggered_effect>
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="3" tags="earth"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="0.25" tags="buffInjuryBleedingZombie"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="0.40" tags="buffInfectionCatch"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="70"/>
+				</effect_group>
+			</item>
+			<item name="meleeHandAnimalChickenDemonBOLT">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="HoldType" value="35"/>
+				<property class="Action0">
+					<property name="Range" value="2.5"/>
+					<property name="Sphere" value="0.4"/>
+					<property name="Block_range" value="5.5"/>
+					<property name="Delay" value="0.4"/>
+					<!-- obsolete if rounds per minute exists -->
+					<property name="DamageEntity" value="20"/>
+					<property name="DamageBlock" value="9"/>
+					<property name="Buff" value="buffInjuryStunned01,buffShocked"/>
+				</property>
+				<effect_group name="meleeHandAnimalChickenDemon" tiered="false">
+					<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffShocked"></triggered_effect>
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="3" tags="earth"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="0.25" tags="buffInjuryBleedingZombie"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="0.40" tags="buffInfectionCatch"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="70"/>
+				</effect_group>
+			</item>			
+		
+		<!--Gunner by Robelote-->
+			<item name="meleehandZombieGunner">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="Degradation" value="99999" param1="true"/>
+				<property class="Action0">
+					<property name="Range" value="2.1"/>
+					<property name="DamageEntity" value="15"/>
+					<property name="DamageBlock" value="190"/>
+					<property name="Buff" value="buffArmBroken,buffInjuryStunned01"/>
+				</property>
+				<property class="Action1">
+					<property name="Class" value="Vomit"/>
+					<property name="Delay" value="0.2"/>
+					<property name="Range" value="200"/>
+					<property name="Infinite_ammo" value="true"/>
+					<property name="Magazine_items" value="GunVomitProjectile"/>
+					<property name="Sound_warning" value="gunnervomitwarning"/>
+					<property name="Sound_start" value="ak47_fire"/>
+					<property name="Sound_end" value="ak47_fire_end"/>
+					<property name="Buff" value="buffInjuryBleedingZombie,buffInjuryStunnedX"/>
+				</property>
+				<effect_group name="meleehandZombieGunner" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="25"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="4"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="3"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="5"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".20" tags="buffArmBroken"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".25" tags="buffInjuryStunnedX"/>
+				</effect_group>
+			</item>
+			<item name="GunVomitProjectile">
+				<property name="Meshfile" value="Entities/Electrical/steel_dartPrefab"/>
+				<property name="Material" value="Morganic" />
+				<property name="CreativeMode" value="None"/>
+				<property class="Action1">
+					<property name="Class" value="Projectile"/>
+					<property name="Gravity" value="-3"/>
+					<property name="DamageEntity" value="10"/>
+					<property name="DamageBlock" value="2"/>
+					<property name="Velocity" value="15"/>
+					<property name="FlyTime" value="3"/>
+					<property name="LifeTime" value="5"/>
+					<property name="DamageBonus.earth" value="0"/>
+					<property name="DamageBonus.wood" value="2"/>
+					<property name="DamageBonus.stone" value="1"/>
+					<property name="DamageBonus.metal" value="1"/>
+					<property name="CollisionRadius" value="0.5"/>
+					<!--<property name="Buff" value="buffInjuryBleedingZombie,buffInjuryStunnedX"/>-->
+				</property>
+				<effect_group name="GunVomitProjectile" tiered="false">
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="metal"/>
+					<!--<passive_effect name="BuffProcChance" operation="base_set" value="0.20" tags="buffInjuryBleedingZombie"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="0.80" tags="buffInjuryStunnedX"/>-->
+				</effect_group>
+			</item>	
+		<!--  Zombie Hans by Snufkin  -->		
+			<item name="meleeHandBanshee">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="Degradation" value="99999" param1="true"/>
+				<property class="Action0">
+					<property name="Range" value="2"/>
+					<property name="DamageEntity" value="30"/>
+					<property name="DamageBlock" value="5"/>
+				</property>
+				<effect_group name="meleeHandBanshee" tiered="false">
+					<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" target="self" range="15" buff="buffBansheeScream"/>
+				</effect_group>
+			</item>		
+			<item name="meleeHandWendigo">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="Degradation" value="99999" param1="true"/>
+				<property name="Material" value="Morganic"/>
+				<property class="Action0">
+					<property name="Range" value="2"/>
+					<property name="Sound_start" value="swoosh"/>
+					<property name="DamageEntity" value="60"/>
+					<property name="DamageBlock" value="60"/>
+				</property>
+				<effect_group name="meleeHandWendigo" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".75" tags="buffInjuryBleedingZombie"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".3" tags="buffInfectionCatch"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".3" tags="buffInjuryStunned01"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="75"/>
+				</effect_group>
+			</item>
+			<item name="meleeHandCowhead">
+				<property name="Extends" value="meleeHandZombie01"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="DamageEntity" value="40"/>
+					<property name="DamageBlock" value="30"/>
+					<property name="DamageBonus.wood" value="2"/>
+					<property name="Particles_muzzle_smoke" value="nozzlesmoke_chainsaw"/>
+					<property name="Sound_start" value="chainsaw_fire_start"/>
+				</property>
+				<property name="Buff" value="buffInjuryBleedingOne,buffInjuryBleeding,buffInfectionCatch"/>
+				<effect_group name="meleeHandCowhead" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+
+					<passive_effect name="BuffProcChance" operation="base_set" value=".3" tags="buffInfectionCatch"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".3" tags="buffInjuryStunned01"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="45"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="PlaySound" sound="chainsaw_fire_start"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="10" tags="buffInjuryBleedingOne"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffInjuryBleedingOne"></triggered_effect>
+				</effect_group>
+			</item>		
+			<item name="meleeHandBomber">
+				<property name="Extends" value="meleeHandZombie01"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="DamageEntity" value="10"/>
+					<property name="DamageBlock" value="30"/></property>
+				<!-- <property class="Action1">
+					<property name="Class" value="Vomit"/>
+					<property name="Delay" value="0.3"/>
+					<property name="Range" value="100"/>
+					<property name="Infinite_ammo" value="true"/>
+					<property name="Magazine_items" value="BomberProjectile" />
+					<property name="Sound_warning" value="moepukervomitwarning"/>
+					<property name="Sound_start" value="moepukervomitwarning"/>
+					<property name="Sound_repeat" value=""/>
+					<property name="Sound_end" value=""/>
+					<property name="Sound_empty" value=""/>
+					<property name="Sound_reload" value=""/>
+				</property> -->
+				<effect_group name="meleeHandBomber" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="100"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				</effect_group>
+			</item>
+			<item name="BomberProjectile">
+				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
+				<property name="Material" value="Mmetal"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action1">
+					<property name="Class" value="Projectile"/>
+					<!--property name="Explosion.ParticleIndex" value="4"/-->
+					<property name="Explosion.ParticleIndex" value="6"/>
+					<!-- which Prefab/particle is used -->
+					<property name="Explosion.RadiusBlocks" value="6"/>
+					<!-- damage radius for blocks -->
+					<property name="Explosion.RadiusEntities" value="6"/>
+					<!-- damage radius for entities -->
+					<property name="Explosion.DamageBonus.stone" value=".1"/>
+					<property name="Explosion.DamageBonus.metal" value=".05"/>
+					<property name="Explosion.DamageBonus.earth" value="0"/>
+					<property name="Explosion.DamageBonus.wood" value=".5"/>
+					<property name="Explosion.DamageBonus.water" value="0"/>
+					<property name="Velocity" value="0"/>
+					<property name="Gravity" value="-200"/>
+					<property name="FlyTime" value=".01"/>
+					<property name="LifeTime" value="20"/>
+				</property>
+				<effect_group name="BomberProjectile" tiered="false">
+					<passive_effect name="BlockDamage" operation="base_set" value="1000"/>
+					<passive_effect name="EntityDamage" operation="base_set" value="500"/>
+					<passive_effect name="ProjectileVelocity" operation="base_set" value="50"/>
+					<display_value name="dExRadius" value="5"/>
+				</effect_group>
+			</item>
+			<item name="meleeHandMantis">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="Range" value="2"/>
+					<property name="Delay" value="0.5"/>
+					<!-- obsolete if rounds per minute exists -->
+					<property name="DamageEntity" value="40"/>
+					<property name="DamageBlock" value="5"/>
+					<property name="Buff" value="buffNarcoticsMantis"/>
+					<property name="Sound_start" value="machete_swinglight"/>
+					<property class="HitSounds">
+						<property name="Override0" value="organic" param1="metalslashorganic"/>
+					</property>
+				</property>
+				<property class="Action1">
+					<!-- UseAction -->
+					<property name="Class" value="Vomit"/>
+					<property name="Delay" value="0.3"/>
+					<!-- obsolete if rounds per minute exists -->
+					<property name="Range" value="200"/>
+					<property name="Infinite_ammo" value="true"/>
+					<property name="Magazine_items" value="MantisVomitProjectile" />
+					<property name="Sound_warning" value="hulkvomitwarning"/>
+					<property name="Sound_start" value="hulkvomitattack"/>
+					<property name="Sound_repeat" value=""/>
+					<property name="Sound_end" value=""/>
+					<property name="Sound_empty" value=""/>
+					<property name="Sound_reload" value=""/>
+					<property name="Buff" value="buffNarcoticsMantis"/>
+				</property>
+				<effect_group name="meleeHandMantis" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="5"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="0.90" tags="buffNarcoticsMantis"/>
+				</effect_group>
+			</item>
+			<item name="MantisVomitProjectile">
+				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
+				<property name="Material" value="Morganic"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action1">
+					<property name="Class" value="Projectile"/>
+					<property name="DamageEntity" value="5"/>
+					<property name="DamageBlock" value="5"/>
+					<property name="Explosion.ParticleIndex" value="7"/>
+					<property name="Velocity" value="15"/>
+					<property name="FlyTime" value="1"/>
+					<property name="LifeTime" value="4"/>
+					<property name="CollisionRadius" value="0.7"/>
+					<property name="Buff" value="buffNarcoticsMantis"/>
+				</property>
+				<effect_group name="MantisVomitProjectile" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="metal"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="0.50" tags="buffNarcoticsMantis"/>
+				</effect_group>
+			</item>
+			<item name="meleeHandScorcher">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="Degradation" value="99999" param1="true"/>
+				<property class="Action0">
+					<property name="Range" value="1.75"/>
+					<property name="DamageEntity" value="95"/>
+					<property name="DamageBlock" value="100"/>
+					<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01"/>
+				</property>
+				<property class="Action1">				<!-- UseAction -->
+					<property name="Class" value="Vomit"/>
+					<property name="Hitmask_override" value="Arrow"/>
+					<property name="Delay" value=".2"/>
+					<!-- obsolete if rounds per minute exists -->
+					<property name="Range" value="20"/>
+					<property name="Infinite_ammo" value="true"/>
+					<property name="Magazine_items" value="ammoProjectileScorcher"/>
+					<property name="Sound_warning" value=""/>
+					<property name="Sound_start" value=""/>
+					<property name="Sound_repeat" value=""/>
+					<property name="Sound_end" value=""/>
+					<property name="Sound_empty" value=""/>
+					<property name="Sound_reload" value=""/>
+					<property name="Buff" value="buffBurningZombie"/>
+				</property>
+				<effect_group name="meleeHandZombieCop" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="20"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="10"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="10"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="10"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".20" tags="buffInjuryBleedingZombie"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".20" tags="buffInfectionCatch"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".25" tags="buffInjuryStunned01"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="30"/>
+					<!--InfectionRegular-->
+				</effect_group>
+			</item>
+			<item name="ammoProjectileScorcher">
+				<!--property name="Meshfile" value="particleeffects/p_onFire"/-->
+				<!-- <property name="Meshfile" value="particleeffects/p_fire_small"/> -->
+				<property name="Meshfile" value="p_twitch_zombie_radiation_left"/>
+				<property name="Material" value="Morganic"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action1">
+					<property name="Class" value="Projectile"/>
+					<property name="DamageEntity" value="5"/>
+					<property name="DamageBlock" value="30"/>
+					<property name="Explosion.ParticleIndex" value="0"/>
+					<property name="Velocity" value="18"/>
+					<property name="FlyTime" value=".2"/>
+					<property name="LifeTime" value="2"/>
+					<property name="CollisionRadius" value=".5"/>
+					<property name="DamageBonus.earth" value="0"/>
+					<property name="Buff" value="buffBurningZombie"/>
+				</property>
+				<effect_group name="ammoProjectileZombieVomit" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".8" tags="buffBurningZombie"/>
+				</effect_group>
+			</item>
+			<item name="meleeScarecrow">
+				<property name="Extends" value="meleeHandZombieBurning"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="DamageEntity" value="30"/>
+					<property name="DamageBlock" value="30"/>
+				</property>
+				<property name="Buff" value="buffBurningMolotov,buffInjuryBleeding,buffInfectionCatch"/>
+				<effect_group name="meleeHandZombieBurningFeral" tiered="false">
+					<passive_effect name="BuffProcChance" operation="base_set" value="6" tags="buffBurningMolotov"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffBurningMolotov"/>
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".5" tags="buffBurningZombie"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".3" tags="buffInjuryBleedingZombie"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="45"/>
+					<!--InfectionFeral-->
+				</effect_group>
+			</item>	
+		<!--HFHands Zombies-->
+			<item name="meleeHandELITE">
+				<property name="Extends" value="meleeHandZombieStrong"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="Buff" value="elitehit"/>
+					<property name="DamageEntity" value="55"/>
+					<property name="DamageBlock" value="100"/>
+				</property>
+				<effect_group name="meleeHandZombieStrongFeral" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="InfectionFeral"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInfectionCatch"/>
+					<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
+				</effect_group>
+			</item>
+			<!-- Zombies hands by Holy Ventus -->
+			<item name="meleeHandElementalFire">
+				<property name="Extends" value="meleeHandZombieStrong"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="DamageEntity" value="65"/>
+					<property name="Buff" value="ElementalNormalHit"/>
+					<property name="DamageBlock" value="400"/>
+				</property>
+				<property class="Action1">
+					<property name="Class" value="Vomit"/>
+					<property name="Delay" value=".3"/>
+					<property name="Range" value="300"/>
+					<property name="Infinite_ammo" value="true"/>
+					<property name="Magazine_items" value="ammoProjectileZombieVomit"/>
+					<property name="Sound_warning" value="hulkvomitwarning"/>
+					<property name="Sound_start" value="hulkvomitattack"/>
+					<property name="Sound_repeat" value=""/>
+					<property name="Sound_end" value=""/>
+					<property name="Sound_empty" value=""/>
+					<property name="Sound_reload" value=""/>
+				</property>				
+				<effect_group name="meleeHandZombieStrongFeral" tiered="false">
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="2"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>					
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="InfectionFeral"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInfectionCatch"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffBurningMolotov"/>
+					<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
+				</effect_group>
+			</item>
+			<item name="meleeHandElementalFrozen">
+				<property name="Extends" value="meleeHandZombieStrong"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="DamageEntity" value="65"/>
+					<property name="Buff" value="ElementalFrozenHit"/>
+					<property name="DamageBlock" value="400"/>
+				</property>
+				<property class="Action1">
+					<property name="Class" value="Vomit"/>
+					<property name="Delay" value=".3"/>
+					<property name="Range" value="300"/>
+					<property name="Infinite_ammo" value="true"/>
+					<!-- <property name="Magazine_items" value="ammoProjectileZombieVomit"/> -->
+					<property name="Magazine_items" value="projectileFrozen"/>
+					<property name="Sound_warning" value="hulkvomitwarning"/>
+					<property name="Sound_start" value="hulkvomitattack"/>
+					<property name="Sound_repeat" value=""/>
+					<property name="Sound_end" value=""/>
+					<property name="Sound_empty" value=""/>
+					<property name="Sound_reload" value=""/>
+					<!-- <property name="Buff" value="ElementalFrozenHit"/> -->
+				</property>
+				<effect_group name="meleeHandZombieStrongFeral" tiered="false">
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="2"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<!-- <passive_effect name="BuffProcChance" operation="base_set" value="0.90" tags="ElementalFrozenHit"/> -->
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="InfectionFeral"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInfectionCatch"/>
+					<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
+				</effect_group>
+			</item>
+			<item name="meleeHandElementalWater">
+				<property name="Extends" value="meleeHandZombieStrong"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="DamageEntity" value="65"/>
+					<property name="Buff" value="ElementalNormalHit"/>
+					<property name="DamageBlock" value="400"/>
+				</property>
+				<property class="Action1">
+					<property name="Class" value="Vomit"/>
+					<property name="Delay" value=".3"/>
+					<property name="Range" value="300"/>
+					<property name="Infinite_ammo" value="true"/>
+					<property name="Magazine_items" value="ammoProjectileZombieVomit"/>
+					<property name="Sound_warning" value="hulkvomitwarning"/>
+					<property name="Sound_start" value="hulkvomitattack"/>
+					<property name="Sound_repeat" value=""/>
+					<property name="Sound_end" value=""/>
+					<property name="Sound_empty" value=""/>
+					<property name="Sound_reload" value=""/>
+				</property>
+				<effect_group name="meleeHandZombieStrongFeral" tiered="false">
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="2"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffDrowned"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="InfectionFeral"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInfectionCatch"/>
+				</effect_group>
+			</item>
+			<item name="meleeHandElementalElectrical">
+				<property name="Extends" value="meleeHandZombieStrong"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="DamageEntity" value="15"/>
+					<property name="Buff" value="ElementalNormalHit"/>
+					<property name="DamageBlock" value="400"/>
+				</property>
+				<property class="Action1">
+					<property name="Class" value="Vomit"/>
+					<property name="Delay" value=".3"/>
+					<property name="Range" value="300"/>
+					<property name="Infinite_ammo" value="true"/>
+					<property name="Magazine_items" value="ammoProjectileZombieVomit"/>
+					<property name="Sound_warning" value="hulkvomitwarning"/>
+					<property name="Sound_start" value="hulkvomitattack"/>
+					<property name="Sound_repeat" value=""/>
+					<property name="Sound_end" value=""/>
+					<property name="Sound_empty" value=""/>
+					<property name="Sound_reload" value=""/>
+				</property>
+				<effect_group name="meleeHandZombieStrongFeral" tiered="false">
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="2"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffShockedElectric"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="InfectionFeral"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInfectionCatch"/>
+					<!-- <triggered_effect trigger="onSelfAttackedOther" action="CallGameEvent" target="other" event="HelicopterHelicopteeer"/> -->
+				</effect_group>
+			</item>	
+			<item name="projectileFrozen">
+				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
+				<property name="Material" value="Morganic"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action1">
+					<property name="Class" value="Projectile"/>
+					<property name="DamageEntity" value="65"/>
+					<property name="DamageBlock" value="400"/>
+					<property name="Explosion.ParticleIndex" value="7"/>
+					<property name="Velocity" value="15"/>
+					<property name="FlyTime" value="1"/>
+					<property name="LifeTime" value="3"/>
+					<property name="CollisionRadius" value="0.7"/>
+					<requirement name="EntityTagCompare" tags="player"/>
+					<requirement name="NotHasBuff" buff="god"/>
+					<property name="Buff" value="ElementalFrozenHit"/>
+				</property>
+				<effect_group name="projectilFrozen" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="metal"/>
+					<!-- <passive_effect name="BuffProcChance" operation="base_set" value="0.50" tags="ElementalFrozenHit"/> -->
+				</effect_group>
+			</item>
+			<!---->
+			<item name="meleeHandNightmare">
+				<property name="Extends" value="meleeHandZombieStrong"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="DamageEntity" value="65"/>
+					<property name="Buff" value="Nigthit,buffDark2"/>
+					<property name="DamageBlock" value="400"/>
+				</property>
+				<effect_group name="meleeHandZombieStrongFeral" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="InfectionFeral"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInfectionCatch"/>
+					<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
+				</effect_group>
+			</item>
+		<!-- Specials-->
+			<item name="meleeHandRAINBOW">
+				<property name="Tags" value="blunt,melee,light,perkFlurryOfBlows"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="HoldType" value="9"/>
+				<property name="Material" value="Morganic"/>
+				<property name="Canhold" value="false"/>
+				<property name="Stacknumber" value="1"/>
+				<property name="Candrop" value="false"/>
+				<property name="CustomIcon" value="missingIcon"/>
+				<property class="Action0">				<!-- AttackAction -->
+					<property name="Class" value="Melee"/>
+					<property name="Delay" value="0.5"/>
+					<property name="Range" value="2.4"/>
+					<property name="Buff" value="buffmummy2"/>
+					<property name="Sound_start" value="chainsaw_fire_start"/>
+					<property name="Sphere" value=".1"/>
+					<property name="Block_range" value="2.5"/>
+					<property name="DamageEntity" value="60"/>
+					<property name="DamageBlock" value="100"/>
+				</property>
+				<effect_group name="meleeHandMaster" tiered="false">
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo" weights=".11,.07,.07,.05,.29,.36,.11"/>
+				</effect_group>
+			</item>		
+			<item name="meleeHandVenSpirit">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="Range" value="2"/>
+					<property name="Delay" value="0.5"/>
+					<!-- obsolete if rounds per minute exists -->
+					<property name="DamageEntity" value="20"/>
+					<property name="DamageBlock" value="5"/>
+					<property name="Buff" value="buffregdamage"/>
+					<property name="Sound_start" value="machete_swinglight"/>
+					<property class="HitSounds">
+						<property name="Override0" value="organic" param1="metalslashorganic"/>
+					</property>
+				</property>
+				<property class="Action1">
+					<!-- UseAction -->
+					<property name="Class" value="Vomit"/>
+					<property name="Delay" value="0.3"/>
+					<!-- obsolete if rounds per minute exists -->
+					<property name="Range" value="200"/>
+					<property name="Infinite_ammo" value="true"/>
+					<property name="Magazine_items" value="VenSpiritProjectile" />
+					<property name="Sound_warning" value="hulkvomitwarning"/>
+					<property name="Sound_start" value="hulkvomitattack"/>
+					<property name="Sound_repeat" value=""/>
+					<property name="Sound_end" value=""/>
+					<property name="Sound_empty" value=""/>
+					<property name="Sound_reload" value=""/>
+					<property name="Buff" value="buffVenSpirit"/>
+				</property>
+				<effect_group name="meleeHandVenSpirit" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="5"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="0.90" tags="buffregdamage"/>
+				</effect_group>
+			</item>
+			<item name="VenSpiritProjectile">
+				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
+				<property name="Material" value="Morganic"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action1">
+					<property name="Class" value="Projectile"/>
+					<property name="DamageEntity" value="10"/>
+					<property name="DamageBlock" value="10"/>
+					<property name="Explosion.ParticleIndex" value="7"/>
+					<property name="Velocity" value="15"/>
+					<property name="FlyTime" value="1"/>
+					<property name="LifeTime" value="3"/>
+					<property name="CollisionRadius" value="0.7"/>
+					<property name="Buff" value="buffregdamage"/>
+				</property>
+				<effect_group name="VenSpiritProjectile" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="metal"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="0.50" tags="buffregdamage"/>
+				</effect_group>
+			</item>
+			<item name="meleeHandPonky">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="Range" value="2"/>
+					<property name="Delay" value="0.5"/>
+					<!-- obsolete if rounds per minute exists -->
+					<property name="DamageEntity" value="20"/>
+					<property name="DamageBlock" value="5"/>
+					<property name="Buff" value="buffOnlyheadshot"/>
+					<property name="Sound_start" value="machete_swinglight"/>
+					<property class="HitSounds">
+						<property name="Override0" value="organic" param1="metalslashorganic"/>
+					</property>
+				</property>
+				<property class="Action1">
+					<!-- UseAction -->
+					<property name="Class" value="Vomit"/>
+					<property name="Delay" value="0.3"/>
+					<!-- obsolete if rounds per minute exists -->
+					<property name="Range" value="200"/>
+					<property name="Infinite_ammo" value="true"/>
+					<property name="Magazine_items" value="PonkyGallina" />
+					<property name="Sound_warning" value="hulkvomitwarning"/>
+					<property name="Sound_start" value="hulkvomitattack"/>
+					<property name="Sound_repeat" value=""/>
+					<property name="Sound_end" value=""/>
+					<property name="Sound_empty" value=""/>
+					<property name="Sound_reload" value=""/>
+					<property name="Buff" value="buffOnlyheadshot"/>
+				</property>
+				<effect_group name="meleeHandPonky" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="5"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="0.90" tags="buffOnlyheadshot"/>
+				</effect_group>
+			</item>
+			<item name="PonkyGallina">
+				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
+				<property name="Material" value="Morganic"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action1">
+					<property name="Class" value="Projectile"/>
+					<property name="DamageEntity" value="10"/>
+					<property name="DamageBlock" value="10"/>
+					<property name="Explosion.ParticleIndex" value="7"/>
+					<property name="Velocity" value="15"/>
+					<property name="FlyTime" value="1"/>
+					<property name="LifeTime" value="3"/>
+					<property name="CollisionRadius" value="0.7"/>
+					<property name="Buff" value="buffOnlyheadshot"/>
+					<!-- <requirement name="EntityTagCompare" target="other" tags="player">
+						<requirement name="NotHasBuff" buff="god"/>
+						<property name="Buff" value="buffOnlyheadshot"/>
+					</requirement> -->
+				</property>
+				<effect_group name="PonkyGallina" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="metal"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="0.50" tags="buffOnlyheadshot"/>
+				</effect_group>
+			</item>
+			<item name="meleeHandMiniROPA">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="Degradation" value="99999" param1="true"/>
+				<property name="Material" value="Morganic"/>
+				<property class="Action0">
+					<property name="Buff" value="buffInjuryKnockdown01"/>
+					<property name="Range" value="2"/>
+					<property name="Sound_start" value="swoosh"/>
+					<property name="DamageEntity" value="1"/>
+					<property name="DamageBlock" value="7000"/>
+				</property>
+				<effect_group name="meleeHandLB" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".75" tags="buffInjuryBleedingZombie"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".1" tags="buffInfectionCatch"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="75"/>
+				</effect_group>
+			</item>			
+		<!--Bomber Elite-->			
+			<item name="meleeHandBomberelite">
+				<property name="Extends" value="meleeHandZombie01"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="DamageEntity" value="70"/>
+					<property name="Buff" value="buffDark2"/>
+					<property name="DamageBlock" value="1000"/>
+				</property>
+				<!-- <property class="Action1">
+					<property name="Class" value="Vomit"/>
+					<property name="Delay" value="0.3"/>
+					<property name="Range" value="100"/>
+					<property name="Infinite_ammo" value="true"/>
+					<property name="Magazine_items" value="eBomberProjectile" />
+					<property name="Sound_warning" value="moepukervomitwarning"/>
+					<property name="Sound_start" value="moepukervomitwarning"/>
+					<property name="Sound_repeat" value=""/>
+					<property name="Sound_end" value=""/>
+					<property name="Sound_empty" value=""/>
+					<property name="Sound_reload" value=""/>
+				</property> -->
+				<effect_group name="meleeHandBomber" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="100"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				</effect_group>
+			</item>
+			<item name="eBomberProjectile">
+				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
+				<property name="Material" value="Mmetal"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action1">
+					<property name="Class" value="Projectile"/>
+					<!--property name="Explosion.ParticleIndex" value="4"/-->
+					<property name="Explosion.ParticleIndex" value="6"/>
+					<!-- which Prefab/particle is used -->
+					<property name="Explosion.RadiusBlocks" value="3"/>
+					<!-- damage radius for blocks -->
+					<property name="Explosion.RadiusEntities" value="10"/>
+					<!-- damage radius for entities -->
+					<property name="Explosion.DamageBonus.stone" value=".5"/>
+					<property name="Explosion.DamageBonus.metal" value="1"/>
+					<property name="Explosion.DamageBonus.earth" value="0"/>
+					<property name="Explosion.DamageBonus.wood" value="0"/>
+					<property name="Explosion.DamageBonus.water" value="0"/>
+					<property name="Velocity" value="0"/>
+					<property name="Gravity" value="-200"/>
+					<property name="FlyTime" value=".01"/>
+					<property name="LifeTime" value="20"/>
+				</property>
+				<effect_group name="BomberProjectile" tiered="false">
+					<passive_effect name="BlockDamage" operation="base_set" value="5000"/>
+					<passive_effect name="EntityDamage" operation="base_set" value="13000"/>
+					<passive_effect name="ProjectileVelocity" operation="base_set" value="50"/>
+					<display_value name="dExRadius" value="5"/>
+				</effect_group>
+			</item>	
+		<!-- Sub Bosses -->
+			<item name="meleeHandBossCrawler">
+				<property name="Extends" value="meleeHandZombie02"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="DamageEntity" value="450"/>
+					<property name="DamageBlock" value="2000"/>
+					<!--<property name="Buff" value="buffsirenhit"/>-->
+				</property>
+				<effect_group name="meleeHandBossCrawler" tiered="false">
+					<passive_effect name="TargetArmor" operation="perc_add" value="-1"/>
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="30"/>  A16 2 -->
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo" weights=".11,.07,.07,.05,.29,.36,.11"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="15">					<!--InfectionFeral-->
+						<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="2400"/>
+					<!--AbrasionFeral-->
+				</effect_group>
+			</item>
+			<!-- Zombies hands by TAV0 -->
+				<item name="meleeHandAnimalChickenDemonBOSS">
+					<property name="Extends" value="meleeHandMaster"/>
+					<property name="CreativeMode" value="None"/>
+					<property name="HoldType" value="35"/>
+					<property class="Action0">
+						<property name="Range" value="3"/>
+						<property name="Sphere" value="0.4"/>
+						<property name="Block_range" value="5.5"/>
+						<property name="Delay" value="0.4"/>
+						<!-- obsolete if rounds per minute exists -->
+						<property name="DamageEntity" value="111"/>
+						<property name="DamageBlock" value="9"/>
+						<property name="Buff" value="buffInjuryStunned01"/>
+					</property>
+					<effect_group name="meleeHandAnimalChickenDemon" tiered="false">
+						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffShocked"/>
+						<passive_effect name="ModSlots" operation="base_set" value="0"/>
+						<passive_effect name="DamageModifier" operation="perc_add" value="3" tags="earth"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value="0.25" tags="buffInjuryBleedingZombie"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value="0.40" tags="buffInfectionCatch"/>
+						<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="70"/>
+					</effect_group>
+				</item>
+			<!---->			
+			<item name="meleeHandLB">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="Degradation" value="99999" param1="true"/>
+				<property name="Material" value="Morganic"/>
+				<property class="Action0">
+					<property name="Range" value="2"/>
+					<property name="Sound_start" value="swoosh"/>
+					<property name="DamageEntity" value="45"/>
+					<property name="DamageBlock" value="60"/>
+				</property>
+				<effect_group name="meleeHandLB" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".75" tags="buffInjuryBleedingZombie"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".3" tags="buffInfectionCatch"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".3" tags="buffInjuryStunned01"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="75"/>
+				</effect_group>
+			</item>
+			<item name="meleeHandAprenticce">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="Degradation" value="99999" param1="true"/>
+				<property name="Material" value="Morganic"/>
+				<property class="Action0">
+					<property name="Buff" value="buffInjuryBleeding,buffInjuryBleedingTwo,buffInjuryBleedingOne"/>
+					<property name="Range" value="3"/>
+					<property name="Sound_start" value="swoosh"/>
+					<property name="DamageEntity" value="60"/>
+					<property name="DamageBlock" value="1500"/>
+				</property>
+				<effect_group name="meleeHandAprenticce" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="6" tags="buffInjuryBleedingZombie"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="6" tags="buffInjuryBleedingZombie"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".3" tags="buffInfectionCatch"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".3" tags="buffInjuryStunned01"/>
+
+					<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffInjuryBleeding" weights="3"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="75"/>
+				</effect_group>
+			</item>
+			<item name="meleeHandzombiSBMiniSiren">
+				<property name="Extends" value="meleeHandZombieStrong"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="Buff" value="minihit"/>
+					<property name="DamageEntity" value="1"/>
+					<property name="DamageBlock" value="500"/>
+				</property>
+				<effect_group name="meleeHandZombieStrongFeral" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="InfectionFeral"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInfectionCatch"/>
+					<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
+				</effect_group>
+			</item>
+			<!-- Zombies hands by Holy Ventus -->
+				<item name="meleeHandToxic">
+					<property name="Extends" value="meleeHandMaster"/>
+					<property name="CreativeMode" value="None"/>
+					<property name="Degradation" value="99999" param1="true"/>
+					<property class="Action0">
+						<property name="Buff" value="buffToxic,buffPoisonRadiation"/>
+						<property name="Range" value="3"/>
+						<property name="DamageEntity" value="50"/>
+						<property name="DamageBlock" value="1500"/>
+					</property>
+					<property class="Action1">
+						<property name="Class" value="Vomit"/>
+						<property name="Delay" value=".3"/>
+						<property name="Range" value="300"/>
+						<property name="Infinite_ammo" value="true"/>
+						<property name="Magazine_items" value="ammoProjectileZombieVomit"/>
+						<property name="Sound_warning" value="hulkvomitwarning"/>
+						<property name="Sound_start" value="hulkvomitattack"/>
+						<property name="Sound_repeat" value=""/>
+						<property name="Sound_end" value=""/>
+						<property name="Sound_empty" value=""/>
+						<property name="Sound_reload" value=""/>
+					</property>	
+					<effect_group name="meleeHandToxic" tiered="false">
+						<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+						<passive_effect name="MaxRange" operation="base_set" value="100"/>
+						<passive_effect name="MagazineSize" operation="base_set" value="2"/>
+						<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
+						<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1"/>
+						<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3"/>
+						<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>					
+						<passive_effect name="ModSlots" operation="base_set" value="0"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value=".75" tags="buffInjuryBleedingZombie"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value=".3" tags="buffInjuryStunned01"/>
+						<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffToxic,buffPoisonRadiation"/>
+					</effect_group>
+				</item>
+				<item name="meleeHandEnfermera">
+					<property name="Extends" value="meleeHandMaster"/>
+					<property name="CreativeMode" value="None"/>
+					<property name="Degradation" value="99999" param1="true"/>
+					<property class="Action0">
+						<property name="Buff" value="drowsy,buffInjuryBleedingStrong"/>
+						<property name="Range" value="3"/>
+						<property name="DamageEntity" value="40"/>
+						<property name="DamageBlock" value="1500"/>
+					</property>
+					<effect_group name="meleeHandEnfermera" tiered="false">
+						<passive_effect name="ModSlots" operation="base_set" value="0"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value=".6" tags="buffInfectionCatch"/>
+						<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="medicalRegHealthAmount" operation="set" value="0"/>
+					</effect_group>
+				</item>
+			<!---->
+		<!--Bosses-->
+			<item name="meleeHandZombieIronSpiderFeral">
+				<property name="Extends" value="meleeHandZombie02"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="Buff" value="buffbossMineralhit"/>
+					<property name="Sound_start" value="Auger_Fire_Start"/>
+					<property name="DamageEntity" value="125"/>
+					<property name="Range" value="2"/>
+					<property name="Block_range" value="4"/>
+					<property name="DamageBlock" value="2500"/>
+					<property name="Delay" value="0.3"/>
+				</property>
+				<effect_group name="meleeHandZombie02Feral" tiered="false">
+					<passive_effect name="BuffProcChance" operation="base_set" value="3" tags="buffInjuryStunned01"/>
+					<!--AbrasionFeral-->
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="BlockRange" operation="base_set" value="4"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="3" tags="buffLegSprainedCHTrigger"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="3" tags="buffAbrasionCatch"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="3" tags="buffLaceration"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="3" tags="buffInfectionCatch"/>
+				</effect_group>
+			</item>
+			<item name="meleeHandZombieSiren">
+				<property name="Extends" value="meleeHandZombie02"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="DamageEntity" value="0"/>
+					<property name="Block_range" value="4"/>
+					<property name="DamageBlock" value="5000"/>
+					<property name="Range" value="5.0"/>
+					<property name="Buff" value="buffsirenhit"/>
+				</property>
+				<effect_group name="meleeHandZombie02Feral" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="MaxRange" operation="base_set" value="5"/>
+					<passive_effect name="BlockRange" operation="base_set" value="4"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="2400"/>
+					<!--AbrasionFeral-->
+				</effect_group>
+			</item>
+			<item name="meleeHandBOSS">
+				<property name="Tags" value="blunt,melee,light,perkFlurryOfBlows"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="HoldType" value="9"/>
+				<property name="Material" value="Morganic"/>
+				<property name="Canhold" value="false"/>
+				<property name="Stacknumber" value="1"/>
+				<property name="Candrop" value="false"/>
+				<property name="CustomIcon" value="missingIcon"/>
+
+				<property class="Action0">				<!-- AttackAction -->
+					<property name="Class" value="Melee"/>
+					<property name="Delay" value="0.5"/>
+					<!-- obsolete if rounds per minute exists -->
+					<property name="Range" value="4.5"/>
+					<!-- This not what "clientside melee combat" means. =) This is the adjustment afterwards due to code changes. -->
+					<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01,buffbosshit"/>
+					<property name="Sphere" value=".1"/>
+					<property name="Block_range" value="4"/>
+					<property name="DamageEntity" value="150"/>
+					<property name="DamageBlock" value="5000"/>
+					<property name="Sound_start" value="swoosh"/>
+				</property>
+				<effect_group name="meleeHandMaster" tiered="false">
+					<passive_effect name="BuffProcChance" operation="base_set" value=".99" tags="buffInjuryStunned"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".99" tags="buffLegSprainedCHTrigger"/>
+					<passive_effect name="MaxRange" operation="base_set" value="4"/>
+					<passive_effect name="BlockRange" operation="base_set" value="4"/>
+					<!--<passive_effect name="DamageFalloffRange" operation="base_set" value="1.65"/> -->
+				</effect_group>
+			</item>	
+			<item name="meleeHandGladBOSS">
+				<property name="Tags" value="blunt,melee,light,perkFlurryOfBlows"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="HoldType" value="9"/>
+				<property name="Material" value="Morganic"/>
+				<property name="Canhold" value="false"/>
+				<property name="Stacknumber" value="1"/>
+				<property name="Candrop" value="false"/>
+				<property name="CustomIcon" value="missingIcon"/>
+
+				<property class="Action0">				<!-- AttackAction -->
+					<property name="Class" value="Melee"/>
+					<property name="Delay" value="0.5"/>
+					<!-- obsolete if rounds per minute exists -->
+					<property name="Range" value="4.5"/>
+					<!-- This not what "clientside melee combat" means. =) This is the adjustment afterwards due to code changes. -->
+					<property name="Buff" value="buffInfectionCatch,buffInjuryStunned01,buffbosshit,buffInjuryBleeding,buffInjuryBleedingTwo,buffInjuryBleedingOne"/>
+					<property name="Sphere" value=".1"/>
+					<property name="Block_range" value="4"/>
+					<property name="DamageEntity" value="130"/>
+					<property name="DamageBlock" value="5000"/>
+					<property name="Sound_start" value="swoosh"/>
+				</property>
+				<effect_group name="meleeHandMaster" tiered="false">
+					<passive_effect name="BuffProcChance" operation="base_set" value="6" tags="buffInjuryBleedingZombie"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".99" tags="buffInjuryStunned"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".99" tags="buffLegSprainedCHTrigger"/>
+					<passive_effect name="MaxRange" operation="base_set" value="4"/>
+					<passive_effect name="BlockRange" operation="base_set" value="4"/>
+					<!--<passive_effect name="DamageFalloffRange" operation="base_set" value="1.65"/> -->
+					<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffInjuryBleeding" weights="3"/>
+				</effect_group>
+			</item>				
+			<!--Malen Based on ZombiesHands by Sunkfin-->
+			<item name="meleeHandJuggernaut">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="Degradation" value="99999" param1="true"/>
+				<property class="Action0">
+					<property name="Range" value="3"/>
+					<property name="Block_range" value="4"/>
+					<property name="DamageEntity" value="125"/>
+					<property name="DamageBlock" value="500"/>
+					<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01,buffbosshit"/>
+					<property name="Sound_start" value="Auger_Fire_Start"/>
+					<property class="HitSounds">
+						<property name="Override0" value="organic" param1="metalsolidhitorganic"/>
+					</property>
+				</property>
+				<property class="Action1">
+					<property name="Class" value="Vomit"/>
+					<property name="Delay" value=".3"/>
+					<property name="Range" value="500"/>
+					<property name="Infinite_ammo" value="true"/>
+					<property name="Magazine_items" value="JuggernautProjectile"/>
+					<property name="Sound_warning" value="demolitionzexplodewarning"/>
+					<property name="Sound_start" value="m136_fire"/>
+					<property name="Sound_repeat" value=""/>
+					<property name="Sound_end" value=""/>
+					<property name="Sound_empty" value=""/>
+					<property name="Sound_reload" value=""/>
+				</property>
+				<effect_group name="meleeHandJuggernaut" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="2"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".20" tags="buffInjuryBleedingZombie"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".20" tags="buffInfectionCatch"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".25" tags="buffInjuryStunned01"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="30"/>
+				</effect_group>
+			</item>
+			<item name="JuggernautProjectile">
+				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
+				<property name="Material" value="Mmetal"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action1">
+					<property name="Class" value="Projectile"/>
+					<property name="DamageEntity" value="200"/>
+					<property name="DamageBlock" value="1000"/>
+					<!--property name="Explosion.ParticleIndex" value="4"/-->
+					<property name="Explosion.ParticleIndex" value="5"/>
+					<!-- which Prefab/particle is used -->
+					<property name="Explosion.RadiusBlocks" value="5"/>
+					<!-- damage radius for blocks -->
+					<property name="Explosion.RadiusEntities" value="4"/>
+					<!-- damage radius for entities -->
+					<property name="Explosion.DamageBonus.water" value="0"/>
+					<property name="Velocity" value="18"/>
+					<property name="FlyTime" value="2"/>
+					<property name="LifeTime" value="4"/>
+					<property name="CollisionRadius" value="0.75"/>
+					<property name="DamageBonus.earth" value="0"/>
+				</property>
+				<effect_group name="JuggernautProjectile" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="metal"/>
+				</effect_group>
+			</item>
+			<!---->
+			<!-- Added by HolyVentus -->
+			<item name="meleeHandCirujano">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="Degradation" value="99999" param1="true"/>
+				<property name="Material" value="Morganic"/>
+				<property class="Action0">
+					<property name="Class" value="Melee"/>
+					<property name="Buff" value="buffInjuryBleedingStrong,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffArmBroken,buffLegBroken"/>
+					<property name="Delay" value="0.2"/>
+					<property name="Range" value="4.5"/>
+					<property name="Sound_start" value="machete_swinglight"/>
+					<property name="DamageEntity" value="80"/>
+					<property name="DamageBlock" value="1000"/>
+				</property>
+				<effect_group name="meleeHandCirujano" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffInjuryBleedingStrong"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffArmSprainedCHTrigger"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffLegSprainedCHTrigger"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffArmBroken"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffLegBroken"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".6" tags="buffInfectionCatch"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".6" tags="buffInjuryStunned01"/>
+
+					<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffInjuryBleedingStrong" weights="3"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="75"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="medicalRegHealthAmount" operation="set" value="0"/>
+				</effect_group>
+			</item>
+			<item name="meleeHandSamurai">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="Degradation" value="99999" param1="true"/>
+				<property name="Material" value="Morganic"/>
+				<property class="Action0">
+					<property name="Class" value="Melee"/>
+					<property name="Buff" value="buffLaceration,buffInjuryBleeding,buffInjuryBleedingOne,buffInjuryBleedingTwo"/>
+					<property name="Delay" value="0.2"/>
+					<property name="Range" value="3.5"/>
+					<!--<property name="Sound_start" value="machete_swinglight"/>-->
+					<property name="DamageEntity" value="130"/>
+					<property name="DamageBlock" value="1500"/>
+				</property>
+				<effect_group name="meleeHandSamurai" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffInjuryBleedingZombie"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffLaceration"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".6" tags="buffInfectionCatch"/>
+
+					<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffInjuryBleeding" weights="3"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="50"/>
+				</effect_group>
+			</item>				
+			<!---->
+			<item name="meleeHandBossHF">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="Degradation" value="99999" param1="true"/>
+				<property class="Action0">
+					<property name="Range" value="4"/>
+					<property name="Block_range" value="4"/>
+					<property name="DamageEntity" value="300"/>
+					<property name="DamageBlock" value="6000"/>
+					<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01,buffBosshitHF"/>
+					<property name="Sound_start" value="Auger_Fire_Start"/>
+					<property class="HitSounds">
+						<property name="Override0" value="organic" param1="metalsolidhitorganic"/>
+					</property>
+				</property>
+				<property class="Action1">
+					<property name="Class" value="Vomit"/>
+					<property name="Delay" value=".3"/>
+					<property name="Range" value="500"/>
+					<property name="Infinite_ammo" value="true"/>
+					<property name="Magazine_items" value="BossHFProjectile"/>
+					<property name="Sound_warning" value="demolitionzexplodewarning"/>
+					<property name="Sound_start" value="m136_fire"/>
+					<property name="Sound_repeat" value=""/>
+					<property name="Sound_end" value=""/>
+					<property name="Sound_empty" value=""/>
+					<property name="Sound_reload" value=""/>
+				</property>
+				<effect_group name="meleeHandBossHF" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="BlockRange" operation="base_set" value="4"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="3"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="3"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".20" tags="buffInjuryBleedingZombie"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".20" tags="buffInfectionCatch"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".25" tags="buffInjuryStunned01"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="30"/>
+				</effect_group>
+			</item>
+			<item name="BossHFProjectile">
+				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
+				<property name="Material" value="Mmetal"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action1">
+					<property name="Class" value="Projectile"/>
+					<property name="DamageEntity" value="500"/>
+					<property name="DamageBlock" value="3000"/>
+					<property name="Explosion.ParticleIndex" value="5"/>
+					<property name="Explosion.RadiusBlocks" value="5"/>
+					<property name="Explosion.RadiusEntities" value="4"/>
+					<property name="Explosion.DamageBonus.water" value="0"/>
+					<property name="Velocity" value="18"/>
+					<property name="FlyTime" value="2"/>
+					<property name="LifeTime" value="4"/>
+					<property name="CollisionRadius" value="0.75"/>
+					<property name="DamageBonus.earth" value="0"/>
+				</property>
+				<effect_group name="BossHFProjectile" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="metal"/>
+				</effect_group>
+			</item>			
+		<!--Shiny Bosses-->
+			<item name="meleeHandBossNigh">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="Degradation" value="99999" param1="true"/>
+				<property class="Action0">
+					<property name="Range" value="1.75"/>
+					<property name="DamageEntity" value="135"/>
+					<property name="Block_range" value="4"/>
+					<property name="DamageBlock" value="500"/>
+					<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01,Nigthit"/>
+					<property name="Sound_start" value="Auger_Fire_Start"/>
+					<property class="HitSounds">
+						<property name="Override0" value="organic" param1="metalsolidhitorganic"/>
+
+					</property>
+				</property>
+				<property class="Action1">				<!-- UseAction -->
+					<property name="Class" value="Vomit"/>
+					<property name="Hitmask_override" value="Arrow"/>
+					<property name="Delay" value=".3"/>
+					<!-- obsolete if rounds per minute exists -->
+					<property name="Range" value="250"/>
+					<property name="Infinite_ammo" value="true"/>
+					<property name="Magazine_items" value="SpecialJuggernautProjectile"/>
+					<property name="Sound_warning" value="hulkvomitwarning"/>
+					<property name="Sound_start" value="hulkvomitattack"/>
+					<property name="Sound_repeat" value=""/>
+					<property name="Sound_end" value=""/>
+					<property name="Sound_empty" value=""/>
+					<property name="Sound_reload" value=""/>
+				</property>
+				<effect_group name="meleeHandZombieCop" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="BlockRange" operation="base_set" value="4"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="2"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="6" tags="buffBurningMolotov"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="0.20" tags="buffInjuryBleeding"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="0.15" tags="buffInfectionCatch"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="70"/>
+
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo" weights=".11,.07,.07,.05,.29,.36,.11"/>
+
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10">					<!--InfectionRegular-->
+						<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/>
+					<!--AbrasionRegular-->
+				</effect_group>
+			</item>	
+			<item name="meleeHandSpecialJuggernaut">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="Degradation" value="99999" param1="true"/>
+				<property class="Action0">
+					<property name="Range" value="3"/>
+					<property name="Block_range" value="4"/>
+					<property name="DamageEntity" value="260"/>
+					<property name="DamageBlock" value="7000"/>
+					<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01,buffbosshitSP"/>
+					<property name="Sound_start" value="Auger_Fire_Start"/>
+					<property class="HitSounds">
+						<property name="Override0" value="organic" param1="metalsolidhitorganic"/>
+					</property>
+				</property>
+				<property class="Action1">
+					<property name="Class" value="Vomit"/>
+					<property name="Delay" value=".3"/>
+					<property name="Range" value="500"/>
+					<property name="Infinite_ammo" value="true"/>
+					<property name="Magazine_items" value="SpecialJuggernautProjectile"/>
+					<property name="Sound_warning" value="demolitionzexplodewarning"/>
+					<property name="Sound_start" value="m136_fire"/>
+					<property name="Sound_repeat" value=""/>
+					<property name="Sound_end" value=""/>
+					<property name="Sound_empty" value=""/>
+					<property name="Sound_reload" value=""/>
+				</property>
+				<effect_group name="meleeHandSpecialJuggernaut" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="2"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".20" tags="buffInjuryBleedingZombie"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".20" tags="buffInfectionCatch"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".25" tags="buffInjuryStunned01"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="30"/>
+				</effect_group>
+			</item>
+			<item name="SpecialJuggernautProjectile">
+				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
+				<property name="Material" value="Mmetal"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action1">
+					<property name="Class" value="Projectile"/>
+					<property name="DamageEntity" value="800"/>
+					<property name="DamageBlock" value="10000"/>
+					<!--property name="Explosion.ParticleIndex" value="4"/-->
+					<property name="Explosion.ParticleIndex" value="5"/>
+					<!-- which Prefab/particle is used -->
+					<property name="Explosion.RadiusBlocks" value="6"/>
+					<!-- damage radius for blocks -->
+					<property name="Explosion.RadiusEntities" value="8"/>
+					<!-- damage radius for entities -->
+					<property name="Explosion.DamageBonus.water" value="0"/>
+					<property name="Velocity" value="25"/>
+					<property name="FlyTime" value="4"/>
+					<property name="LifeTime" value="4"/>
+					<property name="CollisionRadius" value="0.75"/>
+					<property name="DamageBonus.earth" value="0"/>
+				</property>
+				<effect_group name="SpecialJuggernautProjectile" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value=".05" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="stone"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="metal"/>
+				</effect_group>
+			</item>
+			<item name="meleeHandSpecialBOSS">
+				<property name="Tags" value="blunt,melee,light,perkFlurryOfBlows"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="HoldType" value="9"/>
+				<property name="Material" value="Morganic"/>
+				<property name="Canhold" value="false"/>
+				<property name="Stacknumber" value="1"/>
+				<property name="Candrop" value="false"/>
+				<property name="CustomIcon" value="missingIcon"/>
+
+				<property class="Action0">				<!-- AttackAction -->
+					<property name="Class" value="Melee"/>
+					<property name="Delay" value="0.5"/>
+					<!-- obsolete if rounds per minute exists -->
+					<property name="Range" value="4.5"/>
+					<!-- This not what "clientside melee combat" means. =) This is the adjustment afterwards due to code changes. -->
+					<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01,buffbosshitSP"/>
+					<property name="Sphere" value=".1"/>
+					<property name="Block_range" value="4"/>
+					<property name="DamageEntity" value="270"/>
+					<property name="DamageBlock" value="10000"/>
+					<property name="Sound_start" value="swoosh"/>
+				</property>
+				<effect_group name="meleeHandMaster" tiered="false">
+					<passive_effect name="BuffProcChance" operation="base_set" value=".99" tags="buffInjuryStunned"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".99" tags="buffLegSprainedCHTrigger"/>
+					<passive_effect name="MaxRange" operation="base_set" value="4"/>
+					<passive_effect name="BlockRange" operation="base_set" value="4"/>
+					<!--<passive_effect name="DamageFalloffRange" operation="base_set" value="1.65"/> -->
+				</effect_group>
+			</item>
+			<item name="meleeHandSpecialBossHF">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="Degradation" value="99999" param1="true"/>
+				<property class="Action0">
+					<property name="Range" value="4"/>
+					<property name="Block_range" value="4"/>
+					<property name="DamageEntity" value="600"/>
+					<property name="DamageBlock" value="15000"/>
+					<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01,buffBosshitHFSP"/>
+					<property name="Sound_start" value="Auger_Fire_Start"/>
+					<property class="HitSounds">
+						<property name="Override0" value="organic" param1="metalsolidhitorganic"/>
+					</property>
+				</property>
+				<property class="Action1">
+					<property name="Class" value="Vomit"/>
+					<property name="Delay" value=".3"/>
+					<property name="Range" value="500"/>
+					<property name="Infinite_ammo" value="true"/>
+					<property name="Magazine_items" value="SpecialBossHFProjectile"/>
+					<property name="Sound_warning" value="demolitionzexplodewarning"/>
+					<property name="Sound_start" value="m136_fire"/>
+					<property name="Sound_repeat" value=""/>
+					<property name="Sound_end" value=""/>
+					<property name="Sound_empty" value=""/>
+					<property name="Sound_reload" value=""/>
+				</property>
+				<effect_group name="meleeHandSpecialBossHF" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="BlockRange" operation="base_set" value="4"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="3"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="3"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".20" tags="buffInjuryBleedingZombie"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".20" tags="buffInfectionCatch"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".25" tags="buffInjuryStunned01"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="30"/>
+				</effect_group>
+			</item>
+			<item name="SpecialBossHFProjectile">
+				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
+				<property name="Material" value="Mmetal"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action1">
+					<property name="Class" value="Projectile"/>
+					<property name="DamageEntity" value="1000"/>
+					<property name="DamageBlock" value="6000"/>
+					<property name="Explosion.ParticleIndex" value="5"/>
+					<property name="Explosion.RadiusBlocks" value="10"/>
+					<property name="Explosion.RadiusEntities" value="8"/>
+					<property name="Explosion.DamageBonus.water" value="0"/>
+					<property name="Velocity" value="20"/>
+					<property name="FlyTime" value="2"/>
+					<property name="LifeTime" value="4"/>
+					<property name="CollisionRadius" value="0.75"/>
+					<property name="DamageBonus.earth" value="0"/>
+				</property>
+				<effect_group name="BossHFProjectile" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="metal"/>
+				</effect_group>
+			</item>
+			<!-- Added by HolyVentus -->
+				<item name="meleeHandCirujanoSP">
+					<property name="Extends" value="meleeHandMaster"/>
+					<property name="CreativeMode" value="None"/>
+					<property name="Degradation" value="99999" param1="true"/>
+					<property name="Material" value="Morganic"/>
+					<property class="Action0">
+						<property name="Class" value="Melee"/>
+						<property name="Buff" value="buffInjuryBleeding,buffShocked,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffArmBroken,buffLegBroken"/>
+						<property name="Delay" value="0.2"/>
+						<property name="Range" value="4.5"/>
+						<property name="Sound_start" value="machete_swinglight"/>
+						<property name="DamageEntity" value="200"/>
+						<property name="DamageBlock" value="7000"/>
+					</property>
+					<effect_group name="meleeHandCirujanoSP" tiered="false">
+						<passive_effect name="ModSlots" operation="base_set" value="0"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffInjuryBleedingZombie"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffArmSprainedCHTrigger"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffLegSprainedCHTrigger"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffLaceration"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffAbrasionCatch"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffArmBroken"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffLegBroken"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value=".6" tags="buffInfectionCatch"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value=".6" tags="buffInjuryStunned01"/>
+
+						<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffInjuryBleeding" weights="3"/>
+						<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="75"/>
+						<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="medicalRegHealthAmount" operation="set" value="0"/>
+					</effect_group>
+				</item>
+				<item name="meleeHandSamuraiSP">
+					<property name="Extends" value="meleeHandMaster"/>
+					<property name="CreativeMode" value="None"/>
+					<property name="Degradation" value="99999" param1="true"/>
+					<property name="Material" value="Morganic"/>
+					<property class="Action0">
+						<property name="Class" value="Melee"/>
+						<property name="Buff" value="buffInjuryBleedingStrong"/>
+						<property name="Delay" value="0.5"/>
+						<property name="Range" value="3.5"/>
+						<property name="Sound_start" value="machete_swinglight"/>
+						<property name="DamageEntity" value="250"/>
+						<property name="DamageBlock" value="2000"/>
+					</property>
+					<effect_group name="meleeHandCirujano" tiered="false">
+						<passive_effect name="ModSlots" operation="base_set" value="0"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffInjuryBleedingStrong"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffLaceration"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value=".6" tags="buffInfectionCatch"/>
+
+						<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffInjuryBleedingStrong" weights="3"/>
+						<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="50"/>
+					</effect_group>
+				</item>				
+			<!---->	
+			<item name="meleeHandMiniElite">
+                <property name="Extends" value="meleeHandZombie01"/>
+                <property name="CreativeMode" value="None"/>
+                <property class="Action0">
+                    <property name="Buff" value="buffInjuryKnockdown01"/>
+                    <property name="DamageEntity" value="4"/>
+                    <!--<property name="Buff" value="buffDark2"/>-->
+                    <property name="DamageBlock" value="1500"/>
+                </property>
+                <!-- <property class="Action1">
+                    <property name="Class" value="Vomit"/>
+                    <property name="Delay" value="0.2"/>
+                    <property name="Range" value="100"/>
+                    <property name="Infinite_ammo" value="true"/>
+                    <property name="Magazine_items" value="MiniBomberProjectile" />
+                    <property name="Sound_warning" value="moepukervomitwarning"/>
+                    <property name="Sound_start" value="moepukervomitwarning"/>
+                    <property name="Sound_repeat" value=""/>
+                    <property name="Sound_end" value=""/>
+                    <property name="Sound_empty" value=""/>
+                    <property name="Sound_reload" value=""/>
+                </property> -->
+                <effect_group name="meleeHandBomber" tiered="false">
+                    <passive_effect name="ModSlots" operation="base_set" value="0"/>
+                    <passive_effect name="DamageFalloffRange" operation="base_set" value="100"/>
+                    <passive_effect name="MaxRange" operation="base_set" value="100"/>
+                    <passive_effect name="MagazineSize" operation="base_set" value="1"/>
+                    <passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+                </effect_group>
+            </item>
+			<item name="MiniBomberProjectile">
+                <property name="Meshfile" value="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
+                <property name="Material" value="Mmetal"/>
+                <property name="CreativeMode" value="None"/>
+                <property class="Action1">
+                    <property name="Class" value="Projectile"/>
+                    <!--property name="Explosion.ParticleIndex" value="4"/-->
+                    <property name="Explosion.ParticleIndex" value="6"/>
+                    <!-- which Prefab/particle is used -->
+                    <property name="Explosion.RadiusBlocks" value="3"/>
+                    <!-- damage radius for blocks -->
+                    <property name="Explosion.RadiusEntities" value="10"/>
+                    <!-- damage radius for entities -->
+                    <property name="Explosion.DamageBonus.stone" value=".71"/>
+                    <property name="Explosion.DamageBonus.metal" value=".7"/>
+                    <property name="Explosion.DamageBonus.earth" value=".5"/>
+                    <property name="Explosion.DamageBonus.wood" value="0"/>
+                    <property name="Explosion.DamageBonus.water" value="0"/>
+                    <property name="Velocity" value="0"/>
+                    <property name="Gravity" value="-200"/>
+                    <property name="FlyTime" value=".01"/>
+                    <property name="LifeTime" value="20"/>
+                </property>
+                <effect_group name="BomberProjectile" tiered="false">
+                    <passive_effect name="BlockDamage" operation="base_set" value="6000"/>
+                    <passive_effect name="EntityDamage" operation="base_set" value="65"/>
+                    <passive_effect name="ProjectileVelocity" operation="base_set" value="50"/>
+                    <display_value name="dExRadius" value="6"/>
+                </effect_group>
+            </item>
+		
+		
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+	</append>
+</config>

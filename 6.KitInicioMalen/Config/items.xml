@@ -1,0 +1,653 @@
+<configs>
+
+	<append xpath="/items">
+		<item name="startBundle">
+			<property name="Extends" value="questMaster"/>
+			<property name="CustomIcon" value="cntWeaponsBagSmall"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="10"/>
+			<property name="Material" value="Morganic"/>
+			<property name="PickupJournalEntry" value="noobiTip"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="EconomicValue" value="5000"/>
+			<property name="Group" value="Books"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="q_Inicio"/>
+			</property>
+		</item>
+		<item name="startTips">
+			<property name="Extends" value="questMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="CustomIcon" value="questMaster"/>
+			<property name="Stacknumber" value="10"/>
+			<property name="Material" value="Morganic"/>		
+			<property name="SellableToTrader" value="true"/>
+			<property name="EconomicValue" value="5000"/>
+			<property name="Group" value="Books"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="q_Tips"/>
+			</property>
+		</item>
+		<!--+1 Skill point for events or compensation-->
+		<item name="oneSkillPoint">
+			<property name="Extends" value="questMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="CustomIcon" value="questMaster"/>
+			<property name="Stacknumber" value="10"/>
+			<property name="DescriptionKey" value="1SPDesc"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="EconomicValue" value="1000"/>
+			<property name="Group" value="Books"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="c_sp1"/>
+			</property>
+		</item>
+		<!--+10 Skill points of veteran class-->
+		<item name="tenSkillPoint">
+			<property name="Extends" value="questMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="CustomIcon" value="questMaster"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="10"/>
+			<property name="DescriptionKey" value="10SPDesc"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="EconomicValue" value="10000"/>
+			<property name="Group" value="Books"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="c_sp10"/>
+			</property>
+		</item>
+		<!--Chale juice IS OP-->
+		<item name="juguito_de_chale">			
+			<property name="CreativeMode" value="Dev"/>			
+			<property name="ItemTypeIcon" value="agility"/>
+			<property name="CustomIcon" value="drinkJarBlackStrapCoffee"/>
+			<property name="CustomIconTint" value="C8BD51"/>
+			<property name="Meshfile" value="@:Other/Items/Food/bottled_waterPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>			
+			<property name="TintColor" value="255, 255, 0"/>
+			<property name="DisplayType" value="JDC"/>			
+			<property name="HoldType" value="3"/>
+			<property name="EconomicValue" value="1500"/>
+			<property name="Material" value="Mglass"/>
+			<property name="Weight" value="10"/>
+			<property name="Stacknumber" value="100"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+			<property name="ShowQuality" value="false"/>
+			<property name="DescriptionKey" value="chaleJ"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Consume" value="true"/>
+				<property name="Delay" value="15"/>
+				<property name="Use_time" value="..."/>
+				<property name="Sound_start" value="player_drinking"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="70"/>
+				<display_value name="dStaminaRegen" value=".15"/>
+				<display_value name="dRunSpeed" value=".25"/>
+				<display_value name="dDuration" value="3600"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffchaleDuration" operation="add" value="3603">
+					<requirement name="!HasBuff" buff="buffowo"/>
+					<requirement name="CVarCompare" cvar="$chale" operation="GT" value="-1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffchaleDuration" operation="set" value="7203">
+					<requirement name="CVarCompare" cvar="$buffchaleDuration" operation="GT" value="7203"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables,buffchale">
+					<requirement name="!HasBuff" buff="buffowo"/>
+					<requirement name="CVarCompare" cvar="$chale" operation="GT" value="-1"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="HasBuff" buff="buffIsOnFire"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+			</effect_group>
+		</item>
+		<item name="juguito_de_chale_donacion">
+			<property name="Extends" value="juguito_de_chale"/>			
+			<property name="DescriptionKey" value="chaleJ"/>
+			<property class="Action0">				
+				<property name="Consume" value="false"/>				
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="0"/>
+				<display_value name="dStaminaRegen" value=".15"/>
+				<display_value name="dRunSpeed" value=".25"/>
+				<display_value name="dDuration" value="3600"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffchaleDuration" operation="add" value="3603">
+					<requirement name="!HasBuff" buff="buffowo"/>
+					<requirement name="CVarCompare" cvar="$chale" operation="GT" value="-1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffchaleDuration" operation="set" value="7203">
+					<requirement name="CVarCompare" cvar="$buffchaleDuration" operation="GT" value="7203"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables,buffchale">
+					<requirement name="!HasBuff" buff="buffowo"/>
+					<requirement name="CVarCompare" cvar="$chale" operation="GT" value="-1"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="HasBuff" buff="buffIsOnFire"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+			</effect_group>
+		</item>
+		<!--Special OP Hammer-->
+		<item name="mitico_Martillo_Divino_Usos">
+			<property name="Extends" value="meleeToolRepairT1ClawHammer"/>
+			<property name="Tags" value="melee,light,tool,attStrength,perkMiner69r,perkMotherLode,admin,canHaveCosmetic,miningTool"/>
+			<property name="DisplayType" value="meleeRepairTool"/>
+			<property name="CustomIcon" value="meleeToolRepairT1ClawHammer"/>
+			<property name="CustomIconTint" value="00AAE4"/>
+			<property name="TintColor" value="00AAE4"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="ShowQuality" value="True"/>
+			<property name="ItemTypeIcon" value="star"/>
+			<property name="Material" value="Morganic"/>
+			<property name="DegradationBreaksAfter" value="true"/>
+			<property name="RepairTools" value=""/>
+			<property name="Stacknumber" value="1"/>
+			<property name="DescriptionKey" value="MD100Desc"/>
+
+			<property class="Action0">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Sphere" value=".1"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+				<property name="GrazeStart" value=".12"/>
+				<property name="GrazeEnd" value=".3"/>
+				<property name="SwingDegrees" value="45"/>
+				<property name="SwingAngle" value="135"/>
+				<property name="UseGrazingHits" value="true"/>
+			</property>
+			<property class="Action1">
+				<property name="Range" value="50"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Class" value="Repair"/>
+				<property name="Delay" value=".45"/>
+				<property name="Repair_amount" value="2000"/>
+				<property name="Upgrade_hit_offset" value="-5"/>
+				<property name="Sound_start" value="repair_block"/>
+				<property name="Allowed_upgrade_items" value="resourceWood,resourceClayLump,resourceSnowBall,resourceScrapIron,resourceForgedIron,resourceForgedSteel,resourceConcreteMix,resourceCobblestones,ironDoor1_v1,vaultDoor01,scrapHatch_v1,vaultHatch_v1,resourceYuccaFibers,resourceCloth,resourceScrapPolymers,resourceNail"/>
+				<property name="UsePowerAttackAnimation" value="false"/>
+			</property>
+			<property name="RepairExpMultiplier" value="15"/>
+			<effect_group tiered="false">
+				<!--<passive_effect name="PlayerExpGain" operation="perc_add" value="1"/>-->
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="200"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="1"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="20000"/>
+				<passive_effect name="MaxRange" operation="base_set" value="20"/>
+				<passive_effect name="MaxRange" operation="base_set" value="20" tags="secondary"/>t
+
+				<passive_effect name="BlockRange" operation="base_set" value="20"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="1" tags="primary"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1.5" tags="oreWoodHarvest"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="200" tags="admin"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="admin"/>
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<display_value name="dBlockRepairAmount" value="2000"/>
+			</effect_group>
+		</item>
+		<!--Electric Taser OP Early game-->
+
+
+
+		<item name="Pistola_electrica">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,gun,shortRange,pistol,barrelAttachments,sideAttachments,smallTopAttachments,magazine,firingMode,selfLoading,attAgility,perkGunslinger,9mmGun,attachmentsIncluded,canHaveCosmetic,handgunSkill"/>
+			<property name="DisplayType" value="rangedGun"/>
+			<property name="HoldType" value="1"/>
+			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Pistol/PistolPrefab.prefab"/>
+			<property name="ItemTypeIcon" value="electric_power"/>
+			<Property name="TintColor" value="00DAFC"/>
+			<property name="CustomIcon" value="gunHandgunT1Pistol"/>
+			<property name="CustomIconTint" value="30, 30, 30"/>
+			<property name="TintColor" value="30, 30, 30"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Weight" value="1"/>
+
+			<property name="RepairTools" value="resourceRepairKit"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="LightSource" value="lightSource"/>
+			<!--   Start: Needed for the attachment flashlight   -->
+			<property name="ActivateObject" value="Attachments/flashlight/lightSource"/>
+			<property name="DegradationBreaksAfter" value="false"/>
+			<property name="SoundJammed" value="weapon_jam"/>
+			<property name="Sound_Sight_In" value="pistol_sight_in"/>
+			<property name="Sound_Sight_Out" value="pistol_sight_out"/>
+			<property name="CrosshairUpAfterShot" value="true"/>
+			<property name="CrosshairOnAim" value="true"/>
+			<property name="ShowQuality" value="true"/>
+			<property class="Action0">
+				<property name="Class" value="Ranged"/>
+				<property name="Magazine_items" value="ammo9mmBulletBall"/>
+				<property name="Sound_start" value="electric_fence_impact"/>
+				<property name="Sound_repeat" value=""/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value="dryfire"/>
+				<property name="Sound_reload" value="pistol_reload"/>
+				<property name="Particles_muzzle_fire" value="gunfire_pistol"/>
+				<property name="Particles_muzzle_fire_fpv" value="gunfire_pistol_fpv"/>
+				<property name="Single_magazine_usage" value="true"/>
+				<property name="Infinite_ammo" value="true"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="Zoom"/>
+				<property name="Zoom_max_out" value="55"/>
+				<property name="Zoom_max_in" value="55"/>
+				<property name="ScopeCameraOffset" value="0,.0008,0"/>
+			</property>
+			<!-- effect_group tiered="false" -->
+			<effect_group name="EFECTOraios" tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="-.001,.070,-.4" localRot="90,0,0"/>
+				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="AddPart" part="SparksB" prefab="ItemModEffects/baton_electricityPrefab" parentTransform="Handle" localPos=".001,.062,-.10" localRot="90,0,0"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="Sparks"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="SparksB"/>
+			</effect_group>
+			<effect_group name="PistolasCreadas" tiered="false">
+				<passive_effect name="MaxRange" operation="base_set" value="10"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="10"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="25"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="RoundRayCount" operation="base_set" value="8"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1000"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="1"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="-.2"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".2"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.1"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".1"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2.6"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="2.6"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".05"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value="1.2"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="200" tags="admin"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="admin"/>
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<display_value name="buffShocked" value="1"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="Sparks"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffShocked">
+					<requirement name="!EntityTagCompare" target="other" tags="player"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" cvar="stunBatonCharge" operation="add" value="1">
+					<requirement name="IsAlive" target="other"/>
+					<requirement name="CVarCompare" cvar="stunBatonCharge" operation="LTE" value="1"/>
+					<requirement name="IsPrimaryAttack"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" cvar="stunBatonCharge" operation="add" value="1">
+					<requirement name="IsAlive" target="other"/>
+					<requirement name="CVarCompare" cvar="stunBatonCharge" operation="LTE" value="1"/>
+					<requirement name="IsSecondaryAttack"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" cvar="stunBatonCharge" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="stunBatonCharge" operation="GT" value="1"/>
+					<!--   last attack will still add so check if above 4   -->
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="PlaySound" sound="stunbaton_hit1">
+					<requirement name="CVarCompare" cvar="stunBatonCharge" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="PlaySound" sound="stunbaton_hit2">
+					<requirement name="CVarCompare" cvar="stunBatonCharge" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="PlaySound" sound="stunbaton_hit3">
+					<requirement name="CVarCompare" cvar="stunBatonCharge" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="PlaySound" sound="stunbaton_hit4">
+					<requirement name="CVarCompare" cvar="stunBatonCharge" operation="Equals" value="4"/>
+				</triggered_effect>
+			</effect_group>
+		</item>
+		<!--Divine water Special Consumable-->
+		<item name="divineWaterEvent">
+			<property name="Extends" value="drinkYuccaJuiceSmoothie"/>
+			<property name="CustomIcon" value="bucketRiverWater"/>
+			<property name="ItemTypeIcon" value="star"/>
+			<property name="CustomIconTint" value="81, 209, 246"/>
+			<property name="TintColor" value="81, 209, 246"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="0"/>
+			<property name="Material" value="Morganic"/>
+			<property name="DescriptionKey" value="aguaDivinaDesc"/>	
+			<property name="DisplayType" value="divineWaterComsumable"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Use_time" value="..."/>
+				<property name="UseAnimation" value="false"/>
+				<property name="Sound_start" value="player_drinking"/>
+				
+			</property>
+			<effect_group tiered="false">
+				<display_value name="CURAA" value="1"/>
+				<display_value name="POWAA" value="300"/>
+				<display_value name="VELOO" value="900"/>
+				<display_value name="DEFEE" value="1800"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$AguaDivinaDuration" operation="add" value="8"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$AguaDivinaDuration" operation="set" value="8">
+					<requirement name="CVarCompare" cvar="$AguaDivinaDuration" operation="GT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="AguaDivina"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$opDuration" operation="add" value="303"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$opDuration" operation="set" value="303">
+					<requirement name="CVarCompare" cvar="$opDuration" operation="GT" value="603"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="OP!"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$op2Duration" operation="add" value="903"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$op2Duration" operation="set" value="903">
+					<requirement name="CVarCompare" cvar="$op2Duration" operation="GT" value="1803"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="OP2!"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$op3Duration" operation="add" value="1803"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$op3Duration" operation="set" value="1803">
+					<requirement name="CVarCompare" cvar="$op3Duration" operation="GT" value="3603"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="OP3!"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="HasBuff" buff="buffDrunkGrandpasAwesomeSauce"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffDrunkGrandpasAwesomeSauce"/>
+			</effect_group>
+		</item>
+		<!--Starter Kit-->
+		<item name="startBundleTest">
+			<property name="CustomIcon" value="backpackMedium"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="newPlayerKit,juguito_de_chale,Pistola_electrica,mitico_Martillo_Divino_Usos"/>
+				<property name="Create_item_count" value="1,24,1,1"/>
+			</property>
+		</item>
+		<item name="newPlayerKit">
+			<property name="CustomIcon" value="cntShippingCrateHero"/>
+			<property name="ItemTypeIcon" value="backpack"/>
+			<!--ui_game_symbol_backpack-->
+			<property name="DisplayInfo" value="Paquete de ayuda para comenzar" />
+			<property name="CreativeMode" value="Player"/>
+			<property name="HoldType" value="21"/>
+			<property name="Meshfile" value="Items/Misc/bookPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="EconomicValue" value="600"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Special Items"/>
+		</item>
+		<!--Classes-->
+		<!--Constructor-->
+		<item name="cl_Constructor">
+			<property name="CreativeMode" value="Player"/>				
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Special Items"/>	
+
+			<property name="CustomIcon" value="bundleSledge"/>
+			<property name="DescriptionKey" value="CCDesc"/>			
+			<property class="Action0">		
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0"/>					
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="medicalBandage,medicalFirstAidBandage,resourceRepairKit,drinkJarPureMineralWater,foodCanBeef,drinkJarGrandpasLearningElixir,gunHandgunT1Pistol,ammo9mmBulletBall,meleeWpnSledgeT1IronSledgehammer,meleeToolAxeT3Chainsaw,meleeToolRepairT3Nailgun,ammoGasCan,resourceNail,meleeToolPaintTool,resourcePaint,resourceWoodBundle,resourceCobblestones,resourceRockSmallBundle,resourceCrushedSand,resourceCement,repairToolsSkillMagazine,sledgehammersSkillMagazine,cementMixer,tier03LumberjackSK"/>
+				<property name="Create_item_count" value="5,3,5,5,5,3,5,250,3,4,1,500,500,1,200,3,10000,1,6000,6000,26,11,1,1"/>
+			</property>
+		</item>		
+		<!--Engineer-->
+		<item name="cl_Ingeniero">
+			<property name="Extends" value="cl_Constructor"/>
+			<property name="CustomIcon" value="bundleGeneratorBank"/>
+			<property name="DescriptionKey" value="CIDesc"/>
+			<property class="Action0">				
+				<property name="Create_item" value="medicalBandage,medicalFirstAidBandage,resourceRepairKit,drinkJarPureMineralWater,foodCanBeef,drinkJarCoffee,resourceDuctTape,gunHandgunT1Pistol,ammo9mmBulletBall,gunBotT1JunkSledge,gunBotT2JunkTurret,ammoJunkTurretRegular,gunBowT3CompoundCrossbow,ammoCrossbowBoltSteelAP,meleeWpnBatonT2StunBaton,meleeToolSalvageT1Wrench,meleeToolWireTool,vehicleBicyclePlaceable,generatorbank,batterybank,ammoGasCan,carBattery,carBattery,carBattery,switch,workbench,roboticsSkillMagazine,workstationSkillMagazine,tier03NerdSK"/>
+				<property name="Create_item_count" value="5,3,10,5,5,30,100,4,100,4,3,150,5,250,6,6,1,1,1,1,500,3,3,3,3,1,39,2,1"/>
+			</property>
+		</item>
+		<!--Miner-->
+		<item name="cl_Minero">
+			<property name="Extends" value="cl_Constructor"/>
+			<property name="CustomIcon" value="bundleShotgun"/>
+			<property name="DescriptionKey" value="CMiDesc"/>			
+			<property class="Action0">				
+				<property name="Create_item" value="medicalBandage,medicalFirstAidBandage,drugPainkillers,resourceRepairKit,drinkJarPureMineralWater,foodCanBeef,gunShotgunT2PumpShotgun,ammoShotgunShell,meleeToolPickT2SteelPickaxe,meleeToolShovelT2SteelShovel,toolAnvil,toolForgeCrucible,toolBellows,lanternDecorLightBlockVariantHelper,resourceForgedIron,resourceForgedSteel,resourceClayLump,resourceScrapIronBundle,resourceCoal,resourceRockSmallBundle,forge,harvestingToolsSkillMagazine,tier03MinerSK"/>
+				<property name="Create_item_count" value="5,5,5,5,5,5,3,50,5,5,1,1,1,5,150,150,6000,1,3000,3,1,27,1"/>
+			</property>
+		</item>
+		<!--Medic-->
+		<item name="cl_Medico">
+			<property name="Extends" value="cl_Constructor"/>
+			<property name="CustomIcon" value="bundleBooks"/>
+			<property name="DescriptionKey" value="CMdDesc"/>			
+			<property class="Action0">				
+				<property name="Create_item" value="medicalBandage,drugPainkillers,medicalFirstAidBandage,medicalFirstAidKit,resourceRepairKit,drinkJarPureMineralWater,foodVegetableStew,medicalSplint,drugVitamins,drugAntibiotics,drugSteroids,drugRecog,drugFortBites,gunHandgunT3DesertVulture,ammo44MagnumBulletHP,medicalPlasterCast,medicalAloeCream,resourceCropAloeLeaf,chemistryStation,medicalSkillMagazine,resourcePaper,tier03PreacherSK"/>
+				<property name="Create_item_count" value="50,30,20,10,5,10,5,20,25,10,10,5,5,5,150,10,20,50,1,25,100,1"/>
+			</property>
+		</item>	
+		<!--Mechanic-->
+		<item name="cl_Mecanico">
+			<property name="Extends" value="cl_Constructor"/>
+			<property name="CustomIcon" value="bundleVehicleMotorCycle"/>
+			<property name="DescriptionKey" value="CMeDesc"/>			
+			<property class="Action0">
+				<property name="Create_item" value="medicalBandage,medicalFirstAidBandage,resourceRepairKit,drinkJarPureMineralWater,foodCanBeef,drinkJarCoffee,gunHandgunT1Pistol,ammo9mmBulletBall,meleeToolSalvageT3ImpactDriver,meleeWpnClubT1BaseballBat,vehicleMinibikePlaceable,ammoGasCan,vehicleMotorcycleChassis,resourceForgedSteel,resourceDuctTape,vehiclesSkillMagazine,tier03ScavengerSK"/>
+				<property name="Create_item_count" value="5,5,50,5,5,10,5,200,2,5,1,2500,1,7,15,45,1"/>
+			</property>
+		</item>
+		<!--Granjero-->
+		<item name="cl_Granjero">
+			<property name="Extends" value="cl_Constructor"/>
+			<property name="CustomIcon" value="bundleFarm"/>
+			<property name="DescriptionKey" value="CGDesc"/>
+			<property class="Action0">				
+				<property name="Create_item" value="medicalFirstAidBandage,resourceRepairKit,foodHoboStew,foodShamChowder,drinkJarYuccaJuice,drinkJarGrandpasAwesomeSauce,drinkJarGrandpasMoonshine,drinkJarGrandpasLearningElixir,gunShotgunT1DoubleBarrel,ammoShotgunShell,gunRifleT0PipeRifle,ammo762mmBulletBall,meleeToolPickT3Auger,ammoGasCan,meleeWpnBladeT3Machete,farmPlotBlock,foodCropPotato,foodCropCorn,seedSkillMagazine,tier03FarmerSK"/>
+				<property name="Create_item_count" value="5,5,15,10,10,3,2,1,4,10,6,50,4,500,1,40,30,30,12,1"/>
+			</property>
+		</item>
+		<!--Hunter-->
+		<item name="cl_Cazador">
+			<property name="Extends" value="cl_Constructor"/>
+			<property name="CustomIcon" value="bundleSecurity"/>
+			<property name="DescriptionKey" value="CCaDesc"/>						
+			<property class="Action0">				
+				<property name="Create_item" value="medicalBandage,medicalFirstAidBandage,drugPainkillers,resourceRepairKit,drinkJarPureMineralWater,foodCanBeef,gunRifleT1HuntingRifle,ammo762mmBulletBall,gunBowT1WoodenBow,ammoArrowSteelAP,meleeWpnBladeT1HuntingKnife,modGunMeleeTheHunter,modGunScopeMedium,modGunSoundSuppressorSilencer,bookHuntingJournalWolves,bookHuntingJournalCoyotes,bookHuntingJournalDeer,bookRangersArrowRecovery,bookRangersAPAmmo,bookRangersForestGuide,resourceArrowHeadSteelAP,ammoArrowStone,tier03AthleticSK"/>
+				<property name="Create_item_count" value="10,4,5,5,5,10,6,250,6,100,6,2,1,1,1,1,1,1,1,1,200,400,1"/>
+			</property>
+		</item>
+		<!--Shooter-->
+		<item name="cl_Tirador">
+			<property name="Extends" value="cl_Constructor"/>
+			<property name="CustomIcon" value="bundleRevolver"/>
+			<property name="DescriptionKey" value="CTDesc"/>
+			<property class="Action0">				
+				<property name="Create_item" value="medicalBandage,drugPainkillers,resourceRepairKit,drinkJarPureMineralWater,foodCanBeef,gunHandgunT1Pistol,gunHandgunT2Magnum44,ammo9mmBulletBall,ammo44MagnumBulletHP,meleeWpnBladeT3Machete,bookPistolPeteTakeAim,bookPistolPeteDamage,bookEnforcerDamage,bookEnforcerPunks,modGunMuzzleBrake,modGunReflexSight,modGunMagazineExtender,handgunsSkillMagazine,tier03RangerSK"/>
+				<property name="Create_item_count" value="5,5,2,1,2,6,5,300,400,5,1,1,1,1,1,1,1,60,1"/>
+			</property>
+		</item>	
+
+		<!-- <item name="gatchaTestBundle">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleBooks"/>
+			<property name="CustomIconTint" value="FFFFFF"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardBookBundleDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourcePaper"/>
+				<property name="Create_item_count" value="0"/>
+				<property name="Random_item" value="legendToolT1_LlaveInglesa,legendToolT1_PicoDeAcero,legendToolT1_HachaDeAcero,legendToolT2_DestornilladorDeImpacto,legendToolT2_Nailgun,legendToolT2_Barrena,legendToolT2_Motosierra,myth_MartilloDivino"/>
+				<property name="Random_item_count" value="6"/>
+				<property name="Random_count" value="1"/>
+				<property name="Unique_random_only" value="true"/>
+			</property>
+		</item> -->
+		<!--Sniper-->
+		<item name="cl_Sniper">
+			<property name="Extends" value="cl_Constructor"/>
+			<property name="CustomIcon" value="bundleRifle"/>
+			<property name="DescriptionKey" value="CSDesc"/>			
+			<property class="Action0">				
+				<property name="Create_item" value="medicalBandage,drugPainkillers,resourceRepairKit,drinkJarPureMineralWater,foodCanBeef,gunRifleT1HuntingRifle,gunRifleT2LeverActionRifle,ammo762mmBulletBall,modGunScopeSmall,modGunScopeLarge,modGunMagazineExtender,bookSniperHeadShot,bookSniperDamage,bookSniperReload,riflesSkillMagazine,tier03AssassinSK"/>
+				<property name="Create_item_count" value="5,5,1,1,2,6,5,200,1,1,1,1,1,1,60,1"/>
+			</property>
+		</item>
+		<!--Demolition-->
+		<item name="cl_Demoledor">
+			<property name="Extends" value="cl_Constructor"/>
+			<property name="CustomIcon" value="bundleShotgun"/>
+			<property name="DescriptionKey" value="CDeDesc"/>			
+			<property class="Action0">				
+				<property name="Create_item" value="medicalBandage,drugPainkillers,resourceRepairKit,drinkJarPureMineralWater,foodCanBeef,gunShotgunT1DoubleBarrel,gunShotgunT2PumpShotgun,ammoShotgunShell,modGunCrippleEm,modGunShotgunTubeExtenderMagazine,modGunChoke,bookShotgunMessiahDamage,bookShotgunMessiahLimbShot,bookShotgunMessiahPartyStarter,shotgunsSkillMagazine,tier03RaiderSK"/>
+				<property name="Create_item_count" value="5,5,1,1,2,6,5,300,1,1,1,1,1,1,60,1"/>
+			</property>
+		</item>
+		<!--Swat-->
+		<item name="cl_Swat">
+			<property name="Extends" value="cl_Constructor"/>
+			<property name="CustomIcon" value="bundleMachineGun"/>
+			<property name="DescriptionKey" value="CSwDesc"/>			
+			<property class="Action0">				
+				<property name="Create_item" value="medicalBandage,drugPainkillers,resourceRepairKit,drinkJarPureMineralWater,foodCanBeef,gunMGT1AK47,gunMGT2TacticalAR,ammo762mmBulletBall,modGunDrumMagazineExtender,modGunForegrip,modGunLaserSight,bookAutoWeaponsDamage,bookAutoWeaponsUncontrolledBurst,bookAutoWeaponsRecoil,machineGunsSkillMagazine,tier03CommandoSK"/>
+				<property name="Create_item_count" value="5,5,1,1,2,6,5,500,1,1,1,1,1,1,60,1"/>
+			</property>
+		</item>
+		<!--Survivor-->
+		<item name="cl_Superviviente">
+			<property name="Extends" value="cl_Constructor"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="DescriptionKey" value="CSuDesc"/>			
+			<property class="Action0">				
+				<property name="Create_item" value="medicalFirstAidBandage,resourceRepairKit,drinkJarPureMineralWater,foodCanBeef,drugPainkillers,gunRifleT1HuntingRifle,gunShotgunT1DoubleBarrel,gunMGT1AK47,gunHandgunT1Pistol,gunBowT1IronCrossbow,meleeWpnBatonT0PipeBaton,meleeWpnBladeT1HuntingKnife,ammo762mmBulletBall,ammoShotgunShell,ammo9mmBulletBall,ammoCrossbowBoltIron,tier03NomadSK"/>
+				<property name="Create_item_count" value="25,25,25,25,20,5,5,5,5,5,5,5,500,300,300,300,1"/>
+			</property>
+		</item>
+		<!--Veteran-->
+		<item name="cl_Veterano">
+			<property name="Extends" value="cl_Constructor"/>
+			<property name="CustomIcon" value="bundlePistol"/>
+			<property name="DescriptionKey" value="CVeDesc"/>			
+			<property class="Action0">				
+				<property name="Create_item" value="gunHandgunT1Pistol,ammo9mmBulletBall,tenSkillPoint,divineWaterEvent,tier01nforcerSK"/>
+				<property name="Create_item_count" value="1,1,1,1,1"/>
+			</property>
+		</item>
+		<!--END-->
+
+		<item name="tier03LumberjackSK">
+			<property name="Extends" value="noteTestersDelightAdmin"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="cntLootChestHeroInsecureT2"/>
+			<property name="CustomIconTint" value="D1E71A"/>
+			<property class="Action0">
+				<property name="Create_item" value="armorLumberjackHelmet,armorLumberjackOutfit,armorLumberjackGloves,armorLumberjackBoots"/>
+				<property name="Create_item_count" value="3,3,3,3"/>
+			</property>
+		</item>
+		<item name="tier03NerdSK">
+			<property name="Extends" value="tier03LumberjackSK"/>
+			<property class="Action0">
+				<property name="Create_item" value="armorNerdHelmet,armorNerdOutfit,armorNerdGloves,armorNerdBoots"/>
+				<property name="Create_item_count" value="3,3,3,3"/>
+			</property>
+		</item>
+		<item name="tier03MinerSK">
+			<property name="Extends" value="tier03LumberjackSK"/>
+			<property class="Action0">
+				<property name="Create_item" value="armorMinerHelmet,armorMinerOutfit,armorMinerGloves,armorMinerBoots"/>
+				<property name="Create_item_count" value="3,3,3,3"/>
+			</property>
+		</item>
+		<item name="tier03PreacherSK">
+			<property name="Extends" value="tier03LumberjackSK"/>
+			<property class="Action0">
+				<property name="Create_item" value="armorPreacherHelmet,armorPreacherOutfit,armorPreacherGloves,armorPreacherBoots"/>
+				<property name="Create_item_count" value="3,3,3,3"/>
+			</property>
+		</item>
+		<item name="tier03ScavengerSK">
+			<property name="Extends" value="tier03LumberjackSK"/>
+			<property class="Action0">
+				<property name="Create_item" value="armorScavengerHelmet,armorScavengerOutfit,armorScavengerGloves,armorScavengerBoots"/>
+				<property name="Create_item_count" value="3,3,3,3"/>
+			</property>
+		</item>
+		<item name="tier03FarmerSK">
+			<property name="Extends" value="tier03LumberjackSK"/>
+			<property class="Action0">
+				<property name="Create_item" value="armorFarmerHelmet,armorFarmerOutfit,armorFarmerGloves,armorFarmerBoots"/>
+				<property name="Create_item_count" value="3,3,3,3"/>
+			</property>
+		</item>
+		<item name="tier03AthleticSK">
+			<property name="Extends" value="tier03LumberjackSK"/>
+			<property class="Action0">
+				<property name="Create_item" value="armorAthleticHelmet,armorAthleticOutfit,armorAthleticGloves,armorAthleticBoots"/>
+				<property name="Create_item_count" value="3,3,3,3"/>
+			</property>
+		</item>
+		<item name="tier03RangerSK">
+			<property name="Extends" value="tier03LumberjackSK"/>
+			<property class="Action0">
+				<property name="Create_item" value="armorRangerHelmet,armorRangerOutfit,armorRangerGloves,armorRangerBoots"/>
+				<property name="Create_item_count" value="3,3,3,3"/>
+			</property>
+		</item>
+		<item name="tier03AssassinSK">
+			<property name="Extends" value="tier03LumberjackSK"/>
+			<property class="Action0">
+				<property name="Create_item" value="armorAssassinHelmet,armorAssassinOutfit,armorAssassinGloves,armorAssassinBoots"/>
+				<property name="Create_item_count" value="3,3,3,3"/>
+			</property>
+		</item>
+		<item name="tier03RaiderSK">
+			<property name="Extends" value="tier03LumberjackSK"/>
+			<property class="Action0">
+				<property name="Create_item" value="armorRaiderHelmet,armorRaiderOutfit,armorRaiderGloves,armorRaiderBoots"/>
+				<property name="Create_item_count" value="3,3,3,3"/>
+			</property>
+		</item>
+		<item name="tier03CommandoSK">
+			<property name="Extends" value="tier03LumberjackSK"/>
+			<property class="Action0">
+				<property name="Create_item" value="armorCommandoHelmet,armorCommandoOutfit,armorCommandoGloves,armorCommandoBoots"/>
+				<property name="Create_item_count" value="3,3,3,3"/>
+			</property>
+		</item>
+		<item name="tier03NomadSK">
+			<property name="Extends" value="tier03LumberjackSK"/>
+			<property class="Action0">
+				<property name="Create_item" value="armorNomadHelmet,armorNomadOutfit,armorNomadGloves,armorNomadBoots"/>
+				<property name="Create_item_count" value="3,3,3,3"/>
+			</property>
+		</item>
+		<item name="tier01nforcerSK">
+			<property name="Extends" value="tier03LumberjackSK"/>
+			<property class="Action0">
+				<property name="Create_item" value="armorEnforcerHelmet,armorEnforcerOutfit,armorEnforcerGloves,armorEnforcerBoots"/>
+				<property name="Create_item_count" value="1,1,1,1"/>
+			</property>
+		</item>
+
+
+
+
+	</append>
+</configs>
