@@ -108,10 +108,13 @@
 					<requirement name="PlayerLevel" operation="GTE" value="300" desc_key="req7"/>
 					<requirement name="ProgressionLevel" progression_name="Prestige" operation="GTE" value="1" desc_key="reqGenericPoints01"/>
 				</level_requirements>
+				
 
 				<effect_group>
 					<!--Distancia de caida modificado en el buffs.xml-->
 					<passive_effect name="Mobility" operation="perc_add" value=".03,.15" level="1,5"/>
+					<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$parkourBonus" operation="add" value="0,.01414,.02828,.04242,.05656,.0707"/>
+
 					<effect_description level="1" desc_key="perkAcrodesc1" long_desc_key="perkAcrolongdesc1"/>
 					<effect_description level="2" desc_key="perkAcrodesc2" long_desc_key="perkAcrolongdesc2"/>
 					<effect_description level="3" desc_key="perkAcrodesc3" long_desc_key="perkAcrolongdesc3"/>
@@ -232,27 +235,27 @@
 			<perk name="perkHealart" parent="skillMental" name_key="perkHeal" desc_key="perkHealdesc" icon="ui_game_symbol_cardio">
 				<level_requirements level="1">
 					<requirement name="ProgressionLevel" progression_name="Prestige" operation="GTE" value="1" desc_key="skillPrestige"/>
-					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="GTE" value="4" desc_key="healpresperk"/>
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="GTE" value="5" desc_key="healpresperk"/>
 					<requirement name="ProgressionLevel" progression_name="perkHealingFactor" operation="GTE" value="5" desc_key="healpresperk2"/>
 				</level_requirements>
 				<level_requirements level="2">
 					<requirement name="ProgressionLevel" progression_name="Prestige" operation="GTE" value="1" desc_key="reqGenericPoints01"/>
-					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="GTE" value="4" desc_key="healpresperk"/>
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="GTE" value="5" desc_key="healpresperk"/>
 					<requirement name="ProgressionLevel" progression_name="perkHealingFactor" operation="GTE" value="5" desc_key="healpresperk2"/>
 				</level_requirements>
 				<level_requirements level="3">
 					<requirement name="ProgressionLevel" progression_name="Prestige" operation="GTE" value="1" desc_key="reqGenericPoints01"/>
-					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="GTE" value="4" desc_key="healpresperk"/>
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="GTE" value="5" desc_key="healpresperk"/>
 					<requirement name="ProgressionLevel" progression_name="perkHealingFactor" operation="GTE" value="5" desc_key="healpresperk2"/>
 				</level_requirements>
 				<level_requirements level="4">
 					<requirement name="ProgressionLevel" progression_name="Prestige" operation="GTE" value="1" desc_key="reqGenericPoints01"/>
-					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="GTE" value="4" desc_key="healpresperk"/>
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="GTE" value="5" desc_key="healpresperk"/>
 					<requirement name="ProgressionLevel" progression_name="perkHealingFactor" operation="GTE" value="5" desc_key="healpresperk2"/>
 				</level_requirements>
 				<level_requirements level="5">
 					<requirement name="ProgressionLevel" progression_name="Prestige" operation="GTE" value="1" desc_key="reqGenericPoints01"/>
-					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="GTE" value="4" desc_key="healpresperk"/>
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="GTE" value="5" desc_key="healpresperk"/>
 					<requirement name="ProgressionLevel" progression_name="perkHealingFactor" operation="GTE" value="5" desc_key="healpresperk2"/>
 				</level_requirements>
 				<effect_group>
@@ -261,7 +264,7 @@
 					<requirement name="NotHasBuff" buff="buffStatusThirsty03"/>
 					<!--Para Evitar que los salve de morir de hambre/sed-->
 					<passive_effect name="HealthChangeOT" operation="base_add" level="1,2,3,4,5" value=".0166,.033,.066,.125,.25"/>
-
+					<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$medicRegHealthIncreaseSpeed" operation="add" value="0,.1,.2,.3,.4,.5"/>
 					<effect_description level="1" desc_key="perkHealdesc1" long_desc_key="perkHeallongdesc1"/>
 					<effect_description level="2" desc_key="perkHealdesc2" long_desc_key="perkHeallongdesc2"/>
 					<effect_description level="3" desc_key="perkHealdesc3" long_desc_key="perkHeallongdesc3"/>
@@ -318,9 +321,14 @@
 						<requirement name="ProgressionLevel" progression_name="perkCraft" operation="Equals" value="0"/>
 					</passive_effect>
 
+					<passive_effect name="WaterLossPerHealthPointGained" operation="perc_add" level="1,5" value="-.05,-.25"/>
+					<passive_effect name="WaterLossPerStaminaPointGained" operation="perc_add" level="1,5" value="-.05,-.25"/>
+					<passive_effect name="FoodLossPerStaminaPointGained" operation="perc_add" level="1,5" value="-.05,-.25"/>
+					<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$MetabolismResist" operation="set" value="-5,-6,-7,-8,-9,-10"/>
 
+					<!-- Increase MetabolismDuration with each level of the perk -->
+					<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$MetabolismDuration" operation="set" value=".667,.6336,.6002,.5668,.5334,.5"/>
 
-					<triggered_effect trigger="onPerkLevelChanged" action="AddBuff" buff="buffPerkAbilityUpdate"/>
 					<effect_description level="1" desc_key="perkFoodesc1" long_desc_key="perkFoolongdesc1"/>
 					<effect_description level="2" desc_key="perkFoodesc2" long_desc_key="perkFoolongdesc2"/>
 					<effect_description level="3" desc_key="perkFoodesc3" long_desc_key="perkFoolongdesc3"/>
