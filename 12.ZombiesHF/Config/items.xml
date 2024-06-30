@@ -48,70 +48,6 @@
 		
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Quest Event Tickets ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->	
 			<!--Normal-->	
-				<!-- <item name="LosLunaticos">
-					<property name="name" value="LosLunaticos" />
-					<property name="Group" value="Science"/>
-					<property name="Extends" value="challengeQuestMaster"/>
-					<property name="ItemTypeIcon" value="death"/>
-					<property name="DescriptionKey" value="TAVOQUESTDesc2"/>
-					<property name="CustomIconTint" value="FFD500"/>
-					<property name="Stacknumber" value="10"/>
-					<property name="TintColor" value="255,214,7"/>
-					<property class="Action0">
-						<requirement name="HasBuff" buff="buffQuest"/>
-						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="true"/>
-						<property name="QuestGiven" value="LosLunaticos"/>
-					</property>
-					<effect_group tiered="false">
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
-					</effect_group>
-				</item> -->
-				<!-- <item name="q_VZ">
-					<property name="name" value="Naturaleza" />
-					<property name="Extends" value="challengeQuestMaster"/>
-					<property name="Group" value="Science"/>
-					<property name="ItemTypeIcon" value="tree"/>
-					<property name="CustomIconTint" value="E2F70F"/>
-					<property name="TintColor" value="115,220,18"/>
-					<property name="Stacknumber" value="5"/>
-					<property name="DescriptionKey" value="VZQuest"/>
-					<property class="Action0">
-						<requirement name="HasBuff" buff="buffQuest"/>
-						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="true"/>
-						<property name="QuestGiven" value="q_venganza"/>
-					</property>
-					<effect_group tiered="false">
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
-					</effect_group>
-				</item> -->
-								
-				<!-- <item name="q_Special">
-					<property name="name" value="Nightmare" />
-					<property name="Extends" value="challengeQuestMaster"/>
-					<property name="Group" value="Science"/>
-					<property name="ItemTypeIcon" value="star"/>
-					<property name="CustomIconTint" value="00E4FF"/>
-					<property name="TintColor" value="4,9,171"/>
-					<property name="Stacknumber" value="5"/>
-					<property name="DescriptionKey" value="SpecialQuest"/>
-					<property class="Action0">
-						<requirement name="HasBuff" buff="buffQuest"/>
-						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="true"/>
-						<property name="QuestGiven" value="q_KillSpecial"/>
-					</property>
-					<effect_group tiered="false">
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
-					</effect_group>
-				</item>	 -->
 
 				<item name="q_Ticket"> <!-- Template for action event notes -->					
 					<property name="CreativeMode" value="None"/>
@@ -142,7 +78,7 @@
 					<property name="CustomIconTint" value="00E4FF"/>
 					<property name="TintColor" value="4,9,171"/>
 					<property class="Action0">	
-						<requirement name="HasBuff" buff="buffQuest"/>
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Special" />
 						<property name="PromptDescription" value="SpecialQuest2" />
@@ -154,28 +90,6 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
 				</item>
-
-				<!-- <item name="q_Minis">
-					<property name="name" value="Minis" />
-					<property name="Extends" value="challengeQuestMaster"/>
-					<property name="Group" value="Science"/>
-					<property name="ItemTypeIcon" value="star"/>
-					<property name="CustomIconTint" value="E02AF9"/>
-					<property name="TintColor" value="4,9,171"/>
-					<property name="Stacknumber" value="5"/>
-					<property name="DescriptionKey" value="MinisQuest"/>
-					<property class="Action0">
-						<requirement name="HasBuff" buff="buffQuest"/>
-						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="true"/>
-						<property name="QuestGiven" value="q_NewKillMinis"/>
-					</property>
-					<effect_group tiered="false">
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
-					</effect_group>
-				</item> -->
 				
 				<item name="q_Minis">
 					<property name="Extends" value="q_Ticket"/>
@@ -184,7 +98,7 @@
 					<property name="CustomIconTint" value="E02AF9"/>
 					<property name="TintColor" value="4,9,171"/>
 					<property class="Action0">	
-						<requirement name="HasBuff" buff="buffQuest"/>
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Minis" />
 						<property name="PromptDescription" value="MinisQuest2" />
@@ -204,7 +118,7 @@
 					<property name="CustomIconTint" value="7C00FF"/>
 					<property name="TintColor" value="255,255,255"/>
 					<property class="Action0">	
-						<requirement name="HasBuff" buff="buffQuest"/>
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_SB" />
 						<property name="PromptDescription" value="q_SBPromp" />
@@ -216,28 +130,7 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
 				</item>
-
-				<!-- <item name="q_Nightmare">
-					<property name="name" value="Criaturas" />
-					<property name="Extends" value="challengeQuestMaster"/>
-					<property name="ItemTypeIcon" value="skull"/>
-					<property name="Group" value="Science"/>
-					<property name="CustomIconTint" value="400261"/>
-					<property name="TintColor" value="64,2,97"/>
-					<property name="Stacknumber" value="5"/>
-					<property name="DescriptionKey" value="CriaturasQuest"/>
-					<property class="Action0">
-						<requirement name="HasBuff" buff="buffQuest"/>
-						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="true"/>
-						<property name="QuestGiven" value="q_KillCriaturas"/>
-					</property>
-					<effect_group tiered="false">
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
-					</effect_group>
-				</item> -->				
+		
 
 				<item name="q_Nightmare">
 					<property name="Extends" value="q_Ticket"/>
@@ -246,7 +139,7 @@
 					<property name="CustomIconTint" value="400261"/>
 					<property name="TintColor" value="64,2,97"/>
 					<property class="Action0">	
-						<requirement name="HasBuff" buff="buffQuest"/>
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Nightmare" />
 						<property name="PromptDescription" value="CriaturasQuest1" />
@@ -258,28 +151,6 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
 				</item>
-			
-				<!-- <item name="q_Mutants">
-					<property name="name" value="Elites" />
-					<property name="Extends" value="challengeQuestMaster"/>
-					<property name="ItemTypeIcon" value="radiation"/>
-					<property name="Group" value="Science"/>
-					<property name="CustomIconTint" value="57FE18"/>
-					<property name="TintColor" value="87,254,24"/>
-					<property name="Stacknumber" value="5"/>
-					<property name="DescriptionKey" value="ElitesQuest"/>
-					<property class="Action0">
-						<requirement name="HasBuff" buff="buffQuest"/>
-						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="true"/>
-						<property name="QuestGiven" value="q_Mutants"/>
-					</property>
-					<effect_group tiered="false">
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
-					</effect_group>
-				</item> -->
 								
 				<item name="q_Mutants">
 					<property name="Extends" value="q_Ticket"/>
@@ -288,7 +159,7 @@
 					<property name="CustomIconTint" value="57FE18"/>
 					<property name="TintColor" value="87,254,24"/>
 					<property class="Action0">	
-						<requirement name="HasBuff" buff="buffQuest"/>
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Mutants" />
 						<property name="PromptDescription" value="ElitesQuest1" />
@@ -308,7 +179,7 @@
 					<property name="CustomIconTint" value="0099ff"/>
 					<property name="TintColor" value="255,255,255"/>
 					<property class="Action0">	
-						<requirement name="HasBuff" buff="buffQuest"/>
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Morte" />
 						<property name="PromptDescription" value="q_MortePromp" />
@@ -327,7 +198,7 @@
 					<property name="CustomIconTint" value="213ab3"/>
 					<property name="TintColor" value="255,255,255"/>
 					<property class="Action0">	
-						<requirement name="HasBuff" buff="buffQuest"/>
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Frozen" />
 						<property name="PromptDescription" value="q_FrozenPromp" />
@@ -346,7 +217,7 @@
 					<property name="CustomIconTint" value="255,0,0"/>
 					<property name="TintColor" value="255,0,0"/>
 					<property class="Action0">	
-						<requirement name="HasBuff" buff="buffQuest"/>
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Infernal" />
 						<property name="PromptDescription" value="q_InfernalPromp" />
@@ -365,7 +236,25 @@
 					<property name="CustomIconTint" value="6b08c6"/>
 					<property name="TintColor" value="255,255,255"/>
 					<property class="Action0">	
-						<requirement name="HasBuff" buff="buffQuest"/>
+						<!-- <property name="cameraDistance" value="3.5, 5"/>
+		<property name="cameraTurnRate" value=".2, .35"/>
+		<property name="upAngleMax" value="3"/>
+		<property name="upForce" value="1"/>
+		<property name="steerRate" value="130"/>
+		<property name="steerCenteringRate" value="90"/>
+		<property name="tiltAngleMax" value="2"/>
+		<property name="tiltThreshold" value=".1"/>
+		<property name="tiltDampening" value=".01"/>
+		<property name="tiltDampenThreshold" value="1"/>
+		<property name="tiltUpForce" value="1"/>
+
+		<property name="motorTorque_turbo" value="1400, 500, 2100, 650"/>
+		<property name="velocityMax_turbo" value="9.8, 6, 14, 8"/>
+		<property name="brakeTorque" value="5000"/>
+		<property name="hopForce" value="1, .8"/>
+		<property name="unstickForce" value="1"/>
+		<property name="wheelPtlScale" value="1"/>
+		<property name="hornSound" value="motorbike_horn"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_shock" />
 						<property name="PromptDescription" value="q_shockPromp" />
@@ -380,27 +269,6 @@
 
 
 			<!--Specials-->
-				<!-- <item name="q_EnemigosHF">
-					<property name="name" value="q_EnemigosHF" />
-					<property name="Extends" value="challengeQuestMaster"/>
-					<property name="ItemTypeIcon" value="diamond"/>
-					<property name="CustomIconTint" value="C20707"/>
-					<property name="TintColor" value="194,7,7"/>
-					<property name="Stacknumber" value="5"/>
-					<property name="Group" value="Science"/>
-					<property name="DescriptionKey" value="TAVOQUESTDesc"/>
-					<property class="Action0">
-						<requirement name="HasBuff" buff="buffQuest"/>
-						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="true"/>
-						<property name="QuestGiven" value="q_EnemigosHF"/>
-					</property>
-					<effect_group tiered="false">
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
-					</effect_group>
-				</item> -->
 				
 				<item name="q_EnemigosHF">
 					<property name="Extends" value="q_Ticket"/>
@@ -409,7 +277,7 @@
 					<property name="CustomIconTint" value="C20707"/>
 					<property name="TintColor" value="194,7,7"/>
 					<property class="Action0">	
-						<requirement name="HasBuff" buff="buffQuest"/>
+					<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_EnemigosHF" />
 						<property name="PromptDescription" value="q_EnemigosHFPromp" />
@@ -486,29 +354,6 @@
 				</item>			
 
 			<!--Bosses-->	
-				<!-- <item name="q_Honor">
-					<property name="name" value="Honor" />
-					<property name="Extends" value="challengeQuestMaster"/>
-					<property name="ItemTypeIcon" value="skull"/>
-					<property name="CustomIconTint" value="024E13"/>
-					<property name="TintColor" value="13,157,29"/>
-					<property name="Stacknumber" value="5"/>
-					<property name="Group" value="Science"/>
-					<property name="DescriptionKey" value="SoldierQuest"/>
-					<property class="Action0">
-						<requirement name="HasBuff" buff="buffQuest"/>
-						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="true"/>
-						<property name="QuestGiven" value="q_KillSoldier"/>
-					</property>
-					<effect_group tiered="false">						
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
-					</effect_group> 
-			
-				</item>-->
-
 				<item name="q_Honor">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -516,7 +361,7 @@
 					<property name="TintColor" value="2,78,19"/>
 					<property name="ItemTypeIcon" value="skull"/>
 					<property class="Action0">	
-						<requirement name="HasBuff" buff="buffQuest"/>
+					<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Honor" />
 						<property name="PromptDescription" value="SoldierQuest1" />
@@ -529,27 +374,6 @@
 					</effect_group>
 				</item>		
 
-				<!-- <item name="q_Jugger">
-					<property name="name" value="Kill the Juggernaut" />
-					<property name="Group" value="Science"/>
-					<property name="Extends" value="challengeQuestMaster"/>
-					<property name="ItemTypeIcon" value="skull"/>
-					<property name="CustomIconTint" value="784212"/>
-					<property name="TintColor" value="120,66,18"/>
-					<property name="Stacknumber" value="5"/>
-					<property name="DescriptionKey" value="JugQuest"/>
-					<property class="Action0">
-						<requirement name="HasBuff" buff="buffQuest"/>
-						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="true"/>
-						<property name="QuestGiven" value="q_KillJuggernaut2"/>
-					</property>
-					<effect_group tiered="false">
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
-					</effect_group>
-				</item> -->
 				<item name="q_Jugger">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -557,7 +381,7 @@
 					<property name="CustomIconTint" value="120,66,18"/>
 					<property name="TintColor" value="120,66,18"/>
 					<property class="Action0">	
-						<requirement name="HasBuff" buff="buffQuest"/>
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Jugger" />
 						<property name="PromptDescription" value="JugQuest1" />
@@ -570,27 +394,7 @@
 					</effect_group>
 				</item>
 
-				<!-- <item name="q_Gladiator">
-					<property name="name" value="Enemigos de Mexico" />
-					<property name="Group" value="Science"/>
-					<property name="Extends" value="challengeQuestMaster"/>
-					<property name="ItemTypeIcon" value="skull"/>
-					<property name="CustomIconTint" value="029567"/>
-					<property name="TintColor" value="2,149,103"/>
-					<property name="Stacknumber" value="5"/>
-					<property name="DescriptionKey" value="MxQuest"/>
-					<property class="Action0">
-						<requirement name="HasBuff" buff="buffQuest"/>
-						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="true"/>
-						<property name="QuestGiven" value="q_KillMx"/>
-					</property>
-					<effect_group tiered="false">
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
-					</effect_group>
-				</item> -->
+
 				<item name="q_Gladiator">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -598,7 +402,7 @@
 					<property name="TintColor" value="2,78,19"/>
 					<property name="ItemTypeIcon" value="skull"/>
 					<property class="Action0">	
-						<requirement name="HasBuff" buff="buffQuest"/>
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Gladiator" />
 						<property name="PromptDescription" value="MxQuest2" />
@@ -611,28 +415,6 @@
 					</effect_group>
 				</item>
 
-
-				<!-- <item name="q_Momia">
-					<property name="name" value="Kill the Mummy" />
-					<property name="Extends" value="challengeQuestMaster"/>
-					<property name="Group" value="Science"/>
-					<property name="ItemTypeIcon" value="skull"/>
-					<property name="CustomIconTint" value="EFB810"/>
-					<property name="TintColor" value="218,232,9"/>
-					<property name="Stacknumber" value="5"/>
-					<property name="DescriptionKey" value="MummyQuest"/>
-					<property class="Action0">
-						<requirement name="HasBuff" buff="buffQuest"/>
-						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="true"/>
-						<property name="QuestGiven" value="q_KillMummy"/>
-					</property>
-					<effect_group tiered="false">
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
-					</effect_group>
-				</item>	 -->
 				<item name="q_Momia">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -640,7 +422,7 @@
 					<property name="CustomIconTint" value="EFB810"/>
 					<property name="TintColor" value="218,232,9"/>
 					<property class="Action0">	
-						<requirement name="HasBuff" buff="buffQuest"/>
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Momia" />
 						<property name="PromptDescription" value="MummyQuest1" />
@@ -653,27 +435,6 @@
 					</effect_group>
 				</item>
 
-				<!-- <item name="q_Cirujano">
-					<property name="name" value="Kill the Cirujano" />
-					<property name="Group" value="Science"/>
-					<property name="Extends" value="challengeQuestMaster"/>
-					<property name="ItemTypeIcon" value="add"/>
-					<property name="CustomIconTint" value="7FDAD7"/>
-					<property name="TintColor" value="127,218,215"/>
-					<property name="Stacknumber" value="5"/>
-					<property name="DescriptionKey" value="CiruQuest"/>
-					<property class="Action0">
-						<requirement name="HasBuff" buff="buffQuest"/>
-						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="true"/>
-						<property name="QuestGiven" value="q_KillCirujano"/>
-					</property>
-					<effect_group tiered="false">
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
-					</effect_group>
-				</item> -->
 				<item name="q_Cirujano">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -681,7 +442,7 @@
 					<property name="CustomIconTint" value="7FDAD7"/>
 					<property name="TintColor" value="127,218,215"/>
 					<property class="Action0">	
-						<requirement name="HasBuff" buff="buffQuest"/>
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Cirujano" />
 						<property name="PromptDescription" value="CiruQuest1" />
@@ -694,27 +455,7 @@
 					</effect_group>
 				</item>
 
-				<!-- <item name="q_Pesadilla">
-					<property name="name" value="Nightmare" />
-					<property name="Extends" value="challengeQuestMaster"/>
-					<property name="Group" value="Science"/>
-					<property name="ItemTypeIcon" value="skull"/>
-					<property name="CustomIconTint" value="0B0139"/>
-					<property name="TintColor" value="4,9,171"/>
-					<property name="Stacknumber" value="5"/>
-					<property name="DescriptionKey" value="SirenQuest"/>
-					<property class="Action0">
-						<requirement name="HasBuff" buff="buffQuest"/>
-						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="true"/>
-						<property name="QuestGiven" value="q_KillSiren"/>
-					</property>
-					<effect_group tiered="false">
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
-					</effect_group>
-				</item> -->				
+	
 				<item name="q_Pesadilla">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -722,7 +463,7 @@
 					<property name="CustomIconTint" value="0B0139"/>
 					<property name="TintColor" value="4,9,171"/>
 					<property class="Action0">	
-						<requirement name="HasBuff" buff="buffQuest"/>
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Pesadilla" />
 						<property name="PromptDescription" value="SirenQuest1" />
@@ -742,7 +483,7 @@
 					<property name="CustomIconTint" value="0099ff"/>
 					<property name="TintColor" value="255,255,255"/>
 					<property class="Action0">	
-						<requirement name="HasBuff" buff="buffQuest"/>
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_vodjaoj" />
 						<property name="PromptDescription" value="q_vodjaojPromp" />
@@ -761,7 +502,7 @@
 					<property name="CustomIconTint" value="255,0,0"/>
 					<property name="TintColor" value="255,255,255"/>
 					<property class="Action0">	
-						<requirement name="HasBuff" buff="buffQuest"/>
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_berial" />
 						<property name="PromptDescription" value="q_berialPromp" />
@@ -780,7 +521,7 @@
 					<property name="CustomIconTint" value="213ab3"/>
 					<property name="TintColor" value="255,255,255"/>
 					<property class="Action0">	
-						<requirement name="HasBuff" buff="buffQuest"/>
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_jack" />
 						<property name="PromptDescription" value="q_jackPromp" />
@@ -799,7 +540,7 @@
 					<property name="CustomIconTint" value="6b08c6"/>
 					<property name="TintColor" value="255,255,255"/>
 					<property class="Action0">	
-						<requirement name="HasBuff" buff="buffQuest"/>
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_raijin" />
 						<property name="PromptDescription" value="q_raijinPromp" />
@@ -818,7 +559,7 @@
 					<property name="CustomIconTint" value="07F00D"/>
 					<property name="TintColor" value="255,255,255"/>
 					<property class="Action0">
-						<requirement name="HasBuff" buff="buffQuest"/>
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_patient0" />
 						<property name="PromptDescription" value="q_patient0Promp" />
@@ -831,27 +572,6 @@
 					</effect_group>
 				</item>
 
-				<!-- <item name="q_HFRush">
-					<property name="name" value="HF" />
-					<property name="Extends" value="challengeQuestMaster"/>
-					<property name="ItemTypeIcon" value="trophy"/>
-					<property name="Group" value="Science"/>
-					<property name="CustomIconTint" value="080008"/>
-					<property name="TintColor" value="22,22,21"/>
-					<property name="Stacknumber" value="5"/>
-					<property name="DescriptionKey" value="HFBRQuest"/>
-					<property class="Action0">
-						<requirement name="HasBuff" buff="buffQuest"/>
-						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="true"/>
-						<property name="QuestGiven" value="q_HFRush"/>
-					</property>
-					<effect_group tiered="false">
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="300"/>						
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
-					</effect_group>
-
-				</item> -->
 				<item name="q_HFRush">
 					<property name="name" value="HF" />
 					<property name="Extends" value="challengeQuestMaster"/>
@@ -866,28 +586,6 @@
 					</property>
 				</item>
 				
-
-				<!-- <item name="q_Hooligan_Force">
-					<property name="name" value="Hooligan Force" />
-					<property name="Extends" value="challengeQuestMaster"/>
-					<property name="Group" value="Science"/>
-					<property name="ItemTypeIcon" value="trophy"/>
-					<property name="CustomIconTint" value="3A363A"/>
-					<property name="TintColor" value="22,22,21"/>
-					<property name="Stacknumber" value="5"/>
-					<property name="DescriptionKey" value="HFQuest"/>
-					<property class="Action0">
-						<requirement name="HasBuff" buff="buffQuest"/>
-						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="true"/>
-						<property name="QuestGiven" value="q_HF2"/>
-					</property>
-					<effect_group tiered="false">
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="300"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>	
-					</effect_group>
-				</item> -->
 				<item name="q_Hooligan_Force">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -895,7 +593,7 @@
 					<property name="CustomIconTint" value="000000"/>
 					<property name="TintColor" value="0,0,0"/>
 					<property class="Action0">							
-						<requirement name="HasBuff" buff="buffQuest"/>
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="PromptTitle" value="q_Hooligan_Force" />
 						<property name="PromptDescription" value="HFQuest1" />
@@ -909,27 +607,6 @@
 				</item>	
 				
 			<!--Randoms-->
-				<!-- <item name="q_Lucky">
-					<property name="name" value="Randoms" />
-					<property name="Group" value="Science"/>
-					<property name="Extends" value="challengeQuestMaster"/>
-					<property name="ItemTypeIcon" value="lightbulb"/>
-					<property name="CustomIconTint" value="EA791A"/>
-					<property name="TintColor" value="243,253,27"/>
-					<property name="Stacknumber" value="10"/>
-					<property name="DescriptionKey" value="q_luckyDesc"/>
-					<property class="Action0">
-						<requirement name="HasBuff" buff="buffQuest"/>
-						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="true"/>
-						<property name="QuestGiven" value="q_killLucky"/>
-					</property>
-					<effect_group tiered="false">
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
-					</effect_group>
-				</item>	 -->
 				<item name="q_Lucky">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -937,7 +614,7 @@
 					<property name="CustomIconTint" value="EA791A"/>
 					<property name="TintColor" value="243,253,27"/>
 					<property class="Action0">	
-						<requirement name="HasBuff" buff="buffQuest"/>
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Lucky" />
 						<property name="PromptDescription" value="QuestLucky2" />
@@ -949,28 +626,6 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
 				</item>
-				
-				<!-- <item name="q_Gacha">
-					<property name="name" value="Gacha" />
-					<property name="Group" value="Science"/>
-					<property name="Extends" value="challengeQuestMaster"/>
-					<property name="ItemTypeIcon" value="treasure"/>
-					<property name="CustomIconTint" value="9A41C4"/>
-					<property name="TintColor" value="234,121,26"/>
-					<property name="Stacknumber" value="20"/>
-					<property name="DescriptionKey" value="KillGacha"/>
-					<property class="Action0">
-						
-						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="true"/>
-						<property name="QuestGiven"value="q_killGacha"/>
-					</property> 
-					<effect_group tiered="false">
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="5"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
-					</effect_group>
-				</item> -->
 				<item name="q_Gacha">
 					<property name="CreativeMode" value="Player"/>
 					<property name="CustomIcon" value="adminQuestTicketMaster"/>
@@ -1011,26 +666,7 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestGatchaCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
 				</item>
-
-				<!-- <item name="q_EnemigsRandom">
-					<property name="name" value="Ranbom" />
-					<property name="Group" value="Science"/>
-					<property name="Extends" value="challengeQuestMaster"/>
-					<property name="ItemTypeIcon" value="skull"/>
-					<property name="CustomIconTint" value="FD65CD"/>
-					<property name="TintColor" value="253,101,205"/>
-					<property name="Stacknumber" value="20"/>
-					<property name="DescriptionKey" value="KillREnemigs"/>
-					<property class="Action0">
-						<property name="UseAnimation" value="true"/>
-						<property name="QuestGiven" value="q_TotalRandom"/>
-					</property>
-					<effect_group tiered="false">
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="10"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
-						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
-					</effect_group>
-				</item> -->				
+			
 				<item name="q_EnemigsRandom">
 					<property name="Extends" value="q_Gacha"/>
 					<property name="CustomIconTint" value="FD65CD"/>
