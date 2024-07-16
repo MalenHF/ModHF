@@ -1,13 +1,12 @@
 <MalenCD>
-    <append xpath="/blocks/block[@name='keystoneBlock']">
+    <!-- <append xpath="/blocks/block[@name='keystoneBlock']">
         <property name="Class" value="LandClaim"/>
         <property name="CreativeMode" value="Player"/>
         <property name="Material" value="Msteel"/>
         <property name="DisplayType" value="blockHardened"/>
         <property name="Texture" value="189"/>
         <property name="Weight" value="0"/>
-        <property name="SortOrder2" value="0050"/>
-        <!--  SortShape  -->
+        <property name="SortOrder2" value="0050"/>        
         <property class="RepairItems">
             <property name="resourceRockSmall" value="10"/>
         </property>
@@ -22,15 +21,26 @@
         <property name="FilterTags" value="fbuilding"/>
         <property name="DisplayInfo" value="Custom"/>
         <property name="UseGlobalUV" value="Local"/>
-        <!--  players want to see the flag rotated correctly  -->
-        <property class="UpgradeBlock">
-            <property name="ToBlock" value="woodMaster"/>
-            <property name="Item" value="CD"/>
-            <property name="ItemCount" value="1"/>
-            <property name="UpgradeHitCount" value="1"/>
-        </property>
-    </append>
-    <!--////////// Tag de Bloqueo //////////-->
+       <property name="Tags" value="landclaim,noblocks"/>
+            <property class="UpgradeBlock">
+                <property name="ToBlock" value="woodMaster"/>
+                <property name="Item" value="CD"/>
+                <property name="ItemCount" value="1"/>
+                <property name="UpgradeHitCount" value="1"/>
+            </property>
+    </append> -->
+
+   <!--////////// Tag de Bloqueo //////////-->
+        <!-- Claim -->
+        <append xpath="/blocks/block[@name='keystoneBlock']">
+            <property name="Tags" value="landclaim,noblocks"/>
+            <property class="UpgradeBlock">
+                <property name="ToBlock" value="woodMaster"/>
+                <property name="Item" value="CD"/>
+                <property name="ItemCount" value="1"/>
+                <property name="UpgradeHitCount" value="1"/>
+            </property>
+        </append>
         <!-- Terrenos -->
         <append xpath="/blocks/block[starts-with(@name, 'terr')]">
             <property name="Tags" value="noblocks"/>        
@@ -45,10 +55,7 @@
         <append xpath="/blocks/block[contains(@name, 'VariantHelper')]">
             <property name="Tags" value="noblocks"/>        
         </append>
-        <!-- Claim -->
-        <append xpath="/blocks/block[@name='keystoneBlock']">
-            <property name="Tags" value="noblocks"/>
-        </append>
+        
         <!-- Frames -->
         <append xpath="/blocks/block[@name='frameShapes']">
             <property name="Tags" value="wood,noblocks"/>

@@ -1,485 +1,69 @@
 <configs>
 	<append xpath="/item_modifiers">
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ DYES ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->		
-		<item_modifier name="modDyeSilver" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
-			<property name="DescriptionKey" value="modDyeGroupDesc"/>
-			<property name="Stacknumber" value="1"/>
-			<property name="Group" value="Mods"/>
-			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-			<property name="CustomIcon" value="modDyeWhite"/>
-			<property name="CustomIconTint" value="213,245,243"/>
-			<property name="Material" value="Mpaint"/>
-			<property name="Weight" value="20"/>
-
+		<item_modifier name="modDyeSilver" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
+			<property name="Extends" value="modDyeBrown"/>				
+			<property name="CustomIconTint" value="213,245,243"/>			
 			<item_property_overrides name="*">
 				<property name="TintColor" value="165, 207, 204"/>
-				<property name="CustomIconTint" value="223, 245, 243"/>
-				<property name="UMA.Overlay0Tint" value="165, 207, 204"/>
+				<property name="CustomIconTint" value="223, 245, 243"/>				
 			</item_property_overrides>
-
-			<item_property_overrides name="apparelTankTop">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="213,245,243"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelTShirtPlain">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="213,245,243"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelTShirtZU">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="213,245,243"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatJacketLetterZU">
-				<property name="UMA.Overlay2Tint" value="213,245,243"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelDenimShortsPants">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="213,245,243"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelSuitPants">
-				<property name="UMA.Overlay0Tint" value="213,245,243"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelSuitJacket">
-				<property name="UMA.Overlay0Tint" value="213,245,243"/>
-			</item_property_overrides>
-
-			<property name="PickupJournalEntry" value="augmentGunsTip"/>
 		</item_modifier>
-		<item_modifier name="modDyeCandyPink" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
-			<property name="DescriptionKey" value="modDyeGroupDesc"/>
-			<property name="Stacknumber" value="1"/>
-			<property name="Group" value="Mods"/>
-			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-			<property name="CustomIcon" value="modDyeWhite"/>
-			<property name="CustomIconTint" value="255,0,221"/>
-			<property name="Material" value="Mpaint"/>
-			<property name="Weight" value="20"/>
 
+		<item_modifier name="modDyeCandyPink" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
+			<property name="Extends" value="modDyeBrown"/>				
+			<property name="CustomIconTint" value="255,0,221"/>			
 			<item_property_overrides name="*">
 				<property name="TintColor" value="255,0,221"/>
 				<property name="CustomIconTint" value="255,0,221"/>
-				<property name="UMA.Overlay0Tint" value="255,0,221"/>
 			</item_property_overrides>
-
-			<item_property_overrides name="apparelTankTop">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="255,0,221"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelTShirtPlain">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="255,0,221"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelTShirtZU">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="255,0,221"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatJacketLetterZU">
-				<property name="UMA.Overlay2Tint" value="255,0,221"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelDenimShortsPants">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="255,0,221"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelSuitPants">
-				<property name="UMA.Overlay0Tint" value="255,0,221"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelSuitJacket">
-				<property name="UMA.Overlay0Tint" value="255,0,221"/>
-			</item_property_overrides>
-
-			<property name="PickupJournalEntry" value="augmentGunsTip"/>
 		</item_modifier>
-		<item_modifier name="modDyeBlack" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".10">
-			<property name="DescriptionKey" value="modDyeGroupDesc"/>
-			<property name="Stacknumber" value="1"/>
-			<property name="CustomIcon" value="modDyeWhite"/>
-			<property name="Material" value="Mpaint"/>
-			<property name="CustomIconTint" value="0,0,0"/>
-			<property name="SellableToTrader" value="false"/>
+
+		<item_modifier name="modDyeCandyPink" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
+			<property name="Extends" value="modDyeBrown"/>				
+			<property name="CustomIconTint" value="0,0,0"/>		
 			<item_property_overrides name="*">
 				<property name="TintColor" value="0,0,0"/>
 				<property name="CustomIconTint" value="0,0,0"/>
-				<property name="UMA.Overlay0Tint" value="0,0,0"/>
 			</item_property_overrides>
-
-			<item_property_overrides name="apparelTankTop">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="0,0,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelTShirtPlain">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="0,0,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelTShirtZU">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="0,0,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatJacketLetterZU">
-				<property name="UMA.Overlay0Tint" value="0,0,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelDenimShortsPants">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="0,0,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelSuitDressShoes">
-				<property name="CustomIconTint" value="0,0,0"/>
-				<property name="UMA.Overlay0Tint" value="0,0,0"/>
-			</item_property_overrides>
-
-
-			<item_property_overrides name="apparelFlannelShirt">
-				<property name="UMA.Overlay0Tint" value="0,0,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelSuitPants">
-				<property name="UMA.Overlay0Tint" value="0,0,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelSuitJacket">
-				<property name="UMA.Overlay0Tint" value="0,0,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatPufferCoat">
-				<property name="CustomIconTint" value="0,0,0"/>
-				<property name="UMA.Overlay0Tint" value="0,0,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatJacketGeneric">
-				<property name="CustomIconTint" value="0,0,0"/>
-				<property name="UMA.Overlay0Tint" value="0,0,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCowboyBoots">
-				<property name="UMA.Overlay0Tint" value="0,0,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatLeatherDuster">
-				<property name="UMA.Overlay0Tint" value="0,0,0"/>
-			</item_property_overrides>
-			<property name="PickupJournalEntry" value="augmentGunsTip"/>
-
 		</item_modifier>
-		<item_modifier name="modDyeBlue" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
-			<property name="DescriptionKey" value="modDyeGroupDesc"/>
-			<property name="Stacknumber" value="1"/>
-			<property name="CustomIcon" value="modDyeWhite"/>
-			<property name="Material" value="Mpaint"/>
-			<property name="CustomIconTint" value="0,0,255"/>
-			<property name="SellableToTrader" value="false"/>
 
+		<item_modifier name="modDyeBlue" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
+			<property name="Extends" value="modDyeBrown"/>				
+			<property name="CustomIconTint" value="0,0,255"/>	
 			<item_property_overrides name="*">
 				<property name="TintColor" value="0,0,255"/>
 				<property name="CustomIconTint" value="0,0,255"/>
-				<property name="UMA.Overlay0Tint" value="0,0,255"/>
 			</item_property_overrides>
-
-			<item_property_overrides name="apparelTankTop">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="0,0,255"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelTShirtPlain">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="0,0,255"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelTShirtZU">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="0,0,255"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatJacketLetterZU">
-				<property name="UMA.Overlay0Tint" value="0,0,255"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelDenimShortsPants">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="0,0,255"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelSuitDressShoes">
-				<property name="CustomIconTint" value="0,0,255"/>
-				<property name="UMA.Overlay0Tint" value="0,0,255"/>
-			</item_property_overrides>
-
-
-			<item_property_overrides name="apparelFlannelShirt">
-				<property name="UMA.Overlay0Tint" value="0,0,255"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelSuitPants">
-				<property name="UMA.Overlay0Tint" value="0,0,255"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelSuitJacket">
-				<property name="UMA.Overlay0Tint" value="0,0,255"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatPufferCoat">
-				<property name="CustomIconTint" value="0,0,255"/>
-				<property name="UMA.Overlay0Tint" value="0,0,255"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatJacketGeneric">
-				<property name="CustomIconTint" value="0,0,255"/>
-				<property name="UMA.Overlay0Tint" value="0,0,255"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCowboyBoots">
-				<property name="UMA.Overlay0Tint" value="0,0,255"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatLeatherDuster">
-				<property name="UMA.Overlay0Tint" value="0,0,255"/>
-			</item_property_overrides>
-			<property name="PickupJournalEntry" value="augmentGunsTip"/>
-
 		</item_modifier>
-		<item_modifier name="modDyePurple" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
-			<property name="DescriptionKey" value="modDyeGroupDesc"/>
-			<property name="Stacknumber" value="1"/>
-			<property name="CustomIcon" value="modDyeWhite"/>
-			<property name="CustomIconTint" value="128,0,128"/>
-			<property name="Material" value="Mpaint"/>
-			<property name="SellableToTrader" value="false"/>
 
+		<item_modifier name="modDyePurple" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
+			<property name="Extends" value="modDyeBrown"/>				
+			<property name="CustomIconTint" value="128,0,128"/>
 			<item_property_overrides name="*">
 				<property name="TintColor" value="128,0,128"/>
 				<property name="CustomIconTint" value="128,0,128"/>
-				<property name="UMA.Overlay0Tint" value="128,0,128"/>
 			</item_property_overrides>
-
-			<item_property_overrides name="apparelTankTop">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="128,0,128"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelTShirtPlain">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="128,0,128"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelTShirtZU">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="128,0,128"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatJacketLetterZU">
-				<property name="UMA.Overlay0Tint" value="128,0,128"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelDenimShortsPants">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="128,0,128"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelSuitDressShoes">
-				<property name="CustomIconTint" value="128,0,128"/>
-				<property name="UMA.Overlay0Tint" value="128,0,128"/>
-			</item_property_overrides>
-
-
-			<item_property_overrides name="apparelFlannelShirt">
-				<property name="UMA.Overlay0Tint" value="128,0,128"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelSuitPants">
-				<property name="UMA.Overlay0Tint" value="128,0,128"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelSuitJacket">
-				<property name="UMA.Overlay0Tint" value="128,0,128"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatPufferCoat">
-				<property name="CustomIconTint" value="128,0,128"/>
-				<property name="UMA.Overlay0Tint" value="128,0,128"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatJacketGeneric">
-				<property name="CustomIconTint" value="128,0,128"/>
-				<property name="UMA.Overlay0Tint" value="128,0,128"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCowboyBoots">
-				<property name="UMA.Overlay0Tint" value="128,0,128"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatLeatherDuster">
-				<property name="UMA.Overlay0Tint" value="128,0,128"/>
-			</item_property_overrides>
-			<property name="PickupJournalEntry" value="augmentGunsTip"/>
-
 		</item_modifier>
-		<item_modifier name="modDyeYellow" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
-			<property name="DescriptionKey" value="modDyeGroupDesc"/>
-			<property name="Stacknumber" value="1"/>
-			<property name="CustomIcon" value="modDyeWhite"/>
-			<property name="CustomIconTint" value="255,255,0"/>
-			<property name="Material" value="Mpaint"/>
-			<property name="SellableToTrader" value="false"/>
 
+		<item_modifier name="modDyeYellow" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
+			<property name="Extends" value="modDyeBrown"/>				
+			<property name="CustomIconTint" value="255,255,0"/>
 			<item_property_overrides name="*">
 				<property name="TintColor" value="255,255,0"/>
 				<property name="CustomIconTint" value="255,255,0"/>
-				<property name="UMA.Overlay0Tint" value="255,255,0"/>
 			</item_property_overrides>
-
-			<item_property_overrides name="apparelTankTop">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="255,255,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelTShirtPlain">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="255,255,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelTShirtZU">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="255,255,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatJacketLetterZU">
-				<property name="UMA.Overlay0Tint" value="255,255,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelDenimShortsPants">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="255,255,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelSuitDressShoes">
-				<property name="CustomIconTint" value="255,255,0"/>
-				<property name="UMA.Overlay0Tint" value="255,255,0"/>
-			</item_property_overrides>
-
-
-			<item_property_overrides name="apparelFlannelShirt">
-				<property name="UMA.Overlay0Tint" value="255,255,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelSuitPants">
-				<property name="UMA.Overlay0Tint" value="255,255,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelSuitJacket">
-				<property name="UMA.Overlay0Tint" value="255,255,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatPufferCoat">
-				<property name="CustomIconTint" value="255,255,0"/>
-				<property name="UMA.Overlay0Tint" value="255,255,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatJacketGeneric">
-				<property name="CustomIconTint" value="255,255,0"/>
-				<property name="UMA.Overlay0Tint" value="255,255,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCowboyBoots">
-				<property name="UMA.Overlay0Tint" value="255,255,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatLeatherDuster">
-				<property name="UMA.Overlay0Tint" value="255,255,0"/>
-			</item_property_overrides>
-			<property name="PickupJournalEntry" value="augmentGunsTip"/>
-
 		</item_modifier>
-		<item_modifier name="modDyeOrange" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
-			<property name="DescriptionKey" value="modDyeGroupDesc"/>
-			<property name="Stacknumber" value="1"/>
-			<property name="CustomIcon" value="modDyeWhite"/>
-			<property name="CustomIconTint" value="255,165,0"/>
-			<property name="Material" value="Mpaint"/>
-			<property name="SellableToTrader" value="false"/>
 
+		<item_modifier name="modDyeOrange" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
+			<property name="Extends" value="modDyeBrown"/>				
+			<property name="CustomIconTint" value="255,165,0"/>
 			<item_property_overrides name="*">
 				<property name="TintColor" value="255,165,0"/>
 				<property name="CustomIconTint" value="255,165,0"/>
-				<property name="UMA.Overlay0Tint" value="255,165,0"/>
 			</item_property_overrides>
-
-			<item_property_overrides name="apparelTankTop">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="255,165,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelTShirtPlain">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="255,165,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelTShirtZU">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="255,165,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatJacketLetterZU">
-				<property name="UMA.Overlay0Tint" value="255,165,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelDenimShortsPants">
-				<property name="UMA.Overlay0Tint" value="skin"/>
-				<property name="UMA.Overlay1Tint" value="255,165,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelSuitDressShoes">
-				<property name="CustomIconTint" value="255,165,0"/>
-				<property name="UMA.Overlay0Tint" value="255,165,0"/>
-			</item_property_overrides>
-
-
-			<item_property_overrides name="apparelFlannelShirt">
-				<property name="UMA.Overlay0Tint" value="255,165,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelSuitPants">
-				<property name="UMA.Overlay0Tint" value="255,165,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelSuitJacket">
-				<property name="UMA.Overlay0Tint" value="255,165,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatPufferCoat">
-				<property name="CustomIconTint" value="255,165,0"/>
-				<property name="UMA.Overlay0Tint" value="255,165,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatJacketGeneric">
-				<property name="CustomIconTint" value="255,165,0"/>
-				<property name="UMA.Overlay0Tint" value="255,165,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCowboyBoots">
-				<property name="UMA.Overlay0Tint" value="255,165,0"/>
-			</item_property_overrides>
-
-			<item_property_overrides name="apparelCoatLeatherDuster">
-				<property name="UMA.Overlay0Tint" value="255,165,0"/>
-			</item_property_overrides>
-			<property name="PickupJournalEntry" value="augmentGunsTip"/>
-
 		</item_modifier>
+
 		<item_modifier name="modDyeBeige" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
 			<property name="Stacknumber" value="1"/>
@@ -554,6 +138,8 @@
 				<property name="UMA.Overlay0Tint" value="245,245,220"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
+			
 		</item_modifier>
 		<item_modifier name="modDyeTan" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -629,6 +215,7 @@
 				<property name="UMA.Overlay0Tint" value="210,180,140"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeSilverD" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -705,6 +292,7 @@
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
 
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeCharcoal" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -780,6 +368,7 @@
 				<property name="UMA.Overlay0Tint" value="70,70,70"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeNavyBlue" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -855,6 +444,7 @@
 				<property name="UMA.Overlay0Tint" value="0,0,128"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeRoyalBlue" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -930,6 +520,7 @@
 				<property name="UMA.Overlay0Tint" value="8,76,158"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeAzure" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -1005,6 +596,7 @@
 				<property name="UMA.Overlay0Tint" value="0,127,255"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeAquamarine" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -1080,6 +672,7 @@
 				<property name="UMA.Overlay0Tint" value="127,255,212"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeTeal" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -1156,6 +749,7 @@
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
 
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeForestGreen" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -1231,6 +825,7 @@
 				<property name="UMA.Overlay0Tint" value="34,139,34"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeOlive" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -1306,6 +901,7 @@
 				<property name="UMA.Overlay0Tint" value="128,128,0"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeChartreuse" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -1381,6 +977,7 @@
 				<property name="UMA.Overlay0Tint" value="127,255,0"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeLime" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -1456,6 +1053,7 @@
 				<property name="UMA.Overlay0Tint" value="191,255,0"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeSalmon" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -1531,6 +1129,7 @@
 				<property name="UMA.Overlay0Tint" value="250,128,114"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeHotPink" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -1606,6 +1205,7 @@
 				<property name="UMA.Overlay0Tint" value="252,15,192"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeFuchsia" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -1681,6 +1281,7 @@
 				<property name="UMA.Overlay0Tint" value="255,119,255"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyePuce" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -1756,6 +1357,7 @@
 				<property name="UMA.Overlay0Tint" value="204,136,153"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeMauve" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -1831,6 +1433,7 @@
 				<property name="UMA.Overlay0Tint" value="224,176,255"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeLavender" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -1906,6 +1509,7 @@
 				<property name="UMA.Overlay0Tint" value="181,126,220"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyePlum" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -1981,6 +1585,7 @@
 				<property name="UMA.Overlay0Tint" value="132,49,121"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeIndigo" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -2056,6 +1661,7 @@
 				<property name="UMA.Overlay0Tint" value="75,0,130"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeMaroon" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -2131,6 +1737,7 @@
 				<property name="UMA.Overlay0Tint" value="128,0,0"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeCrimson" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -2206,6 +1813,7 @@
 				<property name="UMA.Overlay0Tint" value="220,20,60"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeMagenta" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -2281,6 +1889,7 @@
 				<property name="UMA.Overlay0Tint" value="255,0,255"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeSnow" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -2356,6 +1965,7 @@
 				<property name="UMA.Overlay0Tint" value="255,250,250"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeLavenderBlush" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -2431,6 +2041,7 @@
 				<property name="UMA.Overlay0Tint" value="255,240,245"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeGreenYellow" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -2506,6 +2117,7 @@
 				<property name="UMA.Overlay0Tint" value="173,255,47"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeMidnight" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -2581,6 +2193,7 @@
 				<property name="UMA.Overlay0Tint" value="43,27,23"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeKhaki" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" rarity="0.2" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -2656,6 +2269,7 @@
 				<property name="UMA.Overlay0Tint" value="173,169,110"/>
 			</item_property_overrides>
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeInvi" installable_tags="clothing,armor" modifier_tags="dye" blocked_tags="noMods" type="attachment" cosmetic_install_chance=".05">
 			<property name="CustomIcon" value="resourceCloth"/>
@@ -2672,6 +2286,7 @@
 				<property name="UMA.Overlay0" value=""/>
 				<property name="UMA.ShowAltHair" value="false"/>
 			</item_property_overrides>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>		
 		<item_modifier name="modDyeHotPink" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -2720,6 +2335,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeFireEngineRed" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -2768,6 +2384,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeOrange" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -2816,6 +2433,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeGold" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".10">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -2864,6 +2482,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeBronze" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -2912,6 +2531,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeLimeGreen" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -2960,6 +2580,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeSpringGreen" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -3008,6 +2629,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeCyan" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".10">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -3056,6 +2678,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>		
 		<item_modifier name="modDyeTurquoise" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -3104,6 +2727,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeBrightSkyBlue" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -3152,6 +2776,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeFuchsia" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -3200,6 +2825,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeRoyalPurple" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -3248,6 +2874,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeBubblegum" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -3296,6 +2923,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeLightCoral" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -3344,6 +2972,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyePaleOrange" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -3392,6 +3021,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeKhaki" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -3440,6 +3070,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeSienna" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -3488,6 +3119,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyePaleGreen" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -3536,6 +3168,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeBabyBlue" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -3584,6 +3217,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeSteelBlue" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -3632,6 +3266,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyePlum" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -3680,6 +3315,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 		<item_modifier name="modDyeGray" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 			<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -3728,6 +3364,7 @@
 			</item_property_overrides>
 
 			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="EconomicValue" value="50"/>
 		</item_modifier>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Visual Armors ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
@@ -3741,38 +3378,12 @@
 				<passive_effect name="CarryCapacity" operation="base_add" value="4"/>
 				<display_value name="dCarryCapacity" value="4"/>
 			</effect_group>
-			<item_property_overrides name="*">
-				<property name="SDCS.HeadGearName" value="Lumberjack"/>	
-				<property name="SDCS.TransformName" value="head"/>	
-				<property name="SDCS.Excludes" value=""/>
-				<property name="SDCS.HairMaskType" value="Hat"/>			
-			</item_property_overrides>
 			<property class="SDCS">
 				<property name="HeadGearName" value="Lumberjack"/>
 				<property name="TransformName" value="head"/>
 				<property name="Excludes" value=""/>
 				<property name="HairMaskType" value="Hat"/>
 			</property>
-			<item_property_overrides name="*">
-				<property name="HeadGearName" value="Lumberjack"/>	
-				<property name="TransformName" value="head"/>	
-				<property name="Excludes" value=""/>
-				<property name="HairMaskType" value="Hat"/>			
-			</item_property_overrides>
-			
-
-			<!-- <item_property_overrides name="SDCS">				
-					<property name="HeadGearName" value="Lumberjack"/>
-					<property name="TransformName" value="head"/>
-					<property name="Excludes" value=""/>
-					<property name="HairMaskType" value="Hat"/>				
-			</item_property_overrides> -->
-
-			<!-- <item_property_overrides name="*">
-				<property name="UMA.Mesh" value="armor_hazmat_head"/>
-				<property name="UMA.Overlay0" value="armor_hazmat_hood"/>
-				<property name="UMA.ShowAltHair" value="true"/>
-			</item_property_overrides> -->
 		
 
 		</item_modifier>

@@ -1,0 +1,35 @@
+<configs>
+	<remove xpath="/windows/window[@name='windowSkillCraftingInfo']/rect/rect[@name='tableBox']"/>
+	<append xpath="/windows/window[@name='windowSkillCraftingInfo']/rect">
+		<rect name="tableBox" depth="1" pos="0,-280" width="646" height="450">
+			<sprite depth="1" name="background" color="[darkGrey]" type="sliced"/>
+			<sprite depth="5" pos="0,1" width="647" height="451" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
+
+			<rect name="tableHeader" pos="0,0" width="644" height="41">
+				<sprite depth="1" name="background" color="[lightGrey]" type="sliced"/>
+				<rect depth="1" pos="0,0" width="75" height="38">
+					<sprite depth="0" name="backgroundMain" sprite="menu_empty3px" height="44" color="[black]" type="sliced" fillcenter="false" />
+					<label depth="1" pos="5,-23" text="Item" text_key="xuiCraftingSkillsItem" pivot="left" justify="center" width="65" />
+				</rect>
+				<rect depth="1" pos="72,0" width="575" height="38">
+					<sprite depth="0" name="backgroundMain" sprite="menu_empty3px" height="44" color="[black]" type="sliced" fillcenter="false" />
+					<label depth="1" pos="5,-23" text_key="xuiSkillUnlocks" pivot="left" justify="center" width="418" />
+				</rect>
+				<rect depth="1" pos="480,0" width="95" height="38">
+					<sprite depth="0" name="backgroundMain" sprite="menu_empty3px" height="44" color="[black]" type="sliced" fillcenter="false" />
+					<label depth="1" pos="5,-23" text="Skill" text_key="xuiCraftingSkillsSkill" pivot="left" justify="center" width="85" />
+				</rect>
+				<rect depth="1" pos="572,0" width="75" height="38">
+					<sprite depth="0" name="backgroundMain" sprite="menu_empty3px" height="44" color="[black]" type="sliced" fillcenter="false" />
+					<label depth="1" pos="5,-23" text="Next" text_key="xuiCraftingSkillsNext" pivot="left" justify="center" width="65" />
+				</rect>
+			</rect>
+
+			<grid rows="6" cols="1" pos="0,-44" width="644" cell_width="644" cell_height="67" repeat_content="true">
+				<skill_crafting_entry width="646" height="67" />
+			</grid>
+		</rect>
+	</append>
+
+</configs>
+

@@ -14,5 +14,46 @@
 				<triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="buffPremmXP"/>				
 			</effect_group>
 		</buff>
+		<buff name="buffEventXP" name_key="Event XP" description_key="XP extra por event" icon="ui_game_symbol_star" remove_on_death="false" icon_color="255,255,255">
+			<stack_type value="ignore"/>
+			<duration value="36000"/>
+			<display_value value="duration"/>
+			<effect_group>				
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPremmXP">
+					<requirement name="CVarCompare" cvar="$eventXP" operation="Equals" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffStack" action="RemoveBuff" buff="buffPremmXP"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$eventXP" operation="set" value="5"/>						
+			</effect_group>
+			<effect_group>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".5"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.25">
+					<requirement name="HasBuff" buff="PPBF"/>
+				</passive_effect>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375">
+					<requirement name="HasBuff" buff="PPBF2"/>
+				</passive_effect>											
+			</effect_group>
+		</buff>
+		<buff name="buffEventXP2" name_key="Event XP" description_key="XP extra por event" icon="ui_game_symbol_star" remove_on_death="false" icon_color="255,255,255">
+			<stack_type value="ignore"/>
+			<duration value="20"/>
+			<display_value value="duration"/>
+			<effect_group>				
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffEventXP2">
+					<requirement name="CVarCompare" cvar="$eventXP" operation="Equals" value="5"/>
+				</triggered_effect>				
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$eventXP" operation="set" value="5"/>						
+			</effect_group>
+			<effect_group>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".5"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.25">
+					<requirement name="HasBuff" buff="PPBF"/>
+				</passive_effect>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375">
+					<requirement name="HasBuff" buff="PPBF2"/>
+				</passive_effect>											
+			</effect_group>
+		</buff>
 	</append>
 </configs>

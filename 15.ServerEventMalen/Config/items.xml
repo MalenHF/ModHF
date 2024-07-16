@@ -11,12 +11,12 @@
 			<!--<property name="CustomIcon" value="resourceConcreteMix"/> verano-->
 			<!--<property name="CustomIcon" value="decoPumpkinJackOLantern"/> Otoño
 			<property name="CustomIcon" value="thrownDynamite"/> Año nuevo-->			
-			<property name="CustomIcon" value="foodEgg"/>
+			<property name="CustomIcon" value="resourceConcreteMix"/>
 			<!--<property name="CustomIconTint" value="FFA200"/> verano/Otoño-->
 			<!--<property name="CustomIconTint" value="2E1503"/> san valentin -->
 			<!--<property name="CustomIconTint" value="FF00E0"/> Pacua -->
 			<!-- <property name="CustomIconTint" value="0CC7A8"/> año nuevo  -->
-			-<property name="CustomIconTint" value="FF00E0"/>			
+			-<property name="CustomIconTint" value="FFA200"/>			
 			<property name="Material" value="Morganic"/>
 			<property name="Stacknumber" value="400"/>
 			<property name="Group" value="Mods"/>
@@ -352,7 +352,7 @@
 			</property>
 		</item>
 		<item name="eventbackpack">
-			<property name="CustomIcon" value="backpackMedium"/>
+			<property name="CustomIcon" value="cntLiquorPileSmall"/>
 			<property name="DescriptionKey" value="Una mochila tomada del cuerpo de un lunatico..."/>
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
@@ -1193,6 +1193,36 @@
 				<property name="Create_item" value="ResourceForgedPlatinum,ResourceForgedPractonium,agua_divina,gunLSHF,lsUnlockBundle,q_Gallinazilla,q_GachaPrem,bammoBundle9mmBulletBall,bammoBundle762mmBulletBall,bammoBundle44MagnumBulletBall,bammoBundleShotgunShell,resourceClayLumpBundle15k,resourceRockSmallBundle10k,resourceWoodBundle10k,resourceScrapIronBundle10k,resourcePotassiumNitratePowderBundle10k,resourceLeadBundle10k,resourceCoalBundle10k,resourceOilShaleBundle10k,resourceCrushedSandBundle10k"/>
 				<property name="Create_item_count" value="1,2,3,1,1,10,5,3,3,3,3,5,3,4,4,3,3,3,3,3"/>
 			</property>
+		</item>
+
+		<item name="armorLumberjackHelmetTest">
+			<property name="Extends" value="armorLightMaster" param1="CustomIcon"/>
+			<property name="DescriptionKey" value="armorLumberjackHelmetDesc"/>
+			<property name="DisplayType" value="armorLumberjackHelmet"/>
+			<property name="ArmorGroup" value="groupLumberjack"/>
+			<property name="Tags" value="head,armor,armorHead,canHaveCosmetic,lightArmor,lightArmorDeg"/>
+			<property name="EquipSlot" value="Head"/>
+			<property name="SoundPickup" value="headwear_cloth_grab"/>
+			<property name="SoundPlace" value="headwear_cloth_place"/>
+			<effect_group name="LumberjackHelmet">
+				<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="8,12.3" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="8,12.3" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.041" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+				<passive_effect name="HypothermalResist" operation="base_add" value="20"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="20"/>
+			</effect_group>
+
+			<effect_group>
+				<passive_effect name="HarvestCount" operation="perc_add" value=".05,.1,.15,.2,.25,.5" tier="1,2,3,4,5,6" tags="lumberjackHarvest"/>
+				<display_value name="dHarvestCount" value=".05,.1,.15,.2,.25,.5" tier="1,2,3,4,5,6"/>
+			</effect_group>
+			
 		</item>
 
 	</append>

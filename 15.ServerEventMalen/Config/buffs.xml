@@ -106,6 +106,7 @@
 			<effect_group>
 				<!--<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="twitch_buffCelebrate"/>-->
 				<triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="twitch_buffCelebrate"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="hf_buffCelebrate"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="twitch_good_buff_ended" play_in_head="true"/>
 
 			</effect_group>	
@@ -117,7 +118,8 @@
 			<stack_type value="replace"/>	
 			<effect_group>
 				<!--<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="twitch_buffCelebrate"/>-->
-				<triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="twitch_buffCelebrate"/>
+				<triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="hf_buffSillySounds"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="hf_buffSillySounds"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="twitch_good_buff_ended" play_in_head="true"/>
 
 			</effect_group>	
