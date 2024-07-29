@@ -1,5 +1,5 @@
 <config>
-    <remove xpath="/buffs/buff[@name='pvp_zone']"/> 
+    <remove xpath="/buffs/buff[@name='pvp_zone']"/>
     <append xpath="/buffs">
         <buff name="pvp_zone" name_key="Zona PVE" description_key="Estas dentro de zona PVP extra loot y XP" tooltip_key="Entraste en zona PVE" icon="ui_game_symbol_twitch_no_ranged" icon_color="204,0,0">
             <display_value_key value="Zona PVE"/>
@@ -12,78 +12,80 @@
                 </triggered_effect>
                 <triggered_effect trigger="onSelfSecondaryActionRayHit" target="other" action="AddBuff" buff="pvp_damage">
                     <requirement name="EntityTagCompare" target="other" tags="player"/>
-                </triggered_effect>                
+                </triggered_effect>
             </effect_group>
             <effect_group>
                 <passive_effect name="PlayerExpGain" operation="perc_add" value=".25"/>
-                <passive_effect name="LootStage" operation="base_add" value="20"/>            
+                <passive_effect name="LootStage" operation="base_add" value="20"/>
             </effect_group>
-        </buff>       
+        </buff>
 
         <!--CPM-->
         <buff name="cpm_tooltip_ProtectedLobby_enter" name_key="cpm_tooltip_ProtectedLobby_exit" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
-            <display_value_key value="Lobby"/> 
-			<display_value value="xxx"/> 
-			<stack_type value="ignore"/>
+            <display_value_key value="Lobby"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
             <effect_group>
-                <passive_effect name="BlockDamage" operation="perc_add" value="-1"/>
-				<passive_effect name="DisableItem" operation="base_set" value="1" tags="ranged,melee,noblocks" />	
-				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="hfProtectZone"/>
-            </effect_group>
-        </buff>		
-		<buff name="cpm_tooltip_ProtectedLobby_exit" name_key="cpm_tooltip_ProtectedLobby_exit" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
-            <display_value_key value="Lobby"/> 
-			<display_value value="xxx"/> 
-			<stack_type value="ignore"/>
-            <effect_group>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff"	buff="hfProtectZone" />
-				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff"	buff="cpm_tooltip_ProtectedLobby_enter" />
-				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff"	buff="cpm_tooltip_ProtectedLobby_exit" />
-            </effect_group>
-        </buff>		
-		<buff name="cpm_tooltip_ProtectedMarket_enter" name_key="cpm_tooltip_ProtectedLobby_exit" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
-            <display_value_key value="Lobby"/> 
-			<display_value value="xxx"/> 
-			<stack_type value="ignore"/>
-            <effect_group>
-                <passive_effect name="BlockDamage" operation="perc_add" value="-1"/>
-				<passive_effect name="DisableItem" operation="base_set" value="1" tags="ranged,melee,noblocks" />				
-				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="hfProtectZone"/>
+                <requirement name="NotHasBuff" buff="god"/>
+                <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfProtectZone" />
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_ProtectedLobby_enter"/>            
             </effect_group>
         </buff>
-		<buff name="cpm_tooltip_ProtectedMarket_exit" name_key="cpm_tooltip_ProtectedMarket_enter" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
-            <display_value_key value="Lobby"/> 
-			<display_value value="xxx"/> 
-			<stack_type value="ignore"/>
+        <buff name="cpm_tooltip_ProtectedLobby_exit" name_key="cpm_tooltip_ProtectedLobby_exit" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
+            <display_value_key value="Lobby"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
             <effect_group>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff"	buff="hfProtectZone" />
-				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff"	buff="cpm_tooltip_ProtectedMarket_enter" />
-				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff"	buff="cpm_tooltip_ProtectedMarket_exit" />				
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="hfProtectZone" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_ProtectedLobby_enter" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_ProtectedLobby_exit" />
+            </effect_group>
+        </buff>
+        <buff name="cpm_tooltip_ProtectedMarket_enter" name_key="cpm_tooltip_ProtectedLobby_exit" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
+            <display_value_key value="Lobby"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
+            <effect_group>
+                <requirement name="NotHasBuff" buff="god"/>
+                <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfProtectZone" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_ProtectedMarket_enter"/>   
+            </effect_group>
+        </buff>
+        <buff name="cpm_tooltip_ProtectedMarket_exit" name_key="cpm_tooltip_ProtectedMarket_enter" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
+            <display_value_key value="Lobby"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="hfProtectZone" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_ProtectedMarket_enter" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_ProtectedMarket_exit" />
             </effect_group>
         </buff>
 
         <buff name="cpm_tooltip_ProtectedPOI_enter" name_key="cpm_tooltip_ProtectedLobby_exit" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
-            <display_value_key value="Lobby"/> 
-			<display_value value="xxx"/> 
-			<stack_type value="ignore"/>
+            <display_value_key value="Lobby"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
             <effect_group>
-				<passive_effect name="DisableItem" operation="base_set" value="1" tags="noblocks" />
-				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="hfNoConstructionZone"/>
-                <triggered_effect trigger="onSelfBuffStart" action="AddBuff"	buff="hfNoConstructionZone" />                
+                <passive_effect name="DisableItem" operation="base_set" value="1" tags="noblocks" />
+                <triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="hfNoConstructionZone"/>
+                <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfNoConstructionZone" />
             </effect_group>
         </buff>
-		<buff name="cpm_tooltip_ProtectedPOI_exit" name_key="cpm_tooltip_ProtectedMarket_enter" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
-            <display_value_key value="Lobby"/> 
-			<display_value value="xxx"/> 
-			<stack_type value="ignore"/>
+        <buff name="cpm_tooltip_ProtectedPOI_exit" name_key="cpm_tooltip_ProtectedMarket_enter" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
+            <display_value_key value="Lobby"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
             <effect_group>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff"	buff="hfNoConstructionZone" />
-				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff"	buff="cpm_tooltip_ProtectedPOI_enter" />
-				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff"	buff="cpm_tooltip_ProtectedPOI_exit" />				
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="hfNoConstructionZone" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_ProtectedPOI_enter" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_ProtectedPOI_exit" />
             </effect_group>
         </buff>
+
         
-        
+
+
 
     </append>
 </config>

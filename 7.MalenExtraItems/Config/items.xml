@@ -47,9 +47,11 @@
 			<property name="Material" value="MtoolBellows"/>
 			<property name="Stacknumber" value="1"/> <!-- STK resource -->
 			<property name="Weight" value="0"/>
-			<property name="EconomicValue" value="5000"/>
 			<property name="Group" value="Tools/Traps"/>
 			<property name="DisplayType" value="toolBellows"/>
+
+			<property name="Candrop" value="false"/>
+			<property name="SellableToTrader" value="false"/>
 			
 			<effect_group tiered="false">
 				<passive_effect name="CraftingSmeltTime" operation="perc_add" value="-.666"/> <!-- this is essentially a multiplier -->
@@ -70,7 +72,8 @@
 			<property name="Material" value="Msteel"/>
 			<property name="Weight" value="0"/>
 			<property name="Stacknumber" value="1"/> <!-- STK loot -->
-			<property name="EconomicValue" value="2400"/>
+			<property name="Candrop" value="false"/>
+			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Tools/Traps"/>
 			<property name="DisplayType" value="toolAnvil"/>
 			<property name="ItemTypeIcon" value="tool_smithing"/>
@@ -84,15 +87,15 @@
 			<property name="CustomIcon" value="toolForgeCrucible"/>
 			<property name="CustomIconTint" value="81, 209, 246"/>
 			<property name="TintColor" value="81, 209, 246"/>
-
+			
 			<property name="UnlockedBy" value="HML"/>
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="Morganic"/>
 			<property name="Stacknumber" value="1"/>
-			<property name="Group" value="Tools/Traps"/>
-			<property name="EconomicValue" value="50000"/>
+			<property name="Group" value="Tools/Traps"/>						
+			<property name="Candrop" value="false"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="ItemTypeIcon" value="tool_smithing"/>
 		</item>
@@ -105,7 +108,8 @@
 			<property name="Material" value="Msteel"/>
 			<property name="Weight" value="30"/>
 			<property name="Stacknumber" value="1"/> <!-- STK loot -->
-			<property name="EconomicValue" value="6000"/>
+			<property name="Candrop" value="false"/>
+			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Tools/Traps"/>
 			<property name="ItemTypeIcon" value="tool_smithing"/>
 			<effect_group tiered="false">
@@ -119,34 +123,22 @@
 			</effect_group>
 		</item>		
 		<item name="platinumMould">
-			<property name="Extends" value="gunMGT1AK47Parts"/>
-			<property name="UnlockedBy" value="HML"/>
+			<property name="Extends" value="gunMGT1AK47Parts"/>			
 			<property name="Material" value="plaMould"/>
+			<property name="UnlockedBy" value="HML"/>
 			<property name="CustomIcon" value="cntBathTubEmpty"/>
 			<property name="CustomIconTint" value="81, 209, 246"/>
-			<property name="TintColor" value="81, 209, 246"/>
-			<property name="SellableToTrader" value="false"/>
-			<property name="EconomicBundleSize" value="1"/>
+			<property name="TintColor" value="81, 209, 246"/>			
 			<property name="DescriptionKey" value="practoniumdesc"/>
-			<property name="EconomicValue" value="5000"/>
-			<property name="Stacknumber" value="10"/>
-			<property name="EconomicBundleSize" value="11"/>
+			<property name="Stacknumber" value="10"/>			
 			<property name="Group" value="Lmats"/>
 		</item>
 		<item name="practoniumMould">
-			<property name="Extends" value="gunMGT1AK47Parts"/>
-			<property name="UnlockedBy" value="HML"/>
-			<property name="Material" value="praMould"/>
-			<property name="CustomIcon" value="cntBathTubEmpty"/>			
+			<property name="Extends" value="platinumMould"/>			
+			<property name="Material" value="praMould"/>					
 			<property name="CustomIconTint" value="B65FCF"/>
-			<property name="TintColor" value="B65FCF"/>
-			<property name="SellableToTrader" value="false"/>
-			<property name="EconomicBundleSize" value="1"/>
-			<property name="DescriptionKey" value="practoniumdesc"/>
-			<property name="EconomicValue" value="5000"/>
-			<property name="Stacknumber" value="10"/>
-			<property name="EconomicBundleSize" value="11"/>
-			<property name="Group" value="Lmats"/>
+			<property name="TintColor" value="B65FCF"/>			
+			<property name="DescriptionKey" value="practoniumdesc"/>	
 		</item>
 		<item name="ResourceForgedPlatinum">
 			<property name="Extends" value="gunMGT1AK47Parts"/>
@@ -154,28 +146,16 @@
 			<property name="CustomIcon" value="resourceForgedSteel"/>
 			<property name="CustomIconTint" value="81, 209, 246"/>
 			<property name="TintColor" value="81, 209, 246"/>
-			<property name="Stacknumber" value="10"/>
-			<property name="DescriptionKey" value="platinumdesc"/>
-			<property name="SellableToTrader" value="false"/>
+			<property name="Stacknumber" value="10"/>			
+			<property name="DescriptionKey" value="platinumdesc"/>			
 			<property name="Group" value="Lmats"/>
-			<property name="EconomicValue" value="250000"/>
-			<property name="EconomicBundleSize" value="1"/>
 			<property name="ItemTypeIcon" value="diamond"/>
 		</item>
 		<item name="ResourceForgedPractonium">
-			<property name="Extends" value="gunMGT1AK47Parts"/>
-			<property name="Material" value="Morganic"/>			
-			<property name="CustomIcon" value="resourceForgedSteel"/>
+			<property name="Extends" value="ResourceForgedPlatinum"/>			
 			<property name="CustomIconTint" value="B65FCF"/>
 			<property name="TintColor" value="B65FCF"/>
-			<property name="SellableToTrader" value="false"/>
-			<property name="Stacknumber" value="10"/>
 			<property name="DescriptionKey" value="practoIngotdesc"/>
-			<property name="Group" value="Lmats"/>
-			<property name="EconomicValue" value="375000"/>>
-			
-			<property name="EconomicBundleSize" value="11"/>
-			<property name="ItemTypeIcon" value="diamond"/>
 		</item>
 		<item name="Practonium">
 			<property name="Extends" value="gunMGT1AK47Parts"/>
@@ -185,13 +165,9 @@
 			<property name="CustomIcon" value="orePotassiumNitrateBoulder"/>
 			<property name="CustomIconTint" value="B65FCF"/>
 			<property name="TintColor" value="B65FCF"/>
-			<property name="EconomicBundleSize" value="101"/>
-			<property name="DescriptionKey" value="practoniumdesc"/>
-			<property name="SellableToTrader" value="false"/>
-			<property name="EconomicValue" value="5000"/>
+			<property name="DescriptionKey" value="practoniumdesc"/>		
 			<property name="Stacknumber" value="100"/>
 			<property name="ItemTypeIcon" value="diamond"/>
-			<property name="SellableToTrader" value="false"/>
 		</item>
 		<item name="mithril">
 			<property name="Extends" value="gunMGT1AK47Parts"/>
@@ -200,15 +176,10 @@
 			<property name="UnlockedBy" value="HML"/>
 			<property name="CustomIcon" value="terrOrePotassiumNitrate"/>
 			<property name="CustomIconTint" value="81, 209, 246"/>
-			<property name="TintColor" value="81, 209, 246"/>
-			<property name="EconomicBundleSize" value="1"/>
-			<property name="DescriptionKey" value="mithrilDesc"/>
-			<property name="EconomicValue" value="5000"/>
-			<property name="SellableToTrader" value="false"/>
-			<property name="Stacknumber" value="25"/>
-			<property name="EconomicBundleSize" value="26"/>
+			<property name="TintColor" value="81, 209, 246"/>			
+			<property name="DescriptionKey" value="mithrilDesc"/>					
+			<property name="Stacknumber" value="25"/>				
 			<property name="Group" value="Lmats"/>
-			<property name="SellableToTrader" value="false"/>
 		</item>
 		<item name="agua_divina">
 			<property name="Extends" value="drinkYuccaJuiceSmoothie"/>
@@ -218,19 +189,19 @@
 			<property name="Stacknumber" value="10"/>
 			<property name="DisplayType" value="divinewater"/>
 			<property name="ItemTypeIcon" value="twitch_special"/>
-			<property name="Material" value="Morganic"/>
-			<property name="SellableToTrader" value="false"/>
+			<property name="Material" value="Morganic"/>			
 			<property name="DescriptionKey" value="aguaDivinaDesc"/>			
 			<property name="UnlockedBy" value="craftingFood"/>
 			<property name="Group" value="Lmats"/>
-			<property name="EconomicValue" value="50000"/>
+
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
 				<property name="Use_time" value="..."/>
 				<property name="UseAnimation" value="false"/>
-				<property name="Sound_start" value="player_drinking"/>
-				
+				<property name="Sound_start" value="player_drinking"/>				
 			</property>
 			<effect_group tiered="false">
 				<display_value name="CURAA" value="1"/>
@@ -252,13 +223,13 @@
 		</item>
 
 		<item name="casinoCoinD">
-			<property name="Extends" value="resourceRockSmallBundle"/>
-			<property name="Stacknumber" value="20000"/>
+			<property name="Extends" value="resourceRockSmallBundle"/>			
 			<property name="CustomIcon" value="casinoCoin"/>
 			<property name="CustomIconTint" value="00AAE4"/>
 			<property name="UnlockedBy" value="perkArtOfMiningComplete"/>
 			<property name="Stacknumber" value="100"/>
-			<property name="EconomicBundleSize" value="101"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Create_item" value="casinoCoin"/>
 				<property name="Create_item_count" value="20000"/>
@@ -272,22 +243,21 @@
 			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MstainlessSteel"/>
 			<property name="Stacknumber" value="500"/>
-			<property name="EconomicValue" value="1000"/>
 			<property name="Group" value="Resources"/>
 			<property name="CraftingIngredientTime" value="15"/>
 			<property name="DescriptionKey" value="resourceSteelPolishRdesc"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 		</item>
+		
 		<item name="ancientMetalAlloy">
 			<property name="Extends" value="gunMGT1AK47Parts"/>
 			<property name="Material" value="Morganic"/>
 			<property name="CustomIcon" value="modRadiationReady"/>
 			<property name="CustomIconTint" value="100,0,0"/>
-			<property name="TintColor" value="100,0,0"/>
-			<property name="EconomicBundleSize" value="6"/>
-
+			<property name="TintColor" value="100,0,0"/>			
 			<property name="UnlockedBy" value="perkprestige2"/>
 			<property name="DescriptionKey" value="aPartDesc"/>
-			<property name="EconomicValue" value="1"/>
 			<property name="Stacknumber" value="5"/>
 			<property name="Group" value="Lmats"/>
 		</item>
@@ -296,11 +266,9 @@
 			<property name="Material" value="Morganic"/>
 			<property name="CustomIcon" value="resourceScopeLens"/>
 			<property name="CustomIconTint" value="255,255,0"/>
-			<property name="TintColor" value="255,255,0"/>
-			<property name="EconomicBundleSize" value="1"/>
+			<property name="TintColor" value="255,255,0"/>						
 			<property name="DescriptionKey" value="legendModPartDesc"/>
-			<property name="EconomicValue" value="1"/>
-			<property name="Stacknumber" value="50"/>
+			<property name="Stacknumber" value="5"/>
 		</item>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 
@@ -309,101 +277,65 @@
 			<property name="Extends" value="partsMaster"/>
 			<property name="ItemTypeIcon" value="computer"/>
 			<property name="DescriptionKey" value="modArmounipart"/>
-			<property name="Stacknumber" value="10"/>
 			<property name="CustomIconTint" value="255,255,0"/>
 			<property name="TintColor" value="255,255,0"/>
 			<property name="CustomIcon" value="modArmorPlatingBasic"/>
 			<property name="Material" value="Morganic"/>
-			<!--<property name="UnlockedBy" value="modArmorPlatingReinforcedSchematic"/>-->
 			<property name="Stacknumber" value="5"/>
-			<property name="Group" value="Resources"/>
 			<property name="UnlockedBy" value="special"/>
 			<property name="Group" value="Lmats"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
+			
 		</item>
 		<item name="LSASP">
-			<property name="Extends" value="partsMaster"/>
-			<property name="ItemTypeIcon" value="computer"/>
-			<property name="DescriptionKey" value="modArmounipart"/>
-			<property name="Stacknumber" value="5"/>
-			<property name="CustomIconTint" value="255,255,0"/>
-			<property name="TintColor" value="255,255,0"/>
+			<property name="Extends" value="LMASP"/>			
 			<property name="CustomIcon" value="modArmorPlatingReinforced"/>
-			<property name="Material" value="Morganic"/>
-			<!--<property name="UnlockedBy" value="modArmorPlatingReinforcedSchematic"/>-->
-			<property name="Stacknumber" value="5"/>
-			<property name="Group" value="Resources"/>
-			<property name="UnlockedBy" value="special"/>
-			<property name="Group" value="Lmats"/>
 
 		</item>
 		<item name="LSTPR">
-			<property name="Extends" value="partsMaster"/>
-			<property name="DescriptionKey" value="modArmounipart2"/>
-			<property name="Stacknumber" value="5"/>
+			<property name="Extends" value="LMASP"/>
+			<property name="DescriptionKey" value="modArmounipart2"/>			
 			<property name="CustomIconTint" value="50,50,50"/>
 			<property name="TintColor" value="50,50,50"/>
 			<property name="CustomIcon" value="armorParts"/>
-			<property name="Material" value="Morganic"/>
-			<!--<property name="UnlockedBy" value="modArmorPlatingReinforcedSchematic"/>-->
-			<property name="Stacknumber" value="5"/>
-			<property name="Group" value="Resources"/>
-			<property name="UnlockedBy" value="special"/>
-			<property name="Group" value="Lmats"/>
 		</item>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Libros Maestros ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<!-- ▼▲ Pistol ▲▼ -->	
 			<item name="PLMP">
+				<property name="CustomIcon" value="schematicMaster"/>
 				<property name="ItemTypeIcon" value="map_cursor"/>
 				<property name="HoldType" value="21"/>
 				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
 				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				
+				<property name="Material" value="Morganic"/>				
 				<property name="Weight" value="5"/>
 				<property name="FuelValue" value="5"/>
 				<property name="Stacknumber" value="5"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="CustomIcon" value="schematicMaster"/>
+				<property name="UnlockedBy" value="PBMA"/>				
 				<property name="Group" value="Books"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="Candrop" value="false"/>
 			</item>
 			<item name="PAMP1">
-				<property name="ItemTypeIcon" value="map_cursor"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
+				<property name="Extends" value="PLMP"/>
 				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
 			</item>
 			<item name="PAMP2">
-				<property name="ItemTypeIcon" value="map_cursor"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>				
 			</item>
 			<item name="bookMaestroPistol">
 				<property name="Extends" value="schematicMaster"/>
-				<property name="EconomicValue" value="20000"/>
+				<property name="CustomIcon" value="bookPistolPeteTakeAim"/>				
 				<property name="ItemTypeIcon" value="map_cursor"/>
 				<property name="Stacknumber" value="10"/>
 				<property name="Material" value="Morganic"/>
-
-				<property name="CustomIcon" value="bookPistolPeteTakeAim"/>
+				<property name="EconomicValue" value="20000"/>
 				<property name="UnlockedBy" value="PBMA"/>
-
+				<property name="SellableToTrader" value="false"/>
+				<property name="Candrop" value="false"/>
 				<property name="Group" value="Books"/>
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkPistolPeteTakeAim" level="-1"/>
@@ -424,53 +356,17 @@
 			</item>
 		<!-- ▼▲ Magnum ▲▼ -->
 			<item name="PLMRe">
-				<property name="ItemTypeIcon" value="map_cursor"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="CustomIcon" value="schematicMaster"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PLMP"/>
 			</item>
 			<item name="PAMRe1">
-				<property name="ItemTypeIcon" value="map_cursor"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
 			</item>
 			<item name="PAMRe2">
-				<property name="ItemTypeIcon" value="map_cursor"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
 			</item>
 			<item name="bookMaestroRev">
-				<property name="Extends" value="schematicMaster"/>
-				<property name="EconomicValue" value="20000"/>
-				<property name="ItemTypeIcon" value="map_cursor"/>
-				<property name="Stacknumber" value="10"/>
-				<property name="Material" value="Morganic"/>
-				<property name="CustomIcon" value="bookEnforcerDamage"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="bookMaestroPistol"/>				
+				<property name="CustomIcon" value="bookEnforcerDamage"/>				
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkEnforcerDamage" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkEnforcerApparel" level="-1"/>
@@ -490,55 +386,17 @@
 			</item>
 		<!-- ▼▲ Escopetas ▲▼ -->
 			<item name="PLME">
-				<property name="ItemTypeIcon" value="map_cursor"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="CustomIcon" value="schematicMaster"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PLMP"/>
 			</item>
 			<item name="PAME1">
-				<property name="ItemTypeIcon" value="map_cursor"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
 			</item>
 			<item name="PAME2">
-				<property name="ItemTypeIcon" value="map_cursor"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
 			</item>
 			<item name="bookMaestroShot">
-				<property name="Extends" value="schematicMaster"/>
-				<property name="EconomicValue" value="20000"/>
-				<property name="ItemTypeIcon" value="map_cursor"/>
-				<property name="Stacknumber" value="10"/>
-				<property name="Material" value="Morganic"/>
-
+				<property name="Extends" value="bookMaestroPistol"/>
 				<property name="CustomIcon" value="bookShotgunMessiahDamage"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
-
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkShotgunMessiahDamage" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkShotgunMessiahBreachingSlugs" level="-1"/>
@@ -558,55 +416,17 @@
 			</item>
 		<!-- ▼▲ Snipers ▲▼ -->
 			<item name="PLMR">
-				<property name="ItemTypeIcon" value="map_cursor"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="CustomIcon" value="schematicMaster"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PLMP"/>
 			</item>
 			<item name="PAMR1">
-				<property name="ItemTypeIcon" value="map_cursor"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
 			</item>
 			<item name="PAMR2">
-				<property name="ItemTypeIcon" value="map_cursor"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
 			</item>
 			<item name="bookMaestroSnip">
-				<property name="Extends" value="schematicMaster"/>
-				<property name="EconomicValue" value="20000"/>
-				<property name="ItemTypeIcon" value="map_cursor"/>
-				<property name="Stacknumber" value="10"/>
-				<property name="Material" value="Morganic"/>
-
+				<property name="Extends" value="bookMaestroPistol"/>
 				<property name="CustomIcon" value="bookAutoWeaponsDamage"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
-
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkAutoWeaponsDamage" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkAutoWeaponsUncontrolledBurst" level="-1"/>
@@ -626,53 +446,17 @@
 			</item>
 		<!-- ▼▲ Metralletas ▲▼ -->
 			<item name="PLMT">
-				<property name="ItemTypeIcon" value="map_cursor"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="CustomIcon" value="schematicMaster"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PLMP"/>
 			</item>
 			<item name="PAMT1">
-				<property name="ItemTypeIcon" value="map_cursor"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
 			</item>
 			<item name="PAMT2">
-				<property name="ItemTypeIcon" value="map_cursor"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
 			</item>
 			<item name="bookMaestroAuto">
-				<property name="Extends" value="schematicMaster"/>
-				<property name="EconomicValue" value="20000"/>
-				<property name="ItemTypeIcon" value="map_cursor"/>
-				<property name="Stacknumber" value="10"/>
-				<property name="Material" value="Morganic"/>
-				<property name="UnlockedBy" value="PBMA"/>
+				<property name="Extends" value="bookMaestroPistol"/>
 				<property name="CustomIcon" value="bookSniperDamage"/>
-				<property name="Group" value="Books"/>
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkSniperDamage" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkSniperCripplingShot" level="-1"/>
@@ -693,53 +477,22 @@
 			</item>
 		<!-- ▼▲ Archer ▲▼ -->
 			<item name="PLMRa">
-				<property name="ItemTypeIcon" value="archery"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="CustomIcon" value="schematicMaster"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PLMP"/>
+				<property name="ItemTypeIcon" value="archery"/>				
 			</item>
 			<item name="PAMRa1">
+				<property name="Extends" value="PAMP1"/>
 				<property name="ItemTypeIcon" value="archery"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				
 			</item>
 			<item name="PAMRa2">
-				<property name="ItemTypeIcon" value="archery"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="archery"/>				
 			</item>
 			<item name="bookMaestroRan">
-				<property name="Extends" value="schematicMaster"/>
-				<property name="EconomicValue" value="20000"/>
-				<property name="ItemTypeIcon" value="archery"/>
-				<property name="Stacknumber" value="10"/>
-				<property name="Material" value="Morganic"/>
+				<property name="Extends" value="bookMaestroPistol"/>
+				<property name="ItemTypeIcon" value="archery"/>				
 				<property name="CustomIcon" value="bookRangersArrowRecovery"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkRangersArrowRecovery" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkRangersExplodingBolts" level="-1"/>
@@ -759,53 +512,21 @@
 			</item>
 		<!-- ▼▲ Herramientas ▲▼ -->
 			<item name="PLMH">
-				<property name="ItemTypeIcon" value="star"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="CustomIcon" value="schematicMaster"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PLMP"/>
+				<property name="ItemTypeIcon" value="star"/>				
 			</item>
 			<item name="PAMH1">
-				<property name="ItemTypeIcon" value="star"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="star"/>				
 			</item>
 			<item name="PAMH2">
-				<property name="ItemTypeIcon" value="star"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="star"/>				
 			</item>
 			<item name="bookMaestroTools">
-				<property name="Extends" value="schematicMaster"/>
-				<property name="EconomicValue" value="20000"/>
-				<property name="ItemTypeIcon" value="star"/>
-				<property name="Stacknumber" value="10"/>
-				<property name="Material" value="Morganic"/>
+				<property name="Extends" value="bookMaestroPistol"/>
+				<property name="ItemTypeIcon" value="star"/>				
 				<property name="CustomIcon" value="bookArtOfMiningLuckyStrike"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkArtOfMiningLuckyStrike" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkArtOfMiningDiamondTools" level="-1"/>
@@ -825,53 +546,23 @@
 			</item>
 		<!-- ▼▲ Looter ▲▼ -->
 			<item name="PLMLoot">
+				<property name="Extends" value="PLMP"/>
 				<property name="ItemTypeIcon" value="treasure"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="CustomIcon" value="schematicMaster"/>
-				<property name="Group" value="Books"/>
+				
 			</item>
 			<item name="PAMLoot1">
+				<property name="Extends" value="PAMP1"/>
 				<property name="ItemTypeIcon" value="treasure"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				
 			</item>
 			<item name="PAMLoot2">
-				<property name="ItemTypeIcon" value="treasure"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="treasure"/>				
 			</item>
 			<item name="bookMaestroLoot">
-				<property name="Extends" value="schematicMaster"/>
-				<property name="EconomicValue" value="20000"/>
-				<property name="ItemTypeIcon" value="treasure"/>
-				<property name="Stacknumber" value="10"/>
-				<property name="Material" value="Morganic"/>
-				<property name="CustomIcon" value="bookLuckyLooterDukes"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="bookMaestroPistol"/>
+				<property name="ItemTypeIcon" value="treasure"/>				
+				<property name="CustomIcon" value="bookLuckyLooterDukes"/>				
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkLuckyLooterDukes" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkLuckyLooterAmmunition" level="-1"/>
@@ -891,53 +582,21 @@
 			</item>
 		<!-- ▼▲ Wateland ▲▼ -->
 			<item name="PLMTrea">
-				<property name="ItemTypeIcon" value="treasure"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="CustomIcon" value="schematicMaster"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PLMP"/>
+				<property name="ItemTypeIcon" value="treasure"/>				
 			</item>
 			<item name="PAMTrea1">
-				<property name="ItemTypeIcon" value="treasure"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="treasure"/>				
 			</item>
 			<item name="PAMTrea2">
-				<property name="ItemTypeIcon" value="treasure"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="treasure"/>				
 			</item>
 			<item name="bookMaestroTrea">
-				<property name="Extends" value="schematicMaster"/>
-				<property name="EconomicValue" value="20000"/>
-				<property name="ItemTypeIcon" value="treasure"/>
-				<property name="Stacknumber" value="10"/>
-				<property name="Material" value="Morganic"/>
+				<property name="Extends" value="bookMaestroPistol"/>				
+				<property name="ItemTypeIcon" value="treasure"/>				
 				<property name="CustomIcon" value="bookWasteTreasuresHoney"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkWasteTreasuresHoney" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkWasteTreasuresCoffins" level="-1"/>
@@ -957,53 +616,21 @@
 			</item>
 		<!-- ▼▲ UrbanC ▲▼ -->
 			<item name="PLMAr">
-				<property name="ItemTypeIcon" value="star"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="CustomIcon" value="schematicMaster"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PLMP"/>
+				<property name="ItemTypeIcon" value="star"/>				
 			</item>
 			<item name="PAMAr1">
-				<property name="ItemTypeIcon" value="star"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="star"/>				
 			</item>
 			<item name="PAMAr2">
-				<property name="ItemTypeIcon" value="star"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="star"/>				
 			</item>
 			<item name="bookMaestroArm">
-				<property name="Extends" value="schematicMaster"/>
-				<property name="EconomicValue" value="20000"/>
-				<property name="ItemTypeIcon" value="star"/>
-				<property name="Stacknumber" value="10"/>
-				<property name="Material" value="Morganic"/>
-				<property name="CustomIcon" value="bookUrbanCombatLanding"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="bookMaestroPistol"/>
+				<property name="ItemTypeIcon" value="star"/>				
+				<property name="CustomIcon" value="bookUrbanCombatLanding"/>				
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkUrbanCombatLanding" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkUrbanCombatCigar" level="-1"/>
@@ -1023,53 +650,21 @@
 			</item>
 		<!-- ▼▲ Tecnologia ▲▼ -->
 			<item name="PLMTec">
-				<property name="ItemTypeIcon" value="computer"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="CustomIcon" value="schematicMaster"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PLMP"/>
+				<property name="ItemTypeIcon" value="computer"/>				
 			</item>
 			<item name="PAMTec1">
-				<property name="ItemTypeIcon" value="computer"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="computer"/>				
 			</item>
 			<item name="PAMTec2">
-				<property name="ItemTypeIcon" value="computer"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="computer"/>				
 			</item>
 			<item name="bookMaestroTech">
-				<property name="Extends" value="schematicMaster"/>
-				<property name="EconomicValue" value="20000"/>
-				<property name="ItemTypeIcon" value="computer"/>
-				<property name="Stacknumber" value="10"/>
-				<property name="Material" value="Morganic"/>
-				<property name="CustomIcon" value="bookTechJunkie1Damage"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="bookMaestroPistol"/>
+				<property name="ItemTypeIcon" value="computer"/>				
+				<property name="CustomIcon" value="bookTechJunkie1Damage"/>				
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkTechJunkie1Damage" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkTechJunkie2Maintenance" level="-1"/>
@@ -1089,53 +684,21 @@
 			</item>
 		<!-- ▼▲ BatterUp ▲▼ -->
 			<item name="bookMPoBat">
-				<property name="ItemTypeIcon" value="club"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="CustomIcon" value="schematicMaster"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PLMP"/>
+				<property name="ItemTypeIcon" value="club"/>				
 			</item>
 			<item name="bookMPa1Bat">
+				<property name="Extends" value="PAMP1"/>
 				<property name="ItemTypeIcon" value="club"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
 			</item>
 			<item name="bookMPa2Bat">
+				<property name="Extends" value="PAMP1"/>
 				<property name="ItemTypeIcon" value="club"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
 			</item>
 			<item name="bookMaestroBat">
-				<property name="Extends" value="schematicMaster"/>
-				<property name="EconomicValue" value="20000"/>
+				<property name="Extends" value="bookMaestroPistol"/>
 				<property name="ItemTypeIcon" value="club"/>
-				<property name="Stacknumber" value="10"/>
-				<property name="Material" value="Morganic"/>
 				<property name="CustomIcon" value="bookBatterUpBigHits"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkBatterUpBigHits" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkBatterUpStealingBases" level="-1"/>
@@ -1155,53 +718,21 @@
 			</item>
 		<!-- ▼▲ BarBrawling ▲▼ -->
 			<item name="bookMPoBar">
-				<property name="ItemTypeIcon" value="boxer"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="CustomIcon" value="schematicMaster"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PLMP"/>
+				<property name="ItemTypeIcon" value="boxer"/>				
 			</item>
 			<item name="bookMPa1Bar">
-				<property name="ItemTypeIcon" value="boxer"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="boxer"/>				
 			</item>
 			<item name="bookMPa2Bar">
-				<property name="ItemTypeIcon" value="boxer"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="boxer"/>				
 			</item>
 			<item name="bookMaestroBar">
-				<property name="Extends" value="schematicMaster"/>
-				<property name="EconomicValue" value="20000"/>
+				<property name="Extends" value="bookMaestroPistol"/>
 				<property name="ItemTypeIcon" value="boxer"/>
-				<property name="Stacknumber" value="10"/>
-				<property name="Material" value="Morganic"/>
-				<property name="CustomIcon" value="bookBarBrawling1BasicMoves"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="CustomIcon" value="bookBarBrawling1BasicMoves"/>				
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkBarBrawling1BasicMoves" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkBarBrawling2DropABomb" level="-1"/>
@@ -1221,53 +752,21 @@
 			</item>
 		<!-- ▼▲ Fireman ▲▼ -->
 			<item name="bookMPoFire">
-				<property name="ItemTypeIcon" value="sledge"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="CustomIcon" value="schematicMaster"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PLMP"/>
+				<property name="ItemTypeIcon" value="sledge"/>				
 			</item>
 			<item name="bookMPa1Fire">
-				<property name="ItemTypeIcon" value="sledge"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="sledge"/>				
 			</item>
 			<item name="bookMPa2Fire">
-				<property name="ItemTypeIcon" value="sledge"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="sledge"/>				
 			</item>
 			<item name="bookMaestroFire">
-				<property name="Extends" value="schematicMaster"/>
-				<property name="EconomicValue" value="20000"/>
-				<property name="ItemTypeIcon" value="fire"/>
-				<property name="Stacknumber" value="10"/>
-				<property name="Material" value="Morganic"/>
+				<property name="Extends" value="bookMaestroPistol"/>				
+				<property name="ItemTypeIcon" value="sledge"/>				
 				<property name="CustomIcon" value="bookFiremansAlmanacHeat"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkFiremansAlmanacHeat" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkFiremansAlmanacAxes" level="-1"/>
@@ -1287,53 +786,21 @@
 			</item>
 		<!-- ▼▲ GreatHeist ▲▼ -->
 			<item name="bookMPoGHeir">
-				<property name="ItemTypeIcon" value="unlock"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="CustomIcon" value="schematicMaster"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PLMP"/>
+				<property name="ItemTypeIcon" value="unlock"/>				
 			</item>
 			<item name="bookMPa1GHeir">
-				<property name="ItemTypeIcon" value="unlock"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="unlock"/>				
 			</item>
 			<item name="bookMPa2GHeir">
-				<property name="ItemTypeIcon" value="unlock"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="unlock"/>				
 			</item>
 			<item name="bookMaestroGHeir">
-				<property name="Extends" value="schematicMaster"/>
-				<property name="EconomicValue" value="20000"/>
-				<property name="ItemTypeIcon" value="unlock"/>
-				<property name="Stacknumber" value="10"/>
-				<property name="Material" value="Morganic"/>
+				<property name="Extends" value="bookMaestroPistol"/>
+				<property name="ItemTypeIcon" value="unlock"/>				
 				<property name="CustomIcon" value="bookTheGreatHeistSafes"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkGreatHeistSafes" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkGreatHeistGems" level="-1"/>
@@ -1353,53 +820,21 @@
 			</item>
 		<!-- ▼▲ HunterJou ▲▼ -->
 			<item name="bookMPoHunt">
-				<property name="ItemTypeIcon" value="deep_cuts"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="CustomIcon" value="schematicMaster"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PLMP"/>
+				<property name="ItemTypeIcon" value="deep_cuts"/>				
 			</item>
 			<item name="bookMPa1Hunt">
-				<property name="ItemTypeIcon" value="deep_cuts"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="deep_cuts"/>				
 			</item>
 			<item name="bookMPa2Hunt">
-				<property name="ItemTypeIcon" value="deep_cuts"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="deep_cuts"/>				
 			</item>
 			<item name="bookMaestroHunt">
-				<property name="Extends" value="schematicMaster"/>
-				<property name="EconomicValue" value="20000"/>
-				<property name="ItemTypeIcon" value="deep_cuts"/>
-				<property name="Stacknumber" value="10"/>
-				<property name="Material" value="Morganic"/>
+				<property name="Extends" value="bookMaestroPistol"/>
+				<property name="ItemTypeIcon" value="deep_cuts"/>				
 				<property name="CustomIcon" value="bookHuntingJournalBears"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkHuntingJournalBears" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkHuntingJournalWolves" level="-1"/>
@@ -1419,53 +854,21 @@
 			</item>
 		<!-- ▼▲ Night Stalk ▲▼ -->
 			<item name="bookMPoStalk">
-				<property name="ItemTypeIcon" value="knife"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="CustomIcon" value="schematicMaster"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PLMP"/>
+				<property name="ItemTypeIcon" value="knife"/>				
 			</item>
 			<item name="bookMPa1Stalk">
-				<property name="ItemTypeIcon" value="knife"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="knife"/>				
 			</item>
 			<item name="bookMPa2Stalk">
-				<property name="ItemTypeIcon" value="knife"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="knife"/>				
 			</item>
 			<item name="bookMaestroStalk">
-				<property name="Extends" value="schematicMaster"/>
-				<property name="EconomicValue" value="20000"/>
+				<property name="Extends" value="bookMaestroPistol"/>				
 				<property name="ItemTypeIcon" value="knife"/>
-				<property name="Stacknumber" value="10"/>
-				<property name="Material" value="Morganic"/>
-				<property name="CustomIcon" value="bookNightStalkerStealthDamage"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="CustomIcon" value="bookNightStalkerStealthDamage"/>				
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkNightStalkerStealthDamage" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkNightStalkerSilentNight" level="-1"/>
@@ -1485,53 +888,21 @@
 			</item>
 		<!-- ▼▲ SpearHun ▲▼ -->
 			<item name="bookMPoSpear">
-				<property name="ItemTypeIcon" value="spear"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="CustomIcon" value="schematicMaster"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PLMP"/>
+				<property name="ItemTypeIcon" value="spear"/>				
 			</item>
 			<item name="bookMPa1Spear">
-				<property name="ItemTypeIcon" value="spear"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="spear"/>				
 			</item>
 			<item name="bookMPa2Spear">
-				<property name="ItemTypeIcon" value="spear"/>
-				<property name="HoldType" value="21"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="Weight" value="5"/>
-				<property name="FuelValue" value="5"/>
-				<property name="Stacknumber" value="5"/>
-				<property name="CustomIcon" value="questMaster"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
+				<property name="Extends" value="PAMP1"/>
+				<property name="ItemTypeIcon" value="spear"/>				
 			</item>
 			<item name="bookMaestroSpear">
-				<property name="Extends" value="schematicMaster"/>
-				<property name="EconomicValue" value="20000"/>
+				<property name="Extends" value="bookMaestroPistol"/>				
 				<property name="ItemTypeIcon" value="spear"/>
-				<property name="Stacknumber" value="10"/>
-				<property name="Material" value="Morganic"/>
 				<property name="CustomIcon" value="bookSpearHunter1Damage"/>
-				<property name="UnlockedBy" value="PBMA"/>
-				<property name="Group" value="Books"/>
 				<effect_group tiered="false">
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkSpearHunter1Damage" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkSpearHunter2Maintenance" level="-1"/>
@@ -1563,10 +934,11 @@
 				<property name="CreativeMode" value="Dev"/>
 				<property name="ShowQuality" value="false"/>
 				<property name="ItemTypeIcon" value="star"/>
-				<property name="Material" value="Morganic"/>
-				<property name="SellableToTrader" value="false"/>
+				<property name="Material" value="Morganic"/>				
 				<property name="UnlockedBy" value="HML"/>
 				<property name="DescriptionKey" value="LTDesc"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="Candrop" value="false"/>
 				<effect_group>
 					<passive_effect name="AttacksPerMinute" operation="base_set" value="80"/>
 					<passive_effect name="EntityDamage" operation="base_set" value="1"/>
@@ -1593,11 +965,12 @@
 				<property name="CreativeMode" value="Dev"/>
 				<property name="EconomicValue" value="93750"/>
 				<property name="ShowQuality" value="false"/>
-				<property name="ItemTypeIcon" value="star"/>
-				<property name="SellableToTrader" value="false"/>
+				<property name="ItemTypeIcon" value="star"/>				
 				<property name="UnlockedBy" value="HML"/>
 				<property name="Material" value="Morganic"/>
 				<property name="DescriptionKey" value="LTDesc"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="Candrop" value="false"/>
 				<effect_group>
 					<passive_effect name="EntityDamage" operation="base_set" value="1"/>
 					<passive_effect name="BlockDamage" operation="base_set" value="250"/>
@@ -1626,11 +999,12 @@
 				<Property name="TintColor" value="ff00ff"/>
 				<property name="ShowQuality" value="false"/>
 				<property name="ItemTypeIcon" value="star"/>
-				<property name="UnlockedBy" value="HML"/>
-				<property name="SellableToTrader" value="false"/>
+				<property name="UnlockedBy" value="HML"/>				
 				<property name="EconomicValue" value="93750"/>
 				<property name="Material" value="Morganic"/>
 				<property name="DescriptionKey" value="LTDesc"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="Candrop" value="false"/>
 				<effect_group>
 					<passive_effect name="EntityDamage" operation="base_set" value="50"/>
 					<passive_effect name="BlockDamage" operation="base_set" value="300"/>
@@ -1659,10 +1033,10 @@
 				<property name="ShowQuality" value="false"/>
 				<property name="Material" value="Morganic"/>
 				<property name="ItemTypeIcon" value="star"/>
-				<property name="UnlockedBy" value="HML"/>
-				<property name="SellableToTrader" value="false"/>
+				<property name="UnlockedBy" value="HML"/>				
 				<property name="Group" value="Tools/Traps"/>
 				<property name="DescriptionKey" value="LTDesc"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="Candrop" value="false"/>
 				<effect_group>
 					<passive_effect name="AttacksPerMinute" operation="base_set" value="150"/>
@@ -1695,10 +1069,11 @@
 				<property name="ItemTypeIcon" value="star"/>
 				<property name="Material" value="Morganic"/>
 				<property name="EconomicValue" value="93750"/>
-				<property name="UnlockedBy" value="PBMT"/>
-				<property name="SellableToTrader" value="false"/>
+				<property name="UnlockedBy" value="PBMT"/>				
 				<property name="DisplayType" value="legendNailgun"/>
 				<property name="DescriptionKey" value="LTDesc"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="Candrop" value="false"/>
 				<property class="Action0">
 					<property name="Class" value="Ranged"/>
 					<property name="Hitmask_override" value="Melee"/>
@@ -1788,10 +1163,10 @@
 				<property name="EconomicValue" value="1"/>
 				<property name="ShowQuality" value="false"/>
 				<property name="EconomicValue" value="165000"/>
-				<property name="CreativeMode" value="Dev"/>
-				<property name="SellableToTrader" value="false"/>
+				<property name="CreativeMode" value="Dev"/>				
 				<property name="UnlockedBy" value="HML"/>
 				<property name="DescriptionKey" value="LTDesc"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="Candrop" value="false"/>
 				<property class="Action0">
 					<property name="Class" value="Ranged"/>
@@ -1868,6 +1243,8 @@
 				<property name="CreativeMode" value="Dev"/>
 				<property name="UnlockedBy" value="HML"/>
 				<property name="DescriptionKey" value="LTDesc"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="Candrop" value="false"/>
 				<property class="Action0">
 					<property name="Class" value="Ranged"/>
 					<property name="Hitmask_override" value="Melee"/>
@@ -2166,11 +1543,12 @@
 				<property name="TintColor" value="255,255,0"/>
 				<property name="CustomIcon" value="gunHandgunT0PipePistol"/>
 				<property name="DescriptionKey" value="LWDS"/>
-				<property name="Material" value="Morganic"/>
-				<property name="SellableToTrader" value="false"/>
+				<property name="Material" value="Morganic"/>				
 				<property name="UnlockedBy" value="HML"/>
 				<property name="ShowQuality" value="false"/>
 				<property name="EconomicValue" value="125000"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="Candrop" value="false"/>
 				<effect_group name="gunPistol">					
 					<passive_effect name="EntityDamage" operation="base_add" value="50">
 						<requirement name="PlayerLevel" operation="GT" value="49"/>
@@ -2227,6 +1605,8 @@
 				<property name="EconomicValue" value="125000"/>
 				<property name="UnlockedBy" value="HML"/>
 				<property name="ShowQuality" value="false"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="Candrop" value="false"/>
 				<effect_group name="gunDoubleBarrelShotgun">
 
 					<passive_effect name="EntityDamage" operation="base_add" value="20.6">
@@ -2267,9 +1647,10 @@
 				<property name="Material" value="Morganic"/>
 				<property name="DescriptionKey" value="LWDS"/>
 				<property name="EconomicValue" value="125000"/>
-				<property name="UnlockedBy" value="HML"/>
-				<property name="SellableToTrader" value="false"/>
+				<property name="UnlockedBy" value="HML"/>				
 				<property name="ShowQuality" value="false"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="Candrop" value="false"/>
 				<effect_group name="gunHuntingRifle">
 
 					<passive_effect name="EntityDamage" operation="base_add" value="123">
@@ -2325,9 +1706,10 @@
 				<property name="DescriptionKey" value="LWDS"/>
 				<property name="Material" value="Morganic"/>
 				<property name="EconomicValue" value="125000"/>
-				<property name="UnlockedBy" value="HML"/>
-				<property name="SellableToTrader" value="false"/>
+				<property name="UnlockedBy" value="HML"/>				
 				<property name="ShowQuality" value="false"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="Candrop" value="false"/>
 				<effect_group name="gunAK47">
 				
 					<passive_effect name="EntityDamage" operation="base_add" value="48">
@@ -2377,6 +1759,8 @@
 				<property name="EconomicValue" value="125000"/>
 				<property name="DescriptionKey" value="LWDS"/>
 				<property name="UnlockedBy" value="HML"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="Candrop" value="false"/>
 				<effect_group name="CrossBLegendT1">
 					<passive_effect name="EntityDamage" operation="base_add" value="51">
 						<requirement name="PlayerLevel" operation="GT" value="49"/>
@@ -2438,6 +1822,7 @@
 				<property name="Material" value="Morganic"/>
 				<property name="ShowQuality" value="false"/>
 				<property name="EconomicValue" value="218,750"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="Candrop" value="false"/>
 				<effect_group name="gunSMG5">					
 					<!--<passive_effect name="EntityDamage" operation="base_set" value="72"/>-->
@@ -2491,6 +1876,7 @@
 				<property name="ShowQuality" value="false"/>
 				<property name="UnlockedBy" value="HML"/>
 				<property name="EconomicValue" value="218,750"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="Candrop" value="false"/>
 				<effect_group name="gun44Magnum">
 
@@ -2544,6 +1930,7 @@
 				<property name="ShowQuality" value="false"/>
 				<property name="UnlockedBy" value="HML"/>
 				<property name="EconomicValue" value="218,750"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="Candrop" value="false"/>
 				<effect_group name="gunPumpShotgun">
 
@@ -2588,6 +1975,7 @@
 				<property name="EconomicValue" value="218,750"/>
 				<property name="UnlockedBy" value="HML"/>
 				<property name="ShowQuality" value="false"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="Candrop" value="false"/>
 				<effect_group name="gunMR10">
 					<passive_effect name="EntityDamage" operation="base_add" value="125">
@@ -2636,6 +2024,7 @@
 				<property name="ShowQuality" value="false"/>
 				<property name="UnlockedBy" value="HML"/>
 				<property name="EconomicValue" value="218750"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="Candrop" value="false"/>
 				<effect_group name="gunMGT2TacticalAR">
 				
@@ -2689,6 +2078,8 @@
 				<property name="EconomicValue" value="218,750"/>
 				<property name="ShowQuality" value="false"/>
 				<property name="UnlockedBy" value="HML"/>
+				<property name="SellableToTrader" value="false"/>
+				<property name="Candrop" value="false"/>
 				<effect_group name="gunBowT3CompoundCrossbow">
 
 					<passive_effect name="DamageFalloffRange" operation="base_set" value="35" tags="perkArchery"/>
@@ -2751,6 +2142,7 @@
 				<property name="ShowQuality" value="false"/>
 				<property name="Group" value="MSeries"/>
 				<property name="DescriptionKey" value="LWDMYT"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="Candrop" value="false"/>
 				<effect_group name="Deco">					
 					<triggered_effect trigger="onSelfEquipStart" action="SetTransformActive" active="false" transform_path="mp5_Mesh"/>
@@ -2816,6 +2208,7 @@
 				<property name="UnlockedBy" value="HML"/>
 				<property name="Group" value="MSeries"/>
 				<property name="DescriptionKey" value="LWDMYT"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="Candrop" value="false"/>
 				<effect_group name="gunHandgunT3DesertVulture">
 					<!--<passive_effect name="EntityDamage" operation="base_set" value="134.4"/>-->
@@ -2874,6 +2267,7 @@
 				<property name="EconomicValue" value="312500"/>
 				<property name="Group" value="MSeries"/>
 				<property name="DescriptionKey" value="LWDMYT"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="Candrop" value="false"/>
 				<effect_group name="gunShotgunT3AutoShotgun">
 
@@ -2934,6 +2328,7 @@
 				<property name="EconomicValue" value="312500"/>
 				<property name="Group" value="MSeries"/>
 				<property name="DescriptionKey" value="LWDMYT"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="Candrop" value="false"/>
 				<effect_group name="gunRifleT3SniperRifle">
 					<passive_effect name="EntityDamage" operation="base_add" value="205" tags="perkDeadEye">
@@ -2998,6 +2393,7 @@
 				<property name="ShowQuality" value="false"/>
 				<property name="Group" value="MSeries"/>
 				<property name="DescriptionKey" value="LWDMYT"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="Candrop" value="false"/>
 				<effect_group name="gunMGT3M60">
 
@@ -3052,6 +2448,7 @@
 				<property name="DescriptionKey" value="LWDS"/>
 				<property name="ShowQuality" value="false"/>
 				<property name="UnlockedBy" value="HML"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="Candrop" value="false"/>
 				<property name="Group" value="MSeries"/>
 				<property class="Action0">					
@@ -3187,6 +2584,7 @@
 				<property name="Material" value="Morganic"/>
 				<property name="UnlockedBy" value="PBMT"/>
 				<property name="EconomicValue" value="100000"/>
+				<property name="SellableToTrader" value="false"/>
 				<property name="Candrop" value="false"/>
 
 				<property class="Action0">					
@@ -3277,7 +2675,8 @@
 
 			<property name="EconomicValue" value="312500"/>
 			<property name="SellableToTrader" value="false"/>
-			<property name="Candrop" value="false"/>
+			<property name="SellableToTrader" value="false"/>
+				<property name="Candrop" value="false"/>
 			<property name="ShowQuality" value="false"/>
 			<property class="Action0">
 				<property name="Class" value="Ranged"/>
@@ -3455,6 +2854,7 @@
 			<property name="LightValue" value=".45"/>
 			<property name="EconomicValue" value="312500"/>
 			<property name="SellableToTrader" value="false"/>
+			<property name="SellableToTrader" value="false"/>
 			<property name="Candrop" value="false"/>
 			<property name="ShowQuality" value="false"/>
 
@@ -3585,6 +2985,8 @@
 			<property name="Stacknumber" value="100"/>
 			<property name="EconomicValue" value="30"/>
 			<property name="Group" value="Mods"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action1">
 				<property name="Class" value="Projectile"/>
 				<property name="Explosion.ParticleIndex" value="0"/>
@@ -3641,6 +3043,7 @@
 			<!--property name="UnlockedBy" value="perkDeadEye,gunHuntingRifleSchematic"/-->			<!--These are special weapons and need an unlock or NRE crash-->
 			<property name="ShowQuality" value="false"/>
 			<property name="EconomicValue" value="312500"/>
+			<property name="SellableToTrader" value="false"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Candrop" value="false"/>
 			<property class="Action0">
@@ -3757,7 +3160,7 @@
 			<property name="RepairExpMultiplier" value="10.8"/>
 			<property name="ShowQuality" value="false"/>
 			<property name="Group" value="Clothing"/>
-			<property name="EconomicValue" value="312500"/>
+			<property name="EconomicValue" value="312500"/>			
 			<property name="SellableToTrader" value="false"/>
 			<property name="Candrop" value="false"/>
 			<property class="Action0">
@@ -3893,6 +3296,7 @@
 			<property name="AttachmentFlashlight" value="flashlight02"/>
 			<property name="Group" value="Clothing"/>
 			<property name="EconomicValue" value="312500"/>
+			<property name="SellableToTrader" value="false"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Candrop" value="false"/>
 			<property class="Action0">
@@ -4086,6 +3490,7 @@
 			<property name="PickupJournalEntry" value="alternateAmmoTip"/>
 			<property name="EconomicValue" value="312500"/>
 			<property name="SellableToTrader" value="false"/>
+			<property name="SellableToTrader" value="false"/>
 			<property name="Candrop" value="false"/>
 
 			<property name="ShowQuality" value="false"/>
@@ -4197,6 +3602,8 @@
 			<property name="EconomicBundleSize" value="5"/>
 			<property name="StickyOffset" value="1"/>
 			<property name="Group" value="Mods"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<effect_group name="ammoArrowSteelAP" tiered="false">				<!-- ammoArrowSteelAP -->
 				<passive_effect name="EntityDamage" operation="base_set" value="70"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="5"/>
@@ -4226,6 +3633,8 @@
 			<property name="EconomicBundleSize" value="5"/>
 			<property name="StickyOffset" value="1"/>
 			<property name="Group" value="Mods"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<effect_group name="ammoArrowSteelAP" tiered="false">				<!-- ammoArrowSteelAP -->
 				<passive_effect name="EntityDamage" operation="base_set" value="55"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="5"/>
@@ -4276,6 +3685,7 @@
 			<property name="ShowQuality" value="false"/>
 			<property name="EconomicValue" value="125000"/>
 			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 
 			<property class="Action0">
 				<property name="Class" value="Ranged"/>
@@ -4417,6 +3827,8 @@
 			<property name="ExplodeOnHit" value="false"/>
 			<property name="StickPercent" value="1"/>
 			<property name="Group" value="Mods"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Class" value="ThrowAway"/>
 				<property name="Delay" value="1"/>
@@ -4445,6 +3857,8 @@
 			<property name="CustomIconTint" value="0,0,255"/>
 			<property name="Explosion.RadiusEntities" value="10"/>
 			<property name="Group" value="Mods"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="10" buff="buffInjuryKnockdown02"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
@@ -7496,16 +6910,16 @@
 			<property name="CustomIconTint" value="255,255,0"/>
 			<property name="TintColor" value="255,255,0"/>			
 			<property name="Meshfile" value="@:Entities/Vehicles/VMotorcycle/VMotorcycleP.prefab"/>
-			<property name="EconomicValue" value="200000"/>
-
-			<property name="SellableToTrader" value="false"/>
+			<property name="EconomicValue" value="200000"/>			
 			<property name="Material" value="Morganic"/>
 			<property name="UnlockedBy" value="HML"/>
 			<property name="Group" value="Ltech"/>
-			<!-- <property class="Action1">				
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
+			<property class="Action1">				
 				<property name="Vehicle" value="SPOMoto"/>
 				<property name="VehicleSize" value="1.3, 1.9, 3"/>				
-			</property> -->
+			</property>
 			<effect_group name="SPO4x4Plac" tiered="false">
 				<passive_effect name="ModSlots" operation="base_set" value="5"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="500" tags="EconomicValue"/>
@@ -7524,11 +6938,13 @@
 			<property name="EconomicValue" value="250000"/>
 			<property name="Group" value="Ltech"/>
 			<property name="UnlockedBy" value="HML"/>
-			<!-- <property class="Action1">
-				<requirement name="PlayerLevel" operation="GT" value="500"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
+			<property class="Action1">
+				
 				<property name="Vehicle" value="SPOGyro"/>
 				<property name="VehicleSize" value="2.5, 2.5, 5.5"/>
-			</property> -->
+			</property>
 			<effect_group name="vehicleGyrocopterPlaceable" tiered="false">
 				<passive_effect name="ModSlots" operation="base_set" value="5"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
@@ -7561,11 +6977,12 @@
 			<property name="Material" value="Morganic"/>
 			<property name="UnlockedBy" value="HML"/>
 			<property name="Group" value="MSeries"/>
-			<!-- <property class="Action1">
-				<requirement name="PlayerLevel" operation="GT" value="500"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
+			<property class="Action1">				
 				<property name="Vehicle" value="SPO4x4"/>
 				<property name="VehicleSize" value="2.5, 2.1, 5"/>
-			</property> -->
+			</property>
 			<effect_group name="SPO4x4Plac" tiered="false">
 				<passive_effect name="ModSlots" operation="base_set" value="5"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="400" tags="EconomicValue"/>
@@ -7584,10 +7001,12 @@
 			<property name="Material" value="Morganic"/>
 			<property name="UnlockedBy" value="special"/>
 			<property name="Group" value="MSeries"/>
-			<!-- <property class="Action1">				
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
+			<property class="Action1">				
 				<property name="Vehicle" value="Betsy"/>				
 				<property name="VehicleSize" value="1.3, 1.9, 3"/>
-			</property> -->
+			</property>
 			<effect_group name="betsyPlac" tiered="false">
 				<passive_effect name="ModSlots" operation="base_set" value="4"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="400" tags="EconomicValue"/>
@@ -7606,10 +7025,12 @@
 			<property name="Material" value="Morganic"/>
 			<property name="UnlockedBy" value="special"/>
 			<property name="Group" value="MSeries"/>
-			<!-- <property class="Action1">				
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
+			<property class="Action1">				
 				<property name="Vehicle" value="Betsy2"/>
 				<property name="VehicleSize" value="1.3, 1.9, 3"/>
-			</property> -->
+			</property>
 			<effect_group name="betsyPlac" tiered="false">
 				<passive_effect name="ModSlots" operation="base_set" value="4"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="400" tags="EconomicValue"/>
@@ -7633,10 +7054,10 @@
 			<property name="Material" value="Morganic"/>
 			<property name="UnlockedBy" value="special"/>
 			<property name="Group" value="MSeries"/>
-			<!-- <property class="Action1">
+			<property class="Action1">
 				<property name="Vehicle" value="Sharky"/>
 				<property name="VehicleSize" value="1.3, 1.9, 3"/>
-			</property> -->
+			</property>
 			<effect_group name="betsyPlac" tiered="false">
 				<passive_effect name="ModSlots" operation="base_set" value="5"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="400" tags="EconomicValue"/>
@@ -7680,6 +7101,8 @@
 			<property name="Stacknumber" value="1"/>
 			<property name="Weight" value="0"/>
 			<property name="Group" value="Special Items"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Class" value="OpenBundle"/>
 				<property name="Delay" value="0.5"/>
@@ -7699,6 +7122,8 @@
 			<property name="Stacknumber" value="1"/>
 			<property name="Weight" value="0"/>
 			<property name="Group" value="Special Items"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Class" value="OpenBundle"/>
 				<property name="Delay" value="0.5"/>
@@ -7721,6 +7146,8 @@
 			<property name="Stacknumber" value="1"/>
 			<property name="Weight" value="0"/>
 			<property name="Group" value="Special Items"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Class" value="OpenBundle"/>
 				<property name="Delay" value="0.5"/>
@@ -7743,6 +7170,8 @@
 			<property name="Stacknumber" value="1"/>
 			<property name="Weight" value="0"/>
 			<property name="Group" value="Special Items"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Class" value="OpenBundle"/>
 				<property name="Delay" value="0.5"/>
@@ -7763,9 +7192,9 @@
 			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="Morganic"/>
-			<property name="Stacknumber" value="1"/>
+			<property name="Stacknumber" value="5"/>
 			<property name="Weight" value="0"/>
-			<property name="Group" value="Special Items"/>
+			<property name="Group" value="Special Items"/>			
 			<property class="Action0">
 				<property name="Class" value="OpenBundle"/>
 				<property name="Delay" value="0.5"/>
@@ -7783,7 +7212,7 @@
 			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="Morganic"/>
-			<property name="Stacknumber" value="1"/>
+			<property name="Stacknumber" value="5"/>
 			<property name="Weight" value="0"/>
 			<property name="Group" value="Special Items"/>
 			<property class="Action0">
@@ -7801,8 +7230,7 @@
 			<property name="CustomIcon" value="terrForestGround"/>
 			<property name="Material" value="MresourceClayLump"/>
 			<property name="MeltTimePerUnit" value=".8"/>
-			<property name="EconomicValue" value="110"/>
-			<property name="SellableToTrader" value="false"/>
+			<property name="EconomicValue" value="110"/>			
 			<property name="ItemTypeIcon" value="ibeam"/>
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
@@ -7813,7 +7241,9 @@
 			<property name="UnlockedBy" value="PBMT"/>
 			<property name="Weight" value="10000"/>
 			<property name="NoScrapping" value="true"/>	
-			<property name="Group" value="Lmats"/>		
+			<property name="Group" value="Lmats"/>	
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>	
 		</item>
 		<item name="resourceCrushedSandCompres">
 			<property name="Extends" value="resourceClayLumpCompres"/>
@@ -7859,6 +7289,8 @@
 			<property name="DescriptionKey" value="resourceClayLumpBundleDesc"/>
 			<property name="Extends" value="resourceRockSmallBundle"/>
 			<property name="CustomIcon" value="resourceClayLump"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Create_item" value="resourceClayLump"/>
 				<property name="Create_item_count" value="6000"/>
@@ -7870,6 +7302,8 @@
 			<property name="DescriptionKey" value="resourceCrushedSandDesc"/>
 			<property name="Extends" value="resourceRockSmallBundle"/>
 			<property name="CustomIcon" value="resourceCrushedSand"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Create_item" value="resourceCrushedSand"/>
 				<property name="Create_item_count" value="6000"/>
@@ -7879,6 +7313,8 @@
 			<property name="Extends" value="resourceRockSmallBundle"/>
 			<property name="CustomIcon" value="resourceGunPowder"/>
 			<property name="UnlockedBy" value="craftingExplosives"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Create_item" value="resourceGunPowder"/>
 				<property name="Create_item_count" value="10000"/>
@@ -7890,6 +7326,8 @@
 			<property name="Extends" value="resourceRockSmallBundle"/>
 			<property name="UnlockedBy" value="perkArtOfMiningComplete"/>
 			<property name="CustomIcon" value="resourceClayLump"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Create_item" value="resourceClayLump"/>
 				<property name="Create_item_count" value="15000"/>
@@ -7899,6 +7337,8 @@
 			<property name="Extends" value="resourceRockSmallBundle"/>
 			<property name="UnlockedBy" value="perkArtOfMiningComplete"/>
 			<property name="CustomIcon" value="resourceRockSmall"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Create_item" value="resourceRockSmall"/>
 				<property name="Create_item_count" value="10000"/>
@@ -7908,6 +7348,8 @@
 			<property name="Extends" value="resourceRockSmallBundle"/>
 			<property name="UnlockedBy" value="perkArtOfMiningComplete"/>
 			<property name="CustomIcon" value="resourceWood"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Create_item" value="resourceWood"/>
 				<property name="Create_item_count" value="10000"/>
@@ -7917,6 +7359,8 @@
 			<property name="Extends" value="resourceRockSmallBundle"/>
 			<property name="CustomIcon" value="resourceScrapIron"/>
 			<property name="UnlockedBy" value="perkArtOfMiningComplete"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Create_item" value="resourceScrapIron"/>
 				<property name="Create_item_count" value="10000"/>
@@ -7926,6 +7370,8 @@
 			<property name="Extends" value="resourceRockSmallBundle"/>
 			<property name="CustomIcon" value="resourcePotassiumNitratePowder"/>
 			<property name="UnlockedBy" value="perkArtOfMiningComplete"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Create_item" value="resourcePotassiumNitratePowder"/>
 				<property name="Create_item_count" value="10000"/>
@@ -7935,6 +7381,8 @@
 			<property name="Extends" value="resourceRockSmallBundle"/>
 			<property name="UnlockedBy" value="perkArtOfMiningComplete"/>
 			<property name="CustomIcon" value="resourceScrapLead"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Create_item" value="resourceScrapLead"/>
 				<property name="Create_item_count" value="10000"/>
@@ -7944,6 +7392,8 @@
 			<property name="Extends" value="resourceRockSmallBundle"/>
 			<property name="UnlockedBy" value="perkArtOfMiningComplete"/>
 			<property name="CustomIcon" value="resourceCoal"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Create_item" value="resourceCoal"/>
 				<property name="Create_item_count" value="10000"/>
@@ -7953,6 +7403,8 @@
 			<property name="Extends" value="resourceRockSmallBundle"/>
 			<property name="UnlockedBy" value="perkArtOfMiningComplete"/>
 			<property name="CustomIcon" value="resourceOilShale"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Create_item" value="resourceOilShale"/>
 				<property name="Create_item_count" value="10000"/>
@@ -7962,6 +7414,8 @@
 			<property name="UnlockedBy" value="perkArtOfMiningComplete"/>
 			<property name="Extends" value="resourceRockSmallBundle"/>
 			<property name="CustomIcon" value="resourceCrushedSand"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Create_item" value="resourceCrushedSand"/>
 				<property name="Create_item_count" value="10000"/>
@@ -7985,6 +7439,8 @@
 			<property name="EconomicValue" value="900"/>
 			<property name="Group" value="Ammo/Weapons"/>
 			<property name="UnlockedBy" value="perkPistolPeteComplete"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Class" value="OpenBundle"/>
 				<property name="Delay" value="0"/>
@@ -8499,9 +7955,10 @@
 			<property name="EconomicValue" value="24000"/>
 			<property name="Group" value="Ltech"/>
 			<property name="UnlockedBy" value="PBMT"/>
-			<property name="DescriptionKey" value="ProSolarDesc"/>
-			<property name="SellableToTrader" value="false"/>
+			<property name="DescriptionKey" value="ProSolarDesc"/>			
 			<property name="ShowQuality" value="false"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Attributes">
 				<property name="DegradationMax" value="10000"/>
 			</property>
@@ -8527,6 +7984,8 @@
 			<property name="Group" value="Ltech"/>
 			<property name="DegradationBreaksAfter" value="false"/>
 			<property name="DescriptionKey" value="proelectricDesc"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Attributes">
 				<property name="DegradationMax" value="10000"/>
 			</property>
@@ -8550,6 +8009,8 @@
 			<property name="Group" value="Ltech"/>
 			<property name="DegradationBreaksAfter" value="false"/>
 			<property name="ShowQuality" value="true"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Attributes">
 				<property name="DescriptionKey" value="proelectricDesc"/>
 				<property name="DegradationMax" value="10000"/>
@@ -8579,6 +8040,8 @@
 			<property name="Stacknumber" value="1000"/>
 			<property name="Group" value="Mods"/>
 			<property name="UnlockedBy" value="PBMT"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<!--  STK ammo low  -->
 			<property name="EconomicValue" value="15"/>
 			<effect_group name="ammoJunkTurretLegend" tiered="false">
@@ -8601,6 +8064,8 @@
 			<property name="Group" value="Mods"/>
 			<property name="UnlockedBy" value="PBMT"/>
 			<property name="EconomicValue" value="10"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<!--  STK ammo low  -->
 
 			<effect_group name="ammoJunkTurretLegend" tiered="false">
@@ -8629,6 +8094,8 @@
 			<property name="Stacknumber" value="1000"/>
 			<property name="Group" value="Mods"/>
 			<property name="UnlockedBy" value="PBMT"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<!--  STK ammo low  -->
 			<property name="EconomicValue" value="8"/>
 			<effect_group name="ammoJunkTurretLegend" tiered="false">
@@ -8656,8 +8123,7 @@
 			<property name="TintColor" value="B65FCF"/>
 			<!--<property name="DisplayType" value="waterDysentery"/>-->
 
-			<property name="ItemTypeIcon" value="add"/>
-			<property name="SellableToTrader" value="false"/>
+			<property name="ItemTypeIcon" value="add"/>			
 			<property name="Material" value="Morganic"/>
 			<property name="EconomicValue" value="2000"/>
 			<property name="Stacknumber" value="10"/>
@@ -8666,6 +8132,8 @@
 			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 			<property name="CraftingIngredientTime" value="15"/>
 			<property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<!--<property name="UnlockedBy" value="PBMT"/>-->
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
@@ -8690,7 +8158,7 @@
 			<property name="Extends" value="mummyConsuSPE"/>
 			<property name="CustomIcon" value="drugRecog"/>
 			<property name="CustomIconTint" value="B65FCF"/>
-			<property name="TintColor" value="B65FCF"/>			
+			<property name="TintColor" value="B65FCF"/>						
 			<!--<property name="DisplayType" value="waterDysentery"/>-->
 
 			<property class="Action0">
@@ -8803,7 +8271,8 @@
 			<property name="Stacknumber" value="50"/>
 			<property name="UnlockedBy" value="craftingFood"/>
 			<property name="DisplayType" value="foodMoma"/>
-
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<effect_group tiered="false" name="Food Tier 4">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="140"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="80"/>
@@ -8833,6 +8302,8 @@
 			<property name="EconomicValue" value="900"/>
 			<property name="Stacknumber" value="50"/>
 			<property name="UnlockedBy" value="craftingFood"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
@@ -8852,6 +8323,8 @@
 			<property name="EconomicValue" value="160"/>
 			<property name="Stacknumber" value="50"/>
 			<property name="UnlockedBy" value="craftingFood"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<effect_group tiered="false" name="Food Tier 3">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="50"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="40"/>
@@ -8902,7 +8375,9 @@
 			<property name="EconomicValue" value="900"/>
 			<property name="Stacknumber" value="50"/>			
 			<property name="DisplayType" value="foodComercialcake"/>			
-			<property name="UnlockedBy" value="craftingFood"/>			
+			<property name="UnlockedBy" value="craftingFood"/>	
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>		
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
@@ -8934,6 +8409,8 @@
 			<property name="EconomicValue" value="400"/>
 			<property name="Stacknumber" value="50"/>			
 			<property name="UnlockedBy" value="craftingFood"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<effect_group tiered="false" name="Drink Tier 5">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="30"/>
 				<display_value name="dStaminaRegen" value=".15"/>
@@ -8960,6 +8437,8 @@
 			<property name="Stacknumber" value="250"/>			
 			<property name="DisplayType" value="supaColaD"/>		
 			<property name="Group" value="Science,Medical"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property name="UnlockedBy" value="craftingMedical"/>
 			<effect_group tiered="false" name="Drink Tier 5">
 				<display_value name="dHarvestMining" value=".35"/>				
@@ -8988,6 +8467,8 @@
 			<property name="EconomicValue" value="700"/>
 			<property name="Stacknumber" value="50"/>
 			<property name="DisplayType" value="uwuprofen"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property name="UnlockedBy" value="craftingMedical"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
@@ -9020,6 +8501,8 @@
 			<property name="EconomicValue" value="1000"/>
 			<property name="Stacknumber" value="50"/>
 			<property name="DisplayType" value="adrenalineD"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property name="UnlockedBy" value="craftingMedical"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
@@ -9050,6 +8533,8 @@
 			<property name="DescriptionKey" value="medicalSpecialBandageDesc"/>
 			<property name="UnlockedBy" value="craftingMedical"/>
 			<property name="DisplayType" value="medicalSpecial"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<effect_group tiered="false">
 				<!-- used on self -->
 				<display_value name="foodHealthAmount" value="20"/>
@@ -9320,6 +8805,8 @@
 			<property name="RepairTime" value="300"/>
 			<property name="RepairAmount" value="32000"/>
 			<property name="Group" value="Resources"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 		</item>
 		<!--
 			<item name="Agua Divina">
@@ -9437,6 +8924,8 @@
 			<property name="Stacknumber" value="1"/>
 			<property name="Weight" value="0"/>
 			<property name="Group" value="Special Items"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<property name="Class" value="OpenBundle"/>
 				<property name="Delay" value="0.5"/>
@@ -9532,6 +9021,7 @@
 			<property name="HoldType" value="44"/>
 			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Magnums/magnumPrefab.prefab"/>
 			<property name="CustomIcon" value="gunHandgunT2Magnum44"/>
+			<property name="Tags" value="admin,noMods,paint"/>
 			<property name="ItemTypeIcon" value="paint_spraygun"/>
 			<property class="Action0">
 				<property name="Class" value="TextureBlock"/>
@@ -9641,9 +9131,15 @@
 
 
 
-	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Remove Drone ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ 
-		<remove xpath="/items/item[@name='gunBotT3JunkDrone']/property[@class='Action1']"/>-->
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Remove Drone ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+		<remove xpath="/items/item[@name='gunBotT3JunkDrone']/property[@class='Action1']"/>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+
+	<remove xpath="/items/item[@name='partsMaster']/property[@name='EconomicValue']"/>
 	
+	<append xpath="/items/item[@name='gunMGT1AK47Parts']" >
+		<property name="SellableToTrader" value="false"/>
+		<property name="Candrop" value="false"/>
+	</append>
 
 </MalenEI>

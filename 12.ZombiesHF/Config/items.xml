@@ -14,13 +14,15 @@
 				<property name="Weight" value="0"/>
 				<property name="Stacknumber" value="10"/>
 				<property name="Group" value="Special Items"/>
+				<property name="Candrop" value="false"/>
+				<property name="SellableToTrader" value="false"/>
 				<property class="Action0">
 
 					<property name="Class" value="OpenBundle"/>
 					<property name="Delay" value="0.5"/>
 					<property name="Use_time" value="1"/>
 					<property name="Sound_start" value="wrench_harvest"/>
-					<property name="Create_item" value="resourceRawDiamond,resourceSilverNugget,resourceGoldNugget,resourceBrokenGlass"/>
+					<property name="Create_item" value="resourceRawDiamond,resourceGoldNugget,resourceSilverNugget,resourceBrokenGlass"/>
 					<property name="Create_item_count" value="10,20,30,1"/>
 				</property>
 			</item>
@@ -35,6 +37,8 @@
 				<property name="ItemTypeIcon" value="treasure"/>
 				<property name="Weight" value="0"/>
 				<property name="Group" value="Special Items"/>
+				<property name="Candrop" value="false"/>
+				<property name="SellableToTrader" value="false"/>
 				<property class="Action0">
 					<property name="Class" value="OpenBundle"/>
 					<property name="Delay" value="0.5"/>
@@ -59,10 +63,11 @@
 					<property name="Material" value="Morganic"/>
 					<property name="Weight" value="10"/>
 					<property name="Stacknumber" value="10"/>
-					<property name="EconomicValue" value="10000"/>
+					<property name="EconomicBundleSize" value="11"/>					
 					<property name="Group" value="Special Items"/>
 					<property name="ShowQuality" value="false"/>
-					<property name="SellableToTrader" value="false"/>					
+					<property name="SellableToTrader" value="false"/>
+					<property name="Candrop" value="false"/>				
 					<property class="Action0">						
 						<property name="Class" value="Eat"/>						
 						<property name="Sound_start" value="ui_mag_read"/>
@@ -129,8 +134,7 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
-				</item>
-		
+				</item>	
 
 				<item name="q_Nightmare">
 					<property name="Extends" value="q_Ticket"/>
@@ -235,26 +239,7 @@
 					<property name="ItemTypeIcon" value="electric_power"/>
 					<property name="CustomIconTint" value="6b08c6"/>
 					<property name="TintColor" value="255,255,255"/>
-					<property class="Action0">	
-						<!-- <property name="cameraDistance" value="3.5, 5"/>
-		<property name="cameraTurnRate" value=".2, .35"/>
-		<property name="upAngleMax" value="3"/>
-		<property name="upForce" value="1"/>
-		<property name="steerRate" value="130"/>
-		<property name="steerCenteringRate" value="90"/>
-		<property name="tiltAngleMax" value="2"/>
-		<property name="tiltThreshold" value=".1"/>
-		<property name="tiltDampening" value=".01"/>
-		<property name="tiltDampenThreshold" value="1"/>
-		<property name="tiltUpForce" value="1"/>
-
-		<property name="motorTorque_turbo" value="1400, 500, 2100, 650"/>
-		<property name="velocityMax_turbo" value="9.8, 6, 14, 8"/>
-		<property name="brakeTorque" value="5000"/>
-		<property name="hopForce" value="1, .8"/>
-		<property name="unstickForce" value="1"/>
-		<property name="wheelPtlScale" value="1"/>
-		<property name="hornSound" value="motorbike_horn"/>	-->
+					<property class="Action0">							
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_shock" />
 						<property name="PromptDescription" value="q_shockPromp" />
@@ -492,7 +477,6 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
 				</item>
-
 				<item name="q_vodjanoj">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -601,8 +585,7 @@
 					<property class="Action0">
 						<property name="QuestGiven" value="q_noteHF"/>
 					</property>
-				</item>
-				
+				</item>				
 				<item name="q_Hooligan_Force">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -656,6 +639,7 @@
 					<property name="EconomicValue" value="10000"/>
 					<property name="Group" value="Special Items"/>
 					<property name="ShowQuality" value="false"/>
+					<property name="Candrop" value="false"/>
 					<property name="SellableToTrader" value="false"/>
 					<property name="ItemTypeIcon" value="treasure"/>
 					<property name="CustomIconTint" value="9A41C4"/>
@@ -682,8 +666,7 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestGatchaCD"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestGatchaCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
-				</item>
-			
+				</item>			
 				<item name="q_EnemigsRandom">
 					<property name="Extends" value="q_Gacha"/>
 					<property name="CustomIconTint" value="FD65CD"/>
@@ -703,246 +686,112 @@
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ Quest Tokens ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 			<item name="bossTokenNatu">
 				<property name="Extends" value="gunMGT1AK47Parts"/>
-				<property name="Material" value="Morganic"/>
-				<property name="ItemTypeIcon" value="tree"/>
-				<property name="CustomIcon" value="casinoCoin"/>
-				<property name="CustomIconTint" value="E2F70F"/>
-				<property name="TintColor" value="115,220,18"/>
-				
+				<property name="Material" value="Morganic"/>							
 				<property name="DescriptionKey" value="bossTokenDesc"/>
-				<property name="Group" value="Lmats"/>
-				<property name="EconomicValue" value="5000"/>
-				<property name="EconomicBundleSize" value="1"/>
+				<property name="Group" value="Lmats"/>			
 				<property name="Stacknumber" value="50"/>
+				<property name="Candrop" value="false"/>
 				<property name="SellableToTrader" value="false"/>
 				<property name="EconomicBundleSize" value="51"/>
+				<property name="CustomIcon" value="casinoCoin"/>
+
+				<property name="ItemTypeIcon" value="tree"/>				
+				<property name="CustomIconTint" value="E2F70F"/>
+				<property name="TintColor" value="115,220,18"/>	
 			</item>
 			<item name="bossTokenMineral">
-				<property name="Extends" value="gunMGT1AK47Parts"/>
-				<property name="Material" value="Morganic"/>
-				<property name="CustomIcon" value="casinoCoin"/>
+				<property name="Extends" value="bossTokenNatu"/>				
 				<property name="ItemTypeIcon" value="diamond"/>
 				<property name="CustomIconTint" value="194, 7, 7"/>
 				<property name="TintColor" value="194, 7, 7"/>
-				
-				<property name="DescriptionKey" value="bossTokenDesc"/>
-				<property name="Group" value="Lmats"/>
-				<property name="EconomicValue" value="5000"/>
-				<property name="Stacknumber" value="50"/>
-				<property name="SellableToTrader" value="false"/>
-				<property name="EconomicBundleSize" value="51"/>
 			</item>
 			<item name="bossTokenNight">
-				<property name="Extends" value="gunMGT1AK47Parts"/>
-				<property name="Material" value="Morganic"/>
+				<property name="Extends" value="bossTokenNatu"/>
 				<property name="ItemTypeIcon" value="skull"/>
-				<property name="CustomIcon" value="casinoCoin"/>
 				<property name="CustomIconTint" value="0B0139"/>
 				<property name="TintColor" value="4,9,171"/>
-				
-				<property name="DescriptionKey" value="bossTokenDesc"/>
-				<property name="Group" value="Lmats"/>
-				<property name="EconomicValue" value="5000"/>
-				<property name="Stacknumber" value="50"/>
-				<property name="SellableToTrader" value="false"/>
-				<property name="EconomicBundleSize" value="51"/>
 			</item>
 			<item name="bossTokenJugger">
-				<property name="Extends" value="gunMGT1AK47Parts"/>
-				<property name="Material" value="Morganic"/>
-				<property name="ItemTypeIcon" value="skull"/>
-				<property name="CustomIcon" value="casinoCoin"/>
+				<property name="Extends" value="bossTokenNatu"/>
+				<property name="ItemTypeIcon" value="skull"/>				
 				<property name="CustomIconTint" value="784212"/>
 				<property name="TintColor" value="120,66,18"/>
-				
-				<property name="DescriptionKey" value="bossTokenDesc"/>
-				<property name="Group" value="Lmats"/>
-				<property name="EconomicValue" value="5000"/>
-				<property name="Stacknumber" value="50"/>
-				<property name="SellableToTrader" value="false"/>
-				<property name="EconomicBundleSize" value="51"/>
 			</item>
 			<item name="bossTokenSoldier">
-				<property name="Extends" value="gunMGT1AK47Parts"/>
-				<property name="Material" value="Morganic"/>
-				<property name="ItemTypeIcon" value="skull"/>
-				<property name="CustomIcon" value="casinoCoin"/>
+				<property name="Extends" value="bossTokenNatu"/>				
+				<property name="ItemTypeIcon" value="skull"/>				
 				<property name="CustomIconTint" value="024E13"/>
 				<property name="TintColor" value="13,157,29"/>
-				
-				<property name="DescriptionKey" value="bossTokenDesc"/>
-				<property name="Group" value="Lmats"/>
-				<property name="EconomicValue" value="5000"/>
-				<property name="Stacknumber" value="50"/>
-				<property name="SellableToTrader" value="false"/>
-				<property name="EconomicBundleSize" value="51"/>
 			</item>
 			<item name="bossTokenMummy">
-				<property name="Extends" value="gunMGT1AK47Parts"/>
-				<property name="Material" value="Morganic"/>
+				<property name="Extends" value="bossTokenNatu"/>
 				<property name="ItemTypeIcon" value="skull"/>
-				<property name="CustomIcon" value="casinoCoin"/>
 				<property name="CustomIconTint" value="EFB810"/>
 				<property name="TintColor" value="218,232,9"/>
-				
-				<property name="DescriptionKey" value="bossTokenDesc"/>
-				<property name="Group" value="Lmats"/>
-				<property name="EconomicValue" value="5000"/>
-				<property name="Stacknumber" value="50"/>
-				<property name="SellableToTrader" value="false"/>
-				<property name="EconomicBundleSize" value="51"/>
 			</item>
 			<item name="bossTokenGadiador">
-				<property name="Extends" value="gunMGT1AK47Parts"/>
-				<property name="Material" value="Morganic"/>
+				<property name="Extends" value="bossTokenNatu"/>
 				<property name="ItemTypeIcon" value="skull"/>
-				<property name="CustomIcon" value="casinoCoin"/>
 				<property name="CustomIconTint" value="636060"/>
 				<property name="TintColor" value="99,96,96"/>
-				
-				<property name="DescriptionKey" value="bossTokenDesc"/>
-				<property name="Group" value="Lmats"/>
-				<property name="EconomicValue" value="5000"/>
-				<property name="Stacknumber" value="50"/>
-				<property name="SellableToTrader" value="false"/>
-				<property name="EconomicBundleSize" value="51"/>
 			</item>
 			<!-- Added by HolyVentus -->
 			<item name="bossTokenCirujano">
-				<property name="Extends" value="gunMGT1AK47Parts"/>
-				<property name="Material" value="Morganic"/>
+				<property name="Extends" value="bossTokenNatu"/>
 				<property name="ItemTypeIcon" value="add"/>
-				<property name="CustomIcon" value="casinoCoin"/>
 				<property name="CustomIconTint" value="5b57a1"/>
 				<property name="TintColor" value="91,87,161"/>
-				
-				<property name="DescriptionKey" value="bossTokenDesc"/>
-				<property name="Group" value="Lmats"/>
-				<property name="EconomicValue" value="5000"/>
-				<property name="Stacknumber" value="50"/>
-				<property name="SellableToTrader" value="false"/>
-				<property name="EconomicBundleSize" value="51"/>
 			</item>
 			<item name="bossTokenSpartan">
-				<property name="Extends" value="gunMGT1AK47Parts"/>
-				<property name="Material" value="Morganic"/>
+				<property name="Extends" value="bossTokenNatu"/>
 				<property name="ItemTypeIcon" value="skull"/>
-				<property name="CustomIcon" value="casinoCoin"/>
 				<property name="CustomIconTint" value="FF0000"/>
 				<property name="TintColor" value="255,0,0"/>
-				
-				<property name="DescriptionKey" value="bossTokenDesc"/>
-				<property name="Group" value="Lmats"/>
-				<property name="EconomicValue" value="5000"/>
-				<property name="Stacknumber" value="50"/>
-				<property name="SellableToTrader" value="false"/>
-				<property name="EconomicBundleSize" value="51"/>
 			</item>
 			<item name="bossTokenMortevoda">
-				<property name="Extends" value="gunMGT1AK47Parts"/>
-				<property name="Material" value="Morganic"/>
+				<property name="Extends" value="bossTokenNatu"/>
 				<property name="ItemTypeIcon" value="skull"/>
-				<property name="CustomIcon" value="casinoCoin"/>
 				<property name="CustomIconTint" value="0099ff"/>
 				<property name="TintColor" value="255,0,0"/>
-				
-				<property name="DescriptionKey" value="bossTokenDesc"/>
-				<property name="Group" value="Lmats"/>
-				<property name="EconomicValue" value="5000"/>
-				<property name="Stacknumber" value="50"/>
-				<property name="SellableToTrader" value="false"/>
-				<property name="EconomicBundleSize" value="51"/>
 			</item>
 			<item name="bossTokenInfernal">
-				<property name="Extends" value="gunMGT1AK47Parts"/>
-				<property name="Material" value="Morganic"/>
+				<property name="Extends" value="bossTokenNatu"/>
 				<property name="ItemTypeIcon" value="skull"/>
-				<property name="CustomIcon" value="casinoCoin"/>
 				<property name="CustomIconTint" value="db7735"/>
 				<property name="TintColor" value="255,0,0"/>
-				
-				<property name="DescriptionKey" value="bossTokenDesc"/>
-				<property name="Group" value="Lmats"/>
-				<property name="EconomicValue" value="5000"/>
-				<property name="Stacknumber" value="50"/>
-				<property name="SellableToTrader" value="false"/>
-				<property name="EconomicBundleSize" value="51"/>
 			</item>
 			<item name="bossTokenHoarfrost">
-				<property name="Extends" value="gunMGT1AK47Parts"/>
-				<property name="Material" value="Morganic"/>
+				<property name="Extends" value="bossTokenNatu"/>
 				<property name="ItemTypeIcon" value="skull"/>
-				<property name="CustomIcon" value="casinoCoin"/>
 				<property name="CustomIconTint" value="213ab3"/>
 				<property name="TintColor" value="255,0,0"/>
-				
-				<property name="DescriptionKey" value="bossTokenDesc"/>
-				<property name="Group" value="Lmats"/>
-				<property name="EconomicValue" value="5000"/>
-				<property name="Stacknumber" value="50"/>
-				<property name="SellableToTrader" value="false"/>
-				<property name="EconomicBundleSize" value="51"/>
 			</item>
 			<item name="bossTokenShocker">
-				<property name="Extends" value="gunMGT1AK47Parts"/>
-				<property name="Material" value="Morganic"/>
+				<property name="Extends" value="bossTokenNatu"/>
 				<property name="ItemTypeIcon" value="skull"/>
-				<property name="CustomIcon" value="casinoCoin"/>
 				<property name="CustomIconTint" value="6b08c6"/>
 				<property name="TintColor" value="255,0,0"/>
-				
-				<property name="DescriptionKey" value="bossTokenDesc"/>
-				<property name="Group" value="Lmats"/>
-				<property name="EconomicValue" value="5000"/>
-				<property name="Stacknumber" value="50"/>
-				<property name="SellableToTrader" value="false"/>
-				<property name="EconomicBundleSize" value="51"/>
 			</item>
 			<item name="bossTokenToxic">
-				<property name="Extends" value="gunMGT1AK47Parts"/>
-				<property name="Material" value="Morganic"/>
+				<property name="Extends" value="bossTokenNatu"/>
 				<property name="ItemTypeIcon" value="skull"/>
-				<property name="CustomIcon" value="casinoCoin"/>
 				<property name="CustomIconTint" value="07F00D"/>
 				<property name="TintColor" value="255,0,0"/>
-				
-				<property name="DescriptionKey" value="bossTokenDesc"/>
-				<property name="Group" value="Lmats"/>
-				<property name="EconomicValue" value="5000"/>
-				<property name="Stacknumber" value="50"/>
-				<property name="SellableToTrader" value="false"/>
-				<property name="EconomicBundleSize" value="51"/>
 			</item>
 			<!---->
 			<item name="bossTokenAncient">
-				<property name="Extends" value="gunMGT1AK47Parts"/>
-				<property name="Material" value="Morganic"/>
-				<property name="CustomIcon" value="casinoCoin"/>
+				<property name="Extends" value="bossTokenNatu"/>
 				<property name="ItemTypeIcon" value="add"/>
 				<property name="CustomIconTint" value="100,0,0"/>
 				<property name="TintColor" value="100,0,0"/>
-				
-				<property name="DescriptionKey" value="bossTokenDesc"/>
-				<property name="Group" value="Lmats"/>
-				<property name="EconomicValue" value="5000"/>
-				<property name="Stacknumber" value="10"/>
-				<property name="SellableToTrader" value="false"/>
-				<property name="EconomicBundleSize" value="11"/>
 			</item>						
 			<item name="questFrag">
-				<property name="Extends" value="gunMGT1AK47Parts"/>
-				<property name="Material" value="Morganic"/>
+				<property name="Extends" value="bossTokenNatu"/>
 				<property name="CustomIcon" value="oreShaleBoulder"/>
 				<property name="ItemTypeIcon" value="gunsmithing"/>				
 				<property name="CustomIconTint" value="100,0,0"/>
-				<property name="TintColor" value="100,0,0"/>
-				
+				<property name="TintColor" value="100,0,0"/>				
 				<property name="DescriptionKey" value="questfargDesc"/>
-				<property name="Group" value="Lmats"/>
-				<property name="EconomicValue" value="1000"/>
-				<property name="Stacknumber" value="50"/>
-				<property name="SellableToTrader" value="false"/>
-				<property name="EconomicBundleSize" value="51"/>
 			</item>
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 
@@ -1031,8 +880,8 @@
 				<property name="CreativeMode" value="None"/>
 				<property name="Degradation" value="99999" param1="true"/>
 				<property class="Action0">
-					<property name="Range" value="1.70"/>
-					<property name="DamageEntity" value="15"/>
+					<property name="Range" value="2"/>
+					<property name="DamageEntity" value="45"/>
 					<property name="DamageBlock" value="60"/>
 					<property name="Buff" value="buffInjuryStunned01,buffShocked2"/>
 				</property>
@@ -1046,6 +895,7 @@
 					<property name="Sound_warning" value="shulkvomitwarning"/>
 					<property name="Sound_start" value="hulkvomitattack"/>
 					<!--	<property name="Buff" value="buffShocked2"/> -->
+					
 				</property>
 				<effect_group name="meleehandZombieBolt" tiered="false">
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
@@ -1067,7 +917,7 @@
 				<property name="CreativeMode" value="None"/>
 				<property class="Action1">
 					<property name="Class" value="Projectile"/>
-					<property name="DamageEntity" value="8"/>
+					<property name="DamageEntity" value="20"/>
 					<property name="DamageBlock" value="20"/>
 					<property name="Explosion.ParticleIndex" value="12"/>
 					<!-- which Prefab/particle is used -->
@@ -1982,6 +1832,7 @@
 				<property class="Action0">
 					<property name="Range" value="2"/>
 					<property name="Sound_start" value="swoosh"/>
+					<property name="Buff" value="Nigthit"/>
 					<property name="DamageEntity" value="45"/>
 					<property name="DamageBlock" value="60"/>
 				</property>
@@ -2000,7 +1851,7 @@
 				<property name="Material" value="Morganic"/>
 				<property class="Action0">
 					<property name="Buff" value="buffInjuryBleeding,buffInjuryBleedingTwo,buffInjuryBleedingOne"/>
-					<property name="Range" value="3"/>
+					<property name="Range" value="4"/>
 					<property name="Sound_start" value="swoosh"/>
 					<property name="DamageEntity" value="60"/>
 					<property name="DamageBlock" value="1500"/>

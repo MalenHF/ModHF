@@ -28,6 +28,11 @@
 		</action_sequence>
 
 		<action_sequence name="bossSirenBehavior">
+			<requirement class="RandomRoll">
+				<property name="min_max" value="0,100" />
+				<property name="operation" value="LTE" />
+				<property name="value" value="25" />
+			</requirement>	
 			<action class="Delay">
 				<property name="phase" value="1" />
 				<property name="time" value="2" />
@@ -35,6 +40,20 @@
 			<action class="RandomizeRotation">
 				<property name="phase" value="2" />
 			</action>
+		</action_sequence>
+
+		<action_sequence name="action_changedirectionhf">
+			<property name="category" value="twitch_actions" />
+
+			<action class="PlaySound">
+				<property name="sound" value="twitch_reverse" />
+				<property name="phase" value="0" />
+			</action>
+
+			<action class="FlipRotation">
+				<property name="phase" value="1" />				
+			</action>
+
 		</action_sequence>
 
 		<action_sequence name="HelicopterHelicopteeer">
@@ -546,9 +565,9 @@
 				<property name="phase" value="9" />
 			</action>			
 			<action class="CallGameEvent">
-				<property name="phase" value="10" />				
-				<property name="phase_on_complete" value="12" />
+				<property name="phase" value="10" />			
 				<property name="game_events" value="lucky_roll" />
+				<property name="phase_on_complete" value="12" />
 			</action>
 	
 			<action class="PlaySound">
@@ -2012,7 +2031,7 @@
 			</action>
 
 			<action class="AddQuest">
-				<property name="quest" value="bossRewardQuest3" />				
+				<property name="quest" value="tier2RewardQuest3" />				
 				<property name="target_group" value="party" />
 				<property name="phase_on_complete" value="11" />
 				<property name="phase" value="9" />

@@ -133,7 +133,9 @@
       <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
       <property name="CustomIcon" value="modArmorTreasureHunter"/>     
       <property name="Material" value="Morganic"/>
-      <property name="EconomicValue" value="20000"/>			
+      <property name="EconomicValue" value="1"/>		
+      <property name="Candrop" value="false"/>
+       <property name="SellableToTrader" value="false"/>	
 			<property name="DisplayType" value="LLD"/>
 			<property name="CustomIconTint" value="255,255,0"/>
 			<property name="Group" value="Tools/Traps"/>
@@ -146,17 +148,16 @@
         <passive_effect name="ModSlots" operation="base_set" value="1"/>
         <passive_effect name="LootStage" operation="base_add" value="10"/>
         <passive_effect name="TreasureBlocksPerReduction" operation="base_add" value="-2"/>
-        <passive_effect name="HypothermalResist" operation="base_add" value="10"/>
-        <passive_effect name="HyperthermalResist" operation="base_add" value="10"/>
         <passive_effect name="AttributeLevel" tags="attStrength" operation="base_add" value="1"/>
         <passive_effect name="AttributeLevel" tags="attIntellect" operation="base_add" value="1"/>
         <passive_effect name="AttributeLevel" tags="attCharisma" operation="base_add" value="1"/>
         <passive_effect name="AttributeLevel" tags="attPerception" operation="base_add" value="1"/>
         <passive_effect name="AttributeLevel" tags="attAgility" operation="base_add" value="1"/>
         <passive_effect name="AttributeLevel" tags="attFortitude" operation="base_add" value="1"/>
-        <passive_effect name="CraftingTime" operation="perc_add" value="-.2"/>
+        <!-- <passive_effect name="CraftingTime" operation="perc_add" value="-.2"/> -->
         <passive_effect name="PlayerExpGain" operation="perc_add" value=".20"/>
-        <display_value name="dCraftingTime" value="-.2"/>
+        <display_value name="statLootFGameStage" value="-.2"/>
+        <!-- <display_value name="dCraftingTime" value="-.2"/> -->
         <display_value name="dPlayerExpGain" value=".2"/>
         <display_value name="dTreasureBlocksPerReduction" value="-2"/>
       </effect_group>
@@ -177,7 +178,7 @@
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ --> 
 
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Uniquie Mods ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-    <item_modifier name="modUNArmorPlat" installable_tags="armor" modifier_tags="resistance" blocked_tags="noMods,LAS" type="attachment">
+    <item_modifier name="modUNArmorPlat" installable_tags="armor" modifier_tags="resistance" blocked_tags="noMods,LAS,heavyArmor" type="attachment">
       <property name="ItemTypeIcon" value="gear"/>
       <property name="DisplayType" value="modArmor"/>
       <property name="CustomIcon" value="modArmorPlatingReinforced"/>
@@ -191,7 +192,7 @@
         <passive_effect name="PhysicalDamageResist" operation="base_add" value="3"/>
       </effect_group>
     </item_modifier>
-    <item_modifier name="modUNArmorCust" installable_tags="armor" modifier_tags="movement" blocked_tags="noMods,padded" type="attachment">
+    <item_modifier name="modUNArmorCust" installable_tags="armor" modifier_tags="movement" blocked_tags="noMods,padded,lightArmor" type="attachment">
       <property name="CustomIcon" value="modArmorCustomizedFittings"/>
       <property name="UnlockedBy" value="modArmorCustomizedFittingsSchematic"/>
       <property name="CustomIconTint" value="50,50,50"/>
