@@ -84,9 +84,12 @@
 			</effect_group>
 		</item>
 		<item name="toolForgeCrucibleDiamond">
-			<property name="CustomIcon" value="toolForgeCrucible"/>
+			<property name="CustomIcon" value="toolDewGatherer"/>
 			<property name="CustomIconTint" value="81, 209, 246"/>
 			<property name="TintColor" value="81, 209, 246"/>
+
+			<property name="CustomIconTint" value="50, 50, 50"/>
+			<property name="TintColor" value="50, 50, 50"/>
 			
 			<property name="UnlockedBy" value="HML"/>
 			<property name="HoldType" value="45"/>
@@ -1499,6 +1502,7 @@
 					<!-- limit to 0.15, else the sphere cast can overlap the target already -->
 					<property name="Sound_start" value="machete_swinglight"/>
 					<property name="ToolCategory.Butcher" value="0" param1="1.5"/>
+					<property name="ToolCategory.Butcher" value="0" param1="1.5"/>
 					<!-- This triggers the use of the special corpse harvesting animation if there is a matching harvest event.
 									Also, param1  is the damage multiplier for corpse harvesting. -->
 
@@ -1520,6 +1524,7 @@
 					<property name="Sound_start" value="machete_swingheavy"/>
 				</property>
 				<effect_group name="Podadora">
+					<!-- <passive_effect name="HarvestCount" operation="base_set" value="1" tags="allSpeTools"/> -->
 					<passive_effect name="EntityDamage" operation="base_set" value="0"/>
 					<passive_effect name="BlockDamage" operation="base_set" value="1"/>
 					<passive_effect name="AttacksPerMinute" operation="base_set" value="1000"/>
@@ -6991,8 +6996,8 @@
 		</item>
 		<item name="BetsyPlaceable">
 			<property name="Extends" value="vehicleMinibikePlaceable"/>
-			<property name="ItemTypeIcon" value="computer"/>
-			<property name="Tags" value="vehicle,vengine,vfuel,vlight,vplow,vseat,canHaveCosmetic"/>
+			<property name="ItemTypeIcon" value="computer"/>			
+			<property name="Tags" value="vehicle,varmor,vengine,vfuel,vlight,vseat,canHaveCosmetic"/>
 			<property name="Meshfile" value="@:Entities/Vehicles/VMotorcycle/VMotorcycleP.prefab"/>
 			<property name="CustomIcon" value="vehicleMotorcyclePlaceable"/>
 			<property name="CustomIconTint" value="00AAE4"/>
@@ -7016,8 +7021,8 @@
 		<item name="Betsy2Placeable">
 			<property name="Extends" value="vehicleMinibikePlaceable"/>			
 			<property name="ItemTypeIcon" value="computer"/>
-			<property name="CustomIcon" value="vehicleMotorcyclePlaceable"/>
-			<property name="Tags" value="vehicle,vengine,vfuel,vlight,vplow,vseat,canHaveCosmetic"/>
+			<property name="CustomIcon" value="vehicleMotorcyclePlaceable"/>			
+			<property name="Tags" value="vehicle,varmor,vengine,vfuel,vlight,vseat,canHaveCosmetic"/>
 			<property name="Meshfile" value="@:Entities/Vehicles/VMotorcycle/VMotorcycleP.prefab"/>
 			<property name="CustomIconTint" value="00AAE4"/>
 			<property name="DescriptionKey" value="betsyPlacDesc2"/>
@@ -8856,38 +8861,100 @@
 				</effect_group>
 			</item>
 		-->
-		<item name="extraItem1">
+		<item name="resourceLegenAlloy">
 			<property name="Extends" value="gunMGT1AK47Parts"/>
 			<property name="Material" value="Morganic"/>
-			<property name="CustomIcon" value="orePotassiumNitrateBoulder"/>
-			<property name="CustomIconTint" value="B65FCF"/>
-			<property name="TintColor" value="B65FCF"/>
-			<property name="EconomicBundleSize" value="1"/>
-			<property name="DescriptionKey" value="practoniumdesc"/>
-			<property name="EconomicValue" value="50000"/>
-			<property name="Stacknumber" value="50"/>
+			<property name="CustomIcon" value="toolForgeCrucible"/>
+			<property name="CustomIconTint" value="81, 209, 246"/>
+			<property name="TintColor" value="81, 209, 246"/>
+			<property name="EconomicBundleSize" value="51"/>
+			<property name="DescriptionKey" value="alloySpDesc"/>
+			<property name="Group" value="Lmats"/>
+			<property name="Stacknumber" value="50"/>			
 		</item>
-		<item name="extraItem2">
-			<property name="Extends" value="gunMGT1AK47Parts"/>
-			<property name="Material" value="Morganic"/>
-			<property name="CustomIcon" value="orePotassiumNitrateBoulder"/>
+		<item name="resourcePractoAlloy">
+			<property name="Extends" value="resourceLegenAlloy"/>			
 			<property name="CustomIconTint" value="B65FCF"/>
 			<property name="TintColor" value="B65FCF"/>
-			<property name="EconomicBundleSize" value="1"/>
-			<property name="DescriptionKey" value="practoniumdesc"/>
-			<property name="EconomicValue" value="50000"/>
-			<property name="Stacknumber" value="50"/>
 		</item>
-		<item name="extraItem3">
-			<property name="Extends" value="gunMGT1AK47Parts"/>
-			<property name="Material" value="Morganic"/>
-			<property name="CustomIcon" value="orePotassiumNitrateBoulder"/>
-			<property name="CustomIconTint" value="B65FCF"/>
-			<property name="TintColor" value="B65FCF"/>
-			<property name="EconomicBundleSize" value="1"/>
-			<property name="DescriptionKey" value="practoniumdesc"/>
-			<property name="EconomicValue" value="50000"/>
-			<property name="Stacknumber" value="50"/>
+		<item name="toolSpecialFarming">
+			<property name="Tags" value="melee,heavy,tool,motorTool,attStrength,perkMiner69r,perkMotherLode,miningTool,canHaveCosmetic,harvestingSkill"/>
+			<property name="DisplayType" value="motorTool"/>
+			<property name="CustomIcon" value="meleeToolPickT3Auger"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property name="ItemTypeIcon" value="star"/>
+			<property name="HoldType" value="20"/>
+			<property name="Meshfile" value="@:Other/Items/Tools/Auger/augerPrefab.prefab"/>
+			<property name="Material" value="MMotorToolParts"/>
+			<property name="Weight" value="6"/>
+			<property name="RepairTools" value="resourceRepairKit"/>
+			<property name="SoundIdle" value="auger_idle"/>
+			<property name="Particles_muzzle_smoke" value="nozzlesmoke_chainsaw"/>
+			<property name="Group" value="Tools/Traps"/>
+			<property name="RepairExpMultiplier" value="10.8"/>
+			<property name="EconomicValue" value="1"/>
+			<property name="ShowQuality" value="false"/>
+			<property name="EconomicValue" value="165000"/>
+			<property name="CreativeMode" value="Dev"/>				
+			<property name="UnlockedBy" value="HML"/>
+			<property name="DescriptionKey" value="LTDesc"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
+			<property class="Action0">
+				<property name="Class" value="Ranged"/>
+				<property name="Hitmask_override" value="Melee"/>
+				<property name="UseMeleeCrosshair" value="true"/>
+				<property name="Single_magazine_usage" value="false"/>
+				<property name="Magazine_items" value="ammoGasCan"/>
+				<property name="Bullet_material" value="metal"/>
+				<property name="Reload_time" value="3"/>
+				<property name="Sound_start" value="wolfalert"/>
+
+				<property name="Sound_repeat" value="taladroguaguasouund/Sounds/Animals/Wolf/wolfattack2"/>
+				
+				<property name="Sound_end" value="wolfdeath"/>
+				<property name="Sound_empty" value="wolfpain"/>
+				<property name="Sound_reload" value="taladroguaguasouund"/>
+				<property name="Particles_muzzle_smoke" value="nozzlesmoke_chainsaw"/>
+				<!--  <property name="DamageBonus.wood" value=".25"/>  -->
+				<!--  <property name="DamageBonus.head" value="3"/>  -->
+				<property name="SupportHarvesting" value="true"/>					
+				<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+					<property name="triggerEffectTriggerPullDualsense" value="PistolTrigger"/>
+					<property name="triggerEffectTriggerPullXbox" value="PistolTrigger"/>
+					<property name="triggerEffectTriggerShootDualsense" value="PistolShoot"/>
+					<property name="triggerEffectTriggerShootXbox" value="PistolShoot"/>
+			</property>
+			<effect_group name="meleeToolPickT3Auger">
+				<passive_effect name="EntityDamage" operation="base_set" value="10" tags="perkMiner69r"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="500" tags="perkMiner69r,miningTool"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="120" tags="perkMiner69r"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="9999" tier="1,6" tags="admin"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkMiner69r"/>
+				<passive_effect name="MaxRange" operation="base_set" value="10" tags="perkMiner69r"/>
+				<passive_effect name="BlockRange" operation="base_set" value="10" tags="perkMiner69r"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value="0" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="SphereCastRadius" operation="base_set" value=".1"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="150" tags="perkMiner69r"/>
+				<passive_effect name="PlayerExpGain" operation="base_set" value="20" tags="Harvesting"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-2" tags="wood"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1000" tags="perkMiner69r"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1000" tags="perkMiner69r"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="2" tags="perkMiner69r"/>
+				<!--  3.5s  -->
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value=".5" tags="perkMiner69r"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value=".5" tags="perkMiner69r"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="-.35" tags="perkMiner69r"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".35" tags="perkMiner69r"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.35" tags="perkMiner69r"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".35" tags="perkMiner69r"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1" tags="perkMiner69r"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value="6" tags="perkMiner69r"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1.2" tags="oreWoodHarvest"/>
+			</effect_group>
 		</item>
 		<item name="extraItem4">
 			<property name="Extends" value="gunMGT1AK47Parts"/>

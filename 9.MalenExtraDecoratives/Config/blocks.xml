@@ -3180,60 +3180,137 @@
 				<property name="Group" value="Decor/Miscellaneous"/>
 			</block>
 
-			<!--Working ON-->
-			<block name="extraBigDoor">
-				<property name="Extends" value="commercialSlidingDoor"/>
-				<property name="CustomIcon" value="commercialSlidingDoor"/>				
-				<property name="Material" value="Msteel"/>   
-				<property name="MaxDamage" value="12000"/>     
-				<property name="MeshDamage" value="
-					Door/DMG0, 13000,
-					Door/DMG1, 12000,
-					Door/DMG2, 2400,	
-					-, 1
-					"/>
-					<property name="SortOrder1" value="A310"/>
-					<property name="SortOrder2" value="0000"/>
+			<!--Big door Reinforced for players-->
+			<block name="doorWoodLargeGateHF">
+				<!-- Class -->
+				<property name="CustomIcon" value="doorWoodLargeGate"/>
+				<property name="Class" value="DoorSecure"/>
+				<property name="OpenSound" value="gate_wood_large_open"/>
+				<property name="CloseSound" value="gate_wood_large_close"/>
+				<property name="LockedSound" value="gate_wood_large_locked"/>
+				<property name="IndexName" value="TraderOnOff"/>
+				<!-- UI_Info -->
+				<property name="DescriptionKey" value="doorGroupDesc"/>
+				<property name="DisplayType" value="blockMulti"/>
+				<property name="Stacknumber" value="500"/>
+				<!-- Visual -->
+				<property name="Material" value="MmetalDrawbridge"/>
+				<property name="Shape" value="ModelEntity"/>
+				<property name="Model" value="Entities/Doors/doorWoodLargeGatePrefab"/>
+				<property name="ModelOffset" value="0,0,.25"/>
+				<property name="MultiBlockDim" value="5,5,1"/>
+				<property name="ImposterExchange" value="imposterDontBlockCTRPlate" param1="12"/>
+				<property name="LODCullScale" value=".1"/>
+				<property name="WaterFlow" value="permitted"/>
+				<property name="LightOpacity" value="1"/>
+				<!-- Placement -->
+				<property name="Place" value="Door"/>
+				<property name="PlaceEverywhere" value="true"/>
+				<property name="AllowAllRotations" value="true"/>
+				<property name="StabilitySupport" value="false"/>
+				<!-- Interaction -->
+				<property name="MaxDamage" value="10000"/>
+				<property name="StartDamage" value="0"/>
+				<property name="PassThroughDamage" value="true"/>
+				<property name="MeshDamage" value="Door/DMG0, 225"/>
+				<property class="RepairItems">
+					<property name="resourceForgedIron" value="100"/>
+					<property name="resourceWood" value="800"/>
+				</property>
+				<drop event="Harvest" name="resourceScrapIron" count="400" tag="allHarvest"/>
+				<drop event="Harvest" name="resourceWood" count="400" tag="allHarvest,lumberjackHarvest"/>
+				<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+				<drop event="Destroy" name="resourceSpring" count="4,12" tag="salvageHarvest" tool_category="Disassemble"/>
+				<drop event="Destroy" name="resourceMechanicalParts" count="4,20" tag="salvageHarvest" tool_category="Disassemble"/>
+				<drop event="Destroy" count="0"/>
+				<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+				<!-- Sorting -->
+				<property name="SortOrder1" value="A310"/>
+				<property name="SortOrder2" value="0000"/>
+				<property name="Group" value="Building,advBuilding"/>
+				<property name="Tags" value="door"/>
+				<property name="BlockTag" value="Door"/>
+				<property name="FilterTags" value="MC_building,SC_doors"/>
 			</block>
 			<!--Bridge + bigdoor-->
-			<block name="extraDoorVariant1">
-				<property name="Extends" value="reinforcedExteriorHouseDoorWhite"/>
-				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+			<block name="metalReinforcedWoodBigDoors_BlockVariantHelper">
+				<property name="Extends" value="metalReinforcedWoodDrawBridge"/>
+				<property name="CustomIcon" value="metalReinforcedWoodDrawBridge"/>
 				<property name="CreativeMode" value="Player"/>
-				<property name="DescriptionKey" value="metalFurnitureBlockVariantHelperDesc"/>
+				<property name="DescriptionKey" value="blockVariantHelperGroupDesc"/>
 				<property name="ItemTypeIcon" value="all_blocks"/>
 				<property name="SellableToTrader" value="false"/>
 				<property name="SelectAlternates" value="true" />
 				<property name="AllowAllRotations" value="true"/>
-				<property name="PlaceAltBlockValue" value="reinforcedExteriorHouseDoorWhite,reinforcedExteriorHouseDoorBrown"/>
+				<property name="Stacknumber" value="500"/>
+				<property name="PlaceAltBlockValue" value="metalReinforcedWoodDrawBridge,doorWoodLargeGateHF"/>
 				<property name="Group" value="Decor/Miscellaneous"/>
-			</block>			
-			<block name="extraBigDoorPowered">
-				<property name="Extends" value="commercialSlidingDoor"/>
-				<property name="CustomIcon" value="commercialSlidingDoor"/>				
-				<property name="Material" value="Msteel"/>   
-				<property name="MaxDamage" value="12000"/>     
-				<property name="MeshDamage" value="
-					Door/DMG0, 13000,
-					Door/DMG1, 12000,
-					Door/DMG2, 2400,	
-					-, 1
-					"/>
-					<property name="SortOrder1" value="A310"/>
-					<property name="SortOrder2" value="0000"/>
-			</block>
-
-			<!--Bridge + bigdoor Powered-->
-			<block name="extraDoorVariant2">
-				<property name="Extends" value="reinforcedExteriorHouseDoorWhite"/>
-				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+			</block>		
+			<!--Big door Reinforced Powered for players-->	
+			<block name="doorWoodLargeGateHF_Powered">
+				<!-- Class -->
+				<property name="CustomIcon" value="doorWoodLargeGate"/>
+				<property name="Class" value="PoweredDoor"/>
+				<property name="OpenSound" value="gate_wood_large_open"/>
+				<property name="CloseSound" value="gate_wood_large_close"/>
+				<property name="LockedSound" value="gate_wood_large_locked"/>
+				<property name="IndexName" value="TraderOnOff"/>
+				<property name="UnlockedBy" value="craftingElectrician"/>
+				<!-- UI_Info -->
+				<property name="DescriptionKey" value="doorGroupDesc"/>
+				<property name="DisplayType" value="blockMulti"/>
+				<property name="Stacknumber" value="500"/>
+				<!-- Visual -->
+				<property name="Material" value="MmetalDrawbridge"/>
+				<property name="Shape" value="ModelEntity"/>
+				<property name="Model" value="Entities/Doors/doorWoodLargeGatePrefab"/>
+				<property name="ModelOffset" value="0,0,.25"/>
+				<property name="MultiBlockDim" value="5,5,1"/>
+				<property name="ImposterExchange" value="imposterDontBlockCTRPlate" param1="12"/>
+				<property name="LODCullScale" value=".1"/>
+				<property name="WaterFlow" value="permitted"/>
+				<property name="LightOpacity" value="1"/>
+				<!-- Placement -->
+				<property name="Place" value="Door"/>
+				<property name="PlaceEverywhere" value="true"/>
+				<property name="AllowAllRotations" value="true"/>
+				<property name="StabilitySupport" value="false"/>
+				<!-- Interaction -->
+				<property name="MaxDamage" value="10000"/>
+				<property name="StartDamage" value="0"/>
+				<property name="PassThroughDamage" value="true"/>
+				<property name="MeshDamage" value="Door/DMG0, 225"/>
+				<property class="RepairItems">
+					<property name="resourceForgedIron" value="100"/>
+					<property name="resourceWood" value="800"/>
+				</property>
+				<drop event="Harvest" name="resourceScrapIron" count="400" tag="allHarvest"/>
+				<drop event="Harvest" name="resourceWood" count="400" tag="allHarvest,lumberjackHarvest"/>
+				<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+				<drop event="Destroy" name="resourceSpring" count="4,12" tag="salvageHarvest" tool_category="Disassemble"/>
+				<drop event="Destroy" name="resourceMechanicalParts" count="4,20" tag="salvageHarvest" tool_category="Disassemble"/>
+				<drop event="Destroy" count="0"/>
+				<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+				<!-- Sorting -->
+				<property name="SortOrder1" value="A310"/>
+				<property name="SortOrder2" value="0000"/>
+				<property name="Group" value="Building,advBuilding"/>
+				<property name="Tags" value="door"/>
+				<property name="BlockTag" value="Door"/>
+				<property name="FilterTags" value="MC_building,SC_doors"/>
+			</block>	
+			<!--Bridge + bigdoor Powered-->			
+			<block name="metalReinforcedWoodBigDoors_PoweredBlockVariantHelper">
+				<property name="Extends" value="metalReinforcedWoodDrawBridgePowered"/>
+				<property name="CustomIcon" value="metalReinforcedWoodDrawBridge"/>
 				<property name="CreativeMode" value="Player"/>
-				<property name="DescriptionKey" value="metalFurnitureBlockVariantHelperDesc"/>
+				<property name="DescriptionKey" value="blockVariantHelperGroupDesc"/>
 				<property name="ItemTypeIcon" value="all_blocks"/>
 				<property name="SellableToTrader" value="false"/>
 				<property name="SelectAlternates" value="true" />
 				<property name="AllowAllRotations" value="true"/>
-				<property name="PlaceAltBlockValue" value="reinforcedExteriorHouseDoorWhite,reinforcedExteriorHouseDoorBrown"/>
+				<property name="Stacknumber" value="500"/>
+				<property name="PlaceAltBlockValue" value="metalReinforcedWoodDrawBridgePowered,doorWoodLargeGateHF_Powered"/>
 				<property name="Group" value="Decor/Miscellaneous"/>
 			</block>
 			<!--rolling special-->

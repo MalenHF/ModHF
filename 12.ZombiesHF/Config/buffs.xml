@@ -33,6 +33,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$varQuestCD" operation="subtract" value="@$MetabolismDuration"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".varQuestCDDysplay" operation="set" value="@$varQuestCD"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".varQuestCDDysplay" operation="divide" value="@$MetabolismDuration"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$varQuestCD,.varQuestCDDysplay"/>	
 			</effect_group>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffQuestCD">
@@ -389,25 +390,40 @@
 		</buff>
 
 		<!--Bosses True damage-->
-		<buff name="buffsirenhit" hidden="true">
-			<duration value="1"/>
+		<buff name="buffsirenhit" hidden="true" remove_on_death="false">			
 			<effect_group>
+				<requirement name="NotHasBuff" buff="god"/>
 				<requirement name="ProgressionLevel" progression_name="PBMH" operation="Equals" value="5"/>
 				<requirement name="NotHasBuff" buff="buffSurviveCD"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSurvive"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="set" value="1"/>
+				
 			</effect_group>
 			<effect_group>
-				<requirement name="NotHasBuff" buff="god"/>
+				<requirement name="NotHasBuff" buff="god"/>				
 				<requirement name="ProgressionLevel" progression_name="PBMH" operation="LTE" value="4"/>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="430"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="500"/>
 			</effect_group>
 			<effect_group>
 				<requirement name="NotHasBuff" buff="god"/>
 				<requirement name="HasBuff" buff="buffSurviveCD"/>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="430"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="500"/>
 			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfRespawn" action="AddBuff" buff="buffsirenhit2"/>
+				<triggered_effect trigger="onSelfRespawn" action="RemoveBuff" buff="buffsirenhit"/>
+			</effect_group>			
 		</buff>
+
+		<buff name="buffsirenhit2" hidden="true">
+			<duration value="1"/>
+			<effect_group>				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="500"/>
+			</effect_group>			
+		</buff>
+
+		
+
 		<buff name="buffbosshit" hidden="true">
 			<duration value="1"/>
 			<effect_group>
@@ -565,22 +581,22 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" range="25" buff="SirenPassiveC" target_tags="player">					<!-- Temporarily 15 to 25 -->
 					<requirement name="EntityTagCompare" target="other" tags="player"/>
 				</triggered_effect>
-				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.8,.4" duration="0,6">
+				<!-- <passive_effect name="WalkSpeed" operation="perc_subtract" value=".9,.5" duration="0,6">
 					<requirement name="EntityTagCompare" tags="player"/>
 				</passive_effect>
-				<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.8,.4" duration="0,4">
+				<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".9,.5" duration="0,4">
 					<requirement name="EntityTagCompare" tags="player"/>
 				</passive_effect>
-				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.8,.4" duration="0,4">
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".9,.5" duration="0,4">
 					<requirement name="EntityTagCompare" tags="player"/>
-				</passive_effect>
+				</passive_effect> -->
 				<!--
-				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" range="25" buff="SirenPassiveB">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" range="25" buff="SirenPassiveB" target_tags="player">
 					<requirement name="NotHasBuff" buff="god"/>
 					<requirement name="EntityTagCompare" target="other" tags="player"/>
 					<requirement name="NotHasBuff" target="other" buff="SirenPassiveC"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" range="35" buff="SirenPassiveA">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" range="35" buff="SirenPassiveA" target_tags="player">
 					<requirement name="NotHasBuff" buff="god"/>
 					<requirement name="EntityTagCompare" target="other" tags="player"/>
 					<requirement name="NotHasBuff" target="other" buff="SirenPassiveB"/>
@@ -594,9 +610,13 @@
 			<effect_group>
 				<requirement name="NotHasBuff" buff="god"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sirenstrong" play_in_head="true"/>
-				<triggered_effect trigger="onSelfBuffFinish" action="StopSound" sound="sirenstrong" />
-				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="SirenPassiveB"/>
-				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="SirenPassiveA"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="
+				"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="SirenPassiveA"/>			
+			</effect_group>
+			<effect_group>				
+				<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="sirenstrong" />
+				<triggered_effect trigger="onSelfBuffFinish" action="StopSound" sound="sirenstrong" />				
 			</effect_group>
 		</buff>
 
@@ -633,52 +653,43 @@
 			<duration value="1.8"/>
 			<effect_group>
 				<requirement name="NotHasBuff" buff="god"/>
-				<requirement name="NotHasBuff" buff="buffDark2SP"/>
-				<requirement name="EntityTagCompare" tags="player"/>
-				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.2" duration="0,7"/>
-				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.2" duration="0,7"/>
-				<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.2" duration="0,7"/>
-				<passive_effect name="JumpStrength" operation="perc_subtract" value="0.2" duration="0,7"/>
+				<requirement name="NotHasBuff" buff="buffDark2SP"/>								
+				<requirement name="EntityTagCompare" tags="player"/>				
 				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="bossSirenBehavior"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="2" fade="1" effect_name="FadeToBlack"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" effect_name="Drunk" fade="1"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="horde_spawn_warning" play_in_head="true"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfNoVehicle"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="horde_spawn_warning" play_in_head="true"/>
-
-
-				<!--
-				<requirement name="NotHasBuff" buff="god"/>
-				<requirement name="NotHasBuff" buff="buffDark2SP"/>
-				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.2" duration="0,7">
-					<requirement name="EntityTagCompare" tags="player"/>
-				</passive_effect>
-				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.2" duration="0,7">
-					<requirement name="EntityTagCompare" tags="player"/>
-				</passive_effect>
-				<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.2" duration="0,7">
-					<requirement name="EntityTagCompare" tags="player"/>
-				</passive_effect>
-				<passive_effect name="JumpStrength" operation="perc_subtract" value="0.2" duration="0,7">
-					<requirement name="EntityTagCompare" tags="player"/>
-				</passive_effect>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="2" fade="1" effect_name="FadeToBlack"/>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" effect_name="Drunk" fade="1"/>
-				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="horde_spawn_warning" play_in_head="true">
-					<requirement name="EntityTagCompare" tags="player"/>
-				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="horde_spawn_warning" play_in_head="true">
-					<requirement name="EntityTagCompare" tags="player"/>
-				</triggered_effect>
-				-->
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfNoVehicle"/>								
 			</effect_group>
 			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDark2">
+					<requirement name="HasBuff" buff="darkCD"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDark2">
+					<requirement name="HasBuff" buff="buffDark2SP"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="darkCD"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="horde_spawn_warning" play_in_head="true"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="FadeToBlack"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" effect_name="Drunk" fade="1"/>
 				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="FadeToBlack"/>
 				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" intensity="0" effect_name="Drunk" fade="1"/>
 			</effect_group>
+			<effect_group>
+				<requirement name="NotHasBuff" buff="god"/>				
+				<requirement name="EntityTagCompare" tags="player"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.3" duration="0,7"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.3" duration="0,7"/>
+				<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.3" duration="0,7"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value="0.3" duration="0,7"/>
+			</effect_group>
 		</buff>
+
+		<buff name="darkCD" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="2.5"/>			
+		</buff>
+
 
 		<buff name="buffSpartan" hidden="false" icon="ui_game_symbol_deep_cuts" icon_color="163,16,16">
 			<update_rate value="4.5"/>
@@ -693,15 +704,13 @@
 			<effect_group>
 				<requirement name="EntityTagCompare" tags="player,zombies"/>
 				<requirement name="NotHasBuff" buff="god"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_add" value="1" tags="melee"/>
 				<passive_effect name="EntityDamage" operation="perc_add" value="15">
 					<requirement name="HoldingItemHasTags" tags="melee"/>
-				</passive_effect>
+				</passive_effect>				
 				<passive_effect name="StaminaLoss" operation="perc_add" value="-0.9">
 					<requirement name="HoldingItemHasTags" tags="melee"/>
-				</passive_effect>
-				<passive_effect name="EntityDamage" operation="perc_add" value="-200">
-					<requirement name="HoldingItemHasTags" tags="ranged"/>
-				</passive_effect>
+				</passive_effect>				
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfNoVehicle"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="horde_spawn_warning" play_in_head="true"/>
 			</effect_group>
@@ -721,6 +730,9 @@
 			<duration value="3"/>
 			<update_rate value="1.5"/>
 			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDark2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDark2SP"/>
+
 				<requirement name="NotHasBuff" buff="god"/>
 				<requirement name="NotHasBuff" buff="buffDark2"/>
 				<requirement name="NotHasBuff" buff="buffDark2SP"/>
@@ -865,26 +877,66 @@
 			<duration value="1.9"/>
 			<effect_group>
 				<requirement name="EntityTagCompare" tags="player"/>
-				<requirement name="NotHasBuff" buff="god"/>
-				<requirement name="NotHasBuff" buff="buffDark2"/>
+				<requirement name="NotHasBuff" buff="god"/>	
+				<requirement name="NotHasBuff" buff="buffDark2"/>				
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffchaleDuration" operation="set" value="0"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfNoVehicle"/>
-				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.2" duration="0,7"/>
-				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.2" duration="0,7"/>
-				<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.2" duration="0,7"/>
-				<passive_effect name="JumpStrength" operation="perc_subtract" value="0.2" duration="0,7"/>
-
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.3" duration="0,7"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.3" duration="0,7"/>
+				<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.3" duration="0,7"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value="0.3" duration="0,7"/>
 				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="bossSirenBehavior"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="2" fade="1" effect_name="FadeToBlack"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" effect_name="Drunk" fade="1"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="horde_spawn_warning" play_in_head="true"/>
-
 			</effect_group>
 			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDark2SP">
+					<requirement name="HasBuff" buff="darkCD"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDark2SP">
+					<requirement name="HasBuff" buff="darkCD"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="horde_spawn_warning" play_in_head="true"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="FadeToBlack"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" effect_name="Drunk" fade="1"/>
 				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="FadeToBlack"/>
 				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" intensity="0" effect_name="Drunk" fade="1"/>
+			</effect_group>
+		</buff>
+		<buff name="buffDark2SP" hidden="false" name_key="DIE" tooltip_key="DIE" icon="ui_game_symbol_near_death_trauma" icon_color="0,0,0">
+			<stack_type value="ignore"/>
+			<duration value="1.8"/>
+			<effect_group>
+				<requirement name="NotHasBuff" buff="god"/>							
+				<requirement name="EntityTagCompare" tags="player"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="bossSirenBehavior"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="2" fade="1" effect_name="FadeToBlack"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" effect_name="Drunk" fade="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="horde_spawn_warning" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfNoVehicle"/>								
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDark2SP">
+					<requirement name="HasBuff" buff="darkCD"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDark2SP">
+					<requirement name="HasBuff" buff="buffDark2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="darkCD"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="horde_spawn_warning" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="FadeToBlack"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" effect_name="Drunk" fade="1"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="FadeToBlack"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" intensity="0" effect_name="Drunk" fade="1"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="NotHasBuff" buff="god"/>				
+				<requirement name="EntityTagCompare" tags="player"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.3" duration="0,7"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.3" duration="0,7"/>
+				<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.3" duration="0,7"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value="0.3" duration="0,7"/>
 			</effect_group>
 		</buff>
 
@@ -1529,8 +1581,11 @@
 			<duration value="1"/>
 			<effect_group>
 				<requirement name="NotHasBuff" buff="god"/>
-				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sirenweak" play_in_head="true"/>
-				<triggered_effect trigger="onSelfBuffFinish" action="StopSound" sound="sirenweak"/>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sirenweak" play_in_head="true"/>				
+			</effect_group>
+			<effect_group>				
+				<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="sirenweak" />
+				<triggered_effect trigger="onSelfBuffFinish" action="StopSound" sound="sirenweak" />				
 			</effect_group>
 		</buff>
 		<buff name="SirenPassiveB" hidden="true">
@@ -1538,9 +1593,12 @@
 			<duration value="1"/>
 			<effect_group>
 				<requirement name="NotHasBuff" buff="god"/>
-				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sirenmed" play_in_head="true"/>
-				<triggered_effect trigger="onSelfBuffFinish" action="StopSound" sound="sirenmed"/>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sirenmed" play_in_head="true"/>				
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="SirenPassiveA"/>
+			</effect_group>
+			<effect_group>				
+				<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="sirenmed" />
+				<triggered_effect trigger="onSelfBuffFinish" action="StopSound" sound="sirenmed" />				
 			</effect_group>
 		</buff>
 		<buff name="JuggernautDeco" hidden="true">
@@ -3373,47 +3431,56 @@
 			<stack_type value="replace"/>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffInfExplo"/>	
-				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffAOEBossInf2"/>								
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffAOEBossInf2"/>	
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_onFire"/>	
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_onFire"/>						
 			</effect_group>
 			<effect_group>
 				<requirement name="NotHasBuff" buff="god"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfNoVehicle"/>
 				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="hfNoVehicle"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,0,0" parent_transform="LOD0" shape_mesh="true"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_onFire"/>
-				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_onFire"/>
-
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,0,0" parent_transform="LOD0" shape_mesh="true"/>
+				 -->
 				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1"/>
 				<passive_effect name="WaterChangeOT" operation="base_subtract" value="0.5"/>								
 			</effect_group>
 			<effect_group>
-				<requirements compare_type="or">
-					<requirement name="CVarCompare" cvar="$buffBurningInfernal" operation="Equals" value="5"/>
+				<!-- <requirements compare_type="or">					
 					<requirement name="CVarCompare" cvar="$buffBurningInfernal" operation="Equals" value="10"/>
 					<requirement name="CVarCompare" cvar="$buffBurningInfernal" operation="Equals" value="15"/>
-				</requirements>
+				</requirements>	
+								 -->
+				<requirement name="NotHasBuff" buff="god"/>
+				<requirement name="CVarCompare" cvar="$buffBurningInfernal" operation="Equals" value="15"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,0,0" parent_transform="LOD0" shape_mesh="true"/>
+		
 			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$buffBurningInfernal" operation="Equals" value="10"/>				
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="p_onFire"/>	
+			</effect_group>
+
+
+
 		</buff>	
 		<buff name="buffAOEBossInf2" hidden="false" icon="ui_game_symbol_fire" icon_color="0,0,0">							
 			<stack_type value="ignore"/>
 			<display_value value="$buffBurningInfernal"/>
 			<effect_group>
+				<requirement name="NotHasBuff" buff="god"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffBurningInfernal" operation="set" value="15"/>				
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="horde_spawn_warning" play_in_head="true"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffBurningInfernal" operation="add" value="-1"/>
-
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffBurningInfernal" operation="set" value="15">
 					<requirement name="CVarCompare" cvar="$buffBurningInfernal" operation="Equals" value="0"/>	
-				</triggered_effect>		
-
+				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffInfExplo">
 					<requirement name="NotHasBuff" buff="buffAOEBossInf"/>
 				</triggered_effect>
-
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffBurningInfernal" operation="set" value="-1"/>				
 				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffInfExplo"/>				
-				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffInfExplo"/>						
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffInfExplo"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$buffBurningInfernal"/>				
 			</effect_group>
 		</buff>	
 		<buff name="buffInfExplo" hidden="true" description_key="infernalcalldesc" name_key="infernalnamecall" tooltip_key="infernalcall" icon="ui_game_symbol_fire" icon_color="0,0,0">
@@ -3421,6 +3488,7 @@
 			<stack_type value="ignore"/>
 			<effect_group>				
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffBurningInfernal" operation="set" value="15"/> -->
+				<requirement name="NotHasBuff" buff="god"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="horde_spawn_warning"/>				
 				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" target="self" event="BossInfernalExplosion"/>	
 			</effect_group>
@@ -3531,9 +3599,10 @@
 
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sirenstrong" play_in_head="true"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="sirenstrong" play_in_head="true"/>
-				<triggered_effect trigger="onSelfBuffFinish" action="StopSound" sound="sirenstrong" />
+				
 			</effect_group>
-			<effect_group>
+			<effect_group>				
+				<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="sirenstrong" />
 				<triggered_effect trigger="onSelfBuffFinish" action="StopSound" sound="sirenstrong" />
 			</effect_group>
 			

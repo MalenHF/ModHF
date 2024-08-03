@@ -106,10 +106,14 @@
 			<recipe name="platinumMould" count="1" craft_time="30" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr1">
 				<ingredient name="resourceForgedSteel" count="1000"/>
 				<ingredient name="resourceForgedIron" count="2000"/>
-				<ingredient name="casinoCoinD" count="5"/>
+				<ingredient name="casinoCoinD" count="3"/>
 			</recipe>
-			<recipe name="ResourceForgedPlatinum" count="1" craft_time="1" material_based="true" craft_area="forgeHF">			<!--tags="perkAdvancedEngineering" craft_tool="toolAndDieSetHF"-->
+			<recipe name="ResourceForgedPlatinum" count="1" craft_time="1" craft_area="legenstation">			<!--tags="perkAdvancedEngineering" craft_tool="toolAndDieSetHF"-->
 				<ingredient name="platinumMould" count="1"/>
+				<ingredient name="resourceLegenAlloy" count="1"/>
+				<ingredient name="drinkJarBoiledWater" count="100"/>
+			</recipe>
+			<recipe name="resourceLegenAlloy" count="1" craft_time="1" material_based="true" craft_area="forgeHF">			<!--tags="perkAdvancedEngineering" craft_tool="toolAndDieSetHF"-->
 				<ingredient name="unit_silver" count="4500"/>
 				<ingredient name="unit_gold" count="6000"/>
 				<ingredient name="unit_diamon" count="6000"/>
@@ -131,12 +135,20 @@
 			<recipe name="practoniumMould" count="1" craft_time="30" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr1">
 				<ingredient name="resourceForgedSteel" count="100"/>
 				<ingredient name="resourceForgedIron" count="200"/>
-				<ingredient name="casinoCoinD" count="4"/>
+				<ingredient name="casinoCoinD" count="2"/>
 			</recipe>
-			<recipe name="ResourceForgedPractonium" count="1" craft_time="1" material_based="true" craft_area="forgeHF">			<!--tags="perkAdvancedEngineering" craft_tool="toolAndDieSetHF"-->
-				<ingredient name="practoniumMould" count="1"/>
+			<recipe name="resourcePractoAlloy" count="1" craft_time="1" material_based="true" craft_area="forgeHF">			<!--tags="perkAdvancedEngineering" craft_tool="toolAndDieSetHF"-->
 				<ingredient name="unit_practo" count="2500"/>
 			</recipe>
+			<recipe name="ResourceForgedPractonium" count="1" craft_time="1" craft_area="legenstation">			<!--tags="perkAdvancedEngineering" craft_tool="toolAndDieSetHF"-->
+				<ingredient name="practoniumMould" count="1"/>
+				<ingredient name="resourcePractoAlloy" count="1"/>
+				<ingredient name="drinkJarBoiledWater" count="100"/>
+			</recipe>
+
+
+
+
 
 			<recipe name="mithril" count="1" craft_time="180" material_based="true" craft_area="forgeHF" tags="learnable,PLHr1">
 				<ingredient name="unit_silver" count="900"/>
@@ -286,7 +298,7 @@
 				<ingredient name="ammoGasCan" count="100000"/>
 				<ingredient name="PLMTec" count="1"/>
 				<ingredient name="resourceForgedSteel" count="10000"/>
-				<ingredient name="casinoCoinD" count="10"/>
+				<ingredient name="casinoCoinD" count="6"/>
 			</recipe>
 			<recipe name="SPOGyroPlaceable" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr1">
 				<ingredient name="vehicleGyrocopterPlaceable" count="1"/>
@@ -294,7 +306,7 @@
 				<ingredient name="PAMTec1" count="1"/>
 				<ingredient name="PAMTec2" count="1"/>
 				<ingredient name="resourceForgedSteel" count="15000"/>
-				<ingredient name="casinoCoinD" count="15"/>
+				<ingredient name="casinoCoinD" count="9"/>
 			</recipe>
 			<recipe name="SPO4x4Placeable" count="1" craft_area="legenstation" craft_time="60" tags="learnable,workbenchCrafting,PLHr3">
 				<ingredient name="vehicleTruck4x4Placeable" count="1"/>
@@ -302,7 +314,7 @@
 				<ingredient name="ammoGasCan" count="200000"/>
 				<ingredient name="vehiclesSkillMagazine" count="100"/>
 				<ingredient name="resourceForgedSteel" count="15000"/>
-				<ingredient name="casinoCoinD" count="15"/>
+				<ingredient name="casinoCoinD" count="9"/>
 			</recipe>
 			<recipe name="SPOmotoPlaceable" count="1" craft_area="legenstation" craft_time="10" tags="workbenchCrafting">
 				<ingredient name="SPOmotoPlaceable" count="1"/>
@@ -324,7 +336,7 @@
 				<ingredient name="ammoGasCan" count="200000"/>
 				<ingredient name="vehiclesSkillMagazine" count="100"/>
 				<ingredient name="resourceForgedSteel" count="10000"/>
-				<ingredient name="casinoCoinD" count="10"/>
+				<ingredient name="casinoCoinD" count="6"/>
 			</recipe>
 			<recipe name="Betsy2Placeable" count="1" craft_area="legenstation" craft_time="60" tags="learnable,workbenchCrafting">
 				<ingredient name="SPOmotoPlaceable" count="1"/>
@@ -332,7 +344,7 @@
 				<ingredient name="ammoGasCan" count="200000"/>
 				<ingredient name="vehiclesSkillMagazine" count="100"/>
 				<ingredient name="resourceForgedSteel" count="10000"/>
-				<ingredient name="casinoCoinD" count="10"/>
+				<ingredient name="casinoCoinD" count="6"/>
 			</recipe>
 
 			<recipe name="BetsyPlaceable" count="1" craft_area="legenstation" craft_time="5" tags="workbenchCrafting">
@@ -358,14 +370,14 @@
 				<ingredient name="modArmorPlatingBasic" count="1"/>
 				<ingredient name="modArmorPlatingReinforced" count="1"/>
 				<ingredient name="resourceDuctTape" count="50"/>
-				<ingredient name="casinoCoin" count="5000"/>
+				<ingredient name="casinoCoin" count="3000"/>
 			</recipe>
 			<recipe name="modUNArmorCust" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr1">
 				<ingredient name="LSTPR" count="1"/>
 				<ingredient name="modArmorImprovedFittings" count="1"/>
 				<ingredient name="modArmorCustomizedFittings" count="1"/>
 				<ingredient name="resourceDuctTape" count="50"/>
-				<ingredient name="casinoCoin" count="5000"/>
+				<ingredient name="casinoCoin" count="3000"/>
 			</recipe>
 			<recipe name="modArmorCursed" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr1">
 				<ingredient name="Practonium" count="10"/>
@@ -373,7 +385,7 @@
 				<ingredient name="modArmorCoolingMesh" count="1"/>
 				<ingredient name="modArmorInsulatedLiner" count="1"/>
 				<ingredient name="resourceForgedIron" count="500"/>
-				<ingredient name="casinoCoin" count="10000"/>
+				<ingredient name="casinoCoin" count="6000"/>
 			</recipe>
 			<recipe name="Cursed_mod" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr3">
 				<ingredient name="modCursedStone" count="1"/>
@@ -980,7 +992,7 @@
 				<ingredient name="legendToolT2_Barrena" count="1"/>
 				<ingredient name="legendToolT2_Motosierra" count="1"/>
 				<ingredient name="legendToolT2_Nailgun" count="1"/>
-				<ingredient name="casinoCoinD" count="20"/>
+				<ingredient name="casinoCoinD" count="12"/>
 			</recipe>
 		<!---->
 		<!--Weapons T1-->
@@ -1083,7 +1095,7 @@
 				<ingredient name="modGunMeleeBlessedMetal" count="1"/>
 				<ingredient name="SMG5_Legendaria" count="1"/>
 				<ingredient name="gunHandgunT1PistolParts" count="400"/>
-				<ingredient name="casinoCoinD" count="10"/>				
+				<ingredient name="casinoCoinD" count="6"/>				
 			</recipe>
 			<recipe name="mitico_Peacemaker" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr3,LCLvl">
 				<ingredient name="bookMaestroRev" count="1"/>
@@ -1091,7 +1103,7 @@
 				<ingredient name="modGunMeleeBlessedMetal" count="1"/>
 				<ingredient name="Magnum44_Legendaria" count="1"/>
 				<ingredient name="gunHandgunT1PistolParts" count="400"/>
-				<ingredient name="casinoCoinD" count="10"/>
+				<ingredient name="casinoCoinD" count="6"/>
 				
 			</recipe>
 			<recipe name="mitico_Destroyer" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr3,LCLvl">
@@ -1100,7 +1112,7 @@
 				<ingredient name="modGunMeleeBlessedMetal" count="1"/>
 				<ingredient name="Escopeta_Legendaria" count="1"/>
 				<ingredient name="gunShotgunT1DoubleBarrelParts" count="400"/>
-				<ingredient name="casinoCoinD" count="10"/>
+				<ingredient name="casinoCoinD" count="6"/>
 			</recipe>
 			<recipe name="mitico_OneShot" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr3,LCLvl">
 				<ingredient name="bookMaestroAuto" count="1"/>
@@ -1108,7 +1120,7 @@
 				<ingredient name="modGunMeleeBlessedMetal" count="1"/>
 				<ingredient name="Francotirador_Legendario" count="1"/>
 				<ingredient name="gunRifleT1HuntingRifleParts" count="400"/>
-				<ingredient name="casinoCoinD" count="10"/>
+				<ingredient name="casinoCoinD" count="6"/>
 			</recipe>
 			<recipe name="mitico_Dominator" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr3,LCLvl">
 				<ingredient name="bookMaestroSnip" count="1"/>
@@ -1116,7 +1128,7 @@
 				<ingredient name="modGunMeleeBlessedMetal" count="1"/>
 				<ingredient name="ARTactico_Legendario" count="1"/>
 				<ingredient name="gunMGT1AK47Parts" count="400"/>
-				<ingredient name="casinoCoinD" count="10"/>
+				<ingredient name="casinoCoinD" count="6"/>
 			</recipe>
 			<recipe name="mitico_Ballesta" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr3,LCLvl">
 				<ingredient name="bookMaestroHunt" count="1"/>
@@ -1124,7 +1136,7 @@
 				<ingredient name="modGunMeleeBlessedMetal" count="1"/>
 				<ingredient name="legend_T2Ballesta" count="1"/>
 				<ingredient name="gunBowT1WoodenBowParts" count="400"/>
-				<ingredient name="casinoCoinD" count="10"/>
+				<ingredient name="casinoCoinD" count="6"/>
 			</recipe>
 		<!---->
 		<!--UNIQUE-->
@@ -1849,6 +1861,8 @@
 
 		<!---->
 	</append>
+
+	<set xpath="/recipes/recipe[@craft_area='forge']/@is_trackable">true</set>
 	<!--<set xpath="/recipes/recipe[@name='woodBarsCentered']/@name">woodBarsVariantHelper</set>
 	<set xpath="/recipes/recipe[@name='ironBarsCentered']/@name">ironBarsVariantHelper</set>-->
 

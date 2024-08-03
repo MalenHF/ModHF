@@ -10,6 +10,9 @@
 		<property name="Texture" value="315"/>
 		<property name="UiBackgroundTexture" value="315"/>
 	</append>	
+	<append xpath="/blocks/block[@name='cntWoodWritableCrate']">
+		<property name="SellableToTrader" value="false"/>
+	</append>	
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Change cars damage type ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ 
@@ -25,6 +28,11 @@
 	<append xpath="/blocks/block[starts-with(@name, 'rollUpDoor')]">
 		<property name="OnlySimpleRotations" value="false"/>
 	</append>
+	<append xpath="/blocks/block[starts-with(@name, 'rollUpDoor')]">
+		<property name="OnlySimpleRotations" value="false"/>
+	</append>
+
+	
 
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
@@ -125,7 +133,9 @@
 				<property name="ItemTypeIcon" value="star"/>
 				<property name="CustomIcon" value="cntHardenedChestSecureT5"/>
 				<property name="CustomIconTint" value="292726"/>
-				
+
+				<property name="CustomIconTint" value="FFFF00"/>				
+				<property name="TintColor" value="FFFF00"/>
 				<property name="Tags" value="workbench,noblocks"/>
 				<property name="UnlockedBy" value="perkAdvancedEngineering"/>
 				<property name="MultiBlockDim" value="2,1,1"/>
@@ -133,8 +143,11 @@
 				<property name="MaxDamage" value="1000"/>
 
 				<property name="Shape" value="ModelEntity"/>
+				
 				<property name="Model" value="@:Entities/LootContainers/tier5LootChestPrefab.prefab"/>
-
+				<property name="Model" value="Entities/Crafting/woodWorkBenchPrefab"/>
+				<property name="Model" value="@:Entities/LootContainers/deskMetalFullPrefab.prefab"/>								
+				
 				<property name="Class" value="Workstation"/>
 				<property name="Material" value="Mmetal"/>
 				<property name="StabilitySupport" value="true"/>
@@ -181,8 +194,7 @@
 				<property name="Group" value="Tools/Traps"/>
 				<property name="Material" value="Mstone_scrap"/>
 				<property name="CustomIcon" value="cntWoodBurningStove" />
-				<property name="CustomIconTint" value="231E1E"/>
-				<property name="TintColor" value="231E1E"/>
+				
 				<property name="ItemTypeIcon" value="star"/>
 				<property name="Tags" value="noblocks"/>
 				<property name="MaxDamage" value="4000"/>
@@ -192,6 +204,8 @@
 				<property name="Path" value="solid"/>
 				<!--<property name="Model" value="Entities/Crafting/forgeWorkstationPrefab"/>-->
 				<property name="Model" value="Entities/Furniture/woodBurningStovePrefab"/>
+				<property name="CustomIconTint" value="231E1E"/>
+				<property name="TintColor" value="000000"/>
 				<property name="Place" value="TowardsPlacerInverted"/>
 				<property name="OnlySimpleRotations" value="true"/>
 				<property name="IsTerrainDecoration" value="true"/>
@@ -244,6 +258,7 @@
 				<property name="CreativeMode" value="Player"/>
 				<property name="Class" value="BladeTrap"/>
 				<property name="UnlockedBy" value="PBMT"/>
+				<property name="TintColor" value="000000"/>
 				<property name="Material" value="Mmetal_hard"/>
 				<property name="Damage" value="200"/>
 				<property name="DamageReceived" value="1"/>
@@ -335,6 +350,8 @@
 				<property name="MaxDamage" value="1000"/>				
 				<property name="Texture" value="62"/>
 				<property name="Shape" value="ModelEntity"/>
+				<property name="ImposterExchange" value="imposterBlock" param1="161"/>
+			
 				<property name="Model" value="Entities/traps/ironSpikesTrapPrefab"/>
 				<property name="WaterFlow" value="permitted"/>
 				<property name="IsTerrainDecoration" value="false"/>
@@ -1361,5 +1378,6 @@
 			</block>			
 		//////////////////END//////////////////
 		-->
+		
 	<!--▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼-->
 </MalenEI>
