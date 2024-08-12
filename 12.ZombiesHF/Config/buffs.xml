@@ -3999,7 +3999,7 @@
 		</buff>
 
 		<buff name="buffRainbowZom" hidden="true">
-			<update_rate value="6"/>
+			<update_rate value="10"/>
 			<effect_group>				
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="spidersense"/>				
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" range="20" buff="buffRainbow" target_tags="player"/>
@@ -4009,7 +4009,7 @@
 		<buff name="buffRainbow" hidden="false" description_key="buffRainDesc" name_key="buffRainName" tooltip_key="buffRainTool" icon="ui_game_symbol_twitch_vision_effects" icon_color="255,175,175">
 			<stack_type value="replace"/>
 
-			<duration value="10"/>
+			<duration value="11"/>
 			<effect_group>
 				<requirement name="NotHasBuff" buff="god"/>
 				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="action_changedirection" />

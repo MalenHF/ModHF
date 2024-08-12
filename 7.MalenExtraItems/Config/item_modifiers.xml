@@ -47,11 +47,14 @@
       <property name="Stacknumber" value="1"/>
       <property name="DescriptionKey" value="modArmorCursedDesc"/>      
       <property name="Group" value="Mods"/>
+      <property name="Candrop" value="false"/>
+			<property name="ShowQuality" value="false"/>
       <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
       <effect_group tiered="false">
         <display_value name="dPlayerExpGain" value=".05"/>
         <passive_effect name="PlayerExpGain" operation="perc_add" value=".05"/>
         <passive_effect name="PhysicalDamageResist" operation="base_add" value="-3"/>
+        <passive_effect name="ElementalDamageResist" operation="base_add" value="-3" tags="heat,electrical"/>        
       </effect_group>
       <effect_group tiered="false">
         <requirement name="HasBuff" buff="PPBF"/>
@@ -246,34 +249,18 @@
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ --> 
 
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Extra Slots ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-    <item_modifier name="modExtra1" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
-      <property name="ItemTypeIcon" value="gear"/>
-      <!--<property name="DisplayType" value="modArmor"/>-->
-      <property name="CustomIcon" value="toolAndDieSet"/>
-      <property name="CustomIconTint" value="00AAE4"/>
-      <property name="UnlockedBy" value="special"/>
-      <property name="DescriptionKey" value="moddevinp"/>
-      <property name="Stacknumber" value="1"/>
-      <property name="Group" value="MSeries"/>
-      <property name="Candrop" value="false"/>
-      <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-      <effect_group tiered="false">
-        <requirement name="EntityTagCompare" target="other" tags="zombie"/>
-        <passive_effect name="EntityDamage" operation="perc_add" value="1.1"/>
+    <item_modifier name="modUniqueBlockDamage" installable_tags="weapon,tool" blocked_tags="noMods" type="attachment">
+      <property name="Extends" value="modGeneralMaster"/>
+      <property name="CustomIcon" value="resourceRawDiamond"/>
+      <property name="CustomIconTint" value="8000FF"/>
+			<property name="TintColor" value="8000FF"/>
+      <property name="UnlockedBy" value="PBMT"/>
+      <property name="Group" value="Lmats"/>
+      <!--Do double damage to evil / undead-->
+      <effect_group tiered="false">        
+        <passive_effect name="BlockDamage" operation="base_set" value="-1"/>
+        <passive_effect name="BlockDamage" operation="perc_add" value="-1"/>
       </effect_group>
-      <effect_group tiered="false">
-        <requirement name="EntityTagCompare" target="other" tags="player,animal"/>
-        <passive_effect name="EntityDamage" operation="perc_add" value="1.1"/>
-      </effect_group>
-      <effect_group tiered="false">
-        <requirement name="EntityTagCompare" target="other" tags="radiated"/>
-        <triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
-      </effect_group>
-      <effect_group tiered="false">
-        <requirement name="EntityTagCompare" target="other" tags="bossrad"/>
-        <triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
-      </effect_group>
-
     </item_modifier>
     <item_modifier name="modExtra2" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
       <property name="ItemTypeIcon" value="gear"/>

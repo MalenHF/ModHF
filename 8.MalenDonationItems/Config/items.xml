@@ -56,7 +56,7 @@
 				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
 				<passive_effect name="ModSlots" operation="base_set" value="0"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1.3" tags="oreWoodHarvest"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-10" tags="wood"/>
 				<passive_effect name="PlayerExpGain" operation="base_set" value="30" tags="Harvesting"/>
 
@@ -83,6 +83,7 @@
 				<passive_effect name="BlockDamage" operation="base_set" value="300"/>
 				<passive_effect name="AttacksPerMinute" operation="base_set" value="100"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" value=".25" tags="lumberjackHarvest"/>
 				<passive_effect name="MaxRange" operation="base_set" value="5"/>
 				<passive_effect name="BlockRange" operation="base_set" value="5"/>
 				<passive_effect name="StaminaLoss" operation="base_set" value="8" tags="primary"/>
@@ -95,8 +96,8 @@
 			</effect_group>
 		</item>
 		<item name="donacion_DestornilladorDeImpacto">
-			<property name="Extends" value="meleeToolSalvageT3ImpactDriver"/>
-				<property name="CustomIcon" value="meleeToolSalvageT3ImpactDriver"/>
+			<property name="Extends" value="meleeToolSalvageT2Ratchet"/>
+				<property name="CustomIcon" value="meleeToolSalvageT2Ratchet"/>
 				<property name="CustomIconTint" value="255,255,0"/>
 				<property name="TintColor" value="255,255,0"/>
 				<property name="EconomicValue" value="1500"/>
@@ -115,18 +116,18 @@
 				<passive_effect name="EntityDamage" operation="base_set" value="1"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="1250"/>
 				<passive_effect name="PlayerExpGain" operation="base_set" value="30" tags="Harvesting"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="2" tags="salvageHarvest"/>
-
+				<passive_effect name="HarvestCount" operation="base_set" value="1.5" tags="salvageHarvest"/>
 				<passive_effect name="MaxRange" operation="base_set" value="10"/>
 				<passive_effect name="BlockRange" operation="base_set" value="10"/>
 				<passive_effect name="StaminaLoss" operation="base_set" value="1" tags="primary"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
 				<passive_effect name="ModSlots" operation="base_set" value="0"/>
-				<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="wood"/>
-				<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="earth"/>
-				<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.99" tags="wood"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.99" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.99" tags="stone"/>
 				<passive_effect name="StaminaLoss" operation="base_set" value="1" tags="primary"/>
+				<display_value name="dHarvestSalvage" value="1.5"/>
 			</effect_group>
 		</item>	
 		<item name="donacion_Nailgun">
@@ -195,23 +196,23 @@
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
 				<passive_effect name="ModSlots" operation="base_set" value="1"/>
 				<passive_effect name="BurstRoundCount" operation="base_set" value="1000" tags="perkMiner69r"/>
-				<display_value name="dPlayerExpGain" value=".25"/>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value=".25"/>
+				<display_value name="dPlayerExpGain" value=".4"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".4"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="3" tags="Upgrading"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="3" tags="Repairing"/>
 
 			</effect_group>
 			<effect_group>
 				<requirement name="HasBuff" buff="PPBF"/>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.125"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.2"/>
 			</effect_group>
 			<effect_group>
 				<requirement name="HasBuff" buff="PPBF2"/>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1875"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.3"/>
 			</effect_group>
 			<effect_group>
 				<requirement name="HasBuff" buff="PPBF3"/>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1875"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.3"/>
 			</effect_group>
 		</item>
 		<item name="donacion_Barrena">
@@ -287,7 +288,7 @@
 				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".35" tags="perkMiner69r"/>
 				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1" tags="perkMiner69r"/>
 				<passive_effect name="WeaponHandling" operation="base_set" value="6" tags="perkMiner69r"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1.2" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1.5" tags="oreWoodHarvest"/>
 			</effect_group>
 		</item>
 		<item name="donacion_Motosierra">
@@ -364,6 +365,7 @@
 				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1" tags="perkMiner69r"/>
 				<passive_effect name="WeaponHandling" operation="base_set" value="6" tags="perkMiner69r"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1.2" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" value=".5" tags="lumberjackHarvest"/>
 			</effect_group>
 		</item>		
 		<item name="donacion_Martillo_Divino">
@@ -378,12 +380,24 @@
 				<passive_effect name="BlockRange" operation="base_set" value="20"/>
 				<passive_effect name="StaminaLoss" operation="base_set" value="1" tags="primary"/>
 				<passive_effect name="PlayerExpGain" operation="base_set" value="10" tags="Harvesting"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1.5" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="2" tags="oreWoodHarvest"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
 				<passive_effect name="ModSlots" operation="base_set" value="0"/>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value=".25" />					
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".5" />					
 				<display_value name="dBlockRepairAmount" value="7000"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="HasBuff" buff="PPBF"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.25"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="HasBuff" buff="PPBF2"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="HasBuff" buff="PPBF3"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375"/>
 			</effect_group>
 		</item>
 

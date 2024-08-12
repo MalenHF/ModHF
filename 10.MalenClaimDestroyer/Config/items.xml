@@ -48,32 +48,28 @@
         <property name="Allowed_upgrade_items" value="CD,resourceWood,resourceClayLump,resourceSnowBall,resourceScrapIron,resourceForgedIron,resourceForgedSteel,resourceConcreteMix,resourceCobblestones,ironDoor1_v1,vaultDoor01,scrapHatch_v1,vaultHatch_v1,resourceYuccaFibers,resourceCloth,resourceScrapPolymers,resourceNail"/>
         <property name="UsePowerAttackAnimation" value="false"/>
       </property>
+    <effect_group name="CDSwitch">					
+          <triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$nailCDBD" operation="set" value="0"/>					
+          <triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nailCDBD" operation="set" value="50000">
+            <requirement name="CVarCompare" cvar="$nailCDBD" operation="Equals" value="0"/>
+          </triggered_effect>					
+          <triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nailCDAD" operation="set" value="1">
+            <requirement name="CVarCompare" cvar="$nailCDBD" operation="Equals" value="0"/>
+          </triggered_effect>					
+          <triggered_effect trigger="onSelfItemActivate" action="PlaySound" sound="ItemNeedsRepair">
+            <requirement name="CVarCompare" cvar="$nailCDBD" operation="Equals" value="50000"/>
+          </triggered_effect>
+          <triggered_effect trigger="onSelfItemActivate" action="ModifyCVar" cvar="$nailCDBD" operation="set" value="1"/>
+          <triggered_effect trigger="onSelfItemActivate" action="ModifyCVar" cvar="$nailCDAD" operation="set" value="99999"/>
+          <triggered_effect trigger="onSelfItemActivate" action="ModifyCVar" cvar="$nailCDRayC" operation="set" value="8"/>
 
-      <effect_group name="CDSwitch">
-        <triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$nailCDBD" operation="set" value="0"/>
-        <triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nailCDBD" operation="set" value="50000">
-          <requirement name="CVarCompare" cvar="$nailCDBD" operation="Equals" value="0"/>
-        </triggered_effect>
-        <triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nailCDAD" operation="set" value="1">
-          <requirement name="CVarCompare" cvar="$nailCDBD" operation="Equals" value="0"/>
-        </triggered_effect> 
-
-        <triggered_effect trigger="onSelfItemActivate" action="PlaySound" sound="ItemNeedsRepair">
-          <requirement name="CVarCompare" cvar="$nailCDBD" operation="Equals" value="50000"/>
-        </triggered_effect>
-        <triggered_effect trigger="onSelfItemActivate" action="ModifyCVar" cvar="$nailCDBD" operation="set" value="1"/>
-        <triggered_effect trigger="onSelfItemActivate" action="ModifyCVar" cvar="$nailCDAD" operation="set" value="99999"/>
-        <triggered_effect trigger="onSelfItemActivate" action="ModifyCVar" cvar="$nailCDRayC" operation="set" value="8"/>
-        
-        <triggered_effect trigger="onSelfItemDeactivate" action="PlaySound" sound="ItemNeedsRepair">
+         <triggered_effect trigger="onSelfItemDeactivate" action="PlaySound" sound="ItemNeedsRepair">
           <requirement name="CVarCompare" cvar="$nailCDBD" operation="Equals" value="1"/>
         </triggered_effect>
-        <triggered_effect trigger="onSelfItemDeactivate" action="ModifyCVar" cvar="$nailCDBD" operation="set" value="50000"/>
-        <triggered_effect trigger="onSelfItemDeactivate" action="ModifyCVar" cvar="$nailCDAD" operation="set" value="1"/>
-        <triggered_effect trigger="onSelfItemDeactivate" action="ModifyCVar" cvar="$nailCDRayC" operation="set" value="1"/>
-      <!-- ************************* -->
-      </effect_group>
-
+          <triggered_effect trigger="onSelfItemDeactivate" action="ModifyCVar" cvar="$nailCDBD" operation="set" value="50000"/>
+          <triggered_effect trigger="onSelfItemDeactivate" action="ModifyCVar" cvar="$nailCDAD" operation="set" value="1"/>
+					<triggered_effect trigger="onSelfItemDeactivate" action="ModifyCVar" cvar="$nailCDRayC" operation="set" value="1"/>
+			</effect_group>
       <effect_group tiered="false">
         <!--<passive_effect name="RoundRayCount" operation="base_set" value="8"/>-->
         <!--<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2"/>-->
