@@ -1135,7 +1135,6 @@
 					<passive_effect name="PlayerExpGain" operation="perc_add" value=".4"/>
 					<passive_effect name="PlayerExpGain" operation="perc_add" value="2" tags="Upgrading"/>
 					<passive_effect name="PlayerExpGain" operation="perc_add" value="2" tags="Repairing"/>
-					
 				</effect_group>
 				<effect_group>
 					<requirement name="HasBuff" buff="PPBF"/>
@@ -1206,7 +1205,7 @@
 				<effect_group name="meleeToolPickT3Auger">
 					<passive_effect name="EntityDamage" operation="base_set" value="10" tags="perkMiner69r"/>
 					<passive_effect name="BlockDamage" operation="base_set" value="250" tags="perkMiner69r,miningTool"/>
-					<passive_effect name="RoundsPerMinute" operation="base_set" value="250" tags="perkMiner69r"/>
+					<passive_effect name="RoundsPerMinute" operation="base_set" value="200" tags="perkMiner69r"/>
 					<passive_effect name="DegradationMax" operation="base_set" value="9999" tier="1,6" tags="admin"/>
 					<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkMiner69r"/>
 					<passive_effect name="MaxRange" operation="base_set" value="10" tags="perkMiner69r"/>
@@ -2118,12 +2117,13 @@
 					<passive_effect name="DamageFalloffRange" operation="base_set" value="35" tags="perkArchery"/>
 					<passive_effect name="DamageFalloffRange" operation="perc_add" value=".2" tags="perkArchery"/>
 					<passive_effect name="MaxRange" operation="base_set" value="100" tags="perkArchery"/>
-					<passive_effect name="MagazineSize" operation="base_set" value="4" tags="perkArchery"/>
-					<passive_effect name="BurstRoundCount" operation="base_set" value="2" tags="perkArchery"/>
-					<passive_effect name="EntityDamage" operation="base_add" value="60" tags="perkArchery">
+					<passive_effect name="MagazineSize" operation="base_set" value="2" tags="perkArchery"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkArchery"/>
+					<passive_effect name="RoundRayCount" operation="base_set" value="2"/>
+					<passive_effect name="EntityDamage" operation="base_add" value="80" tags="perkArchery">
 						<requirement name="PlayerLevel" operation="GT" value="99"/>
 					</passive_effect>
-					<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1" tags="perkArchery"/>
+					<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value=".6" tags="perkArchery"/>
 					<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15" tags="perkArchery"/>
 					<!--  random BlockDmg  -->
 					<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkArchery"/>
@@ -2189,7 +2189,7 @@
 					<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="Drum"/>
 				</effect_group>
 				<effect_group name="gunSMG5">					
-					<passive_effect name="EntityDamage" operation="base_add" value="72" tags="perkGunslinger,9mmGun">
+					<passive_effect name="EntityDamage" operation="base_add" value="90" tags="perkGunslinger,9mmGun">
 						<requirement name="PlayerLevel" operation="GT" value="149"/>
 					</passive_effect>
 					<passive_effect name="MaxRange" operation="base_set" value="80" tags="perkGunslinger,9mmGun"/>
@@ -2205,19 +2205,19 @@
 					<!--  random BlockDmg  -->
 					<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkGunslinger"/>
 					<!--  tier bonus  -->
-					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2" />
-					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="2" />
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1" />
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1" />
 					<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".1" />
 					<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".4" />
-					<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1" />
-					<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2" />
+					<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.2" />
+					<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="1.8" />
 					<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="0"/>
 					<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="0"/>
 					<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="0"/>
 					<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="0"/>
-					<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1.1" tags="perkGunslinger,9mmGun"/>
+					<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1.3" tags="perkGunslinger,9mmGun"/>
 					<passive_effect name="ModSlots" operation="base_set" value="5"/>
-					<passive_effect name="WeaponHandling" operation="perc_add" value=".09" tags="perkGunslinger"/>
+					<passive_effect name="WeaponHandling" operation="perc_add" value="1" tags="perkGunslinger"/>
 					<passive_effect name="WeaponHandling" operation="base_set" value="1" tags="perkGunslinger"/>
 					<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
 					<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
@@ -2445,12 +2445,12 @@
 					<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkMachineGunner"/>
 					<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" tags="perkMachineGunner"/>
 					<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.2" tags="perkMachineGunner"/>
-					<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="0" tags="perkMachineGunner"/>
-					<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="0" tags="perkMachineGunner"/>
-					<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="0" tags="perkMachineGunner"/>
-					<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="0" tags="perkMachineGunner"/>
-					<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1.5" tags="perkMachineGunner"/>
-					<passive_effect name="WeaponHandling" operation="perc_add" value=".08" tags="perkMachineGunner"/>
+					<passive_effect name="KickDegreesVerticalMin" operation="base_set" value=".1" tags="perkMachineGunner"/>
+					<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".2" tags="perkMachineGunner"/>
+					<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.1" tags="perkMachineGunner"/>
+					<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".1" tags="perkMachineGunner"/>
+					<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2" tags="perkMachineGunner"/>
+					<passive_effect name="WeaponHandling" operation="perc_add" value="1" tags="perkMachineGunner"/>
 					<passive_effect name="WeaponHandling" operation="base_set" value="1" tags="perkMachineGunner"/>
 					<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
 					<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
@@ -2530,17 +2530,18 @@
 					</passive_effect>
 					<passive_effect name="DamageFalloffRange" operation="perc_add" value=".2" tags="perkArchery"/>
 					<passive_effect name="MaxRange" operation="base_set" value="100" tags="perkArchery"/>
-					<passive_effect name="MagazineSize" operation="base_set" value="10" tags="perkArchery"/>
-					<passive_effect name="EntityDamage" operation="base_add" value="190" tags="perkArchery">
+					<passive_effect name="MagazineSize" operation="base_set" value="2" tags="perkArchery"/>
+					<!-- <passive_effect name="EntityDamage" operation="base_add" value="190" tags="perkArchery"> -->
+					<passive_effect name="EntityDamage" operation="base_add" value="120" tags="perkArchery">
 						<requirement name="PlayerLevel" operation="GT" value="149"/>
 					</passive_effect>
-					<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.2" tags="perkArchery"/>
+					<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value=".7" tags="perkArchery"/>
 
 					<!-- random effective rng -->
 
 					<passive_effect name="RoundsPerMinute" operation="base_set" value="100" tags="perkArchery"/>
-					<passive_effect name="BurstRoundCount" operation="base_set" value="5" tags="perkArchery"/>
-
+					
+					<passive_effect name="RoundRayCount" operation="base_set" value="5"/>
 					<!-- 3.4s -->
 					<passive_effect name="ProjectileVelocity" operation="perc_add" value=".5" tags="perkArchery"/>
 
@@ -2556,7 +2557,7 @@
 					<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2" tags="perkArchery"/>
 					<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1.5" tags="perkArchery"/>
 
-					<passive_effect name="WeaponHandling" operation="base_set" value="1.5" tags="perkArchery"/>
+					<passive_effect name="WeaponHandling" operation="base_set" value="3" tags="perkArchery"/>
 
 					<!-- crosshair reset speed -->
 					<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="0"/>
@@ -2581,8 +2582,8 @@
 				<effect_group name="sneak damage bonus">
 					<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
 					<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
-					<passive_effect name="DamageBonus" operation="base_add" value="3"/>
-					<passive_effect name="EntityDamage" operation="perc_add" value="3" tags="perkArchery"/>
+					<passive_effect name="DamageBonus" operation="base_add" value="2"/>
+					<passive_effect name="EntityDamage" operation="perc_add" value="2" tags="perkArchery"/>
 					<display_value name="dEntityDamageSneak" value="3"/>
 				</effect_group>
 
@@ -3248,25 +3249,21 @@
 				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="Shell4"/>
 			</effect_group>
 			<effect_group name="unique_HyperBlaster">
-				<passive_effect name="MaxRange" operation="base_set" value="70" />
-				<passive_effect name="DamageFalloffRange" operation="base_set" value="35" />
+				<passive_effect name="MaxRange" operation="base_set" value="80" />
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="40" />
 				<!--<passive_effect name="EntityDamage" operation="base_add" value="53" tags="perkGunslinger,9mmGun"/>-->
 				
-				<passive_effect name="EntityDamage" operation="base_add" value="20" tags="perkGunslinger"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="25" tags="perkGunslinger"/>
 				
-				<passive_effect name="EntityDamage" operation="base_add" value="20" tags="perkGunslinger">
+				<passive_effect name="EntityDamage" operation="base_add" value="25" tags="perkGunslinger">
 					<requirement name="PlayerLevel" operation="GT" value="49"/>
 				</passive_effect>
-				<passive_effect name="EntityDamage" operation="base_add" value="20" tags="perkGunslinger">
+				<passive_effect name="EntityDamage" operation="base_add" value="25" tags="perkGunslinger">
 					<requirement name="PlayerLevel" operation="GT" value="99"/>
 				</passive_effect>
-				<passive_effect name="EntityDamage" operation="base_add" value="20" tags="perkGunslinger">
+				<passive_effect name="EntityDamage" operation="base_add" value="25" tags="perkGunslinger">
 					<requirement name="PlayerLevel" operation="GT" value="149"/>
-				</passive_effect>	
-
-
-
-
+				</passive_effect>
 				<passive_effect name="RoundsPerMinute" operation="base_set" value="600" tags="perkGunslinger" />
 				<passive_effect name="BurstRoundCount" operation="base_set" value="1050" tags="perkGunslinger" />
 				<passive_effect name="MagazineSize" operation="base_set" value="70" tags="perkGunslinger" />
@@ -5303,8 +5300,8 @@
 
 					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="5" tags="perkDeadEye"/>
 					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="5" tags="perkDeadEye"/>
-					<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".08" tags="perkDeadEye"/>
-					<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkDeadEye"/>
+					<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".03" tags="perkDeadEye"/>
+					<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".5" tags="perkDeadEye"/>
 					<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" tags="perkDeadEye"/>
 					<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2" tags="perkDeadEye"/>
 					<passive_effect name="KickDegreesVerticalMin" operation="base_set" value=".5" tags="perkDeadEye"/>

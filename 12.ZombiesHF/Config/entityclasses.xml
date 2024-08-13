@@ -877,54 +877,17 @@
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Animals ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-		<entity_class name="zombieMummyDog" extends="animalWolf">
-			<property name="Tags" value="entity,animal,zombie,hostile,dog"/>
-			<property name="Prefab" value="/Entities/Animals/Wolf/animalStandardDogZombieRagdoll"/>
-			<property name="Class" value="EntityZombieDog"/>
-			<property name="ReplaceMaterial0" value="particleeffects/models/materials/p_wood"/>
+		<entity_class name="zombieMummyDog" extends="animalDireWolf">
+			<property name="Tags" value="entity,animal,hostile,wolf,perkAT02,perkAT03"/>		
+			<property name="SizeScale" value=".8"/>
 			<property name="AltMats" value="entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder"/>
-			
-			<property name="SizeScale" value="1.2"/>
-			<property name="SoundRandomTime" value="45.0"/>
-			<property name="SoundAlertTime" value="25.0"/>
-			<property name="SoundRandom" value="Enemies/Zombie_Dogs/zombiedogroam"/>
-			<property name="SoundAlert" value="Enemies/Zombie_Dogs/zombiedogalert"/>
-			<property name="SoundHurt" value="Enemies/Zombie_Dogs/zombiedogpain"/>
-			<property name="SoundDeath" value="Enemies/Zombie_Dogs/zombiedogdeath"/>
-			<property name="SoundAttack" value="Enemies/Zombie_Dogs/zombiedogattack"/>
-			<property name="SoundSense" value="Enemies/Zombie_Dogs/zombiedogsense"/>
-			<property name="SoundGiveUp" value="Enemies/Zombie_Dogs/zombiedoggiveup"/>
-
-			<property name="AITask" value="
-			BreakBlock|
-			DestroyArea|
-			Territorial|			
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
-			ApproachSpot|
-			Look|
-			Wander|
-			"/>
-			
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
-			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
-			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
-			"/>		
-			<!--  Stealth  -->
-			<property name="SleeperSmellSenseThreshold" value="5,30"/>
-			<!--  Indiv.Random. smell capability - "I smell something" player smell value  -->
-			<property name="SleeperSmellWakeThreshold" value="10,40"/>
-			<property name="SmellAlertThreshold" value="5"/>
-			<!--  for awake zombies  -->
-			<!--  Gameplay  -->
-			<property name="MoveSpeed" value=".45"/>
-			<property name="MoveSpeedNight" value=".3"/>
-			<property name="MoveSpeedAggro" value="1.2, 1.3"/>
-			<property name="MoveSpeedPanic" value="1.5"/>
-			<property name="HandItem" value="meleeHandAnimalBear"/>
-			<property name="Immunity" value="sickness;disease;wellness"/>
+			<property name="MoveSpeed" value=".60"/>
+			<property name="MoveSpeedNight" value=".4"/>
+			<property name="MoveSpeedAggro" value="1.5, 1.6"/>
+			<property name="MoveSpeedPanic" value="1.9"/>
+			<property name="HandItem" value="meleeHandAnimalDireWolf"/>			
 			<!--  bleeding;  -->
-			<property name="PainResistPerHit" value=".9"/>
+			<property name="PainResistPerHit" value="1"/>
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="40"/>
 			<!--  animalZombieDog  -->
@@ -940,7 +903,7 @@
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="3000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="35"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="25"/>
 				<!--  Zombie HP scale  -->
 			</effect_group>
 		</entity_class>
