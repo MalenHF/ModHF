@@ -880,7 +880,8 @@
 		<entity_class name="zombieMummyDog" extends="animalDireWolf">
 			<property name="Tags" value="entity,animal,hostile,wolf,perkAT02,perkAT03"/>		
 			<property name="SizeScale" value=".8"/>
-			<property name="AltMats" value="entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder"/>
+			<!-- <property name="AltMats" value="entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder"/> -->
+			<property name="AltMats" value="entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder"/>
 			<property name="MoveSpeed" value=".60"/>
 			<property name="MoveSpeedNight" value=".4"/>
 			<property name="MoveSpeedAggro" value="1.5, 1.6"/>
@@ -901,6 +902,7 @@
 			<property name="DeadBodyHitPoints" value="1000"/>
 			<!--  <drop event="Destroy" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>  -->
 			<effect_group name="Base Effects">
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="dogMummyDeco"/>
 				<passive_effect name="HealthMax" operation="base_set" value="3000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="25"/>
@@ -3563,7 +3565,7 @@
 			</effect_group>
 		</entity_class>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
-	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ SHOCKER ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ SHOCKER ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<!-- HvShockerCop -->
 		<entity_class name="HvShockerCop" extends="TemplateHF_Zombie_Special_Cop">
 			<property name="SizeScale" value="1.1"/>			
@@ -3799,6 +3801,38 @@
 			</effect_group>
 		</entity_class>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+	
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ ROCK/SAND ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+		<!-- HvSandCop -->
+		<entity_class name="HvSandCop" extends="TemplateHF_Zombie_Special_Cop">
+			<property name="SizeScale" value="1.1"/>			
+			<property name="MoveSpeed" value="1.1"/>
+			
+			<!-- <property name="AltMats" value="entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder"/>			 -->
+<!-- <property name="AltMats" value="entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder"/> -->
+<property name="AltMats" value="Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty"/>
+
+			<property name="HandItem" value="meleeHandElementalElectrical"/>
+			<!--  Gameplay  -->
+			<property name="ExperienceGain" value="2800"/>
+			<!--  XP strong radiated  -->
+			<property name="LootDropProb" value=".25"/>
+			<!--  Radiated  -->
+			<property name="MoveSpeedAggro" value="1.5, 2"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="5000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="15"/>
+				<!-- <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="twitch_enemyshock"/> -->
+				<!-- <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalElectrical"/> -->
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<!-- <passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffShocked"/> -->
+			</effect_group>
+		</entity_class>	
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->	
+	
+	
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Rare Zombies by Snufkin/Radamus Edit by Malen ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<entity_class name="zombieScarecrow" extends="zombieSpiderFeral">
 			<property name="Tags" value="entity,zombie,walker,radiated,hostile,vulture,scarecrow"/>
@@ -6814,7 +6848,8 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,boss,bossrad"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBurnt.prefab"/>
-			<property name="AltMats" value="particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood"/>
+			<!-- <property name="AltMats" value="particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood"/> -->
+			<property name="AltMats" value="entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder"/>
 			
 			<property name="ReplaceMaterial0" value="particleeffects/models/materials/p_wood"/>
 			<property name="SizeScale" value="1.5"/>
