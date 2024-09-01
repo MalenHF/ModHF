@@ -1188,6 +1188,42 @@
 			</effect_group>
 		</buff>
 
+		<buff name="dogMummyDeco" hidden="true">
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Lighting/candle_tablePrefab" local_offset="0,0.5,0" local_rotation="0,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightLeg"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Lighting/candle_tablePrefab" local_offset="0,0.5,0" local_rotation="0,0,0" parent_transform="Head">
+					<requirement name="!HasPrefab" prefab="Entities/Lighting/candle_tablePrefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Head">
+					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine2">
+					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightShoulder">
+					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftShoulder">
+					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftLeg">
+					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightLeg">
+					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		
+
 		<!-- AURA NIGHTMARES -->
 		<buff name="decoNightmareAura" hidden="true">
 			<effect_group>
@@ -1322,7 +1358,7 @@
 					weights="1,11,11,9,8,10,10,9,8,3,2,1"/> -->
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" fireOneBuff="false"
 					buff="triggerInfection,CirujanoBuffHurt,buffInjuryConcussion,triggerAbrasion,buffFatigued,buffLegSprained,buffArmSprained,triggerLaceration,CirujanoBuffPuking,buffLegBroken,buffArmBroken"
-					weights="1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1"/>
+					weights="1, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05"/>
 			</effect_group>
 		</buff>
 		<!-- ESTO ES CADA 7 SEGUNDOS -->
@@ -1343,7 +1379,7 @@
 					weights="5,11,11,9,8,10,10,9,8,5,5,1"/> -->
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" fireOneBuff="false"
 					buff="triggerInfection,CirujanoBuffHurt,buffInjuryConcussion,triggerAbrasion,buffFatigued,buffLegSprained,buffArmSprained,triggerLaceration,CirujanoBuffPukingSP,buffLegBroken,buffArmBroken"
-					weights="1, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15"/>
+					weights="1, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10"/>
 			</effect_group>
 		</buff>
 		<buff name="buffHolyAura" hidden="true">
@@ -1444,7 +1480,7 @@
 				<requirement name="EntityTagCompare" tags="player"/>
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="CirujanoBuffHurt"/> -->
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="DrowsyCD"/>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="medicalRegHealthAmount" operation="set" value="0"/>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="medicalRegHealthAmount" operation="set" value="0"/> -->
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="foodHealthAmount" operation="set" value="0"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfNoVehicle"/>
 				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffCirujanoSP2"/>
@@ -1706,7 +1742,7 @@
 
 		<buff name="DrowsyCD" hidden="true">
 			<stack_type value="ignore"/>
-			<duration value="20"/>
+			<duration value="30"/>
 			<effect_group>
 				<requirement name="NotHasBuff" buff="god"/>
 				<requirement name="EntityTagCompare" tags="player"/>
