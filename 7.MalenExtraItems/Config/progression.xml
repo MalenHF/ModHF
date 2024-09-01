@@ -16,7 +16,83 @@
       <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add Acid Unlock ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		
 
-    
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Preacher Book ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+    <insertAfter xpath="/progression/skills/book_group[@name='skillUrbanCombat']">      
+        <book_group name="skillPreacher" parent="attBooks" name_key="perkPreacher0Name" desc_key="perkPreacher00Desc" long_desc_key="perkBookGroupLongDesc" icon="ui_game_symbol_twitch_regen"><effect_group/></book_group>
+    </insertAfter>
+    <append xpath="/progression/perks">
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Prestige 1 Book ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+			<book name="perkPreacherUI" parent="skillPreacher" max_level="1" base_skill_point_cost="0" desc_key="perkPreacherUIDesc" long_desc_key="perkPreacherUILongDesc">
+        <effect_group>
+				  <passive_effect name="Tracking" operation="base_set" value="1" tags="specialZ" level="1"/>
+		    </effect_group>
+			</book>
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Prestige 2 Book ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+			<book name="perkPreacherZombies" parent="skillPreacher" max_level="1" base_skill_point_cost="0" desc_key="perkPreacherZombiesDesc" long_desc_key="perkPreacherZombiesLongDesc">
+        <effect_group>
+				  <passive_effect name="EntityDamage" operation="perc_add" value=".1" level="1"/>
+          <requirement name="EntityTagCompare" target="other" tags="zombie"/>
+		    </effect_group>
+        <effect_group>
+				  <passive_effect name="EntityDamage" operation="perc_add" value="-.1" level="1"/>
+          <requirement name="EntityTagCompare" target="other" tags="specialZ"/>
+		    </effect_group>
+			</book>
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+    <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Prestige 3 Book ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+			<book name="perkPreacherSpecial" parent="skillPreacher" max_level="1" base_skill_point_cost="0" desc_key="perkPreacherSpecialDesc" long_desc_key="perkPreacherSpecialLongDesc">
+        <effect_group>
+				  <passive_effect name="EntityDamage" operation="perc_add" value=".1" level="1"/>
+          <requirement name="EntityTagCompare" target="other" tags="dog,direwolf"/>
+		    </effect_group>
+			</book>
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+    <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Prestige 4 Book ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+			<book name="perkPreacherBosses" parent="skillPreacher" max_level="1" base_skill_point_cost="0" desc_key="perkPreacherBossesDesc" long_desc_key="perkPreacherBossesLongDesc">
+         <effect_group>
+				  <passive_effect name="EntityDamage" operation="perc_add" value=".1" level="1"/>
+          <requirement name="EntityTagCompare" target="other" tags="boss"/>
+		    </effect_group>
+			</book>
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+    <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Prestige 5 Book ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+			<book name="perkPreacherZXP" parent="skillPreacher" max_level="1" base_skill_point_cost="0" desc_key="perkPreacherZXPDesc" long_desc_key="perkPreacherZXPLongDesc">
+        <effect_group>
+				  <passive_effect name="PlayerExpGain" operation="perc_add" value=".1" tags="Kill" level="1">
+            <requirement name="EntityTagCompare" target="other" tags="zombie"/>
+          </passive_effect>          
+		    </effect_group>
+			</book>
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+    <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Prestige 6 Book ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+			<book name="bookPreacherDXP" parent="skillPreacher" max_level="1" base_skill_point_cost="0" desc_key="perkPreacherDXPDesc" long_desc_key="perkPreacherDXPLongDesc">
+        <effect_group>
+				  <passive_effect name="PlayerExpGain" operation="perc_add" value=".1" tags="Kill" level="1">
+            <requirement name="EntityTagCompare" target="other" tags="specialZ"/>
+          </passive_effect>
+		    </effect_group>
+			</book>
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+    <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Prestige 7 Book ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+			<book name="bookPreacherBXP" parent="skillPreacher" max_level="1" base_skill_point_cost="0" desc_key="perkPreacherBXPDesc" long_desc_key="perkPreacherBXPLongDesc">
+        <effect_group>
+				  <passive_effect name="PlayerExpGain" operation="perc_add" value=".1" tags="Kill" level="1">
+            <requirement name="EntityTagCompare" target="other" tags="boss"/>
+          </passive_effect>
+		    </effect_group>
+			</book>
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Prestige Complete ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+			<book name="perkPreacherComplete" parent="skillPreacher" max_level="1" base_skill_point_cost="0" desc_key="perkPreacherCompleteDesc" long_desc_key="perkPreacherCompleteLongDesc">
+        <effect_group>
+          <passive_effect name="LootProb" operation="perc_add" value="2" tags="specialNotes" level="1"/>
+		    </effect_group>
+			</book>
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+	</append>
+
+  <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->  
 
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add Art of mining key for localitation ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
     <setattribute xpath="/progression/perks/book[@name='perkArtOfMiningComplete']" name="name_key">bafcom</setattribute>

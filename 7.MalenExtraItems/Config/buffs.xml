@@ -1114,6 +1114,83 @@
 			</effect_group>
 		</buff>
 
+		<buff name="buffUniqueLightSetBonus" name_key="buffUniqueLightSetBonusName" description_key="buffUniqueLightSetBonusDesc" tooltip_key="buffUniqueLightSetBonusTooltip" icon="ui_game_symbol_armor_iron" icon_color="255,255,255">
+			<stack_type value="ignore"/>
+			<display_value_key value="Bonus"/>
+			<display_value value="xxx"/>	
+			<effect_group>
+				<requirement name="EntityTagCompare" target="other" tags="boss"/>
+					<passive_effect name="EntityDamage" operation="perc_add" value="1"/>      				  
+			</effect_group>				
+			<effect_group>
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add"  value=".5" tags="ranged"/>
+				<passive_effect name="StaminaLoss" operation="perc_add" value="-.5"/>
+				<passive_effect name="TargetArmor" operation="perc_add" value="-.25" tags="ranged,melee"/>
+				<passive_effect name="EntityPenetrationCount" operation="perc_add" value="1" tags="perkDeadEye"/>
+			</effect_group>
+			<effect_group name="sneak damage bonus">
+			<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+			<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+				<passive_effect name="DamageBonus" operation="base_add" value="3"/> <!--For UI-->
+				<passive_effect name="EntityDamage" operation="perc_add" value="3"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUniqueMediumSetBonus" name_key="buffUniqueLightSetBonusName" description_key="buffUniqueLightSetBonusDesc" tooltip_key="buffUniqueLightSetBonusTooltip" icon="ui_game_symbol_armor_iron" icon_color="255,255,255">
+			<stack_type value="ignore"/>
+			<display_value_key value="Bonus"/>
+			<display_value value="xxx"/>								
+			<effect_group>
+				<requirement name="HoldingItemHasTags" tags="melee"/>
+					<passive_effect name="AttacksPerMinute" operation="perc_add" value=".5" tags="melee"/>					
+			</effect_group>
+			<effect_group>
+				<requirement name="NotHasBuff" buff="jumpBuff"/>
+					<passive_effect name="JumpStrength" operation="base_add" value=".05"/>							
+			</effect_group>
+			<effect_group>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.5"/> 	
+				<passive_effect name="Mobility" operation="perc_add" value=".5"/>
+				<passive_effect name="WalkSpeed" operation="perc_add" value=".5"/>
+				<passive_effect name="RunSpeed" operation="perc_add" value=".5"/>
+				<passive_effect name="QuestRewardChoiceCount" operation="base_add" value="1"/>
+			</effect_group>
+
+		</buff>
+		<buff name="buffUniqueHeavySetBonus" name_key="buffUniqueLightSetBonusName" description_key="buffUniqueLightSetBonusDesc" tooltip_key="buffUniqueLightSetBonusTooltip" icon="ui_game_symbol_armor_iron" icon_color="255,255,255">
+			<stack_type value="ignore"/>
+			<display_value_key value="Bonus"/>
+			<display_value value="xxx"/>
+			<effect_group>					
+				
+			</effect_group>		
+			<effect_group>					
+				<requirement name="EntityTagCompare" target="other" tags="boss"/>
+					<passive_effect name="PhysicalDamageResist" operation="perc_add" value=".1"/>
+			</effect_group>	
+			
+			<effect_group>					
+				<passive_effect name="FoodLossPerStaminaPointGained" operation="perc_add" value="-.6"/>
+				<passive_effect name="WaterLossPerStaminaPointGained" operation="perc_add" value="-.6"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".3"/>	
+				<passive_effect name="GeneralDamageResist" operation="base_add" value=".25"/>
+				
+			</effect_group>
+			<effect_group>
+				<requirement name="HasBuff" buff="PPBF"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.15"/>					
+			</effect_group>
+			<effect_group>
+				<requirement name="HasBuff" buff="PPBF2"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.225"/>
+				
+			</effect_group>
+			<effect_group>
+				<requirement name="HasBuff" buff="PPBF3"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.225"/>					
+			</effect_group>
+		</buff>
+
 
 	</append>
 
@@ -1264,7 +1341,8 @@
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/animals/shark/animalsharkstandard" local_offset="0,.9,0" local_rotation="0,0,0" parent_transform="Mesh"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false"  parent_transform="GameObject" transform_path="car_mesh"/>
 			</effect_group>
-		</buff>	</append>
+		</buff>	
+	</append>
 
 	<remove xpath="/buffs/buff[@name='buffAssassinSetBonus']/effect_group/passive_effect[@name='EnemySearchDuration']"/>
 		<append xpath="/buffs/buff[@name='buffAssassinSetBonus']">	
@@ -1381,6 +1459,50 @@
 					<passive_effect name="DamageBonus" operation="base_add" value="3"/> <!--For UI-->
 					<passive_effect name="EntityDamage" operation="perc_add" value="3"/>
 			</effect_group>
-
 		</append>
+
+	<append xpath="/buffs/buff[@name='buffStatusCheck02']">
+		<!-- *** UNIQUELIGHT_FULL_SET_BONUS -->
+		<effect_group>
+			<!-- If armor set NOT complete, remove bonus buff -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffUniqueLightSetBonus">
+				<requirement name="ArmorGroupCount" group_name="groupUniqueArmorLight" operation="LTE" value="3" />
+				<requirement name="HasBuff" buff="buffUniqueLightSetBonus"/>
+			</triggered_effect>
+			<!-- If armor set complete, add bonus buff -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffUniqueLightSetBonus">
+				<requirement name="ArmorGroupCount" group_name="groupUniqueArmorLight" operation="Equals" value="4" />
+				<requirement name="!HasBuff" buff="buffUniqueLightSetBonus"/>
+			</triggered_effect>
+		</effect_group>
+		<!-- *** UNIQUEMEDIUM_FULL_SET_BONUS -->
+		<effect_group>
+			<!-- If armor set NOT complete, remove bonus buff -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffUniqueMediumSetBonus">
+				<requirement name="ArmorGroupCount" group_name="groupUniqueArmorMedium" operation="LTE" value="3" />
+				<requirement name="HasBuff" buff="buffUniqueMediumSetBonus"/>
+			</triggered_effect>
+			<!-- If armor set complete, add bonus buff -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffUniqueMediumSetBonus">
+				<requirement name="ArmorGroupCount" group_name="groupUniqueArmorMedium" operation="Equals" value="4" />
+				<requirement name="!HasBuff" buff="buffUniqueMediumSetBonus"/>
+			</triggered_effect>
+		</effect_group>
+		<!-- *** UNIQUEHEAVY_FULL_SET_BONUS -->
+		<effect_group>
+			<!-- If armor set NOT complete, remove bonus buff -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffUniqueHeavySetBonus">
+				<requirement name="ArmorGroupCount" group_name="groupUniqueArmorHeavy" operation="LTE" value="3" />
+				<requirement name="HasBuff" buff="buffUniqueHeavySetBonus"/>
+			</triggered_effect>
+			<!-- If armor set complete, add bonus buff -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffUniqueHeavySetBonus">
+				<requirement name="ArmorGroupCount" group_name="groupUniqueArmorHeavy" operation="Equals" value="4" />
+				<requirement name="!HasBuff" buff="buffUniqueHeavySetBonus"/>
+			</triggered_effect>
+		</effect_group>
+	</append>
+	
+	
+	
 </configs>

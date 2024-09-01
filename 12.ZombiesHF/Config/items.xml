@@ -57,6 +57,7 @@
 					<property name="CreativeMode" value="None"/>
 					<property name="CustomIcon" value="adminQuestTicketMaster"/>
 					<property name="HoldType" value="31"/>
+					<property name="Tags" value="specialNotes"/>
 					<property name="DescriptionKey" value="noteTixDescTierIII"/>					
 					<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
 					<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
@@ -323,10 +324,11 @@
 					<property name="TintColor" value="0,255,255"/>
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="TacoQuest"/>
-					<property class="Action0">
-						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="true"/>
+					<property class="Action0">						
+						<property name="Class" value="Quest"/>
 						<property name="QuestGiven" value="q_killTaco2"/>
+						<property name="Delay" value="0.5"/>
+						<property name="UseAnimation" value="false"/>
 					</property>
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
@@ -343,10 +345,11 @@
 					<property name="TintColor" value="0,255,255"/>
 					<property name="Stacknumber" value="5"/>
 					<property name="DescriptionKey" value="TacoQuestS"/>
-					<property class="Action0">
-						<requirement name="!HasBuff" buff="buffQuestCD"/>
-						<property name="UseAnimation" value="true"/>
+					<property class="Action0">						
+						<property name="Class" value="Quest"/>
 						<property name="QuestGiven" value="q_killTacoSpecial"/>
+						<property name="Delay" value="0.5"/>
+						<property name="UseAnimation" value="false"/>
 					</property>
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
@@ -1995,7 +1998,7 @@
 					<!-- obsolete if rounds per minute exists -->
 					<property name="Range" value="4.5"/>
 					<!-- This not what "clientside melee combat" means. =) This is the adjustment afterwards due to code changes. -->
-					<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01,buffbosshit"/>
+					<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01"/>
 					<property name="Sphere" value=".1"/>
 					<property name="Block_range" value="4"/>
 					<property name="DamageEntity" value="150"/>

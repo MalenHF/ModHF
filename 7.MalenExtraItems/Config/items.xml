@@ -1153,6 +1153,7 @@
 					<passive_effect name="PlayerExpGain" operation="perc_add" value="-.3"/>
 					<passive_effect name="PlayerExpGain" operation="perc_add" value="-1.5" tags="Upgrading"/>
 					<passive_effect name="PlayerExpGain" operation="perc_add" value="-1.5" tags="Repairing"/>
+					
 				</effect_group>
 			</item>
 			<item name="legendToolT2_Barrena">
@@ -2471,6 +2472,7 @@
 				<property name="TintColor" value="00AAE4"/>
 				<property name="CustomIconTint" value="00AAE4"/>
 				<property name="Extends" value="gunBowT3CompoundCrossbow"/>
+				<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,sideAttachments,smallTopAttachments,mediumTopAttachments,bottomAttachments,attAgility,perkArchery,crossbow,attachmentsIncluded,canHaveCosmetic,bowSkill,arbalest"/>
 				<property name="ItemTypeIcon" value="map_cursor"/>
 				<property name="TintColor" value="00AAE4"/>
 				<property name="EconomicValue" value="312500"/>
@@ -2482,14 +2484,14 @@
 				<property name="SellableToTrader" value="false"/>
 				<property name="Candrop" value="false"/>
 				<property name="Group" value="MSeries"/>
-				<property class="Action0">					
+				<property class="Action0">	
+					<property name="Class" value="Launcher"/>		
 					<property name="Instantiate_on_load" value="false"/>
-					<property name="Auto_fire" value="true" />
-					<property name="Class" value="Launcher" />
+					<property name="Auto_fire" value="true" />					
 					<property name="Delay" value="0.250" />
 					<property name="Crosshair_min_distance" value="5" />
 					<property name="Crosshair_max_distance" value="30" />
-					<property name="Magazine_items" value="ammoCrossbowBoltStone,ammoCrossbowBoltIron,ammoCrossbowBoltSteelAP,ammoCrossbowBoltFlaming,ammoCrossbowBoltExploding"/>
+					<property name="Magazine_items" value="ammoCrossbowBoltStone,ammoCrossbowBoltIron,ammoCrossbowBoltSteelAP,ammoCrossbowBoltFlaming,ammoCrossbowBoltExploding"/>					
 					<property name="Sound_start" value="crossbow2_fire"/>
 					<property name="Sound_repeat" value="crossbow2_fire"/>
 					<property name="Sound_loop" value="crossbow2_fire"/>
@@ -2529,19 +2531,20 @@
 						<requirement name="PlayerLevel" operation="GT" value="149"/>
 					</passive_effect>
 					<passive_effect name="DamageFalloffRange" operation="perc_add" value=".2" tags="perkArchery"/>
-					<passive_effect name="MaxRange" operation="base_set" value="100" tags="perkArchery"/>
-					<passive_effect name="MagazineSize" operation="base_set" value="2" tags="perkArchery"/>
 					<!-- <passive_effect name="EntityDamage" operation="base_add" value="190" tags="perkArchery"> -->
 					<passive_effect name="EntityDamage" operation="base_add" value="120" tags="perkArchery">
 						<requirement name="PlayerLevel" operation="GT" value="149"/>
 					</passive_effect>
+					<passive_effect name="MaxRange" operation="base_set" value="100" tags="perkArchery"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="5" tags="perkArchery"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="5"/>					
+					<!-- <passive_effect name="RoundRayCount" operation="base_set" value="5" tags="perkArchery"/>	 -->
 					<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value=".7" tags="perkArchery"/>
 
 					<!-- random effective rng -->
-
-					<passive_effect name="RoundsPerMinute" operation="base_set" value="100" tags="perkArchery"/>
+					<passive_effect name="RoundsPerMinute" operation="base_set" value="1000" tags="perkArchery"/>
 					
-					<passive_effect name="RoundRayCount" operation="base_set" value="5"/>
+					
 					<!-- 3.4s -->
 					<passive_effect name="ProjectileVelocity" operation="perc_add" value=".5" tags="perkArchery"/>
 
@@ -2584,7 +2587,7 @@
 					<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
 					<passive_effect name="DamageBonus" operation="base_add" value="2"/>
 					<passive_effect name="EntityDamage" operation="perc_add" value="2" tags="perkArchery"/>
-					<display_value name="dEntityDamageSneak" value="3"/>
+					<display_value name="dEntityDamageSneak" value="2"/>
 				</effect_group>
 
 			</item>
@@ -3699,7 +3702,7 @@
 			<property name="RepairExpMultiplier" value="10.8"/>
 			<property name="LightValue" value=".45"/>
 			<property name="EconomicValue" value="500"/>
-			<property name="Tags" value="weapon,nailgun,ranged,holdBreathAiming,reloadPenalty,gun,shortRange,pistol,revolver,barrelAttachments,magazine,selfLoading,attAgility,perkGunslinger,firingMode,9mmGun,canHaveCosmetic,admin"/>
+			<property name="Tags" value="weapon,44enforcer,nailgun,ranged,holdBreathAiming,reloadPenalty,gun,shortRange,pistol,revolver,barrelAttachments,magazine,selfLoading,attAgility,perkGunslinger,firingMode,9mmGun,canHaveCosmetic,admin"/>
 			<property name="DisplayType" value="NewCGun"/>
 			<property name="HoldType" value="1"/>
 			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Pistol/PistolPrefab.prefab"/>
@@ -3803,7 +3806,7 @@
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="nailgun"/>
 				<passive_effect name="ModSlots" operation="base_set" value="5"/>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value=".50"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".60"/>
 				<display_value name="dPlayerExpGain" value=".5"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="3" tags="Upgrading"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="3" tags="Repairing"/>
@@ -3815,15 +3818,15 @@
 			</effect_group>
 			<effect_group>
 				<requirement name="HasBuff" buff="PPBF"/>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.25"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.30"/>
 			</effect_group>
 			<effect_group>
 				<requirement name="HasBuff" buff="PPBF2"/>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.45"/>
 			</effect_group>
 			<effect_group>
 				<requirement name="HasBuff" buff="PPBF3"/>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.45"/>
 			</effect_group>
 		</item>
 		<!--Granadas-->
@@ -7786,20 +7789,23 @@
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.15"/>
 			</effect_group>
 		</item> -->
-		<!-- ▼▲ UniqueSwat ▲▼ -->
+		<!-- ▼▲ UniqueLight ▲▼ -->
 		<item name="uniqueArmorLighHelm">
 			<property name="Extends" value="armorLightMaster" param1="CustomIcon"/>
-			<property name="Tags" value="head,armor,armorHead,canHaveCosmetic,lightArmor,lightArmorDeg"/>			
+			<property name="Tags" value="head,armor,armorHead,canHaveCosmetic,lightArmor,lightArmorDeg,armorUniqueLightBonus"/>			
 			<property name="EquipSlot" value="Head"/>
 			<property name="SoundPickup" value="headwear_cloth_grab"/>
-			<property name="SoundPlace" value="headwear_cloth_place"/>	
+			<property name="SoundPlace" value="headwear_cloth_place"/>
 
+			<property name="CustomIcon" value="armorRangerHelmet"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
 			<property name="ArmorGroup" value="groupUniqueArmorLight"/>
 			<property name="CustomIconTint" value="B65FCF"/>
 			<property name="TintColor" value="B65FCF"/>
 			<property name="Material" value="Morganic"/>
-			<property name="DescriptionKey" value="uniqueArmorLightHelmDesc"/>
-			<property name="DisplayType" value="uniqueArmorLightHelm"/>					
+			<property name="DescriptionKey" value="uniqueArmorLighHelmDesc"/>
+			<property name="DisplayType" value="uniqueHelmet"/>					
 			<property name="SellableToTrader" value="false"/>
 			<property name="Candrop" value="false"/>
 			<property name="ShowQuality" value="false"/>
@@ -7808,11 +7814,11 @@
 				<passive_effect name="ModPowerBonus" operation="base_add" value="1" tags="EconomicValue"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="13"/>			
 				<passive_effect name="ElementalDamageResist" operation="base_add" value="13" tags="heat,electrical"/>			
-				<passive_effect name="BuffResistance" operation="base_add" value="0.041" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.05" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="9999"  tags="admin"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="20"/>
-				<passive_effect name="HyperthermalResist" operation="base_add" value="20"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="20"/>				
 			</effect_group>
 			<effect_group>
 				<passive_effect name="BarteringBuying" operation="base_add" value=".2"/>
@@ -7822,20 +7828,29 @@
 				<passive_effect name="LootStage" operation="perc_add" value=".25"/>
 				<display_value name="dLootStage" value=".25" />
 			</effect_group>
+			<property class="SDCS">
+				<property name="HeadGearName" value="Ranger"/>
+				<property name="TransformName" value="head"/>
+				<property name="Excludes" value=""/>
+				<property name="HairMaskType" value="Hat"/>
+			</property>
 		</item>
 		<item name="uniqueArmorLighArmor">
 			<property name="Extends" value="armorLightMaster" param1="CustomIcon"/>
-			<property name="Tags" value="upperbody,chest,armor,armorChest,canHaveCosmetic,lightArmor,lightArmorDeg"/>			
+			<property name="Tags" value="upperbody,chest,armor,armorChest,canHaveCosmetic,lightArmor,lightArmorDeg,armorUniqueLightBonus"/>			
 			<property name="EquipSlot" value="Chest"/>
 			<property name="SoundPickup" value="outfit_cloth_grab"/>
 			<property name="SoundPlace" value="outfit_cloth_place"/>
 
+			<property name="CustomIcon" value="armorRangerOutfit"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>	
 			<property name="ArmorGroup" value="groupUniqueArmorLight"/>
 			<property name="CustomIconTint" value="B65FCF"/>
 			<property name="TintColor" value="B65FCF"/>
 			<property name="Material" value="Morganic"/>
-			<property name="DescriptionKey" value="uniqueArmorLightArmDesc"/>
-			<property name="DisplayType" value="uniqueArmorLightArm"/>					
+			<property name="DescriptionKey" value="uniqueArmorLighArmorDesc"/>
+			<property name="DisplayType" value="uniqueArmor"/>					
 			<property name="SellableToTrader" value="false"/>
 			<property name="Candrop" value="false"/>
 			<property name="ShowQuality" value="false"/>
@@ -7844,7 +7859,7 @@
 				<passive_effect name="ModPowerBonus" operation="base_add" value="1" tags="EconomicValue"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="13"/>			
 				<passive_effect name="ElementalDamageResist" operation="base_add" value="13" tags="heat,electrical"/>			
-				<passive_effect name="BuffResistance" operation="base_add" value="0.041" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.05" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="9999"  tags="admin"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="20"/>
@@ -7852,28 +7867,37 @@
 			</effect_group>
 			<effect_group>
 				<requirement name="EntityTagCompare" target="other" tags="zombie"/>
-					<passive_effect name="PhysicalDamageResist" operation="perc_add" value=".15"/>
+					<passive_effect name="PhysicalDamageResist" operation="perc_add" value=".10"/>
 			</effect_group>
 			<effect_group>
 				<passive_effect name="CarryCapacity" operation="base_add" value="10"/>
 				<display_value name="dCarryCapacity" value="10"/>
 				<passive_effect name="HealthMax" operation="base_add" value="25"/>
 				<display_value name="dHealthMax" value="25"/>
+				<display_value name="dDamageResist" value=".1"/>
 			</effect_group>
+			<property class="SDCS">
+				<property name="Prefab" value="Entities/Player/*/Gear/Prefabs/gear*RangerPrefab"/>
+				<property name="TransformName" value="body"/>
+				<property name="Excludes" value="body"/>
+			</property>
 		</item>
 		<item name="uniqueArmorLighGloves">
 			<property name="Extends" value="armorLightMaster" param1="CustomIcon"/>
-			<property name="Tags" value="upperbody,hands,armor,armorHands,canHaveCosmetic,lightArmor,lightArmorDeg"/>		
+			<property name="Tags" value="upperbody,hands,armor,armorHands,canHaveCosmetic,lightArmor,lightArmorDeg,armorUniqueLightBonus"/>		
 			<property name="EquipSlot" value="Hands"/>
 			<property name="SoundPickup" value="gloves_leather_grab"/>
 			<property name="SoundPlace" value="gloves_leather_place"/>
 
+			<property name="CustomIcon" value="armorRangerGloves"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
 			<property name="ArmorGroup" value="groupUniqueArmorLight"/>
 			<property name="CustomIconTint" value="B65FCF"/>
 			<property name="TintColor" value="B65FCF"/>
 			<property name="Material" value="Morganic"/>
-			<property name="DescriptionKey" value="uniqueArmorLightGlovDesc"/>
-			<property name="DisplayType" value="uniqueArmorLightGlov"/>					
+			<property name="DescriptionKey" value="uniqueArmorLighGlovesDesc"/>
+			<property name="DisplayType" value="uniqueGloves"/>					
 			<property name="SellableToTrader" value="false"/>
 			<property name="Candrop" value="false"/>
 			<property name="ShowQuality" value="false"/>
@@ -7882,42 +7906,59 @@
 				<passive_effect name="ModPowerBonus" operation="base_add" value="1" tags="EconomicValue"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="13"/>			
 				<passive_effect name="ElementalDamageResist" operation="base_add" value="13" tags="heat,electrical"/>			
-				<passive_effect name="BuffResistance" operation="base_add" value="0.041" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.05" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="9999"  tags="admin"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="20"/>
 				<passive_effect name="HyperthermalResist" operation="base_add" value="20"/>
-				<display_value name="dEntityDamage" value=".6"/>
+
+				<display_value name="dEntityDamage" value=".75"/>
+				<display_value name="dEntityDamageM" value=".5"/>
+				<display_value name="dHavestUnique" value=".5"/>
 			</effect_group>
 			<effect_group>
 				<requirement name="ArmorGroupCount" group_name="groupMiner" operation="LTE" value="0" />
 				<requirement name="ArmorGroupCount" group_name="groupLumberjack" operation="LTE" value="0" />
 				<requirement name="ArmorGroupCount" group_name="groupFarmer" operation="LTE" value="0" />
-				<passive_effect name="HarvestCount" operation="perc_add" value=".5" tags="oreWoodHarvest"/>
-				<passive_effect name="HarvestCount" operation="perc_add" value=".5" tags="lumberjackHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="1" tags="farmerBonusHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" value=".5" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" value=".5" tags="lumberjackHarvest"/>				
+				<passive_effect name="HarvestCount" operation="base_add" value=".5" tags="salvageHarvest,allHarvest"/>
 			</effect_group>
-			<effect_group>				
-				<passive_effect name="EntityDamage" operation="perc_add" value=".6"/>
-			</effect_group>			
+			<effect_group>
+				<requirement name="HoldingItemHasTags" tags="ranged"/>			
+				<passive_effect name="EntityDamage" operation="perc_add" value=".75"/>
+			</effect_group>	
+			<effect_group>
+				<requirement name="HoldingItemHasTags" tags="meleeWeapon"/>			
+				<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
+			</effect_group>		
 			<effect_group>			
 				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="1" tags="farmerBonusSeed"/>
 			</effect_group>
+			<property class="SDCS">
+				<property name="Prefab" value="Entities/Player/*/Gear/Prefabs/gear*RangerPrefab"/>
+				<property name="TransformName" value="hands"/>
+				<property name="Excludes" value="hands"/>
+			</property>
 		</item>
 		<item name="uniqueArmorLighLegs">
 			<property name="Extends" value="armorLightMaster" param1="CustomIcon"/>
-			<property name="Tags" value="lowerbody,feet,armor,armorFeet,canHaveCosmetic,lightArmor,lightArmorDeg"/>		
+			<property name="Tags" value="lowerbody,feet,armor,armorFeet,canHaveCosmetic,lightArmor,lightArmorDeg,armorUniqueLightBonus"/>		
 			<property name="EquipSlot" value="Feet"/>
 			<property name="SoundPickup" value="footwear_regular_grab"/>
 			<property name="SoundPlace" value="footwear_regular_place"/>
 
+			<property name="CustomIcon" value="armorRangerBoots"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
 			<property name="ArmorGroup" value="groupUniqueArmorLight"/>
 			<property name="CustomIconTint" value="B65FCF"/>
 			<property name="TintColor" value="B65FCF"/>
 			<property name="Material" value="Morganic"/>
-			<property name="DescriptionKey" value="uniqueArmorLightBooDesc"/>
-			<property name="DisplayType" value="uniqueArmorLightBoo"/>					
+			<property name="DescriptionKey" value="uniqueArmorLighLegsDesc"/>
+			<property name="DisplayType" value="uniqueBoots"/>					
 			<property name="SellableToTrader" value="false"/>
 			<property name="Candrop" value="false"/>
 			<property name="ShowQuality" value="false"/>
@@ -7926,12 +7967,241 @@
 				<passive_effect name="ModPowerBonus" operation="base_add" value="1" tags="EconomicValue"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="13"/>			
 				<passive_effect name="ElementalDamageResist" operation="base_add" value="13" tags="heat,electrical"/>			
-				<passive_effect name="BuffResistance" operation="base_add" value="0.041" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.05" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="9999"  tags="admin"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
+				<passive_effect name="HypothermalResist" operation="base_add" value="20"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="20"/>				
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nerdBootFallDMG" operation="set" value=".08484"/>
+				<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar="$nerdBootFallDMG" operation="set" value="0"/>	
+				<passive_effect name="RunSpeed" operation="perc_add" value=".2"/>
+				<display_value name="dRunSpeed" value=".2"/>
+				<passive_effect name="StaminaMax" operation="base_add" value="100"/>
+				<display_value name="dStaminaMax" value="100" />
+				<display_value name="dFallDamage" value="6"/>
+			</effect_group>
+			<property class="SDCS">
+				<property name="Prefab" value="Entities/Player/*/Gear/Prefabs/gear*RangerPrefab"/>
+				<property name="TransformName" value="feet"/>
+				<property name="Excludes" value="feet"/>
+			</property>
+		</item>
+		<!-- ▼▲ UniqueMedium ▲▼ -->
+		<item name="uniqueArmorMediHelm">
+			<property name="Extends" value="armorMediumMaster" param1="CustomIcon"/>
+			<property name="Tags" value="head,armor,armorHead,mediumArmor,mediumArmorPenalty,canHaveCosmetic,mediumArmorDeg,armorMediumSkill,armorUniqueMediumBonus"/>		
+			<property name="EquipSlot" value="Head"/>
+			<property name="SoundPickup" value="outfit_leather_grab"/>
+			<property name="SoundPlace" value="outfit_leather_place"/>
+
+			<property name="CustomIcon" value="armorEnforcerHelmet"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property name="ArmorGroup" value="groupUniqueArmorMedium"/>
+			<property name="CustomIconTint" value="B65FCF"/>
+			<property name="TintColor" value="B65FCF"/>
+			<property name="Material" value="Morganic"/>
+			<property name="DescriptionKey" value="uniqueArmorMediHelmDesc"/>
+			<property name="DisplayType" value="dUniqueArmorMediHelm"/>					
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
+			<property name="ShowQuality" value="false"/>
+			<effect_group name="uniqueArmorMedium">
+				<passive_effect name="ModSlots" operation="base_set" value="5" />
+				<passive_effect name="ModPowerBonus" operation="base_add" value="1" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="18"/>			
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="18" tags="heat,electrical"/>			
+				<passive_effect name="BuffResistance" operation="base_add" value=".055" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="9999"  tags="admin"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="20"/>
 				<passive_effect name="HyperthermalResist" operation="base_add" value="20"/>
-				<display_value name="dEntityDamage" value=".6"/>
+
+				<passive_effect name="Mobility" operation="perc_add" value="-.06"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.026" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.054" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.54"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".1"/>
+				<display_value name="dNoiseMultiplier" value=".1"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="BarteringBuying" operation="base_add" value=".2"/>
+				<passive_effect name="BarteringSelling" operation="base_add" value=".2"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".2"/>
+				<display_value name="dPlayerExpGain" value=".2"/>
+				<passive_effect name="LootStage" operation="perc_add" value="1"/>
+				<display_value name="dLootStage" value="1" />
+			</effect_group>
+			<property class="SDCS">
+				<property name="HeadGearName" value="Enforcer"/>
+				<property name="TransformName" value="head"/>
+				<property name="Excludes" value=""/>
+				<property name="HairMaskType" value="Full"/>
+			</property>
+		</item>
+		<item name="uniqueArmorMediArmor">
+			<property name="Extends" value="armorMediumMaster" param1="CustomIcon"/>
+			<property name="Tags" value="head,armor,armorHead,mediumArmor,mediumArmorPenalty,canHaveCosmetic,mediumArmorDeg,armorMediumSkill,armorUniqueMediumBonus"/>		
+			<property name="EquipSlot" value="Chest"/>
+			<property name="SoundPickup" value="outfit_leather_grab"/>
+			<property name="SoundPlace" value="outfit_leather_place"/>
+
+			<property name="CustomIcon" value="armorEnforcerOutfit"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property name="ArmorGroup" value="groupUniqueArmorMedium"/>
+			<property name="CustomIconTint" value="B65FCF"/>
+			<property name="TintColor" value="B65FCF"/>
+			<property name="Material" value="Morganic"/>
+			<property name="DescriptionKey" value="uniqueArmorMediArmorDesc"/>
+			<property name="DisplayType" value="uniqueArmor"/>					
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
+			<property name="ShowQuality" value="false"/>
+
+			<effect_group name="uniqueArmorMedium">
+				<passive_effect name="ModSlots" operation="base_set" value="5" />
+				<passive_effect name="ModPowerBonus" operation="base_add" value="1" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="18"/>			
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="18" tags="heat,electrical"/>			
+				<passive_effect name="BuffResistance" operation="base_add" value=".055" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="9999"  tags="admin"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
+				<passive_effect name="HypothermalResist" operation="base_add" value="20"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="20"/>
+
+				<passive_effect name="Mobility" operation="perc_add" value="-.06"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.026" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.054" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.54"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".1"/>
+				<display_value name="dNoiseMultiplier" value=".1"/>
+				<display_value name="dDamageResist" value=".1"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="other" tags="zombie"/>
+					<passive_effect name="PhysicalDamageResist" operation="perc_add" value=".10"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="CarryCapacity" operation="base_add" value="10"/>
+				<display_value name="dCarryCapacity" value="10"/>
+				<passive_effect name="HealthMax" operation="base_add" value="50"/>
+				<display_value name="dHealthMax" value="50"/>				
+			</effect_group>
+			<property class="SDCS">
+				<property name="Prefab" value="Entities/Player/*/Gear/Prefabs/gear*Enforcer"/>
+				<property name="TransformName" value="body"/>
+				<property name="Excludes" value="body"/>
+			</property>
+		</item>
+		<item name="uniqueArmorMediGloves">
+			<property name="Extends" value="armorMediumMaster" param1="CustomIcon"/>					
+			<property name="Tags" value="upperbody,hands,armor,armorHands,mediumArmor,mediumArmorPenalty,canHaveCosmetic,mediumArmorDeg,armorMediumSkill,armorUniqueMediumBonus"/>
+			<property name="EquipSlot" value="Hands"/>
+			<property name="SoundPickup" value="outfit_leather_grab"/>
+			<property name="SoundPlace" value="outfit_leather_place"/>
+
+			<property name="CustomIcon" value="armorEnforcerGloves"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property name="ArmorGroup" value="groupUniqueArmorMedium"/>
+			<property name="CustomIconTint" value="B65FCF"/>
+			<property name="TintColor" value="B65FCF"/>
+			<property name="Material" value="Morganic"/>
+			<property name="DescriptionKey" value="uniqueArmorMediGlovesDesc"/>
+			<property name="DisplayType" value="uniqueGloves"/>					
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
+			<property name="ShowQuality" value="false"/>
+
+			<effect_group name="uniqueArmorMedium">
+				<passive_effect name="ModSlots" operation="base_set" value="5" />
+				<passive_effect name="ModPowerBonus" operation="base_add" value="1" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="18"/>			
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="18" tags="heat,electrical"/>			
+				<passive_effect name="BuffResistance" operation="base_add" value=".055" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="9999"  tags="admin"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
+				<passive_effect name="HypothermalResist" operation="base_add" value="20"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="20"/>
+
+				<passive_effect name="Mobility" operation="perc_add" value="-.06"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.026" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.054" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.54"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".1"/>
+				<display_value name="dNoiseMultiplier" value=".1"/>
+				
+				<display_value name="dEntityDamage" value=".5"/>
+				<display_value name="dEntityDamageM" value=".5"/>
+				<display_value name="dHavestUnique" value=".75"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="ArmorGroupCount" group_name="groupMiner" operation="LTE" value="0" />
+				<requirement name="ArmorGroupCount" group_name="groupLumberjack" operation="LTE" value="0" />
+				<requirement name="ArmorGroupCount" group_name="groupFarmer" operation="LTE" value="0" />
+				<passive_effect name="HarvestCount" operation="base_add" value="1" tags="farmerBonusHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" value=".75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" value=".75" tags="lumberjackHarvest"/>				
+				<passive_effect name="HarvestCount" operation="base_add" value=".75" tags="salvageHarvest,allHarvest"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="HoldingItemHasTags" tags="ranged"/>			
+				<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
+			</effect_group>	
+			<effect_group>
+				<requirement name="HoldingItemHasTags" tags="meleeWeapon"/>			
+				<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
+			</effect_group>		
+			<effect_group>			
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="75"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="1" tags="farmerBonusSeed"/>
+			</effect_group>
+			<property class="SDCS">
+				<property name="Prefab" value="Entities/Player/*/Gear/Prefabs/gear*Enforcer"/>
+				<property name="TransformName" value="hands"/>
+				<property name="Excludes" value="hands"/>
+			</property>
+		</item>
+		<item name="uniqueArmorMediLegs">
+			<property name="Extends" value="armorMediumMaster" param1="CustomIcon"/>	
+			<property name="Tags" value="lowerbody,feet,armor,armorFeet,mediumArmor,mediumArmorPenalty,canHaveCosmetic,mediumArmorDeg,armorMediumSkill,armorUniqueMediumBonus"/>			
+			<property name="EquipSlot" value="Feet"/>
+			<property name="SoundPickup" value="outfit_leather_grab"/>
+			<property name="SoundPlace" value="outfit_leather_place"/>
+
+			<property name="CustomIcon" value="armorEnforcerBoots"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property name="ArmorGroup" value="groupUniqueArmorMedium"/>
+			<property name="CustomIconTint" value="B65FCF"/>
+			<property name="TintColor" value="B65FCF"/>
+			<property name="Material" value="Morganic"/>
+			<property name="DescriptionKey" value="uniqueArmorMediLegsDesc"/>
+			<property name="DisplayType" value="uniqueBoots"/>					
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
+			<property name="ShowQuality" value="false"/>
+
+			<effect_group name="uniqueArmorMedium">
+				<passive_effect name="ModSlots" operation="base_set" value="5" />
+				<passive_effect name="ModPowerBonus" operation="base_add" value="1" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="18"/>			
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="18" tags="heat,electrical"/>			
+				<passive_effect name="BuffResistance" operation="base_add" value=".055" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="9999"  tags="admin"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
+				<passive_effect name="HypothermalResist" operation="base_add" value="20"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="20"/>
+
+				<passive_effect name="Mobility" operation="perc_add" value="-.06"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.026" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.054" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.54"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".1"/>
+				<display_value name="dNoiseMultiplier" value=".1"/>
 			</effect_group>
 			<effect_group>
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nerdBootFallDMG" operation="set" value=".08484"/>
@@ -7939,100 +8209,241 @@
 				<passive_effect name="RunSpeed" operation="perc_add" value=".2"/>
 				<display_value name="dRunSpeed" value=".2"/>
 				<passive_effect name="StaminaMax" operation="base_add" value="50"/>
-				<display_value name="dStaminaMax" value="50" />				
+				<display_value name="dStaminaMax" value="50" />	
+				<display_value name="dFallDamage" value="6"/>			
 			</effect_group>
-
-
+			<property class="SDCS">
+				<property name="Prefab" value="Entities/Player/*/Gear/Prefabs/gear*Enforcer"/>
+				<property name="TransformName" value="feet"/>
+				<property name="Excludes" value="feet"/>
+			</property>
 		</item>
-		<!-- ▼▲ UniqueMili ▲▼ -->
-		<item name="uniqueArmorMediHelm">
-			<property name="Extends" value="gunMGT1AK47Parts"/>
-			<property name="Material" value="Morganic"/>
-			<property name="CustomIcon" value="orePotassiumNitrateBoulder"/>
-			<property name="CustomIconTint" value="B65FCF"/>
-			<property name="TintColor" value="B65FCF"/>
-			<property name="EconomicBundleSize" value="1"/>
-			<property name="DescriptionKey" value="practoniumdesc"/>
-			<property name="EconomicValue" value="50000"/>
-			<property name="Stacknumber" value="50"/>
-		</item>
-		<item name="uniqueArmorMediArmor">
-			<property name="Extends" value="gunMGT1AK47Parts"/>
-			<property name="Material" value="Morganic"/>
-			<property name="CustomIcon" value="orePotassiumNitrateBoulder"/>
-			<property name="CustomIconTint" value="B65FCF"/>
-			<property name="TintColor" value="B65FCF"/>
-			<property name="EconomicBundleSize" value="1"/>
-			<property name="DescriptionKey" value="practoniumdesc"/>
-			<property name="EconomicValue" value="50000"/>
-			<property name="Stacknumber" value="50"/>
-		</item>
-		<item name="uniqueArmorMediGloves">
-			<property name="Extends" value="gunMGT1AK47Parts"/>
-			<property name="Material" value="Morganic"/>
-			<property name="CustomIcon" value="orePotassiumNitrateBoulder"/>
-			<property name="CustomIconTint" value="B65FCF"/>
-			<property name="TintColor" value="B65FCF"/>
-			<property name="EconomicBundleSize" value="1"/>
-			<property name="DescriptionKey" value="practoniumdesc"/>
-			<property name="EconomicValue" value="50000"/>
-			<property name="Stacknumber" value="50"/>
-		</item>
-		<item name="uniqueArmorMediLegs">
-			<property name="Extends" value="gunMGT1AK47Parts"/>
-			<property name="Material" value="Morganic"/>
-			<property name="CustomIcon" value="orePotassiumNitrateBoulder"/>
-			<property name="CustomIconTint" value="B65FCF"/>
-			<property name="TintColor" value="B65FCF"/>
-			<property name="EconomicBundleSize" value="1"/>
-			<property name="DescriptionKey" value="practoniumdesc"/>
-			<property name="EconomicValue" value="50000"/>
-			<property name="Stacknumber" value="50"/>
-		</item>
-
+		<!-- ▼▲ UniqueHeavy ▲▼ -->
 		<item name="uniqueArmorHeavHelm">
-			<property name="Extends" value="gunMGT1AK47Parts"/>
-			<property name="Material" value="Morganic"/>
-			<property name="CustomIcon" value="orePotassiumNitrateBoulder"/>
+			<property name="Extends" value="armorHeavyMaster" param1="CustomIcon"/>	
+			<property name="Tags" value="head,armor,armorHead,heavyArmor,heavyArmorPenalty,canHaveCosmetic,heavyArmorDeg,armorHeavySkill,armorUniqueHeavyBonus"/>					
+			<property name="EquipSlot" value="Head"/>
+			<property name="SoundPickup" value="headwear_metal_grab"/>
+			<property name="SoundPlace" value="headwear_metal_place"/>
+
+			<property name="CustomIcon" value="armorRaiderHelmet"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>	
+			<property name="ArmorGroup" value="groupUniqueArmorHeavy"/>
 			<property name="CustomIconTint" value="B65FCF"/>
 			<property name="TintColor" value="B65FCF"/>
-			<property name="EconomicBundleSize" value="1"/>
-			<property name="DescriptionKey" value="practoniumdesc"/>
-			<property name="EconomicValue" value="50000"/>
-			<property name="Stacknumber" value="50"/>
+			<property name="Material" value="Morganic"/>
+			<property name="DescriptionKey" value="uniqueArmorHeavHelmDesc"/>
+			<property name="DisplayType" value="uniqueHelmet"/>					
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
+			<property name="ShowQuality" value="false"/>
+			<effect_group name="UniqueArmorHeavy">
+				<passive_effect name="ModSlots" operation="base_set" value="5"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="22"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="22" tags="heat,electrical"/>				
+				<passive_effect name="BuffResistance" operation="base_add" value="0.11" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="9999"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="heavyArmorDeg"/>
+				<passive_effect name="HypothermalResist" operation="base_add" value="20"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="20"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.070"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.040" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.08" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.8"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".1"/>
+				<display_value name="dNoiseMultiplier" value=".1"/>				
+			</effect_group>
+			<effect_group>
+				<passive_effect name="BarteringBuying" operation="base_add" value=".2"/>
+				<passive_effect name="BarteringSelling" operation="base_add" value=".2"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".2"/>
+				<display_value name="dPlayerExpGain" value=".2"/>
+				<passive_effect name="LootStage" operation="perc_add" value=".5"/>
+				<display_value name="dLootStage" value=".5" />
+			</effect_group>			
+			<property class="SDCS">
+				<property name="Prefab" value="Entities/Player/*/Gear/Prefabs/gear*RaiderPrefab"/>
+				<property name="TransformName" value="head"/>
+				<property name="Excludes" value="head"/>
+				<property name="HairMaskType" value="None"/>
+				<property name="FacialHairMaskType" value="None"/>
+			</property>
 		</item>
 		<item name="uniqueArmorHeavArmor">
-			<property name="Extends" value="gunMGT1AK47Parts"/>
-			<property name="Material" value="Morganic"/>
-			<property name="CustomIcon" value="orePotassiumNitrateBoulder"/>
+			<property name="Extends" value="armorHeavyMaster" param1="CustomIcon"/>				
+			<property name="Tags" value="upperbody,chest,armor,armorChest,heavyArmor,heavyArmorPenalty,canHaveCosmetic,heavyArmorDeg,armorHeavySkill,armorUniqueHeavyBonus"/>					
+			<property name="EquipSlot" value="Chest"/>
+			<property name="SoundPickup" value="headwear_metal_grab"/>
+			<property name="SoundPlace" value="headwear_metal_place"/>
+			
+			<property name="CustomIcon" value="armorRaiderOutfit"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property name="ArmorGroup" value="groupUniqueArmorHeavy"/>
 			<property name="CustomIconTint" value="B65FCF"/>
 			<property name="TintColor" value="B65FCF"/>
-			<property name="EconomicBundleSize" value="1"/>
-			<property name="DescriptionKey" value="practoniumdesc"/>
-			<property name="EconomicValue" value="50000"/>
-			<property name="Stacknumber" value="50"/>
+			<property name="Material" value="Morganic"/>
+			<property name="DescriptionKey" value="uniqueArmorHeavArmorDesc"/>
+			<property name="DisplayType" value="uniqueArmor"/>					
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
+			<property name="ShowQuality" value="false"/>
+			<effect_group name="UniqueArmorHeavy">
+				<passive_effect name="ModSlots" operation="base_set" value="5"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="22"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="22" tags="heat,electrical"/>				
+				<passive_effect name="BuffResistance" operation="base_add" value="0.11" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="9999"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="heavyArmorDeg"/>
+				<passive_effect name="HypothermalResist" operation="base_add" value="20"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="20"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.070"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.040" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.08" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.8"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".1"/>
+				<display_value name="dNoiseMultiplier" value=".1"/>	
+				<display_value name="dDamageResist" value=".1"/>			
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="other" tags="zombie"/>
+					<passive_effect name="PhysicalDamageResist" operation="perc_add" value=".10"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="CarryCapacity" operation="base_add" value="10"/>
+				<display_value name="dCarryCapacity" value="10"/>
+				<passive_effect name="HealthMax" operation="base_add" value="100"/>
+				<display_value name="dHealthMax" value="100"/>
+			</effect_group>
+			<property class="SDCS">
+				<property name="Prefab" value="Entities/Player/*/Gear/Prefabs/gear*RaiderPrefab"/>
+				<property name="TransformName" value="body"/>
+				<property name="Excludes" value="body"/>
+			</property>
 		</item>
 		<item name="uniqueArmorHeavGloves">
-			<property name="Extends" value="gunMGT1AK47Parts"/>
-			<property name="Material" value="Morganic"/>
-			<property name="CustomIcon" value="orePotassiumNitrateBoulder"/>
+			<property name="Extends" value="armorHeavyMaster" param1="CustomIcon"/>				
+			<property name="Tags" value="upperbody,hands,armor,armorHands,heavyArmor,heavyArmorPenalty,canHaveCosmetic,heavyArmorDeg,armorHeavySkill,armorUniqueHeavyBonus"/>				
+			<property name="EquipSlot" value="Hands"/>
+			<property name="SoundPickup" value="headwear_metal_grab"/>
+			<property name="SoundPlace" value="headwear_metal_place"/>
+			
+			<property name="CustomIcon" value="armorRaiderGloves"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property name="ArmorGroup" value="groupUniqueArmorHeavy"/>
 			<property name="CustomIconTint" value="B65FCF"/>
 			<property name="TintColor" value="B65FCF"/>
-			<property name="EconomicBundleSize" value="1"/>
-			<property name="DescriptionKey" value="practoniumdesc"/>
-			<property name="EconomicValue" value="50000"/>
-			<property name="Stacknumber" value="50"/>
+			<property name="Material" value="Morganic"/>
+			<property name="DescriptionKey" value="uniqueArmorHeavGlovesDesc"/>
+			<property name="DisplayType" value="uniqueGloves"/>					
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
+			<property name="ShowQuality" value="false"/>
+			<effect_group name="UniqueArmorHeavy">
+				<passive_effect name="ModSlots" operation="base_set" value="5"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="22"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="22" tags="heat,electrical"/>				
+				<passive_effect name="BuffResistance" operation="base_add" value="0.11" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="9999"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="heavyArmorDeg"/>
+				<passive_effect name="HypothermalResist" operation="base_add" value="20"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="20"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.070"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.040" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.08" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.8"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".1"/>
+				<display_value name="dNoiseMultiplier" value=".1"/>				
+				<display_value name="dEntityDamage" value=".5"/>
+				<display_value name="dEntityDamageM" value=".7"/>
+				<display_value name="dHavestUnique" value=".5"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="ArmorGroupCount" group_name="groupMiner" operation="LTE" value="0" />
+				<requirement name="ArmorGroupCount" group_name="groupLumberjack" operation="LTE" value="0" />
+				<requirement name="ArmorGroupCount" group_name="groupFarmer" operation="LTE" value="0" />
+				<passive_effect name="HarvestCount" operation="base_add" value="1" tags="farmerBonusHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" value=".5" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" value=".5" tags="lumberjackHarvest"/>				
+				<passive_effect name="HarvestCount" operation="base_add" value=".5" tags="salvageHarvest,allHarvest"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="HoldingItemHasTags" tags="ranged"/>			
+				<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
+			</effect_group>	
+			<effect_group>
+				<requirement name="HoldingItemHasTags" tags="meleeWeapon"/>			
+				<passive_effect name="EntityDamage" operation="perc_add" value=".7"/>
+			</effect_group>		
+			<effect_group>			
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="1" tags="farmerBonusSeed"/>
+			</effect_group>
+			<property class="SDCS">
+				<property name="Prefab" value="Entities/Player/*/Gear/Prefabs/gear*RaiderPrefab"/>
+				<property name="TransformName" value="hands"/>
+				<property name="Excludes" value="hands"/>
+			</property>
 		</item>
 		<item name="uniqueArmorHeavLegs">
-			<property name="Extends" value="gunMGT1AK47Parts"/>
-			<property name="Material" value="Morganic"/>
-			<property name="CustomIcon" value="orePotassiumNitrateBoulder"/>
+			<property name="Extends" value="armorHeavyMaster" param1="CustomIcon"/>			
+			<property name="Tags" value="lowerbody,feet,armor,armorFeet,heavyArmor,heavyArmorPenalty,canHaveCosmetic,heavyArmorDeg,armorHeavySkill,armorUniqueHeavyBonus"/>				
+			<property name="EquipSlot" value="Feet"/>
+			<property name="SoundPickup" value="headwear_metal_grab"/>
+			<property name="SoundPlace" value="headwear_metal_place"/>
+			
+			<property name="CustomIcon" value="armorRaiderBoots"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property name="ArmorGroup" value="groupUniqueArmorHeavy"/>
 			<property name="CustomIconTint" value="B65FCF"/>
 			<property name="TintColor" value="B65FCF"/>
-			<property name="EconomicBundleSize" value="1"/>
-			<property name="DescriptionKey" value="practoniumdesc"/>
-			<property name="EconomicValue" value="50000"/>
-			<property name="Stacknumber" value="50"/>
+			<property name="Material" value="Morganic"/>
+			<property name="DescriptionKey" value="uniqueArmorHeavGlovesDesc"/>
+			<property name="DisplayType" value="uniqueBoots"/>					
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
+			<property name="ShowQuality" value="false"/>
+			<effect_group name="UniqueArmorHeavy">
+				<passive_effect name="ModSlots" operation="base_set" value="5"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="22"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="22" tags="heat,electrical"/>				
+				<passive_effect name="BuffResistance" operation="base_add" value="0.11" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="9999"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="heavyArmorDeg"/>
+				<passive_effect name="HypothermalResist" operation="base_add" value="20"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="20"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.070"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.040" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.08" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.8"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".1"/>
+				<display_value name="dNoiseMultiplier" value=".1"/>				
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nerdBootFallDMG" operation="set" value=".08484"/>
+				<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar="$nerdBootFallDMG" operation="set" value="0"/>	
+				<passive_effect name="RunSpeed" operation="perc_add" value=".2"/>
+				<display_value name="dRunSpeed" value=".2"/>
+				<passive_effect name="StaminaMax" operation="base_add" value="25"/>
+				<display_value name="dStaminaMax" value="25" />
+				<display_value name="dFallDamage" value="6"/>				
+			</effect_group>
+			<property class="SDCS">
+				<property name="Prefab" value="Entities/Player/*/Gear/Prefabs/gear*RaiderPrefab"/>
+				<property name="TransformName" value="feet"/>
+				<property name="Excludes" value="feet"/>
+			</property>
 		</item>
 		
 		<!-- ▼▲ AncientArmor ▲▼ -->
@@ -9192,7 +9603,8 @@
 		
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 
-	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Shutgun Ammo Balance ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Shutgun Ammo Balance ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->		 
+
 		<append xpath="/items/item[@name='ammoShotgunSlug']">
 			<effect_group name="destroyerbalance" tiered="false">
 				<passive_effect name="EntityDamage" operation="base_add" value="212" tags="perkBoomstick">
