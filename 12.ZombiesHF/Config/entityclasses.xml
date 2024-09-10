@@ -910,353 +910,26 @@
 			</effect_group>
 		</entity_class>
 		<!-- by T4VO Animals based on Robeloto Zombies -->
-		<entity_class name="TAVOanimalChickenDemon" extends="animalTemplateHostile">
-			<property name="HideInSpawnMenu" value="false"/>
-
-			<property name="Tags" value="entity,animal,zombie,hostile"/>
-			<property name="Class" value="EntityEnemyAnimal"/>
-			<property name="Prefab" value="/Entities/Animals/CHICKEN/chickenPrefab"/>
-			<property name="IsEntityAnimal" value="true"/>
-			<property name="IsEnemyEntity" value="True"/>
-			<property name="Parent" value="Animals"/>
-			<property name="SizeScale" value="1.3"/>
-			<property name="PhysicsBody" value="chicken"/>
-
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
-			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
-			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
-			"/>
-
-			<property name="Mass" value="40"/>
-			<property name="Weight" value="40"/>
-			<property name="SoundHurt" value="Animals/Chicken/chickenpain"/>
-			<property name="SoundDeath" value="Animals/Chicken/chickendeath"/>
-			<property name="SwimOffset" value="2"/>
-			<property name="HasRagdoll" value="false"/>
-			<property name="HasDeathAnim" value="false"/>
-			<!-- Gameplay -->
-			<property name="SightRange" value="150"/>
-			<!--<property name="HandItem" value="meleeHandAnimalChickenDemon"/> -->			<!-- mano original de mi local -->
-			<property name="HandItem" value="meleeHandAnimalWolf"/>
-			<property name="AttackTimeoutDay" value="1.5"/>
-			<property name="AttackTimeoutNight" value="1.1"/>
-			<property name="MaxTurnSpeed" value="100"/>
-			<property name="MoveSpeed" value="1.8"/>
-			<property name="MoveSpeedAggro" value="2.7, 3.7"/>
-			<property name="MoveSpeedPanic" value="3.5"/>
-			<property name="ExperienceGain" value="1200"/>
-			<property name="DeadBodyHitPoints" value="1000"/>
-			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="25"/>
-			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="50"/>
-			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="9"/>
-			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="4"/>
-			<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
-			<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-			<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
-			<effect_group name="Base Effects">
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="10"/>
-				<passive_effect name="HealthMax" operation="base_set" value="900"/>
-				<passive_effect name="HealthMax" operation="perc_add" value="0"/>
-			</effect_group>
-		</entity_class>
-		<entity_class name="TAVOanimalChickenDemonFeral" extends="animalTemplateHostile">
-			<property name="HideInSpawnMenu" value="false"/>
-			<property name="Tags" value="entity,animal,zombie,hostile"/>
-			<property name="Prefab" value="/Entities/Animals/CHICKEN/chickenPrefab"/>
-			<property name="ReplaceMaterial0" value="particleeffects/models/materials/p_gib"/>
-			<property name="Class" value="EntityEnemyAnimal"/>
-			<property name="IsEntityAnimal" value="true"/>
-			<property name="IsEnemyEntity" value="True"/>
-			<property name="Parent" value="Animals"/>
-			<property name="SizeScale" value="2"/>
-			<property name="PhysicsBody" value="chicken"/>
-			<property name="AITask" value="
-			BreakBlock|
-			DestroyArea|
-			Territorial|			
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
-			ApproachSpot|
-			Look|
-			Wander|
-			"/>
-			
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
-			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
-			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
-			"/>
-
-			<property name="Mass" value="40"/>
-			<property name="Weight" value="40"/>
-			<property name="SoundHurt" value="Animals/Chicken/chickenpain"/>
-			<property name="SoundDeath" value="Animals/Chicken/chickendeath"/>
-			<property name="SwimOffset" value="2"/>
-			<property name="HasRagdoll" value="false"/>
-			<property name="HasDeathAnim" value="false"/>
-			<!-- Gameplay -->
-			<property name="SightRange" value="150"/>
-			<property name="HandItem" value="meleeHandAnimalBear"/>
-			<property name="AttackTimeoutDay" value="1.5"/>
-			<property name="AttackTimeoutNight" value="1.1"/>
-			<property name="MaxTurnSpeed" value="100"/>
-			<property name="MoveSpeed" value="2.1"/>
-			<property name="MoveSpeedAggro" value="2.9, 3.9"/>
-			<property name="MoveSpeedPanic" value="3.5"/>
-			<property name="ExperienceGain" value="1200"/>
-			<property name="DeadBodyHitPoints" value="1000"/>
-			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="25"/>
-			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="50"/>
-			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="9"/>
-			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="4"/>
-			<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
-			<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-			<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
-			<effect_group name="Base Effects">
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/>
-				<passive_effect name="HealthMax" operation="base_set" value="1275"/>
-				<passive_effect name="HealthMax" operation="perc_add" value="0"/>
-			</effect_group>
-		</entity_class>
-		<entity_class name="TAVOanimalChickenDemonFeralFUEGO" extends="animalTemplateHostile">
-			<property name="HideInSpawnMenu" value="false"/>
-			<property name="Tags" value="entity,animal,zombie,hostile"/>
-			<property name="Prefab" value="/Entities/Animals/CHICKEN/chickenPrefab"/>
-			<property name="ReplaceMaterial0" value="itemmodeffects/materials/melee_fire"/>
-			<property name="Class" value="EntityEnemyAnimal"/>
-			<property name="IsEntityAnimal" value="true"/>
-			<property name="IsEnemyEntity" value="True"/>
-			<property name="Parent" value="Animals"/>
-			<property name="SizeScale" value="2.4"/>
-			<property name="PhysicsBody" value="chicken"/>
-			<property name="AITask" value="
-			BreakBlock|
-			DestroyArea|
-			Territorial|			
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
-			ApproachSpot|
-			Look|
-			Wander|
-			"/>
-
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
-			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
-			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
-			"/>		
-
-			<property name="Mass" value="40"/>
-			<property name="Weight" value="40"/>
-			<property name="SoundHurt" value="Animals/Chicken/chickenpain"/>
-			<property name="SoundDeath" value="Animals/Chicken/chickendeath"/>
-			<property name="SwimOffset" value="2"/>
-			<property name="HasRagdoll" value="false"/>
-			<property name="HasDeathAnim" value="false"/>
-			<!-- Gameplay -->
-			<property name="SightRange" value="150"/>
-			<property name="HandItem" value="meleeHandAnimalChickenDemon"/>
-			<property name="AttackTimeoutDay" value="1.5"/>
-			<property name="AttackTimeoutNight" value="1.1"/>
-			<property name="MaxTurnSpeed" value="100"/>
-			<property name="MoveSpeed" value="2.1"/>
-			<property name="MoveSpeedAggro" value="2.9, 3.9"/>
-			<property name="MoveSpeedPanic" value="3.5"/>
-			<property name="ExperienceGain" value="1200"/>
-			<property name="DeadBodyHitPoints" value="1000"/>
-			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="25"/>
-			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="50"/>
-			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="9"/>
-			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="4"/>
-			<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
-			<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-			<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
-			<effect_group name="Base Effects">
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/>
-				<passive_effect name="HealthMax" operation="base_set" value="1500"/>
-				<passive_effect name="HealthMax" operation="perc_add" value="0"/>
-			</effect_group>
-		</entity_class>
-		<entity_class name="TAVOanimalChickenDemonFeralBOLT" extends="animalTemplateHostile">
-			<property name="HideInSpawnMenu" value="false"/>
-			<property name="Tags" value="entity,animal,zombie,hostile"/>
-			<property name="Prefab" value="/Entities/Animals/CHICKEN/chickenPrefab"/>
-			<property name="ReplaceMaterial0" value="itemmodeffects/materials/baton_arc"/>
-			<property name="ReplaceMaterial1" value="particleeffects/materials/p_spark_electricity"/>
-			<property name="Class" value="EntityEnemyAnimal"/>
-			<property name="IsEntityAnimal" value="true"/>
-			<property name="IsEnemyEntity" value="True"/>
-			<property name="Parent" value="Animals"/>
-			<property name="SizeScale" value="2.4"/>
-			<property name="PhysicsBody" value="chicken"/>
-			<property name="AITask" value="
-			BreakBlock|
-			DestroyArea|
-			Territorial|			
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
-			ApproachSpot|
-			Look|
-			Wander|
-			"/>
-			
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
-			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
-			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
-			"/>		
-
-			<property name="Mass" value="40"/>
-			<property name="Weight" value="40"/>
-			<property name="SoundHurt" value="Animals/Chicken/chickenpain"/>
-			<property name="SoundDeath" value="Animals/Chicken/chickendeath"/>
-			<property name="SwimOffset" value="2"/>
-			<property name="HasRagdoll" value="false"/>
-			<property name="HasDeathAnim" value="false"/>
-
-			<property name="SightRange" value="150"/>
-			<property name="HandItem" value="meleeHandAnimalChickenDemonBOLT"/>
-			<property name="AttackTimeoutDay" value="1.5"/>
-			<property name="AttackTimeoutNight" value="1.1"/>
-			<property name="MaxTurnSpeed" value="100"/>
-			<property name="MoveSpeed" value="2.1"/>
-			<property name="MoveSpeedAggro" value="2.9, 3.9"/>
-			<property name="MoveSpeedPanic" value="3.5"/>
-			<property name="ExperienceGain" value="1200"/>
-			<property name="DeadBodyHitPoints" value="1000"/>
-			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="25"/>
-			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="50"/>
-			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="9"/>
-			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="4"/>
-			<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
-			<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-			<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
-			<effect_group name="Base Effects">
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/>
-				<passive_effect name="HealthMax" operation="base_set" value="1500"/>
-				<passive_effect name="HealthMax" operation="perc_add" value="0"/>
-			</effect_group>
-		</entity_class>
-		<entity_class name="TAVOanimalChickenDemonFeralBlackChamuscada" extends="animalTemplateHostile">
-			<property name="HideInSpawnMenu" value="false"/>
-			<property name="Tags" value="entity,animal,zombie,hostile"/>
-			<property name="Prefab" value="/Entities/Animals/CHICKEN/chickenPrefab"/>
-			<property name="ReplaceMaterial0" value="entities/resources/materials/oreCoalBoulder"/>
-			<property name="Class" value="EntityEnemyAnimal"/>
-			<property name="IsEntityAnimal" value="true"/>
-			<property name="IsEnemyEntity" value="True"/>
-			<property name="Parent" value="Animals"/>
-			<property name="SizeScale" value="2.6"/>
-			<property name="PhysicsBody" value="chicken"/>
-			<property name="AITask" value="
-			BreakBlock|
-			DestroyArea|
-			Territorial|			
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
-			ApproachSpot|
-			Look|
-			Wander|
-			"/>
-			
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
-			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
-			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
-			"/>
-
-			<property name="Mass" value="40"/>
-			<property name="Weight" value="40"/>
-			<property name="SoundHurt" value="Animals/Chicken/chickenpain"/>
-			<property name="SoundDeath" value="Animals/Chicken/chickendeath"/>
-			<property name="SwimOffset" value="2"/>
-			<property name="HasRagdoll" value="false"/>
-			<property name="HasDeathAnim" value="false"/>
-			<!-- Gameplay -->
-			<property name="SightRange" value="150"/>
-			<property name="HandItem" value="meleeHandAnimalBear"/>
-			<property name="AttackTimeoutDay" value="1.5"/>
-			<property name="AttackTimeoutNight" value="1.1"/>
-			<property name="MaxTurnSpeed" value="100"/>
-			<property name="MoveSpeed" value="2.1"/>
-			<property name="MoveSpeedAggro" value="2.9, 3.9"/>
-			<property name="MoveSpeedPanic" value="3.5"/>
-			<property name="ExperienceGain" value="1200"/>
-			<property name="DeadBodyHitPoints" value="1000"/>
-			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="25"/>
-			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="50"/>
-			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="9"/>
-			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="4"/>
-			<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
-			<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-			<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
-			<effect_group name="Base Effects">
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="15"/>
-				<passive_effect name="HealthMax" operation="base_set" value="1500"/>
-				<passive_effect name="HealthMax" operation="perc_add" value="0"/>
-			</effect_group>
-		</entity_class>
-		<entity_class name="TAVOanimalChickenDemonFeralTANK" extends="animalTemplateHostile">
-			<property name="HideInSpawnMenu" value="false"/>
-			<property name="Tags" value="entity,animal,zombie,hostile"/>
-			<property name="Prefab" value="/Entities/Animals/CHICKEN/chickenPrefab"/>
-			<property name="ReplaceMaterial1" value="materials/nightvisionmaterial"/>
-			<property name="ReplaceMaterial0" value="entities/resources/materials/oreleadboulder"/>
-			<property name="Class" value="EntityEnemyAnimal"/>
-			<property name="IsEntityAnimal" value="true"/>
-			<property name="IsEnemyEntity" value="True"/>
-			<property name="Parent" value="Animals"/>
-			<property name="SizeScale" value="2.8"/>
-			<property name="PhysicsBody" value="chicken"/>
-			<property name="AITask" value="
-			BreakBlock|
-			DestroyArea|
-			Territorial|			
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
-			ApproachSpot|
-			Look|
-			Wander|
-			"/>
-
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
-			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
-			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
-			"/>
-			<property name="Mass" value="40"/>
-			<property name="Weight" value="40"/>
-			<property name="SoundHurt" value="Animals/Chicken/chickenpain"/>
-			<property name="SoundDeath" value="Animals/Chicken/chickendeath"/>
-			<property name="SwimOffset" value="2"/>
-			<property name="HasRagdoll" value="false"/>
-			<property name="HasDeathAnim" value="false"/>
-			<!-- Gameplay -->
-			<property name="SightRange" value="150"/>
-			<property name="HandItem" value="meleeHandAnimalBear"/>
-			<property name="AttackTimeoutDay" value="1.5"/>
-			<property name="AttackTimeoutNight" value="1.1"/>
-			<property name="MaxTurnSpeed" value="100"/>
-			<property name="MoveSpeed" value="2.1"/>
-			<property name="MoveSpeedAggro" value="2.9, 3.9"/>
-			<property name="MoveSpeedPanic" value="3.5"/>
-			<property name="ExperienceGain" value="1200"/>
-			<property name="DeadBodyHitPoints" value="1000"/>
-			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="25"/>
-			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="50"/>
-			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="9"/>
-			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="4"/>
-			<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
-			<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-			<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
-			<effect_group name="Base Effects">
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="50"/>
-				<passive_effect name="HealthMax" operation="base_set" value="2400"/>
-				<passive_effect name="HealthMax" operation="perc_add" value="0"/>
-			</effect_group>
-		</entity_class>
+		<!--
+			<entity_class name="TAVOanimalChickenDemon" extends="animalTemplateHostile">
+				
+			</entity_class>
+			<entity_class name="TAVOanimalChickenDemonFeral" extends="animalTemplateHostile">
+				
+			</entity_class>
+			<entity_class name="TAVOanimalChickenDemonFeralFUEGO" extends="animalTemplateHostile">
+				
+			</entity_class>
+			<entity_class name="TAVOanimalChickenDemonFeralBOLT" extends="animalTemplateHostile">
+				
+			</entity_class>
+			<entity_class name="TAVOanimalChickenDemonFeralBlackChamuscada" extends="animalTemplateHostile">
+				
+			</entity_class>
+			<entity_class name="TAVOanimalChickenDemonFeralTANK" extends="animalTemplateHostile">
+				
+			</entity_class> 
+		-->
 		<entity_class name="TAVOanimalSnakeFeral" extends="animalSnake">
 			<property name="HideInSpawnMenu" value="false"/>
 			<property name="Tags" value="entity,animal,hostile"/>
@@ -1300,7 +973,7 @@
 			<property name="AttackTimeoutDay" value="1.5"/>
 			<property name="AttackTimeoutNight" value="1.1"/>
 
-			<property name="ExperienceGain" value="5900"/>
+			<property name="ExperienceGain" value="9000"/>
 			<property name="DeadBodyHitPoints" value="1000"/>
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="80"/>
@@ -1334,8 +1007,7 @@
 			<property name="SoundAttack" value="Animals/Snake/snakeattack"/>
 			<property name="RootMotion" value="true"/>
 			<property name="HasDeathAnim" value="true"/>
-			<!--<property name="PainResistPerHit" value="-1"/>-->
-			<!--<property name="WalkType" value="7"/>-->
+			
 
 			<property class="MechanimAttackTriggers">
 				<property name="state0" value="AttackTrigger"/>
@@ -1347,7 +1019,7 @@
 				<property name="state0" value="DeathTrigger"/>
 			</property>
 
-			<!-- Gameplay -->
+			
 			<property name="MaxTurnSpeed" value="100"/>
 			<property name="MoveSpeed" value="0.15"/>
 			<property name="MoveSpeedAggro" value=".18, .22"/>
@@ -1358,11 +1030,11 @@
 			<property name="AttackTimeoutDay" value="1.5"/>
 			<property name="AttackTimeoutNight" value="1.1"/>
 
-			<property name="ExperienceGain" value="4000"/>
+			<property name="ExperienceGain" value="6000"/>
 			<property name="DeadBodyHitPoints" value="1000"/>
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="300"/>
-			<!-- animalZombieSNAKE -->
+			
 			<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="30"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="4500"/>
@@ -1475,7 +1147,7 @@
 			<property name="SightLightThreshold" value="-2,150"/>
 			<property name="LookAtAngle" value="0"/>
 			<property name="HandItem" value="meleeHandAnimalZombieBearLEGENDARY"/>
-			<property name="ExperienceGain" value="30000"/>
+			<property name="ExperienceGain" value="45000"/>
 			<!-- XP strong -->
 			<property name="DeadBodyHitPoints" value="1000"/>
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
@@ -1499,76 +1171,10 @@
 		</entity_class>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Special Zombies ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
 		
-	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Scouts ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-		<entity_class name="zombiSBMiniSiren" extends="zombieBurnt">
-			<property name="Archetype" value="archezombiSBMiniSiren"/>
-			<property name="SizeScale" value=".5"/>
-			<property name="Tags" value="entity,zombie,walker,boss,umazombie,siren"/>
+	
 
-			<property name="AltMats" value="entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder"/>
-			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>
-			
 
-			
-			<property name="WalkType" value="7"/>
-			<property name="SoundRandomTime" value="7"/>
-			<property name="SurfaceCategory" value="organic"/>
-			<property name="SoundRandom" value="sirenidle"/>
-			<property name="SoundSpawn" value="sirenspawn"/>
-			<property name="SoundAlert" value=""/>
-			<property name="SoundAttack" value=""/>
-			<property name="SoundHurt" value=""/>
-			<property name="SoundDeath" value=""/>
-			<property name="SoundSense" value=""/>
-			<property name="HandItem" value="meleeHandzombiSBMiniSiren"/>
-			<property name="SoundFootstepModifier" value=""/>
-			<property name="DismemberMultiplierHead" value="0"/>
-			<property name="DismemberMultiplierArms" value="0"/>
-			<property name="DismemberMultiplierLegs" value="0"/>
-			<property name="LegCrippleScale" value="0"/>
-			<property name="LegCrawlerThreshold" value="0"/>
-			<property name="KnockdownProneDamageThreshold" value="3"/>
-			<property name="KnockdownKneelDamageThreshold" value="3"/>
-			<property name="LegsExplosionDamageMultiplier" value="0"/>
-			<property name="ArmsExplosionDamageMultiplier" value="0"/>
-			<property name="HeadExplosionDamageMultiplier" value="0"/>
-			<property name="ChestExplosionDamageMultiplier" value="0"/>
-			<property name="PainResistPerHit" value="1"/>
-			<property name="ExperienceGain" value="1500"/>
-			<property name="SightRange" value="30"/>
-			<property name="MoveSpeed" value="1"/>
-			<!--  just shambling around  -->
-			<property name="MoveSpeedAggro" value=".7, 1.0"/>
-			<!--  chasing a target min/max (like day or night) -->
-			<property name="AITask" value="
-			BreakBlock|
-			DestroyArea|
-			Territorial|
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal,0,EntityAnimal|
-			Leap|			
-			ApproachSpot|
-			Territorial|
-			Look|
-			Wander|
-			"/>
 
-			<property name="LootDropEntityClass" count="1" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value="1"/>
-			<drop event="Harvest" name="resourceRawDiamond" count="0" tool_category="Disassemble"/>
-			<effect_group name="Base Effects">
-				<passive_effect name="HealthMax" operation="base_set" value="1500"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="35"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="SirenDeco"/>
-
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffSiren"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffDark3"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffNoiseAOE01"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
-				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
-			</effect_group>
-			<property name="DeadBodyHitPoints" value="1000"/>
-			<property name="TimeStayAfterDeath" value="5"/>
-		</entity_class>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Mutant by Malen and holyVentus ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
 		<!-- Cop -->
@@ -1604,7 +1210,7 @@
 			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/> -->
 			<!--  Gameplay  -->
 			<!--  <property name="Buffs" value="zombieRadiatedBuff80"/>  -->
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="3750"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".2"/>
@@ -1656,7 +1262,7 @@
 			<property name="ParticleOnSpawn" value="p_twitch_zombie_radiation_left" param1="SetShapeToMesh0"/>
 			<!--  Gameplay  -->
 			<!--  <property name="Buffs" value="zombieRadiatedBuff80"/>  -->
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="3750"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".2"/>
@@ -1706,7 +1312,7 @@
 			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 			<!--  Gameplay  -->
 			<!--  <property name="Buffs" value="zombieRadiatedBuff80"/>  -->
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="3750"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".2"/>
@@ -1754,7 +1360,7 @@
 			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 			<!--  Gameplay  -->
 			<!--  <property name="Buffs" value="zombieRadiatedBuff80"/>  -->
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="3750"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".2"/>
@@ -1802,7 +1408,7 @@
 			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 			<!--  Gameplay  -->
 			<!--  <property name="Buffs" value="zombieRadiatedBuff80"/>  -->
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="3750"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".2"/>
@@ -1859,7 +1465,7 @@
 			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 			<!--  Gameplay  -->
 			<!--  <property name="Buffs" value="zombieRadiatedBuff80"/>  -->
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="3750"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".2"/>
@@ -1909,7 +1515,7 @@
 			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 			<!--  Gameplay  -->
 			<!--  <property name="Buffs" value="zombieRadiatedBuff80"/>  -->
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="3750"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".2"/>
@@ -1955,7 +1561,7 @@
 			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 			<!--  Gameplay  -->
 			<!--  <property name="Buffs" value="zombieRadiatedBuff80"/>  -->
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="3750"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".2"/>
@@ -2001,7 +1607,7 @@
 			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 			<!--  Gameplay  -->
 			<!--  <property name="Buffs" value="zombieRadiatedBuff80"/>  -->
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="3750"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".2"/>
@@ -2056,7 +1662,7 @@
 			<!--  Disable Health explosion  -->
 			<property name="SoundExplodeWarn" value="demolitionzexplodewarning"/>
 			<property name="SoundTick" value="demolitionz_beep,.5,.9"/>
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="3750"/>
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".2"/>
 			<property name="MoveSpeedAggro" value=".8, .9"/>
@@ -2082,7 +1688,7 @@
 
 			<property name="AltMats" value="entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace"/>
 
-			<property name="ExperienceGain" value="6000"/>
+			<property name="ExperienceGain" value="9000"/>
 			<property name="WalkType" value="3"/>
 			<property name="Class" value="EntityZombieCop"/>
 
@@ -2187,7 +1793,7 @@
 						
 			<!--  Gameplay  -->
 			<!--  <property name="Buffs" value="zombieRadiatedBuff80"/>  -->
-			<property name="ExperienceGain" value="4000"/>
+			<property name="ExperienceGain" value="6000"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".4"/>
@@ -2242,7 +1848,7 @@
 			<property name="ChestExplosionDamageMultiplier" value=".85"/>
 			<!--  Gameplay  -->
 			<!--  <property name="Buffs" value="zombieRadiatedBuff80"/>  -->
-			<property name="ExperienceGain" value="4000"/>
+			<property name="ExperienceGain" value="6000"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".4"/>
@@ -2299,7 +1905,7 @@
 		
 			<!--  Gameplay  -->
 			<!--  <property name="Buffs" value="zombieRadiatedBuff80"/>  -->
-			<property name="ExperienceGain" value="4000"/>
+			<property name="ExperienceGain" value="6000"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".4"/>
@@ -2353,7 +1959,7 @@
 
 			<!--  Gameplay  -->
 			<!--  <property name="Buffs" value="zombieRadiatedBuff80"/>  -->
-			<property name="ExperienceGain" value="4000"/>
+			<property name="ExperienceGain" value="6000"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".4"/>
@@ -2407,7 +2013,7 @@
 
 			<!--  Gameplay  -->
 			<!--  <property name="Buffs" value="zombieRadiatedBuff80"/>  -->
-			<property name="ExperienceGain" value="4000"/>
+			<property name="ExperienceGain" value="6000"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".4"/>
@@ -2461,7 +2067,7 @@
 
 			<!--  Gameplay  -->
 			<!--  <property name="Buffs" value="zombieRadiatedBuff80"/>  -->
-			<property name="ExperienceGain" value="4000"/>
+			<property name="ExperienceGain" value="6000"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".4"/>
@@ -2513,7 +2119,7 @@
 
 			<!--  Gameplay  -->
 			<!--  <property name="Buffs" value="zombieRadiatedBuff80"/>  -->
-			<property name="ExperienceGain" value="4000"/>
+			<property name="ExperienceGain" value="6000"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".4"/>
@@ -2561,7 +2167,7 @@
 			<property name="HeadExplosionDamageMultiplier" value=".85"/>
 			<property name="ChestExplosionDamageMultiplier" value=".85"/>
 
-			<property name="ExperienceGain" value="4000"/>
+			<property name="ExperienceGain" value="6000"/>
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".4"/>
 			<property name="MoveSpeedAggro" value="1.5, 2"/>
@@ -2608,7 +2214,7 @@
 			<property name="ChestExplosionDamageMultiplier" value=".85"/>
 			<!--   Gameplay   -->
 			<!--   <property name="Buffs" value="zombieRadiatedBuff80"/>   -->
-			<property name="ExperienceGain" value="4000"/>
+			<property name="ExperienceGain" value="6000"/>
 			<!--   XP strong radiated   -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".4"/>
@@ -2662,7 +2268,7 @@
 
 			<!--  Gameplay  -->
 			<!--  <property name="Buffs" value="zombieRadiatedBuff80"/>  -->
-			<property name="ExperienceGain" value="4000"/>
+			<property name="ExperienceGain" value="6000"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".4"/>
@@ -2739,7 +2345,7 @@
 			<!--  Disable Health explosion  -->
 			<property name="SoundExplodeWarn" value="demolitionzexplodewarning"/>
 			<property name="SoundTick" value="demolitionz_beep,.5,.9"/>
-			<property name="ExperienceGain" value="4000"/>
+			<property name="ExperienceGain" value="6000"/>
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".4"/>
 			<property name="MoveSpeedAggro" value="1.5, 2"/>
@@ -2768,7 +2374,7 @@
 			
 			<property name="HandItem" value="meleeHandElementalFire"/>				
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -2790,7 +2396,7 @@
 			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>
 			<property name="HandItem" value="meleeHandElementalFire"/>				
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -2812,7 +2418,7 @@
 			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>				
 			<property name="HandItem" value="meleeHandElementalFire"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -2833,7 +2439,7 @@
 			<property name="SoundSpawn" value="Ambient_Loops/a_fire_embersmoke_sm_lp"/>
 			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -2855,7 +2461,7 @@
 			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>
 			<property name="HandItem" value="meleeHandElementalFire"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -2877,7 +2483,7 @@
 			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>
 			<property name="HandItem" value="meleeHandElementalFire"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -2899,7 +2505,7 @@
 			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>
 			<property name="HandItem" value="meleeHandElementalFire"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".25"/>
@@ -2922,7 +2528,7 @@
 			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>
 			<property name="HandItem" value="meleeHandElementalFire"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -2945,7 +2551,7 @@
 			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>
 			<property name="HandItem" value="meleeHandElementalFire"/>
 			<!--   Gameplay   -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--   XP strong radiated   -->
 			<property name="LootDropProb" value=".25"/>
 			<!--   Radiated   -->
@@ -2968,7 +2574,7 @@
 			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>				
 			<property name="HandItem" value="meleeHandElementalFire"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -2991,7 +2597,7 @@
 			<!--  Gameplay  -->
 			<property name="HandItem" value="meleeHandElementalFire"/>
 			<!--  Disable Health explosion  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<property name="LootDropProb" value=".25"/>
 			<property name="MoveSpeedAggro" value="1.5, 1.9"/>
 			<effect_group name="Base Effects">
@@ -3017,7 +2623,7 @@
 			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".28"/>
 			<!--  Radiated  -->
@@ -3042,7 +2648,7 @@
 			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".28"/>
 			<!--  Radiated  -->
@@ -3066,7 +2672,7 @@
 			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".28"/>
 			<!--  Radiated  -->
@@ -3090,7 +2696,7 @@
 			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".28"/>
 			<!--  Radiated  -->
@@ -3113,7 +2719,7 @@
 			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".28"/>
 			<!--  Radiated  -->
@@ -3137,7 +2743,7 @@
 			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".28"/>
 			<!--  Radiated  -->
@@ -3161,7 +2767,7 @@
 			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".28"/>
 			<!--  Radiated  -->
@@ -3185,7 +2791,7 @@
 			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".28"/>
 			<!--  Radiated  -->
@@ -3210,7 +2816,7 @@
 			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
 			<!--   Gameplay   -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--   XP strong radiated   -->
 			<property name="LootDropProb" value=".28"/>
 			<!--   Radiated   -->
@@ -3234,7 +2840,7 @@
 			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".28"/>
 			<!--  Radiated  -->
@@ -3257,7 +2863,7 @@
 			
 			<!-- <property name="SurfaceCategory" value="snow"/> -->
 			<property name="HandItem" value="meleeHandElementalFrozen"/>
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<property name="LootDropProb" value=".28"/>
 			<property name="MoveSpeedAggro" value="1.5, 1.6"/>
 			<effect_group name="Base Effects">
@@ -3284,7 +2890,7 @@
 			<property name="SurfaceCategory" value="water"/>
 			<property name="HandItem" value="meleeHandElementalWater"/>	
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="4100"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -3310,7 +2916,7 @@
 			<property name="SurfaceCategory" value="water"/>
 			<property name="HandItem" value="meleeHandElementalWater"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="4100"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -3336,7 +2942,7 @@
 			<property name="SurfaceCategory" value="water"/>
 			<property name="HandItem" value="meleeHandElementalWater"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="4100"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -3362,7 +2968,7 @@
 			<property name="SurfaceCategory" value="water"/>
 			<property name="HandItem" value="meleeHandElementalWater"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="4100"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -3388,7 +2994,7 @@
 			<property name="SurfaceCategory" value="water"/>
 			<property name="HandItem" value="meleeHandElementalWater"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="4100"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -3414,7 +3020,7 @@
 			<property name="SurfaceCategory" value="water"/>
 			<property name="HandItem" value="meleeHandElementalWater"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="4100"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -3440,7 +3046,7 @@
 			<property name="SurfaceCategory" value="water"/>
 			<property name="HandItem" value="meleeHandElementalWater"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="4100"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -3467,7 +3073,7 @@
 			<property name="SurfaceCategory" value="water"/>
 			<property name="HandItem" value="meleeHandElementalWater"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="4100"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -3494,7 +3100,7 @@
 			<property name="SurfaceCategory" value="water"/>
 			<property name="HandItem" value="meleeHandElementalWater"/>
 			<!--   Gameplay   -->
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="4100"/>
 			<!--   XP strong radiated   -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".25"/>
@@ -3521,7 +3127,7 @@
 			<property name="SurfaceCategory" value="water"/>
 			<property name="HandItem" value="meleeHandElementalWater"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="4100"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -3547,7 +3153,7 @@
 			<property name="SurfaceCategory" value="water"/>
 			<!--  Gameplay  -->
 			<property name="HandItem" value="meleeHandElementalWater"/>
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="4100"/>
 			<property name="LootDropProb" value=".25"/>
 			<property name="MoveSpeedAggro" value="1.3, 1.7"/>
 			<effect_group name="Base Effects">
@@ -3572,7 +3178,7 @@
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="HandItem" value="meleeHandElementalElectrical"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -3594,7 +3200,7 @@
 			<property name="MoveSpeed" value="1.1"/>			
 			<property name="HandItem" value="meleeHandElementalElectrical"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -3615,7 +3221,7 @@
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="HandItem" value="meleeHandElementalElectrical"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -3636,7 +3242,7 @@
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="HandItem" value="meleeHandElementalElectrical"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -3657,7 +3263,7 @@
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="HandItem" value="meleeHandElementalElectrical"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -3678,7 +3284,7 @@
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="HandItem" value="meleeHandElementalElectrical"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -3699,7 +3305,7 @@
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="HandItem" value="meleeHandElementalElectrical"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -3720,7 +3326,7 @@
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="HandItem" value="meleeHandElementalElectrical"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -3742,7 +3348,7 @@
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="HandItem" value="meleeHandElementalElectrical"/>
 			<!--   Gameplay   -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--   XP strong radiated   -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".25"/>
@@ -3764,7 +3370,7 @@
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="HandItem" value="meleeHandElementalElectrical"/>
 			<!--   Gameplay   -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -3785,7 +3391,7 @@
 			<property name="MoveSpeed" value="1.1"/>
 			<!--  Gameplay  -->
 			<property name="HandItem" value="meleeHandElementalElectrical"/>
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<property name="LootDropProb" value=".25"/>
 			<property name="MoveSpeedAggro" value="1.5, 2"/>
 			<effect_group name="Base Effects">
@@ -3808,13 +3414,12 @@
 			<property name="SizeScale" value="1.1"/>			
 			<property name="MoveSpeed" value="1.1"/>
 			
-			<!-- <property name="AltMats" value="entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder"/>			 -->
-<!-- <property name="AltMats" value="entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/resourceRock01,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder"/> -->
-<property name="AltMats" value="Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty"/>
+			
+			<property name="AltMats" value="Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty,Entities/Plumbing/portapotty"/>
 
 			<property name="HandItem" value="meleeHandElementalElectrical"/>
 			<!--  Gameplay  -->
-			<property name="ExperienceGain" value="2800"/>
+			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropProb" value=".25"/>
 			<!--  Radiated  -->
@@ -3885,7 +3490,7 @@
 			<property name="SoundDeath" value="Enemies/Burnt_Zombie/zombieburntdeath"/>
 			<property name="SoundSense" value="Enemies/Burnt_Zombie/zombieburntsense"/>
 			<property name="HandItem" value="meleeScarecrow"/>
-			<property name="ExperienceGain" value="1250"/>
+			<property name="ExperienceGain" value="1800"/>
 			<property name="SoundFootstepModifier" value=""/>
 			
 			<effect_group name="Base Effects">
@@ -3914,7 +3519,7 @@
 			<!-- Radiated -->
 			<property name="PainResistPerHit" value=".9"/>
 			<!-- Radiated -->
-			<property name="ExperienceGain" value="1650"/>
+			<property name="ExperienceGain" value="2400"/>
 			<!-- XP strong radiated -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".1"/>
@@ -3934,7 +3539,7 @@
 			<property name="SizeScale" value=".8"/>
 			<property name="Tags" value="entity,zombie,walker,boss,bomber,umazombie,bomber" />
 			<property name="HandItem" value="meleeHandBomber"/>
-			<property name="ExperienceGain" value="1200"/>
+			<property name="ExperienceGain" value="1800"/>
 			<property name="WalkType" value="1"/>
 			<property name="Class" value="EntityZombieCop"/>
 
@@ -4003,7 +3608,7 @@
 		<entity_class name="zombieCowhead" extends="zombieBiker">
 			<property name="Archetype" value="Cowhead" />
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,cowhead" />
-			<property name="ExperienceGain" value="1500"/>
+			<property name="ExperienceGain" value="2300"/>
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".10"/>
 			<property name="HandItem" value="meleeHandCowhead"/>
@@ -4018,7 +3623,7 @@
 		</entity_class>
 		<entity_class name="zombieWendigo" extends="zombieScreamer">			
 			<property name="Tags" value="entity,zombie,walker,boss,wendigo,umazombie,wendigo" />
-			<property name="ExperienceGain" value="3500"/>
+			<property name="ExperienceGain" value="5000"/>
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".20"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSpider.prefab"/>
@@ -4051,7 +3656,7 @@
 		</entity_class>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Special Zombies by Malen and TacoMaestro ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-
+		<!-- Banshee -->
 		<entity_class name="zombieBanshee" extends="zombieBoeFeral">
 			<property name="SizeScale" value=".8"/>
 			<property name="Tags" value="entity,specialZ,walker,banshee" />
@@ -4067,7 +3672,7 @@
 			<property name="SoundHurt" value="Enemies/Base_Zombie_Female/zombiefemalescoutpain"/>
 			<property name="SoundDeath" value="Enemies/Base_Zombie_Female/zombiefemalescoutdeath"/>
 			<property name="SoundSense" value=""/>
-			<property name="ExperienceGain" value="1500"/>
+			<property name="ExperienceGain" value="5000"/>
 			<property name="WalkType" value="22"/>
 			<property name="HandItem" value="meleeHandBanshee"/>
 			<property name="DeadBodyHitPoints" value="1000"/>
@@ -4112,7 +3717,7 @@
 			<property name="SwimStrokeRate" value="1.5,1.7"/>
 			<property name="CanClimbVertical" value="true"/>
 			<property name="JumpMaxDistance" value="7, 9"/>
-			<property name="ExperienceGain" value="2000"/>
+			<property name="ExperienceGain" value="5000"/>
 
 			<drop event="Harvest" name="resourceCoal" tag="allToolsHarvest" count="100"/>
 			<drop event="Harvest" name="resourceScrapLead" tag="allToolsHarvest" count="100"/>
@@ -4159,7 +3764,7 @@
 			<property name="HandItem" value="meleeHandRAINBOW"/>
 			<property name="JumpMaxDistance" value="4.6, 5"/>
 
-			<property name="ExperienceGain" value="2000"/>
+			<property name="ExperienceGain" value="5000"/>
 			<!-- XP strong -->
 			<property name="LootDropProb" value=".09"/>
 			<!-- Feral -->
@@ -4228,7 +3833,7 @@
 			<property name="ChestExplosionDamageMultiplier" value=".85"/>
 			<!--  Gameplay  -->
 			<!--  <property name="Buffs" value="zombieRadiatedBuff80"/>  -->
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="5000"/>
 			<!--  XP strong radiated  -->
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".5"/>
@@ -4294,7 +3899,7 @@
 			"/>
 
 			<property name="LootDropProb" value=".15"/>
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="5000"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
@@ -4350,7 +3955,7 @@
 
 			<property name="LootDropProb" value=".1"/>
 			
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="5000"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="3000"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
@@ -4375,7 +3980,7 @@
 			<property name="SoundDeath" value="sonidomamalon"/>
 			<property name="SoundAttack" value="malehateattackhf"/>
 			<property name="LootDropProb" value="1"/>
-			<property name="ExperienceGain" value="1500"/>
+			<property name="ExperienceGain" value="5000"/>
 			<property name="MapIcon" value="ui_game_symbol_twitch_minion_overhead"/>
 			<property name="TrackerIcon" value="ui_game_symbol_twitch_minion_overhead"/>
 			<property name="NavObject" value="zombietracking_special" />
@@ -4422,7 +4027,7 @@
 			<property name="MapIcon" value="ui_game_symbol_twitch_minion_overhead"/>
 			<property name="TrackerIcon" value="ui_game_symbol_twitch_minion_overhead"/>
 			<property name="NavObject" value="zombietracking_special" />
-			<property name="ExperienceGain" value="1500"/>
+			<property name="ExperienceGain" value="2500"/>
 			<property name="WalkType" value="3"/>
 			<property name="Class" value="EntityZombieCop"/>
 
@@ -4493,6 +4098,77 @@
 		</entity_class>		
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Scouts ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+		<entity_class name="zombiSBMiniSiren" extends="zombieBurnt">
+			<property name="Archetype" value="archezombiSBMiniSiren"/>
+			<property name="SizeScale" value=".5"/>
+			<property name="Tags" value="entity,zombie,walker,boss,umazombie,siren"/>
+
+			<property name="AltMats" value="entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder"/>
+			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>
+			
+
+			
+			<property name="WalkType" value="7"/>
+			<property name="SoundRandomTime" value="7"/>
+			<property name="SurfaceCategory" value="organic"/>
+			<property name="SoundRandom" value="sirenidle"/>
+			<property name="SoundSpawn" value="sirenspawn"/>
+			<property name="SoundAlert" value=""/>
+			<property name="SoundAttack" value=""/>
+			<property name="SoundHurt" value=""/>
+			<property name="SoundDeath" value=""/>
+			<property name="SoundSense" value=""/>
+			<property name="HandItem" value="meleeHandzombiSBMiniSiren"/>
+			<property name="SoundFootstepModifier" value=""/>
+			<property name="DismemberMultiplierHead" value="0"/>
+			<property name="DismemberMultiplierArms" value="0"/>
+			<property name="DismemberMultiplierLegs" value="0"/>
+			<property name="LegCrippleScale" value="0"/>
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="LegsExplosionDamageMultiplier" value="0"/>
+			<property name="ArmsExplosionDamageMultiplier" value="0"/>
+			<property name="HeadExplosionDamageMultiplier" value="0"/>
+			<property name="ChestExplosionDamageMultiplier" value="0"/>
+			<property name="PainResistPerHit" value="1"/>
+			<property name="ExperienceGain" value="5000"/>
+			<property name="SightRange" value="30"/>
+			<property name="MoveSpeed" value="1"/>
+			<!--  just shambling around  -->
+			<property name="MoveSpeedAggro" value=".7, 1.0"/>
+			<!--  chasing a target min/max (like day or night) -->
+			<property name="AITask" value="
+			BreakBlock|
+			DestroyArea|
+			Territorial|
+			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal,0,EntityAnimal|
+			Leap|			
+			ApproachSpot|
+			Territorial|
+			Look|
+			Wander|
+			"/>
+
+			<property name="LootDropEntityClass" count="1" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value="1"/>
+			<drop event="Harvest" name="resourceRawDiamond" count="0" tool_category="Disassemble"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="1500"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="35"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="SirenDeco"/>
+
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffSiren"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffDark3"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffNoiseAOE01"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
+			</effect_group>
+			<property name="DeadBodyHitPoints" value="1000"/>
+			<property name="TimeStayAfterDeath" value="5"/>
+		</entity_class>
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 		
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Semi Bosses ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<entity_class name="Gallinazilla" extends="animalTemplateTimid">
@@ -4549,7 +4225,7 @@
 			<property name="MoveSpeed" value="0.7"/>
 			<property name="MoveSpeedAggro" value="0.7, 1"/>
 			<property name="MoveSpeedPanic" value="1, 1.5"/>
-			<property name="ExperienceGain" value="45000"/>
+			<property name="ExperienceGain" value="60000"/>
 
 
 			<effect_group name="Base Effects">
@@ -4588,7 +4264,7 @@
 			<!-- Feral -->
 			<property name="HandItem" value="meleeHandBossCrawler"/>
 
-			<property name="ExperienceGain" value="2000"/>
+			<property name="ExperienceGain" value="3000"/>
 			<!-- XP grunt feral -->
 			<property name="LootDropProb" value="1"/>
 			<!-- Feral -->
@@ -4632,7 +4308,7 @@
 			<!-- Feral -->
 			<property name="HandItem" value="meleeHandBossCrawler"/>
 
-			<property name="ExperienceGain" value="2000"/>
+			<property name="ExperienceGain" value="5000"/>
 			<!-- XP grunt feral -->
 			<property name="LootDropProb" value="1"/>
 			<!-- Feral -->
@@ -4696,7 +4372,7 @@
 			<property name="MoveSpeed" value="2.1"/>
 			<property name="MoveSpeedAggro" value="2.9, 3.9"/>
 			<property name="MoveSpeedPanic" value="3.5"/>
-			<property name="ExperienceGain" value="3000"/>
+			<property name="ExperienceGain" value="4500"/>
 			<property name="DeadBodyHitPoints" value="1000"/>
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="25"/>
@@ -4731,7 +4407,7 @@
 			<property name="SoundAttack" value="malehateattack"/>
 
 			<property name="LootDropProb" value="1"/>
-			<property name="ExperienceGain" value="10000"/>
+			<property name="ExperienceGain" value="15000"/>
 
 			<property name="AITarget" value="
 			BlockingTargetTask|                        
@@ -4786,7 +4462,7 @@
 			<property name="SoundSense" value="demolitionzsense"/>
 			<property name="SoundFootstepModifier" value="bear_footstep"/>
 			<property name="LootDropProb" value="1"/>
-			<property name="ExperienceGain" value="10000"/>
+			<property name="ExperienceGain" value="15000"/>
 
 			<property name="KnockdownProneDamageThreshold" value="2"/>
 			<property name="KnockdownProneStunDuration" value="0"/>
@@ -4863,7 +4539,7 @@
 			<property name="HandItem" value="meleehandZombieBolt"/>
 			<property name="LootDropEntityClass" value="MiniBossLootContainer"/>
 			<property name="LootDropProb" value="1"/>
-			<property name="ExperienceGain" value="10000"/>
+			<property name="ExperienceGain" value="15000"/>
 			<effect_group name="Base Effects">
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="twitch_enemyshock"/>
 				<passive_effect name="HealthMax" operation="base_set" value="20000"/>
@@ -4913,7 +4589,7 @@
 			<property name="PainResistPerHit" value="2"/>
 
 			<property name="HandItem" value="meleehandZombieGunner"/>
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="7500"/>
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".5"/>
 			<property name="TimeStayAfterDeath" value="5"/>
@@ -4975,7 +4651,7 @@
 			<property name="PainResistPerHit" value="1"/>
 			<property name="StompsSpikes" value="true"/>
 			<property name="ExplodeHealthThreshold" value="0"/>
-			<property name="ExperienceGain" value="5000"/>
+			<property name="ExperienceGain" value="7500"/>
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 			<property name="LootDropProb" value=".3"/>
 			<property name="DeadBodyHitPoints" value="1000"/>
@@ -5008,7 +4684,7 @@
 			<property name="SoundSense" value="Enemies/Acid_Puking_Hulk/hulksense"/>
 			<property name="SoundFootstepModifier" value="bear_footstep"/>
 			<property name="LootDropProb" value="1"/>
-			<property name="ExperienceGain" value="10000"/>
+			<property name="ExperienceGain" value="15000"/>
 		
 			<property name="AITask" value="
 			BreakBlock|
@@ -5068,7 +4744,7 @@
 			<property name="SoundSense" value="Enemies/Base_Zombie_Female/zombiefemalesense"/>
 			<property name="SoundFootstepModifier" value="bear_footstep"/>
 			<property name="LootDropProb" value="1"/>
-			<property name="ExperienceGain" value="10000"/>
+			<property name="ExperienceGain" value="15000"/>
 			
 			<property name="KnockdownProneDamageThreshold" value="2"/>
 			<property name="KnockdownProneStunDuration" value="0"/>
@@ -5391,7 +5067,7 @@
 			<property name="CanClimbVertical" value="true"/>
 			<property name="JumpMaxDistance" value="1.5, 1.7"/>
 
-			<property name="ExperienceGain" value="30000"/>
+			<property name="ExperienceGain" value="45000"/>
 
 			<property name="HandItem" value="meleeHandZombieIronSpiderFeral"/>
 
@@ -5448,7 +5124,7 @@
 			<property name="SwimStrokeRate" value="1.5,1.7"/>
 			<property name="CanClimbVertical" value="true"/>
 			<property name="JumpMaxDistance" value="1.5, 1.7"/>
-			<property name="ExperienceGain" value="30000"/>
+			<property name="ExperienceGain" value="45000"/>
 			
 			<property name="HandItem" value="meleeHandZombieIronSpiderFeral"/>
 			<property name="LootDropEntityClass" count="1" value="MineralLootContainer"/>
@@ -5507,7 +5183,7 @@
 				
 			<property name="MoveSpeedAggro" value="2.0, 2.8"/>						
 			<property name="HandItem" value="meleeHandBOSS"/>
-			<property name="ExperienceGain" value="60000"/>
+			<property name="ExperienceGain" value="90000"/>
 			<property name="LootDropEntityClass" count="1" value="BossSoldierLootContainer"/>
 			<drop event="Harvest" name="resourceRawDiamond" count="0" tool_category="Disassemble"/>
 			<effect_group name="Base Effects">
@@ -5535,7 +5211,7 @@
 			
 			<property name="LootDropEntityClass" value="zombieBossZombieKnightLootContainer"/>			
 			<property name="HandItem" value="meleeHandGladBOSS"/>
-			<property name="ExperienceGain" value="60000"/>
+			<property name="ExperienceGain" value="90000"/>
 			<property name="WalkType" value="2"/>
 			<property name="MoveSpeed" value="0.5"/>
 			<property name="SurfaceCategory" value="metal"/>
@@ -5584,7 +5260,7 @@
 			<property name="MoveSpeedAggro" value="1.50, 1.80"/>
 			<property name="HandItem" value="meleeHandBOSS"/>
 			<property name="JumpMaxDistance" value="9, 16"/>
-			<property name="ExperienceGain" value="60000"/>
+			<property name="ExperienceGain" value="90000"/>
 			<property name="LootDropEntityClass" value="zombieBossMummyLootContainer"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="55000"/>
@@ -5622,7 +5298,7 @@
 			<property name="SoundDeath" value=""/>
 			<property name="SoundSense" value=""/>
 			<property name="HandItem" value="meleeHandZombieSiren"/>
-			<property name="ExperienceGain" value="45000"/>
+			<property name="ExperienceGain" value="60000"/>
 			<property name="SoundFootstepModifier" value=""/>
 			<property name="StompsSpikes" value="false"/>
 			<property name="SightRange" value="45"/>
@@ -5688,7 +5364,7 @@
 			"/>
 			<property name="LootDropEntityClass" value="BossJuggerLootContainer"/>
 			<property name="HandItem" value="meleeHandJuggernaut"/>
-			<property name="ExperienceGain" value="60000"/>
+			<property name="ExperienceGain" value="90000"/>
 			<property name="SoundRandom" value="demolitionzroam"/>
 			<property name="SoundAlert" value="demolitionzalert"/>
 			<property name="SoundAttack" value="demolitionzattack"/>
@@ -5726,7 +5402,7 @@
 			<property name="LootDropEntityClass" value="zombieBossCirujanoLootContainer"/>			
 			<property name="HandItem" value="meleeHandCirujano"/>			
 			<property name="SoundFootstepModifier" value="bear_footstep"/>
-			<property name="ExperienceGain" value="60000"/>
+			<property name="ExperienceGain" value="100000"/>
 			<property name="WalkType" value="2"/>
 			<property name="MoveSpeedAggro" value="1.40, 1.60"/>
 			<effect_group name="Base Effects">
@@ -5756,7 +5432,7 @@
 			<property name="LootDropEntityClass" value="zombieBossCirujanoLootContainer"/>			
 			<property name="HandItem" value="meleeHandCirujano"/>			
 			<property name="SoundFootstepModifier" value="bear_footstep"/>
-			<property name="ExperienceGain" value="60000"/>
+			<property name="ExperienceGain" value="100000"/>
 			<property name="WalkType" value="2"/>
 			<property name="MoveSpeedAggro" value="1.40, 1.60"/>
 			<effect_group name="Base Effects">
@@ -5788,7 +5464,7 @@
 			<property name="MoveSpeedAggro" value="1.50, 1.80"/>
 			<property name="HandItem" value="meleeHandBOSS"/>
 			<property name="JumpMaxDistance" value="9, 16"/>
-			<property name="ExperienceGain" value="50000"/>
+			<property name="ExperienceGain" value="90000"/>
 			<property name="LootDropEntityClass" value="zombieBossSpartanLootContainer"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="50000"/>
@@ -5823,7 +5499,7 @@
 			
 			<property name="LootDropEntityClass" value="zombieBossMortevodaLootContainer"/>
 			<property name="HandItem" value="meleeHandBOSS"/>
-			<property name="ExperienceGain" value="60000"/>
+			<property name="ExperienceGain" value="100000"/>
 			<property name="WalkType" value="2"/>
 			<property name="MoveSpeedAggro" value="1.20, 1.50"/>
 			<effect_group name="Base Effects">
@@ -5855,7 +5531,7 @@
 
 			<property name="LootDropEntityClass" value="zombieBossInfernalLootContainer"/>
 			<property name="HandItem" value="meleeHandBOSS"/>
-			<property name="ExperienceGain" value="60000"/>
+			<property name="ExperienceGain" value="100000"/>
 			<property name="SurfaceCategory" value="metal"/>
 			<property name="WalkType" value="2"/>
 			<property name="MoveSpeedAggro" value="1.20, 1.40"/>
@@ -5891,7 +5567,7 @@
 
 			<property name="LootDropEntityClass" value="zombieBossHoarfrostLootContainer"/>
 			<property name="HandItem" value="meleeHandBOSS"/>
-			<property name="ExperienceGain" value="60000"/>
+			<property name="ExperienceGain" value="100000"/>
 			<property name="SurfaceCategory" value="metal"/>
 			<property name="WalkType" value="2"/>
 			<property name="MoveSpeedAggro" value="1.20, 1.50"/>
@@ -5924,7 +5600,7 @@
 
 			<property name="LootDropEntityClass" value="zombieBossShockerLootContainer"/>
 			<property name="HandItem" value="meleeHandBOSS"/>
-			<property name="ExperienceGain" value="60000"/>
+			<property name="ExperienceGain" value="100000"/>
 			<property name="SurfaceCategory" value="metal"/>
 			<property name="WalkType" value="2"/>
 			<property name="MoveSpeedAggro" value="1.30, 1.50"/>
@@ -5960,7 +5636,7 @@
 
 			<property name="LootDropEntityClass" value="zombieBossToxicLootContainer"/>
 			<property name="HandItem" value="meleeHandBOSS"/>
-			<property name="ExperienceGain" value="60000"/>
+			<property name="ExperienceGain" value="100000"/>
 			<property name="SurfaceCategory" value="metal"/>
 			<property name="WalkType" value="2"/>
 			<property name="MoveSpeedAggro" value="1.10, 1.30"/>
@@ -6031,7 +5707,7 @@
 			<property name="MoveSpeedAggro" value="1.50, 1.80"/>
 			<property name="HandItem" value="meleeHandBOSS"/>
 			<property name="JumpMaxDistance" value="9, 16"/>
-			<property name="ExperienceGain" value="120000"/>
+			<property name="ExperienceGain" value="180000"/>
 			<!-- <property name="LootDropEntityClass" value="zombieBossAvatarLootContainer"/> -->
 			<property name="LootDropEntityClass" value="BossHF2LootContainer"/>
 			
@@ -6065,7 +5741,7 @@
 			<property name="SoundSense" value="demolitionzsense"/>
 			<property name="SoundFootstepModifier" value="bear_footstep"/>
 			<property name="LootDropProb" value="1"/>
-			<property name="ExperienceGain" value="24000"/>
+			<property name="ExperienceGain" value="100000"/>
 
 			<property name="AITask" value="
 			BreakBlock|
@@ -6150,11 +5826,11 @@
 			
 			<property name="MoveSpeedAggro" value="1.50, 1.80"/>
 			<property name="HandItem" value="meleeHandBossHF"/>
-			<property name="ExperienceGain" value="120000"/>
+			<property name="ExperienceGain" value="180000"/>
 			<property name="LootDropEntityClass" count="1" value="BossHFLootContainer"/>
 
 			<effect_group name="Base Effects">
-				<passive_effect name="HealthMax" operation="base_set" value="150000"/>
+				<passive_effect name="HealthMax" operation="base_set" value="250000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="80"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="30"/>
@@ -6238,7 +5914,7 @@
 			<property name="SwimStrokeRate" value="1.5,1.7"/>
 			<property name="CanClimbVertical" value="true"/>
 			<property name="JumpMaxDistance" value="3, 5"/>
-			<property name="ExperienceGain" value="60000"/>
+			<property name="ExperienceGain" value="90000"/>
 			<property name="DeadBodyHitPoints" value="1000"/>
 
 			<drop event="Harvest" name="resourceRawDiamond" count="0" tool_category="Disassemble"/>
@@ -6296,7 +5972,7 @@
 			<property name="MoveSpeedAggro" value="1.6,2"/>
 			<property name="HandItem" value="meleeHandSpecialBOSS"/>
 			<property name="JumpMaxDistance" value="9, 16"/>
-			<property name="ExperienceGain" value="120000"/>
+			<property name="ExperienceGain" value="180000"/>
 			<property name="LootDropEntityClass" value="zombieBossMummyLootContainerS"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="DistractionResistance" operation="base_set" value="0,0"/>
@@ -6338,7 +6014,7 @@
 			<property name="SoundDeath" value=""/>
 			<property name="SoundSense" value=""/>
 			<property name="HandItem" value="meleeHandZombieSiren"/>
-			<property name="ExperienceGain" value="90000"/>
+			<property name="ExperienceGain" value="135000"/>
 			<property name="SoundFootstepModifier" value=""/>
 
 			<property name="SightRange" value="40"/>
@@ -6401,7 +6077,7 @@
 			<property name="SurfaceCategory" value="metal"/>			
 			<property name="HandItem" value="meleeHandSpecialJuggernaut"/>			
 			<property name="LootDropEntityClass" value="BossJuggerLootContainerS"/>
-			<property name="ExperienceGain" value="120000"/>
+			<property name="ExperienceGain" value="180000"/>
 			<property name="MoveSpeed" value="0.9"/>
 			<property name="MoveSpeedAggro" value="1.4, 1.9"/>
 			<effect_group name="Base Effects">
@@ -6428,7 +6104,7 @@
 			<property name="WalkType" value="7"/>			
 			<property name="MoveSpeedAggro" value="2.2, 3"/>
 			<property name="HandItem" value="meleeHandSpecialBOSS"/>
-			<property name="ExperienceGain" value="120000"/>
+			<property name="ExperienceGain" value="180000"/>
 			<property name="LootDropEntityClass" count="1" value="BossSoldierLootContainerS"/>
 			<drop event="Harvest" name="resourceRawDiamond" count="0" tool_category="Disassemble"/>			
 			<effect_group name="Base Effects">
@@ -6463,7 +6139,7 @@
 			<property name="SoundDeath" value="demolitionzdeath"/>
 			<property name="SoundSense" value="demolitionzsense"/>
 			<property name="SoundFootstepModifier" value="bear_footstep"/>
-			<property name="ExperienceGain" value="120000"/>
+			<property name="ExperienceGain" value="180000"/>
 			<property name="HandItem" value="meleeHandSpecialBOSS"/>
 			<property name="LootDropEntityClass" value="zombieBossZombieKnightLootContainerS"/>
 			<property name="WalkType" value="2"/>
@@ -6503,7 +6179,7 @@
 			<property name="SoundFootstepModifier" value="bear_footstep"/>
 			<property name="LootDropEntityClass" value="zombieBossCirujanoLootContainerS"/>			
 			<property name="HandItem" value="meleeHandCirujanoSP"/>			
-			<property name="ExperienceGain" value="120000"/>
+			<property name="ExperienceGain" value="180000"/>
 			<property name="WalkType" value="2"/>
 			<property name="MoveSpeedAggro" value="1.60, 1.80"/>
 			<effect_group name="Base Effects">
@@ -6539,7 +6215,7 @@
 			<property name="MoveSpeedAggro" value="1.6,2"/>
 			<property name="HandItem" value="meleeHandSpecialBOSS"/>
 			<property name="JumpMaxDistance" value="9, 16"/>
-			<property name="ExperienceGain" value="100000"/>
+			<property name="ExperienceGain" value="200000"/>
 			<property name="SurfaceCategory" value="metal"/>
 			<property name="LootDropEntityClass" value="zombieBossSpartanLootContainerS"/>
 			<effect_group name="Base Effects">
@@ -6577,7 +6253,7 @@
 			<property name="SoundSense" value="demolitionzsense"/>
 			<property name="SoundFootstepModifier" value="bear_footstep"/>
 			<property name="LootDropProb" value="1"/>
-			<property name="ExperienceGain" value="96000"/>
+			<property name="ExperienceGain" value="200000"/>
 
 			<property name="LegsExplosionDamageMultiplier" value="0"/>
 			<property name="ArmsExplosionDamageMultiplier" value="0"/>
@@ -6632,7 +6308,7 @@
 			<property name="LootDropEntityClass" value="zombieBossMortevodaLootContainerS"/>
 			<property name="HandItem" value="meleeHandBOSS"/>
 			<property name="SoundFootstepModifier" value="bear_footstep"/>
-			<property name="ExperienceGain" value="120000"/>
+			<property name="ExperienceGain" value="200000"/>
 			<property name="WalkType" value="2"/>
 			<property name="MoveSpeedAggro" value="1.30, 1.50"/>
 			<effect_group name="Base Effects">
@@ -6667,7 +6343,7 @@
 			<property name="LootDropEntityClass" value="zombieBossInfernalLootContainerS"/>
 			<property name="HandItem" value="meleeHandBOSS"/>
 			<property name="SoundFootstepModifier" value="bear_footstep"/>
-			<property name="ExperienceGain" value="120000"/>
+			<property name="ExperienceGain" value="200000"/>
 			<property name="SurfaceCategory" value="metal"/>
 			<property name="WalkType" value="2"/>
 			<property name="MoveSpeedAggro" value="1.50, 1.70"/>
@@ -6705,7 +6381,7 @@
 
 			<property name="LootDropEntityClass" value="zombieBossHoarfrostLootContainerS"/>
 			<property name="HandItem" value="meleeHandBOSS"/>
-			<property name="ExperienceGain" value="120000"/>
+			<property name="ExperienceGain" value="200000"/>
 			<property name="SurfaceCategory" value="metal"/>
 			<property name="WalkType" value="2"/>
 			<property name="MoveSpeedAggro" value="1.40, 1.60"/>
@@ -6740,7 +6416,7 @@
 
 			<property name="LootDropEntityClass" value="zombieBossShockerLootContainerS"/>
 			<property name="HandItem" value="meleeHandBOSS"/>
-			<property name="ExperienceGain" value="120000"/>
+			<property name="ExperienceGain" value="200000"/>
 			<property name="SurfaceCategory" value="metal"/>
 			<property name="WalkType" value="2"/>
 			<property name="MoveSpeedAggro" value="1.40, 1.60"/>
@@ -6776,7 +6452,7 @@
 
 			<property name="LootDropEntityClass" value="zombieBossToxicLootContainerS"/>
 			<property name="HandItem" value="meleeHandBOSS"/>
-			<property name="ExperienceGain" value="120000"/>
+			<property name="ExperienceGain" value="200000"/>
 			<property name="SurfaceCategory" value="metal"/>
 			<property name="WalkType" value="2"/>
 			<property name="MoveSpeedAggro" value="1.20, 1.40"/>
@@ -6824,7 +6500,7 @@
 
 			<property name="MoveSpeedAggro" value="1.7, 2.5"/>
 			<property name="HandItem" value="meleeHandSpecialBossHF"/>
-			<property name="ExperienceGain" value="240000"/>
+			<property name="ExperienceGain" value="500000"/>
 			<property name="LootDropEntityClass" count="1" value="BossHFLootContainerS"/>
 			<property name="LootDropProb" value="1"/>
 			<drop event="Harvest" name="resourceRawDiamond" count="0" tool_category="Disassemble"/>
@@ -6972,52 +6648,6 @@
 		</entity_class>	
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->					
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ WORKING ON ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
-		<entity_class name="zombieLowDef" extends="TemplateHF_Zombie_Special_Cop">
-			<property name="UserSpawnType" value="None"/>
-			<property name="Archetype" value="SOLDIER" />
-			<property name="Tags" value="entity,zombie,walker,boss,bossrad"/>
-			<property name="Mass" value="170"/>
-			<property name="ReplaceMaterial1" value="entities/resources/materials/oreCoalBoulder"/>
-			<property name="WalkType" value="2"/>
-
-			<property name="PainResistPerHit" value="3"/>
-
-			<property name="DismemberMultiplierHead" value="0"/>
-			<property name="DismemberMultiplierArms" value="0"/>
-			<property name="DismemberMultiplierLegs" value="0"/>
-			<property name="LegCrawlerThreshold" value="0"/>
-			<property name="LegCrippleThreshold" value="0"/>
-			<property name="KnockdownProneDamageThreshold" value="3"/>
-			<property name="KnockdownKneelDamageThreshold" value="3"/>
-
-			<property name="MoveSpeedAggro" value="1.50, 1.80"/>
-
-			<property name="HandItem" value="meleeHandBOSS"/>
-			<property name="ExperienceGain" value="56000"/>
-
-			<property name="LootDropEntityClass" count="1" value="BossSoldierLootContainer"/>
-			<property name="LootDropProb" value="1"/>
-
-			<drop event="Harvest" name="resourceRawDiamond" count="0" tool_category="Disassemble"/>
-			<property name="DeadBodyHitPoints" value="1000"/>
-			<effect_group name="Base Effects">
-				<passive_effect name="HealthMax" operation="base_set" value="53000"/>
-				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
-				<!-- Zombie HP scale -->
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="55"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="prueba"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="30"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffSoldier"/>
-
-				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
-				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
-			</effect_group>
-			<property name="DeadBodyHitPoints" value="1000"/>
-			<property name="TimeStayAfterDeath" value="5"/>
-		</entity_class>
-		
-
 		<entity_class name="animalDiamonChicken" extends="animalTemplateTimid">
 			<property name="Class" value="EntityAnimalRabbit"/>
 			<property name="UserSpawnType" value="Menu"/>
@@ -7067,46 +6697,6 @@
 			<property name="NavObject" value="animaltracking_chicken" />
 		</entity_class>	
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->	
-	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ NOT IN USE ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-		<!--
-		<entity_class name="zombieMantis" extends="Zombie_Template">
-			<property name="Archetype" value="Mantis" />
-			<property name="WalkType" value="8"/>
-			<property name="Tags" value="entity,zombie,walker,boss,umazombie,mantis" />
-			<property name="HandItem" value="meleeHandMantis"/>
-			<property name="MoveSpeed" value="0.5"/>
-			<property name="MoveSpeedAggro" value="0.6, 1.35"/>
-			<property name="MoveSpeedPanic" value="1.2"/>
-			<property name="CanClimbVertical" value="true"/>
-			<property name="JumpMaxDistance" value="8, 16"/>
-			<property name="SoundRandom" value="Enemies/Spider_Zombie/spiderroam"/>
-			<property name="SoundAlert" value="Enemies/Spider_Zombie/spideralert"/>
-			<property name="SoundAttack" value="Enemies/Spider_Zombie/spiderattack"/>
-			<property name="SoundDeath" value="Enemies/Spider_Zombie/spiderdeath"/>
-			<property name="SoundHurt" value="Enemies/Spider_Zombie/spiderpain"/>
-			<property name="SoundSense" value="Enemies/Spider_Zombie/spidersense"/>
-			
-			<property name="AITask" value="
-			Leap|
-			BreakBlock|
-			RangedAttackTarget itemType=1;cooldown=4;duration=5|
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|								
-			ApproachSpot|
-			Look|
-			Wander|	
-			"/>	
-			<property name="LootDropProb" value=".15"/>
-			<property name="ExperienceGain" value="1500"/>
-			<effect_group name="Base Effects">
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="mantisDeco"/>
-				
-				<passive_effect name="HealthMax" operation="base_set" value="1150"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="5"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
-			</effect_group>
-		</entity_class>
-		-->	
-		<!---->
+	
 	</append>
 </configs>

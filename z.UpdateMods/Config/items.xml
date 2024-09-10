@@ -295,7 +295,7 @@
 		<item name="bookPreacherUI">
 			<property name="Extends" value="bookFiremansAlmanacHeat"/>
 			<property name="CustomIcon" value="cntBookPile08"/>
-			<property name="DescriptionKey" value="x"/>
+			<property name="DescriptionKey" value="perkPreacherUILongDesc"/>
 			<property name="Unlocks" value="perkPreacherUI"/>
 			<property name="Tags" value="nightStalkerProb"/>
 			<property name="Group" value="Books,BooksOnly,TCReading"/>
@@ -313,7 +313,7 @@
 		</item>
 		<item name="bookPreacherZombies">
 			<property name="Extends" value="bookPreacherUI"/>
-			<property name="DescriptionKey" value="x"/>
+			<property name="DescriptionKey" value="perkPreacherZombiesLongDesc"/>
 			<property name="Unlocks" value="perkPreacherZombies"/>
 			<effect_group tiered="false">
 				<requirement name="ProgressionLevel" progression_name="perkPreacherZombies" operation="Equals" value="0"/>
@@ -329,7 +329,7 @@
 		</item>
 		<item name="bookPreacherSpecial">
 			<property name="Extends" value="bookPreacherUI"/>
-			<property name="DescriptionKey" value="x"/>
+			<property name="DescriptionKey" value="perkPreacherSpecialLongDesc"/>
 			<property name="Unlocks" value="perkPreacherSpecial"/>
 			<effect_group tiered="false">
 				<requirement name="ProgressionLevel" progression_name="perkPreacherSpecial" operation="Equals" value="0"/>
@@ -345,7 +345,7 @@
 		</item>
 		<item name="bookPreacherBosses">
 			<property name="Extends" value="bookPreacherUI"/>
-			<property name="DescriptionKey" value="x"/>
+			<property name="DescriptionKey" value="perkPreacherBossesLongDesc"/>
 			<property name="Unlocks" value="perkPreacherBosses"/>
 			<effect_group tiered="false">
 				<requirement name="ProgressionLevel" progression_name="perkPreacherBosses" operation="Equals" value="0"/>
@@ -362,7 +362,7 @@
 
 		<item name="bookPreacherZXP">
 			<property name="Extends" value="bookPreacherUI"/>
-			<property name="DescriptionKey" value="x"/>
+			<property name="DescriptionKey" value="perkPreacherZXPLongDesc"/>
 			<property name="Unlocks" value="perkPreacherZXP"/>
 			<effect_group tiered="false">
 				<requirement name="ProgressionLevel" progression_name="perkPreacherZXP" operation="Equals" value="0"/>
@@ -376,13 +376,13 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
 			</effect_group>
 		</item>
-		<item name="bookPreacherDXP">
+		<item name="bookPreacherSXP">
 			<property name="Extends" value="bookPreacherUI"/>
-			<property name="DescriptionKey" value="x"/>
+			<property name="DescriptionKey" value="perkPreacherSXPLongDesc"/>
 			<property name="Unlocks" value="perkPreacherZXP"/>
 			<effect_group tiered="false">
-				<requirement name="ProgressionLevel" progression_name="perkPreacherDXP" operation="Equals" value="0"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkPreacherDXP" level="-1"/>
+				<requirement name="ProgressionLevel" progression_name="perkPreacherSXP" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkPreacherSXP" level="-1"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkPreacherComplete" level="-1">
 					<requirement name="PerksUnlocked" skill_name="skillPreacher" operation="GTE" value="7"/></triggered_effect>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="read_skillbook_final" play_in_head="true">
@@ -394,7 +394,7 @@
 		</item>
 		<item name="bookPreacherBXP">
 			<property name="Extends" value="bookPreacherUI"/>
-			<property name="DescriptionKey" value="x"/>
+			<property name="DescriptionKey" value="perkPreacherBXPLongDesc"/>
 			<property name="Unlocks" value="perkPreacherZXP"/>
 			<effect_group tiered="false">
 				<requirement name="ProgressionLevel" progression_name="perkPreacherBXP" operation="Equals" value="0"/>
@@ -417,7 +417,7 @@
 		</item>			
 		<item name="bookMasterPreacher">
 			<property name="Extends" value="schematicMaster"/>
-			<property name="CustomIcon" value="bookPistolPeteTakeAim"/>				
+			<property name="CustomIcon" value="cntBookPile08"/>				
 			<property name="ItemTypeIcon" value="map_cursor"/>
 			<property name="Stacknumber" value="10"/>
 			<property name="Material" value="Morganic"/>
@@ -625,7 +625,7 @@
 		</item>
 		<item name="uniqueArmorMediArmor2">
 			<property name="Extends" value="uniqueArmorMediArmor" param1="CustomIcon"/>
-			<property name="CustomIcon" value="armorEnforcerOutfit"/>
+			<property name="CustomIcon" value="armorAssassinOutfit"/>
 
 			<effect_group name="uniqueArmorMedium">
 				<passive_effect name="ModSlots" operation="base_set" value="5" />
@@ -665,7 +665,7 @@
 		</item>
 		<item name="uniqueArmorMediGloves2">
 			<property name="Extends" value="uniqueArmorMediGloves" param1="CustomIcon"/>					
-			<property name="CustomIcon" value="armorEnforcerGloves"/>
+			<property name="CustomIcon" value="armorAssassinGloves"/>
 			
 			<effect_group name="uniqueArmorMedium">
 				<passive_effect name="ModSlots" operation="base_set" value="5" />
@@ -719,7 +719,7 @@
 		</item>
 		<item name="uniqueArmorMediLegs2">
 			<property name="Extends" value="uniqueArmorMediLegs" param1="CustomIcon"/>
-			<property name="CustomIcon" value="armorEnforcerBoots"/>
+			<property name="CustomIcon" value="armorAssassinBoots"/>
 
 			<effect_group name="uniqueArmorMedium">
 				<passive_effect name="ModSlots" operation="base_set" value="5" />
@@ -1062,9 +1062,6 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varKitMaga" operation="set" value="1"/>
 			</effect_group>	
 		</item>
-
-		
-
 
 
 

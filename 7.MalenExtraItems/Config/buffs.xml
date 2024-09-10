@@ -1114,7 +1114,7 @@
 			</effect_group>
 		</buff>
 
-		<buff name="buffUniqueLightSetBonus" name_key="buffUniqueLightSetBonusName" description_key="buffUniqueLightSetBonusDesc" tooltip_key="buffUniqueLightSetBonusTooltip" icon="ui_game_symbol_armor_iron" icon_color="255,255,255">
+		<buff name="buffUniqueLightSetBonus" name_key="buffUniqueLightSetBonusName" description_key="buffUniqueLightSetBonusDesc" tooltip_key="buffUniqueLightSetBonusDesc" icon="ui_game_symbol_armor_iron" icon_color="255,255,0">
 			<stack_type value="ignore"/>
 			<display_value_key value="Bonus"/>
 			<display_value value="xxx"/>	
@@ -1135,7 +1135,7 @@
 				<passive_effect name="EntityDamage" operation="perc_add" value="3"/>
 			</effect_group>
 		</buff>
-		<buff name="buffUniqueMediumSetBonus" name_key="buffUniqueLightSetBonusName" description_key="buffUniqueLightSetBonusDesc" tooltip_key="buffUniqueLightSetBonusTooltip" icon="ui_game_symbol_armor_iron" icon_color="255,255,255">
+		<buff name="buffUniqueMediumSetBonus" name_key="buffUniqueMediumSetBonusName" description_key="buffUniqueMediumSetBonusDesc" tooltip_key="buffUniqueMediumSetBonusDesc" icon="ui_game_symbol_armor_iron" icon_color="255,255,0">
 			<stack_type value="ignore"/>
 			<display_value_key value="Bonus"/>
 			<display_value value="xxx"/>								
@@ -1156,7 +1156,7 @@
 			</effect_group>
 
 		</buff>
-		<buff name="buffUniqueHeavySetBonus" name_key="buffUniqueLightSetBonusName" description_key="buffUniqueLightSetBonusDesc" tooltip_key="buffUniqueLightSetBonusTooltip" icon="ui_game_symbol_armor_iron" icon_color="255,255,255">
+		<buff name="buffUniqueHeavySetBonus" name_key="buffUniqueHeavySetBonusName" description_key="buffUniqueHeavySetBonusDesc" tooltip_key="buffUniqueHeavySetBonusDesc" icon="ui_game_symbol_armor_iron" icon_color="255,255,0">
 			<stack_type value="ignore"/>
 			<display_value_key value="Bonus"/>
 			<display_value value="xxx"/>
@@ -1502,7 +1502,15 @@
 			</triggered_effect>
 		</effect_group>
 	</append>
-	
-	
+
+	<insertAfter xpath="/buffs/buff[@name='buffPlayerFallingDamage']/effect_group/requirement[@buff='buffDrugOhShitzDrops']">
+		<requirement name="!HasBuff" buff="buffUniqueMediumSetBonus"/>
+	</insertAfter>
+	<insertAfter xpath="/buffs/buff[@name='buffPlayerFallingDamage']/effect_group/triggered_effect/requirement[@buff='buffDrugOhShitzDrops']">
+		<requirement name="!HasBuff" buff="buffUniqueMediumSetBonus"/>
+	</insertAfter>
+	<insertAfter xpath="/buffs/buff[@name='buffLegSprainedFallTrigger']/effect_group/requirement[@buff='buffDrugOhShitzDrops']">
+		<requirement name="!HasBuff" buff="buffUniqueMediumSetBonus"/>
+	</insertAfter>
 	
 </configs>

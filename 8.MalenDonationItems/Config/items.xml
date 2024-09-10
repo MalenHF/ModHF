@@ -230,13 +230,14 @@
 			</effect_group>
 		</item>
 
-		<item name="uniqueArmorSwatSet">
-            <property name="CustomIcon" value="bundleArmorHeavy"/>
+		<item name="uniqueLightArmorSet">
+            <property name="CustomIcon" value="cntWoodWritableCrate"/>
+			<property name="CustomIconTint" value="150,150,150"/>
             <property name="DescriptionKey" value="uArmorDesc"/>
             <property name="HoldType" value="45"/>
             <property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
             <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-            <property name="Material" value="Mpaper"/>
+            <property name="Material" value="Morganic"/>
             <property name="Stacknumber" value="1"/>
             <property name="ItemTypeIcon" value="bundle"/>
             <property name="Weight" value="0"/>
@@ -246,28 +247,22 @@
                 <property name="Delay" value="0.5"/>
                 <property name="Use_time" value="1"/>
                 <property name="Sound_start" value="wrench_harvest"/>
-                <property name="Create_item" value="donacion_LSAH,donacion_LSAA,donacion_LSAG,donacion_LSAL,donacion_LSAB"/>
-                <property name="Create_item_count" value="6,6,6,6,6"/>
+                <property name="Create_item" value="uniqueArmorLighHelm,uniqueArmorLighArmor,uniqueArmorLighGloves,uniqueArmorLighLegs"/>
+                <property name="Create_item_count" value="5,5,5,5"/>
             </property>
         </item>
-        <item name="uniqueArmorMiliSet">
-			<property name="CustomIcon" value="bundleArmorLight"/>
+        <item name="uniqueMediumArmorSet">
+			<property name="Extends" value="uniqueLightArmorSet"/>			
 			<property name="DescriptionKey" value="uArmorDesc2"/>
-			<property name="HoldType" value="45"/>
-			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
-			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-			<property name="Material" value="Mpaper"/>
-			<property name="Stacknumber" value="1"/>
-			<property name="ItemTypeIcon" value="bundle"/>
-			<property name="Weight" value="0"/>
-			<property name="Group" value="Special Items"/>
+			<property name="CustomIcon" value="cntIronWritableCrate"/>
+			<property name="CustomIconTint" value="100,100,100"/>			
 			<property class="Action0">
 				<property name="Class" value="OpenBundle"/>
 				<property name="Delay" value="0.5"/>
 				<property name="Use_time" value="1"/>
 				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="donacion_LMAH,donacion_LMAA,donacion_LMAG,donacion_LMAL,donacion_LMAB"/>
-				<property name="Create_item_count" value="6,6,6,6,6"/>
+				<property name="Create_item" value="uniqueArmorMediHelm,uniqueArmorMediArmor,uniqueArmorMediGloves,uniqueArmorMediLegs"/>
+				<property name="Create_item_count" value="5,5,5,5"/>
 			</property>
 		</item>		
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
@@ -914,7 +909,7 @@
 			</property>
 		</item>
 		<item name="donatio_ForgeKit">
-			<property name="CustomIcon" value="bundleMiningHelmet"/>
+			<property name="CustomIcon" value="toolAnvil"/>
 			<property name="ItemTypeIcon" value="bundle"/>
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
@@ -953,25 +948,16 @@
 				<property name="Create_item_count" value="2,2,2,2,2"/>
 			</property>
 		</item>
-		<item name="uniqueArmorSwatSet">
-            <property name="CustomIcon" value="bundleArmorHeavy"/>
-            <property name="DescriptionKey" value="uArmorDesc"/>
-            <property name="HoldType" value="45"/>
-            <property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
-            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-            <property name="Material" value="Mpaper"/>
-            <property name="Stacknumber" value="1"/>
-            <property name="ItemTypeIcon" value="bundle"/>
-            <property name="Weight" value="0"/>
-            <property name="Group" value="Special Items"/>
-            <property class="Action0">
-                <property name="Class" value="OpenBundle"/>
-                <property name="Delay" value="0.5"/>
-                <property name="Use_time" value="1"/>
-                <property name="Sound_start" value="wrench_harvest"/>
-                <property name="Create_item" value="LSAH,LSAA,LSAG,LSAL,LSAB"/>
-                <property name="Create_item_count" value="6,6,6,6,6"/>
-            </property>
+		<item name="donationArmorToken">
+			<property name="Extends" value="gunMGT1AK47Parts"/>
+            <property name="CustomIcon" value="resourceSewingKit"/>
+            <property name="DescriptionKey" value="uArmorCraftDesc"/>            
+			<property name="Material" value="Morganic"/>			
+			<property name="CustomIconTint" value="B65FCF"/>
+			<property name="TintColor" value="B65FCF"/>
+			<property name="EconomicBundleSize" value="1"/>			
+			<property name="EconomicValue" value="1"/>
+			<property name="Stacknumber" value="1"/>
         </item>
         <item name="uniqueArmorMiliSet">
 			<property name="CustomIcon" value="bundleArmorLight"/>
@@ -1134,50 +1120,61 @@
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ extra ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-		<item name="donacion_extraItem1">
-			<property name="Extends" value="gunMGT1AK47Parts"/>
-			<property name="Material" value="Morganic"/>
-			<property name="CustomIcon" value="orePotassiumNitrateBoulder"/>
-			<property name="CustomIconTint" value="B65FCF"/>
-			<property name="TintColor" value="B65FCF"/>
-			<property name="EconomicBundleSize" value="1"/>
-			<property name="DescriptionKey" value="practoniumdesc"/>
-			<property name="EconomicValue" value="50000"/>
-			<property name="Stacknumber" value="50"/>
-		</item>
-		<item name="donacion_extraItem2">
-			<property name="Extends" value="gunMGT1AK47Parts"/>
-			<property name="Material" value="Morganic"/>
-			<property name="CustomIcon" value="orePotassiumNitrateBoulder"/>
-			<property name="CustomIconTint" value="B65FCF"/>
-			<property name="TintColor" value="B65FCF"/>
-			<property name="EconomicBundleSize" value="1"/>
-			<property name="DescriptionKey" value="practoniumdesc"/>
-			<property name="EconomicValue" value="50000"/>
-			<property name="Stacknumber" value="50"/>
-		</item>
-		<item name="donacion_extraItem3">
-			<property name="Extends" value="gunMGT1AK47Parts"/>
-			<property name="Material" value="Morganic"/>
-			<property name="CustomIcon" value="orePotassiumNitrateBoulder"/>
-			<property name="CustomIconTint" value="B65FCF"/>
-			<property name="TintColor" value="B65FCF"/>
-			<property name="EconomicBundleSize" value="1"/>
-			<property name="DescriptionKey" value="practoniumdesc"/>
-			<property name="EconomicValue" value="50000"/>
-			<property name="Stacknumber" value="50"/>
-		</item>
-		<item name="donacion_extraItem4">
-			<property name="Extends" value="gunMGT1AK47Parts"/>
-			<property name="Material" value="Morganic"/>
-			<property name="CustomIcon" value="orePotassiumNitrateBoulder"/>
-			<property name="CustomIconTint" value="B65FCF"/>
-			<property name="TintColor" value="B65FCF"/>
-			<property name="EconomicBundleSize" value="1"/>
-			<property name="DescriptionKey" value="practoniumdesc"/>
-			<property name="EconomicValue" value="50000"/>
-			<property name="Stacknumber" value="50"/>
-		</item>
+		<item name="uniqueHeavyArmorSet">
+			<property name="Extends" value="uniqueLightArmorSet"/>			
+			<property name="DescriptionKey" value="uArmorDesc3"/>
+			<property name="CustomIcon" value="cntSteelWritableCrate"/>
+			<property name="CustomIconTint" value="50,50,50"/>			
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="uniqueArmorHeavHelm,uniqueArmorHeavArmor,uniqueArmorHeavGloves,uniqueArmorHeavLegs"/>
+				<property name="Create_item_count" value="5,5,5,5"/>
+			</property>
+		</item>	
+		<item name="uniqueLightArmorSet2">
+			<property name="Extends" value="uniqueLightArmorSet"/>			
+			<property name="DescriptionKey" value="uArmorDesc"/>
+			<property name="CustomIconTint" value="150,150,150"/>			
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="uniqueArmorLighHelm2,uniqueArmorLighArmor2,uniqueArmorLighGloves2,uniqueArmorLighLegs2"/>
+				<property name="Create_item_count" value="5,5,5,5"/>
+			</property>
+		</item>	
+		<item name="uniqueMediumArmorSet2">
+			<property name="Extends" value="uniqueLightArmorSet"/>			
+			<property name="DescriptionKey" value="uArmorDesc2"/>
+			<property name="CustomIcon" value="cntIronWritableCrate"/>
+			<property name="CustomIconTint" value="100,100,100"/>			
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="uniqueArmorMediHelm2,uniqueArmorMediArmor2,uniqueArmorMediGloves2,uniqueArmorMediLegs2"/>
+				<property name="Create_item_count" value="5,5,5,5"/>
+			</property>
+		</item>	
+		<item name="uniqueHeavyArmorSet2">
+			<property name="Extends" value="uniqueLightArmorSet"/>			
+			<property name="DescriptionKey" value="uArmorDesc3"/>
+			<property name="CustomIcon" value="cntSteelWritableCrate"/>
+			<property name="CustomIconTint" value="50,50,50"/>			
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="uniqueArmorHeavHelm2,uniqueArmorHeavArmor2,uniqueArmorHeavGloves2,uniqueArmorHeavLegs2"/>
+				<property name="Create_item_count" value="5,5,5,5"/>
+			</property>
+		</item>	
 		<item name="donacion_extraItem5">
 			<property name="Extends" value="gunMGT1AK47Parts"/>
 			<property name="Material" value="Morganic"/>
