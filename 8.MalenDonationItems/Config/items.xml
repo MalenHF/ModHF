@@ -2,9 +2,69 @@
 	<append xpath="/items">
 		
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Donation Items ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-		
-		<item name="donacion_LlaveInglesa">
-			<property name="Extends" value="legendToolT1_LlaveInglesa"/>
+		<item name="donatio_StoneHammer">
+			<property name="Extends" value="meleeToolRepairT0StoneAxe"/>
+			<property name="CustomIcon" value="meleeToolRepairT0StoneAxe"/>
+			<property name="CustomIconTint" value="e38c19"/>
+			<property name="TintColor" value="e38c19"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="ShowQuality" value="false"/>
+			<property name="Material" value="Morganic"/>
+			<property name="ItemTypeIcon" value="star"/>
+			<property name="UnlockedBy" value="HML"/>				
+			<property name="Group" value="Tools/Traps"/>
+			<property name="DescriptionKey" value="LTDesc"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
+			<property class="Action1">
+				<property name="Class" value="Repair"/>
+				<property name="Delay" value=".4"/> <!-- Repair actions still need the delay amount -->
+				<property name="Repair_amount" value="5000"/>
+				<property name="Upgrade_hit_offset" value="-5"/>
+				<property name="Sound_start" value="repair_block"/>
+				<property name="Allowed_upgrade_items" value="resourceWood,resourceClayLump,resourceSnowBall,resourceScrapIron,resourceForgedIron,resourceForgedSteel,resourceConcreteMix,resourceCobblestones,ironDoor1_v1,vaultDoor01,scrapHatch_v1,vaultHatch_v1,resourceYuccaFibers,resourceCloth,resourceScrapPolymers,resourceNail,resourceSteelPolishR"/>
+				<property name="UsePowerAttackAnimation" value="false"/>
+			</property>
+			<effect_group>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="80"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="1"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="150"/>					
+				<passive_effect name="MaxRange" operation="base_set" value="5"/>
+				<passive_effect name="BlockRange" operation="base_set" value="5"/>
+				<passive_effect name="BlockRange" operation="base_set" value="5"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="1" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1"/>					
+				<passive_effect name="StaminaLoss" operation="base_set" value="1" tags="primary"/>
+				<display_value name="dBlockRepairAmount" value="5000"/>
+				<passive_effect name="PlayerExpGain" operation="base_set" value="10" tags="Harvesting"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".1" />
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="1" tags="Upgrading"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="1" tags="Repairing"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="HasBuff" buff="PPBF"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.05"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.5" tags="Upgrading"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.5" tags="Repairing"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="HasBuff" buff="PPBF2"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.075"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.75" tags="Upgrading"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.5" tags="Repairing"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="HasBuff" buff="PPBF3"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.075"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.75" tags="Upgrading"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.75" tags="Repairing"/>
+			</effect_group>
+		</item>	
+		<item name="donatio_Wrench">
+			<property name="Extends" value="epicToolT1_Wrench"/>
 			<effect_group>
 				<passive_effect name="AttacksPerMinute" operation="base_set" value="80"/>
 				<passive_effect name="EntityDamage" operation="base_set" value="1"/>
@@ -20,8 +80,8 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.99" tags="stone"/>					
 			</effect_group>
 		</item>
-		<item name="donacion_PicoDeAcero">
-			<property name="Extends" value="legendToolT1_LlaveInglesa"/>
+		<item name="donatio_PickAxe">
+			<property name="Extends" value="epicToolT1_Wrench"/>
 			<effect_group>
 				<passive_effect name="EntityDamage" operation="base_set" value="1"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="250"/>
@@ -37,8 +97,8 @@
 				<passive_effect name="PlayerExpGain" operation="base_set" value="30" tags="Harvesting"/>
 			</effect_group>
 		</item>
-		<item name="donacion_HachaDeAcero">
-			<property name="Extends" value="legendToolT1_HachaDeAcero"/>
+		<item name="donatio_SteelAxe">
+			<property name="Extends" value="epicToolT1_SteelAxe"/>
 			<effect_group>
 				<passive_effect name="EntityDamage" operation="base_set" value="50"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="300"/>
@@ -57,8 +117,8 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.98" tags="stone"/>
 			</effect_group>
 		</item>
-		<item name="donacion_DestornilladorDeImpacto">
-			<property name="Extends" value="legendToolT2_DestornilladorDeImpacto"/>
+		<item name="donation_Ratchet">
+			<property name="Extends" value="legendToolT2_Ratchet"/>
 			<effect_group>
 				<passive_effect name="AttacksPerMinute" operation="base_set" value="150"/>
 				<passive_effect name="EntityDamage" operation="base_set" value="1"/>
@@ -79,7 +139,7 @@
 				<display_value name="dHarvestSalvage" value="1.5"/>
 			</effect_group>
 		</item>	
-		<item name="donacion_Nailgun">
+		<item name="donation_Nailgun">
 			<property name="Extends" value="legendToolT2_Nailgun"/>
 			<effect_group>					
 				<display_value name="dBlockRepairAmount" value="10000"/>
@@ -128,8 +188,8 @@
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-1.5" tags="Repairing"/>
 			</effect_group>
 		</item>
-		<item name="donacion_Barrena">
-			<property name="Extends" value="legendToolT2_Barrena"/>
+		<item name="donation_Auger">
+			<property name="Extends" value="legendToolT2_Auger"/>
 			<effect_group name="meleeToolPickT3Auger">
 				<passive_effect name="EntityDamage" operation="base_set" value="10" tags="perkMiner69r"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="250" tags="perkMiner69r,miningTool"/>
@@ -160,8 +220,8 @@
 				<passive_effect name="HarvestCount" operation="base_set" value="1.5" tags="oreWoodHarvest"/>
 			</effect_group>
 		</item>
-		<item name="donacion_Motosierra">
-			<property name="Extends" value="legendToolT2_Motosierra"/>
+		<item name="donation_Chainsaw">
+			<property name="Extends" value="legendToolT2_Chainsaw"/>
 			<effect_group name="meleeToolAxeT3Chainsaw">
 				<passive_effect name="EntityDamage" operation="base_set" value="35" tags="perkMiner69r"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="600" tags="perkMiner69r"/>
@@ -196,9 +256,9 @@
 				<passive_effect name="HarvestCount" operation="perc_add" value=".50" tags="lumberjackHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1.2" tags="oreWoodHarvest"/>
 			</effect_group>
-		</item>		
-		<item name="donacion_Martillo_Divino">
-			<property name="Extends" value="myth_MartilloDivino"/>
+		</item>
+		<item name="donation_DivineHammer">
+			<property name="Extends" value="mythTool_DivineHammer"/>
 			<property name="Tags" value="melee,light,tool,attStrength,perkMiner69r,perkMotherLode,admin,canHaveCosmetic,miningTool"/>
 			<effect_group>
 				<passive_effect name="AttacksPerMinute" operation="base_set" value="300"/>
@@ -227,6 +287,49 @@
 			<effect_group>
 				<requirement name="HasBuff" buff="PPBF3"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375"/>
+			</effect_group>
+		</item>
+		<item name="donation_DivineDriver">
+			<property name="Extends" value="mythTool_DivineDriver"/>			
+			<effect_group>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="300"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="1"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="2500"/>					
+				<passive_effect name="HarvestCount" operation="base_set" value="2" tags="salvageHarvest"/>
+				<passive_effect name="MaxRange" operation="base_set" value="20"/>
+				<passive_effect name="MaxRange" operation="base_set" value="20" tags="secondary"/>
+				<passive_effect name="BlockRange" operation="base_set" value="20"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="1" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1"/>					
+				<passive_effect name="StaminaLoss" operation="base_set" value="1" tags="primary"/>
+				<display_value name="dBlockRepairAmount" value="20000"/>
+				<display_value name="dHarvestSalvage" value="2"/>
+				<display_value name="dPlayerExpGain" value=".5"/>
+				<passive_effect name="PlayerExpGain" operation="base_set" value="10" tags="Harvesting"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="3" tags="Upgrading"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="3" tags="Repairing"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".5" />	
+				
+			</effect_group>
+			<effect_group>
+				<requirement name="HasBuff" buff="PPBF"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.25"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-1.5" tags="Upgrading"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-1.5" tags="Repairing"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="HasBuff" buff="PPBF2"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-2.25" tags="Upgrading"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-2.25" tags="Repairing"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="HasBuff" buff="PPBF3"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-2.25" tags="Upgrading"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-2.25" tags="Repairing"/>
 			</effect_group>
 		</item>
 
@@ -948,6 +1051,17 @@
 				<property name="Create_item_count" value="2,2,2,2,2"/>
 			</property>
 		</item>
+		<item name="donationArmorPieceToken">
+			<property name="Extends" value="gunMGT1AK47Parts"/>
+            <property name="CustomIcon" value="resourceCloth"/>
+            <property name="DescriptionKey" value="uArmorCraftDesc"/>            
+			<property name="Material" value="Morganic"/>			
+			<property name="CustomIconTint" value="B65FCF"/>
+			<property name="TintColor" value="B65FCF"/>
+			<property name="EconomicBundleSize" value="1"/>			
+			<property name="EconomicValue" value="1"/>
+			<property name="Stacknumber" value="1"/>
+        </item>
 		<item name="donationArmorToken">
 			<property name="Extends" value="gunMGT1AK47Parts"/>
             <property name="CustomIcon" value="resourceSewingKit"/>
