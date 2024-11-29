@@ -324,10 +324,15 @@
 					<passive_effect name="WaterLossPerHealthPointGained" operation="perc_add" level="1,5" value="-.05,-.25"/>
 					<passive_effect name="WaterLossPerStaminaPointGained" operation="perc_add" level="1,5" value="-.05,-.25"/>
 					<passive_effect name="FoodLossPerStaminaPointGained" operation="perc_add" level="1,5" value="-.05,-.25"/>
-					<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$MetabolismResist" operation="set" value="-5,-6,-7,-8,-9,-10"/>
-
+					<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$MetabolismResist" operation="set" value="-5,-6,-7,-8,-9,-10">
+						<requirement name="ProgressionLevel" progression_name="perkSlowMetabolism" operation="GTE" value="5" desc_key="perkslowdesc"/>
+						<requirement name="ProgressionLevel" progression_name="perkMasterChef" operation="GTE" value="3" desc_key="perkslowdesc2"/>
+					</triggered_effect>
 					<!-- Increase MetabolismDuration with each level of the perk -->
-					<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$MetabolismDuration" operation="set" value=".667,.6336,.6002,.5668,.5334,.5"/>
+					<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$MetabolismDuration" operation="set" value=".667,.6336,.6002,.5668,.5334,.5">
+						<requirement name="ProgressionLevel" progression_name="perkSlowMetabolism" operation="GTE" value="5" desc_key="perkslowdesc"/>
+						<requirement name="ProgressionLevel" progression_name="perkMasterChef" operation="GTE" value="3" desc_key="perkslowdesc2"/>
+					</triggered_effect>
 
 					<effect_description level="1" desc_key="perkFoodesc1" long_desc_key="perkFoolongdesc1"/>
 					<effect_description level="2" desc_key="perkFoodesc2" long_desc_key="perkFoolongdesc2"/>
@@ -473,7 +478,8 @@
 					<effect_description level="5" desc_key="perkweadesc5" long_desc_key="perkwealongdesc5"/>
 				</effect_group>
 				<effect_group>
-					<passive_effect name="CraftingTier" operation="base_add" level="5" value="1" tags="perkBoomstick,perkMachineGunner,perkGunslinger,perkDeadEye"/>
+					<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5" value="1" tags="resourceLegendaryParts"/>
+					
 				</effect_group>
 
 

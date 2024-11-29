@@ -137,7 +137,7 @@
 		<!--Special OP Hammer-->
 		<item name="mitico_Martillo_Divino_Usos">
 			<property name="Extends" value="meleeToolRepairT1ClawHammer"/>
-			<property name="Tags" value="melee,light,tool,attStrength,perkMiner69r,perkMotherLode,admin,canHaveCosmetic,miningTool"/>
+			<property name="Tags" value="melee,light,perkMotherLode,admin,canHaveCosmetic"/>
 			<property name="DisplayType" value="meleeRepairTool"/>
 			<property name="CustomIcon" value="meleeToolRepairT1ClawHammer"/>
 			<property name="CustomIconTint" value="00AAE4"/>
@@ -324,24 +324,24 @@
 				<display_value name="POWAA" value="300"/>
 				<display_value name="VELOO" value="900"/>
 				<display_value name="DEFEE" value="1800"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$AguaDivinaDuration" operation="add" value="8"/>
+				<!-- <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$AguaDivinaDuration" operation="add" value="8"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$AguaDivinaDuration" operation="set" value="8">
 					<requirement name="CVarCompare" cvar="$AguaDivinaDuration" operation="GT" value="8"/>
-				</triggered_effect>
+				</triggered_effect> -->
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="AguaDivina"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$opDuration" operation="add" value="303"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$opDuration" operation="set" value="303">
-					<requirement name="CVarCompare" cvar="$opDuration" operation="GT" value="603"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$opDuration" operation="set" value="903">
+					<requirement name="CVarCompare" cvar="$opDuration" operation="GT" value="903"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="OP!"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$op2Duration" operation="add" value="903"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$op2Duration" operation="set" value="903">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$op2Duration" operation="add" value="603"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$op2Duration" operation="set" value="1803">
 					<requirement name="CVarCompare" cvar="$op2Duration" operation="GT" value="1803"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="OP2!"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$op3Duration" operation="add" value="1803"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$op3Duration" operation="set" value="1803">
-					<requirement name="CVarCompare" cvar="$op3Duration" operation="GT" value="3603"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$op3Duration" operation="add" value="903"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$op3Duration" operation="set" value="2703">
+					<requirement name="CVarCompare" cvar="$op3Duration" operation="GT" value="2703"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="OP3!"/>
 			</effect_group>

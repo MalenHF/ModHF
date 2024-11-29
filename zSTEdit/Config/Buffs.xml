@@ -1,8 +1,33 @@
 <config>
-    <remove xpath="/buffs/buff[@name='pvp_zone']"/>
+    <remove xpath="/buffs/buff[@name='cpm_tooltip_enterpvpclaim']"/>
+    <remove xpath="/buffs/buff[@name='cpm_tooltip_exitpvpclaim']"/>
     <remove xpath="/buffs/buff[@name='cpm_tooltip_enterpveclaim']"/>
     <remove xpath="/buffs/buff[@name='cpm_tooltip_exitpveclaim']"/>
     <append xpath="/buffs">
+        <buff name="cpm_tooltip_enterpvpclaim" name_key="cpm_tooltip_enterpvpclaim" hidden="true" icon="ui_game_symbol_block_repair" icon_color="255,0,0">
+            <display_value_key value="In PVP zone"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+             <effect_group>
+                <triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffZoneHC"/>
+                <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffZoneHC" />                
+             </effect_group>
+            <!--<effect_group><triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_enterpvpclaim"/></effect_group>-->
+        </buff>
+
+        <buff name="cpm_tooltip_exitpvpclaim" name_key="cpm_tooltip_exitpvpclaim" hidden="true" icon="ui_game_symbol_block_repair">
+            <display_value_key value="CPM"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffZoneHC" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_enterpvpclaim"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_exitpvpclaim"/>
+            </effect_group>
+        </buff>
+
         <buff name="pvp_zone" name_key="Zona PVE" description_key="Estas dentro de zona PVP extra loot y XP" tooltip_key="Entraste en zona PVE" icon="ui_game_symbol_twitch_no_ranged" icon_color="204,0,0">
             <display_value_key value="Zona PVE"/>
             <display_value value="xxx"/>
@@ -40,9 +65,9 @@
             <display_value value="xxx"/>
             <stack_type value="ignore"/>
             <duration value="0"/>
-            <effect_group>                
+            <effect_group>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="hfNoConstructionZone" />
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_enterpveclaim" />                
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_enterpveclaim" />
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_exitpveclaim"/>
             </effect_group>
         </buff>

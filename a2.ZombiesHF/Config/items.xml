@@ -1994,11 +1994,9 @@
 
 				<property class="Action0">				<!-- AttackAction -->
 					<property name="Class" value="Melee"/>
-					<property name="Delay" value="0.5"/>
-					<!-- obsolete if rounds per minute exists -->
+					<property name="Delay" value="0.5"/>					
 					<property name="Range" value="4.5"/>
-					<!-- This not what "clientside melee combat" means. =) This is the adjustment afterwards due to code changes. -->
-					<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01"/>
+					<property name="Buff" value="buffbosshit,buffInfectionCatch,buffInjuryStunned01,buffInjuryBleeding,buffInjuryBleedingTwo,buffInjuryBleedingOne,buffInjuryBleedingZombie"/>
 					<property name="Sphere" value=".1"/>
 					<property name="Block_range" value="4"/>
 					<property name="DamageEntity" value="150"/>
@@ -2012,7 +2010,38 @@
 					<passive_effect name="BlockRange" operation="base_set" value="4"/>
 					<!--<passive_effect name="DamageFalloffRange" operation="base_set" value="1.65"/> -->
 				</effect_group>
-			</item>	
+			</item>
+			<item name="meleeHandFarmBOSS">
+				<property name="Tags" value="blunt,melee,light,perkFlurryOfBlows"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="HoldType" value="9"/>
+				<property name="Material" value="Morganic"/>
+				<property name="Canhold" value="false"/>
+				<property name="Stacknumber" value="1"/>
+				<property name="Candrop" value="false"/>
+				<property name="CustomIcon" value="missingIcon"/>
+
+				<property class="Action0">				<!-- AttackAction -->
+					<property name="Class" value="Melee"/>
+					<property name="Delay" value="0.5"/>					
+					<property name="Range" value="4.5"/>
+					<property name="Buff" value="buffInfectionCatch,buffInjuryStunned01,buffInjuryBleeding,buffInjuryBleedingTwo,buffInjuryBleedingOne,buffInjuryBleedingZombie"/>
+					<property name="Sphere" value=".1"/>
+					<property name="Block_range" value="4"/>
+					<property name="DamageEntity" value="150"/>
+					<property name="DamageBlock" value="5000"/>
+					<property name="Sound_start" value="swoosh"/>
+				</property>
+				<effect_group name="meleeHandMaster" tiered="false">
+					<passive_effect name="BuffProcChance" operation="base_set" value=".99" tags="buffInjuryStunned"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".99" tags="buffLegSprainedCHTrigger"/>
+					<passive_effect name="MaxRange" operation="base_set" value="4"/>
+					<passive_effect name="BlockRange" operation="base_set" value="4"/>
+					<!--<passive_effect name="DamageFalloffRange" operation="base_set" value="1.65"/> -->
+				</effect_group>
+			</item>		
+
+			
 			<item name="meleeHandGladBOSS">
 				<property name="Tags" value="blunt,melee,light,perkFlurryOfBlows"/>
 				<property name="CreativeMode" value="None"/>

@@ -62,9 +62,8 @@
 	<effect_group>
 		<passive_effect name="AttributeLevel" operation="base_add" value="1" tags="attIntellect"/>
 		<passive_effect name="CraftingTime" operation="perc_add" value="-.1"/>
-		<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffPerkAbilityUpdate"/>
-		<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="buffPerkAbilityUpdate"/>
-		<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+		<triggered_effect trigger="onSelfBuffStart" action="RefreshPerks"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="RefreshPerks"/>
 	</effect_group>
 </buff>
 
