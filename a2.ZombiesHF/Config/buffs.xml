@@ -233,6 +233,49 @@
 				<passive_effect name="DisableItem" operation="base_set" value="1" tags="melee" />
 			</effect_group>
 		</buff>
+		<buff name="ElementalEarthHit" hidden="true">
+			<duration value="3"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="NotHasBuff" buff="god"/>
+				<!-- Blinks the display -->
+				<!-- <passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,4" tags="buffInjuryConcussion"/> -->
+
+
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="1" effect_name="Greyscale"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Greyscale"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Greyscale"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Greyscale"/>
+				<triggered_effect trigger="onSelfLeaveGame" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Greyscale"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Greyscale"/>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="SetAudioMixerState" state="Deafened" enabled="true"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="SetAudioMixerState" state="Deafened" enabled="false"/> -->
+
+				<!-- Decrease movement speed -->
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.8,.2" duration="0,3"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.8,.2" duration="0,3"/>
+				<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.8,.2" duration="0,3"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value="0.8,.2" duration="0,3"/>
+				<!-- Handlers for screen effects -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="0.8" fade="1" effect_name="Blur"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Blur"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Blur"/>
+				<triggered_effect trigger="onSelfLeaveGame" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Blur"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Blur"/>
+				<!-- Handlers for sounds -->
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="buff_stunned" play_in_head="true"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="StopSound" sound="buff_stunned" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="buff_stunned" play_in_head="true"/>
+				<triggered_effect trigger="onSelfLeaveGame" action="StopSound" sound="buff_stunned" play_in_head="true"/>
+				<triggered_effect trigger="onSelfDied" action="StopSound" sound="buff_stunned" play_in_head="true"/>
+				<!-- Handlers for camera shake -->
+				<triggered_effect trigger="onSelfBuffStart" action="ShakeCamera" shake_speed="0.5" shake_amplitude="80" shake_time="3"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ShakeCamera" shake_speed="0" shake_amplitude="0" shake_time="3"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="ShakeCamera" shake_speed="0" shake_amplitude="0" shake_time="3"/>
+				<triggered_effect trigger="onSelfLeaveGame" action="ShakeCamera" shake_speed="0" shake_amplitude="0" shake_time="3"/>
+				<triggered_effect trigger="onSelfDied" action="ShakeCamera" shake_speed="0" shake_amplitude="0" shake_time="3"/>
+			</effect_group>
+		</buff>
 
 
 
