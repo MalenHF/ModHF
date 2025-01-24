@@ -39,6 +39,8 @@
 				<label name="compassElevationTxt" depth="2" pos="332,0" width="172" height="24" text=" [DECEA3]{mapelevation} M[-]" font_size="22" effect="outline" />
 			</rect>
 		</rect>
+
+	
 	</append>
 
 	<!--Toolbelt-->	
@@ -117,6 +119,59 @@
 					<invetNum txtNum="[FFFFFF]S9" vwidth="19" vwidth2="16"/>
 					<invetNum txtNum="[FFFFFF]S0" vwidth="19" vwidth2="16"/>					
 				</grid>
+<!-- 
+	<panel name="mapArea" pos="400,770" width="718" height="770" panel="Center" controller="MapArea" cursor_area="true" >
+		
+		<panel name="header" pos="3,0" height="43" depth="1" backgroundspritename="ui_game_panel_header">
+			<sprite depth="1" name="windowIcon" style="icon32px" pos="4,-5" sprite="ui_game_symbol_map"/>
+			<label style="header.name" text="MAP" text_key="xuiMap" />
+			<button depth="1" name="switchStaticMap" style="icon32px, press, hover" pivot="center" pos="690, -21" sprite="ui_game_symbol_electric_switch" tooltip_key="lblSwitchStaticMap" sound="[paging_click]" />
+			<combobox name="cbxStaticMapType" type="ComboBoxEnum`1[XUiC_MapArea+EStaticMapOverlay]" value_wrap="true" localization_prefix="xuiStaticMapType" pos="460,-6" width="210" height="30" />
+		</panel>
+
+		<panel name="content" depth="0" pos="0,-43" height="770" disableautobackground="true"> 
+			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="3,-3" width="718" height="761" color="[black]" type="sliced" fillcenter="false" />
+			<rect depth="1" name="toolbar" width="712" height="43" pos="6,-6">
+				<sprite color="[lightGrey]" type="sliced" />
+				<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="718" height="47" color="[black]" type="sliced" fillcenter="false" />
+				<button depth="1" name="playerIcon" style="icon32px, press, hover" pivot="center" pos="20,-21" sprite="ui_game_symbol_map_player_arrow" tooltip="Center on Player" tooltip_key="lblCenterOnPlayer" sound="[paging_click]" />
+				<label depth="1" name="playerPos" pos="40,-12" width="150" height="28" text="110 S 769 W" font_size="26"/>
+
+				<button depth="1" name="bedrollIcon" style="icon32px, press, hover" pivot="center" pos="216,-21" sprite="ui_game_symbol_map_bed" tooltip="Center on Sleeping Bag" tooltip_key="lblCenterOnSleepingBag" sound="[paging_click]" />
+				<label depth="1" name="bedrollPos" pos="236,-12" width="150" height="28" text="300 N 832 W" font_size="26"/>
+
+				<sprite depth="1" name="cursorIcon" style="icon32px, press, hover" pos="390,-5" sprite="ui_game_symbol_map_cursor" tooltip="Cursor Position" tooltip_key="lblCursorPosition" sound="[paging_click]"/>
+				<label depth="1" name="cursorPos" pos="428,-12" width="130" height="28" text="300 N 832 W" font_size="26"/>
+
+				<button depth="1" name="waypointIcon" style="icon32px, hover" pivot="center" on_press="true" pos="578,-21" sprite="ui_game_symbol_map_waypoint_remove" tooltip="Remove Quick Waypoint" tooltip_key="lblRemoveQuickWaypoint" />
+				<label depth="1" name="waypointDistance" pos="586,-12" width="122" height="28" text="0.2 KILOMETERS" font_size="26"/>
+			</rect>
+			
+			<panel name="mapView" depth="1" width="712" height="712" pos="6,-49" disableautobackground="true" on_drag="true" style="press, scroll, hover" snap="false"> 
+			
+				<sprite depth="1" name="backgroundMain" sprite="menu_empty" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
+				<texture depth="2" name="mapViewTexture" width="712" height="712" pos="0,0" material="Materials/MaskableMainmap"/>
+				<sprite depth="3" width="64" height="64" pos="356,-356" pivot="center" name="crosshair" sprite="ui_game_symbol_map_cursor" color="255,255,255,160" globalopacity="false" foregroundlayer="true" />
+				<panel name="clippingPanel" depth="4" width="712" height="712" pos="0,0" disableautobackground="true" createuipanel="true" clipping="SoftClip" clippingsoftness="4,4" clippingsize="712,712" clippingcenter="356,-356" />
+
+				<rect name="content" depth="5" pos="0,-565" height="239" controller="MapStats">
+
+					<sprite depth="2" name="dayTimeIcon" width="24" height="24" pos="10,-16" sprite="ui_game_symbol_clock" color="[iconColor]" foregroundlayer="true" visible="{showtime}"/>
+					<label depth="2" name="dayTimeLabel" pos="40,-18" width="250" height="28" text="{mapdaytimetitle}: [DECEA3]{mapdaytime}[-]" font_size="26" visible="{showtime}"/>
+
+					<sprite depth="2" name="tempIcon" width="24" height="24" pos="10,-48" sprite="ui_game_symbol_temperature" color="[iconColor]" foregroundlayer="true"/>
+					<label depth="2" name="tempLabel" pos="40,-50" width="250" height="28" text="{playercoretemptitle}: [DECEA3]{playercoretemp}[-]" font_size="26"/>
+
+					<sprite depth="2" name="windIcon" width="24" height="24" pos="10,-80" sprite="ui_game_symbol_wind" color="[iconColor]" foregroundlayer="true"/>
+					<label depth="2" name="windLabel" pos="40,-82" width="250" height="28" text="{mapwindtitle}: [DECEA3]{mapwind} MPH[-]" font_size="26"/>
+
+					<sprite depth="2" name="elevIcon" width="24" height="24" pos="10,-112" sprite="ui_game_symbol_climb" color="[iconColor]" foregroundlayer="true"/>
+					<label depth="2" name="elevLabel" pos="40,-114" width="250" height="28" text="{mapelevationtitle}: [DECEA3]{mapelevation} M[-]" font_size="26"/>
+
+				</rect>
+			</panel>
+		</panel>
+	</panel> -->
 				
 			</rect>
 			<!--XP BAR-->

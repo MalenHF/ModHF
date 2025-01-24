@@ -1,5 +1,39 @@
 <MalenEI>
 	<append xpath="/items">
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Donation Tokens ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+		<item name="donationArmorPieceToken">
+			<property name="Extends" value="gunMGT1AK47Parts"/>
+            <property name="CustomIcon" value="resourceCloth"/>
+            <property name="DescriptionKey" value="uArmorCraftDesc"/>            
+			<property name="Material" value="Morganic"/>			
+			<property name="CustomIconTint" value="B65FCF"/>
+			<property name="TintColor" value="B65FCF"/>
+			<property name="EconomicBundleSize" value="1"/>			
+			<property name="EconomicValue" value="1"/>
+			<property name="Stacknumber" value="1"/>
+        </item>
+		<item name="donationArmorToken">
+			<property name="Extends" value="gunMGT1AK47Parts"/>
+            <property name="CustomIcon" value="resourceSewingKit"/>
+            <property name="DescriptionKey" value="uArmorCraftDesc"/>            
+			<property name="Material" value="Morganic"/>			
+			<property name="CustomIconTint" value="B65FCF"/>
+			<property name="TintColor" value="B65FCF"/>
+			<property name="EconomicBundleSize" value="1"/>			
+			<property name="EconomicValue" value="1"/>
+			<property name="Stacknumber" value="1"/>
+        </item>
+		<item name="donationAutoMinerToken">
+			<property name="Extends" value="gunMGT1AK47Parts"/>
+            <property name="CustomIcon" value="meleeToolPickT2SteelPickaxe"/>
+            <property name="DescriptionKey" value="donationAutoMinerTokenDesc"/>            
+			<property name="Material" value="Morganic"/>			
+			<property name="CustomIconTint" value="B65FCF"/>
+			<property name="TintColor" value="B65FCF"/>
+			<property name="EconomicBundleSize" value="1"/>			
+			<property name="EconomicValue" value="1"/>
+			<property name="Stacknumber" value="1"/>
+        </item>
 		
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Donation Items ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<item name="donatio_StoneHammer">
@@ -34,8 +68,8 @@
 				<passive_effect name="BlockRange" operation="base_set" value="5"/>
 				<passive_effect name="BlockRange" operation="base_set" value="5"/>
 				<passive_effect name="StaminaLoss" operation="base_set" value="1" tags="primary"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="perkMiner69r"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkMiner69r"/>
 				<passive_effect name="ModSlots" operation="base_set" value="1"/>					
 				<passive_effect name="StaminaLoss" operation="base_set" value="1" tags="primary"/>
 				<display_value name="dBlockRepairAmount" value="5000"/>
@@ -81,7 +115,7 @@
 			</effect_group>
 		</item>
 		<item name="donatio_PickAxe">
-			<property name="Extends" value="epicToolT1_Wrench"/>
+			<property name="Extends" value="epicToolT1_Pickaxe"/>
 			<effect_group>
 				<passive_effect name="EntityDamage" operation="base_set" value="1"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="250"/>
@@ -258,8 +292,7 @@
 			</effect_group>
 		</item>
 		<item name="donation_DivineHammer">
-			<property name="Extends" value="mythTool_DivineHammer"/>
-			<property name="Tags" value="melee,light,tool,attStrength,perkMiner69r,perkMotherLode,admin,canHaveCosmetic,miningTool"/>
+			<property name="Extends" value="mythTool_DivineHammer"/>			
 			<effect_group>
 				<passive_effect name="AttacksPerMinute" operation="base_set" value="300"/>
 				<passive_effect name="EntityDamage" operation="base_set" value="1"/>
@@ -272,7 +305,7 @@
 				<passive_effect name="HarvestCount" operation="base_set" value="2" tags="oreWoodHarvest"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
-				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value=".5" />					
 				<display_value name="dBlockRepairAmount" value="7000"/>
 			</effect_group>
@@ -310,27 +343,20 @@
 				<passive_effect name="PlayerExpGain" operation="base_set" value="10" tags="Harvesting"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="3" tags="Upgrading"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="3" tags="Repairing"/>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value=".5" />	
-				
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".1" />	
 			</effect_group>
-			<effect_group>
-				<requirement name="HasBuff" buff="PPBF"/>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.25"/>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value="-1.5" tags="Upgrading"/>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value="-1.5" tags="Repairing"/>
-			</effect_group>
-			<effect_group>
-				<requirement name="HasBuff" buff="PPBF2"/>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375"/>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value="-2.25" tags="Upgrading"/>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value="-2.25" tags="Repairing"/>
-			</effect_group>
-			<effect_group>
-				<requirement name="HasBuff" buff="PPBF3"/>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375"/>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value="-2.25" tags="Upgrading"/>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value="-2.25" tags="Repairing"/>
-			</effect_group>
+				<effect_group>
+					<requirement name="HasBuff" buff="PPBF"/>
+					<passive_effect name="PlayerExpGain" operation="perc_add" value="-.05"/>
+				</effect_group>
+				<effect_group>
+					<requirement name="HasBuff" buff="PPBF2"/>
+					<passive_effect name="PlayerExpGain" operation="perc_add" value="-.075"/>
+				</effect_group>
+				<effect_group>
+					<requirement name="HasBuff" buff="PPBF3"/>
+					<passive_effect name="PlayerExpGain" operation="perc_add" value="-.075"/>
+				</effect_group>
 		</item>
 
 		<item name="uniqueLightArmorSet">
@@ -985,9 +1011,7 @@
 
 
 			
-		</item>	
-
-		
+		</item>			
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Donation Bundles! ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
@@ -1050,29 +1074,7 @@
 				<property name="Create_item" value="bammoBundle9mmBulletBall,bammoBundle762mmBulletBall,bammoBundle44MagnumBulletBall,bammoBundleShotgunShell,resourceGunPowderBundle10k"/>
 				<property name="Create_item_count" value="2,2,2,2,2"/>
 			</property>
-		</item>
-		<item name="donationArmorPieceToken">
-			<property name="Extends" value="gunMGT1AK47Parts"/>
-            <property name="CustomIcon" value="resourceCloth"/>
-            <property name="DescriptionKey" value="uArmorCraftDesc"/>            
-			<property name="Material" value="Morganic"/>			
-			<property name="CustomIconTint" value="B65FCF"/>
-			<property name="TintColor" value="B65FCF"/>
-			<property name="EconomicBundleSize" value="1"/>			
-			<property name="EconomicValue" value="1"/>
-			<property name="Stacknumber" value="1"/>
-        </item>
-		<item name="donationArmorToken">
-			<property name="Extends" value="gunMGT1AK47Parts"/>
-            <property name="CustomIcon" value="resourceSewingKit"/>
-            <property name="DescriptionKey" value="uArmorCraftDesc"/>            
-			<property name="Material" value="Morganic"/>			
-			<property name="CustomIconTint" value="B65FCF"/>
-			<property name="TintColor" value="B65FCF"/>
-			<property name="EconomicBundleSize" value="1"/>			
-			<property name="EconomicValue" value="1"/>
-			<property name="Stacknumber" value="1"/>
-        </item>
+		</item>		
         <item name="uniqueArmorMiliSet">
 			<property name="CustomIcon" value="bundleArmorLight"/>
 			<property name="DescriptionKey" value="uArmorDesc2"/>

@@ -836,7 +836,7 @@
 			<property name="Explosion.ParticleIndex" value="2"/>
 			<property name="Explosion.RadiusBlocks" value="5"/>
 			<property name="Explosion.RadiusEntities" value="8"/>
-			<property name="Explosion.BlockDamage" value="9500"/>
+			<property name="Explosion.BlockDamage" value="5000"/>
 			<property name="Explosion.EntityDamage" value="1500"/>
 			<property name="Explosion.DamageBonus.earth" value=".1"/>
 			<property name="StompsSpikes" value="true"/>
@@ -1054,7 +1054,7 @@
 			<property name="PhysicsBody" value="MountainLion"/>
 			<property name="Mass" value="125"/>
 			<property name="Prefab" value="/Entities/Animals/Mountain_Lion/animalStandardMountainLionRagdoll"/>
-			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>
+			<property name="AltMats" value="entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel"/>
 			<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/rad_eye.mat"/>
 
 			<property name="SoundRandom" value="mlionroam"/>
@@ -1115,7 +1115,7 @@
 		<!-- Legen Bear by TAV0 -->			
 		<entity_class name="TAVOanimalZombieBearLEGENDARY" extends="animalBear">
 			<property name="Tags" value="entity,zombie,walker"/>
-			<!--<property name="ReplaceMaterial0" value="entities/animals/vulture/materials/vulture_v2"/> -->
+			<!--<property name="ReplaceMaterial0" value="entities/electrical/materials/solarpanel"/> -->
 			<property name="ReplaceMaterial0" value="Entities/Animals/Bear/Materials/zBear"/>
 			<!--<property name="ReplaceMaterial1" value="Materials/UMAFur_ZombieBear"/> -->
 			<property name="ReplaceMaterial0" value="entities/resources/materials/oreCoalBoulder"/>
@@ -1165,7 +1165,7 @@
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
 				<!-- Zombie HP scale -->
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="90"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="OSOESQ"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="decoBear"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 		</entity_class>
@@ -1695,7 +1695,7 @@
 			<property name="Explosion.DamageBonus.earth" value="1"/>
 			<property name="Explosion.DamageBonus.wood" value=".50"/>
 			<property name="Explosion.DamageBonus.water" value="0"/>
-			<property name="Explosion.BlockDamage" value="3000"/>
+			<property name="Explosion.BlockDamage" value="8000"/>
 			<property name="Explosion.EntityDamage" value="8000"/>
 			<property name="JumpMaxDistance" value="2, 3"/>
 			<property name="LootDropProb" value=".40"/>
@@ -1707,7 +1707,7 @@
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="4500"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="65"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BomberDeco1"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="decoBomber"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="Explode" blast_power="0" block_damage="0" block_radius="5" entity_damage="13000" entity_radius="6" />
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyStats" stat="Health" operation="set" value="0" />
 				<!-- <triggered_effect trigger="onSelfDamagedBlock" action="Explode" blast_power="0" block_damage="1000" block_radius="5" entity_damage="13000" entity_radius="4"/> -->
@@ -2255,8 +2255,8 @@
 			<property name="SizeScale" value="1.1"/>
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZDemolition.prefab"/>
-			<property name="AltMats" value="entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder"/>
-
+			<property name="SwapMats" value="entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder"/>
+			
 
 			
 			<property name="Class" value="EntityZombieCop"/>
@@ -2297,7 +2297,7 @@
 			<property name="Explosion.ParticleIndex" value="2"/>
 			<property name="Explosion.RadiusBlocks" value="5"/>
 			<property name="Explosion.RadiusEntities" value="8"/>
-			<property name="Explosion.BlockDamage" value="9500"/>
+			<property name="Explosion.BlockDamage" value="5000"/>
 			<property name="Explosion.EntityDamage" value="1500"/>
 			<property name="Explosion.DamageBonus.earth" value=".1"/>
 			<property name="StompsSpikes" value="true"/>
@@ -2331,7 +2331,7 @@
 			<property name="SizeScale" value="1"/>			
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="SoundSpawn" value="Ambient_Loops/a_fire_embersmoke_sm_lp"/>
-			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>
+			<property name="AltMats" value="entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel"/>
 			
 			<property name="HandItem" value="meleeHandElementalFire"/>				
 			<!--  Gameplay  -->
@@ -2354,7 +2354,7 @@
 			<property name="SizeScale" value="1"/>			
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="SoundSpawn" value="Ambient_Loops/a_fire_embersmoke_sm_lp"/>
-			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>
+			<property name="AltMats" value="entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel"/>
 			<property name="HandItem" value="meleeHandElementalFire"/>				
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="4400"/>
@@ -2376,7 +2376,7 @@
 			<property name="SizeScale" value="1"/>
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="SoundSpawn" value="Ambient_Loops/a_fire_embersmoke_sm_lp"/>
-			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>				
+			<property name="AltMats" value="entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel"/>				
 			<property name="HandItem" value="meleeHandElementalFire"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="4400"/>
@@ -2398,7 +2398,7 @@
 			<property name="SizeScale" value="1"/>			
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="SoundSpawn" value="Ambient_Loops/a_fire_embersmoke_sm_lp"/>
-			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>
+			<property name="AltMats" value="entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="4400"/>
 			<!--  XP strong radiated  -->
@@ -2419,7 +2419,7 @@
 			<property name="SizeScale" value="1"/>
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="SoundSpawn" value="Ambient_Loops/a_fire_embersmoke_sm_lp"/>
-			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>
+			<property name="AltMats" value="entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel"/>
 			<property name="HandItem" value="meleeHandElementalFire"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="4400"/>
@@ -2441,7 +2441,7 @@
 			<property name="SizeScale" value="1"/>
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="SoundSpawn" value="Ambient_Loops/a_fire_embersmoke_sm_lp"/>
-			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>
+			<property name="AltMats" value="entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel"/>
 			<property name="HandItem" value="meleeHandElementalFire"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="4400"/>
@@ -2463,7 +2463,7 @@
 			<property name="SizeScale" value="1"/>			
 			<property name="MoveSpeed" value="0.8"/>
 			<property name="SoundSpawn" value="Ambient_Loops/a_fire_embersmoke_sm_lp"/>
-			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>
+			<property name="AltMats" value="entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel"/>
 			<property name="HandItem" value="meleeHandElementalFire"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="4400"/>
@@ -2486,7 +2486,7 @@
 			<property name="SizeScale" value="1"/>			
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="SoundSpawn" value="Ambient_Loops/a_fire_embersmoke_sm_lp"/>
-			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>
+			<property name="AltMats" value="entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel"/>
 			<property name="HandItem" value="meleeHandElementalFire"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="4400"/>
@@ -2509,7 +2509,7 @@
 			<property name="SizeScale" value="1"/>
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="SoundSpawn" value="Ambient_Loops/a_fire_embersmoke_sm_lp"/>
-			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>
+			<property name="AltMats" value="entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel"/>
 			<property name="HandItem" value="meleeHandElementalFire"/>
 			<!--   Gameplay   -->
 			<property name="ExperienceGain" value="4400"/>
@@ -2532,7 +2532,7 @@
 			<property name="SizeScale" value="1"/>
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="SoundSpawn" value="Ambient_Loops/a_fire_embersmoke_sm_lp"/>
-			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>				
+			<property name="AltMats" value="entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel"/>				
 			<property name="HandItem" value="meleeHandElementalFire"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="4400"/>
@@ -2554,7 +2554,7 @@
 			<property name="SizeScale" value="1.1"/>
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="SoundSpawn" value="Ambient_Loops/a_fire_embersmoke_sm_lp"/>
-			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>
+			<property name="AltMats" value="entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel"/>
 			<!--  Gameplay  -->
 			<property name="HandItem" value="meleeHandElementalFire"/>
 			<!--  Disable Health explosion  -->
@@ -3640,46 +3640,6 @@
 			</effect_group>
 		</entity_class>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->	
 	
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Rare Zombies by Snufkin/Radamus Edit by Malen ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
@@ -4253,7 +4213,7 @@
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="0"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="Ropita"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="decoMiniRopa"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="2"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
@@ -4328,7 +4288,7 @@
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="4000"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="5"/>
-				<!--<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BomberDeco1"/>-->
+				
 				<!--triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffNoiseAOE01"/-->
 				<!--triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffBLIND01"/-->
 				<triggered_effect trigger="onSelfAttackedOther" action="Explode" blast_power="0" block_damage="100" block_radius="3" entity_damage="65" entity_radius="4" />
@@ -4349,7 +4309,7 @@
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,siren"/>
 
 			<property name="AltMats" value="entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder,entities/resources/materials/oreCoalBoulder"/>
-			<property name="AltMats" value="entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2,entities/animals/vulture/materials/vulture_v2"/>
+			<property name="AltMats" value="entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel"/>
 			
 
 			
@@ -4415,72 +4375,82 @@
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 		
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Semi Bosses ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-		<entity_class name="Gallinazilla" extends="animalTemplateTimid">
+		<entity_class name="Gallinazilla" extends="animalTemplateHostile">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,animal,chicken,perkAT01,perkAT02,perkAT03,tavoR"/>
+			<property name="SizeScale" value="10"/>
+			<property name="Tags" value="entity,animal,chicken,hostile,perkAT01,perkAT02,perkAT03,tavoR"/>
+
 			<property name="MapIcon" value="ui_game_symbol_tracking_chicken"/>
 			<property name="TrackerIcon" value="ui_game_symbol_tracking_chicken"/>
+			<property name="AvatarController" value="AvatarAnimalController"/>
+			<property name="ModelType" value="Standard"/>
+			<property name="Prefab" value="/Entities/Animals/Bird/animalBirdChickenPrefab"/>
 
-			<property name="Class" value="EntityEnemyAnimal"/>
-			<property name="Prefab" value="/Entities/Animals/CHICKEN/chickenPrefab"/>
+			<!-- <property name="Class" value="EntityEnemyAnimal"/>
+			<property name="Prefab" value="/Entities/Animals/CHICKEN/chickenPrefab"/> -->
 			<!--<property name="ReplaceMaterial0" value="particleeffects/models/materials/p_metal"/>-->
 
-			<property name="Class" value="EntityEnemyAnimal"/>
-			<property name="IsEnemyEntity" value="True"/>
 			<property name="Parent" value="Animals"/>
+			<property name="HasDeathAnim" value="true"/>
+			<property name="HasRagdoll" value="true"/>
 			<property name="Faction" value="animals"/>
-			<property name="SizeScale" value="10"/>
-			<property name="IsEntityAnimal" value="true"/>
 			<property name="PhysicsBody" value="chicken"/>
-
-
-			<property name="AITask" value="
-			BreakBlock|
-			DestroyArea|
-			Territorial|
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
-			ApproachSpot|
-			Look|
-			Wander|
-			"/>
-
-			<property name="AITarget" value="
-			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|			
-			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
-			BlockingTargetTask|
-			"/>	
-
-
-
-			<property name="Mass" value="40"/>
-			<property name="Weight" value="40"/>
-			<property name="SoundHurt" value="Animals/Chicken/chickenpain"/>
-			<property name="SoundDeath" value="Animals/Chicken/chickendeath"/>
+			<property name="Mass" value="36"/>
+			<property name="Weight" value="12"/>
+			<property name="SoundHurt" value="chickenpain"/>
+			<property name="SoundDeath" value="chickendeath"/>
 			<property name="SwimOffset" value="2"/>
-			<property name="HasRagdoll" value="false"/>
-			<property name="HasDeathAnim" value="false"/>
+			<property name="HasRagdoll" value="true"/>
+			<property name="HasDeathAnim" value="true"/>
+			<property name="CanBigHead" value="false" />
+
+			<property name="AISeeOffset" value=".8"/>
+			<property name="AITask-1" value="BreakBlock"/>
+			<property name="AITask-2" value="DestroyArea"/>
+			<property name="AITask-3" value="Territorial"/>
+			<property name="AITask-4" value="ApproachAndAttackTarget" data="class=EntityPlayer,25,EntityBandit,25,EntityAnimalStag,40,EntityZombie,30"/>
+			<property name="AITask-5" value="ApproachSpot"/>
+			<property name="AITask-6" value="Look"/>
+			<property name="AITask-7" value="Wander"/>
+			<property name="AITask-8" value=""/>
+			<property name="AITarget-1" value="SetAsTargetIfHurt"/>
+			<property name="AITarget-2" value="BlockingTargetTask"/>
+			<property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityPlayer,13,9,EntityBandit,0,-6,EntityAnimalStag,0,0,EntityZombie,0,-6"/>
+			<property name="AITarget-4" value=""/>
+			
+
+			<property name="Mass" value="36"/>
+			<property name="Weight" value="12"/>
+			<property name="SoundHurt" value="chickenpain"/>
+			<property name="SoundDeath" value="chickendeath"/>
+			<property name="SwimOffset" value="2"/>
+			<property name="HasRagdoll" value="true"/>
+			<property name="HasDeathAnim" value="true"/>
+			<property name="CanBigHead" value="false" />
+
 
 			<!-- Gameplay -->
-			<property name="SightRange" value="150"/>
-			<property name="HandItem" value="meleeHandAnimalBear"/>
+			<property name="PainResistPerHit" value=".8"/>
+			<property name="MaxTurnSpeed" value="280"/>
+			<property name="MoveSpeed" value=".5"/>
+			<property name="MoveSpeedAggro" value="1.5, 2"/>
+			<property name="MoveSpeedRand" value="-.2, .2"/>
+			<property name="MoveSpeedPanic" value="2"/>
+			<property name="SwimSpeed" value="1.5"/>
+			<property name="SwimStrokeRate" value="1.1,1.5"/>
 			<property name="AttackTimeoutDay" value="1.5"/>
-			<property name="AttackTimeoutNight" value="1.1"/>
-			<property name="MaxTurnSpeed" value="100"/>
-			<property name="MoveSpeed" value="0.7"/>
-			<property name="MoveSpeedAggro" value="0.7, 1"/>
-			<property name="MoveSpeedPanic" value="1, 1.5"/>
+			<property name="AttackTimeoutNight" value="1.4"/>
+			<property name="CanClimbLadders" value="true"/>
+			<property name="HandItem" value="meleeHandAnimalBear"/>			
 			<property name="ExperienceGain" value="60000"/>
-
-
+			<property name="NavObject" value="animaltracking_chicken" />
+			<property name="TimeStayAfterDeath" value="30"/>
+			<property name="DeadBodyHitPoints" value="1000"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="15000"/>
 				<passive_effect name="HealthMax" operation="perc_add" value="0"/>
 				<!-- Animal HP scale -->
-			</effect_group>
-
-			<property name="NavObject" value="animaltracking_chicken" />
-			<property name="TimeStayAfterDeath" value="5"/>
-			<property name="DeadBodyHitPoints" value="1000"/>
+			</effect_group>			
 		</entity_class>
 		<entity_class name="BossCrawler" extends="zombieSteveCrawler">
 			<property name="UserSpawnType" value="Menu"/>
@@ -4677,7 +4647,7 @@
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="40"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ROPA"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="decoInfestedJoel"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="10"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
@@ -6638,7 +6608,7 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="decoBossSP"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="20"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buff_AOE_BossHoarfrost"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buff_AOE_BossHoarfrost_Shiny"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 			<property name="DeadBodyHitPoints" value="1000"/>

@@ -129,5 +129,28 @@
 			</effect_group>
 		</buff>
 
+		<buff name="buffNote_Navidad" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
+			<duration value="6"/>
+			<display_value value="duration"/>	
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>	
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNote_Navidad2"/>									
+			</effect_group>			
+		</buff>
+		<buff name="buffNote_Navidad2" hidden="true" >
+			<duration value="11"/>
+			<display_value value="duration"/>	
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_navidad"/>									
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNote_Navidad2"/>									
+			</effect_group>							
+		</buff>
+
 	</append>
 </configs>

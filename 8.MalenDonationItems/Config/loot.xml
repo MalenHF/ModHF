@@ -1,0 +1,66 @@
+<configs>
+	<append xpath="/lootcontainers">
+		<!-- Lootgroup -->
+		<lootgroup name="groupAMGems" count="1">
+			<item name="resourceSilverNugget" count="3,15"/>
+			<item name="resourceGoldNugget" count="2,10"/>
+			<item name="resourceRawDiamond" count="1,5"/>
+		</lootgroup>
+		<lootgroup name="groupAMCommond" count="all">
+			<item name="resourceClayLump" count ="1000,2000"/>
+			<item name="resourceCrushedSand" count ="1000,2000"/>
+			<item name="resourceRockSmall" count ="2500,5000"/>
+		</lootgroup>
+		<lootgroup name="groupAMIron" count="all">			
+			<item name="resourceScrapIron" count="5000,10000"/>
+			<item name="resourceScrapIron" count="5000,10000"/>
+			<item group="groupAMCommond"/>
+			<item group="groupAMGems"/>
+		</lootgroup>
+
+		<lootgroup name="groupAMLead" count="all">			
+			<item name="resourceScrapLead" count="5000,10000"/>
+			<item name="resourceScrapLead" count="5000,10000"/>
+			<item group="groupAMCommond"/>
+			<item group="groupAMGems"/>
+		</lootgroup>
+		<lootgroup name="groupAMNitre" count="all">			
+			<item name="resourcePotassiumNitratePowder" count="5000,10000"/>
+			<item name="resourcePotassiumNitratePowder" count="5000,10000"/>
+			<item group="groupAMCommond"/>
+			<item group="groupAMGems"/>
+		</lootgroup>
+		<lootgroup name="groupAMCoal" count="all">			
+			<item name="resourceCoal" count="5000,10000"/>	
+			<item name="resourceCoal" count="5000,10000"/>	
+			<item group="groupAMCommond"/>
+			<item group="groupAMGems"/>
+		</lootgroup>
+		<lootgroup name="groupAMOil" count="all">			
+			<item name="resourceOilShale" count="5000,10000"/>
+			<item name="resourceOilShale" count="5000,10000"/>
+			<item group="groupAMCommond"/>
+			<item group="groupAMGems"/>
+		</lootgroup>
+
+		<!-- Lootcontainer -->		
+		<lootcontainer name="autominerStone" count="5" size="5,2" sound_open="open_workbench" sound_close="close_workbench" destroy_on_close="true" loot_quality_template="qualBaseTemplate">
+			<item group="groupAMCommond"/>
+		</lootcontainer>
+		<lootcontainer name="autominerIron" count="1" size="5,2" sound_open="open_workbench" sound_close="close_workbench" destroy_on_close="true" loot_quality_template="qualBaseTemplate">
+			<item group="groupAMIron"/>			
+		</lootcontainer>
+		<lootcontainer name="autominerLead" count="1" size="5,2" sound_open="open_workbench" sound_close="close_workbench" destroy_on_close="true" loot_quality_template="qualBaseTemplate">
+			<item group="groupAMLead"/>
+		</lootcontainer>
+		<lootcontainer name="autominerNitre" count="1" size="5,2" sound_open="open_workbench" sound_close="close_workbench" destroy_on_close="true" loot_quality_template="qualBaseTemplate">
+			<item group="groupAMNitre"/>
+		</lootcontainer>
+		<lootcontainer name="autominerCoal" count="1" size="5,2" sound_open="open_workbench" sound_close="close_workbench" destroy_on_close="true" loot_quality_template="qualBaseTemplate">
+			<item group="groupAMCoal"/>
+		</lootcontainer>
+		<lootcontainer name="autominerOil" count="1" size="5,2" sound_open="open_workbench" sound_close="close_workbench" destroy_on_close="true" loot_quality_template="qualBaseTemplate">
+			<item group="groupAMOil"/>
+		</lootcontainer>
+	</append>
+</configs>

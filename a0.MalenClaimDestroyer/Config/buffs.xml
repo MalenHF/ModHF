@@ -67,7 +67,7 @@
 			</effect_group>
 		</buff>
 
-		<buff name="hfProtectZone" name_key="Zona protegida" description_key="Esta es una zona protegida, ciertas acciones estan bloqueadas" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Zona Protegida[-]">
+		<buff name="hfProtectZone" name_key="Zona protegida"  remove_on_death="false" description_key="Esta es una zona protegida, ciertas acciones estan bloqueadas" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Zona Protegida[-]">
 			<display_value value="xxx"/> 
 			<display_value_key value="Zona Protegida"/> 
 			<stack_type value="ignore"/>
@@ -78,13 +78,13 @@
 				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="hfProtectZone"/>
             </effect_group>
         </buff>
-		<buff name="hfNoConstructionZone" name_key="Zona protegida" description_key="Esta es una zona protegida, no podras construir aqui" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Zona Protegida[-]">
+		<buff name="hfNoConstructionZone" name_key="Zona protegida" description_key="Esta es una zona protegida, no podras construir aqui" icon="ui_game_symbol_destruction2"  remove_on_death="false" icon_color="46,244,41" tooltip_key="[00FF00]Zona Protegida[-]">
 			<display_value value="xxx" remove_on_death="false"/> 
 			<display_value_key value="Zona Protegida"/> 
 			<stack_type value="ignore"/>
             <effect_group>        
 				<requirement name="NotHasBuff" buff="god"/>        
-				<passive_effect name="DisableItem" operation="base_set" value="1" tags="noblocks" />	
+				<passive_effect name="DisableItem" operation="base_set" value="1" tags="noblocks,killBossSwitch" />	
 				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="hfNoConstructionZone"/>			
             </effect_group>
         </buff>

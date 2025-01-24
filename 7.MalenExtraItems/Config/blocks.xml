@@ -51,13 +51,53 @@
 			<property name="UpgradeHitCount" value="4"/>
 		</property>
 	</append>
+	
+	<remove xpath="/blocks/block[@name='barbedWireSpindle1m']/property[@name='Extends']"/>
+	<append xpath="/blocks/block[@name='barbedWireSpindle1m']">
+		<property name="CreativeMode" value="Dev"/>
+		<property name="Class" value="Damage"/>
+		<property name="Damage" value="1"/>
+		<property name="DamageType" value="BarbedWire"/>		
+		<property name="Material" value="MbarbedWireHF"/>
+		<property name="ImposterExclude" value="true"/>
+		<property name="LightOpacity" value="0"/>
+		<property name="WaterFlow" value="permitted"/>
+		<!-- <property name="Place" value="TowardsPlacerInverted"/> -->		
+		<property name="VehicleHitScale" value="8"/>
+		<property name="EconomicValue" value="15"/>
+		<property class="RepairItems">
+			<property name="resourceForgedSteel" value="1"/>
+		</property>
+		<drop event="Destroy" name="resourceScrapIron" count="1,12"/>		
+		<property name="Group" value="Building"/>
+		<property name="BlockTag" value="Spike"/>
+		<property name="FilterTags" value="MC_building,SC_traps"/>
+
+		<property name="Damage_received" value="5"/>
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="MultiBlockDim" value="1,1,1"/>
+		<property name="SortOrder2" value="0001"/>
+		<property name="Collide" value="melee"/>
+		<property name="MaxDamage" value="1500"/>		
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="Shape" value="ModelEntity"/>		
+		<property name="Model" value="Entities/Bandits/Barbedwire/barbedwire_spindle_1mPrefab"/>
+		
+		
+		
+		<property name="SortOrder1" value="B753"/>
+		<property name="SortOrder2" value="0000"/>
+	</append>
+
+
+
 	<append xpath="/blocks/block[@name='barbedWireSheet']">
 		<property name="Damage_received" value="5"/>
 		<property name="MaxDamage" value="1000"/>
 		<property class="UpgradeBlock">
 			<property name="ToBlock" value="barbedWireSpindle1m"/>
 			<property name="Item" value="resourceForgedSteel"/>
-			<property name="ItemCount" value="20"/>
+			<property name="ItemCount" value="10"/>
 			<property name="UpgradeHitCount" value="4"/>
 		</property>
 	</append>
@@ -252,6 +292,7 @@
 				<property name="CustomIcon" value="bladeTrap"/>
 				<property name="CustomIconTint" value="00AAE4"/>
 				<property name="TintColor" value="00AAE4"/>
+				<property name="UMA.Overlay0Tint" value="0,170,228"/>
 				<property name="ItemTypeIcon" value="computer"/>
 				<property name="Tags" value="noblocks"/>
 				<property name="DescriptionKey" value="DbladeTrapDesc"/>
@@ -341,6 +382,11 @@
 			</block>
 			<block name="trapSpikesScrapSteelMaster">				
 				<property name="CreativeMode" value="None"/>
+
+				<property name="UMA.Overlay0Tint" value="0,170,228"/>
+				<property name="CustomIconTint" value="00AAE4"/>
+				<property name="TintColor" value="00AAE4"/>
+
 				<property name="Class" value="TrunkTip"/>				
 				<property name="BlockTag" value="Spike"/>
 				<property name="Damage" value="100"/>
@@ -376,8 +422,9 @@
 			<block name="trapSpikesSteelDmg2">
 				<property name="Extends" value="trapSpikesScrapSteelMaster"/>
 				<property name="CreativeMode" value="Dev"/>
-				<property name="TintColor" value="00AAE4"/>
-				<property name="CustomIconTint" value="00AAE4"/>
+				
+				
+								
 				<property name="CustomIcon" value="trapSpikesIronDmg2"/>
 				<property name="Model" value="Entities/traps/ironSpikesTrap2BloodPrefab"/>
 				<property class="UpgradeBlock">
@@ -390,9 +437,9 @@
 			<block name="trapSpikesSteelDmg1">
 				<property name="Extends" value="trapSpikesScrapSteelMaster"/>
 				<property name="CreativeMode" value="Dev"/>
-				<property name="CustomIconTint" value="00AAE4"/>
+				
 				<property name="CustomIcon" value="trapSpikesIronDmg1"/>
-				<property name="TintColor" value="00AAE4"/>
+				
 				<property name="Model" value="Entities/traps/ironSpikesTrap1BloodPrefab"/>
 				<property class="UpgradeBlock">
 					<property name="ToBlock" value="trapSpikesSteelDmg0"/>
@@ -404,7 +451,7 @@
 			</block>
 			<block name="trapSpikesSteelDmg0">				
 				<property name="Extends" value="trapSpikesScrapSteelMaster"/>
-				<property name="TintColor" value="00AAE4"/>
+				
 				<property name="CustomIconTint" value="1E1A19"/>
 				<property name="CustomIcon" value="trapSpikesScrapIronMaster"/>
 				<property name="Tags" value="noblocks"/>				
@@ -558,7 +605,7 @@
 				<property name="CreativeMode" value="Player"/>
 				<property name="Class" value="SolarPanel"/>
 				<property name="CustomIcon" value="solarbank"/>
-				<property name="Material" value="Mmetal_weak"/>
+				<property name="Material" value="MmetalHF"/>
 				<property name="ItemTypeIcon" value="computer"/>
 				<property name="StabilitySupport" value="true"/>
 				<property name="Shape" value="ModelEntity"/>
@@ -613,7 +660,7 @@
 				<property name="Class" value="Generator"/>
 				<property name="DisplayType" value="blockElectricalHardened"/>
 				<property name="UnlockedBy" value="PBMT"/>
-				<property name="Material" value="Mmetal_medium"/>				
+				<property name="Material" value="MmetalHF"/>				
 				<property name="Path" value="solid"/>
 				<property name="Shape" value="ModelEntity"/>
 				<property name="Model" value="Entities/Electrical/smallGeneratorPrefab"/>
@@ -655,7 +702,7 @@
 				<property name="CustomIconTint" value="255,255,0"/>
 				<property name="CreativeMode" value="Player"/>
 				<property name="Class" value="BatteryBank"/>
-				<property name="Material" value="Mmetal_weak"/>
+				<property name="Material" value="MmetalHF"/>
 				<property name="StabilitySupport" value="false"/>
 				<property name="Tags" value="noblocks"/>
 				<property name="Shape" value="ModelEntity"/>
@@ -693,6 +740,7 @@
 			<block name="ProPressureplate">
 				<property name="Extends" value="pressureplate"/>
 				<property name="MaxDamage" value="6000"/>
+				<property name="Material" value="MmetalHF"/>
 				<property name="CustomIcon" value="pressureplate"/>
 				<property name="ItemTypeIcon" value="computer"/>
 				<property name="StabilitySupport" value="true"/>
@@ -713,6 +761,7 @@
 			<block name="ProPressureplateLong">
 				<property name="Extends" value="pressureplateLong"/>
 				<property name="MaxDamage" value="6000"/>
+				<property name="Material" value="MmetalHF"/>
 				<property name="CustomIcon" value="pressureplateLong"/>
 				<property name="CustomIconTint" value="255,255,0"/>
 				<property name="TintColor" value="00AAE4"/>
@@ -735,6 +784,7 @@
 				<property name="MaxDamage" value="3000"/>
 				<property name="CustomIcon" value="motionsensor"/>
 				<property name="ItemTypeIcon" value="computer"/>
+				<property name="Material" value="MmetalHF"/>
 				<property name="CustomIconTint" value="255,255,0"/>
 				<property name="TintColor" value="00AAE4"/>
 				<property name="DescriptionKey" value="Promotionsensordesc"/>
@@ -758,6 +808,7 @@
 				<property name="TintColor" value="00AAE4"/>
 				<property name="CustomIconTint" value="255,255,0"/>
 				<property name="TintColor" value="255,255,0"/>
+				<property name="Material" value="MmetalHF"/>
 				<property name="AmmoItem" value="ammo9mmBulletAP"/>
 				<property name="MaxDistance" value="60"/>		
 				<property name="EntityDamage" value="65"/>
@@ -778,6 +829,7 @@
 				<property name="TintColor" value="00AAE4"/>
 				<property name="CustomIconTint" value="255,255,0"/>
 				<property name="TintColor" value="255,255,0"/>
+				<property name="Material" value="MmetalHF"/>
 				<property name="AmmoItem" value="ammoShotgunShell"/>	
 				<!--  does not use the damage value  -->
 				<property name="MaxDistance" value="30"/>
@@ -867,6 +919,7 @@
 				<property name="StabilitySupport" value="true"/>
 				<property name="CustomIcon" value="bridgeMetalRivetBlock"/>
 				<property name="ImposterDontBlock" value="true"/>
+				<property name="Material" value="MmetalHF"/>
 				<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
 				<property name="IsTerrainDecoration" value="true"/>
 				<property name="Stacknumber" value="10"/>
@@ -897,10 +950,11 @@
 			</block>
 			<block name="Wireless_BlockR">
 				<property name="Class" value="ElectricWire"/>
-				<property name="Material" value="Mmetal"/>
+				
 				<property name="MaxDamage" value="4000"/>
 				<property name="CustomIconTint" value="100,100,100"/>
 				<property name="StabilitySupport" value="true"/>
+				<property name="Material" value="MmetalHF"/>
 				<property name="CustomIcon" value="bridgeMetalRivetBlock"/>
 				<property name="ImposterDontBlock" value="true"/>
 				<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
@@ -1236,9 +1290,8 @@
 			<block name="stainlesSteelShapes" shapes="All">
                 <property name="DescriptionKey" value="steelBlockGroupDesc"/>            
                 <property name="DisplayType" value="blockHardened"/>
-                <property name="Material" value="MstainlessSteel"/>
-				<property name="Tags" value="noblocks"/>
-				<property name="Tags" value="blocks"/>
+                <property name="Material" value="MstainlessSteel"/>				
+				<property name="Tags" value="blocks,noblocks"/>
                 <property name="Shape" value="New"/>
                 <property name="Texture" value="62"/>
                 <property name="UiBackgroundTexture" value="62"/>   

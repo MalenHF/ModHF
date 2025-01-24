@@ -12,12 +12,12 @@
 			<!--<property name="CustomIcon" value="resourceConcreteMix"/> verano-->
 			<!--<property name="CustomIcon" value="decoPumpkinJackOLantern"/> Otoño
 			<property name="CustomIcon" value="thrownDynamite"/> Año nuevo-->			
-			<property name="CustomIcon" value="decoPumpkinJackOLantern"/>
+			<property name="CustomIcon" value="thrownDynamite"/>
 			<!--<property name="CustomIconTint" value="FFA200"/> verano/Otoño-->
 			<!--<property name="CustomIconTint" value="2E1503"/> san valentin -->
 			<!--<property name="CustomIconTint" value="FF00E0"/> Pacua -->
 			<!-- <property name="CustomIconTint" value="0CC7A8"/> año nuevo  -->
-			-<property name="CustomIconTint" value="FFA200"/>			
+			-<property name="CustomIconTint" value="0CC7A8"/>			
 			<property name="Material" value="Morganic"/>
 			<property name="Stacknumber" value="400"/>
 			<property name="Group" value="Mods"/>
@@ -227,6 +227,9 @@
 			<property name="CustomIcon" value="armorAthleticOutfit"/>
 			<property name="Tags" value="upperbody,chest,armor,armorChest,canHaveCosmetic,lightArmor,lightArmorDeg"/>
 			<property name="EquipSlot" value="Chest"/>
+			<property name="Tags" value="upperbody,chest,armor,armorChest,canHaveCosmetic,lightArmor,lightArmorDeg"/>
+			<property name="EquipSlot" value="Chest"/>
+			<property name="DisplayType" value="armorAthleticOutfit"/>
 
 			<effect_group name="with x5 BuffResistance" tiered="false">
 				<passive_effect name="ModSlots" operation="base_set" value="0"/>
@@ -247,8 +250,11 @@
 		<item name="PVPMAG">
 			<property name="Extends" value="PVPMAH" param1="DescriptionKey"/>
 			<property name="CustomIcon" value="armorAthleticGloves"/>
-			<property name="Tags" value="upperbody,hands,armor,armorHands,canHaveCosmetic,lightArmor,lightArmorDeg"/>
 			<property name="EquipSlot" value="Hands"/>
+			<property name="DisplayType" value="armorAthleticGloves"/>
+			<property name="Tags" value="upperbody,hands,armor,armorHands,canHaveCosmetic,lightArmor,lightArmorDeg"/>	
+			<property name="SoundPickup" value="gloves_leather_grab"/>
+			<property name="SoundPlace" value="gloves_leather_place"/>
 			<effect_group name="with x5 BuffResistance" tiered="false">
 				<passive_effect name="ModSlots" operation="base_set" value="0"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
@@ -269,7 +275,10 @@
 			<property name="Extends" value="PVPMAH" param1="DescriptionKey"/>
 			<property name="CustomIcon" value="armorAthleticBoots"/>
 			<property name="Tags" value="lowerbody,feet,armor,armorFeet,canHaveCosmetic,lightArmor,lightArmorDeg"/>
-			<property name="EquipSlot" value="Feet"/>
+			<property name="EquipSlot" value="Feet"/>			
+			<property name="DisplayType" value="armorAthleticBoots"/>
+			<property name="SoundPickup" value="footwear_regular_grab"/>
+			<property name="SoundPlace" value="footwear_regular_place"/>
 			<effect_group name="with x5 BuffResistance" tiered="false">
 				<passive_effect name="ModSlots" operation="base_set" value="0"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
@@ -279,7 +288,6 @@
 				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
 				<passive_effect name="Mobility" operation="perc_add" value="0"/>
-
 			</effect_group>
 			<property class="SDCS">
 				<property name="Prefab" value="Entities/Player/*/Gear/Prefabs/gear*FitnessPrefab"/>
@@ -1135,28 +1143,43 @@
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Quest de Navidad ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
 		<item name="q_xmas">
-			<property name="Extends" value="challengeQuestMaster"/>
+			<property name="Extends" value="q_Ticket"/>
+			<property name="CustomIcon" value="challengeQuestMaster"/>						
+			<property name="CreativeMode" value="Dev"/>
 			<property name="DescriptionKey" value="questxmasnote"/>
 			<property name="ItemTypeIcon" value="twitch_special"/>
-			<property name="IsQuestItem" value="true" />
 			<property name="Candrop" value="false"/>
+			<property name="IsQuestItem" value="true" />
 			<property name="TintColor" value="00AAE4"/>
 			<property name="CustomIconTint" value="00AAE4"/>
-			<property class="Action0">
-			  <property name="QuestGiven" value="xmas"/>
+			<property class="Action0">	
+				<requirement name="CVarCompare" cvar="$varNavidad" operation="LT" value="2"/>
+				<property name="PromptTitle" value="xmasquest" />
+				<property name="PromptDescription" value="xmasquestoffer" />
 			</property>
+			<effect_group tiered="false">						
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNote_Navidad"/>				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varNavidad" operation="set" value="2"/>
+			</effect_group>
 		</item>
 		<item name="Regalo">
-			<property name="Extends" value="challengeQuestMaster"/>
+			<property name="Extends" value="q_Ticket"/>
+			<property name="CustomIcon" value="challengeQuestMaster"/>						
+			<property name="CreativeMode" value="Dev"/>
 			<property name="DescriptionKey" value="questxmasnote"/>
 			<property name="ItemTypeIcon" value="twitch_special"/>
-			<property name="IsQuestItem" value="true" />
 			<property name="Candrop" value="false"/>
+			<property name="IsQuestItem" value="true" />
 			<property name="TintColor" value="00AAE4"/>
 			<property name="CustomIconTint" value="00AAE4"/>
 			<property class="Action0">
-				<property name="QuestGiven" value="xmas2"/>
+				<property name="PromptTitle" value="xmasquest" />
+				<property name="PromptDescription" value="xmasquestoffer" />
 			</property>
+			<effect_group tiered="false">						
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNote_Navidad"/>				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varNavidad" operation="set" value="2"/>
+			</effect_group>
 		</item>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Quest de Pascua ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
 		<item name="q_AniEvent">

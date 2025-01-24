@@ -4,16 +4,33 @@
     <remove xpath="/buffs/buff[@name='cpm_tooltip_enterpveclaim']"/>
     <remove xpath="/buffs/buff[@name='cpm_tooltip_exitpveclaim']"/>
     <append xpath="/buffs">
-        <buff name="cpm_tooltip_enterpvpclaim" name_key="cpm_tooltip_enterpvpclaim" hidden="true" icon="ui_game_symbol_block_repair" icon_color="255,0,0">
-            <display_value_key value="In PVP zone"/>
+        <buff name="cpm_tooltip_enterpvpclaim" name_key="buffZoneHCName" escription_key="buffZoneHCDesc"  remove_on_death="false" tooltip_key="buffZoneHCTooltip" icon="ui_game_symbol_twitch_minion_overhead" icon_blink="true">
+            <display_value_key value="buffZoneHCNameShort"/>
             <display_value value="xxx"/>
             <stack_type value="ignore"/>
             <duration value="0"/>
-             <effect_group>
+             <!-- <effect_group>
                 <triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffZoneHC"/>
                 <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffZoneHC" />                
-             </effect_group>
-            <!--<effect_group><triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_enterpvpclaim"/></effect_group>-->
+             </effect_group> -->
+            <effect_group>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="1"/>
+				<passive_effect name="ScavengingTime" operation="perc_subtract" value=".25"/>
+				<passive_effect name="LootStage" operation="perc_add" value=".50"/>
+				<passive_effect name="HarvestCount" operation="perc_add" value="1" tags="oreWoodHarvest"/>				
+			</effect_group>
+			<effect_group>
+				<requirement name="HasBuff" buff="PPBF"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.50"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="HasBuff" buff="PPBF2"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.75"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="HasBuff" buff="PPBF3"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.75"/>
+			</effect_group>
         </buff>
 
         <buff name="cpm_tooltip_exitpvpclaim" name_key="cpm_tooltip_exitpvpclaim" hidden="true" icon="ui_game_symbol_block_repair">
@@ -22,30 +39,13 @@
             <stack_type value="ignore"/>
             <duration value="0"/>
             <effect_group>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffZoneHC" />
+                <!-- <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffZoneHC" /> -->
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_enterpvpclaim"/>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_exitpvpclaim"/>
             </effect_group>
         </buff>
 
-        <buff name="pvp_zone" name_key="Zona PVE" description_key="Estas dentro de zona PVP extra loot y XP" tooltip_key="Entraste en zona PVE" icon="ui_game_symbol_twitch_no_ranged" icon_color="204,0,0">
-            <display_value_key value="Zona PVE"/>
-            <display_value value="xxx"/>
-            <stack_type value="replace"/>
-            <effect_group>
-                <triggered_effect trigger="onSelfDied" target="self" action="RemoveBuff" buff="pvp_zone"/>
-                <triggered_effect trigger="onSelfPrimaryActionRayHit" target="other" action="AddBuff" buff="pvp_damage">
-                    <requirement name="EntityTagCompare" target="other" tags="player"/>
-                </triggered_effect>
-                <triggered_effect trigger="onSelfSecondaryActionRayHit" target="other" action="AddBuff" buff="pvp_damage">
-                    <requirement name="EntityTagCompare" target="other" tags="player"/>
-                </triggered_effect>
-            </effect_group>
-            <effect_group>
-                <passive_effect name="PlayerExpGain" operation="perc_add" value=".25"/>
-                <passive_effect name="LootStage" operation="base_add" value="20"/>
-            </effect_group>
-        </buff>
+        
 
         <buff name="cpm_tooltip_enterpveclaim" name_key="cpm_tooltip_enterpveclaim" icon="ui_game_symbol_block_repair" icon_color="255,0,0" tooltip_key="[00FF00]You are entering a PVE zone! Killing is not possible.[-]">
             <display_value_key value="In PVE zone"/>
@@ -93,6 +93,7 @@
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_ProtectedLobby_exit" />
             </effect_group>
         </buff>
+        
         <buff name="cpm_tooltip_ProtectedMarket_enter" name_key="cpm_tooltip_ProtectedLobby_exit" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
             <display_value_key value="Lobby"/>
             <display_value value="xxx"/>
@@ -135,6 +136,103 @@
             </effect_group>
         </buff>
 
+        <buff name="pvp_zone" name_key="Zona PVE" description_key="Estas dentro de zona PVP extra loot y XP" tooltip_key="Entraste en zona PVE" icon="ui_game_symbol_twitch_no_ranged" icon_color="204,0,0">
+            <display_value_key value="Zona PVE"/>
+            <display_value value="xxx"/>
+            <stack_type value="replace"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfDied" target="self" action="RemoveBuff" buff="pvp_zone"/>
+                <triggered_effect trigger="onSelfPrimaryActionRayHit" target="other" action="AddBuff" buff="pvp_damage">
+                    <requirement name="EntityTagCompare" target="other" tags="player"/>
+                </triggered_effect>
+                <triggered_effect trigger="onSelfSecondaryActionRayHit" target="other" action="AddBuff" buff="pvp_damage">
+                    <requirement name="EntityTagCompare" target="other" tags="player"/>
+                </triggered_effect>
+            </effect_group>
+            <effect_group>
+                <passive_effect name="PlayerExpGain" operation="perc_add" value=".25"/>
+                <passive_effect name="LootStage" operation="base_add" value="20"/>
+            </effect_group>
+        </buff>
+
+
+         <buff name="cpm_tooltip_Coliseo1_enter" name_key="Coliseo" remove_on_death="false" hidden="false" icon="ui_game_symbol_spear" icon_color="244,93,41" tooltip_key="coloEnterKey">
+            <display_value_key value="Coliseo"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
+            <effect_group>
+                <requirement name="NotHasBuff" buff="god"/>
+                <passive_effect name="DisableItem" operation="base_set" value="1" tags="noblocks,ranged" />  
+                <passive_effect name="AttacksPerMinute" operation="perc_add" value=".5" tags="melee">
+					<requirement name="!HoldingItemHasTags" tags="ancienthammer"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value="8">
+					<requirement name="HoldingItemHasTags" tags="melee"/>
+					<requirement name="!HoldingItemHasTags" tags="ancienthammer"/>
+				</passive_effect>      
+            </effect_group>
+        </buff>
+        <buff name="cpm_tooltip_Coliseo1_exit" name_key="cpm_tooltip_ProtectedLobby_exit" hidden="true" icon="ui_game_symbol_destruction2" icon_color="244,93,41" tooltip_key="coloExitKey">
+            <display_value_key value="Lobby"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
+            <effect_group>                
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_Coliseo1_enter" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_Coliseo1_exit" />
+            </effect_group>
+        </buff>
+
+        <buff name="cpm_tooltip_Coliseo2_enter" name_key="Coliseo" remove_on_death="false" hidden="false" icon="ui_game_symbol_spear" icon_color="244,93,41" tooltip_key="coloEnterKey">
+            <display_value_key value="Coliseo"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
+            <effect_group>
+                <requirement name="NotHasBuff" buff="god"/>
+                <passive_effect name="DisableItem" operation="base_set" value="1" tags="noblocks,ranged" />
+                <passive_effect name="AttacksPerMinute" operation="perc_add" value=".5" tags="melee">
+					<requirement name="!HoldingItemHasTags" tags="ancienthammer"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value="8">
+					<requirement name="HoldingItemHasTags" tags="melee"/>
+					<requirement name="!HoldingItemHasTags" tags="ancienthammer"/>
+				</passive_effect>     
+            </effect_group>
+        </buff>
+        <buff name="cpm_tooltip_Coliseo2_exit" name_key="x" hidden="true" icon="ui_game_symbol_destruction2" icon_color="244,93,41" tooltip_key="coloExitKey">
+            <display_value_key value="Lobby"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
+            <effect_group>                
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_Coliseo2_enter" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_Coliseo2_exit" />
+            </effect_group>
+        </buff>
+
+        <buff name="cpm_tooltip_Coliseo3_enter" name_key="Coliseo" remove_on_death="false" hidden="false" icon="ui_game_symbol_spear" icon_color="244,93,41" tooltip_key="coloEnterKey">
+            <display_value_key value="Coliseo"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
+            <effect_group>
+                <requirement name="NotHasBuff" buff="god"/>
+                <passive_effect name="DisableItem" operation="base_set" value="1" tags="noblocks,ranged" />  
+                <passive_effect name="AttacksPerMinute" operation="perc_add" value=".5" tags="melee">
+					<requirement name="!HoldingItemHasTags" tags="ancienthammer"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value="8">
+					<requirement name="HoldingItemHasTags" tags="melee"/>
+					<requirement name="!HoldingItemHasTags" tags="ancienthammer"/>
+				</passive_effect>      
+            </effect_group>
+        </buff>
+        <buff name="cpm_tooltip_Coliseo3_exit" name_key="x" hidden="true" icon="ui_game_symbol_destruction2" icon_color="244,93,41" tooltip_key="coloExitKey">
+            <display_value_key value="Lobby"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
+            <effect_group>                
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_Coliseo3_enter" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_Coliseo3_exit" />
+            </effect_group>
+        </buff>
 
 
 

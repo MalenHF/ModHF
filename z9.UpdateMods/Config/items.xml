@@ -1,5 +1,31 @@
 <config>
 	<append xpath="/items">		
+		<item name="kitDeseos">			
+			<property name="TintColor" value="255,255,0"/>	
+			<property name="HoldType" value="45"/>			
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="ItemTypeIcon" value="twitch_special"/>
+			<property name="CustomIcon" value="cntLootChestHeroInsecureT1"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property name="Candrop" value="false"/>
+			<property class="Action0">				
+				<!-- <requirement name="CVarCompare" cvar="$varDeseos" operation="LT" value="1"/> -->
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="toolAnvilGold,modArmorImprovedFittingsSchematic,modArmorCustomizedFittingsSchematic,toolBellowsSilver,mummyConsuSPE,ResourceForgedPractonium,ResourceForgedPlatinum,agua_divina,resourceRawDiamond,cl_Medico,eventbackpack,forgeHF,meleeWpnBladeT3MacheteParts"/>
+				<property name="Create_item_count" value="1,9,9,1,3,2,1,2,50,2,10,1,150"/>
+			</property>
+			<effect_group tiered="false">				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varDeseos" operation="set" value="1"/>
+			</effect_group>
+		</item>
 				
 	</append>
 </config>
