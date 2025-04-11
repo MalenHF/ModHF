@@ -781,6 +781,12 @@
 				<property name="CustomIconTint" value="07F00D"/>
 				<property name="TintColor" value="255,0,0"/>
 			</item>
+			<item name="bossTokenTerra">
+				<property name="Extends" value="bossTokenNatu"/>
+				<property name="ItemTypeIcon" value="skull"/>
+				<property name="CustomIconTint" value="B1803F"/>
+				<property name="TintColor" value="255,0,0"/>
+			</item>
 			<!---->
 			<item name="bossTokenAncient">
 				<property name="Extends" value="bossTokenNatu"/>
@@ -801,7 +807,7 @@
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Zombies Hans ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
-		<!--Tavo Zombies Hans-->
+			<!--Tavo Zombies Hands-->
 			<item name="meleeHandZombieIronSpider">
 				<property name="Extends" value="meleeHandZombie02"/>
 				<property name="CreativeMode" value="None"/>
@@ -1016,7 +1022,7 @@
 				</effect_group>
 			</item>			
 		
-		<!--Gunner by Robelote-->
+			<!--Gunner by Robelote-->
 			<item name="meleehandZombieGunner">
 				<property name="Extends" value="meleeHandMaster"/>
 				<property name="CreativeMode" value="None"/>
@@ -1035,7 +1041,9 @@
 					<property name="Magazine_items" value="GunVomitProjectile"/>
 					<property name="Sound_warning" value="gunnervomitwarning"/>
 					<property name="Sound_start" value="ak47_fire"/>
-					<property name="Sound_repeat" value="ak47_s_fire"/>
+					<property name="Sound_loop" value="ak47_fire"/>
+					<property name="Sound_empty" value="dryfire"/>
+					<property name="Sound_reload" value="ak47_reload"/>
 					<property name="Sound_end" value="ak47_fire_end"/>
 					<property name="Buff" value="buffInjuryBleedingZombie,buffInjuryStunnedX"/>
 				</property>
@@ -1078,7 +1086,7 @@
 					<passive_effect name="BuffProcChance" operation="base_set" value="0.80" tags="buffInjuryStunnedX"/>-->
 				</effect_group>
 			</item>	
-		<!--  Zombie Hans by Snufkin  -->		
+			<!--  Zombie Hans by Snufkin  -->		
 			<item name="meleeHandBanshee">
 				<property name="Extends" value="meleeHandMaster"/>
 				<property name="CreativeMode" value="None"/>
@@ -1342,7 +1350,7 @@
 					<!--InfectionFeral-->
 				</effect_group>
 			</item>	
-		<!--HFHands Zombies-->
+			<!--HFHands Zombies-->
 			<item name="meleeHandELITE">
 				<property name="Extends" value="meleeHandZombieStrong"/>
 				<property name="CreativeMode" value="None"/>
@@ -1607,7 +1615,7 @@
 					<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
 				</effect_group>
 			</item>
-		<!-- Specials-->
+			<!-- Specials-->
 			<item name="meleeHandRAINBOW">
 				<property name="Tags" value="blunt,melee,light,perkFlurryOfBlows"/>
 				<property name="CreativeMode" value="None"/>
@@ -1785,7 +1793,7 @@
 					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="75"/>
 				</effect_group>
 			</item>			
-		<!--Bomber Elite-->			
+			<!-- Bomber Elite -->			
 			<item name="meleeHandBomberelite">
 				<property name="Extends" value="meleeHandZombie01"/>
 				<property name="CreativeMode" value="None"/>
@@ -1845,7 +1853,7 @@
 					<display_value name="dExRadius" value="5"/>
 				</effect_group>
 			</item>	
-		<!-- Sub Bosses -->
+			<!-- Sub Bosses -->
 			<item name="meleeHandBossCrawler">
 				<property name="Extends" value="meleeHandZombie02"/>
 				<property name="CreativeMode" value="None"/>
@@ -2004,7 +2012,7 @@
 					</effect_group>
 				</item>
 			<!---->
-		<!--Bosses-->
+			<!-- Bosses -->
 			<item name="meleeHandZombieIronSpiderFeral">
 				<property name="Extends" value="meleeHandZombie02"/>
 				<property name="CreativeMode" value="None"/>
@@ -2103,8 +2111,7 @@
 					<passive_effect name="BlockRange" operation="base_set" value="4"/>
 					<!--<passive_effect name="DamageFalloffRange" operation="base_set" value="1.65"/> -->
 				</effect_group>
-			</item>
-			
+			</item>			
 			<item name="meleeHandGladBOSS">
 				<property name="Tags" value="blunt,melee,light,perkFlurryOfBlows"/>
 				<property name="CreativeMode" value="None"/>
@@ -2213,6 +2220,41 @@
 			</item>
 			<!---->
 			<!-- Added by HolyVentus -->
+			<item name="meleeHandRevenant">
+				<property name="Extends" value="meleeHandZombieStrong"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="Range" value="2"/>
+					<property name="DamageEntity" value="50"/>
+					<property name="Block_range" value="2"/>
+					<property name="DamageBlock" value="1000"/>
+					<property name="Buff" value="RevenantHit"/>
+				</property>
+				<effect_group name="meleeHandZombieStrongFeral" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="MaxRange" operation="base_set" value="2"/>
+					<passive_effect name="BlockRange" operation="base_set" value="2"/>
+				</effect_group>
+			</item>
+			<item name="meleeHandSpirit">
+				<property name="Extends" value="meleeHandZombieStrong"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="Range" value="5"/>
+					<property name="DamageEntity" value="0"/>
+					<property name="Block_range" value="5"/>
+					<property name="DamageBlock" value="2000"/>
+					<property name="Buff" value="SpiritHit"/>
+				</property>
+				<effect_group name="meleeHandZombieStrongFeral" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="MaxRange" operation="base_set" value="5"/>
+					<passive_effect name="BlockRange" operation="base_set" value="5"/>
+				</effect_group>
+			</item>
+
+
+
 			<item name="meleeHandCirujano">
 				<property name="Extends" value="meleeHandMaster"/>
 				<property name="CreativeMode" value="None"/>
@@ -2242,6 +2284,81 @@
 					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="medicalRegHealthAmount" operation="set" value="0"/>
 				</effect_group>
 			</item>
+			<item name="meleeHandBossTerra">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="Degradation" value="99999" param1="true"/>
+				<property class="Action0">
+					<property name="Range" value="3"/>
+					<property name="Block_range" value="4"/>
+					<property name="DamageEntity" value="125"/>
+					<property name="DamageBlock" value="2500"/>
+					<property name="Buff" value="ElementalEarthHit,buffbosshit,buffInfectionCatch,buffInjuryStunned01,buffInjuryBleeding,buffInjuryBleedingTwo,buffInjuryBleedingOne,buffInjuryBleedingZombie"/>
+					<property class="HitSounds">
+						<property name="Override0" value="organic" param1="metalsolidhitorganic"/>
+					</property>
+				</property>
+				<property class="Action1">
+					<property name="Class" value="Vomit"/>
+					<property name="Delay" value=".3"/>
+					<property name="Range" value="500"/>
+					<property name="Infinite_ammo" value="true"/>
+					<property name="Magazine_items" value="BossTerraProjectile"/>
+					<!-- <property name="Sound_warning" value="demolitionzexplodewarning"/> -->
+					<property name="Sound_start" value="m136_fire"/>
+					<property name="Sound_repeat" value=""/>
+					<property name="Sound_end" value=""/>
+					<property name="Sound_empty" value=""/>
+					<property name="Sound_reload" value=""/>
+					<!-- <property name="Buff" value="BossProjectileEarthHit,buffLegBroken,buffArmBroken,buffInjuryKnockdown01"/> -->
+					<!-- <property name="Buff" value="buffLegBroken,buffArmBroken,buffInjuryKnockdown01"/> -->
+				</property>
+				<effect_group name="meleeHandBossTerra" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="2"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".20" tags="buffInjuryBleedingZombie"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".20" tags="buffInfectionCatch"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value=".25" tags="buffInjuryStunned01"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="30"/>
+				</effect_group>
+			</item>
+			<item name="BossTerraProjectile">
+				<property name="Meshfile" value="Entities/Resources/oreCoalBoulderPrefab"/>
+				<property name="Material" value="Mstone"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action1">
+					<property name="Class" value="Projectile"/>
+					<property name="DamageEntity" value="100"/>
+					<property name="DamageBlock" value="5000"/>
+					<property name="Explosion.Buff" value="BossProjectileEarthHit,buffArmBroken,buffInjuryKnockdown01"/> <!-- index 7 has ExplosionDamageArea script -->
+					<!--property name="Explosion.ParticleIndex" value="4"/-->
+					<!-- EL VALOR 5 PROVOCA QUE SEA VISUALMENTE UNA EXPLOSION AL COLISIONAR -->
+					<property name="Explosion.ParticleIndex" value="5"/> 
+					<!-- which Prefab/particle is used -->
+					<property name="Explosion.RadiusBlocks" value="4"/>
+					<!-- damage radius for blocks -->
+					<property name="Explosion.RadiusEntities" value="4"/>
+					<!-- damage radius for entities -->
+					<property name="Explosion.DamageBonus.water" value="0"/>
+					<property name="Velocity" value="18"/>
+					<property name="FlyTime" value="2"/>
+					<property name="LifeTime" value="4"/>
+					<property name="CollisionRadius" value="0.75"/>
+					<property name="DamageBonus.earth" value="0"/>
+				</property>
+				<effect_group name="BossTerraProjectile" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="metal"/>
+				</effect_group>
+			</item>			
 			<item name="meleeHandSamurai">
 				<property name="Extends" value="meleeHandMaster"/>
 				<property name="CreativeMode" value="None"/>
