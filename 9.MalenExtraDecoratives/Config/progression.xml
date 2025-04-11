@@ -5,13 +5,19 @@
 <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 
    <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add New big door unlock to Electrician ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-    <set xpath="/progression/crafting_skills/crafting_skill[@name='craftingElectrician']/display_entry[@icon='batterybank']/unlock_entry/@item">batterybank,vaultDoor01_Powered,vaultDoor01Double_Powered,vaultHatch01_Powered,ironGarageDoor_PoweredBlockVariantHelper,woodenGarageDoor3x3_PoweredBlockVariantHelper,woodenGarageDoor4x3_PoweredBlockVariantHelper,woodenGarageDoor5x3_PoweredBlockVariantHelper,steelGarageDoor3x3_PoweredBlockVariantHelper,steelGarageDoor4x3_PoweredBlockVariantHelper,steelGarageDoor5x3_PoweredBlockVariantHelper,rollUpDoor3x3_PoweredVariantHelper,rollUpDoor5x4_PoweredVariantHelper,rollUpDoor7x4_PoweredVariantHelper</set>
-    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingElectrician']/effect_group/passive_effect[@level='75,100']/@tags">,rollUpDoor3x3_PoweredVariantHelper,rollUpDoor5x4_PoweredVariantHelper,rollUpDoor7x4_PoweredVariantHelper,doorWoodLargeGateHF_Powered</append>
-   <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingElectrician']">
-   <display_entry icon="metalReinforcedWoodDrawBridge" name_key="electricianT5" has_quality="false" unlock_level="75" >
-			<unlock_entry item="metalReinforcedWoodDrawBridgePowered,doorWoodLargeGateHF_Powered" unlock_tier="1" />
-	</display_entry>  
-   </append>
+    <!-- <set xpath="/progression/crafting_skills/crafting_skill[@name='craftingElectrician']/display_entry[@icon='batterybank']/unlock_entry/@item">batterybank,vaultDoor01_Powered,vaultDoor01Double_Powered,vaultHatch01_Powered,ironGarageDoor_PoweredBlockVariantHelper,woodenGarageDoor3x3_PoweredBlockVariantHelper,woodenGarageDoor4x3_PoweredBlockVariantHelper,woodenGarageDoor5x3_PoweredBlockVariantHelper,steelGarageDoor3x3_PoweredBlockVariantHelper,steelGarageDoor4x3_PoweredBlockVariantHelper,steelGarageDoor5x3_PoweredBlockVariantHelper,rollUpDoor3x3_PoweredVariantHelper,rollUpDoor5x4_PoweredVariantHelper,rollUpDoor7x4_PoweredVariantHelper</set>
+    -->
    
+   <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingElectrician']">
+      <display_entry icon="metalReinforcedWoodDrawBridge" name_key="electricianT5" has_quality="false" unlock_level="75" >
+			<unlock_entry item="metalReinforcedWoodDrawBridgePowered,doorWoodLargeGateHF_Powered,specialPoweredDoorsVariantHelper,rollUpDoor3x3_PoweredVariantHelper,rollUpDoor5x4_PoweredVariantHelper,rollUpDoor7x4_PoweredVariantHelper" unlock_tier="1" />
+	   </display_entry>  
+   </append>
+    <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingElectrician']/effect_group">
+         <passive_effect name="RecipeTagUnlocked" operation="base_set" level="75,100" value="1" tags="metalReinforcedWoodDrawBridgePowered,doorWoodLargeGateHF_Powered,specialPoweredDoorsVariantHelper,rollUpDoor3x3_PoweredVariantHelper,rollUpDoor5x4_PoweredVariantHelper,rollUpDoor7x4_PoweredVariantHelper"/>
+   </append>   
+   <!-- Revisar con las updates-->
+   <set xpath="/progression/crafting_skills/crafting_skill[@name='craftingElectrician']/display_entry[@icon='generatorBankA']/unlock_entry/@item">generatorbank,electricwirerelay,switchVariantHelper,tripwirepost,ceilingLight01_player,industrialLight01_player,industrialLight02_player,ceilingLight07_player</set>
+   <set xpath="/progression/crafting_skills/crafting_skill[@name='craftingElectrician']/effect_group/passive_effect[@level='25,100']/@tags">generatorbank,electricwirerelay,switchVariantHelper,tripwirepost,ceilingLight01_player,industrialLight01_player,industrialLight02_player,ceilingLight07_player</set>
 <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 </configs>

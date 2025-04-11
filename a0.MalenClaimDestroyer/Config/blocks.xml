@@ -206,7 +206,7 @@
 			<property name="StabilitySupport" value="false"/>
             <property name="BuffsWhenWalkedOn" value="hfBossRoom"/>
 
-			<property name="FallDamage" value=".5"/>
+			<property name="FallDamage" value="0"/>
 			<!-- SortShape -->
 			<property name="SortOrder1" value="40e0"/>
 			<property name="Place" value="TowardsPlacerInverted"/>
@@ -317,7 +317,21 @@
             <property name="CustomIconTint" value="000000"/>
             <property name="TintColor" value="000000"/>          
         </block>
-        
+        <block name="iDBVaultDoor01">
+            <property name="Extends" value="vaultDoor01Double"/>
+            <property name="CustomIcon" value="vaultDoor01Double"/>
+			<property name="ItemTypeIcon" value="brick"/>			
+            <property name="Material" value="MbedrockHF"/>
+            <property name="AllowAllRotations" value="true"/>
+            <property name="StabilitySupport" value="true"/>            
+            <property name="MaxDamage" value="30000"/>            
+            <property class="UpgradeBlock">
+				<property name="ToBlock" value="vaultDoor01Double"/>
+				<property name="Item" value="CD"/>
+				<property name="ItemCount" value="1"/>
+				<property name="UpgradeHitCount" value="1"/>
+			</property>            
+        </block>        
         <block name="invDevVaultDoor03">
             <property name="CustomIcon" value="vaultDoor01"/>
 
@@ -427,6 +441,7 @@
             <property name="Extends" value="vaultDoor01"/>
             <property name="CustomIcon" value="vaultDoor01"/>
             <property name="Material" value="MbedrockHF"/>
+            <property name="ItemTypeIcon" value="brick"/>	
             <property name="AllowAllRotations" value="true"/>
             <property name="StabilitySupport" value="false"/>            
             <property name="MaxDamage" value="30000"/>
@@ -471,7 +486,7 @@
             <property name="MaxDamage" value="30000"/>
             <property name="MeshDamage" value="
                 Door/DMG0, 40000,
-                Door/DMG1, 3000,
+                Door/DMG1, 30000,
                 -, 1
                 "/>
 		</block> 

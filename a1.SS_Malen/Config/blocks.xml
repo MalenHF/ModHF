@@ -31,8 +31,13 @@
 			<!--<property name="Model" value="cube"/>-->
 			<property name="DescriptionKey" value="cntStorageGenericDesc"/>
 			<property name="Tags" value="door"/>
-			<property name="Class" value="Loot"/>
-			<property name="LootList" value="cajaDeSeguridad"/>
+			<property name="Class" value="CompositeTileEntity"/>
+			<property class="CompositeFeatures">
+				<property class="TEFeatureStorage">
+					<property name="LootList" value="cajaDeSeguridad"/>
+				</property>				
+			</property>
+			
 			<property name="Material" value="Msteel"/>
 			<property name="MaxDamage" value="200"/>
 			<property name="Texture" value="62,64,64,64,64,64"/>
@@ -180,7 +185,7 @@
 			<property name="Tags" value="noblocks"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="SelectAlternates" value="true" />
-			<property name="PlaceAltBlockValue" value="cSeguridad,CSHardenedChestSecureT5,CSPaintable,cSHalfblock,CSSigned,CSCrateBook,CSCrateCarParts,cCSCrateLab,CSCrateMoPower,CSCrateSavageC,CSCrateShamway,CSCrateShotgunMessiah,CSCrateWorkingStiff,CSCrateConstruction,CSGarageStorage,cntWoodWritableCrateCS,cntIronWritableCrateCS,cntSteelWritableCrateCS,cntRetroFridgeVer1ClosedCS,cntFridgeStainlessSteelCS,cntPillCaseClosedCS,cntMedicineCabinetFaucetClosedCS,cntMedicineCabinetClosedCS"/>
+			<property name="PlaceAltBlockValue" value="cSeguridad,CSHardenedChestSecureT5,CSPaintable,cSHalfblock,CSSigned,CSCrateBook,CSCrateCarParts,cCSCrateLab,CSCrateMoPower,CSCrateSavageC,CSCrateShamway,CSCrateShotgunMessiah,CSCrateWorkingStiff,CSCrateConstruction,CSGarageStorage,cntWoodWritableCrateCS,cntIronWritableCrateCS,cntSteelWritableCrateCS,cntRetroFridgeVer1ClosedCS,cntFridgeStainlessSteelCS,cntPillCaseClosedCS,cntMedicineCabinetFaucetClosedCS,cntMedicineCabinetClosedCS,cntFootlockerClosedWhite_SS,cntFootlockerClosedBrown_SS,cntFootlockerClosedRed_SS,cntFootlockerClosedOrange_SS,cntFootlockerClosedYellow_SS,cntFootlockerClosedGreen_SS,cntFootlockerClosedBlue_SS,cntFootlockerClosedPurple_SS,cntFootlockerClosedGrey_SS,cntFootlockerClosedBlack_SS,cntFootlockerClosedPink_SS,cntFootlockerClosedArmyGreen_SS"/>
 			<property name="Group" value="Building,advBuilding"/>
 		</block>
 
@@ -189,17 +194,18 @@
 			<property name="Extends" value="CSPaintable"/>
 			<property name="Shape" value="ModelEntity"/>
 			<property name="CustomIcon" value="cntShippingCrateShamway"/>
+			<property name="ModelOffset" value="0,0,0"/>
 			<property name="Model" value="@:Entities/LootContainers/shippingCrateShamwayPrefab.prefab"/>
 		</block>
 		<block name="cCSCrateLab">
 			<property name="CustomIconTint" value="150,150,150"/>
-			<property name="Extends" value="CSPaintable"/>
+			<property name="Extends" value="CSCrateShamway"/>
 			<property name="Shape" value="ModelEntity"/>
 			<property name="CustomIcon" value="cntShippingCrateLabEquipment"/>
 			<property name="Model" value="@:Entities/LootContainers/shippingCratePopnPillsPrefab.prefab"/>
 		</block>
 		<block name="CSCrateBook">
-			<property name="Extends" value="CSPaintable"/>
+			<property name="Extends" value="CSCrateShamway"/>
 			<property name="CustomIconTint" value="150,150,150"/>
 			<property name="Shape" value="ModelEntity"/>
 			<property name="CustomIcon" value="cntShippingCrateBookstore"/>
@@ -207,42 +213,42 @@
 		</block>
 		<block name="CSCrateCarParts">
 			<property name="CustomIconTint" value="150,150,150"/>
-			<property name="Extends" value="CSPaintable"/>
+			<property name="Extends" value="CSCrateShamway"/>
 			<property name="Shape" value="ModelEntity"/>
 			<property name="CustomIcon" value="cntShippingCrateCarParts"/>
 			<property name="Model" value="@:Entities/LootContainers/shippingCratePassnGasPrefab.prefab"/>
 		</block>
 		<block name="CSCrateShotgunMessiah">
 			<property name="CustomIconTint" value="150,150,150"/>
-			<property name="Extends" value="CSPaintable"/>
+			<property name="Extends" value="CSCrateShamway"/>
 			<property name="Shape" value="ModelEntity"/>
 			<property name="CustomIcon" value="cntShippingCrateShotgunMessiah"/>
 			<property name="Model" value="@:Entities/LootContainers/shippingCrateShotgunPrefab.prefab"/>
 		</block>
 		<block name="CSCrateWorkingStiff">
 			<property name="CustomIconTint" value="150,150,150"/>
-			<property name="Extends" value="CSPaintable"/>
+			<property name="Extends" value="CSCrateShamway"/>
 			<property name="Shape" value="ModelEntity"/>
 			<property name="CustomIcon" value="cntShippingCrateWorkingStiffs"/>
 			<property name="Model" value="@:Entities/LootContainers/shippingCrateWorkingStiffPrefab.prefab"/>
 		</block>
 		<block name="CSCrateSavageC">
 			<property name="CustomIconTint" value="150,150,150"/>
-			<property name="Extends" value="CSPaintable"/>
+			<property name="Extends" value="CSCrateShamway"/>
 			<property name="Shape" value="ModelEntity"/>
 			<property name="CustomIcon" value="cntShippingCrateSavageCountry"/>
 			<property name="Model" value="@:Entities/LootContainers/shippingCrateSavagePrefab.prefab"/>
 		</block>
 		<block name="CSCrateMoPower">
 			<property name="CustomIconTint" value="150,150,150"/>
-			<property name="Extends" value="CSPaintable"/>
+			<property name="Extends" value="CSCrateShamway"/>
 			<property name="Shape" value="ModelEntity"/>
 			<property name="CustomIcon" value="cntShippingCrateMoPowerElectronics"/>
 			<property name="Model" value="@:Entities/LootContainers/shippingCrateMoPowerPrefab.prefab"/>
 		</block>
 		<block name="CSCrateConstruction">
 			<property name="CustomIconTint" value="150,150,150"/>
-			<property name="Extends" value="CSPaintable"/>
+			<property name="Extends" value="CSCrateShamway"/>
 			<property name="Shape" value="ModelEntity"/>
 			<property name="CustomIcon" value="cntShippingCrateHero"/>
 			<property name="Model" value="@:Entities/LootContainers/shippingCratePrefab.prefab"/>

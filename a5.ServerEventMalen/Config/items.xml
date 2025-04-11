@@ -12,12 +12,12 @@
 			<!--<property name="CustomIcon" value="resourceConcreteMix"/> verano-->
 			<!--<property name="CustomIcon" value="decoPumpkinJackOLantern"/> Otoño
 			<property name="CustomIcon" value="thrownDynamite"/> Año nuevo-->			
-			<property name="CustomIcon" value="thrownDynamite"/>
+			<property name="CustomIcon" value="foodEgg"/>
 			<!--<property name="CustomIconTint" value="FFA200"/> verano/Otoño-->
 			<!--<property name="CustomIconTint" value="2E1503"/> san valentin -->
 			<!--<property name="CustomIconTint" value="FF00E0"/> Pacua -->
 			<!-- <property name="CustomIconTint" value="0CC7A8"/> año nuevo  -->
-			-<property name="CustomIconTint" value="0CC7A8"/>			
+			-<property name="CustomIconTint" value="FF00E0"/>			
 			<property name="Material" value="Morganic"/>
 			<property name="Stacknumber" value="400"/>
 			<property name="Group" value="Mods"/>
@@ -160,7 +160,8 @@
 		</item>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Equipo PVP ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<item name="PVPMAH">
-			<property name="Extends" value="armorLightMaster"  param1="CustomIcon"/>			
+			<property name="Extends" value="armorLightMaster"  param1="CustomIcon"/>	
+			<property name="Tags" value="head,armor,armorHead,canHaveCosmetic,lightArmor,lightArmorDeg"/>		
 			<property name="CreativeMode" value="Dev"/>
 			<property name="DisplayType" value="armorLight"/>
 			<property name="ArmorGroup" value="groupPVP"/>
@@ -176,9 +177,7 @@
 			<property name="Group" value="Clothing"/>
 			<property name="SoundPickup" value="outfit_cloth_grab"/>
 			<property name="SoundPlace" value="outfit_cloth_place"/>
-
-			<property name="CustomIcon" value="armorAthleticHelmet"/>
-			<property name="Tags" value="head,armor,armorHead,canHaveCosmetic,lightArmor,lightArmorDeg"/>
+			<property name="CustomIcon" value="armorAthleticHelmet"/>			
 			<property name="EquipSlot" value="Head"/>
 			<effect_group name="pvpArmorHelm" tiered="false">
 				<passive_effect name="AttributeLevel" tags="attPerception" operation="base_set" value="1"/>
@@ -223,10 +222,13 @@
 			</property>
 		</item>
 		<item name="PVPMAA">
-			<property name="Extends" value="PVPMAH"  param1="CustomIcon"/>
+			<property name="Extends" value="armorAthleticOutfit"  param1="CustomIcon"/>
 			<property name="CustomIcon" value="armorAthleticOutfit"/>
 			<property name="Tags" value="upperbody,chest,armor,armorChest,canHaveCosmetic,lightArmor,lightArmorDeg"/>
 			<property name="EquipSlot" value="Chest"/>
+			<property name="UMA.Overlay0Tint" value="10,10,10"/>
+			<property name="CustomIconTint" value="10,10,10"/>
+			<property name="TintColor" value="10,10,10"/>			
 			<property name="Tags" value="upperbody,chest,armor,armorChest,canHaveCosmetic,lightArmor,lightArmorDeg"/>
 			<property name="EquipSlot" value="Chest"/>
 			<property name="DisplayType" value="armorAthleticOutfit"/>
@@ -241,19 +243,22 @@
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
 				<passive_effect name="Mobility" operation="perc_add" value="0"/>
 			</effect_group>
-			<property class="SDCS">
+			<property class="SDCS" >
 				<property name="Prefab" value="Entities/Player/*/Gear/Prefabs/gear*FitnessPrefab"/>
 				<property name="TransformName" value="body"/>
 				<property name="Excludes" value="body"/>
 			</property>
 		</item>
 		<item name="PVPMAG">
-			<property name="Extends" value="PVPMAH" param1="DescriptionKey"/>
+			<property name="Extends" value="armorAthleticGloves" param1="DescriptionKey"/>
 			<property name="CustomIcon" value="armorAthleticGloves"/>
 			<property name="EquipSlot" value="Hands"/>
 			<property name="DisplayType" value="armorAthleticGloves"/>
+			<property name="UMA.Overlay0Tint" value="10,10,10"/>
+			<property name="CustomIconTint" value="10,10,10"/>
+			<property name="TintColor" value="10,10,10"/>			
 			<property name="Tags" value="upperbody,hands,armor,armorHands,canHaveCosmetic,lightArmor,lightArmorDeg"/>	
-			<property name="SoundPickup" value="gloves_leather_grab"/>
+			<property name="SoundPickup" value="gloves_leather_grab" />
 			<property name="SoundPlace" value="gloves_leather_place"/>
 			<effect_group name="with x5 BuffResistance" tiered="false">
 				<passive_effect name="ModSlots" operation="base_set" value="0"/>
@@ -272,11 +277,14 @@
 			</property>
 		</item>
 		<item name="PVPMAL">
-			<property name="Extends" value="PVPMAH" param1="DescriptionKey"/>
+			<property name="Extends" value="armorAthleticBoots" param1="DescriptionKey"/>
 			<property name="CustomIcon" value="armorAthleticBoots"/>
 			<property name="Tags" value="lowerbody,feet,armor,armorFeet,canHaveCosmetic,lightArmor,lightArmorDeg"/>
 			<property name="EquipSlot" value="Feet"/>			
 			<property name="DisplayType" value="armorAthleticBoots"/>
+			<property name="UMA.Overlay0Tint" value="10,10,10"/>
+			<property name="CustomIconTint" value="10,10,10"/>
+			<property name="TintColor" value="10,10,10"/>			
 			<property name="SoundPickup" value="footwear_regular_grab"/>
 			<property name="SoundPlace" value="footwear_regular_place"/>
 			<effect_group name="with x5 BuffResistance" tiered="false">
@@ -1252,6 +1260,59 @@
 				<display_value name="dHarvestCount" value=".05,.1,.15,.2,.25,.5" tier="1,2,3,4,5,6"/>
 			</effect_group>
 			
+		</item>
+
+		<item name="kitDeseos">			
+			<property name="TintColor" value="255,255,0"/>	
+			<property name="HoldType" value="45"/>			
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="ItemTypeIcon" value="twitch_special"/>
+			<property name="CustomIcon" value="cntLootChestHeroInsecureT1"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property name="Candrop" value="false"/>
+			<property class="Action0">				
+				<!-- <requirement name="CVarCompare" cvar="$varDeseos" operation="LT" value="1"/> -->
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="toolAnvilGold,modArmorImprovedFittingsSchematic,modArmorCustomizedFittingsSchematic,toolBellowsSilver,mummyConsuSPE,ResourceForgedPractonium,ResourceForgedPlatinum,agua_divina,resourceRawDiamond,cl_Medico,eventbackpack,forgeHF,meleeWpnBladeT3MacheteParts"/>
+				<property name="Create_item_count" value="1,9,9,1,3,2,1,2,50,2,10,1,150"/>
+			</property>
+			<effect_group tiered="false">				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varDeseos" operation="set" value="1"/>
+			</effect_group>
+		</item>
+
+		<item name="valentin1">
+			<property name="CustomIcon" value="cntFootlockerClosedWhite"/>
+			<property name="ItemTypeIcon" value="twitch_special"/>
+			<property name="HoldType" value="45"/>			
+			<property name="CustomIconTint" value="ff00e4"/>
+			<property name="DescriptionKey" value="kitvalentinDesc"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">				
+				<requirement name="CVarCompare" cvar="$valentine" operation="LT" value="1"/>				
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="donationAutoMinerToken,AmmoKit,eventIT1,q_Gacha"/>
+				<property name="Create_item_count" value="1,3,140,14"/>
+			</property>
+			<effect_group tiered="false">				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$valentine" operation="set" value="1"/>
+			</effect_group>
 		</item>
 
 	</append>

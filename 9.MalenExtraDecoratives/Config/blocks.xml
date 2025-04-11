@@ -1,6 +1,7 @@
 <MalenED>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Change barbedwire group ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<set xpath="/blocks/block[@name='barbedWireSheet']/property[@name='Group']/@value">Science</set>
+		<set xpath="/blocks/block[starts-with(@name, 'elevatorDoor')]/property[@name='MaxDamage']/@value">15000</set>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add Doors to garage variants ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<append xpath="/blocks/block[@name='woodenGarageDoor3x3_PoweredBlockVariantHelper']/property[@name='PlaceAltBlockValue']/@value">,"woodenGarageDoor3x3Centered_PoweredWhite,woodenGarageDoor3x3Centered_PoweredBrown,woodenGarageDoor3x3Centered_PoweredRed,woodenGarageDoor3x3Centered_PoweredOrange,woodenGarageDoor3x3Centered_PoweredYellow,woodenGarageDoor3x3Centered_PoweredGreen,woodenGarageDoor3x3CenteredPoweredBlue,woodenGarageDoor3x3Centered_PoweredGrey,woodenGarageDoor3x3Centered_PoweredBlack</append>
 		<append xpath="/blocks/block[@name='woodenGarageDoor4x3_PoweredBlockVariantHelper']/property[@name='PlaceAltBlockValue']/@value">,"woodenGarageDoor3x4Centered_PoweredWhite,woodenGarageDoor3x4Centered_PoweredBrown,woodenGarageDoor3x4Centered_PoweredRed,woodenGarageDoor3x4Centered_PoweredOrange,woodenGarageDoor3x4Centered_PoweredYellow,woodenGarageDoor3x4Centered_PoweredGreen,woodenGarageDoor3x4CenteredPoweredBlue,woodenGarageDoor3x4Centered_PoweredGrey,woodenGarageDoor3x4Centered_PoweredBlack</append>
@@ -9,7 +10,12 @@
 		<append xpath="/blocks/block[@name='steelGarageDoor3x3_PoweredBlockVariantHelper']/property[@name='PlaceAltBlockValue']/@value">,steelGarageDoor3x3Centered_PoweredWhite,steelGarageDoor3x3Centered_PoweredBrown,steelGarageDoor3x3Centered_PoweredRed,steelGarageDoor3x3Centered_PoweredOrange,steelGarageDoor3x3Centered_PoweredYellow,steelGarageDoor3x3Centered_PoweredGreen,steelGarageDoor3x3CenteredPoweredBlue,steelGarageDoor3x3Centered_PoweredGrey,steelGarageDoor3x3Centered_PoweredBlack,steelGarageDoor3x3Centered_PoweredArmyGreen</append>
 		<append xpath="/blocks/block[@name='steelGarageDoor4x3_PoweredBlockVariantHelper']/property[@name='PlaceAltBlockValue']/@value">,steelGarageDoor4x3Centered_PoweredWhite,steelGarageDoor4x3Centered_PoweredBrown,steelGarageDoor4x3Centered_PoweredRed,steelGarageDoor4x3Centered_PoweredOrange,steelGarageDoor4x3Centered_PoweredYellow,steelGarageDoor4x3Centered_PoweredGreen,steelGarageDoor4x3CenteredPoweredBlue,steelGarageDoor4x3Centered_PoweredGrey,steelGarageDoor4x3Centered_PoweredBlack,steelGarageDoor4x3Centered_PoweredArmyGreen</append>
 		<append xpath="/blocks/block[@name='steelGarageDoor5x3_PoweredBlockVariantHelper']/property[@name='PlaceAltBlockValue']/@value">,steelGarageDoor5x3Centered_PoweredWhite,steelGarageDoor5x3Centered_PoweredBrown,steelGarageDoor5x3Centered_PoweredRed,steelGarageDoor5x3Centered_PoweredOrange,steelGarageDoor5x3Centered_PoweredYellow,steelGarageDoor5x3Centered_PoweredGreen,steelGarageDoor5x3CenteredPoweredBlue,steelGarageDoor5x3Centered_PoweredGrey,steelGarageDoor5x3Centered_PoweredBlack,steelGarageDoor5x3Centered_PoweredArmyGreen</append>
-	
+		<!-- <append xpath="/blocks/block[starts-with(@name, 'elevatorDoor')]">
+			<property name="" value="" />
+		</append> -->
+
+		
+
 	<append xpath="/blocks">
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ ModernCooking ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 			<block name="modernCookingMaster">
@@ -71,6 +77,9 @@
 				<property name="StabilitySupport" value="false" /> <!-- build restriction -->
 				<property name="ParticleName" value="candle_flame" />
 				<property name="ParticleOffset" value="0.5,0,0.3" />
+				<property name="ModelOffset" value="0,0,0.5"/>
+				<property name="Place" value="TowardsPlacerInverted"/>
+
 			</block>
 			<block name="modernCookingCoffeeMakerCommercial">
 				<property name="Extends" value="modernCookingMaster" />
@@ -81,6 +90,8 @@
 				<property name="StabilitySupport" value="false" /> <!-- build restriction -->
 				<property name="ParticleName" value="candle_flame" />
 				<property name="ParticleOffset" value="0.4,0,0.4" />
+				<property name="ModelOffset" value="0,0,0"/>
+				<property name="Place" value="TowardsPlacerInverted"/>
 			</block>
 			<block name="modernCookingCharcoalGrillClosed">
 				<property name="Extends" value="modernCookingMaster" />
@@ -287,7 +298,6 @@
 				<property name="Group" value="Science"/>
 				<property name="FilterTags" value="MC_playerBlocks,SC_decor,SC_playerHelpers"/>
 			</block>
-
 			<block name="decoVariant_Beds">
 				<property name="Extends" value="bunkBedMade"/>
 				<property name="Tags" value="noblocks"/>
@@ -323,7 +333,7 @@
 				<property name="ItemTypeIcon" value="all_blocks" />
 				<property name="SelectAlternates" value="true" />
 				<property name="DescriptionKey" value="decoVariant_signRoadBlockDesc" />
-				<property name="PlaceAltBlockValue" value="signRoadStop,signRoadStop4way,signRoadSpeed25,signRoadSpeed35,signRoadSpeed45,signRoadSpeed55,signRoadSpeed65,signSchoolZone,signRoadSpeed25noTrucks,signNoHazardousWaste,signRoadWork,signRoadRoughSurface,signRoadSlow,signYardSign01,signRoadCourtlandBell,signRoadCourtlandHuenink,signRoadCourtlandMaple,signRoadCourtlandTran,signRoadDavis,signRoadEssig,signRoadLangTran,signRoadTran,signRoadMaple,signRoadPrivate,signRoadBellLake,signRoadCoronado,signRoadCoronadoCourtland,signRoadCourtlandApache,signRoadAZ260eastSpeed65,signRoadAZ260west,signRoadAZ260westSpeed65,signRoadAZ73north,signRoadAZ73northSpeed65,signRoadAZ73south,signRoadAZ73southSpeed65,signRoadCourtlandAZ260Left,signRoadCourtlandAZ260Right,signRoadApacheAZ260,signRoadArrowheadApache,signRoadDestinationsEast,signRoadDestinationsWest,signCamping,signSpillwayLake,signAnselAdamsRiver,signCampFish,signInfoCenter" />
+				<property name="PlaceAltBlockValue" value="signRoadStop,signRoadStop4way,signRoadSpeed25,signRoadSpeed35,signRoadSpeed45,signRoadSpeed55,signRoadSpeed65,signSchoolZone,signRoadSpeed25noTrucks,signNoHazardousWaste,signRoadWork,signRoadRoughSurface,signRoadSlow,signYardSign01,signRoadCourtlandBell,signRoadCourtlandHuenink,signRoadCourtlandMaple,signRoadCourtlandTran,signRoadDavis,signRoadEssig,signRoadLangTran,signRoadTran,signRoadMaple,signRoadPrivate,signRoadBellLake,signRoadCoronado,signRoadCoronadoCourtland,signRoadCourtlandApache,signRoadAZ260eastSpeed65,signRoadAZ260west,signRoadAZ260westSpeed65,signRoadAZ73north,signRoadAZ73northSpeed65,signRoadAZ73south,signRoadAZ73southSpeed65,signRoadCourtlandAZ260Left,signRoadCourtlandAZ260Right,signRoadApacheAZ260,signRoadArrowheadApache,signRoadDestinationsEast,signRoadDestinationsWest,signCamping,signSpillwayLake,signAnselAdamsRiver,signCampFish,signInfoCenter,signCrossWalkYellowHanging,signCrossWalkYellow,signDoNotEnter,signDoNotEnterHanging,signHandicapParking,signNoParking,signNoParkingHanging,parkingMeter,signTowAway" />
 			</block>
 			<block name="decoVariant_signShopLit">
 				<property name="Extends" value="signShopGasLit" />
@@ -333,7 +343,7 @@
 				<property name="ItemTypeIcon" value="all_blocks" />
 				<property name="SelectAlternates" value="true" />
 				<property name="DescriptionKey" value="decoVariant_signShopLitBlockDesc" />
-				<property name="PlaceAltBlockValue" value="signShopGasLit,signShopGasWallLit,signShopGasLargeLit,signShopGasLargeWallLit,signShopGunStoreLit,signShopGunStoreWallLit,signShopGunStoreLargeLit,signShopGunStoreLargeWallLit,signShopBookStoreLit,signShopBookStoreWallLit,signShopBookStoreLargeLit,signShopBookStoreLargeWallLit,signShopPharmacyLit,signShopPharmacyWallLit,signShopPharmacyLargeLit,signShopPharmacyLargeWallLit,signShopToolStoreLit,signShopToolStoreWallLit,signShopToolStoreLargeLit,signShopToolStoreLargeWallLit,signShopGroceryLit,signShopGroceryWallLit,signShopGroceryLargeLit,signShopGroceryLargeWallLit,signShopSavageCountryLit,signShopSavageCountryWallLit,signShopSavageCountryLargeLit,signShopSavageCountryLargeWallLit,signShopMoPowerElectronicsLit,signShopMoPowerElectronicsWallLit,signShopMoPowerElectronicsLargeLit,signShopMoPowerElectronicsLargeWallLit" />
+				<property name="PlaceAltBlockValue" value="signShopGasLit,signShopGasWallLit,signShopGasLargeLit,signShopGasLargeWallLit,signShopGunStoreLit,signShopGunStoreWallLit,signShopGunStoreLargeLit,signShopGunStoreLargeWallLit,signShopBookStoreLit,signShopBookStoreWallLit,signShopBookStoreLargeLit,signShopBookStoreLargeWallLit,signShopPharmacyLit,signShopPharmacyWallLit,signShopPharmacyLargeLit,signShopPharmacyLargeWallLit,signShopToolStoreLit,signShopToolStoreWallLit,signShopToolStoreLargeLit,signShopToolStoreLargeWallLit,signShopGroceryLit,signShopGroceryWallLit,signShopGroceryLargeLit,signShopGroceryLargeWallLit,signShopSavageCountryLit,signShopSavageCountryWallLit,signShopSavageCountryLargeLit,signShopSavageCountryLargeWallLit,signShopMoPowerElectronicsLit,signShopMoPowerElectronicsWallLit,signShopMoPowerElectronicsLargeLit,signShopMoPowerElectronicsLargeWallLit,signShopPostOfficeSignLit,signShopPostOfficeSignWallLit,signShopPostOfficeSignLargeLit,signShopPostOfficeSignLargeWallLit" />
 			</block>
 			<block name="decoVariant_signShopDark">
 				<property name="Extends" value="signShopGas" />
@@ -343,7 +353,7 @@
 				<property name="ItemTypeIcon" value="all_blocks" />
 				<property name="SelectAlternates" value="true" />
 				<property name="DescriptionKey" value="decoVariant_signShopDarkBlockDesc" />
-				<property name="PlaceAltBlockValue" value="signShopBookStore,signShopBookStoreWall,signShopBookStoreLarge,signShopBookStoreLargeWall,signShopGas,signShopGasWall,signShopGasLarge,signShopGasLargeWall,signShopGunStore,signShopGunStoreWall,signShopGunStoreLarge,signShopGunStoreLargeWall,signShopPharmacy,signShopPharmacyWall,signShopPharmacyLarge,signShopPharmacyLargeWall,signShopToolStore,signShopToolStoreWall,signShopToolStoreLarge,signShopToolStoreLargeWall,signShopGrocery,signShopGroceryWall,signShopGroceryLarge,signShopGroceryLargeWall,signShopSavageCountry,signShopSavageCountryWall,signShopSavageCountryLarge,signShopSavageCountryLargeWall,signShopMoPowerElectronics,signShopMoPowerElectronicsWall,signShopMoPowerElectronicsLarge,signShopMoPowerElectronicsLargeWall" />
+				<property name="PlaceAltBlockValue" value="signShopBookStore,signShopBookStoreWall,signShopBookStoreLarge,signShopBookStoreLargeWall,signShopGas,signShopGasWall,signShopGasLarge,signShopGasLargeWall,signShopGunStore,signShopGunStoreWall,signShopGunStoreLarge,signShopGunStoreLargeWall,signShopPharmacy,signShopPharmacyWall,signShopPharmacyLarge,signShopPharmacyLargeWall,signShopToolStore,signShopToolStoreWall,signShopToolStoreLarge,signShopToolStoreLargeWall,signShopGrocery,signShopGroceryWall,signShopGroceryLarge,signShopGroceryLargeWall,signShopSavageCountry,signShopSavageCountryWall,signShopSavageCountryLarge,signShopSavageCountryLargeWall,signShopMoPowerElectronics,signShopMoPowerElectronicsWall,signShopMoPowerElectronicsLarge,signShopMoPowerElectronicsLargeWall,signShopPostOfficeSign,signShopPostOfficeSignWall,signShopPostOfficeSignLarge,signShopPostOfficeSignLargeWall" />
 			</block>
 			<block name="decoVariant_signTrader">
 				<property name="Extends" value="signTraderJenInterior" />
@@ -356,29 +366,29 @@
 				<property name="PlaceAltBlockValue" value="signTraderJenInterior,signTraderJenExterior,signTraderJoelExteriorSmall,signTraderJoelExteriorLarge,signTraderHughExterior,signTraderHughInterior,signTraderBobExterior,signTraderBobExteriorLarge,signTraderBobExteriorBig,signTraderBobInterior,signTraderRektExteriorSmall,signTraderRektExteriorLarge" />
 			</block>
 			<block name="decoVariant_KitchenFurniture">
-				<property name="Extends" value="cntRetroFridgeVer1Closed"/>
+				<property name="Extends" value="decoClawFootBathTub"/>
 				<property name="Tags" value="noblocks"/>
-				<property name="CustomIcon" value="cntRetroFridgeVer1Closed"/>
+				<property name="CustomIcon" value="decoClawFootBathTub"/>
 				<property name="CreativeMode" value="Player"/>
 				<property name="DescriptionKey" value="metalFurnitureBlockVariantHelperDesc"/>
 				<property name="ItemTypeIcon" value="all_blocks"/>
 				<property name="SellableToTrader" value="false"/>
 				<property name="SelectAlternates" value="true" />
 				<property name="AllowAllRotations" value="true"/>
-				<property name="PlaceAltBlockValue" value="cntRetroFridgeVer1Closed,cntFridgeStainlessSteel,cntVendingMachine2Broken,cntIceMachine,cntWasherOpen,cntWasherClosed,cntDryerClosed,cntMedicineCabinetOpen,cntTiltTruckEmpty,cntSodaFountain,decoTableRound,metalTablePillar0.025CTR,cntMedicineCabinetClosed,cntMedicineCabinetFaucetClosed,cntMedicineCabinetFaucetOpen,cntPillCaseClosed,cntPillCaseEmpty,decoClawFootBathTub,cntBathTubEmpty"/>
+				<property name="PlaceAltBlockValue" value="decoClawFootBathTub,cntWasherOpen,cntVendingMachine2Broken,cntIceMachine,cntMedicineCabinetOpen,cntTiltTruckEmpty,cntSodaFountain,decoTableRound,metalTablePillar0.025CTR,cntMedicineCabinetClosed,cntMedicineCabinetFaucetClosed,cntMedicineCabinetFaucetOpen,cntPillCaseClosed,cntPillCaseEmpty,cntBathTubEmpty,cntWasherIndustrialClosed,cntWasherIndustrialOpen,cntWasherIndustrialTipped,showerHandle01,showerHead,showerHead02"/>
 				<property name="Group" value="Decor/Miscellaneous"/>
 			</block>
 			<block name="decoVariant_HomeFurniture">
-				<property name="Extends" value="birdBathPlanter"/>
+				<property name="Extends" value="piano"/>
 				<property name="Tags" value="noblocks"/>
-				<property name="CustomIcon" value="birdBathPlanter"/>
+				<property name="CustomIcon" value="piano"/>
 				<property name="CreativeMode" value="Player"/>
 				<property name="SellableToTrader" value="false"/>
 				<property name="DescriptionKey" value="metalFurnitureBlockVariantHelperDesc"/>
 				<property name="ItemTypeIcon" value="all_blocks"/>
 				<property name="SelectAlternates" value="true" />
 				<property name="AllowAllRotations" value="true"/>
-				<property name="PlaceAltBlockValue" value="birdBathPlanter,decoPoolTable,decoPoolTableBlue,schoolDesk01White,decoStationaryBike,decoTreadmill,decoBasketBallHoop,decoSwingSet,decoMetalSlide,decoLargePetCage,decoReptileTerrarium,gurneyBed,decoBenchPress,decoWeightBar,cntRollingToolBoxClosedWhite,cntToolBoxClosedWhite,cntUtilityCartFull,cntJanitorCartFull,cntSuitcase,cntLuggageMediumClosed,ceilingFanLight,deskLampLight,tableLampLight01White,workLightPOI,chandelierLight,candelabraLight,cntWaterCoolerBottle,cntDomedTrashCanEmpty,signNationalPark,cntFancyGarbageCan,cntBookShelfDoubleBottomFull01,cntBookShelfDoubleBottomFull02,cntBookShelfDoubleTopFull01,cntBookShelfDoubleTopFull02,cntBookShelfSingleBottomFull01,cntBookShelfSingleBottomFull02,cntBookShelfSingleCapBottomFull01,cntBookShelfSingleCapBottomFull02,cntBookShelfSingleCapTopFull01,cntBookShelfSingleCapTopFull02,cntBookShelfSingleTopFull01,cntBookShelfSingleTopFull02,graveStone01,graveStone02,graveStone03,graveStone04,decoCarSeatUpright,cntDumpster,cntDumpsterFlies"/>
+				<property name="PlaceAltBlockValue" value="piano,woodenBear,rugBear,birdBathPlanter,decoPoolTable,decoPoolTableBlue,decoStationaryBike,decoTreadmill,decoBasketBallHoop,decoSwingSet,decoMetalSlide,decoLargePetCage,decoReptileTerrarium,gurneyBed,decoBenchPress,decoWeightBar,cntJanitorCartFull,ceilingFanLight,deskLampLight,tableLampLight01White,workLightPOI,chandelierLight,candelabraLight,cntWaterCoolerBottle,signNationalPark,decoCarSeatUpright,cntBookcaseFull_Player,cntBookShelfSingleBottomFull01_Player,cntBookShelfSingleBottomFull02_Player,cntBookShelfSingleTopFull01_Player,cntBookShelfSingleTopFull02_Player,cntBookShelfDoubleBottomFull01_Player,cntBookShelfDoubleBottomFull02_Player,cntBookShelfDoubleTopFull01_Player,cntBookShelfDoubleTopFull02_Player,plantHydroponicAloe,plantHydroponicVertical,screenCurtainDividerWhite,screenCurtainDividerRed,screenCurtainDividerGreen,screenCurtainDividerBlue,officeDesk,officeTable,diningTable01,tableCommunion,cntNewsDispenseFreeGreen,cntNewsDispenseFreeOrange,cntNewspaperDispenserStandBlue,cntNewspaperDispenserStandYellow,cntPostMailbox,waterHeaterWhite,waterHeaterBrown,waterHeaterRed,waterHeaterYellow,waterHeaterGreen,waterHeaterBlue,waterHeaterGrey,waterHeaterBlack,keyRackBoxMetal01,keyRackWood01,apartmentMailboxClosedWhite,apartmentMailboxClosedRed,apartmentMailboxClosedYellow,apartmentMailboxClosedGreen,apartmentMailboxClosedBlue,apartmentMailboxClosedGrey,apartmentMailboxOpenWhite,apartmentMailboxOpenRed,apartmentMailboxOpenYellow,apartmentMailboxOpenGreen,apartmentMailboxOpenBlue,apartmentMailboxOpenGrey,apartmentSmallMailboxClosedWhite,apartmentSmallMailboxClosedRed,apartmentSmallMailboxClosedYellow,apartmentSmallMailboxClosedGreen,apartmentSmallMailboxClosedBlue,apartmentSmallMailboxClosedGrey,apartmentSmallMailboxClosedWhite,apartmentSmallMailboxClosedRed,apartmentSmallMailboxClosedYellow,apartmentSmallMailboxClosedGreen,apartmentSmallMailboxClosedBlue,apartmentSmallMailboxClosedGrey,wheelchairWhite,wheelchairBrown,wheelchairRed,wheelchairYellow,wheelchairGreen,wheelchairBlue,wheelchairGrey,wheelchairBlack,cntUtilityCartFull,cntUtilityCartFullBrown,cntUtilityCartFullRed,cntUtilityCartFullYellow,cntUtilityCartFullGreen,cntUtilityCartFullBlue,cntUtilityCartFullGrey,cntUtilityCartFullBlack,schoolDesk01White,schoolDesk01Brown,schoolDesk01Red,schoolDesk01Orange,schoolDesk01Yellow,schoolDesk01Green,schoolDesk01Blue,schoolDesk01Purple,schoolDesk01Grey,schoolDesk02White,schoolDesk02Brown,schoolDesk02Red,schoolDesk02Orange,schoolDesk02Yellow,schoolDesk02Green,schoolDesk02Blue,schoolDesk02Purple,schoolDesk02Grey,schoolDesk03White,schoolDesk03Brown,schoolDesk03Red,schoolDesk03Orange,schoolDesk03Yellow,schoolDesk03Green,schoolDesk03Blue,schoolDesk03Purple,schoolDesk03Grey,schoolSeat01White,schoolSeat01Brown,schoolSeat01Red,schoolSeat01Orange,schoolSeat01Yellow,schoolSeat01Green,schoolSeat01Blue,schoolSeat01Purple,schoolSeat01Grey,schoolSeat02White,schoolSeat02Brown,schoolSeat02Red,schoolSeat02Orange,schoolSeat02Yellow,schoolSeat02Green,schoolSeat02Blue,schoolSeat02Purple,schoolSeat02Grey,cntshelfSupplyOfficeEmptyWhite,cntshelfSupplyOfficeEmptyBrown,cntshelfSupplyOfficeEmptyRed,cntshelfSupplyOfficeEmptyOrange,cntshelfSupplyOfficeEmptyYellow,cntshelfSupplyOfficeEmptyGreen,cntshelfSupplyOfficeEmptyBlue,cntshelfSupplyOfficeEmptyPurple,cntshelfSupplyOfficeEmptyGrey,cntshelfSupplyOfficeEmptyPink,cntshelfSupplyOfficeFullWhite,cntshelfSupplyOfficeFullBrown,cntshelfSupplyOfficeFullRed,cntshelfSupplyOfficeFullOrange,cntshelfSupplyOfficeFullYellow,cntshelfSupplyOfficeFullGreen,cntshelfSupplyOfficeFullBlue,cntshelfSupplyOfficeFullPurple,cntshelfSupplyOfficeFullGrey,cntshelfSupplyOfficeFullPink"/>
 				<property name="Group" value="Decor/Miscellaneous"/>
 			</block>
 			<block name="decoVariant_Construction">
@@ -392,35 +402,35 @@
 				<property name="ItemTypeIcon" value="all_blocks"/>
 				<property name="SelectAlternates" value="true" />
 				<property name="AllowAllRotations" value="true"/>
-				<property name="PlaceAltBlockValue" value="tableSaw,cntGasPumpFull,cntGasPumpEmpty,heatVentIndustrial,decoHoistChain,decoHoistSpreader,decoHoistHook,decoHoistMagnet,decoHoistTopMount,decoHandTruck,palletBagSandBaseFull,palletBagSandBaseFull,palletBagSandBaseMed,palletBagSandCapMed,palletBagSandCapSml,palletBagSandSingleBent,palletBagSandSingleFlat,palletBagConcreteBaseFull,palletBagConcreteTile,palletBagConcreteBaseMed,palletBagConcreteCapMed,palletBagConcreteBaseSml,palletBagConcreteCapSml,palletBagConcreteSingleBent,palletBagConcreteSingleFlat,palletBagFertilizerBaseFull,palletBagFertilizerTile,palletBagFertilizerBaseMed,palletBagFertilizerCapMed,palletBagFertilizerCapSml,palletBagFertilizerSingleBent,palletBagFertilizerSingleFlat,palletBrownBoxesBase,palletBrownBoxesTile,palletBrownBoxesTop,palletBrownBoxesLoose,palletBricksBase,palletBricksTile,palletBricksTop,palletBricksPartial1,palletBricksPartial2,palletBricksLoose,palletCompressedCardboard,palletEmpty,palletEmptyStack,emberPileDeco1,emberPileDeco2,emberPileLightPOI1,emberPileLightPOI2,decoCarTireFlat,decoCarTirePile,decoCarTireSmallFlat,decoCarTireStack,decoCarWheelFlat,decoConcreteBollard,modularFireWoodStackA,modularFireWoodStackB,modularFireWoodStackC"/>
+				<property name="PlaceAltBlockValue" value="tableSaw,cntGasPumpFull,cntGasPumpEmpty,heatVentIndustrial,decoHoistChain,decoHoistSpreader,decoHoistHook,decoHoistMagnet,decoHoistTopMount,decoHandTruck,emberPileDeco1,emberPileDeco2,emberPileLightPOI1,emberPileLightPOI2,decoCarTireFlat,decoCarTirePile,decoCarTireSmallFlat,decoCarTireStack,decoCarWheelFlat,decoConcreteBollard,modularFireWoodStackA,modularFireWoodStackB,modularFireWoodStackC,coneConstruction,manholeHatch,cntBarrelAcidSingle00,cntBarrelAcidSingle45,cntBarrelAcidQuadA,cntBarrelAcidQuadB,cntBarrelGasSingle00,cntBarrelGasSingle45,cntBarrelGasQuadA,cntBarrelAcidQuadB,cntBarrelGenericSingle00,cntBarrelGenericSingle45,cntBarrelGenericQuadA,cntBarrelGenericQuadB,cntBarrelOilSingle00,cntBarrelOilSingle45,cntBarrelOilQuadA,cntBarrelOilQuadB,cntBarrelRadiatedSingle00,cntBarrelRadiatedSingle45,cntBarrelRadiatedQuadA,cntBarrelRadiatedQuadB,cntBarrelWhiteSingle00,cntBarrelWhiteSingle45,cntBarrelWhiteQuadA,cntBarrelWhiteQuadB,cntBarrelPlasticSingle00,cntBarrelPlasticSingle45,cntBarrelPlasticQuadA,cntBarrelPlasticQuadB,portaPottyWhite,portaPottyBrown,portaPottyRed,portaPottyOrange,portaPottyYellow,portaPottyGreen,portaPottyBlue,portaPottyPurple,portaPottyGrey,portaPottyPink,tankPropaneWhite,tankPropaneBrown,tankPropaneRed,tankPropaneOrange,tankPropaneYellow,tankPropaneGreen,tankPropaneBlue,tankPropaneGrey,tankPropanePink,fireHydrant,fireHydrantYellow,capChimney,capChimneyLarge"/>
 				<property name="Group" value="Decor/Miscellaneous"/>
 			</block>
 			<!--A borrar-->
-			<block name="decoVariant_Pipes">
-				<property name="Extends" value="pipeSmallJoint"/>
-				<property name="Tags" value="noblocks"/>
-				<property name="CustomIcon" value="pipeSmallJoint"/>
-				<property name="CreativeMode" value="Player"/>
-				<property name="SellableToTrader" value="false"/>
-				<property name="DescriptionKey" value="metalFurnitureBlockVariantHelperDesc"/>
-				<property name="ItemTypeIcon" value="all_blocks"/>
-				<property name="SelectAlternates" value="true" />
-				<property name="AllowAllRotations" value="true"/>
-				<property name="PlaceAltBlockValue" value="pipeSmallJoint,pipeSmall1x1,pipeSmall1x3,pipeSmallBroke,pipeSmallCap,pipeSmallCorner,pipeSmallValve,pipeSmallWall1x1,pipeSmallWall1x3,pipeSmallWallBroke,pipeSmallWallCap,pipeSmallWallCenterBridge,pipeSmallWallCorner,pipeSmallWallJoint,pipeSmallWallValve,metalPipeJoint,metalPipeStraight,metalPipeCorner,metalPipeFlange,metalPipeCap,metalPipeValve"/>
-				<property name="Group" value="Decor/Miscellaneous"/>
-			</block>
+				<block name="decoVariant_Pipes">
+					<property name="Extends" value="pipeSmallJoint"/>
+					<property name="Tags" value="noblocks"/>
+					<property name="CustomIcon" value="pipeSmallJoint"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="SellableToTrader" value="false"/>
+					<property name="DescriptionKey" value="metalFurnitureBlockVariantHelperDesc"/>
+					<property name="ItemTypeIcon" value="all_blocks"/>
+					<property name="SelectAlternates" value="true" />
+					<property name="AllowAllRotations" value="true"/>
+					<property name="PlaceAltBlockValue" value="pipeSmallJoint,pipeSmall1x1,pipeSmall1x3,pipeSmallBroke,pipeSmallCap,pipeSmallCorner,pipeSmallValve,pipeSmallWall1x1,pipeSmallWall1x3,pipeSmallWallBroke,pipeSmallWallCap,pipeSmallWallCenterBridge,pipeSmallWallCorner,pipeSmallWallJoint,pipeSmallWallValve,metalPipeJoint,metalPipeStraight,metalPipeCorner,metalPipeFlange,metalPipeCap,metalPipeValve,conduit01,conduit01End,conduit01Curve,conduitTriple90AngleEnd,conduit01Corner,conduitSingleCentered,conduitSingleCenteredEnd,conduitSingle90Angle,conduitSingleCorner,conduitSingleOffset,conduitSingleOffsetEnd"/>
+					<property name="Group" value="Decor/Miscellaneous"/>
+				</block>
 			<!---->
 			<block name="decoVariant_Technology">
-				<property name="Extends" value="decoComputerMonitorKeyboardMousePC"/>
+				<property name="Extends" value="satelliteUnitLarge"/>
 				<property name="Tags" value="noblocks"/>
-				<property name="CustomIcon" value="decoComputerMonitorKeyboardMousePC"/>
+				<property name="CustomIcon" value="satelliteUnitLarge"/>
 				<property name="CreativeMode" value="Player"/>
 				<property name="DescriptionKey" value="metalFurnitureBlockVariantHelperDesc"/>
 				<property name="ItemTypeIcon" value="all_blocks"/>
 				<property name="SellableToTrader" value="false"/>
 				<property name="SelectAlternates" value="true" />
 				<property name="AllowAllRotations" value="true"/>
-				<property name="PlaceAltBlockValue" value="decoComputerMonitorKeyboardMousePC,decoComputerMonitorKeyboardMouse,decoComputerDeskTopPC,decoComputerMonitor,satelliteUnitLarge,satelliteUnitSmallWall,satelliteUnitSmallFloor,lightDisplayXRayFull,lightDisplayXRayEmpty,hospitalBed,airConditioner,airConditionVentFan,airConditionVentFanDouble,electricalBox01,breakerBoxClosed,breakerBoxOpen,breakerBoxBroken,breakerBoxWallClosed,breakerBoxWallOpen,residentialSingleMeterDisconnect,commercialDistributionBox,commercialSingleMeterDisconnect,commercialSingleMeter,commercialDualMeter,commercialTripleMeter,commercialQuadMeter,powerSwitch01,powerSwitch02,pushButtonSwitch01,pushButtonSwitch02,factoryConveyorBelt,factoryConveyorCap,factoryConveyorBridge,factoryConveyorTee,factoryConveyorCorner,factoryConveyorCorner,factoryConveyorCorner2,factoryConveyorRamp,factoryConveyorWedgeRamp"/>
+				<property name="PlaceAltBlockValue" value="satelliteUnitLarge,satelliteUnitSmallWall,satelliteUnitSmallFloor,lightDisplayXRayFull,lightDisplayXRayEmpty,hospitalBed,airConditioner,airConditionVentFan,airConditionVentFanDouble,electricalBox01,breakerBoxClosed,breakerBoxOpen,breakerBoxBroken,breakerBoxWallClosed,breakerBoxWallOpen,residentialSingleMeterDisconnect,commercialDistributionBox,commercialSingleMeterDisconnect,commercialSingleMeter,commercialDualMeter,commercialTripleMeter,commercialQuadMeter,powerSwitch01,powerSwitch01,pushButtonSwitch01,pushButtonSwitch02,factoryConveyorBelt,factoryConveyorCap,factoryConveyorBridge,factoryConveyorTee,factoryConveyorCorner,factoryConveyorCorner,factoryConveyorCorner2,factoryConveyorRamp,factoryConveyorWedgeRamp,radioHam,standIV,projectorCeiling,projectorTableTop,decoServerRackWhite,decoServerRackBrown,decoServerRackRed,decoServerRackOrange,decoServerRackYellow,decoServerRackGreen,decoServerRackBlue,decoServerRackGrey,decoServerRackArmyGreen,cntATMSecure"/>
 				<property name="Group" value="Decor/Miscellaneous"/>
 			</block>
 			<block name="decoVariant_Conduit">
@@ -433,7 +443,7 @@
 				<property name="SellableToTrader" value="false"/>
 				<property name="SelectAlternates" value="true" />
 				<property name="AllowAllRotations" value="true"/>
-				<property name="PlaceAltBlockValue" value="conduit01,conduit01End,conduit01Curve,conduitTriple90AngleEnd,conduit01Corner,conduitSingleCentered,conduitSingleCenteredEnd,conduitSingle90Angle,conduitSingleCorner,conduitSingleOffset,conduitSingleOffsetEnd"/>
+				<property name="PlaceAltBlockValue" value="conduit01,conduit01End,conduit01Curve,conduitTriple90AngleEnd,conduit01Corner,conduitSingleCentered,conduitSingleCenteredEnd,conduitSingle90Angle,conduitSingleCorner,conduitSingleOffset,conduitSingleOffsetEnd,ductStraightCentered,ductCornerUp,ductCornerDown,ductStraightSideCentered,ductCornerSideCentered,utilityGasMeter01,utilityGasMeter02"/>
 				<property name="Group" value="Decor/Miscellaneous"/>
 			</block>
 			<block name="decoVariant_Panels">
@@ -459,7 +469,7 @@
 				<property name="SellableToTrader" value="false"/>
 				<property name="SelectAlternates" value="true" />
 				<property name="AllowAllRotations" value="true"/>
-				<property name="PlaceAltBlockValue" value="cntCashRegisterEmpty,cashRegisterScanner,cashRegisterConveyorCorner,cashRegisterConveyorMiddle,cashRegisterConveyorStraight,cntStoreElectronicsBookShelfSpeaker,cntStoreElectronicsPalletTvStanding,cntGunRackSmallArmor,cntGunRackSmallMagazines,cntGunRackLargeGuns01,cntGunRackLargeGuns02,cntShippingCrateBookstoredeco,cntShippingCrateCarPartsdeco,cntShippingCrateLabEquipmentdeco,cntShippingCrateMoPowerElectronicsdeco,cntShippingCrateSavageCountrydeco,cntShippingCrateShamwaydeco,cntShippingCrateShotgunMessiahdeco,cntShippingCrateWorkingStiffsdeco,cntFreezerBeveragesLeftEmptyClosed,cntFreezerBeveragesLeftEmptyClosedBroken,cntFreezerBeveragesMiddleEmptyClosed,cntFreezerBeveragesMiddleEmptyClosedBroken,cntFreezerBeveragesMiddleEmptyOpen,cntFreezerBeveragesMiddleEmptyOpenBroken,cntFreezerBeveragesMiddleFullClosed,cntFreezerBeveragesMiddleFullClosedBroken,cntFreezerBeveragesRightEmptyClosed,cntFreezerBeveragesRightEmptyClosedBroken,cntFreezerBeveragesStandaloneEmptyClosed,cntFreezerBeveragesStandaloneEmptyClosedBroken,cntFreezerBeveragesStandaloneFullClosed,cntFreezerBeveragesStandaloneFullClosedBroken,cntFreezerGroceriesLeftEmptyClosed,cntFreezerGroceriesLeftEmptyClosedBroken,cntFreezerGroceriesMiddleEmptyClosed,cntFreezerGroceriesMiddleEmptyClosedBroken,cntFreezerGroceriesMiddleEmptyOpen,cntFreezerGroceriesMiddleEmptyOpenBroken,cntFreezerGroceriesMiddleFullClosed,cntFreezerGroceriesMiddleFullClosed2,cntFreezerGroceriesMiddleFullClosedBroken,cntFreezerGroceriesMiddleFullClosedBroken2,cntFreezerGroceriesRightEmptyClosed,cntFreezerGroceriesRightEmptyClosedBroken,cntStoreProduceBasketApples1,cntStoreProduceBasketApples2,cntStoreProduceBasketCornerEmpty1,cntStoreProduceBasketCornerEmpty2,cntStoreProduceBasketEmpty1,cntStoreProduceBasketEmpty2,cntStoreProduceBasketGourds1,cntStoreProduceBasketGourds2,cntStoreProduceBasketMelons1,cntDisplayCaseAmmoLeftBroken,cntDisplayCaseAmmoMiddleBroken01,cntDisplayCaseAmmoMiddleBroken02,cntDisplayCaseAmmoRightBroken,cntDisplayCaseEmptyLeft,cntDisplayCaseEmptyLeftBroken,cntDisplayCaseEmptyMiddle,cntDisplayCaseEmptyMiddleBroken,cntDisplayCaseEmptyRight,cntDisplayCaseEmptyRightBroken"/>
+				<property name="PlaceAltBlockValue" value="cntCashRegisterEmpty,cashRegisterScanner,cashRegisterConveyorCorner,cashRegisterConveyorMiddle,cashRegisterConveyorStraight,cntStoreElectronicsBookShelfSpeaker,cntStoreElectronicsPalletTvStanding,cntGunRackSmallArmor,cntGunRackSmallMagazines,cntGunRackLargeGuns01,cntGunRackLargeGuns02,cntShippingCrateBookstoredeco,cntShippingCrateCarPartsdeco,cntShippingCrateLabEquipmentdeco,cntShippingCrateMoPowerElectronicsdeco,cntShippingCrateSavageCountrydeco,cntShippingCrateShamwaydeco,cntShippingCrateShotgunMessiahdeco,cntShippingCrateWorkingStiffsdeco,cntFreezerBeveragesLeftEmptyClosed,cntFreezerBeveragesLeftEmptyClosedBroken,cntFreezerBeveragesMiddleEmptyClosed,cntFreezerBeveragesMiddleEmptyClosedBroken,cntFreezerBeveragesMiddleEmptyOpen,cntFreezerBeveragesMiddleEmptyOpenBroken,cntFreezerBeveragesMiddleFullClosed,cntFreezerBeveragesMiddleFullClosedBroken,cntFreezerBeveragesRightEmptyClosed,cntFreezerBeveragesRightEmptyClosedBroken,cntFreezerBeveragesStandaloneEmptyClosed,cntFreezerBeveragesStandaloneEmptyClosedBroken,cntFreezerBeveragesStandaloneFullClosed,cntFreezerBeveragesStandaloneFullClosedBroken,cntFreezerGroceriesLeftEmptyClosed,cntFreezerGroceriesLeftEmptyClosedBroken,cntFreezerGroceriesMiddleEmptyClosed,cntFreezerGroceriesMiddleEmptyClosedBroken,cntFreezerGroceriesMiddleEmptyOpen,cntFreezerGroceriesMiddleEmptyOpenBroken,cntFreezerGroceriesMiddleFullClosed,cntFreezerGroceriesMiddleFullClosed2,cntFreezerGroceriesMiddleFullClosedBroken,cntFreezerGroceriesMiddleFullClosedBroken2,cntFreezerGroceriesRightEmptyClosed,cntFreezerGroceriesRightEmptyClosedBroken,cntStoreProduceBasketApples1,cntStoreProduceBasketApples2,cntStoreProduceBasketCornerEmpty1,cntStoreProduceBasketCornerEmpty2,cntStoreProduceBasketEmpty1,cntStoreProduceBasketEmpty2,cntStoreProduceBasketGourds1,cntStoreProduceBasketGourds2,cntStoreProduceBasketMelons1,cntDisplayCaseAmmoLeftBroken,cntDisplayCaseAmmoMiddleBroken01,cntDisplayCaseAmmoMiddleBroken02,cntDisplayCaseAmmoRightBroken,cntDisplayCaseEmptyLeft,cntDisplayCaseEmptyLeftBroken,cntDisplayCaseEmptyMiddle,cntDisplayCaseEmptyMiddleBroken,cntDisplayCaseEmptyRight,cntDisplayCaseEmptyRightBroken,cntVendingMachineEnergyBroken,cntVendingMachineWaterBroken,cntVendingMachineSnacksEmpty,cntVendingMachineSnacksEmptyBroken,signOpenWallMountChain,signOpenWallMountFrame,signOpenSideMount,signOpenCeilingMount,restaurantTableEnd,restaurantTableMiddle,restaurantBoothWhite,restaurantBoothBrown,restaurantBoothRed,restaurantBoothOrange,restaurantBoothYellow,restaurantBoothGreen,restaurantBoothBlue,restaurantBoothPurple,restaurantBooth,restaurantBoothBlack,restaurantBoothPink,restaurantBoothCornerWhite,restaurantBoothCornerBrown,restaurantBoothCornerRed,restaurantBoothCornerOrange,restaurantBoothCornerYellow,restaurantBoothCornerGreen,restaurantBoothCornerBlue,restaurantBoothCornerPurple,restaurantBoothCorner,restaurantBoothCornerBlack,restaurantBoothCornerPink,fastFoodBoothWhite,fastFoodBoothBrown,fastFoodBoothRed,fastFoodBoothOrange,fastFoodBoothYellow,fastFoodBoothGreen,fastFoodBooth,fastFoodBoothPurple,fastFoodBoothGrey,fastFoodBoothBlack,fastFoodBoothEndClosedWhite,fastFoodBoothEndClosedBrown,fastFoodBoothEndClosedRed,fastFoodBoothEndClosedOrange,fastFoodBoothEndClosedYellow,fastFoodBoothEndClosedGreen,fastFoodBoothEndClosed,fastFoodBoothEndClosedPurple,fastFoodBoothEndClosedGrey,fastFoodBoothEndClosedBlack,fastFoodBoothEndOpenWhite,fastFoodBoothEndOpenBrown,fastFoodBoothEndOpenRed,fastFoodBoothEndOpenOrange,fastFoodBoothEndOpenYellow,fastFoodBoothEndOpenGreen,fastFoodBoothEndOpen,fastFoodBoothEndOpenPurple,fastFoodBoothEndOpenGrey,fastFoodBoothEndOpenBlack,fastFoodBoothMiddleWhite,fastFoodBoothMiddleBrown,fastFoodBoothMiddleRed,fastFoodBoothMiddleOrange,fastFoodBoothMiddleYellow,fastFoodBoothMiddleGreen,fastFoodBoothMiddle,fastFoodBoothMiddlePurple,fastFoodBoothMiddleGrey,fastFoodBoothMiddleBlack,fastFoodBoothBenchWhite,fastFoodBoothBenchBrown,fastFoodBoothBenchRed,fastFoodBoothBenchOrange,fastFoodBoothBenchYellow,fastFoodBoothBenchGreen,fastFoodBoothBenchBlue,fastFoodBoothBenchPurple,fastFoodBoothBenchGrey,fastFoodBoothBenchBlack,cntShoppingCartEmptyWhite,cntShoppingCartEmptyRed,cntShoppingCartEmptyOrange,cntShoppingCartEmptyYellow,cntShoppingCartEmptyGreen,cntShoppingCartEmptyBlue,cntShoppingCartEmptyGrey,cntShoppingCartTippedWhite,cntShoppingCartTippedRed,cntShoppingCartTippedOrange,cntShoppingCartTippedYellow,cntShoppingCartTippedGreen,cntShoppingCartTippedBlue,cntShoppingCartTippedGrey,cntShoppingCartWhite,cntShoppingCartRed,cntShoppingCartOrange,cntShoppingCartYellow,cntShoppingCartGreen,cntShoppingCartBlue,cntShoppingCartGrey,cntShoppingBasketEmptyWhite,cntShoppingBasketEmptyRed,cntShoppingBasketEmptyOrange,cntShoppingBasketEmptyYellow,cntShoppingBasketEmptyGreen,cntShoppingBasketEmptyTeal,cntShoppingBasketEmptyBlue,cntShoppingBasketWhite,cntShoppingBasketRed,cntShoppingBasketOrange,cntShoppingBasketYellow,cntShoppingBasketGreen,cntShoppingBasketTeal,cntShoppingBasketBlue,cntMilitaryGoodsA,cntMilitaryGoodsB,cntMilitaryGoodsC,cntMilitaryGoodsD"/>
 				<property name="Group" value="Decor/Miscellaneous"/>
 			</block>
 			<block name="decoVariant_Cloth">
@@ -472,7 +482,7 @@
 				<property name="ItemTypeIcon" value="all_blocks"/>
 				<property name="SelectAlternates" value="true" />
 				<property name="AllowAllRotations" value="true"/>
-				<property name="PlaceAltBlockValue" value="cntModularClosetCloseddeco,cntModularClosetEnd,cntModularClosetOpen,cntClothesRackRectangleEmpty2,cntClothesRackRectanglePants,cntClothesRackRectangleShirts,cntClothesRackRoundEmpty2,cntClothesRackRoundShirts,cntClothesRackWallLongSleeve,cntClothesRackWallPants,cntClothesRackWallSweater,cntClothesRackWallTShirts,cntClothesRackRoundPants,decoMannequinFemale,decoMannequinMale,cntStoreShelfSingleTopShoesEmpty,cntStoreShelfSingleTopShoesFull,cntStoreShelfSingleBottomShoesEmpty,cntStoreShelfSingleBottomShoesFull,cntStoreShelfDoubleBottomShoesEmpty,cntStoreShelfDoubleBottomShoesFull,cntStoreShelfDoubleTopShoesEmpty,cntStoreShelfDoubleTopShoesFull,cntShoesPileBusinessShoesdeco,cntShoesPileLeatherBootsdeco,cntShoesPileSneakersdeco,cntShoesPileWomensHeelsdeco,cntShoesPileSandalsdeco,cntShoesPileCommercial01deco,cntShoesPileCommercial02deco"/>
+				<property name="PlaceAltBlockValue" value="cntModularClosetClosed_Player,cntModularClosetClosedBrown,cntModularClosetClosedGreen,cntModularClosetClosedBlue,cntModularClosetEnd,cntModularClosetOpen,cntClothesRackRectangleEmpty2,cntClothesRackRectanglePants,cntClothesRackRectangleShirts,cntClothesRackRectanglePantsMilitary,cntClothesRackRectangleShirtsMilitary,cntClothesRackRoundEmpty2,cntClothesRackRoundPants,cntClothesRackRoundShirts,cntClothesRackRoundPantsMilitary,cntClothesRackRoundShirtsMilitary,cntClothesRackWallPants,cntClothesRackWallLongSleeve,cntClothesRackWallSweater,cntClothesRackWallTShirts,cntClothesRackWallPantsMilitary,cntClothesRackWallLongSleeveMilitary,cntClothesRackWallSweaterMilitary,cntClothesRackWallTShirtsMilitary,decoMannequinFemale,decoMannequinMale,decoMannequinMilitaryCommando,cntStoreShelfSingleTopShoesEmpty,cntStoreShelfSingleTopShoesFull,cntStoreShelfSingleBottomShoesEmpty,cntStoreShelfSingleBottomShoesFull,cntStoreShelfDoubleBottomShoesEmpty,cntStoreShelfDoubleBottomShoesFull,cntStoreShelfDoubleTopShoesEmpty,cntStoreShelfDoubleTopShoesFull,cntShoesPileBusinessShoes_Player,cntShoesPileLeatherBoots_Player,cntShoesPileSneakers_Player,cntShoesPileWomensHeels_Player,cntShoesPileSandals_Player,cntShoesPileCommercial01_Player,cntShoesPileCommercial02_Player"/>
 				<property name="Group" value="Decor/Miscellaneous"/>
 			</block>
 			<block name="decoVariant_Sign">
@@ -485,20 +495,20 @@
 				<property name="SellableToTrader" value="false"/>
 				<property name="SelectAlternates" value="true" />
 				<property name="AllowAllRotations" value="true"/>
-				<property name="PlaceAltBlockValue" value="paintingBen,paintingDerek,paintingDuke,paintingKen,paintingLorien,paintingNoah,signPosterMovie2159,signPosterMovieLoneWolf,signPosterMovieMammasJustice,signPosterMovieSexualTension,signPosterMovieTheater2159,signPosterMovieTheaterLoneWolf,signPosterMovieTheaterSexualTension,signPosterWantedMissing01,signPosterWantedMissing02,signPosterWantedMissing03,signBulletinBoard02,signSafetyWorkProtection,signBathroomSignMenCeilingMount,signBathroomSignMenWallMount,signBathroomSignUnisexCeilingMount,signBathroomSignUnisexWallMount,signBathroomSignWomenCeilingMount,signBathroomSignWomenWallMount,signSale01,signSale02,signShamwaySale,signMegaCrushAd,signLaborDaySaleAd,signBookSaleAd,signBread01,signBread02,signCigaretteAd,signPillsLogo,signPillsLogoSmall,shootingRangeTarget"/>
+				<property name="PlaceAltBlockValue" value="paintingBen,paintingDerek,paintingDuke,paintingKen,paintingLorien,paintingNoah,signPosterMovie2159,signPosterMovieLoneWolf,signPosterMovieMammasJustice,signPosterMovieSexualTension,signPosterMovieTheater2159,signPosterMovieTheaterLoneWolf,signPosterMovieTheaterSexualTension,signPosterWantedMissing01,signPosterWantedMissing02,signPosterWantedMissing03,signBulletinBoard02,signSafetyWorkProtection,signBathroomSignMenCeilingMount,signBathroomSignMenWallMount,signBathroomSignUnisexCeilingMount,signBathroomSignUnisexWallMount,signBathroomSignWomenCeilingMount,signBathroomSignWomenWallMount,signSale01,signSale02,signShamwaySale,signMegaCrushAd,signLaborDaySaleAd,signBookSaleAd,signBread01,signBread02,signCigaretteAd,signPillsLogo,signPillsLogoSmall,shootingRangeTarget,pictureFrameCarrier,pictureFrameTank,pictureFrameGunSchematic,pictureFrameJetGirls,calendar2034,posterCalendarWorkingStiff,pictureFramedMedalsSml,pictureFramedMedalsMed,pictureFramedMedalsLrg,posterBlueprintPistol,posterBlueprintRifle,pictureDeskFrameBigFam,pictureDeskFrameModFam,pictureDeskFrameRetroFam,signGunsThinSafety,signGunsThinSafety2,signGunsWideWarning,signGunsWideWarning2,signGunsThinAttention,signGunsThinNo,signGunsThinPermitted,signGunsThinPrivate,signGunsThinReturn,signGunsThinSmile,signGunsThinSmoke,signPassNGasHanging,signPassNGasHanging2,signPrivateProperty,signNotice,targetPoster1,targetPoster2,signHardHat,signCaution,signStaffOnly,signAuthorizedPersonnel,signSafetyWorkProtection,signNotice01,signNotice02,signNotice03,signNotice04,signGas01,signGas02,signGas03,signGas04,signGas05,signGas06,signGas07,signGas08,signGas09,signGas10,signGas11,signGas12,signGas13,signGas14,signGas15,signGas16,signGas17,signGas18,signGas19,signGas20,signGas21,banditWallStreetsign3x2,newspaperDecor01,newspaperDecor02,newspaperDecor03,signDinersMenu,signDinersMenu2m,signDinersMenu2mCentered"/>
 				<property name="Group" value="Decor/Miscellaneous"/>
 			</block>
 			<block name="decoVariant_extra">
-				<property name="Extends" value="cntBusCity"/>
+				<property name="Extends" value="cntSemiTruck01White"/>
 				<property name="Tags" value="noblocks"/>
-				<property name="CustomIcon" value="cntBusCity"/>
+				<property name="CustomIcon" value="cntSemiTruck01White"/>
 				<property name="CreativeMode" value="Player"/>
 				<property name="DescriptionKey" value="metalFurnitureBlockVariantHelperDesc"/>
 				<property name="ItemTypeIcon" value="all_blocks"/>
 				<property name="SellableToTrader" value="false"/>
 				<property name="SelectAlternates" value="true" />
 				<property name="AllowAllRotations" value="true"/>
-				<property name="PlaceAltBlockValue" value="cntBusCity,cntBusSchool,cntBusSchoolShort,cntBusShuttle,cntArmyTruckClosed,cntAmbulanceTruck01,cntServiceTruckMoPower,cntServiceTruckWorkingStiffTools,cntCar03SedanDamage0v01,cntCar03SedanDamage0v02,cntCar03SedanDamage0v03,cntCar03SedanDamage0v04,cntCar03SedanDamage0v05,cntCar03SedanDamage0v06,cntCar03SedanDamage0v07,cntCar03SedanDamage0v08,cntHardenedChestSecure,chimneyPOI,chimneyBlackPOI,flagPoleAmerican,flagPoleWhiteRiver,stmoto,st4x4,stgyro"/>
+				<property name="PlaceAltBlockValue" value="cntBusCity,cntBusSchool,cntBusSchoolShort,cntBusShuttle,cntArmyTruckClosed,cntAmbulanceTruck01,cntServiceTruckMoPower,cntServiceTruckWorkingStiffTools,chimneyPOI,chimneyBlackPOI,flagPoleAmerican,flagPoleWhiteRiver,flagPoleTrader,bicycleStatic,minibikeStatic,motorcycleStatic,4x4Static,gyrocopterStatic,helipad,capChimneyLargeSmoke,churchBell,churchBellHanging,churchBell1x2x1,churchBellHanging1x2x1,tractorWhite,tractorRed,tractorGreen,tractorBlue,excavatorWhite,excavatorRed,excavatorOrange,excavatorYellow,excavatorGreen,excavatorBlue,excavatorGrey,excavatorClawWhite,excavatorClawRed,excavatorClawOrange,excavatorClawYellow,excavatorClawGreen,excavatorClawBlue,excavatorClawGrey,cntFireTruck01Red,cntFireTruck01Orange,cntFireTruck01Yellow,cntSemiTruck01White,cntSemiTruck01Brown,cntSemiTruck01Red,cntSemiTruck01Orange,cntSemiTruck01Yellow,cntSemiTruck01Green,cntSemiTruck01Blue,cntSemiTruck01Purple,cntSemiTruck01Pink,cntSemiTruck01ModularFrontBrown,cntSemiTruck01ModularFrontRed,cntSemiTruck01ModularFrontOrange,cntSemiTruck01ModularFrontYellow,cntSemiTruck01ModularFrontGreen,cntSemiTruck01ModularFrontBlue,cntSemiTruck01ModularFrontPurple,cntSemiTruck01ModularFrontPink,cntFarmTruckClosed,cntFarmTruckOpen,backhoeWhite,backhoeRed,backhoeOrange,backhoeYellow,backhoeGreen,backhoeBlue,backhoeGrey,stmoto,st4x4,stgyro"/>
 				<property name="Group" value="Science"/>
 			</block>
 			<block name="decoVariant_deco">
@@ -524,7 +534,7 @@
 				<property name="SelectAlternates" value="true" />
 				<property name="SellableToTrader" value="false"/>
 				<property name="AllowAllRotations" value="true"/>
-				<property name="PlaceAltBlockValue" value="cntWeaponsBagSmall,cntAmmoPileSmalldeco,cntAmmoPileMediumdeco,cntWeaponsBagLarge,cntAmmoPileLargedeco,cntDuffle01,cntBackpack01,cntBackpack03,cntLootChestHero,cntMedicalPileSmalldeco,cntMedicalPileMediumdeco,cntMedicalPileLargedeco,cntMedicLootPileAdeco,cntMedicLootPileBdeco,cntFoodPileSmalldeco,cntFoodPileMediumdeco,cntFoodPileLargedeco,cntBookPile01deco,cntBookPile02deco,cntBookPile03deco,cntBookPile04deco"/>
+				<property name="PlaceAltBlockValue" value="cntWeaponsBagSmall_Player,cntWeaponsBagLarge_Player,cntAmmoPileSmall_Player,cntAmmoPileMedium_Player,cntAmmoPileLarge_Player,cntDuffle01,cntBackpack01,cntBackpack03,cntLootChestHero,cntMedicalPileSmall_Player,cntMedicalPileMedium_Player,cntMedicalPileLarge_Player,cntMedicLootPileA_Player,cntMedicLootPileB_Player,cntFoodPileSmall_Player,cntFoodPileMedium_Player,cntFoodPileLarge_Player,cntBookPile01_Player,cntBookPile02_Player,cntBookPile03_Player,cntBookPile04_Player,cntBookPile05,cntBookPile06,cntBookPile07,cntBookPile08,cntBookPile09,cntBookPile10,cntBookPile11,cntBookPile12,cntBookPile13,cntBookPile14,cntBookPile15,cntSportsBag02White_Player,cntSportsBag02Brown_Player,cntSportsBag02Red_Player,cntSportsBag02Orange_Player,cntSportsBag02Yellow_Player,cntSportsBag02Green_Player,cntSportsBag02Blue_Player,cntSportsBag02Purple_Player,cntSportsBag02Pink_Player,cntPurse01_Player,cntLuggageMediumClosed_Player,cntLuggageBigClosed_Player,cntLuggagePileBClosed_Player,cntLuggagePileAClosed_Player,cntToolBoxOpenWhite,cntToolBoxOpenRed,cntToolBoxOpenYellow,cntToolBoxOpenGreen,cntToolBoxOpenBlue,cntToolBoxOpenGrey,cntToolBoxClosedWhite,cntToolBoxClosedRed,cntToolBoxClosedYellow,cntToolBoxClosedGreen,cntToolBoxClosedBlue,cntToolBoxClosedGrey,cntToolBoxOffsetOpenWhite,cntToolBoxOffsetOpenRed,cntToolBoxOffsetOpenYellow,cntToolBoxOffsetOpenGreen,cntToolBoxOffsetOpenBlue,cntToolBoxOffsetOpenGrey,cntToolBoxOffsetClosedWhite,cntToolBoxOffsetClosedRed,cntToolBoxOffsetClosedYellow,cntToolBoxOffsetClosedGreen,cntToolBoxOffsetClosedBlue,cntToolBoxOffsetClosedGrey,cntRollingToolBoxOpenWhite,cntRollingToolBoxOpenRed,cntRollingToolBoxOpenYellow,cntRollingToolBoxOpenGreen,cntRollingToolBoxOpenBlue,cntRollingToolBoxOpenGrey,cntRollingToolBoxClosedWhite,cntRollingToolBoxClosedRed,cntRollingToolBoxClosedYellow,cntRollingToolBoxClosedGreen,cntRollingToolBoxClosedBlue,cntRollingToolBoxClosedGrey"/>
 				<property name="Group" value="Decor/Miscellaneous"/>
 			</block>
 			<block name="decoVariant_plants">
@@ -537,7 +547,7 @@
 				<property name="SellableToTrader" value="false"/>
 				<property name="SelectAlternates" value="true" />
 				<property name="AllowAllRotations" value="true"/>
-				<property name="PlaceAltBlockValue" value="treeAzalea,treeSnowyGrassDiagonal,cntBirdnest,treeJuniper4m,treeCactus04,treeCactus05,treeCactus06,treeCactus01,treeCactus02,treeCactus03,treeStump,treeBurntMaple01,treeBurntMaple02,treeBurntMaple03,decoCowSkull,hayBaleRound,hayBaleSquare,treePineBurntLrg,treePineBurntMed,treePineBurntFullMed"/>
+				<property name="PlaceAltBlockValue" value="treeAzalea,treeSnowyGrassDiagonal,cntBirdnest,treeJuniper4m,treeCactus04,treeCactus05,treeCactus06,treeCactus01,treeCactus02,treeCactus03,treeStump,treeBurntMaple01,treeBurntMaple02,treeBurntMaple03,decoCowSkull,hayBaleRound,hayBaleSquare,treePineBurntLrg,treePineBurntMed,treePineBurntFullMed,horseshoe_01,horseshoe_02,horseshoe_03,umbrellaTableDownWhite,umbrellaTableDownBrown,umbrellaTableDownRed,umbrellaTableDownOrange,umbrellaTableDownYellow,umbrellaTableDownGreen,umbrellaTableDownBlue,umbrellaTableDownPurple,umbrellaTableDownGrey,umbrellaTableDownBlack,umbrellaTableDownPink,umbrellaTableUpWhite,umbrellaTableUpBrown,umbrellaTableUpRed,umbrellaTableUpOrange,umbrellaTableUpYellow,umbrellaTableUpGreen,umbrellaTableUpBlue,umbrellaTableUpPurple,umbrellaTableUpGrey,umbrellaTableUpBlack,umbrellaTableUpPink,plantHangingIvy01,plantHangingIvy02,hangingMoss,cntTroughPigEmpty"/>
 				<property name="Group" value="Decor/Miscellaneous"/>
 			</block>		
 			<block name="decoVariant_Lights">
@@ -550,7 +560,7 @@
 				<property name="SellableToTrader" value="false"/>
 				<property name="AllowAllRotations" value="true"/>
 				<property name="SelectAlternates" value="true" />
-				<property name="PlaceAltBlockValue" value="lightPorchWhite_Player,lightPorchBrown_Player,lightPorchYellow_Player,lightPorchGreen_Player,lightPorchGrey_Player,lightPorchBlack_Player,lightWallGooseneckWhite_Player,lightWallGooseneckBrown_Player,lightWallGooseneckRed_Player,lightWallGooseneckOrange_Player,lightWallGooseneckYellow_Player,lightWallGooseneckGreen_Player,lightWallGooseneckBlue_Player,lightWallGooseneckPurple_Player,lightWallGooseneckGrey_Player,lightWallGooseneckBlack_Player,lightWallGooseneckPink_Player,lightWallGooseneckArmyGreen_Player,lightCeilingBulbMount_2x2White_Player,lightCeilingBulbSocketWhite_Player,lightCeilingBulbSocket_2x2White_Player,ceilingLight02_Player,ceilingLight02_2x2_Player,ceilingLight02Brass_Player,ceilingLight02Brass_2x2_Player,ceilingLight04_Player,ceilingLight05_Player,ceilingLight05Brass_Player,recessedLight_Player,recessedLight_2x2_Player,recessedLightOffset_Player,recessedLight_2x2Offset_Player,lightCeiling07_2x2_Player,fluorescentLight_Player,fluorescentLightBayIntact_Player,lightPanelLEDWhite_Player,lightPanelLEDBlack_Player,lightPanelLEDOffsetWhite_Player,lightPanelLEDOffsetBlack_Player,lightPanelLEDOffset02White_Player,lightPanelLEDOffset02Black_Player,trackLight_Player,lightIndustrialRed_Player,lightIndustrialMountedWall_Player,lightIndustrialMountedWallRed_Player,lightIndustrialHangingWhite_Player,lightIndustrialHangingBlack_Player,lightSconce_Player,lightSconce_2x1_Player,ceilingFanLight_Player,chandelierLight_Player,chandelierLight2x2_Player,endTableLamp_Player,signExitLight_Player,signExitLightOffset_Player,signExitFrameMount_Player,signExitFrameMountHigh_Player,signExitFrameMount2mCentered_Player,signExitFrameMountHigh2mCentered_Player,signExitWallMount_Player,signExitWallMountHigh_Player,roadBarricadeLight_Player,deskLampLight_Player,deskLampLight02White_Player,deskLampLight02Brown_Player,deskLampLight02Red_Player,deskLampLight02Orange_Player,deskLampLight02Yellow_Player,deskLampLight02Green_Player,deskLampLight02Blue_Player,deskLampLight02BPurple_Player,deskLampLight02BGrey_Player,deskLampLight02Black_Player,deskLampLight02Pink_Player,tableLampLight01White_Player,tableLampLight01Black_Player,tableLampLight01Pink_Player,tableLampLight01CenteredWhite_Player,tableLampLight01CenteredBrown_Player,tableLampLight01CenteredRed_Player,tableLampLight01CenteredOrange_Player,tableLampLight01CenteredYellow_Player,tableLampLight01CenteredGreen_Player,tableLampLight01CenteredBlue_Player,tableLampLight01CenteredPurple_Player,tableLampLight01CenteredGrey_Player,tableLampLight01CenteredBlack_Player,tableLampLight01CenteredPink_Player,workLightPOI_Player,streetLight01_Player,streetLight02_Player,streetLight03_Player,streetLight04_Player,streetLightClassic_Player"/>
+				<property name="PlaceAltBlockValue" value="lightPorchWhite_Player,lightPorchBrown_Player,lightPorchYellow_Player,lightPorchGreen_Player,lightPorchGrey_Player,lightPorchBlack_Player,lightWallGooseneckWhite_Player,lightWallGooseneckBrown_Player,lightWallGooseneckRed_Player,lightWallGooseneckOrange_Player,lightWallGooseneckYellow_Player,lightWallGooseneckGreen_Player,lightWallGooseneckBlue_Player,lightWallGooseneckPurple_Player,lightWallGooseneckGrey_Player,lightWallGooseneckBlack_Player,lightWallGooseneckPink_Player,lightWallGooseneckArmyGreen_Player,lightCeilingBulbMount_2x2White_Player,lightCeilingBulbSocketWhite_Player,lightCeilingBulbSocket_2x2White_Player,ceilingLight02_Player,ceilingLight02_2x2_Player,ceilingLight02Brass_Player,ceilingLight02Brass_2x2_Player,ceilingLight04_Player,ceilingLight05_Player,ceilingLight05Brass_Player,recessedLight_Player,recessedLight_2x2_Player,recessedLightOffset_Player,recessedLight_2x2Offset_Player,lightCeiling07_2x2_Player,fluorescentLight_Player,fluorescentLightBayIntact_Player,lightPanelLEDWhite_Player,lightPanelLEDBlack_Player,lightPanelLEDOffsetWhite_Player,lightPanelLEDOffsetBlack_Player,lightPanelLEDOffset02White_Player,lightPanelLEDOffset02Black_Player,trackLight_Player,lightIndustrialRed_Player,lightIndustrialMountedWall_Player,lightIndustrialMountedWallRed_Player,lightIndustrialHangingWhite_Player,lightIndustrialHangingBlack_Player,lightSconce_Player,lightSconce_2x1_Player,ceilingFanLight_Player,chandelierLight_Player,chandelierLight2x2_Player,endTableLamp_Player,signExitLight_Player,signExitLightOffset_Player,signExitFrameMount_Player,signExitFrameMountHigh_Player,signExitFrameMount2mCentered_Player,signExitFrameMountHigh2mCentered_Player,signExitWallMount_Player,signExitWallMountHigh_Player,roadBarricadeLight_Player,deskLampLight_Player,deskLampLight02White_Player,deskLampLight02Brown_Player,deskLampLight02Red_Player,deskLampLight02Orange_Player,deskLampLight02Yellow_Player,deskLampLight02Green_Player,deskLampLight02Blue_Player,deskLampLight02BPurple_Player,deskLampLight02BGrey_Player,deskLampLight02Black_Player,deskLampLight02Pink_Player,tableLampLight01White_Player,tableLampLight01Black_Player,tableLampLight01Pink_Player,tableLampLight01CenteredWhite_Player,tableLampLight01CenteredBrown_Player,tableLampLight01CenteredRed_Player,tableLampLight01CenteredOrange_Player,tableLampLight01CenteredYellow_Player,tableLampLight01CenteredGreen_Player,tableLampLight01CenteredBlue_Player,tableLampLight01CenteredPurple_Player,tableLampLight01CenteredGrey_Player,tableLampLight01CenteredBlack_Player,tableLampLight01CenteredPink_Player,workLightPOI_Player,streetLight01_Player,streetLight02_Player,streetLight03_Player,streetLight04_Player,streetLightClassic_Player,plantHydroponicAloe_Player,plantHydroponicVertical_Player,projectorCeiling_Player,projectorTableTop_Player,signOpenWallMountChain_Player,signOpenWallMountFrame_Player,signOpenSideMount_Player,signOpenCeilingMount_Player,lightDisplayXRayFull_Player,lightDisplayXRayEmpty_Player"/>
 			</block>		
 			<block name="decoVariant_scary">
 				<property name="Extends" value="cntCoffinWildWestClosed"/>
@@ -562,7 +572,7 @@
 				<property name="SellableToTrader" value="false"/>
 				<property name="SelectAlternates" value="true" />
 				<property name="AllowAllRotations" value="true"/>
-				<property name="PlaceAltBlockValue" value="cntCoffinWildWestClosed,cntCoffinWildWestCracked,cntCoffinWildWestLeaning,cntCoffinWildWestLidLeaning,cntCoffinWildWestOpen,cntCoffinWildWestStack,bodyBagBlackFlies,bodyBagPair,bodyBagPairMixed,bodyBagPairYellow,bodyBagPile,bodyBagPileMix,bodyBagYellow,bodyBagYellowFlies,treeDeadPineLeaf,treeDeadTree01,treeDeadTree02,graveStone01,graveStone02,graveStone03,graveStone04,graveStone05,graveStone06,graveStone07,graveStone08"/>
+				<property name="PlaceAltBlockValue" value="cntCoffinWildWestClosed,cntCoffinWildWestCracked,cntCoffinWildWestLeaning,cntCoffinWildWestLidLeaning,cntCoffinWildWestOpen,cntCoffinWildWestStack,bodyBagBlackFlies,bodyBagPair,bodyBagPairMixed,bodyBagPairYellow,bodyBagPile,bodyBagPileMix,bodyBagYellow,bodyBagYellowFlies,treeDeadPineLeaf,treeDeadTree01,treeDeadTree02,graveStone01,graveStone02,graveStone03,graveStone04,graveStone05,graveStone06,graveStone07,graveStone08,cobweb,corpseHangingLog1White,corpseHangingLog1Brown,corpseHangingLog1Red,corpseHangingLog1Green,corpseHangingLog1Blue,corpseHangingLog1Grey,corpseHangingLog2White,corpseHangingLog2Brown,corpseHangingLog2Red,corpseHangingLog2Green,corpseHangingLog2Blue,corpseHangingLog2Grey,corpseHangingLog3White,corpseHangingLog3Brown,corpseHangingLog3Red,corpseHangingLog3Green,corpseHangingLog3Blue,corpseHangingLog3Grey,corpseHangingRope1White,corpseHangingRope1Brown,corpseHangingRope1Red,corpseHangingRope1Green,corpseHangingRope1Blue,corpseHangingRope1Grey,cntCasketModernOpenTan,cntCasketModernOpenBrown,cntCasketModernOpenGrey,cntCasketModernOpenRed,cntCasketModernOpenGreen,cntCasketModernOpenBlue,cntCasketModernOpenYellow,cntCasketModernOpenAqua,cntCasketModernOpenPurple,cntCasketModernOpenWhite,cntCasketModernClosedTan,cntCasketModernClosedBrown,cntCasketModernClosedGrey,cntCasketModernClosedRed,cntCasketModernClosedGreen,cntCasketModernClosedBlue,cntCasketModernClosedYellow,cntCasketModernClosedAqua,cntCasketModernClosedPurple,cntCasketModernClosedWhite"/>
 				<property name="Group" value="Decor/Miscellaneous"/>
 			</block>
 		<!-- ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
@@ -574,7 +584,7 @@
 				<property name="CustomIcon" value="lightPorchWhite"/>
 				<property name="Class" value="PoweredLight"/>
 				<property name="RequiredPower" value="5"/>
-				<property name="MaxDamage" value="1000"/>
+				<property name="MaxDamage" value="2000"/>
 				<property name="RuntimeSwitch" value="true"/>
 				<property name="OnlySimpleRotations" value="false"/>
 				<property name="TakeDelay" value="5"/>
@@ -1883,6 +1893,9 @@
 				<property name="Model" value="Entities/Commercial/bookPile4Prefab"/>
 			</block>
 			<block name="cntShippingCrateBookstoredeco">
+				<property name="CustomIcon" value="cntShippingCrateBookstore"/>
+				<property name="Model" value="@:Entities/LootContainers/shippingCrateCrackaBookPrefab.prefab"/>
+				<property name="ModelOffset" value="0,0,0"/>
 				<property name="DescriptionKey" value="cntShippingCrateGroupDesc"/>
 				<property name="Shape" value="ModelEntity"/>
 				<property name="LootList" value="decoLoot"/>
@@ -1891,8 +1904,7 @@
 				<property name="Material" value="Mwood_regular"/>
 				<drop event="Destroy" count="0"/>
 				<property name="OnlySimpleRotations" value="false"/>
-				<property name="CustomIcon" value="cntShippingCrateBookstore"/>
-				<property name="Model" value="@:Entities/LootContainers/shippingCrateCrackaBookPrefab.prefab"/>
+				
 			</block>
 			<block name="cntShippingCrateCarPartsdeco">
 				<property name="Extends" value="cntShippingCrateBookstoredeco"/>
@@ -2268,16 +2280,19 @@
 				<property name="Extends" value="exteriorHouseDoorWhite"/>
 				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
 				<property name="Material" value="Msteel"/>   
-				<property name="MaxDamage" value="12000"/>     
+				<property name="MaxDamage" value="15000"/>     
 				<property name="MeshDamage" value="
-					Door/DMG0, 13000,
-					Door/DMG1, 12000,
+					Door/DMG0, 16000,
+					Door/DMG1, 15000,
 					Door/DMG2, 7000,
 					Door/DMG3, 1500,
 					-, 1
 					"/>
-					<property name="SortOrder1" value="A300"/>
-					<property name="SortOrder2" value="0000"/>
+				<property class="RepairItems">
+					<property name="resourceForgedSteel" value="11"/>
+				</property>
+				<property name="SortOrder1" value="A300"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<!-- Brown -->
 			<block name="reinforcedExteriorHouseDoorBrown">
@@ -2374,8 +2389,11 @@
 					Door/DMG3, 1500,
 					-, 1
 					"/>
-					<property name="SortOrder1" value="A301"/>
-					<property name="SortOrder2" value="0000"/>
+				<property class="RepairItems">
+					<property name="resourceForgedSteel" value="11"/>
+				</property>
+				<property name="SortOrder1" value="A301"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>			
 			<!-- Brown -->
 			<block name="reinforcedExteriorHouseDoorDoubleBrown">
@@ -2473,8 +2491,11 @@
 					Door/DMG3, 1500,
 					-, 1
 					"/>
-					<property name="SortOrder1" value="A302"/>
-					<property name="SortOrder2" value="0000"/>
+				<property class="RepairItems">
+					<property name="resourceForgedSteel" value="11"/>
+				</property>
+				<property name="SortOrder1" value="A302"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<!-- Brown -->
 			<block name="reinforcedExteriorHouseDoorSideLightSingleBrown">
@@ -2562,8 +2583,11 @@
 					Door/DMG3, 1500,
 					-, 1
 					"/>
-					<property name="SortOrder1" value="A303"/>
-					<property name="SortOrder2" value="0000"/>
+				<property class="RepairItems">
+					<property name="resourceForgedSteel" value="11"/>
+				</property>
+				<property name="SortOrder1" value="A303"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>			
 			<!-- Brown -->
 			<block name="reinforcedExteriorHouseDoorSideLightBrown">
@@ -2660,8 +2684,11 @@
 					Door/DMG2, 7000,
 					-, 1
 					"/>
-					<property name="SortOrder1" value="A304"/>
-					<property name="SortOrder2" value="0000"/>
+				<property class="RepairItems">
+					<property name="resourceForgedSteel" value="11"/>
+				</property>
+				<property name="SortOrder1" value="A304"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<!-- Brown -->
 			<block name="reinforcedFrenchDoorBrown">
@@ -2757,8 +2784,11 @@
 					Door/DMG2, 7000,
 					-, 1
 					"/>
-					<property name="SortOrder1" value="A305"/>
-					<property name="SortOrder2" value="0000"/>
+				<property class="RepairItems">
+					<property name="resourceForgedSteel" value="11"/>
+				</property>
+				<property name="SortOrder1" value="A305"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<!-- Brown -->
 			<block name="reinforcedFrenchDoorDoubleBrown">
@@ -2855,8 +2885,11 @@
 					Door/DMG3, 1500,
 					-, 1
 					"/>
-					<property name="SortOrder1" value="A306"/>
-					<property name="SortOrder2" value="0000"/>
+				<property class="RepairItems">
+					<property name="resourceForgedSteel" value="11"/>
+				</property>
+				<property name="SortOrder1" value="A306"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>			
 			<!-- Brown -->
 			<block name="reinforcedInteriorHouseDoorBrown">
@@ -2953,8 +2986,11 @@
 					Door/DMG3, 1500,
 					-, 1
 					"/>
-					<property name="SortOrder1" value="A307"/>
-					<property name="SortOrder2" value="0000"/>
+				<property class="RepairItems">
+					<property name="resourceForgedSteel" value="11"/>
+				</property>
+				<property name="SortOrder1" value="A307"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>
 			<!-- Brown -->
 			<block name="reinforcedInteriorHouseDoorDoubleBrown">
@@ -3050,8 +3086,11 @@
 					Door/DMG3, 1500,
 					-, 1
 					"/>
-					<property name="SortOrder1" value="A308"/>
-					<property name="SortOrder2" value="0000"/>
+				<property class="RepairItems">
+					<property name="resourceForgedSteel" value="11"/>
+				</property>
+				<property name="SortOrder1" value="A308"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>	
 			<block name="reinforcedCommercialBulletproofGlassDoor">
 				<property name="Extends" value="commercialBulletproofGlassDoor"/>
@@ -3065,8 +3104,11 @@
 					Door/DMG3, 1500,
 					-, 1
 					"/>
-					<property name="SortOrder1" value="A308"/>
-					<property name="SortOrder2" value="0001"/>
+				<property class="RepairItems">
+					<property name="resourceForgedSteel" value="11"/>
+				</property>
+				<property name="SortOrder1" value="A308"/>
+				<property name="SortOrder2" value="0001"/>
 			</block>	
 			<block name="reinforcedCommercialGlassDoorDouble">
 				<property name="Extends" value="commercialGlassDoorDouble"/>
@@ -3080,8 +3122,11 @@
 					Door/DMG3, 1500,
 					-, 1
 					"/>
-					<property name="SortOrder1" value="A309"/>
-					<property name="SortOrder2" value="0000"/>
+				<property class="RepairItems">
+					<property name="resourceForgedSteel" value="11"/>
+				</property>
+				<property name="SortOrder1" value="A309"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>	
 			<block name="reinforcedCommercialBulletproofGlassDoorDouble">
 				<property name="Extends" value="commercialBulletproofGlassDoorDouble"/>
@@ -3095,8 +3140,11 @@
 					Door/DMG3, 1500,
 					-, 1
 					"/>
-					<property name="SortOrder1" value="A309"/>
-					<property name="SortOrder2" value="0001"/>
+				<property class="RepairItems">
+					<property name="resourceForgedSteel" value="11"/>
+				</property>
+				<property name="SortOrder1" value="A309"/>
+				<property name="SortOrder2" value="0001"/>
 			</block>
 
 			<!-- *** COMMERCIAL_SLIDNIG_DOORS -->
@@ -3111,8 +3159,11 @@
 					Door/DMG2, 2400,	
 					-, 1
 					"/>
-					<property name="SortOrder1" value="A310"/>
-					<property name="SortOrder2" value="0000"/>
+				<property class="RepairItems">
+					<property name="resourceForgedSteel" value="11"/>
+				</property>
+				<property name="SortOrder1" value="A310"/>
+				<property name="SortOrder2" value="0000"/>
 			</block>	
 			<block name="reinforcedCommercialBulletproofSlidingDoor">
 				<property name="Extends" value="commercialBulletproofSlidingDoor"/>
@@ -3125,8 +3176,11 @@
 					Door/DMG2, 2400,
 					-, 1
 					"/>
-					<property name="SortOrder1" value="A310"/>
-					<property name="SortOrder2" value="0001"/>
+				<property class="RepairItems">
+					<property name="resourceForgedSteel" value="11"/>
+				</property>
+				<property name="SortOrder1" value="A310"/>
+				<property name="SortOrder2" value="0001"/>
 			</block>	
 
 
@@ -3144,15 +3198,15 @@
 			</block>			
 			<!---->
 			<block name="decoVariant_Doors">
-				<property name="Extends" value="reinforcedExteriorHouseDoorWhite"/>
-				<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+				<property name="Extends" value="tallCabinetDoorWhite"/>
+				<property name="CustomIcon" value="tallCabinetDoorWhite"/>
 				<property name="CreativeMode" value="Player"/>
 				<property name="DescriptionKey" value="metalFurnitureBlockVariantHelperDesc"/>
 				<property name="ItemTypeIcon" value="all_blocks"/>
 				<property name="SellableToTrader" value="false"/>
 				<property name="SelectAlternates" value="true" />
 				<property name="AllowAllRotations" value="true"/>
-				<property name="PlaceAltBlockValue" value="reinforcedExteriorHouseDoorWhite,reinforcedExteriorHouseDoorBrown,reinforcedExteriorHouseDoorRed,reinforcedExteriorHouseDoorOrange"/>
+				<property name="PlaceAltBlockValue" value="tallCabinetDoorWhite,tallCabinetDoorBrown,tallCabinetDoorRed,tallCabinetDoorOrange,tallCabinetDoorYellow,tallCabinetDoorGreen,tallCabinetDoorBlue,tallCabinetDoorPurple,tallCabinetDoorGrey,tallCabinetDoorBlack,tallCabinetDoorPink,cntArmoireDoorsWhite,cntArmoireDoorsBrown,cntArmoireDoorsRed,cntArmoireDoorsOrange,cntArmoireDoorsYellow,cntArmoireDoorsGreen,cntArmoireDoorsBlue,cntArmoireDoorsPurple,cntArmoireDoorsGrey,cntArmoireDoorsBlack,cntArmoireDoorsPink,pantryDoorWhite,pantryDoorBrown,pantryDoorRed,pantryDoorOrange,pantryDoorYellow,pantryDoorGreen,pantryDoorBlue,pantryDoorPurple,pantryDoorGrey,pantryDoorPink,closetDoorWhite,closetDoorBrown,closetDoorRed,closetDoorOrange,closetDoorYellow,closetDoorGreen,closetDoorBlue,closetDoorPurple,closetDoorGrey,closetDoorPink,closetDoorDoubleWhite,closetDoorDoubleBrown,closetDoorDoubleRed,closetDoorDoubleOrange,closetDoorDoubleYellow,closetDoorDoubleGreen,closetDoorDoubleBlue,closetDoorDoublePurple,closetDoorDoubleGrey,closetDoorDoublePink,woodenFenceDoorWhite,woodenFenceDoorBrown,woodenFenceDoorRed,woodenFenceDoorOrange,woodenFenceDoorYellow,woodenFenceDoorGreen,woodenFenceDoorBlue,woodenFenceDoorPurple,woodenFenceDoorGrey,woodenFenceDoorPink,chainlinkFenceDoorDouble,chainlinkGateDoubleWide,chainlinkGateDouble,portaPottyDoorWhite,portaPottyDoorBrown,portaPottyDoorRed,portaPottyDoorOrange,portaPottyDoorYellow,portaPottyDoorGreen,portaPottyDoorBlue,portaPottyDoorPurple,portaPottyDoorGrey,portaPottyDoorPink,trailerDoorWhite,trailerDoorBrown,trailerDoorRed,trailerDoorOrange,trailerDoorYellow,trailerDoorGreen,trailerDoorBlue,trailerDoorPurple,trailerDoorGrey,trailerDoorBlack,trailerDoorPink,trailerDoorArmyGreen,bathroomStallDoor"/>
 				<property name="Group" value="Decor/Miscellaneous"/>
 			</block>
 
@@ -4470,5 +4524,7 @@
 			</block>
 		<!-- ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 	</append>
+
+	
 
 </MalenED>

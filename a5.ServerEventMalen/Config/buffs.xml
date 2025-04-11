@@ -151,6 +151,20 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNote_Navidad2"/>									
 			</effect_group>							
 		</buff>
+		<buff name="buffEventXP" name_key="buffEventXP" description_key="buffPremmXPDesc" icon="ui_game_symbol_star" remove_on_death="false" icon_color="255,0,228">
+			<stack_type value="ignore"/>
+			<display_value value="duration"/>
+			<duration value="7200"/>
+			<effect_group>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".5"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.25">
+					<requirement name="HasBuff" buff="PPBF"/>
+				</passive_effect>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375">
+					<requirement name="HasBuff" buff="PPBF2"/>
+				</passive_effect>								
+			</effect_group>
+		</buff>
 
 	</append>
 </configs>
