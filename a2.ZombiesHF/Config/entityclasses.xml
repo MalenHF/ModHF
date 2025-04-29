@@ -531,9 +531,9 @@
 			<property name="SoundDeath" value="zombiemaledeath"/>
 
 			<property name="AISeeOffset" value="1"/>
-	<property name="AIFeralSense" value="1.5"/>
-	<property name="AINoiseSeekDist" value="8"/>
-	<property name="AIPathCostScale" value=".15, .4"/>
+				<property name="AIFeralSense" value="1.5"/>
+				<property name="AINoiseSeekDist" value="8"/>
+				<property name="AIPathCostScale" value=".15, .4"/>
 			<property name="AITask-1" value="RunawayWhenHurt"/>
 			<property name="AITask-2" value="RunawayFromEntity" data="class=EntityPlayer"/>
 			<property name="AITask-3" value="Look"/>
@@ -617,9 +617,9 @@
 			Wander|
 			"/>
 
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
+			<property name="AITarget" value="                
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask| 
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>		
 
@@ -629,7 +629,7 @@
 			
 		</entity_class>
 		<entity_class name="TemplateHF_Zombie_Special_Soldier" extends="zombieSoldierFeral">
-			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
+			<property name="Tags" value="entity,zombie,walker,feral,radiated,elemental"/>
 
 			<!-- DISMEMBER AND DAMAGE -->
 			<property name="DismemberMultiplierHead" value=".4"/>
@@ -650,9 +650,9 @@
 			<property name="ChestExplosionDamageMultiplier" value=".85"/>
 			
 			<!-- IA -->
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
+			<property name="AITarget" value="                     
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask| 
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>		
 			
@@ -661,7 +661,7 @@
 			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
 		<entity_class name="TemplateHF_Zombie_Special_Hawaiian" extends="zombieFatHawaiian">
-			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
+			<property name="Tags" value="entity,zombie,walker,feral,radiated,elemental"/>
 
 			<!-- DISMEMBER AND DAMAGE -->
 			<property name="DismemberMultiplierHead" value=".4"/>
@@ -682,9 +682,9 @@
 			<property name="ChestExplosionDamageMultiplier" value=".85"/>
 			
 			<!-- IA -->
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
+			<property name="AITarget" value="			                     
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask| 
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>		
 			
@@ -694,7 +694,7 @@
 
 		</entity_class>
 		<entity_class name="TemplateHF_Zombie_Special_Skater" extends="zombieSkateboarderFeral">
-			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
+			<property name="Tags" value="entity,zombie,walker,feral,radiated,elemental"/>
 
 			<!-- DISMEMBER AND DAMAGE -->
 			<property name="DismemberMultiplierHead" value=".4"/>
@@ -716,8 +716,8 @@
 			
 			<!-- IA -->
 			<property name="AITarget" value="
-			BlockingTargetTask|                        
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask|
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>		
 			
@@ -727,7 +727,7 @@
 
 		</entity_class>
 		<entity_class name="TemplateHF_Zombie_Special_TomClark" extends="zombieTomClarkFeral">
-			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
+			<property name="Tags" value="entity,zombie,walker,feral,radiated,elemental"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZTomClark.prefab"/>
 
 			<!-- DISMEMBER AND DAMAGE -->
@@ -750,8 +750,8 @@
 			
 			<!-- IA -->
 			<property name="AITarget" value="
-			BlockingTargetTask|                        
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask|
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>		
 			
@@ -761,7 +761,7 @@
 
 		</entity_class>
 		<entity_class name="TemplateHF_Zombie_Special_Burn" extends="zombieBurnt">
-			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
+			<property name="Tags" value="entity,zombie,walker,feral,radiated,elemental"/>
 			<!-- DISMEMBER AND DAMAGE 
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBurnt.prefab"/>-->
 			
@@ -785,8 +785,8 @@
 			
 			<!-- IA -->
 			<property name="AITarget" value="
-			BlockingTargetTask|                        
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask|
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>		
 			
@@ -796,7 +796,7 @@
 			
 		</entity_class>
 		<entity_class name="TemplateHF_Zombie_Special_Spider" extends="zombieSpiderFeral">
-			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
+			<property name="Tags" value="entity,zombie,walker,feral,radiated,elemental"/>
 			<property name="JumpMaxDistance" value="2, 4"/>
 
 			<!-- DISMEMBER AND DAMAGE -->
@@ -819,8 +819,8 @@
 			
 			<!-- IA -->
 			<property name="AITarget" value="
-			BlockingTargetTask|                        
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask|
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>		
 			
@@ -830,7 +830,7 @@
 			
 		</entity_class>
 		<entity_class name="TemplateHF_Zombie_Special_Nurse" extends="zombieNurse">
-			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
+			<property name="Tags" value="entity,zombie,walker,feral,radiated,elemental"/>
 			<property name="JumpMaxDistance" value="2, 4"/>
 			
 			<!-- DISMEMBER AND DAMAGE -->
@@ -853,8 +853,8 @@
 			
 			<!-- IA -->
 			<property name="AITarget" value="
-			BlockingTargetTask|                        
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask|
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>		
 			
@@ -864,7 +864,7 @@
 			
 		</entity_class>
 		<entity_class name="TemplateHF_Zombie_Special_Hazmat" extends="zombieMaleHazmatFeral">
-			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
+			<property name="Tags" value="entity,zombie,walker,feral,radiated,elemental"/>
 			<property name="JumpMaxDistance" value="2, 4"/>
 
 			<!-- DISMEMBER AND DAMAGE -->
@@ -887,8 +887,8 @@
 			
 			<!-- IA -->
 			<property name="AITarget" value="
-			BlockingTargetTask|                        
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask|
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>		
 			
@@ -898,7 +898,7 @@
 			
 		</entity_class>
 		<entity_class name="TemplateHF_Zombie_Special_Wight" extends="zombieWightFeral">
-			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
+			<property name="Tags" value="entity,zombie,walker,feral,radiated,elemental"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSpider.prefab"/>
 
 			<!-- DISMEMBER AND DAMAGE -->
@@ -921,8 +921,8 @@
 			
 			<!-- IA -->
 			<property name="AITarget" value="
-			BlockingTargetTask|                        
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask|
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>		
 			
@@ -932,7 +932,7 @@
 			
 		</entity_class>
 		<entity_class name="TemplateHF_Zombie_Special_Demolition" extends="zombieDemolition">
-			<property name="Tags" value="entity,zombie,walker,feral,radiated,boss"/>
+			<property name="Tags" value="entity,zombie,walker,feral,radiated,boss,elemental"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZDemolition.prefab"/>
 			<property name="Class" value="EntityZombieCop"/>
 			<property name="Mass" value="170"/>
@@ -977,8 +977,8 @@
 			<property name="ChestExplosionDamageMultiplier" value=".85"/>
 						
 			<property name="AITarget" value="
-			BlockingTargetTask|                        
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask|
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>		
 			
@@ -1190,8 +1190,8 @@
 			"/>
 
 			<property name="AITarget" value="
-			BlockingTargetTask|                        
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask|
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>
 
@@ -1249,8 +1249,8 @@
 			"/>			
 
 			<property name="AITarget" value="
-			BlockingTargetTask|                        
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask|
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|			
 			"/>
 			<property name="SurfaceCategory" value="organic"/>
@@ -1282,11 +1282,6 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
 		</entity_class>
-	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Special Zombies ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
-		
-	
-
-
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Mutant by Malen and holyVentus ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
@@ -1776,9 +1771,9 @@
 			Wander|
 			"/>
 
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
+			<property name="AITarget" value="			                       
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask| 
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|			
 			"/>
 
@@ -3769,9 +3764,9 @@
 			ApproachSpot|	
 			Wander|
 			"/>
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
+			<property name="AITarget" value="                       
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask| 
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>	
 
@@ -3865,9 +3860,9 @@
 			Look|
 			Wander|
 			"/>
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
+			<property name="AITarget" value="                 
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask| 
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>	
 
@@ -4125,9 +4120,9 @@
 			<!--  Radiated  -->
 			<property name="PainResistPerHit" value=".9"/>
 
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
+			<property name="AITarget" value="                   
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask| 
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|			
 			"/>
 			<!--  Radiated  -->
@@ -4205,9 +4200,9 @@
 			Look|
 			Wander|
 			"/>
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
+			<property name="AITarget" value="			                     
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask| 
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|			
 			"/>
 
@@ -4260,9 +4255,9 @@
 			Look|
 			Wander|
 			"/>
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
+			<property name="AITarget" value="                      
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask| 
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|			
 			"/>
 
@@ -4297,9 +4292,9 @@
 			<property name="MapIcon" value="ui_game_symbol_twitch_minion_overhead"/>
 			<property name="TrackerIcon" value="ui_game_symbol_twitch_minion_overhead"/>
 			<property name="NavObject" value="zombietracking_special" />
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
+			<property name="AITarget" value="                     
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask| 
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|			
 			"/>
 
@@ -4352,9 +4347,9 @@
 			Wander|
 			"/>
 
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
+			<property name="AITarget" value="                  
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask| 
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|			
 			"/>
 
@@ -4411,7 +4406,7 @@
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ RaSpecial Zombies by HolyVentus (Feb/2025) ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<entity_class name="HvZombieRevenant" extends="zombieTemplateMale">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,radiated"/>
+			<property name="Tags" value="entity,zombie,walker,radiated,specialZ"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZCrawler.prefab"/>
 			<property name="SwapMats" value="entities/misc/materials/scope_glass"/>	
 			<property name="SizeScale" value="1"/>
@@ -4444,7 +4439,7 @@
 		<!-- PENDIENTE HAND, NO APARECERA EN DIAS DE HORDAS -->
 		<entity_class name="HvZombieSpirit" extends="zombieTemplateMale">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,radiated"/>
+			<property name="Tags" value="entity,zombie,walker,radiated,specialZ"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSuit.prefab"/>
 			<property name="SwapMats" value="entities/misc/materials/scope_glass"/>
 			<property name="SizeScale" value="1"/>
@@ -4479,13 +4474,13 @@
 		<!-- zombieTemplateMale -->
 		<entity_class name="HvZombieShadow" extends="zombieTemplateTimid">
 			<property name="UserSpawnType" value="Menu"/>
-	<!-- <property name="EntityFlags" value="animal,edible"/>
-	<property name="Tags" value="entity,animal"/>
-	<property name="ModelType" value="Standard"/>
-	<property name="Prefab" value="NPC"/>
-	<property name="Parent" value="Animals"/>
-	<property name="IsAnimalEntity" value="true"/>
-	<property name="Faction" value="animals"/> -->
+				<!-- <property name="EntityFlags" value="animal,edible"/>
+				<property name="Tags" value="entity,animal"/>
+				<property name="ModelType" value="Standard"/>
+				<property name="Prefab" value="NPC"/>
+				<property name="Parent" value="Animals"/>
+				<property name="IsAnimalEntity" value="true"/>
+				<property name="Faction" value="animals"/> -->
 			<!-- <property name="Tags" value="entity,zombie,walker,radiated"/> -->
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSuit.prefab"/>
 			<!-- EWRROR LOOP INFINITO ???-->
@@ -4583,6 +4578,12 @@
 			Territorial|
 			Look|
 			Wander|
+			"/>
+
+			<property name="AITarget" value="
+			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask|			
+			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>
 
 			<property name="LootDropEntityClass" count="1" value="EntityLootContainerBoss"/>
@@ -4783,6 +4784,10 @@
 			<property name="SoundDeath" value="rabbitdeath"/>
 			<property name="SwimOffset" value="2"/>
 			<property name="CanBigHead" value="false" />
+			<property name="LegsExplosionDamageMultiplier" value="0"/>
+			<property name="ArmsExplosionDamageMultiplier" value="0"/>
+			<property name="HeadExplosionDamageMultiplier" value="0"/>
+			<property name="ChestExplosionDamageMultiplier" value="0"/>
 
 			<property name="AISeeOffset" value=".8"/>
 			<property name="AISeeOffset" value=".8"/>
@@ -4811,17 +4816,89 @@
 			<property name="AttackTimeoutDay" value="1.5"/>
 			<property name="AttackTimeoutNight" value="1.4"/>
 			<property name="CanClimbLadders" value="true"/>
-			<property name="HandItem" value="meleeHandAnimalBear"/>			
-			<property name="ExperienceGain" value="100000"/>
+			<property name="HandItem" value="meleeHandAnimalBear"/>		
+			<property name="ExperienceGain" value="50000"/>
 			<property name="NavObject" value="animaltracking_rabbit" />
 			<property name="TimeStayAfterDeath" value="30"/>
 			<property name="DeadBodyHitPoints" value="1000"/>
 			<property name="JumpMaxDistance" value="15, 30"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="300"/>
-				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
-				<passive_effect name="InternalDamageModifier" operation="perc_add" value="-0.9999999" tags="ranged"/>
-				<passive_effect name="InternalDamageModifier" operation="perc_add" value="-100" tags="melee"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>				
+				<passive_effect name="InternalDamageModifier" operation="perc_add" value="-10"  tags="perkDemolitionsExpert,ranged,melee"/>				
+				<passive_effect name="ExplosionIncomingDamage" operation="base_set" value="0"/>
+				
+				<!-- Animal HP scale -->
+			</effect_group>			
+		</entity_class>
+		<entity_class name="ConejosaurioEvent" extends="animalTemplateHostile">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="SizeScale" value="10"/>
+			<property name="Tags" value="entity,animal,rabbit,hostile,perkAT01,perkAT02,perkAT03,tavoR,boss"/>
+			<!-- <property name="Mesh" value="entities/resources/materials/oreNitrateBoulder"/>
+			<property name="AltMats" value="entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder"/> -->
+
+			<property name="MapIcon" value="ui_game_symbol_tracking_rabbit"/>
+			<property name="TrackerIcon" value="ui_game_symbol_tracking_rabbit"/>
+			<property name="AvatarController" value="AvatarAnimalController"/>
+			<property name="ModelType" value="Standard"/>
+			<property name="Prefab" value="/Entities/Animals/Rabbit/animalRabbitPrefab"/>
+
+			<property name="Parent" value="Animals"/>
+			<property name="HasDeathAnim" value="true"/>
+			<property name="HasRagdoll" value="true"/>
+			<property name="Faction" value="animals"/>
+			<property name="PhysicsBody" value="rabbit"/>
+			<property name="Mass" value="36"/>
+			<property name="Weight" value="12"/>
+			<property name="SoundHurt" value="rabbitpain"/>
+			<property name="SoundDeath" value="rabbitdeath"/>
+			<property name="SwimOffset" value="2"/>
+			<property name="CanBigHead" value="false" />
+			<property name="LegsExplosionDamageMultiplier" value="0"/>
+			<property name="ArmsExplosionDamageMultiplier" value="0"/>
+			<property name="HeadExplosionDamageMultiplier" value="0"/>
+			<property name="ChestExplosionDamageMultiplier" value="0"/>
+
+			<property name="AISeeOffset" value=".8"/>
+			<property name="AISeeOffset" value=".8"/>
+			<property name="AITask-1" value="BreakBlock"/>
+			<property name="AITask-2" value="DestroyArea"/>
+			<property name="AITask-3" value="Territorial"/>
+			<property name="AITask-4" value="ApproachAndAttackTarget" data="class=EntityPlayer,25,EntityBandit,25,EntityAnimalStag,40,EntityZombie,30"/>
+			<property name="AITask-5" value="ApproachSpot"/>
+			<property name="AITask-6" value="Look"/>
+			<property name="AITask-7" value="Wander"/>
+			<property name="AITask-8" value=""/>
+			<property name="AITarget-1" value="SetAsTargetIfHurt"/>
+			<property name="AITarget-2" value="BlockingTargetTask"/>
+			<property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityPlayer,13,9,EntityBandit,0,-6,EntityAnimalStag,0,0,EntityZombie,0,-6"/>
+			<property name="AITarget-4" value=""/>
+
+			<!-- Gameplay -->
+			<property name="PainResistPerHit" value=".8"/>
+			<property name="MaxTurnSpeed" value="280"/>
+			<property name="MoveSpeed" value=".5"/>
+			<property name="MoveSpeedAggro" value="1.5, 2"/>
+			<property name="MoveSpeedRand" value="-.2, .2"/>
+			<property name="MoveSpeedPanic" value="2"/>
+			<property name="SwimSpeed" value="1.5"/>
+			<property name="SwimStrokeRate" value="1.1,1.5"/>
+			<property name="AttackTimeoutDay" value="1.5"/>
+			<property name="AttackTimeoutNight" value="1.4"/>
+			<property name="CanClimbLadders" value="true"/>
+			<property name="HandItem" value="meleeHandAnimalBear"/>		
+			<property name="ExperienceGain" value="0"/>
+			<property name="NavObject" value="animaltracking_rabbit" />
+			<property name="TimeStayAfterDeath" value="30"/>
+			<property name="DeadBodyHitPoints" value="1000"/>
+			<property name="JumpMaxDistance" value="15, 30"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="300"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>				
+				<passive_effect name="InternalDamageModifier" operation="perc_add" value="-10"  tags="perkDemolitionsExpert,ranged,melee"/>				
+				<passive_effect name="ExplosionIncomingDamage" operation="base_set" value="0"/>
+				
 				<!-- Animal HP scale -->
 			</effect_group>			
 		</entity_class>
@@ -4840,6 +4917,12 @@
 			ApproachSpot|
 			Look|
 			Wander|
+			"/>
+
+			<property name="AITarget" value="
+			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask|			
+			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>
 
 			<!-- Gameplay -->
@@ -4885,6 +4968,12 @@
 			Look|
 			Wander|
 			Territorial|
+			"/>
+
+			<property name="AITarget" value="
+			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask|			
+			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>
 
 			<!-- Gameplay -->
@@ -4939,9 +5028,9 @@
 			"/>
 
 			
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
+			<property name="AITarget" value="                  
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask| 
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>	
 
@@ -4984,7 +5073,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Archetype" value="ROPAZOMBIE" />
 			<property name="LootDropEntityClass" value="MiniBossLootContainer"/>
-			<property name="Tags" value="entity,zombie,walker,boss,tavoR" />
+			<property name="Tags" value="entity,walker,boss,tavoR" />
 			<property name="HandItem" value="meleeHandLB"/>
 			<property name="ParticleOnDeath" value="blood_death"/>
 			<property name="SoundRandomTime" value="200.0"/>
@@ -4998,9 +5087,9 @@
 			<property name="LootDropProb" value="1"/>
 			<property name="ExperienceGain" value="15000"/>
 
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
+			<property name="AITarget" value="                       
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask| 
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>	
 
@@ -5014,7 +5103,7 @@
 			<property name="WalkType" value="2"/>
 			<property name="MoveSpeed" value="0.25"/>
 			<property name="SurfaceCategory" value="metal"/>
-			<property name="PainResistPerHit" value="1"/>
+			<property name="PainResistPerHit" value="3"/>
 			<property name="MoveSpeedAggro" value="0.8, 1.8"/>
 
 			<effect_group name="Base Effects">
@@ -5195,7 +5284,8 @@
 		</entity_class>
 		<entity_class name="zombieScorcher" extends="zombieSoldier">
 			<property name="SizeScale" value="1.2"/>
-			<property name="Tags" value="entity,zombie,walker,boss,scorcher"/>			
+
+			<property name="Tags" value="entity,walker,boss,tavoR,scorcher" />			
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZDemolition.prefab"/>
 
 			<property name="Class" value="EntityZombieCop"/>
@@ -5213,20 +5303,22 @@
 			Look|
 			Wander|
 			"/>
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
+
+			<property name="AITarget" value="			                        
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask|
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>	
 
 			<property name="DismemberMultiplierHead" value="0"/>
-			<property name="DismemberMultiplierArms" value=".7"/>
-			<property name="DismemberMultiplierLegs" value=".7"/>
+			<property name="DismemberMultiplierArms" value="0"/>
+			<property name="DismemberMultiplierLegs" value="0"/>
 
 			<property name="LegCrawlerThreshold" value="0"/>
 			<property name="LegCrippleThreshold" value="0"/>
 			<property name="KnockdownProneDamageThreshold" value="0"/>
 			<property name="KnockdownKneelDamageThreshold" value="0"/>
+
 			<property name="SoundRandom" value="demolitionzroam"/>
 			<property name="SoundAlert" value="demolitionzalert"/>
 			<property name="SoundAttack" value="demolitionzattack"/>
@@ -5236,21 +5328,25 @@
 			<property name="SoundFootstepModifier" value="bear_footstep"/>
 
 			<property name="HandItem" value="meleeHandScorcher"/>
+
 			<property name="JumpMaxDistance" value="1, 2"/>
-			<property name="PainResistPerHit" value="1"/>
+			<property name="PainResistPerHit" value="3"/>
 			<property name="StompsSpikes" value="true"/>
 			<property name="ExplodeHealthThreshold" value="0"/>
-			<property name="ExperienceGain" value="7500"/>
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<property name="ExperienceGain" value="15000"/>
+			<property name="LootDropEntityClass" value="MiniBossLootContainer"/>
+			<property name="LootDropProb" value="1"/>
 			<property name="DeadBodyHitPoints" value="1000"/>
 			<effect_group name="Base Effects">
-				<passive_effect name="HealthMax" operation="base_set" value="4000"/>
+				<passive_effect name="HealthMax" operation="base_set" value="20000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
-				<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="head"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="60"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ScorcherDeco"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="40"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
+				<!-- <passive_effect name="DamageModifier" operation="perc_set" value="1" tags="head"/> -->				
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ScorcherDeco"/>				
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="10"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
 			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>	
@@ -5286,9 +5382,9 @@
 			Wander|	
 			"/>	
 			
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
+			<property name="AITarget" value="			                     
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask|
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>	
 			
@@ -5586,9 +5682,9 @@
 			Look|
 			Wander|
 			"/>
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
+			<property name="AITarget" value="			                      
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask|
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,0|
 			"/>		
             <property name="MoveSpeedAggro" value="2.0, 2.8"/>						
@@ -5643,9 +5739,9 @@
 			Look|
 			Wander|
 			"/>
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
+			<property name="AITarget" value="			                        
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask|
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>
 
@@ -5732,9 +5828,9 @@
 			Look|
 			Wander|
 			"/>
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
+			<property name="AITarget" value="			                        
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask|
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>
 			
@@ -5870,8 +5966,7 @@
 		<!--Siren and Jugger BY Malen Boss idea by Snufking-->
 		<entity_class name="zombieBossSiren" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,walker,boss,siren"/>	
-					
+			<property name="Tags" value="entity,walker,boss,siren"/>						
 			
 			<property name="SizeScale" value="1.7"/>	
 			<property name="WalkType" value="7"/>
@@ -5939,22 +6034,24 @@
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZDemolition.prefab"/>
 			<property name="SizeScale" value="1.6"/>						
 			<property name="WalkType" value="2"/>
-			<property name="add_to_group" value="zombies,boss" />
+				<property name="Class" value="EntityZombieCop"/>
+				<property name="ExplodeHealthThreshold" value="0"/>
 			<property name="AITask" value="
 			BreakBlock|
-			DestroyArea|
-			Territorial|
-			RangedAttackTarget itemType=1;cooldown=5;duration=4|
+			DestroyArea|			
+			RangedAttackTarget itemType=1;cooldown=2;duration=3|
 			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 			ApproachSpot|
 			Look|
 			Wander|
-			"/>
+			"/>			
+
 			<property name="AITarget" value="
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
 			BlockingTargetTask|			
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>
+			
 			<property name="LootDropEntityClass" value="BossJuggerLootContainer"/>
 			<property name="HandItem" value="meleeHandJuggernaut"/>
 			<property name="ExperienceGain" value="90000"/>
@@ -6629,9 +6726,9 @@
 			Wander|
 			"/>
 			
-			<property name="AITarget" value="
-			BlockingTargetTask|                        
+			<property name="AITarget" value="                        
 			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask|
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>
 			
@@ -7409,7 +7506,7 @@
 				<passive_effect name="HealthMax" operation="base_set" value="150000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="80"/>	
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffDark3"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffDark3"/>			
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="adminDeco"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>

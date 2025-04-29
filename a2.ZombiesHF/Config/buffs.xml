@@ -133,6 +133,9 @@
 
 			</effect_group>
 		</buff>
+
+
+
 		<!--Nighmer True damage-->
 		<buff name="Nigthit" hidden="true">
 			<duration value="1"/>
@@ -246,6 +249,47 @@
 				<triggered_effect trigger="onSelfDied" action="ShakeCamera" shake_speed="0" shake_amplitude="0" shake_time="3"/>
 			</effect_group>
 		</buff>
+		<buff name="scorcherExplo" hidden="true">
+			<duration value="3"/>
+			<stack_type value="ignore"/>
+			<effect_group>
+				<requirement name="NotHasBuff" buff="god"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="scorcherExplo2"/>
+			</effect_group>
+		</buff>
+
+		<buff name="scorcherExplo2" hidden="false" icon="ui_game_symbol_fire" icon_color="0,0,0">			
+			<stack_type value="replace"/>
+			<display_value value="$explotionConter"/>
+			<effect_group>
+				<requirement name="NotHasBuff" buff="god"/>
+				<triggered_effect trigger="onSelfBuffStart"  action="ModifyCVar" cvar="$explotionConter" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStack"  action="ModifyCVar" cvar="$explotionConter" operation="add" value="1"/>				
+			</effect_group>
+			<effect_group>				
+				<triggered_effect trigger="onSelfBuffUpdate"  action="RemoveBuff" buff="scorcherExplo2">	
+					<requirement name="CVarCompare" cvar="$explotionConter" operation="Equals" value="0"/>
+				</triggered_effect>						
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$explotionConter,.explotionConterRemover"/>
+			</effect_group>
+			<effect_group>				
+				<triggered_effect trigger="onSelfBuffUpdate"  action="ModifyCVar" cvar=".explotionConterRemover" operation="add" value="1"/>									
+				<triggered_effect trigger="onSelfBuffUpdate"  action="ModifyCVar" cvar="$explotionConter" operation="add" value="-1">	
+					<requirement name="CVarCompare" cvar=".explotionConterRemover" operation="Equals" value="15"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate"  action="ModifyCVar" cvar=".explotionConterRemover" operation="set" value="0">	
+					<requirement name="CVarCompare" cvar=".explotionConterRemover" operation="Equals" value="16"/>
+				</triggered_effect>	
+			</effect_group>
+			<effect_group>				
+				<requirement name="NotHasBuff" buff="god"/>				
+				<requirement name="CVarCompare" cvar="$explotionConter" operation="Equals" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="horde_spawn_warning"/>	
+				<triggered_effect trigger="onSelfBuffUpdate"  action="ModifyCVar" cvar="$explotionConter" operation="set" value="0"/>			
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" target="self" event="BossInfernalExplosion"/>				
+			</effect_group>			
+		</buff>
+
 		<buff name="buffDrowned" hidden="true">
 			<damage_type value="Suffocation"/>
 			<duration value="10"/>
@@ -449,9 +493,14 @@
 			<effect_group>
 				<requirement name="EntityTagCompare" tags="player"/>
 				<requirement name="NotHasBuff" buff="god"/>
+				<requirement name="NotHasBuff" buff="buffJugger2SP"/>
 				<passive_effect name="DisableItem" operation="base_set" value="1" tags="ranged" />
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfNoVehicle"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="horde_spawn_warning" play_in_head="true"/>
+			</effect_group>
+			<effect_group>				
+				<requirement name="HasBuff" buff="buffJugger2SP"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffJugger2"/>			
 			</effect_group>
 		</buff>
 		<buff name="buffJuggerSP" hidden="false" icon="ui_game_symbol_near_death_trauma" icon_color="255,5,5">
@@ -467,6 +516,7 @@
 			<effect_group>
 				<requirement name="EntityTagCompare" tags="player"/>
 				<requirement name="NotHasBuff" buff="god"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffJugger2"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveCVar" cvar="$buffchaleDuration"/>
 				<passive_effect name="DisableItem" operation="base_set" value="1" tags="ranged" />
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfNoVehicle"/>
@@ -567,6 +617,7 @@
 			<effect_group>
 				<requirement name="EntityTagCompare" tags="player"/>
 				<requirement name="NotHasBuff" buff="god"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="bossMummyCall"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveCVar" cvar="$buffchaleDuration"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfNoVehicle"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="horde_spawn_warning" play_in_head="true"/>
@@ -1239,7 +1290,9 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffInfExplo">
 					<requirement name="NotHasBuff" buff="buffAOEBossInf"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffBurningInfernal" operation="set" value="-1"/>				
+				<!-- <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffBurningInfernal" operation="set" value="-1"/>	 -->
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$buffBurningInfernal"/>
+							
 				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffInfExplo"/>				
 				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffInfExplo"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$buffBurningInfernal"/>				
@@ -2217,6 +2270,12 @@
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="horde_spawn_warning"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" target_tags="player" range="10" buff="buffDark2"/>
+			</effect_group>
+		</buff>
+		<buff name="dummyDance" hidden="false" icon="ui_game_symbol_near_death_trauma" icon_color="255,5,5">
+			<update_rate value="4.5"/>
+			<effect_group>				
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" target_tags="boss,zombies" range="20" buff="twitch_dance"/>
 			</effect_group>
 		</buff>
 
@@ -4506,7 +4565,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>	
 				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNoteHF62"/>											
-			</effect_group>								
+			</effect_group>						
 		</buff>
 		<buff name="buffNoteHF62" hidden="true" description_key="x" tooltip_key="x">
 			<duration value="11"/>

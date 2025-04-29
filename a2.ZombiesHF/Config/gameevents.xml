@@ -42,6 +42,22 @@
 			</action>
 		</action_sequence>
 
+		<action_sequence name="bossMummyCall">
+			<requirement class="RandomRoll">
+				<property name="min_max" value="0,100" />
+				<property name="operation" value="LTE" />
+				<property name="value" value="50" />
+			</requirement>			
+			<action class="PlaySound">
+				<property name="sound" value="horde_spawn_warning" />
+				<property name="phase" value="1" />
+			</action>
+			<action class="FlipRotation">
+				<property name="phase" value="2" />				
+			</action>
+
+		</action_sequence>
+
 		<action_sequence name="action_changedirectionhf">
 			<property name="category" value="twitch_actions" />
 

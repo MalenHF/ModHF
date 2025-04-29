@@ -921,7 +921,7 @@
 			</item>
 			<item name="ammoProjectileZombieBolt">
 				<!--<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/> -->
-				<property name="Meshfile" value="particleeffects/p_electric_shock"/>
+				<property name="Meshfile" value="@:ParticleEffects/p_electric_shock.prefab"/>
 				<property name="Material" value="Morganic" />
 				<property name="CreativeMode" value="None"/>
 				<property class="Action1">
@@ -1268,10 +1268,11 @@
 				<property name="CreativeMode" value="None"/>
 				<property name="Degradation" value="99999" param1="true"/>
 				<property class="Action0">
-					<property name="Range" value="1.75"/>
-					<property name="DamageEntity" value="95"/>
-					<property name="DamageBlock" value="100"/>
-					<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01"/>
+					<property name="Range" value="2"/>
+					<property name="Buff" value="Nigthit"/>
+					<property name="DamageEntity" value="60"/>
+					<property name="DamageBlock" value="500"/>
+					<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01,scorcherExplo"/>
 				</property>
 				<property class="Action1">				<!-- UseAction -->
 					<property name="Class" value="Vomit"/>
@@ -1287,7 +1288,7 @@
 					<property name="Sound_end" value=""/>
 					<property name="Sound_empty" value=""/>
 					<property name="Sound_reload" value=""/>
-					<property name="Buff" value="buffBurningZombie"/>
+					<property name="Buff" value="buffBurningZombie,scorcherExplo"/>
 				</property>
 				<effect_group name="meleeHandZombieCop" tiered="false">
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
@@ -1295,7 +1296,7 @@
 					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
 					<passive_effect name="MaxRange" operation="base_set" value="20"/>
 					<passive_effect name="MagazineSize" operation="base_set" value="10"/>
-					<passive_effect name="BurstRoundCount" operation="base_set" value="10"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="4"/>
 					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
 					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="10"/>
 					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
@@ -1309,27 +1310,28 @@
 			<item name="ammoProjectileScorcher">
 				<!--property name="Meshfile" value="particleeffects/p_onFire"/-->
 				<!-- <property name="Meshfile" value="particleeffects/p_fire_small"/> -->
-				<property name="Meshfile" value="p_twitch_zombie_radiation_left"/>
+				<property name="Meshfile" value="@:ParticleEffects/p_fire_small.prefab"/>
+				<!-- <property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/> -->
 				<property name="Material" value="Morganic"/>
 				<property name="CreativeMode" value="None"/>
 				<property class="Action1">
 					<property name="Class" value="Projectile"/>
-					<property name="DamageEntity" value="5"/>
-					<property name="DamageBlock" value="10"/>
+					<property name="DamageEntity" value="12"/>
+					<property name="DamageBlock" value="25"/>
 					<property name="Explosion.ParticleIndex" value="0"/>
 					<property name="Velocity" value="18"/>
 					<property name="FlyTime" value=".2"/>
 					<property name="LifeTime" value="2"/>
 					<property name="CollisionRadius" value=".5"/>
 					<property name="DamageBonus.earth" value="0"/>
-					<property name="Buff" value="buffBurningZombie"/>
+					<property name="Buff" value="buffBurningZombie,scorcherExplo"/>
 				</property>
 				<effect_group name="ammoProjectileZombieVomit" tiered="false">
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
 					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
-					<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="stone"/>
 					<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
-					<passive_effect name="BuffProcChance" operation="base_set" value=".8" tags="buffBurningZombie"/>
+					<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffBurningZombie,scorcherExplo"/>
 				</effect_group>
 			</item>
 			<item name="meleeScarecrow">
@@ -2164,7 +2166,7 @@
 				<property class="Action1">
 					<property name="Class" value="Vomit"/>
 					<property name="Delay" value=".3"/>
-					<property name="Range" value="500"/>
+					<property name="Range" value="200"/>
 					<property name="Infinite_ammo" value="true"/>
 					<property name="Magazine_items" value="JuggernautProjectile"/>
 					<property name="Sound_warning" value="demolitionzexplodewarning"/>
@@ -2178,7 +2180,7 @@
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
 					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
 					<passive_effect name="MaxRange" operation="base_set" value="100"/>
-					<passive_effect name="MagazineSize" operation="base_set" value="2"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="4"/>
 					<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
 					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1"/>
 					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3"/>
@@ -2209,7 +2211,7 @@
 					<property name="FlyTime" value="2"/>
 					<property name="LifeTime" value="4"/>
 					<property name="CollisionRadius" value="0.75"/>
-					<property name="DamageBonus.earth" value="0"/>
+					<property name="DamageBonus.earth" value="0"/>					
 				</property>
 				<effect_group name="JuggernautProjectile" tiered="false">
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
