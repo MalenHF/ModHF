@@ -66,14 +66,12 @@
       <property name="difficulty" value="easy"/>
       <property name="completiontype" value="TurnIn"/>
 
-      <objective type="EntityKill" id="animalChicken" value="100" phase="1"/>
-      <objective type="EntityKill" id="Gallinazilla" value="1" phase="1"/>
-
+      <objective type="EntityKill" id="animalRabbit" value="100" phase="1"/>
+      <action type="SpawnEnemy" id="Conejosaurio" value="1" phase="2"/>      
       <objective type="InteractWithNPC">
         <property name="phase" value="2"/>
       </objective>
 
-      <reward type="Exp" value="100000"/>
       <reward type="Item" id="casinoCoinD" value="2"/>
       <reward type="Item" id="gunLSHF" value="1"/>      
       <reward type="Item" id="eventIT1" value="200"/>
@@ -169,17 +167,59 @@
       <property name="difficulty" value="easy"/>
       <property name="completiontype" value="TurnIn"/>
 
-      <objective type="EntityKill" id="animalChicken" value="100" phase="1"/>
+      <objective type="EntityKill" id="animalRabbit" value="100" phase="1"/>
       <objective type="EntityKill" id="Gallinazilla" value="1" phase="1"/>
 
       <objective type="InteractWithNPC">
         <property name="phase" value="2"/>
-      </objective>
-      <reward type="Exp" value="50000"/>
+      </objective>      
       <reward type="Item" id="casinoCoinD" value="1"/>
       <reward type="Item" id="gunLSHF" value="1"/>
       <reward type="Item" id="eventIT2" value="100"/>
     </quest>
+    <quest id="q_EventPascua2">
+			<property name="name_key" value="q_hfEvent" />
+			<property name="subtitle_key" value="q_eventPascua" />
+			<property name="description_key" value="quest_pascua_description" />			
+			<property name="repeatable" value="false" />			
+			<property name="category_key" value="qEventPascuaName" />
+			<property name="icon" value="ui_game_symbol_star" />				
+			<property name="difficulty" value="easy" />			
+
+      <action type="ShowMessageWindow">
+        <property name="message" value="quest_pascua_description"/>
+        <property name="title" value="q_eventPascua"/>
+        <property name="delay" value="2"/>
+      </action>
+
+			<reward type="Item" id="eventIT1" value="1"/>
+		</quest>
+
+    <quest id="q_EventPascua3">
+			<property name="name" value="q_hfEvent" />
+      <property name="description_key" value="comletePascua" />
+      <property name="subtitle_key" value="challengeRewardPascuaEvent" />
+      <property name="category_key" value="quest"/>
+      <property name="completion_key" value="comletePascua"/>      
+      <property name="icon" value="ui_game_symbol_twitch_special"/>
+      <property name="repeatable" value="false"/>
+      <property name="shareable" value="false" />
+      <property name="difficulty" value="easy"/>
+      <property name="completiontype" value="TurnIn"/>  
+      <action type="ShowMessageWindow">
+        <property name="message" value="pascuaCompletePromp"/>
+        <property name="title" value="challengeRewardPascuaEvent"/>
+        <property name="delay" value="2"/>
+      </action>      
+      <objective type="InteractWithNPC">
+        <property name="phase" value="1"/>
+      </objective>
+      <reward type="Item" id="resourceLegendaryParts" value="25"/>
+      <reward type="Item" id="casinoCoinD" value="4"/>
+      <reward type="Item" id="gunLSHF" value="1"/>      
+      <reward type="Item" id="eventIT1" value="200"/>
+		</quest>
+    
 
     <!--
     <quest id="qlab1">

@@ -1,0 +1,60 @@
+<config>
+    
+    <append xpath="/challenges">
+        <challenge_category name="Eventos" title_key="xuiEvents" icon="ui_game_symbol_twitch_special"/>
+       
+        <challenge_group category="Eventos" name="pascuaUnlock" title_key="challengeGroupEventsUnlock" reward_text_key="challengeRewardEventUnlock" reward_event="challenge_group_reward_hfEvents"/>
+        <challenge_group category="Eventos" name="pascuaEvent" title_key="challengeGroupPascua" reward_text_key="challengeRewardPascuaEvent" reward_event="challenge_group_reward_hfEvents_Pacua" link_challenges="true" hidden_by="pascuaUnlock"/>
+        <!-- <challenge_group category="Eventos" name="summerUnlock" title_key="challengeGroupsummerUnlock" reward_text_key="challengeRewardsummerEvent" reward_event="challenge_group_reward_basics" link_challenges="true"/> -->
+        <challenge_group category="Eventos" name="summerEvent" title_key="challengeGroupSummer" reward_text_key="challengeRewardsummerEvent" reward_event="challenge_group_reward_basics" link_challenges="true" hidden_by="summerUnlock"/>
+        <!-- <challenge_group category="Eventos" name="halloweenUnlock" title_key="challengeGrouphalloweenUnlock" reward_text_key="challengeRewardhalloweenEvent" reward_event="challenge_group_reward_basics" link_challenges="true"/> -->
+        <challenge_group category="Eventos" name="halloweenEvent" title_key="challengeGroupHalloween" reward_text_key="challengeRewardhalloweenEvent" reward_event="challenge_group_reward_basics" link_challenges="true" hidden_by="halloweenUnlock"/>
+        <!-- <challenge_group category="Eventos" name="newYearUnlock" title_key="challengeGroupnewYearUnlock" reward_text_key="challengeRewardnewYearEvent" reward_event="challenge_group_reward_basics" link_challenges="true"/> -->
+        <challenge_group category="Eventos" name="xmasEvent" title_key="challengeGrouXmas" reward_text_key="challengeRewardnewXmas" reward_event="challenge_group_reward_basics" link_challenges="true" hidden_by="xmasUnlock"/>
+        <challenge_group category="Eventos" name="newYearEvent" title_key="challengeGroupnewYear" reward_text_key="challengeRewardnewYearEvent" reward_event="challenge_group_reward_basics" link_challenges="true" hidden_by="xmasUnlock"/>
+     
+         <!-- prerequisite_hint="challengeRedeemChallengeHint1" hint="challengeRedeemChallengeHint2" -->
+        <challenge name="pascuaChallengeUnlock" title_key="challengeRedeemTitle" icon="ui_game_symbol_twitch_leaderboard" group="pascuaUnlock"           
+            short_description_key="challengeRedeemShort" description_key="challengeRedeemDesc" >
+                <objective type="Craft" item="q_eventPascua"/>
+                <objective type="UseItem" item="q_eventPascua" count="1"/>
+        </challenge>
+
+        <!-- reward_event="xxx"> -->
+        <!-- prerequisite_hint="challengeRedeemChallengeHint1" hint="challengeRedeemChallengeHint2" -->
+        
+
+        <challenge name="pascuaChallenge1" title_key="challengePascua1Title" icon="ui_game_symbol_tracking_rabbit" group="pascuaEvent" short_description_key="challengePascuaShort1" description_key="challengePascuaDesc1" >
+           <objective type="BlockPlace" block="eventmachine" count="1"/>
+        </challenge>
+        <challenge name="pascuaChallenge2" title_key="challengePascua2Title" icon="ui_game_symbol_zombie" group="pascuaEvent" short_description_key="challengePascuaShort2" description_key="challengePascuaDesc2" reward_event="challenge_Events_reward_25000">
+            <objective type="KillByTag" entity_tags="zombie" target_name_key="xuiZombies" count="400"/>
+        </challenge>
+        <challenge name="pascuaChallenge3" title_key="challengePascua3Title" icon="ui_game_symbol_animal_tracker" group="pascuaEvent" short_description_key="challengePascuaShort3" description_key="challengePascuaDesc3" reward_event="challenge_Events_item_reward_1">
+            <objective type="Gather" item="eventIT1" count="10"/>
+        </challenge>
+        <challenge name="pascuaChallenge4" title_key="challengePascua4Title" icon="ui_game_symbol_twitch_boss_overhead" group="pascuaEvent" short_description_key="challengePascuaShort4" description_key="challengePascuaDesc4" reward_event="challenge_Events_reward_50000">
+            <objective type="KillByTag" entity_tags="specialZ" target_name_key="xuiSpecial" count="200"/>
+        </challenge>
+        <challenge name="pascuaChallenge5" title_key="challengePascua5Title" icon="ui_game_symbol_animal_tracker" group="pascuaEvent" short_description_key="challengePascuaShort5" description_key="challengePascuaDesc5" reward_event="challenge_Events_item_reward_2">
+            <objective type="Gather" item="eventIT1" count="50"/>
+        </challenge>
+        <challenge name="pascuaChallenge6" title_key="challengePascua6Title" icon="ui_game_symbol_twitch_minion_overhead" group="pascuaEvent" short_description_key="challengePascuaShort6" description_key="challengePascuaDesc6" reward_event="challenge_Events_reward_75000">
+            <objective type="KillByTag" entity_tags="elemental" target_name_key="xuiElementals" count="100"/>
+        </challenge>
+        <challenge name="pascuaChallenge7" title_key="challengePascua7Title" icon="ui_game_symbol_animal_tracker" group="pascuaEvent" short_description_key="challengePascuaShort7" description_key="challengePascuaDesc7" reward_event="challenge_Events_item_reward_3">
+            <objective type="Gather" item="eventIT1" count="100"/>
+        </challenge>        
+        <challenge name="pascuaChallenge8" title_key="challengePascua8Title" icon="ui_game_symbol_other" group="pascuaEvent" short_description_key="challengePascuaShort8" description_key="challengePascuaDesc8" reward_event="challenge_Events_item_reward_4">
+            <objective type="Craft" item="q_Conejosaurio" count="1"/>            
+        </challenge>
+        <challenge name="pascuaChallenge9" title_key="challengePascua9Title" icon="ui_game_symbol_twitch_fast" group="pascuaEvent" short_description_key="challengePascuaShort9" description_key="challengePascuaDesc9" reward_event="challenge_Events_reward_100000">
+            <objective type="Kill" entity_names="ConejosaurioEvent" count="1"/>
+        </challenge>	
+
+        <challenge name="pascuaChallengeComplete" title_key="challengePascuaCompleteTitle" icon="ui_game_symbol_twitch_leaderboard" group="pascuaEvent"
+           short_description_key="challengePascuaShortComplete" description_key="challengePascuaDescComplete" redeem_always="false">
+                <objective type="ChallengeComplete" challenge="pascuaEvent" is_redeemed="true" is_group="true"/>
+        </challenge>
+    </append>
+</config>

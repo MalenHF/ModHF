@@ -1,7 +1,76 @@
 <config>
 	<append xpath="/items">		
-		
-	
+		<item name="meleeHandAnimalConejoEvent">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="46"/>
+			<property class="Action0">
+				<property name="Delay" value="1.5"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="3.6"/>
+				<property name="Sphere" value=".3"/>
+				<property name="DamageEntity" value="2"/>
+				<property name="DamageBlock" value="5000"/>
+			</property>
+			<effect_group name="meleeHandAnimalBear" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="40"/> A16 1.5 -->
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".11,.07,.07,.05,.29,.36,.11"/>
+			</effect_group>
+		</item>
+
+		<item name="q_eventPascua2">          
+            <property name="CustomIcon" value="questMaster"/>
+			<property name="DescriptionKey" value="qPascuaDesc"/>
+            <property name="CustomIconTint" value="FF00E0"/>
+            <property name="ItemTypeIcon" value="twitch_special"/>
+			<property name="ItemTypeIcon" value="treasure"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">	
+				<requirement name="CVarCompare" cvar="$varEventPascua" operation="LT" value="1"/>
+				<property name="PromptTitle" value="xmasquest" />
+				<property name="PromptDescription" value="xmasquestoffer" />
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="hooliganCoin"/>
+				<property name="Create_item_count" value="500"/>
+			</property>
+			<effect_group tiered="false">				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveCVar" cvar="$varPascua"/>				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varEventPascua" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="resetChallengeHF"/>
+			</effect_group>			
+        </item>
+
+		<item name="q_Conejosaurio">
+			<property name="Extends" value="q_Ticket"/>
+			<property name="CreativeMode" value="Player"/>					
+			<property name="CustomIcon" value="resourcePaper"/>
+			<property name="CustomIconTint" value="FF00E0"/>
+			<property name="TintColor" value="218,232,9"/>
+			<property name="ItemTypeIcon" value="tracking_rabbit"/>			
+			<property class="Action0">											
+				<requirement name="!HasBuff" buff="buffQuestCD"/>											
+				<property name="PromptTitle" value="q_Conejosaurio" />
+				<property name="PromptDescription" value="tixConejoPromp" />
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffSaurus"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestGatchaCD"/>																	
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestGatchaCD" target="selfOtherPlayers" target_tags="ally,party"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+			</effect_group>
+		</item>	
+			
 				
 	</append>
 </config>
