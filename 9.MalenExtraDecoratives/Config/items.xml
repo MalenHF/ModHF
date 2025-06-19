@@ -1,5 +1,5 @@
 <configs>
-	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Fill Water Items ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ 
 		<insertAfter xpath="/items/item[@name='drinkJarEmpty']/property[@class='Action1']/property[@name='Focused_blockname_5']">
 			<property name="Focused_blockname_6" value="faucet02"/>
@@ -8,97 +8,17 @@
 			<property name="Focused_blockname_9" value="faucetBrass04"/>
 			<property name="Focused_blockname_10" value="cntMedicineCabinetFaucetOpen"/>
 		</insertAfter>
-	-->
-
-	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Add Garage Doors Variant to the Schematic ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ 
-		<append xpath="/items/item[@name='poweredDoorsSchematic']/effect_group" >
-			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="reinforRollingGarageHelper" operation="set" value="1"/>
-		</append>
 		-->
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+	
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 	<append xpath="/items">
-	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Craft Material ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->		
-		<item name="UVI">
-			<property name="Extends" value="partsMaster"/>
-			<property name="ItemTypeIcon" value="light_armor"/>
-			<property name="DescriptionKey" value="modvisu"/>
-			<property name="Stacknumber" value="5"/>
-			<property name="CustomIconTint" value="255,255,0"/>
-			<property name="TintColor" value="255,255,0"/>
-			<property name="CustomIcon" value="resourceSewingKit"/>
-			<property name="Material" value="Morganic"/>
-			<!-- <property name="UnlockedBy" value="modArmorPlatingReinforcedSchematic"/> -->
-			<property name="Stacknumber" value="10"/>
-			<property name="Group" value="Lmats"/>
-			<property name="UnlockedBy" value="perkNeedleAndThreadComplete"/>
-		</item>
-		<item name="modDyepaint">
-			<property name="Extends" value="partsMaster"/>
-			<property name="ItemTypeIcon" value="gunsmithing"/>
-			<property name="DescriptionKey" value="modInvDye"/>
-			<property name="Stacknumber" value="10"/>
-			<property name="CustomIcon" value="modDyeWhite"/>
-			<property name="Material" value="Morganic"/>
-			<!-- <property name="UnlockedBy" value="modArmorPlatingReinforcedSchematic"/> -->
-			<property name="Stacknumber" value="10"/>
-			<property name="Group" value="Resources"/>
-			<property name="UnlockedBy" value="perkNeedleAndThreadComplete"/>
-			<property name="Group" value="Mods"/>
-		</item>
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Craft Material ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->			
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Master Book ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
-		<item name="PLMFa">
-			<property name="ItemTypeIcon" value="light_armor"/>
-			<property name="HoldType" value="21"/>
-			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-			<property name="Material" value="Morganic"/>
-			<property name="Weight" value="5"/>
-			<property name="FuelValue" value="5"/>
-			<property name="Stacknumber" value="5"/>
-			<property name="UnlockedBy" value="perkNeedleAndThreadComplete"/>
-			<property name="CustomIcon" value="schematicMaster"/>
-			<property name="Group" value="Books"/>
-		</item>
-		<item name="PAMFa1">
-			<property name="ItemTypeIcon" value="light_armor"/>
-			<property name="HoldType" value="21"/>
-			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-			<property name="Material" value="Morganic"/>
-			<property name="Weight" value="5"/>
-			<property name="FuelValue" value="5"/>
-			<property name="Stacknumber" value="5"/>
-			<property name="CustomIcon" value="questMaster"/>
-			<property name="UnlockedBy" value="perkNeedleAndThreadComplete"/>
-			<property name="Group" value="Books"/>
-		</item>
-		<item name="PAMFa2">
-			<property name="ItemTypeIcon" value="light_armor"/>
-			<property name="HoldType" value="21"/>
-			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-			<property name="Material" value="Morganic"/>
-			<property name="Weight" value="5"/>
-			<property name="FuelValue" value="5"/>
-			<property name="Stacknumber" value="5"/>
-			<property name="CustomIcon" value="questMaster"/>
-			<property name="UnlockedBy" value="perkNeedleAndThreadComplete"/>
-			<property name="Group" value="Books"/>
-		</item>
-		<item name="Maestro Fashionista">
-			<property name="Extends" value="gunMGT1AK47Parts"/>
-			<property name="Material" value="Morganic"/>
-			<property name="CustomIcon" value="orePotassiumNitrateBoulder"/>
-			<property name="CustomIconTint" value="B65FCF"/>
-			<property name="TintColor" value="B65FCF"/>
-			<property name="EconomicBundleSize" value="1"/>
-			<property name="DescriptionKey" value="practoniumdesc"/>
-			<property name="EconomicValue" value="50000"/>
-			<property name="Stacknumber" value="50"/>
-		</item>
+
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ xxxx ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->			
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Kits ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<item name="Decokit">
 			<property name="CustomIcon" value="modRoboticDroneCargoMod"/>

@@ -1,4 +1,4 @@
-<MalenPR2>
+<Malenprestige2Badge>
 
 	<append xpath="/items/item[@name='resourceLegendaryParts']">
 		<property name="UnlockedBy" value="perkweapsp"/>
@@ -6,11 +6,11 @@
 	<append xpath="/items">	
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Prestige Items ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<!-- ▼▲Prestige Medal▲▼ -->	
-			<item name="PR1">
+			<item name="prestige1Badge">
 				<property name="CreativeMode" value="Dev"/>
 				<property name="CustomIcon" value="casinoCoin"/>
 				<property name="CustomIconTint" value="F0EA4C"/>
-				<property name="DescriptionKey" value="PR1Desc"/>	
+				<property name="DescriptionKey" value="prestige1BadgeDesc"/>	
 				<property name="ItemTypeIcon" value="perk"/>
 				<property name="HoldType" value="31"/>
 				<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
@@ -22,13 +22,13 @@
 				<property name="Group" value="Special Items"/>				
 				<property name="ShowQuality" value="false"/>
 				<property class="Action0">
-					<requirement name="HasBuff" buff="PPBF"/>
+					<requirement name="HasBuff" buff="prestigeBuff"/>
 					<property name="Class" value="Eat"/>
 					<property name="Delay" value="1"/>	
 					<property name="Sound_start" value="read_mod"/>					
 				</property>
 				<effect_group tiered="false">
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="PPBF"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="prestigeBuff"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestige1" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestigeUnlock" level="-1">
 						<requirement name="PerksUnlocked" skill_name="skillPrestige" operation="GTE" value="2"/>
@@ -36,20 +36,43 @@
 				</effect_group>
 			</item>
 		<!-- ▼▲Prestige Medal 2▲▼ -->
-			<item name="PR2">
-				<property name="Extends" value="PR1"/>
+			<item name="prestige2Badge">
+				<property name="Extends" value="prestige1Badge"/>
 				<property name="CustomIconTint" value="EA4224"/>
-				<property name="DescriptionKey" value="PR2Desc"/>
+				<property name="DescriptionKey" value="prestige2BadgeDesc"/>
 				<property class="Action0">
-					<requirement name="HasBuff" buff="PPBF2"/>					
+					<requirement name="HasBuff" buff="prestigeBuff2"/>					
 					<property name="Class" value="Eat"/>
 					<property name="Delay" value="1.0"/>
 					<property name="Sound_start" value="read_mod"/>
 					<property name="Sound_in_head" value="true"/>					
 				</property>
 				<effect_group tiered="false">					
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="PPBF2"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="PPBF"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="prestigeBuff2"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="prestigeBuff"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestige1" level="-1"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestige2" level="-1"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestigeUnlock" level="-1">
+						<requirement name="PerksUnlocked" skill_name="skillPrestige" operation="GTE" value="2"/>
+					</triggered_effect>
+				</effect_group>
+			</item>
+
+		<!-- ▼▲Prestige Medal 3▲▼ -->
+			<item name="prestige3Badge">
+				<property name="Extends" value="prestige1Badge"/>
+				<property name="CustomIconTint" value="EA4224"/>
+				<property name="DescriptionKey" value="prestige2BadgeDesc"/>
+				<property class="Action0">
+					<requirement name="HasBuff" buff="prestigeBuff3"/>					
+					<property name="Class" value="Eat"/>
+					<property name="Delay" value="1.0"/>
+					<property name="Sound_start" value="read_mod"/>
+					<property name="Sound_in_head" value="true"/>					
+				</property>
+				<effect_group tiered="false">
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="prestigeBuff3"/>					
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="prestigeBuff2"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestige1" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestige2" level="-1"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestigeUnlock" level="-1">
@@ -58,14 +81,14 @@
 				</effect_group>
 			</item>
 		<!-- ▼▲Prestige Unlocker▲▼ -->
-			<item name="PRSP">
+			<item name="ancientUnlocker">
 				<property name="Extends" value="schematicMaster"/>
 				<property name="ItemTypeIcon" value="perk"/>
 				<property name="Stacknumber" value="1"/>
 				<property name="Material" value="Morganic"/>
 				<property name="CustomIcon" value="casinoCoin"/>
 				<property name="CustomIconTint" value="EA4224"/>
-				<property name="DescriptionKey" value="PR2Desc"/>
+				<property name="DescriptionKey" value="ancientUnlockerDesc"/>
 				<property name="Group" value="Books"/>
 
 				<property class="Action0">				
@@ -101,28 +124,6 @@
 		<!-- ▼▲Prestige Kit▲▼ -->
 			<item name="PrkitQuest">
 				<property name="Extends" value="questMaster"/>
-				<property name="CustomIcon" value="cntHardenedChestSecure"/>
-				<property name="ItemTypeIcon" value="bundle"/>
-				<property name="DescriptionKey" value="PrkitDesc"/>
-				<property name="CustomIconTint" value="F0EA4C"/>
-				<property name="ItemTypeIcon" value="perk"/>
-				<property name="Weight" value="0"/>
-				<property name="Group" value="Special Items"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-
-				<property name="CreativeMode" value="Player"/>
-				<property name="Stacknumber" value="1"/>
-				<property name="Material" value="Morganic"/>
-				<property name="PickupJournalEntry" value="prestigioTip"/>
-				<property name="SellableToTrader" value="false"/>
-				<property name="EconomicValue" value="0"/>
-				<property class="Action0">
-					<property name="QuestGiven" value="q_Presgio1"/>
-				</property>
-			</item>
-			<item name="PrkitQuest">
-				<property name="Extends" value="questMaster"/>
 				<property name="CustomIcon" value="cntBookPile13"/>
 				<property name="CustomIconTint" value="F0EA4C"/>
 				<property name="ItemTypeIcon" value="bundle"/>
@@ -151,7 +152,7 @@
 				<property name="EconomicValue" value="1"/>
 				<property name="Group" value="Books"/>
 				<property class="Action0">
-					<requirement name="HasBuff" buff="PPBF"/>
+					<requirement name="HasBuff" buff="prestigeBuff"/>
 					<requirement name="PlayerLevel" operation="GT" value="349"/>
 					<property name="QuestGiven" value="q_Presgio2"/>
 				</property>
@@ -178,11 +179,11 @@
 					<property name="PromptTitle" value="prestige1Title" />
 					<property name="PromptDescription" value="prestige1Desc" />
 
-					<property name="Create_item" value="PR1,modGunMeleeBlessedMetal,SkillPoints,divineWaterEvent,p_kitlvl50"/>
+					<property name="Create_item" value="prestige1Badge,modGunMeleeBlessedMetal,SkillPoints,divineWaterEvent,p_kitlvl50"/>
 					<property name="Create_item_count" value="1,1,1,2,1"/>
 				</property>
 				<effect_group tiered="false">
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="PPBF"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="prestigeBuff"/>
 
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffxpst"/>
 
@@ -215,7 +216,7 @@
 				<property name="Weight" value="0"/>
 				<property name="Group" value="Special Items"/>
 				<property class="Action0">
-					<requirement name="HasBuff" buff="PPBF"/>
+					<requirement name="HasBuff" buff="prestigeBuff"/>
 					<requirement name="PlayerLevel" operation="GT" value="349"/>
 					<property name="Class" value="OpenBundle"/>
 					<property name="Delay" value="0.5"/>
@@ -224,11 +225,11 @@
 
 					<property name="PromptTitle" value="prestige2Title" />
 					<property name="PromptDescription" value="prestige2Desc" />
-					<property name="Create_item" value="PR2,q_Hooligan_Force,modGunMeleeBlessedMetal,SkillPoints,divineWaterEvent"/>
+					<property name="Create_item" value="prestige2Badge,q_Hooligan_Force,modGunMeleeBlessedMetal,SkillPoints,divineWaterEvent"/>
 					<property name="Create_item_count" value="1,2,1,1,4"/>
 				</property>
 				<effect_group tiered="false">
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="PPBF2"/>			
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="prestigeBuff2"/>			
 
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ResetProgression" reset_skills="true" reset_levels="true" reset_books="true" reset_crafting="true"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$PlayerLevelBonus" operation="set" value="0"/>
@@ -263,19 +264,19 @@
 	<append xpath="/items/item[@name='meleeToolPickT3Auger']">
 	<!-- ▼▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲▲▼▲▼▲ Prestige Auger XP Ajust ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 		<effect_group>
-			<requirement name="HasBuff" buff="PPBF"/>
+			<requirement name="HasBuff" buff="prestigeBuff"/>
 			<passive_effect name="PlayerExpGain" operation="perc_add" value=".15" tags="Harvesting"/>
 		</effect_group>
 		<effect_group>
-			<requirement name="HasBuff" buff="PPBF2"/>
+			<requirement name="HasBuff" buff="prestigeBuff2"/>
 			<passive_effect name="PlayerExpGain" operation="perc_add" value=".225" tags="Harvesting"/>
 		</effect_group>
 		<effect_group>
-			<requirement name="HasBuff" buff="PPBF3"/>
+			<requirement name="HasBuff" buff="prestigeBuff3"/>
 			<passive_effect name="PlayerExpGain" operation="perc_add" value=".225" tags="Harvesting"/>
 		</effect_group>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	
 	</append>
 
-</MalenPR2>
+</Malenprestige2Badge>

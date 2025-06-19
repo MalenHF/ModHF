@@ -79,19 +79,19 @@
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="1" tags="Repairing"/>
 			</effect_group>
 			<effect_group>
-				<requirement name="HasBuff" buff="PPBF"/>
+				<requirement name="HasBuff" buff="prestigeBuff"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.05"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.5" tags="Upgrading"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.5" tags="Repairing"/>
 			</effect_group>
 			<effect_group>
-				<requirement name="HasBuff" buff="PPBF2"/>
+				<requirement name="HasBuff" buff="prestigeBuff2"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.075"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.75" tags="Upgrading"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.5" tags="Repairing"/>
 			</effect_group>
 			<effect_group>
-				<requirement name="HasBuff" buff="PPBF3"/>
+				<requirement name="HasBuff" buff="prestigeBuff3"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.075"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.75" tags="Upgrading"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.75" tags="Repairing"/>
@@ -204,19 +204,19 @@
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="2" tags="Repairing"/>
 			</effect_group>
 			<effect_group>
-				<requirement name="HasBuff" buff="PPBF"/>
+				<requirement name="HasBuff" buff="prestigeBuff"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.2"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-1.5" tags="Upgrading"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-1.5" tags="Repairing"/>
 			</effect_group>
 			<effect_group>
-				<requirement name="HasBuff" buff="PPBF2"/>
+				<requirement name="HasBuff" buff="prestigeBuff2"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.3"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-1.5" tags="Upgrading"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-1.5" tags="Repairing"/>
 			</effect_group>
 			<effect_group>
-				<requirement name="HasBuff" buff="PPBF3"/>
+				<requirement name="HasBuff" buff="prestigeBuff3"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.3"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-1.5" tags="Upgrading"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-1.5" tags="Repairing"/>
@@ -310,15 +310,15 @@
 				<display_value name="dBlockRepairAmount" value="7000"/>
 			</effect_group>
 			<effect_group>
-				<requirement name="HasBuff" buff="PPBF"/>
+				<requirement name="HasBuff" buff="prestigeBuff"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.25"/>
 			</effect_group>
 			<effect_group>
-				<requirement name="HasBuff" buff="PPBF2"/>
+				<requirement name="HasBuff" buff="prestigeBuff2"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375"/>
 			</effect_group>
 			<effect_group>
-				<requirement name="HasBuff" buff="PPBF3"/>
+				<requirement name="HasBuff" buff="prestigeBuff3"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375"/>
 			</effect_group>
 		</item>
@@ -346,20 +346,20 @@
 				<passive_effect name="PlayerExpGain" operation="perc_add" value=".1" />	
 			</effect_group>
 				<effect_group>
-					<requirement name="HasBuff" buff="PPBF"/>
+					<requirement name="HasBuff" buff="prestigeBuff"/>
 					<passive_effect name="PlayerExpGain" operation="perc_add" value="-.05"/>
 				</effect_group>
 				<effect_group>
-					<requirement name="HasBuff" buff="PPBF2"/>
+					<requirement name="HasBuff" buff="prestigeBuff2"/>
 					<passive_effect name="PlayerExpGain" operation="perc_add" value="-.075"/>
 				</effect_group>
 				<effect_group>
-					<requirement name="HasBuff" buff="PPBF3"/>
+					<requirement name="HasBuff" buff="prestigeBuff3"/>
 					<passive_effect name="PlayerExpGain" operation="perc_add" value="-.075"/>
 				</effect_group>
 		</item>
 
-		<item name="uniqueLightArmorSet">
+		<!-- <item name="uniqueLightArmorSet">
             <property name="CustomIcon" value="cntWoodWritableCrate"/>
 			<property name="CustomIconTint" value="150,150,150"/>
             <property name="DescriptionKey" value="uArmorDesc"/>
@@ -393,7 +393,7 @@
 				<property name="Create_item" value="uniqueArmorMediHelm,uniqueArmorMediArmor,uniqueArmorMediGloves,uniqueArmorMediLegs"/>
 				<property name="Create_item_count" value="5,5,5,5"/>
 			</property>
-		</item>		
+		</item>		 -->
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Legend Melee Weapon ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
@@ -468,7 +468,7 @@
 				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="SetTransformActive" active="false"  parent_transform="Handle" transform_path="sack_LOD1"/>
 				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="SetTransformActive" active="false"  parent_transform="Handle" transform_path="sack_LOD2"/>
 
-				<triggered_effect trigger="onSelfEquipStart" action="AttachPrefabToHeldItem" prefab="Entities/Electrical/steel_dart" parentTransform="Handle" local_offset="0,.4,0" local_rotation="-90,90,90"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AttachPrefabToHeldItem" prefab="@:Entities/Electrical/steel_dartPrefab.prefab" parentTransform="Handle" local_offset="0,.4,0" local_rotation="-90,90,90"/>
 				<triggered_effect trigger="onSelfEquipStart" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Weapons/Melee/Knives/hunting_knifePrefab.prefab" parent_transform="main1" local_offset="-.025,.19,0" local_rotation="0,90,0"/>
 				<triggered_effect trigger="onSelfEquipStart" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Weapons/Melee/Knives/hunting_knifePrefab.prefab" parent_transform="main2" local_offset=".025,.23,0" local_rotation="0,270,0" />
 				<!--<triggered_effect trigger="onSelfEquipStart" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Weapons/Melee/Knives/hunting_knifePrefab.prefab" parent_transform="Handle" local_offset="0,-0.08,.375" local_rotation="-90,90,90"/>-->
@@ -764,7 +764,7 @@
 				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="RemovePart" part="Blade1XA"/>
 				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="RemovePart" part="Blade2XA"/>
 				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="RemovePart" part="SyringeXA"/>
-				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="AddPart" part="Syringe" prefab="Entities/Electrical/steel_dart" parentTransform="ProjectileJoint" localPos="0,-.005,.05" localRot="0,0,0"/> <!-- A20 -->				
+				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="AddPart" part="Syringe" prefab="@:Entities/Electrical/steel_dartPrefab.prefab" parentTransform="ProjectileJoint" localPos="0,-.005,.05" localRot="0,0,0"/> <!-- A20 -->				
 				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="AddPart" part="Blade1" prefab="@:Other/Items/Weapons/Melee/Knives/hunting_knifePrefab.prefab" parentTransform="Left_bow1" localPos=".01,0,.1" localRot="0,90,-90"/>
 				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="AddPart" part="Blade2" prefab="@:Other/Items/Weapons/Melee/Knives/hunting_knifePrefab.prefab" parentTransform="Right_bow1" localPos="-.01,0,-.1" localRot="0,-90,-90"/>
 			</effect_group>
@@ -780,7 +780,7 @@
 				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="SetTransformActive" active="false"  parent_transform="LeftHand" transform_path="sack_LOD2"/>
 				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="AddPart" part="Blade1B" prefab="@:Other/Items/Weapons/Melee/Knives/hunting_knifePrefab.prefab" parentTransform="main1" localPos="0,.03,0" localRot="90,0,0"/>
 				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="AddPart" part="Blade2B" prefab="@:Other/Items/Weapons/Melee/Knives/hunting_knifePrefab.prefab" parentTransform="main2" localPos="0,-.03,0" localRot="-90,180,0"/>
-				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="AddPart" part="SyringeB" prefab="Entities/Electrical/steel_dart" parentTransform="main3" localPos="-.005,.06,.07" localRot="0,0,0"/>
+				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="AddPart" part="SyringeB" prefab="@:Entities/Electrical/steel_dartPrefab.prefab" parentTransform="main3" localPos="-.005,.06,.07" localRot="0,0,0"/>
 			</effect_group>
 			<effect_group name="DecoCInactive">
 				<requirement name="IsFPV"/>
@@ -795,7 +795,7 @@
 				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="SetTransformActive" active="false"  parent_transform="Propjoint" transform_path="sack_LOD2"/>
 				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="AddPart" part="Blade1B" prefab="@:Other/Items/Weapons/Melee/Knives/hunting_knifePrefab.prefab" parentTransform="main1" localPos="0,.03,0" localRot="90,0,0"/>
 				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="AddPart" part="Blade2B" prefab="@:Other/Items/Weapons/Melee/Knives/hunting_knifePrefab.prefab" parentTransform="main2" localPos="0,-.03,0" localRot="-90,180,0"/>
-				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="AddPart" part="SyringeB" prefab="Entities/Electrical/steel_dart" parentTransform="main3" localPos="-.005,.06,.075" localRot="0,0,0"/>
+				<triggered_effect trigger="onSelfPrimaryActionUpdate" action="AddPart" part="SyringeB" prefab="@:Entities/Electrical/steel_dartPrefab.prefab" parentTransform="main3" localPos="-.005,.06,.075" localRot="0,0,0"/>
 			</effect_group>
 
 		</item>
@@ -944,7 +944,7 @@
 		<item name="donacion_SPO4x4Placeable">
 			<property name="Extends" value="vehicleMinibikePlaceable"/>
 			<property name="Tags" value="vehicle,vengine,vfuel,vlight,vplow,vseat,canHaveCosmetic"/>
-			<property name="ItemTypeIcon" value="computer"/>
+			<property name="ItemTypeIcon" value="computer"/> 
 			<property name="CustomIcon" value="vehicleTruck4x4Placeable"/>
 			<property name="CustomIconTint" value="00AAE4"/>
 			<property name="TintColor" value="255,255,0"/>
@@ -1236,7 +1236,7 @@
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ extra ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-		<item name="uniqueHeavyArmorSet">
+		<!-- <item name="uniqueHeavyArmorSet">
 			<property name="Extends" value="uniqueLightArmorSet"/>			
 			<property name="DescriptionKey" value="uArmorDesc3"/>
 			<property name="CustomIcon" value="cntSteelWritableCrate"/>
@@ -1290,7 +1290,7 @@
 				<property name="Create_item" value="uniqueArmorHeavHelm2,uniqueArmorHeavArmor2,uniqueArmorHeavGloves2,uniqueArmorHeavLegs2"/>
 				<property name="Create_item_count" value="5,5,5,5"/>
 			</property>
-		</item>	
+		</item>	 -->
 		<item name="donacion_extraItem5">
 			<property name="Extends" value="gunMGT1AK47Parts"/>
 			<property name="Material" value="Morganic"/>

@@ -2,7 +2,7 @@
 	<!-- Remover HUD vanilla -->
 	<remove xpath="/windows/window[@name='windowCompass']/sprite[@pos='240,-60']"/>
 	<remove xpath="/windows/window[@name='windowTargetBar']"/> 
-	<remove xpath="/windows/window[@name='windowToolbelt']"/> 
+	<!-- <remove xpath="/windows/window[@name='windowToolbelt']"/>  -->
 	<remove xpath="/windows/window[@name='HUDLeftStatBars']"/>	
 	<remove xpath="/windows/window[@name='chatoutput']"/>
     <remove xpath="/windows/window[@name='chat']"/>
@@ -76,7 +76,7 @@
         
 		<window name="windowToolbelt" width="753" height="78" depth="5" anchor="CenterBottom" pos="-187, 104" backgroundcolor="[black]" controller="ToolbeltWindow" visible="{toolbeltvisible}" cursor_area="true" xp_fill_speed="2.5">
 		
-        <!--Toolbelt Slots-->
+        	<!--Toolbelt Slots-->
 			<rect pos="-189,0" controller="Toolbelt">
 				<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" on_press="true" />
 				<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="0,92" color="[black]" type="sliced" fillcenter="false" on_press="true" visible="{secondrow}"/>
@@ -118,61 +118,7 @@
 					<invetNum txtNum="[FFFFFF]S8" vwidth="19" vwidth2="16"/>
 					<invetNum txtNum="[FFFFFF]S9" vwidth="19" vwidth2="16"/>
 					<invetNum txtNum="[FFFFFF]S0" vwidth="19" vwidth2="16"/>					
-				</grid>
-<!-- 
-	<panel name="mapArea" pos="400,770" width="718" height="770" panel="Center" controller="MapArea" cursor_area="true" >
-		
-		<panel name="header" pos="3,0" height="43" depth="1" backgroundspritename="ui_game_panel_header">
-			<sprite depth="1" name="windowIcon" style="icon32px" pos="4,-5" sprite="ui_game_symbol_map"/>
-			<label style="header.name" text="MAP" text_key="xuiMap" />
-			<button depth="1" name="switchStaticMap" style="icon32px, press, hover" pivot="center" pos="690, -21" sprite="ui_game_symbol_electric_switch" tooltip_key="lblSwitchStaticMap" sound="[paging_click]" />
-			<combobox name="cbxStaticMapType" type="ComboBoxEnum`1[XUiC_MapArea+EStaticMapOverlay]" value_wrap="true" localization_prefix="xuiStaticMapType" pos="460,-6" width="210" height="30" />
-		</panel>
-
-		<panel name="content" depth="0" pos="0,-43" height="770" disableautobackground="true"> 
-			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="3,-3" width="718" height="761" color="[black]" type="sliced" fillcenter="false" />
-			<rect depth="1" name="toolbar" width="712" height="43" pos="6,-6">
-				<sprite color="[lightGrey]" type="sliced" />
-				<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="718" height="47" color="[black]" type="sliced" fillcenter="false" />
-				<button depth="1" name="playerIcon" style="icon32px, press, hover" pivot="center" pos="20,-21" sprite="ui_game_symbol_map_player_arrow" tooltip="Center on Player" tooltip_key="lblCenterOnPlayer" sound="[paging_click]" />
-				<label depth="1" name="playerPos" pos="40,-12" width="150" height="28" text="110 S 769 W" font_size="26"/>
-
-				<button depth="1" name="bedrollIcon" style="icon32px, press, hover" pivot="center" pos="216,-21" sprite="ui_game_symbol_map_bed" tooltip="Center on Sleeping Bag" tooltip_key="lblCenterOnSleepingBag" sound="[paging_click]" />
-				<label depth="1" name="bedrollPos" pos="236,-12" width="150" height="28" text="300 N 832 W" font_size="26"/>
-
-				<sprite depth="1" name="cursorIcon" style="icon32px, press, hover" pos="390,-5" sprite="ui_game_symbol_map_cursor" tooltip="Cursor Position" tooltip_key="lblCursorPosition" sound="[paging_click]"/>
-				<label depth="1" name="cursorPos" pos="428,-12" width="130" height="28" text="300 N 832 W" font_size="26"/>
-
-				<button depth="1" name="waypointIcon" style="icon32px, hover" pivot="center" on_press="true" pos="578,-21" sprite="ui_game_symbol_map_waypoint_remove" tooltip="Remove Quick Waypoint" tooltip_key="lblRemoveQuickWaypoint" />
-				<label depth="1" name="waypointDistance" pos="586,-12" width="122" height="28" text="0.2 KILOMETERS" font_size="26"/>
-			</rect>
-			
-			<panel name="mapView" depth="1" width="712" height="712" pos="6,-49" disableautobackground="true" on_drag="true" style="press, scroll, hover" snap="false"> 
-			
-				<sprite depth="1" name="backgroundMain" sprite="menu_empty" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
-				<texture depth="2" name="mapViewTexture" width="712" height="712" pos="0,0" material="Materials/MaskableMainmap"/>
-				<sprite depth="3" width="64" height="64" pos="356,-356" pivot="center" name="crosshair" sprite="ui_game_symbol_map_cursor" color="255,255,255,160" globalopacity="false" foregroundlayer="true" />
-				<panel name="clippingPanel" depth="4" width="712" height="712" pos="0,0" disableautobackground="true" createuipanel="true" clipping="SoftClip" clippingsoftness="4,4" clippingsize="712,712" clippingcenter="356,-356" />
-
-				<rect name="content" depth="5" pos="0,-565" height="239" controller="MapStats">
-
-					<sprite depth="2" name="dayTimeIcon" width="24" height="24" pos="10,-16" sprite="ui_game_symbol_clock" color="[iconColor]" foregroundlayer="true" visible="{showtime}"/>
-					<label depth="2" name="dayTimeLabel" pos="40,-18" width="250" height="28" text="{mapdaytimetitle}: [DECEA3]{mapdaytime}[-]" font_size="26" visible="{showtime}"/>
-
-					<sprite depth="2" name="tempIcon" width="24" height="24" pos="10,-48" sprite="ui_game_symbol_temperature" color="[iconColor]" foregroundlayer="true"/>
-					<label depth="2" name="tempLabel" pos="40,-50" width="250" height="28" text="{playercoretemptitle}: [DECEA3]{playercoretemp}[-]" font_size="26"/>
-
-					<sprite depth="2" name="windIcon" width="24" height="24" pos="10,-80" sprite="ui_game_symbol_wind" color="[iconColor]" foregroundlayer="true"/>
-					<label depth="2" name="windLabel" pos="40,-82" width="250" height="28" text="{mapwindtitle}: [DECEA3]{mapwind} MPH[-]" font_size="26"/>
-
-					<sprite depth="2" name="elevIcon" width="24" height="24" pos="10,-112" sprite="ui_game_symbol_climb" color="[iconColor]" foregroundlayer="true"/>
-					<label depth="2" name="elevLabel" pos="40,-114" width="250" height="28" text="{mapelevationtitle}: [DECEA3]{mapelevation} M[-]" font_size="26"/>
-
-				</rect>
-			</panel>
-		</panel>
-	</panel> -->
-				
+				</grid>			
 			</rect>
 			<!--XP BAR-->
 			<!-- ♦♦ Special thx to Scomar Death/kill Counter are based on Scomar82 HUD MOD ♦♦ -->
@@ -421,45 +367,50 @@
             <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
                 <rect name="tabsHeader" height="34">
                     <grid name="tabButtons" pos="457,-759" rows="1" cols="2" cell_width="26" cell_height="29" repeat_content="true" arrangement="horizontal">
-                        <rect>						
-                            <simplebutton depth="-3" defaultsprite="ui_game_symbol_shape_text" selectedsprite="ui_game_symbol_shape_text" hoversprite="ui_game_symbol_shape_text" name="tabButton" pos="2,-2" width="24" height="24" font_size="30" caption_key="xuiBack" selectedcolor="255,255,255" hovercolor="255,200,0,180" defaultcolor="0,0,0,240" tooltip_key="chatHideOp"/>
+                        <rect controller="TabSelectorButton">						
+                            <simplebutton depth="-3" defaultsprite="ui_game_symbol_shape_text" selectedsprite="ui_game_symbol_shape_text" hoversprite="ui_game_symbol_shape_text" name="tabButton" pos="2,-2" width="24" height="24" font_size="30" caption="{tab_name_localized}" selectedcolor="255,255,255" hovercolor="255,200,0,180" defaultcolor="0,0,0,240" tooltip_key="chatHideOp"/>
                         </rect>
                     </grid>
                 </rect>
                 <!--Contenido de la tabulacion-->
                 <rect name="tabsContents">
-                    <rect tab_key="">
-                        <textlist name="txtOutput" pos="8,-214" width="484" height="210" list_style="chat" pivot="bottomleft" depth="2" font_size="26" crispness="Never">
+                    <rect controller="TabSelectorTab" tab_key="">
+						<textlist name="txtOutput" pos="8,-214" width="484" height="210" list_style="chat" pivot="bottomleft" depth="2" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" effect_color="[black]" on_press="true" prefix_first_line="   " support_urls="Chat,DiscordMessageButton" gamepad_selectable="false">
                             <sprite pos="495,24" depth="5" width="30" height="30" sprite="ui_game_symbol_x" color="255,0,0,230" />
                             <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
                                 <rect name="tabsHeader" height="40">                                    <!--Change rows to the number of "buttons you need"-->
                                     <grid name="tabButtons" pos="495,59" rows="2" cols="1" cell_width="30" cell_height="35" repeat_content="true" arrangement="vertical">
-                                        <rect>
-                                            <simplebutton depth="3" name="tabButton" width="30" height="30" font_size="25" caption_key="xuiBack" defaultcolor="0,0,0,150" hovercolor="255,200,0,180" selectedcolor="255,255,255" defaultsprite="ui_game_symbol_stealth" selectedsprite="ui_game_symbol_stealth" hoversprite="ui_game_symbol_stealth" tooltip_key="chatBackOp"/>
-                                            <!-- <sprite depth="3" pos="2,-2" width="26" height="26" sprite="ui_game_symbol_stealth" color="255,255,255" /> -->
+                                        <rect controller="TabSelectorButton">
+                                            <simplebutton depth="3" name="tabButton" width="30" height="30" font_size="25" caption="{tab_name_localized}" defaultcolor="0,0,0,150" hovercolor="255,200,0,180" selectedcolor="255,255,255" defaultsprite="ui_game_symbol_stealth" selectedsprite="ui_game_symbol_stealth" hoversprite="ui_game_symbol_stealth" tooltip_key="chatBackOp"/>
                                         </rect>
                                     </grid>
                                 </rect>
                                 <!--Contenido de la tabulacion-->
                                 <rect name="tabsContents">
-                                    <rect tab_key="">
-                                        <sprite depth="-1" name="border" pos="-8,212" width="500" height="218" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false"/>
-                                        <sprite depth="-1" color="[darkGrey]" pos="-8,212" width="500" height="218" type="sliced" globalopacitymod=".95" />
+                                    <rect controller="TabSelectorTab" tab_key="" >
+										<rect>
+											
+											<sprite depth="-1" name="border" pos="-7,213" width="500" height="219" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false"/>
+                                        	<sprite depth="-1" color="[darkGrey]" pos="-5,211" width="496" height="215" type="sliced" globalopacitymod=".95" />	
+
+										</rect>
+                                        
+										
                                     </rect>
-                                    <rect tab_key="">
+                                    <rect controller="TabSelectorTab" tab_key="" >
                                     </rect>                                    
                                 </rect>
                             </rect>
                         </textlist>
                     </rect>
-                    <rect tab_key="">
+                    <rect controller="TabSelectorTab" tab_key="" >
                     </rect>
                 </rect>
             </rect>
 
 			
         </window>
-        <window name="chat" pos="15, -251" width="500" height="250" anchor="LeftTop" controller="Chat" cursor_area="true">
+        <!-- <window name="chat" pos="15, -251" width="500" height="250" anchor="LeftTop" controller="Chat" cursor_area="true">
             <sprite depth="3" name="border" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false" />
             <rect name="input" depth="2" pos="0,-218" height="32">
                 <sprite depth="3" name="border" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false" />
@@ -467,7 +418,21 @@
                 <combobox name="cbxTarget" type="ComboBoxList`1[EChatType]" value_max="party" pos="2, -6" width="100" height="22" font_size="22" localization_prefix="xuiChatTarget" />
                 <textfield name="txtInput" backgroundcolor="[transparent]" depth="1" pos="110,-16" width="386" height="28" pivot="left" justify="left" overflow="ClampContent" max_line_count="1" crispness="Never" open_vk_on_open="true" />
             </rect>
-        </window>
+        </window> -->
+		<window name="chat" pos="15, -250" width="500" height="250" anchor="LeftTop" controller="Chat" cursor_area="true">
+			<rect name="frame" depth="0" createuiwidget="true">
+				<rect name="input" depth="2" pos="0,-218" height="32" createuiwidget="true">
+					<label name="toLabel" pos="4,-17" width="100" height="22" pivot="left" justify="right" text_key="xuiChatTo" />
+					<combobox name="cbxTarget" type="ComboBoxList`1[XUiC_Chat+ChatTarget]" value_max="party" pos="108, -6" width="300" height="22" font_size="22" />
+					<textfield name="txtInput" backgroundcolor="[transparent]" depth="2" pos="6,-34" width="488" height="26" pivot="topleft" justify="left" effect="outline" overflow="resizeheight" character_limit="300" max_line_count="0" crispness="Never" focus_on_open="true" open_vk_on_open="false" ignore_up_down_keys="true" />
+
+					<sprite depth="8" name="border" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false" anchor_left="frame,0,0" anchor_right="frame,1,0" anchor_top="input,1,0" anchor_bottom="text,0,-6" />
+				</rect>
+
+				<sprite depth="8" name="border" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false" anchor_left="frame,0,0" anchor_right="frame,1,0" anchor_top="frame,1,0" anchor_bottom="text,0,-6" />
+				<sprite color="[darkGrey]" type="sliced" globalopacitymod="0.7" anchor_left="frame,0,0" anchor_right="frame,1,0" anchor_top="frame,1,0" anchor_bottom="text,0,-6" />
+			</rect>
+		</window>
 		<!--////-->
 		<window name="windowGroupBars" controller="PartyWindow" depth="-20">
             <sprite depth="8" name="voiceStatus" style="icon32px" pos="25,-68" sprite="ui_game_symbol_mic" visible="{# partyvisible and voicevisible}" pivot="center" color="{# voiceactive ? '255,255,255,255' : '128,128,128,255' }" />

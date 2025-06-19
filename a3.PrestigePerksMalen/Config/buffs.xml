@@ -1,9 +1,189 @@
 <configs>
+	<append xpath="/buffs/buff[@name='buffLevelUpTracking']">
+		<effect_group>
+			<requirement name="!HasBuff" buff="prestigeBuff,prestigeBuff2,prestigeBuff3"/>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige0_50" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="49"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige0_100" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="99"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige0_150" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="149"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige0_200" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="199"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige0_250" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="249"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige0_300" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="299"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige0_350" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="349"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige0_400" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="399"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige0_450" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="449"/>		
+			</triggered_effect>
+		</effect_group>
+		<effect_group>
+			<requirement name="HasBuff" buff="prestigeBuff"/>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige1_50" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="49"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige1_100" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="99"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige1_150" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="149"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige1_200" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="199"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige1_250" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="249"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige1_300" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="299"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige1_350" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="349"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige1_400" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="399"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige1_450" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="449"/>		
+			</triggered_effect>
+		</effect_group>
+		<effect_group>
+			<requirement name="HasBuff" buff="prestigeBuff2"/>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige1_50" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="49"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige1_100" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="99"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige1_150" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="149"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige1_200" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="199"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige1_250" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="249"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige1_300" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="299"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige1_350" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="349"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige1_400" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="399"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige1_450" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="449"/>		
+			</triggered_effect>
+		</effect_group>
+		<!-- <effect_group>
+			<requirement name="!HasBuff" buff="prestigeBuff,prestigeBuff2,prestigeBuff3"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfProgressionTracker" operation="add" value="0">
+				<requirement name="PlayerLevel" operation="GT" value="1"/>
+				<requirement name="CVarCompare" cvar="$hfProgressionTracker" operation="LT" value="1"/>			
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfProgressionTracker" operation="add" value="1">
+				<requirement name="PlayerLevel" operation="GT" value="49"/>
+				<requirement name="CVarCompare" cvar="$hfProgressionTracker" operation="LT" value="0"/>			
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfProgressionTracker" operation="add" value="1">
+				<requirement name="PlayerLevel" operation="GT" value="99"/>
+				<requirement name="CVarCompare" cvar="$hfProgressionTracker" operation="LT" value="1"/>			
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfProgressionTracker" operation="add" value="1">
+				<requirement name="PlayerLevel" operation="GT" value="149"/>
+				<requirement name="CVarCompare" cvar="$hfProgressionTracker" operation="LT" value="2"/>			
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfProgressionTracker" operation="add" value="1">
+				<requirement name="PlayerLevel" operation="GT" value="199"/>
+				<requirement name="CVarCompare" cvar="$hfProgressionTracker" operation="LT" value="3"/>			
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfProgressionTracker" operation="add" value="1">
+				<requirement name="PlayerLevel" operation="GT" value="249"/>
+				<requirement name="CVarCompare" cvar="$hfProgressionTracker" operation="LT" value="4"/>			
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfProgressionTracker" operation="add" value="1">
+				<requirement name="PlayerLevel" operation="GT" value="299"/>
+				<requirement name="CVarCompare" cvar="$hfProgressionTracker" operation="LT" value="5"/>			
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfProgressionTracker" operation="add" value="1">
+				<requirement name="PlayerLevel" operation="GT" value="349"/>
+				<requirement name="CVarCompare" cvar="$hfProgressionTracker" operation="LT" value="6"/>						
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfProgressionTracker" operation="add" value="1">
+				<requirement name="PlayerLevel" operation="GT" value="399"/>
+				<requirement name="CVarCompare" cvar="$hfProgressionTracker" operation="LT" value="7"/>	
+							
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfProgressionTracker" operation="add" value="1">
+				<requirement name="PlayerLevel" operation="GT" value="449"/>
+				<requirement name="CVarCompare" cvar="$hfProgressionTracker" operation="LT" value="8"/>
+								
+			</triggered_effect>
+		</effect_group>
+		<effect_group>
+			<requirement name="HasBuff" buff="prestigeBuff"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfPrestige0Tracker" operation="add" value="0">
+				<requirement name="PlayerLevel" operation="GT" value="1"/>
+				<requirement name="CVarCompare" cvar="$hfPrestige0Tracker" operation="LT" value="1"/>							
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfPrestige0Tracker" operation="add" value="1">
+				<requirement name="PlayerLevel" operation="GT" value="49"/>
+				<requirement name="CVarCompare" cvar="$hfPrestige0Tracker" operation="LT" value="0"/>			
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfPrestige0Tracker" operation="add" value="1">
+				<requirement name="PlayerLevel" operation="GT" value="99"/>
+				<requirement name="CVarCompare" cvar="$hfPrestige0Tracker" operation="LT" value="1"/>			
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfPrestige0Tracker" operation="add" value="1">
+				<requirement name="PlayerLevel" operation="GT" value="149"/>
+				<requirement name="CVarCompare" cvar="$hfPrestige0Tracker" operation="LT" value="2"/>			
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfPrestige0Tracker" operation="add" value="1">
+				<requirement name="PlayerLevel" operation="GT" value="199"/>
+				<requirement name="CVarCompare" cvar="$hfPrestige0Tracker" operation="LT" value="3"/>			
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfPrestige0Tracker" operation="add" value="1">
+				<requirement name="PlayerLevel" operation="GT" value="249"/>
+				<requirement name="CVarCompare" cvar="$hfPrestige0Tracker" operation="LT" value="4"/>			
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfPrestige0Tracker" operation="add" value="1">
+				<requirement name="PlayerLevel" operation="GT" value="299"/>
+				<requirement name="CVarCompare" cvar="$hfPrestige0Tracker" operation="LT" value="5"/>			
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfPrestige0Tracker" operation="add" value="1">
+				<requirement name="PlayerLevel" operation="GT" value="349"/>
+				<requirement name="CVarCompare" cvar="$hfPrestige0Tracker" operation="LT" value="6"/>						
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfPrestige0Tracker" operation="add" value="1">
+				<requirement name="PlayerLevel" operation="GT" value="399"/>
+				<requirement name="CVarCompare" cvar="$hfPrestige0Tracker" operation="LT" value="7"/>	
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfPrestige0Tracker" operation="add" value="1">
+				<requirement name="PlayerLevel" operation="GT" value="449"/>
+				<requirement name="CVarCompare" cvar="$hfPrestige0Tracker" operation="LT" value="8"/>				
+			</triggered_effect>
+		</effect_group> -->
+	</append>
 
 	<append xpath="/buffs">
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Prestige 1 Debuff ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 	
-		<buff name="PPBF" name_key="prestige" description_key="PPdesc" icon="ui_game_symbol_perk" remove_on_death="false" icon_color="240,234,76">
+		<buff name="prestigeBuff" name_key="prestige" description_key="PPdesc" icon="ui_game_symbol_perk" remove_on_death="false" icon_color="240,234,76">
 			<stack_type value="ignore"/>
 			<effect_group>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.5"/>
@@ -32,12 +212,12 @@
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Prestige 2 Debuff ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-		<buff name="PPBF2" name_key="prestige2" description_key="PPdesc2" icon="ui_game_symbol_perk" remove_on_death="false" icon_color="234,66,36">
+		<buff name="prestigeBuff2" name_key="prestige2" description_key="PPdesc2" icon="ui_game_symbol_perk" remove_on_death="false" icon_color="234,66,36">
 			<stack_type value="ignore"/>
 			<effect_group>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.75"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffxpst"/>
-				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="PPBF"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prestigeBuff"/>
 			</effect_group>
 			<effect_group>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375">
@@ -64,16 +244,16 @@
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Prestige Extra Debuff ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-		<buff name="PPBF3" name_key="prestige3" description_key="PPdesc2" icon="ui_game_symbol_twitch_special" remove_on_death="false" icon_color="0,176,246">
+		<buff name="prestigeBuff3" name_key="prestige3" description_key="PPdesc3" icon="ui_game_symbol_twitch_leaderboard" remove_on_death="false" icon_color="0,176,246">
 			<update_rate value="300"/>
 			<stack_type value="ignore"/>
 			<effect_group>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.75"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffxpst"/>
-				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="PPBF"/>
-				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="PPBF2"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="PPBF"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="PPBF2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prestigeBuff"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prestigeBuff2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="prestigeBuff"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="prestigeBuff2"/>
 			</effect_group>
 			<effect_group>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.15">
@@ -86,7 +266,32 @@
 					<requirement name="ProgressionLevel" progression_name="perkNightStalkerTwilightThief" operation="Equals" value="1"/>
 				</passive_effect>				
 			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$chale" operation="GT" value="-1"/>
+				<triggered_effect trigger="onSelfDied" target="self" action="AddBuff" buff="buffPrestigeReset"/>										
+			</effect_group>			
 		</buff>
+
+		<buff name="buffPrestigeReset" name_key="buffPrestigeResetName" description_key="buffPrestigeResetDesc" icon="ui_game_symbol_skull" remove_on_death="false" icon_color="0,176,246">
+			<stack_type value="ignore"/>
+			<duration value="3"/>
+			<effect_group>	
+				<triggered_effect trigger="onSelfBuffStart" action="ResetProgression" reset_skills="true" reset_levels="true" reset_books="false" reset_crafting="false"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PlayerLevelBonus" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$LastPlayerLevel" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffDeathFoodDrinkAdjust"/>		
+
+				<triggered_effect trigger="onSelfBuffRemove" action="ResetProgression" reset_skills="true" reset_levels="true" reset_books="false" reset_crafting="false"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$PlayerLevelBonus" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$LastPlayerLevel" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffDeathFoodDrinkAdjust"/>				
+				<passive_effect name="HealthMax" operation="base_set" value="100"/>
+				<passive_effect name="StaminaMax" operation="base_set" value="100"/>										
+			</effect_group>			
+		</buff>
+		
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	</append>
 
@@ -94,17 +299,17 @@
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Prestige XP balance RockBuster ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<effect_group>
 			<requirement name="HoldingItemHasTags" tags="perkMiner69r"/>
-			<requirement name="HasBuff" buff="PPBF"/>
+			<requirement name="HasBuff" buff="prestigeBuff"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value=".0375" tags="Harvesting"/>
 		</effect_group>
 		<effect_group>
 			<requirement name="HoldingItemHasTags" tags="perkMiner69r"/>
-			<requirement name="HasBuff" buff="PPBF2"/>
+			<requirement name="HasBuff" buff="prestigeBuff2"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value=".0375" tags="Harvesting"/>
 		</effect_group>
 		<effect_group>
 			<requirement name="HoldingItemHasTags" tags="perkMiner69r"/>
-			<requirement name="HasBuff" buff="PPBF3"/>
+			<requirement name="HasBuff" buff="prestigeBuff3"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value=".0375" tags="Harvesting"/>
 		</effect_group>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
@@ -114,17 +319,17 @@
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Prestige XP balance Hackers ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<effect_group>
 			<requirement name="HoldingItemHasTags" tags="perkSalvageOperations"/>
-			<requirement name="HasBuff" buff="PPBF"/>
+			<requirement name="HasBuff" buff="prestigeBuff"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value=".0375" tags="Harvesting"/>
 		</effect_group>
 		<effect_group>
 			<requirement name="HoldingItemHasTags" tags="perkSalvageOperations"/>
-			<requirement name="HasBuff" buff="PPBF2"/>
+			<requirement name="HasBuff" buff="prestigeBuff2"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value=".0375" tags="Harvesting"/>
 		</effect_group>
 		<effect_group>
 			<requirement name="HoldingItemHasTags" tags="perkSalvageOperations"/>
-			<requirement name="HasBuff" buff="PPBF3"/>
+			<requirement name="HasBuff" buff="prestigeBuff3"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value=".0375" tags="Harvesting"/>
 		</effect_group>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->

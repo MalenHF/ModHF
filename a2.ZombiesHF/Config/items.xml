@@ -1128,11 +1128,10 @@
 					<property name="DamageBonus.wood" value="2"/>
 					<property name="Particles_muzzle_smoke" value="nozzlesmoke_chainsaw"/>
 					<property name="Sound_start" value="chainsaw_fire_start"/>
-				</property>
-				<property name="Buff" value="buffInjuryBleedingOne,buffInjuryBleeding,buffInfectionCatch"/>
+					<property name="Buff" value="buffInjuryBleedingCowHead,buffInfectionCatch"/>
+				</property>				
 				<effect_group name="meleeHandCowhead" tiered="false">
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
-
 					<passive_effect name="BuffProcChance" operation="base_set" value=".3" tags="buffInfectionCatch"/>
 					<passive_effect name="BuffProcChance" operation="base_set" value=".3" tags="buffInjuryStunned01"/>
 					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="45"/>
@@ -1270,7 +1269,7 @@
 				<property class="Action0">
 					<property name="Range" value="2"/>
 					<property name="Buff" value="Nigthit"/>
-					<property name="DamageEntity" value="60"/>
+					<property name="DamageEntity" value="50"/>
 					<property name="DamageBlock" value="500"/>
 					<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01,scorcherExplo"/>
 				</property>
@@ -1911,7 +1910,7 @@
 					<property name="Sound_start" value="swoosh"/>
 					<property name="Buff" value="Nigthit"/>
 					<property name="DamageEntity" value="45"/>
-					<property name="DamageBlock" value="700"/>
+					<property name="DamageBlock" value="300"/>
 				</property>
 				<effect_group name="meleeHandLB" tiered="false">
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
@@ -2130,7 +2129,7 @@
 					<!-- obsolete if rounds per minute exists -->
 					<property name="Range" value="4.5"/>
 					<!-- This not what "clientside melee combat" means. =) This is the adjustment afterwards due to code changes. -->
-					<property name="Buff" value="buffInfectionCatch,buffInjuryStunned01,buffbosshit,buffInjuryBleeding,buffInjuryBleedingTwo,buffInjuryBleedingOne"/>
+					<property name="Buff" value="buffInfectionCatch,buffInjuryStunned01,buffbosshit,buffInjuryBleedingCowHead"/>
 					<property name="Sphere" value=".1"/>
 					<property name="Block_range" value="4"/>
 					<property name="DamageEntity" value="130"/>
@@ -2144,7 +2143,7 @@
 					<passive_effect name="MaxRange" operation="base_set" value="4"/>
 					<passive_effect name="BlockRange" operation="base_set" value="4"/>
 					<!--<passive_effect name="DamageFalloffRange" operation="base_set" value="1.65"/> -->
-					<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffInjuryBleeding" weights="3"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffInjuryBleedingCowHead" weights="3"/>
 				</effect_group>
 			</item>				
 			<!--Malen Based on ZombiesHands by Sunkfin-->
@@ -2331,7 +2330,8 @@
 				</effect_group>
 			</item>
 			<item name="BossTerraProjectile">
-				<property name="Meshfile" value="Entities/Resources/oreCoalBoulderPrefab"/>
+				
+				<property name="Meshfile" value="@:Entities/Minerals/oreCoalBoulderPrefab.prefab"/>
 				<property name="Material" value="Mstone"/>
 				<property name="CreativeMode" value="None"/>
 				<property class="Action1">

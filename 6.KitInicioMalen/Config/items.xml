@@ -28,6 +28,9 @@
 			<property class="Action0">
 				<property name="QuestGiven" value="q_Tips"/>
 			</property>
+			<effect_group>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".dukeNoteRead" operation="set" value="1"/>
+			</effect_group>
 		</item>
 		<!--+1 Skill point for events or compensation-->
 		<item name="oneSkillPoint">
@@ -366,6 +369,10 @@
 				<property name="Delay" value="0.5"/>
 				<property name="Use_time" value="1"/>
 				<property name="Sound_start" value="wrench_harvest"/>
+
+				<property name="PromptTitle" value="q_Special" />
+				<property name="PromptDescription" value="SpecialQuest2" />
+				
 				<property name="Create_item" value="newPlayerKit,juguito_de_chale,Pistola_electrica,mitico_Martillo_Divino_Usos"/>
 				<property name="Create_item_count" value="1,24,1,1"/>
 			</property>
@@ -377,7 +384,7 @@
 			<property name="DisplayInfo" value="Paquete de ayuda para comenzar" />
 			<property name="CreativeMode" value="Player"/>
 			<property name="HoldType" value="21"/>
-			<property name="Meshfile" value="Items/Misc/bookPrefab"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
 			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
 			<property name="Material" value="Morganic"/>
 			<property name="Stacknumber" value="1"/>

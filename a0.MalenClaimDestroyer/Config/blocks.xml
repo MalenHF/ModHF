@@ -144,7 +144,7 @@
 		</block>
         <block name="eventMetalCatwalkTrap">
             <property name="Extends" value="metalCatwalk"/>
-            <property name="Model" value="Plate" />
+            <property name="Model" value="@:Shapes/plate.fbx" />
             <property name="CustomIcon" value="shapePlate"/>
 
             <property name="StabilityFull" value="true"/>
@@ -203,7 +203,7 @@
 			<property name="DescriptionKey" value="scrapIronGroupDesc"/>
 			<property name="Material" value="MbedrockHF"/>
 			<property name="Shape" value="New"/>
-			<property name="Model" value="billboard"/>
+			<property name="Model" value="@:Shapes/billboard.fbx" />
 			<!-- <property name="HandleFace" value="South"/> -->
 			<property name="SortOrder2" value="0181"/>
 
@@ -231,7 +231,7 @@
             <property name="CreativeMode" value="Player"/>
             <property name="Shape" value="New"/>
             <property name="CustomIcon" value="shapePlate"/>
-            <property name="Model" value="Plate"/>            
+            <property name="Model" value="@:Shapes/plate.fbx"/>            
             <property name="Texture" value="580"/>
             <!--  SortShape  -->
         </block>
@@ -240,7 +240,7 @@
             <property name="CustomIcon" value="shapePlateHalfTriangle"/>
             <property name="CreativeMode" value="Player"/>
             <property name="Shape" value="New"/>
-            <property name="Model" value="plate_half_triangle"/>
+            <property name="Model" value="@:Shapes/plate_half_triangle.fbx" />
             <property name="Texture" value="580"/>
             <!--  SortShape  -->
         </block>
@@ -353,7 +353,7 @@
             <property name="Stacknumber" value="500"/>
             <!-- Visual -->           
             <property name="Shape" value="ModelEntity"/>
-            <property name="Model" value="Entities/Doors/vaultDoor/vaultDoorPrefab"/>
+            <property name="Model" value="@:Entities/Doors/vaultDoor/vaultDoorPrefab.prefab"/>
             <property name="ModelOffset" value="0,0,0"/>
             <property name="MultiBlockDim" value="1,2,1"/>
             <property name="ImposterExchange" value="imposterBlock" param1="77"/>
@@ -441,28 +441,21 @@
 				<property name="UpgradeHitCount" value="1"/>
 			</property>
 		</block>
-
-        <block name="iDBVaultDoor01">
-            <property name="Extends" value="vaultDoor01"/>
-            <property name="CustomIcon" value="vaultDoor01"/>
+        <block name="iDBVaultDoor01Double">
+            <property name="Extends" value="vaultDoor01Double"/>
+            <property name="CustomIcon" value="vaultDoor01Double"/>
+			<property name="ItemTypeIcon" value="brick"/>			
             <property name="Material" value="MbedrockHF"/>
-            <property name="ItemTypeIcon" value="brick"/>	
             <property name="AllowAllRotations" value="true"/>
-            <property name="StabilitySupport" value="false"/>            
-            <property name="MaxDamage" value="30000"/>
-            <property name="MeshDamage" value="
-                Door/DMG0, 30000,
-                Door/DMG1, 10000,
-                Door/DMG2, 5000,
-                -, 1
-                "/>
-                <property class="UpgradeBlock">
-				<property name="ToBlock" value="vaultDoor01"/>
+            <property name="StabilitySupport" value="true"/>            
+            <property name="MaxDamage" value="30000"/>            
+            <property class="UpgradeBlock">
+				<property name="ToBlock" value="vaultDoor01Double"/>
 				<property name="Item" value="CD"/>
 				<property name="ItemCount" value="1"/>
 				<property name="UpgradeHitCount" value="1"/>
 			</property>            
-        </block>
+        </block> 
         <block name="iDBVaultHatch01">
             <property name="Extends" value="vaultHatch01"/>\
             <property name="Material" value="MbedrockHF"/>
@@ -802,35 +795,35 @@
 
 			<property name="SingleUse" value="false" />
 			<property name="Shape" value="ModelEntity" />
-			<property name="Model" value="Entities/Industrial/powerSwitchOff_01Prefab" />
+			<property name="Model" value="@:Entities/Industrial/powerSwitchOff_01Prefab.prefab"/>
 		</block>
 		<block name="indDevPowerSwitch02">
 			<property name="Extends" value="indDevPowerSwitch01" />
 			<property name="CustomIcon" value="powerSwitch02" />
 			<property name="Powered" value="false"/>
 			<property name="SingleUse" value="true"/>
-			<property name="Model" value="Entities/Industrial/powerSwitchOff_02Prefab" />
+			<property name="Model" value="@:Entities/Industrial/powerSwitchOff_02Prefab.prefab"/>
 		</block>
 		<block name="indDevPushButtonSwitch01">
 			<property name="Extends" value="indDevPowerSwitch01" />
 			<property name="CustomIcon" value="pushButtonSwitch01" />
 			<property name="SingleUse" value="true" />
 			<property name="Powered" value="true"/>
-			<property name="Model" value="Entities/Industrial/powerSwitchButton_01Prefab"/>
+			<property name="Model" value="@:Entities/Industrial/powerSwitchButton_01Prefab.prefab"/>
 		</block>
 		<block name="indDevPushButtonSwitch02">
 			<property name="Extends" value="indDevPowerSwitch01" />
 			<property name="CustomIcon" value="pushButtonSwitch02" />
 			<property name="SingleUse" value="true" />
 			<property name="Powered" value="true"/>
-			<property name="Model" value="Entities/Industrial/powerSwitchButton_02Prefab"/>
+			<property name="Model" value="@:Entities/Industrial/powerSwitchButton_02Prefab.prefab"/>
 		</block>
 		<block name="indDevKeyRackBoxMetal01">
 			<property name="Extends" value="indDevPowerSwitch01" />
 			<property name="CustomIcon" value="keyRackBoxMetal01" />
 			<property name="Powered" value="false"/>
 			<property name="Shape" value="ModelEntity"/>
-			<property name="Model" value="Entities/Commercial/keyRackBoxMetal_01Prefab"/>
+			<property name="Model" value="@:Entities/Commercial/keyRackBoxMetal_01Prefab.prefab"/>
 			<property name="ActivateSound" value="keyrack"/>
 			<property name="SingleUse" value="false" />
 		</block>
@@ -839,7 +832,7 @@
 			<property name="CustomIcon" value="keyRackWood01" />
 			<property name="ActivateSound" value="keyrack"/>
 			<property name="Shape" value="ModelEntity"/>
-			<property name="Model" value="Entities/Commercial/keyRackWood_01Prefab"/>
+			<property name="Model" value="@:Entities/Commercial/keyRackWood_01Prefab.prefab"/>
 			<property name="Powered" value="false"/>
 			<property name="Material" value="MbedrockHF" />
 		</block>
@@ -850,35 +843,35 @@
 			<property name="Powered" value="false"/>
 			<property name="Material" value="MbedrockHF" />
 			<property name="Shape" value="New"/>
-			<property name="Model" value="pillar50_plate"/>
+			<property name="Model" value="@:Shapes/pillar50_plate.fbx" />
 		</block>
         <block name="iDBPowerSwitch01">
             <property name="Extends" value="pushButtonSwitch01"/>
             <property name="Tags" value="killBossSwitch"/>            
 			<property name="CustomIcon" value="powerSwitch01" />
 			<property name="Material" value="MbedrockHF" />			
-			<property name="Model" value="Entities/Industrial/powerSwitchOff_01Prefab" />
+			<property name="Model" value="@:Entities/Industrial/powerSwitchOff_01Prefab.prefab"/>
 		</block>
 		<block name="iDBPowerSwitch02">
 			<property name="Extends" value="iDBPowerSwitch01"/>            
 			<property name="CustomIcon" value="powerSwitch01" />		
-			<property name="Model" value="Entities/Industrial/powerSwitchOff_02Prefab" />
+			<property name="Model" value="@:Entities/Industrial/powerSwitchOff_02Prefab.prefab"/>
 		</block>
 		<block name="iDBPushButtonSwitch01">
 			<property name="Extends" value="iDBPowerSwitch01"/>
 			<property name="CustomIcon" value="pushButtonSwitch01" />
-			<property name="Model" value="Entities/Industrial/powerSwitchButton_01Prefab"/>
+			<property name="Model" value="@:Entities/Industrial/powerSwitchButton_01Prefab.prefab"/>
 		</block>
 		<block name="iDBPushButtonSwitch02">
 			<property name="Extends" value="iDBPowerSwitch01" />
 			<property name="CustomIcon" value="pushButtonSwitch02" />
-			<property name="Model" value="Entities/Industrial/powerSwitchButton_02Prefab"/>
+			<property name="Model" value="@:Entities/Industrial/powerSwitchButton_02Prefab.prefab"/>
 		</block>
 		<block name="iDBKeyRackBoxMetal01">
 			<property name="Extends" value="iDBPowerSwitch01" />
 			<property name="CustomIcon" value="keyRackBoxMetal01" />
 			<property name="Shape" value="ModelEntity"/>
-			<property name="Model" value="Entities/Commercial/keyRackBoxMetal_01Prefab"/>
+			<property name="Model" value="@:Entities/Commercial/keyRackBoxMetal_01Prefab.prefab"/>
 			<property name="ActivateSound" value="keyrack"/>
 		</block>
 		<block name="iDBKeyRackWood01">
@@ -886,7 +879,7 @@
 			<property name="CustomIcon" value="keyRackWood01" />
 			<property name="ActivateSound" value="keyrack"/>
 			<property name="Shape" value="ModelEntity"/>
-			<property name="Model" value="Entities/Commercial/keyRackWood_01Prefab"/>
+			<property name="Model" value="@:Entities/Commercial/keyRackWood_01Prefab.prefab"/>
 		</block>
         <block name="iDBCircularButtonHelper">
 			<property name="Extends" value="iDBPowerSwitch01" />
@@ -895,7 +888,7 @@
 			<property name="Powered" value="false"/>
 			<property name="Material" value="MbedrockHF" />
 			<property name="Shape" value="New"/>
-			<property name="Model" value="pillar50_plate"/>
+			<property name="Model" value="@:Shapes/pillar50_plate.fbx" />
 		</block>
 		<block name="iDBCircularButton">
 			<property name="Extends" value="iDBPowerSwitch01" />
@@ -904,17 +897,17 @@
 			<property name="Powered" value="false"/>
 			<property name="Material" value="MbedrockHF" />
 			<property name="Shape" value="New"/>
-			<property name="Model" value="pillar50_plate"/>
+			<property name="Model" value="@:Shapes/pillar50_plate.fbx" />
 		</block>
         <block name="iDBPushButtonSwitch01InfestedHelper">
 			<property name="Extends" value="iDBPowerSwitch01"/>
 			<property name="CustomIcon" value="pushButtonSwitch01" />
-			<property name="Model" value="Entities/Industrial/powerSwitchButton_01Prefab"/>
+			<property name="Model" value="@:Entities/Industrial/powerSwitchButton_01Prefab.prefab"/>
 		</block>
         <block name="iDBPushButtonSwitch01Infested">
 			<property name="Extends" value="iDBPowerSwitch01"/>
 			<property name="CustomIcon" value="pushButtonSwitch01" />
-			<property name="Model" value="Entities/Industrial/powerSwitchButton_01Prefab"/>
+			<property name="Model" value="@:Entities/Industrial/powerSwitchButton_01Prefab.prefab"/>
 		</block>
         <block name="iDBCircularButtonInfestedHelper">
 			<property name="Extends" value="iDBCircularButton" />			
@@ -935,7 +928,7 @@
 			<property name="Powered" value="false"/>
 			<property name="Material" value="MbedrockHF" />
 			<property name="Shape" value="New"/>
-			<property name="Model" value="pillar50_plate"/>
+			<property name="Model" value="@:Shapes/pillar50_plate.fbx" />
 		</block>
         <block name="iDBExtra3">
 			<property name="Extends" value="iDBPowerSwitch01" />
@@ -944,7 +937,7 @@
 			<property name="Powered" value="false"/>
 			<property name="Material" value="MbedrockHF" />
 			<property name="Shape" value="New"/>
-			<property name="Model" value="pillar50_plate"/>
+			<property name="Model" value="@:Shapes/pillar50_plate.fbx" />
 		</block>
         <block name="iDBExtra4">
 			<property name="Extends" value="iDBPowerSwitch01" />
@@ -953,7 +946,7 @@
 			<property name="Powered" value="false"/>
 			<property name="Material" value="MbedrockHF" />
 			<property name="Shape" value="New"/>
-			<property name="Model" value="pillar50_plate"/>
+			<property name="Model" value="@:Shapes/pillar50_plate.fbx" />
 		</block>
         <block name="invDevWallTorchLight">            
             <property name="Extends" value="wallTorchLight"/>

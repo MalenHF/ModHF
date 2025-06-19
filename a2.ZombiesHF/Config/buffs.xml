@@ -2335,7 +2335,27 @@
 					<requirement name="!HasBuff" buff="buffInjuryBleeding"/>
 				</triggered_effect>
 
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="bleedCounter" operation="add" value="8">
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="bleedCounter" operation="add" value="6">
+					<!-- Limit the amount of bleeding stacks that enemies can put on. -->
+					<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="1"/>
+				</triggered_effect>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInjuryBleeding">
+					<!-- They can still extend/refresh the buff. -->
+					<requirement name="CVarCompare" cvar="bleedCounter" operation="GT" value="0"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffInjuryBleedingCowHead" name_key="buffInjuryBleedingOne" icon="ui_game_symbol_critical" icon_color="255,255,0" icon_blink="true" hidden="true">
+			<damage_type value="bloodloss"/>
+			<duration value="4"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveCVar" cvar="bleedCounter">				
+					<!-- check for leftover counters without buff -->
+					<requirement name="!HasBuff" buff="buffInjuryBleeding"/>
+				</triggered_effect>
+
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="bleedCounter" operation="add" value="3">
 					<!-- Limit the amount of bleeding stacks that enemies can put on. -->
 					<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="1"/>
 				</triggered_effect>
@@ -2572,6 +2592,109 @@
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Infected"/>
 			</effect_group>
 		</buff>
+		<buff name="buffCowHeadAOE" hidden="true">
+			<update_rate value="8"/>
+			<effect_group>				
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="spidersense"/> -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" range="15" buff="buffCowHead" target_tags="player" tags="player"/>
+			</effect_group>
+		</buff>
+
+		<buff name="buffCowHead" hidden="false" name_key="buffCowHeadName" description_key="buffCowHeadDesc" tooltip_key="buffCowHeadTool" icon="ui_game_symbol_bull" icon_color="235,21,21">
+			<stack_type value="replace"/>
+			<duration value="10"/>
+			<effect_group>
+				<requirement name="NotHasBuff" buff="god"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="2" fade="1" effect_name="Dead"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="0.1" fade="1" effect_name="Vibrant"/>	
+					<passive_effect name="HealthLoss" operation="perc_add" value=".20"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Dead"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Dead"/>
+
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Vibrant"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Vibrant"/>
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="buffCowHead" buff="SirenPassiveA">
+					<requirement name="NotHasBuff" buff="buffCowHeadAOE"/>
+				</triggered_effect> -->
+
+				
+			</effect_group>
+		</buff>
+
+		<buff name="buffPhyscoAOE" hidden="true">
+			<update_rate value="8"/>
+			<effect_group>				
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="spidersense"/> -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="positionAOE" range="20" buff="buffPhysco" target_tags="player" tags="player"/>
+			</effect_group>
+		</buff>
+
+		<buff name="buffPhysco" hidden="false" name_key="buffPhyscoName" description_key="buffPhyscoDesc" tooltip_key="buffPhyscoTool" icon="ui_game_symbol_twitch_vision_effects" icon_color="151,29,167">
+			<stack_type value="replace"/>
+			<duration value="10"/>
+			<update_rate value="4.5"/>
+			<effect_group>				
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$randomDebuff" operation="set" value="randomint(1,5)"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="1" effect_name="Distortion"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$randomDebuff" operation="set" value="randomint(1,5)"/>
+			</effect_group>
+			<effect_group>
+					<requirement name="NotHasBuff" buff="god"/>					
+					<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="action_jumpscare">	
+						<requirement name="CVarCompare" cvar="$randomDebuff" operation="Equals" value="1"/>
+					</triggered_effect>
+					<triggered_effect  trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDark2">
+						<requirement name="CVarCompare" cvar="$randomDebuff" operation="Equals" value="2"/>
+					</triggered_effect>
+					<!--Invertir 4 seg-->
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffPyscoControls">
+						<requirement name="CVarCompare" cvar="$randomDebuff" operation="Equals" value="3"/>
+					</triggered_effect>
+					<!--Pantalla mob-->					
+					<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="psycoRandomCamera">
+						<requirement name="CVarCompare" cvar="$randomDebuff" operation="Equals" value="4"/>
+					</triggered_effect>
+					<!--Pantalla distortion-->
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffPyscoBlur">
+						<requirement name="CVarCompare" cvar="$randomDebuff" operation="Equals" value="5"/>
+					</triggered_effect>
+
+					<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="test2" operation="set" value="randomint(1,10)"/> -->
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Distortion"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Distortion"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffPhysco"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$randomDebuff"/>
+			</effect_group>
+		</buff>
+
+		<buff name="buffPyscoControls" hidden="false" name_key="buffPyscoControlsName" description_key="buffPyscoControlsDesc"  icon="ui_game_symbol_twitch_confused_controls" icon_color="124,252,0">
+			<stack_type value="ignore"/>
+			<duration value="3"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="NotHasBuff" buff="god"/>
+				<passive_effect name="FlipControls" operation="base_set" value="1" />			
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="horde_spawn_warning" play_in_head="true"/>
+			</effect_group>
+		</buff>
+
+		<buff name="buffPyscoBlur" hidden="false" name_key="buffPyscoControlsName" description_key="buffPyscoControlsDesc"  icon="ui_game_symbol_stunned" icon_color="151,29,167">
+			<stack_type value="ignore"/>
+			<duration value="3"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="NotHasBuff" buff="god"/>						
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="1" effect_name="Drunk"/>		
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1"/>		
+			</effect_group>
+			<effect_group>				
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Drunk"/>
+			</effect_group>
+		</buff>
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Special Zombies Decoratives ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<buff name="decoBomber" hidden="true">
@@ -2579,7 +2702,7 @@
 
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelAcidPrefab" local_offset=".2,.2,-.2" local_rotation="0,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelAcidPrefab.prefab" local_offset=".2,.2,-.2" local_rotation="0,0,0" parent_transform="Spine"/>
 				<!-- <triggered_effect trigger="onSelfRangedBurstShotEnd" target="self" action="ModifyStats" stat="Health" operation="subtract" value="99999999"/> -->
 				<triggered_effect trigger="onSelfDamagedBlock" target="self" action="ModifyStats" stat="Health" operation="set" value="60"/>
 
@@ -2600,53 +2723,53 @@
 					<requirement name="!HasParticle" particle="p_twitch_zombie_radiation_right" />
 				</triggered_effect>
 
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelAcidPrefab" local_offset=".2,.2,-.2" local_rotation="0,0,0" parent_transform="Spine">
-					<requirement name="!HasPrefab" particle="Entities/Industrial/barrelAcidPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelAcidPrefab.prefab" local_offset=".2,.2,-.2" local_rotation="0,0,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" particle="@:Entities/Industrial/barrelAcidPrefab.prefab" />
 				</triggered_effect>
 
 			</effect_group>
 		</buff>
 		<buff name="decoMiniRopa" hidden="true">
 			<effect_group>				<!-- -.5 -->
-				<!--<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Plants/pumpkinJackoLanternPrefab" local_offset="-.3,0,0" local_rotation="0,0,90" parent_transform="Head"/> -->
+				<!--<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Plants/pumpkinJackoLanternPrefab.prefab" local_offset="-.3,0,0" local_rotation="0,0,90" parent_transform="Head"/> -->
 
 				<!--/y/  /x/  /z/-->
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Tools/hammerPrefab.prefab" local_offset="0.1,0.02,0.0" local_rotation="187,-80,90" parent_transform="RightHand"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/backpack03Prefab.prefab" local_offset="0,.1,-.1" local_rotation="90,180,0" parent_transform="Spine2"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Lighting/candle_tablePrefab" local_offset="-.15,-.05,.5" local_rotation="90,0,0" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Lighting/candle_tablePrefab.prefab" local_offset="-.15,-.05,.5" local_rotation="90,0,0" parent_transform="LeftHand"/>
 			</effect_group>
 		</buff>
 		<buff name="dogMummyDeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Lighting/candle_tablePrefab" local_offset="0,0.5,0" local_rotation="0,0,0" parent_transform="Head"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Head"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine2"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightShoulder"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftShoulder"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftLeg"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Lighting/candle_tablePrefab.prefab" local_offset="0,0.5,0" local_rotation="0,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightLeg"/>
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Lighting/candle_tablePrefab" local_offset="0,0.5,0" local_rotation="0,0,0" parent_transform="Head">
-					<requirement name="!HasPrefab" prefab="Entities/Lighting/candle_tablePrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Lighting/candle_tablePrefab.prefab" local_offset="0,0.5,0" local_rotation="0,0,0" parent_transform="Head">
+					<requirement name="!HasPrefab" prefab="@:Entities/Lighting/candle_tablePrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Head">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Head">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/cobwebPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine2">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine2">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/cobwebPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightShoulder">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightShoulder">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/cobwebPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftShoulder">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftShoulder">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/cobwebPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/cobwebPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/cobwebPrefab.prefab" />
 				</triggered_effect>
 			</effect_group>
 		</buff>
@@ -2846,19 +2969,19 @@
 		</buff>
 		<buff name="ElementalWater" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelPlasticPrefab" local_offset="0.15,0.25,-0.25" local_rotation="0,0,0" parent_transform="Spine"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Commercial/bollardConcreteKnockedBPrefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="LeftLeg"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Commercial/bollardConcreteKnockedBPrefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="RightLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelPlasticPrefab.prefab" local_offset="0.15,0.25,-0.25" local_rotation="0,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Commercial/bollardConcreteKnockedBPrefab.prefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="LeftLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Commercial/bollardConcreteKnockedBPrefab.prefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="RightLeg"/>
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelPlasticPrefab" local_offset="0.15,0.25,-0.25" local_rotation="0,0,0" parent_transform="Spine">
-					<requirement name="!HasPrefab" prefab="Entities/Industrial/barrelPlasticPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelPlasticPrefab.prefab" local_offset="0.15,0.25,-0.25" local_rotation="0,0,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="@:Entities/Industrial/barrelPlasticPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Commercial/bollardConcreteKnockedBPrefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="LeftLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Commercial/bollardConcreteKnockedBPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Commercial/bollardConcreteKnockedBPrefab.prefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="LeftLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Commercial/bollardConcreteKnockedBPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Commercial/bollardConcreteKnockedBPrefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="RightLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Commercial/bollardConcreteKnockedBPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Commercial/bollardConcreteKnockedBPrefab.prefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="RightLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Commercial/bollardConcreteKnockedBPrefab.prefab" />
 				</triggered_effect>
 			</effect_group>
 		</buff>
@@ -2866,7 +2989,7 @@
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" target="self"  particle="p_twitch_zombie_shock_left" local_offset="-0.1,1.3,-0.40" local_rotation="0,0,0" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" target="self"  particle="p_twitch_zombie_shock_right" local_offset="0.1,1.3,-0.40" local_rotation="0,0,0" parent_transform="Spine"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Electrical/utilityTransformerPrefab" local_offset="0,0.3,-0.2" local_rotation="0,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Electrical/utilityTransformerPrefab.prefab" local_offset="0,0.3,-0.2" local_rotation="0,0,0" parent_transform="Spine"/>
 
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="p_twitch_zombie_shock_left" />
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="p_twitch_zombie_shock_right" />
@@ -2878,8 +3001,8 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_shock_right" parent_transform="Spine">
 					<requirement name="!HasParticle" particle="p_twitch_zombie_shock_right" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Electrical/utilityTransformerPrefab" parent_transform="Spine">
-					<requirement name="!HasPrefab" prefab="Entities/Electrical/utilityTransformerPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Electrical/utilityTransformerPrefab.prefab" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="@:Entities/Electrical/utilityTransformerPrefab.prefab" />
 				</triggered_effect>
 
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="p_twitch_zombie_shock_left" />
@@ -2888,7 +3011,7 @@
 		</buff>
 		<buff name="DecoMiniBossToxic" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelAcidPrefab" local_offset="-0.1,0,-0.3" local_rotation="90,-90,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelAcidPrefab.prefab" local_offset="-0.1,0,-0.3" local_rotation="90,-90,0" parent_transform="Spine"/>
 
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_left" parent_transform="Head" />
 				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_left" parent_transform="Head" />
@@ -2903,8 +3026,8 @@
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_twitch_zombie_radiation_right"/>
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" particle="Entities/Industrial/barrelAcidPrefab" local_offset="-0.1,0,-0.3" local_rotation="90,-90,0" parent_transform="Spine">
-					<requirement name="!HasPrefab" particle="Entities/Industrial/barrelAcidPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" particle="@:Entities/Industrial/barrelAcidPrefab.prefab" local_offset="-0.1,0,-0.3" local_rotation="90,-90,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" particle="@:Entities/Industrial/barrelAcidPrefab.prefab" />
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_left" parent_transform="Head">
 					<requirement name="!HasParticle" particle="p_twitch_zombie_radiation_left" />
@@ -2922,8 +3045,8 @@
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/JunkTurret/junkTurret_Prefab.prefab" parent_transform="LeftShoulder" local_offset="-.25,-.60,-.2" local_rotation="0,0,0"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/JunkTurret/junkTurret_Prefab.prefab" parent_transform="RightShoulder" local_offset=".25,.60,.2" local_rotation="180,0,0"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelOilPrefab" local_offset=".45,.20,-.2" local_rotation="0,0,0" parent_transform="Spine"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelGasPrefab" local_offset="-.15,.20,-.2" local_rotation="0,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelOilPrefab.prefab" local_offset=".45,.20,-.2" local_rotation="0,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelGasPrefab.prefab" local_offset="-.15,.20,-.2" local_rotation="0,0,0" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false"  parent_transform="RightShoulder" transform_path="BaseMesh"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false"  parent_transform="RightShoulder" transform_path="turret_cone"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false"  parent_transform="RightShoulder" transform_path="DiscMesh"/>
@@ -2941,64 +3064,64 @@
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Knives/machetePrefab.prefab" local_offset="-.25,0,0" local_rotation="180,90,180" parent_transform="LeftForeArm"/>
 			</effect_group>
 		</buff>
-		<buff name="ArchonDeco" hidden="true">
+		<!-- <buff name="ArchonDeco" hidden="true">
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Animals/vulture/vulture" local_offset="0,-.3,.25" local_rotation="-45,0,0" parent_transform="Spine3"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" parent_transform="Spine" transform_path="body_mesh"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_torch_wall" local_offset=".2,0,0" local_rotation="0,0,0" parent_transform="RightHand"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_torch_wall" local_offset="-.2,0,0" local_rotation="0,0,0" parent_transform="LeftHand"/>
 			</effect_group>
-		</buff>
+		</buff> -->
 		<buff name="BomberDeco" hidden="true">
 			<effect_group>
 
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelRadiatedPrefab" local_offset=".2,.2,-.2" local_rotation="0,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelRadiatedPrefab.prefab" local_offset=".2,.2,-.2" local_rotation="0,0,0" parent_transform="Spine"/>
 				<!-- <triggered_effect trigger="onSelfRangedBurstShotEnd" target="self" action="ModifyStats" stat="Health" operation="subtract" value="99999999"/> -->
 				<triggered_effect trigger="onSelfDamagedBlock" target="self" action="ModifyStats" stat="Health" operation="set" value="60"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelRadiatedPrefab" local_offset=".2,.2,-.2" local_rotation="0,0,0" parent_transform="Spine">
-					<requirement name="!HasPrefab" particle="Entities/Industrial/barrelAcidPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelRadiatedPrefab.prefab" local_offset=".2,.2,-.2" local_rotation="0,0,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" particle="@:Entities/Industrial/barrelAcidPrefab.prefab" />
 				</triggered_effect>
 			</effect_group>
 		</buff>
 		<buff name="MiniBomberDeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelGasPrefab" local_offset=".2,.2,-.2" local_rotation="0,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelGasPrefab.prefab" local_offset=".2,.2,-.2" local_rotation="0,0,0" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfDamagedBlock" target="self" action="ModifyStats" stat="Health" operation="set" value="60"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelGasPrefab" local_offset=".2,.2,-.2" local_rotation="0,0,0" parent_transform="Spine">
-					<requirement name="!HasPrefab" particle="Entities/Industrial/barrelAcidPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelGasPrefab.prefab" local_offset=".2,.2,-.2" local_rotation="0,0,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" particle="@:Entities/Industrial/barrelAcidPrefab.prefab" />
 				</triggered_effect>
 			</effect_group>
 		</buff>
 		<buff name="cowheadDeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/cowSkullPrefab" local_offset="0,.4,0" local_rotation="-10,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/OutdoorDecor/cowSkullPrefab.prefab" local_offset="0,.4,0" local_rotation="-10,0,0" parent_transform="Head"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Chainsaw/chainsawPrefab.prefab" local_offset="0,0,-.05" local_rotation="0,90,180" parent_transform="RightHand"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="chainsaw_idle" />
 			</effect_group>
 		</buff>
 		<buff name="wendigoDeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/cowSkullPrefab" local_offset="0,.4,0" local_rotation="-10,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/OutdoorDecor/cowSkullPrefab.prefab" local_offset="0,.4,0" local_rotation="-10,0,0" parent_transform="Head"/>
 
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/hoistHookPrefab" local_offset="-.2,0,0" local_rotation="0,180,90" parent_transform="LeftHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/hoistHookPrefab" local_offset=".2,0,0" local_rotation="180,0,90" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/hoistHookPrefab.prefab" local_offset="-.2,0,0" local_rotation="0,180,90" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/hoistHookPrefab.prefab" local_offset=".2,0,0" local_rotation="180,0,90" parent_transform="RightHand"/>
 			</effect_group>
 		</buff>
 		<buff name="psychoDeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Misc/body_bag_fliesPrefab" local_offset=".2,-.35,.15" local_rotation="45,90,90" parent_transform="Spine2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Misc/body_bag_fliesPrefab.prefab" local_offset=".2,-.35,.15" local_rotation="45,90,90" parent_transform="Spine2"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Axe/steelAxePrefab.prefab" local_offset="0.1,0.02,0.0" local_rotation="187,-80,90" parent_transform="RightHand"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Chainsaw/chainsawPrefab.prefab" local_offset="-.1,0,.05" local_rotation="0,-90,180" parent_transform="LeftHand"/>
 			</effect_group>
 		</buff>
 		<buff name="scarecrowDeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Plants/pumpkinJackoLanternPrefab" local_offset="0,.4,0" local_rotation="0,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:@:Entities/Plants/pumpkinJackoLanternPrefab.prefab.prefab" local_offset="0,.4,0" local_rotation="0,0,0" parent_transform="Head"/>
 				<!--<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_torch_wall" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightHand"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_torch_wall" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftHand"/>-->
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Tools/pickaxe_ironPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightHand"/>
 
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Animals/Vulture/animalVultureStandard" local_offset="0,-.3,.25" local_rotation="-45,0,0" parent_transform="Spine"/> <!-- A19 Oakraven -->
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Animals/Vulture/animalVultureStandard.prefab" local_offset="0,-.3,.25" local_rotation="-45,0,0" parent_transform="Spine"/> <!-- A19 Oakraven -->
 				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false"  parent_transform="Spine" transform_path="body_mesh"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_torch_wall" local_offset="0.2,0,0" local_rotation="0,0,0" parent_transform="RightHand"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_torch_wall" local_offset="-0.1,-0.15,0" local_rotation="0,0,0" parent_transform="LeftHand"/>
@@ -3010,12 +3133,12 @@
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Sub Boss Decoratives ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
 		<buff name="decoInfestedJoel" hidden="true">
 			<effect_group>				<!-- -.5 -->
-				<!--<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Plants/pumpkinJackoLanternPrefab" local_offset="-.3,0,0" local_rotation="0,0,90" parent_transform="Head"/> -->
+				<!--<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Plants/pumpkinJackoLanternPrefab.prefab" local_offset="-.3,0,0" local_rotation="0,0,90" parent_transform="Head"/> -->
 
 				<!--/y/  /x/  /z/-->
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Tools/pickaxe_steelPrefab.prefab" local_offset="0.1,0.02,0.0" local_rotation="187,-80,90" parent_transform="RightHand"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/weapon_bags_largePrefab.prefab" local_offset="0,-.3,-.5" local_rotation="360,0,0" parent_transform="Spine2"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Lighting/lightPorchPrefab" local_offset="0,0,.5" local_rotation="-90,-90,0" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Lighting/lightPorchPrefab.prefab" local_offset="0,0,.5" local_rotation="-90,-90,0" parent_transform="LeftHand"/>
 			</effect_group>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Other/Items/Tools/pickaxe_steelPrefab.prefab" local_offset="0.1,0.02,0.0" local_rotation="187,-80,90" parent_transform="RightHand">
@@ -3024,15 +3147,15 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/weapon_bags_largePrefab.prefab" local_offset="0,-.3,-.5" local_rotation="360,0,0" parent_transform="Spine2">
 					<requirement name="!HasPrefab" particle="@:Entities/LootContainers/weapon_bags_largePrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Lighting/lightPorchPrefab" local_offset="0,0,.5" local_rotation="-90,-90,0" parent_transform="LeftHand">
-					<requirement name="!HasPrefab" particle="Entities/Lighting/lightPorchPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Lighting/lightPorchPrefab.prefab" local_offset="0,0,.5" local_rotation="-90,-90,0" parent_transform="LeftHand">
+					<requirement name="!HasPrefab" particle="@:Entities/Lighting/lightPorchPrefab.prefab" />
 				</triggered_effect>
 			</effect_group>
 		</buff>
 		<buff name="aprenDeco" hidden="true">
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/TaserBaton/TaserBatonPrefab.prefab" local_offset=".1,.05,-.05" local_rotation="-90,90,180" parent_transform="RightHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Traps/hubcapPrefab" local_offset="-.1,0,.55" local_rotation="90,0,0" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Traps/hubcapPrefab.prefab" local_offset="-.1,0,.55" local_rotation="90,0,0" parent_transform="LeftHand"/>
 			</effect_group>
 		</buff>
 		<buff name="DecoSBNurse" hidden="true">
@@ -3042,19 +3165,19 @@
 				
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset="-.1,-.03,.05" local_rotation="90,0,0" parent_transform="LeftHand"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Knives/boneShivPrefab.prefab" local_offset=".1,.03,-.05" local_rotation="-90,0,0" parent_transform="RightHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Traps/woodSpikesTrap2BloodPrefab" local_offset="0.2,0,0" local_rotation="0,0,-60" parent_transform="LeftLeg"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Traps/woodSpikesTrap2BloodPrefab" local_offset="0.2,0,0" local_rotation="0,0,-60" parent_transform="RightLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Traps/woodSpikesTrap2BloodPrefab.prefab" local_offset="0.2,0,0" local_rotation="0,0,-60" parent_transform="LeftLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Traps/woodSpikesTrap2BloodPrefab.prefab" local_offset="0.2,0,0" local_rotation="0,0,-60" parent_transform="RightLeg"/>
 			</effect_group>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/pill_case_closedPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine">
 					<requirement name="!HasPrefab" prefab="@:Entities/LootContainers/pill_case_closedPrefab.prefab" />
 				</triggered_effect>				
 		
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Traps/woodSpikesTrap2BloodPrefab" local_offset="0.2,0,0" local_rotation="0,0,-60" parent_transform="LeftLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Traps/woodSpikesTrap2BloodPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Traps/woodSpikesTrap2BloodPrefab.prefab" local_offset="0.2,0,0" local_rotation="0,0,-60" parent_transform="LeftLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Traps/woodSpikesTrap2BloodPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Traps/woodSpikesTrap2BloodPrefab" local_offset="0.2,0,0" local_rotation="0,0,-60" parent_transform="RightLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Traps/woodSpikesTrap2BloodPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Traps/woodSpikesTrap2BloodPrefab.prefab" local_offset="0.2,0,0" local_rotation="0,0,-60" parent_transform="RightLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Traps/woodSpikesTrap2BloodPrefab.prefab" />
 				</triggered_effect>
 			</effect_group>
 		</buff>
@@ -3068,7 +3191,7 @@
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Knives/machetePrefab.prefab" local_offset=".15,0,-.05" local_rotation="0,90,-90" local_scale="1,3,1" parent_transform="RightHand"/>
 
 
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Traps/hubcapPrefab" local_offset="-.1,0,1.35" local_rotation="90,0,0" local_scale="2,2,2" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Traps/hubcapPrefab.prefab" local_offset="-.1,0,1.35" local_rotation="90,0,0" local_scale="2,2,2" parent_transform="LeftHand"/>
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="chainsaw_idle"/> -->
 			</effect_group>
 			<effect_group>
@@ -3078,123 +3201,117 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Knives/machetePrefab.prefab" local_offset=".15,0,-.05" local_rotation="0,90,-90" local_scale="1,3,1" parent_transform="RightHand">
 					<requirement name="!HasPrefab" prefab="@:Other/Items/Weapons/Melee/Knives/machetePrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Traps/hubcapPrefab" local_offset="-.1,0,1.35" local_rotation="90,0,0" local_scale="2,2,2" parent_transform="LeftHand">
-					<requirement name="!HasPrefab" prefab="Entities/Traps/hubcapPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Traps/hubcapPrefab.prefab" local_offset="-.1,0,1.35" local_rotation="90,0,0" local_scale="2,2,2" parent_transform="LeftHand">
+					<requirement name="!HasPrefab" prefab="@:Entities/Traps/hubcapPrefab.prefab" />
 				</triggered_effect>
 			</effect_group>
 		</buff>
 		<buff name="mummyDeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/coffinWildWestOpenPrefab" local_offset="0,0,0" local_rotation="90,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/OutdoorDecor/coffinWildWestOpenPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,0" parent_transform="Spine"/>
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Candycane/candycanePrefab.prefab" local_offset="-0.08,-0.05,-0.15" local_rotation="90,0,0" parent_transform="LeftHand"/> -->
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Head"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine2"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightShoulder"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftShoulder"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftLeg"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightLeg"/>
-				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" target="self" prefab="Entities/OutdoorDecor/coffinWildWestOpenPrefab"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightLeg"/>
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" target="self" prefab="@:Entities/OutdoorDecor/coffinWildWestOpenPrefab.prefab"/>
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Head">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Head">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/cobwebPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine2">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine2">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/cobwebPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightShoulder">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightShoulder">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/cobwebPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftShoulder">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftShoulder">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/cobwebPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/cobwebPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/cobwebPrefab.prefab" />
 				</triggered_effect>				
-				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" target="self" prefab="Entities/OutdoorDecor/coffinWildWestOpenPrefab"/>
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" target="self" prefab="@:Entities/OutdoorDecor/coffinWildWestOpenPrefab.prefab"/>
 			</effect_group>
 		</buff>
 		<buff name="mummyDecoSP" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/coffinWildWestOpenPrefab" local_offset="0,0,0" local_rotation="90,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/OutdoorDecor/coffinWildWestOpenPrefab.prefab" local_offset="0,0,0" local_rotation="90,0,0" parent_transform="Spine"/>
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Candycane/candycanePrefab.prefab" local_offset="-0.08,-0.05,-0.15" local_rotation="90,0,0" parent_transform="LeftHand"/> -->
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Head"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine2"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightShoulder"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftShoulder"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftLeg"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightLeg"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="RadiatedParticlesOnMesh" local_offset="0,0,0"/>
-				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" target="self" prefab="Entities/OutdoorDecor/coffinWildWestOpenPrefab"/>
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" target="self" prefab="@:Entities/OutdoorDecor/coffinWildWestOpenPrefab.prefab"/>
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Head">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Head">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/cobwebPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine2">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine2">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/cobwebPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightShoulder">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightShoulder">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/cobwebPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftShoulder">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftShoulder">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/cobwebPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/cobwebPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Decor/cobwebPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/cobwebPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/cobwebPrefab.prefab" />
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="RadiatedParticlesOnMesh" local_offset="0,0,0">
 					<requirement name="!Hasparticle" particle="RadiatedParticlesOnMesh" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" target="self" prefab="Entities/OutdoorDecor/coffinWildWestOpenPrefab"/>
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" target="self" prefab="@:Entities/OutdoorDecor/coffinWildWestOpenPrefab.prefab"/>
 			</effect_group>
 		</buff>
 		<buff name="soldierDeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Electrical/satelliteUnitLargePrefab" target="self" local_offset="0,0,-0.5" local_rotation="0,180,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Electrical/satelliteUnitLargePrefab.prefab" target="self" local_offset="0,0,-0.5" local_rotation="0,180,0" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Ranged/Junk Drone/junkDrone_Prefab.prefab" target="self" local_offset="0,2,0" local_rotation="0,0,0" parent_transform="Spine" />
 
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine"/> -->
-				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Electrical/satelliteUnitLargePrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine"/> -->
-				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Bandits/BanditSupport3mPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Bandits/BanditSupport3mPrefab" local_offset="0,1,0" local_rotation="90,0,0" parent_transform="Spine2"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Electrical/satelliteUnitLargePrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine"/> -->
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/BanditProps/BanditSupport3mPrefab.prefab" local_offset="0,1,0" local_rotation="90,0,0" parent_transform="Spine2"/> -->
 
-				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" target="self" prefab="Entities/Electrical/satelliteUnitLargePrefab"/>
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" target="self" prefab="@:Entities/Electrical/satelliteUnitLargePrefab.prefab"/>
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="@:Other/Items/Weapons/Ranged/Junk Drone/junkDrone_Prefab.prefab"/>
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="Entities/Electrical/satelliteUnitLargePrefab" local_offset="0,0,-0.5" local_rotation="0,180,0" parent_transform="Spine">
-					<requirement name="!HasPrefab" prefab="Entities/Electrical/satelliteUnitLargePrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Electrical/satelliteUnitLargePrefab.prefab" local_offset="0,0,-0.5" local_rotation="0,180,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="@:Entities/Electrical/satelliteUnitLargePrefab.prefab" />
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" target="self" particle="@:Other/Items/Weapons/Ranged/Junk Drone/junkDrone_Prefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine">
 					<requirement name="!HasPrefab" particle="@:Other/Items/Weapons/Ranged/Junk Drone/junkDrone_Prefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" target="self" prefab="Entities/Electrical/satelliteUnitLargePrefab"/>
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" target="self" prefab="@:Entities/Electrical/satelliteUnitLargePrefab.prefab"/>
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="@:Other/Items/Weapons/Ranged/Junk Drone/junkDrone_Prefab.prefab"/>
 			</effect_group>
 		</buff>
 		<buff name="spartanDeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/flagHonorDutyPrefab" local_offset="-0.18, 0.2, -1" local_rotation="-40, 180, 90" local_scale="0.65,0.4,1" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/flagHonorDutyPrefab.prefab" local_offset="-0.18, 0.2, -1" local_rotation="-40, 180, 90" local_scale="0.65,0.4,1" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Spear/spear_steel_Prefab.prefab" local_offset="0.14,0.06,-.05" local_rotation="0,-90,90" parent_transform="RightHand"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Explosive/trapMineAirFilter_01Prefab.prefab" local_offset="-.1,0,0" local_rotation="-90,0,0" local_scale="3.5,1,3.5" parent_transform="LeftHand"/>
-				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Explosive/trapMineAirFilter_01Prefab.prefab" local_offset="-.1,0,1.35" local_rotation="90,0,0" local_scale="5,5,5" parent_transform="LeftHand"/> -->
-
-				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Buildings/capChimneyLargePrefab" local_offset="-.1,0,.45" local_rotation="90,0,0" parent_transform="LeftHand"/> -->
-				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Buildings/capChimneyPrefab" local_offset="-.1,0,.55" local_rotation="90,0,0" parent_transform="LeftHand"/> -->
-				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Vehicles/Car/car_radiator_uprightPrefab.prefab" local_offset="-.1,0,.55" local_rotation="90,0,0" parent_transform="LeftHand"/> -->
-				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Buildings/TarpHangingRedPrefab" local_offset="0, 0, 0" local_rotation="0, 0, 0" parent_transform="Spine"/> -->
-				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/flagHonorDutyPrefab" local_offset="-0.25, 0, -1.25" local_rotation="90, 90, 0" parent_transform="Spine"/> -->
+				
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Decor/flagHonorDutyPrefab" local_offset="-0.18, 0.2, -1" local_rotation="-40, 180, 90" local_scale="0.65,0.4,1"  parent_transform="Spine">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/flagHonorDutyPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Decor/flagHonorDutyPrefab.prefab" local_offset="-0.18, 0.2, -1" local_rotation="-40, 180, 90" local_scale="0.65,0.4,1"  parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/flagHonorDutyPrefab.prefab" />
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Spear/spear_steel_Prefab.prefab" local_offset="0.14,0.06,-.05" local_rotation="0,-90,90" parent_transform="RightHand">
 					<requirement name="!HasPrefab" prefab="@:Other/Items/Weapons/Melee/Spear/spear_steel_Prefab.prefab" />
@@ -3209,7 +3326,7 @@
 			<effect_group>
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Tools/Auger/augerPrefab.prefab" local_offset="-.4,0,-.15" local_rotation="-90,225,0" parent_transform="LeftShoulder"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Tools/Auger/augerPrefab.prefab" local_offset=".4,0,.15" local_rotation="90,-135,0" parent_transform="RightShoulder"/> -->
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Resources/oreNitrateBoulderPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Minerals/oreNitrateBoulderPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine"/>
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="Auger_Idle" /> -->
 			</effect_group>
 			<effect_group>
@@ -3219,8 +3336,8 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Other/Items/Tools/Auger/augerPrefab.prefab" local_offset=".4,0,.15" local_rotation="90,-135,0" parent_transform="RightShoulder">
 					<requirement name="!HasPrefab" prefab="@:Other/Items/Tools/Auger/augerPrefab.prefab" />
 				</triggered_effect> -->
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Resources/oreNitrateBoulderPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine">
-					<requirement name="!HasPrefab" prefab="Entities/Resources/oreNitrateBoulderPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Minerals/oreNitrateBoulderPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="@:Entities/Minerals/oreNitrateBoulderPrefab.prefab" />
 				</triggered_effect>
 			</effect_group>
 		</buff>
@@ -3228,7 +3345,7 @@
 			<effect_group>
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Chainsaw/chainsawPrefab.prefab" local_offset="-.4,0,-.15" local_rotation="-90,225,0" parent_transform="LeftShoulder"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Chainsaw/chainsawPrefab.prefab" local_offset=".4,0,.15" local_rotation="90,-135,0" parent_transform="RightShoulder"/> -->
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Resources/oreShaleBoulderPrefab" local_offset="-.1,.1,0" local_rotation="70,200,20" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Minerals/oreShaleBoulderPrefab.prefab" local_offset="-.1,.1,0" local_rotation="70,200,20" parent_transform="Spine"/>
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="Chainsaw_Idle" /> -->
 			</effect_group>
 			<effect_group>
@@ -3238,14 +3355,14 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Chainsaw/chainsawPrefab.prefab" local_offset=".4,0,.15" local_rotation="90,-135,0" parent_transform="RightShoulder">
 					<requirement name="!HasPrefab" prefab="@:Other/Items/Weapons/Melee/Chainsaw/chainsawPrefab.prefab" />
 				</triggered_effect> -->
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Resources/oreShaleBoulderPrefab" local_offset="-.1,.1,0" local_rotation="70,200,20" parent_transform="Spine">
-					<requirement name="!HasPrefab" prefab="Entities/Resources/oreShaleBoulderPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Minerals/oreShaleBoulderPrefab.prefab" local_offset="-.1,.1,0" local_rotation="70,200,20" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="@:Entities/Minerals/oreShaleBoulderPrefab.prefab" />
 				</triggered_effect>
 			</effect_group>
 		</buff>
 		<buff name="SPIDER3" hidden="true">
-			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Resources/oreCoalBoulderPrefab" local_offset="0,0.02,0.15" local_rotation="-95,0,0" parent_transform="Spine"/>
+			<effect_group>                                                                     
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Minerals/oreCoalBoulderPrefab.prefab" local_offset="0,0.02,0.15" local_rotation="-95,0,0" parent_transform="Spine"/>
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" local_offset="-.4,0,-.15" local_rotation="-90,225,0" parent_transform="LeftShoulder"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" local_offset=".4,0,.15" local_rotation="90,-75,0" parent_transform="RightShoulder"/> -->
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="Chainsaw_Idle" /> -->
@@ -3257,8 +3374,8 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" local_offset=".4,0,.15" local_rotation="90,-75,0" parent_transform="RightShoulder">
 					<requirement name="!HasPrefab" prefab="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" />
 				</triggered_effect> -->
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Resources/oreCoalBoulderPrefab" local_offset="0,0.02,0.15" local_rotation="-95,0,0" parent_transform="Spine">
-					<requirement name="!HasPrefab" prefab="Entities/Resources/oreCoalBoulderPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Minerals/oreCoalBoulderPrefab.prefab" local_offset="0,0.02,0.15" local_rotation="-95,0,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="@:Entities/Minerals/oreCoalBoulderPrefab.prefab" />
 				</triggered_effect>
 			</effect_group>
 		</buff>
@@ -3300,54 +3417,54 @@
 		<!-- DECO BOSSES ELEMENTALES -->
 		<buff name="DecoBossMortevoda" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelPlasticQuadBPrefab" local_offset="0,0.25,-0.75" local_rotation="0,0,0" parent_transform="Spine"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Commercial/bollardConcreteKnockedBPrefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="LeftLeg"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Commercial/bollardConcreteKnockedBPrefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="RightLeg"/>
-				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/hangingMossPrefab" local_offset="0,-.3,0.2" local_rotation="0,0,0" parent_transform="Head"/> -->
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/hangingMossPrefab" local_offset="0,0.18,0.35" local_rotation="0,120,-20" parent_transform="Spine"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/hangingMossPrefab" local_offset="-0.15,-0.35,0.12" local_rotation="0,50,0" parent_transform="LeftShoulder"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/hangingMossPrefab" local_offset="0.15,0.35,-0.16" local_rotation="180,60,0" parent_transform="RightShoulder"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/hangingMossPrefab" local_offset="0,0,0" local_rotation="60,0,-80" parent_transform="LeftHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/hangingMossPrefab" local_offset="0,0,0" local_rotation="60,0,80" parent_transform="RightHand"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/hangingMossPrefab" local_offset="0,-0.2,0.2" local_rotation="-25,0,0" parent_transform="LeftLeg"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Decor/hangingMossPrefab" local_offset="0,-0.2,0.2" local_rotation="-25,0,0" parent_transform="RightLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelPlasticQuadBPrefab.prefab" local_offset="0,0.25,-0.75" local_rotation="0,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Commercial/bollardConcreteKnockedBPrefab.prefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="LeftLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Commercial/bollardConcreteKnockedBPrefab.prefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="RightLeg"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/hangingMossPrefab.prefab" local_offset="0,0.18,0.35" local_rotation="0,120,-20" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/hangingMossPrefab.prefab" local_offset="-0.15,-0.35,0.12" local_rotation="0,50,0" parent_transform="LeftShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/hangingMossPrefab.prefab" local_offset="0.15,0.35,-0.16" local_rotation="180,60,0" parent_transform="RightShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/hangingMossPrefab.prefab" local_offset="0,0,0" local_rotation="60,0,-80" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/hangingMossPrefab.prefab" local_offset="0,0,0" local_rotation="60,0,80" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/hangingMossPrefab.prefab" local_offset="0,-0.2,0.2" local_rotation="-25,0,0" parent_transform="LeftLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/hangingMossPrefab.prefab" local_offset="0,-0.2,0.2" local_rotation="-25,0,0" parent_transform="RightLeg"/>
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelPlasticQuadBPrefab" local_offset="0,0.25,-0.75" local_rotation="0,0,0" parent_transform="Spine">
-					<requirement name="!HasPrefab" prefab="Entities/Industrial/barrelPlasticQuadBPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelPlasticQuadBPrefab.prefab" local_offset="0,0.25,-0.75" local_rotation="0,0,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="@:Entities/Industrial/barrelPlasticQuadBPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Commercial/bollardConcreteKnockedBPrefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="LeftLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Commercial/bollardConcreteKnockedBPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Commercial/bollardConcreteKnockedBPrefab.prefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="LeftLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Commercial/bollardConcreteKnockedBPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Commercial/bollardConcreteKnockedBPrefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="RightLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Commercial/bollardConcreteKnockedBPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Commercial/bollardConcreteKnockedBPrefab.prefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="RightLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Commercial/bollardConcreteKnockedBPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Decor/hangingMossPrefab" local_offset="0,0.18,0.35" local_rotation="0,120,-20" parent_transform="Spine">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/hangingMossPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Decor/hangingMossPrefab.prefab" local_offset="0,0.18,0.35" local_rotation="0,120,-20" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/hangingMossPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Decor/hangingMossPrefab" local_offset="-0.15,-0.35,0.12" local_rotation="0,50,0" parent_transform="LeftShoulder">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/hangingMossPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Decor/hangingMossPrefab.prefab" local_offset="-0.15,-0.35,0.12" local_rotation="0,50,0" parent_transform="LeftShoulder">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/hangingMossPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Decor/hangingMossPrefab" local_offset="0.15,0.35,-0.16" local_rotation="180,60,0" parent_transform="RightShoulder">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/hangingMossPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Decor/hangingMossPrefab.prefab" local_offset="0.15,0.35,-0.16" local_rotation="180,60,0" parent_transform="RightShoulder">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/hangingMossPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Decor/hangingMossPrefab" local_offset="0,0,0" local_rotation="60,0,-80" parent_transform="LeftHand">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/hangingMossPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Decor/hangingMossPrefab.prefab" local_offset="0,0,0" local_rotation="60,0,-80" parent_transform="LeftHand">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/hangingMossPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Decor/hangingMossPrefab" local_offset="0,0,0" local_rotation="60,0,80" parent_transform="RightHand">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/hangingMossPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Decor/hangingMossPrefab.prefab" local_offset="0,0,0" local_rotation="60,0,80" parent_transform="RightHand">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/hangingMossPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Decor/hangingMossPrefab" local_offset="0,-0.2,0.2" local_rotation="-25,0,0" parent_transform="LeftLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/hangingMossPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Decor/hangingMossPrefab.prefab" local_offset="0,-0.2,0.2" local_rotation="-25,0,0" parent_transform="LeftLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/hangingMossPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Decor/hangingMossPrefab" local_offset="0,-0.2,0.2" local_rotation="-25,0,0" parent_transform="RightLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Decor/hangingMossPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Decor/hangingMossPrefab.prefab" local_offset="0,-0.2,0.2" local_rotation="-25,0,0" parent_transform="RightLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Decor/hangingMossPrefab.prefab" />
 				</triggered_effect>
 			</effect_group>
 		</buff>
 		<buff name="DecoBossInfernal" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/cowSkullPrefab" local_offset="0,0.4,0" local_rotation="0,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/OutdoorDecor/cowSkullPrefab.prefab" local_offset="0,0.4,0" local_rotation="0,0,0" parent_transform="Head"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" target="self" particle="p_burning_barrel" local_offset="0,-0.4,0" parent_transform="Head"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" target="self" particle="p_fire_small" local_offset="-0.05,-0.11,-0.08" local_rotation="-45,0,0" parent_transform="LeftShoulder"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" target="self" particle="p_fire_small" local_offset="0.1,0.11,0.08" local_rotation="110,0,0" parent_transform="RightShoulder"/>
@@ -3357,8 +3474,8 @@
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" target="self" particle="p_fire_small" local_offset="0,-0.4,0" local_rotation="0,0,0" parent_transform="RightLeg"/>
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/cowSkullPrefab" local_offset="0,0.4,0" local_rotation="0,0,0" parent_transform="Head">
-					<requirement name="!HasPrefab" prefab="Entities/OutdoorDecor/cowSkullPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/OutdoorDecor/cowSkullPrefab.prefab" local_offset="0,0.4,0" local_rotation="0,0,0" parent_transform="Head">
+					<requirement name="!HasPrefab" prefab="@:Entities/OutdoorDecor/cowSkullPrefab.prefab" />
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" target="self" particle="p_burning_barrel" local_offset="0,-0.4,0" parent_transform="Head">
 					<requirement name="!HasParticle" particle="p_burning_barrel" />
@@ -3385,22 +3502,22 @@
 		</buff>
 		<buff name="DecoBossHoarfrost" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Resources/oreNitrateBoulderPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Resources/oreNitrateBoulderPrefab" local_offset="0,-0.4,0" local_rotation="0,0,0" parent_transform="LeftLeg"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Resources/oreNitrateBoulderPrefab" local_offset="0,-0.4,0" local_rotation="0,0,0" parent_transform="RightLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Minerals/oreNitrateBoulderPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Minerals/oreNitrateBoulderPrefab.prefab" local_offset="0,-0.4,0" local_rotation="0,0,0" parent_transform="LeftLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Minerals/oreNitrateBoulderPrefab.prefab" local_offset="0,-0.4,0" local_rotation="0,0,0" parent_transform="RightLeg"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Axe/fireaxe_ironPrefab.prefab" local_offset="0.1,0.08,-0.35" local_rotation="-90,0,0" parent_transform="RightHand"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" target="self" particle="Smoke_Unlit" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="Smoke_Unlit" />
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Resources/oreNitrateBoulderPrefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine">
-					<requirement name="!HasPrefab" prefab="Entities/Resources/oreNitrateBoulderPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Minerals/oreNitrateBoulderPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="@:Entities/Minerals/oreNitrateBoulderPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Resources/oreNitrateBoulderPrefab" local_offset="0,-0.4,0" local_rotation="0,0,0" parent_transform="LeftLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Resources/oreNitrateBoulderPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Minerals/oreNitrateBoulderPrefab.prefab" local_offset="0,-0.4,0" local_rotation="0,0,0" parent_transform="LeftLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Minerals/oreNitrateBoulderPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Resources/oreNitrateBoulderPrefab" local_offset="0,-0.4,0" local_rotation="0,0,0" parent_transform="RightLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Resources/oreNitrateBoulderPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Minerals/oreNitrateBoulderPrefab.prefab" local_offset="0,-0.4,0" local_rotation="0,0,0" parent_transform="RightLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Minerals/oreNitrateBoulderPrefab.prefab" />
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Axe/fireaxe_ironPrefab.prefab" local_offset="0.1,0.08,-0.35" local_rotation="-90,0,0" parent_transform="RightHand">
 					<requirement name="!HasPrefab" prefab="@:Other/Items/Weapons/Melee/Axe/fireaxe_ironPrefab.prefab" />
@@ -3413,7 +3530,7 @@
 		</buff>
 		<buff name="DecoSubBossShocker" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/cowSkullPrefab" local_offset="0,0.4,0" local_rotation="0,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/OutdoorDecor/cowSkullPrefab.prefab" local_offset="0,0.4,0" local_rotation="0,0,0" parent_transform="Head"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_electric_shock" local_offset="0,0,0" local_rotation="0,0,90" parent_transform="LeftHand" />
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_electric_shock" local_offset="0,0,0" local_rotation="0,0,90" parent_transform="RightHand"  />
 
@@ -3422,8 +3539,8 @@
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_electric_shock" parent_transform="RightHand"/>
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/cowSkullPrefab" local_offset="0,0.4,0" local_rotation="0,0,0" parent_transform="Head">
-					<requirement name="!HasPrefab" prefab="Entities/OutdoorDecor/cowSkullPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/OutdoorDecor/cowSkullPrefab.prefab" local_offset="0,0.4,0" local_rotation="0,0,0" parent_transform="Head">
+					<requirement name="!HasPrefab" prefab="@:Entities/OutdoorDecor/cowSkullPrefab.prefab" />
 				</triggered_effect>				
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_electric_shock" local_offset="0,0,0" local_rotation="0,0,90" parent_transform="LeftHand">
 					<requirement name="!HasParticle" particle="p_electric_shock" />
@@ -3438,37 +3555,37 @@
 		</buff>		
 		<buff name="DecoBossShocker" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/cowSkullPrefab" local_offset="0,0.4,0" local_rotation="0,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/OutdoorDecor/cowSkullPrefab.prefab" local_offset="0,0.4,0" local_rotation="0,0,0" parent_transform="Head"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_electric_shock" local_offset="0,0,0" local_rotation="0,0,90" parent_transform="LeftHand" />
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_electric_shock" local_offset="0,0,0" local_rotation="0,0,90" parent_transform="RightHand"  />
 
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Lighting/lightCeilingPrefab" local_offset="-0.25,1.2,-1" local_rotation="90,0,0" parent_transform="Spine"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Lighting/lightCeilingPrefab" local_offset="-0.75,-0.3,-1" local_rotation="90,0,0" parent_transform="LeftShoulder"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Lighting/lightCeilingPrefab" local_offset="0.75,0.3,1" local_rotation="-90,0,0" parent_transform="RightShoulder"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Bandits/BanditSupportBroken1mPrefab" local_offset="0,0.3,-0.45" local_rotation="0,0,140" parent_transform="LeftShoulder"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Bandits/BanditSupportBroken1mPrefab" local_offset="0,-0.3,0.45" local_rotation="-45,-90,0" parent_transform="RightShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Lighting/lightCeilingPrefab.prefab" local_offset="-0.25,1.2,-1" local_rotation="90,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Lighting/lightCeilingPrefab.prefab" local_offset="-0.75,-0.3,-1" local_rotation="90,0,0" parent_transform="LeftShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Lighting/lightCeilingPrefab.prefab" local_offset="0.75,0.3,1" local_rotation="-90,0,0" parent_transform="RightShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/BanditProps/BanditSupportBroken1mPrefab.prefab" local_offset="0,0.3,-0.45" local_rotation="0,0,140" parent_transform="LeftShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/BanditProps/BanditSupportBroken1mPrefab.prefab" local_offset="0,-0.3,0.45" local_rotation="-45,-90,0" parent_transform="RightShoulder"/>
 
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_electric_shock" parent_transform="LeftHand"/>
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_electric_shock" parent_transform="RightHand"/>
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/cowSkullPrefab" local_offset="0,0.4,0" local_rotation="0,0,0" parent_transform="Head">
-					<requirement name="!HasPrefab" prefab="Entities/OutdoorDecor/cowSkullPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/OutdoorDecor/cowSkullPrefab.prefab" local_offset="0,0.4,0" local_rotation="0,0,0" parent_transform="Head">
+					<requirement name="!HasPrefab" prefab="@:Entities/OutdoorDecor/cowSkullPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Lighting/lightCeilingPrefab" local_offset="-0.25,1.2,-1" local_rotation="90,0,0" parent_transform="Spine">
-					<requirement name="!HasPrefab" prefab="Entities/Lighting/lightCeilingPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Lighting/lightCeilingPrefab.prefab" local_offset="-0.25,1.2,-1" local_rotation="90,0,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="@:Entities/Lighting/lightCeilingPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Lighting/lightCeilingPrefab" local_offset="-0.75,-0.3,-1" local_rotation="90,0,0" parent_transform="LeftShoulder">
-					<requirement name="!HasPrefab" prefab="Entities/Lighting/lightCeilingPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Lighting/lightCeilingPrefab.prefab" local_offset="-0.75,-0.3,-1" local_rotation="90,0,0" parent_transform="LeftShoulder">
+					<requirement name="!HasPrefab" prefab="@:Entities/Lighting/lightCeilingPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Lighting/lightCeilingPrefab" local_offset="0.75,0.3,1" local_rotation="-90,0,0" parent_transform="RightShoulder">
-					<requirement name="!HasPrefab" prefab="Entities/Lighting/lightCeilingPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Lighting/lightCeilingPrefab.prefab" local_offset="0.75,0.3,1" local_rotation="-90,0,0" parent_transform="RightShoulder">
+					<requirement name="!HasPrefab" prefab="@:Entities/Lighting/lightCeilingPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Bandits/BanditSupportBroken1mPrefab" local_offset="0,0.3,-0.45" local_rotation="0,0,140" parent_transform="LeftShoulder">
-					<requirement name="!HasPrefab" prefab="Entities/Bandits/BanditSupportBroken1mPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/BanditProps/BanditSupportBroken1mPrefab.prefab" local_offset="0,0.3,-0.45" local_rotation="0,0,140" parent_transform="LeftShoulder">
+					<requirement name="!HasPrefab" prefab="@:Entities/BanditProps/BanditSupportBroken1mPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Bandits/BanditSupportBroken1mPrefab" local_offset="0,-0.3,0.45" local_rotation="-45,-90,0" parent_transform="RightShoulder">
-					<requirement name="!HasPrefab" prefab="Entities/Bandits/BanditSupportBroken1mPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/BanditProps/BanditSupportBroken1mPrefab.prefab" local_offset="0,-0.3,0.45" local_rotation="-45,-90,0" parent_transform="RightShoulder">
+					<requirement name="!HasPrefab" prefab="@:Entities/BanditProps/BanditSupportBroken1mPrefab.prefab" />
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_electric_shock" local_offset="0,0,0" local_rotation="0,0,90" parent_transform="LeftHand">
 					<requirement name="!HasParticle" particle="p_electric_shock" />
@@ -3483,7 +3600,7 @@
 		</buff>
 		<buff name="DecoBossToxic" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/barrelAcidQuadBPrefab" local_offset="0,0.25,-0.75" local_rotation="0,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelAcidQuadBPrefab.prefab" local_offset="0,0.25,-0.75" local_rotation="0,0,0" parent_transform="Spine"/>
 
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_left" local_offset="0,0,0.15" local_rotation="0,0,90" parent_transform="Head" />
 				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_left" local_offset="0,0,0.15" local_rotation="0,0,90" parent_transform="Head" />
@@ -3504,8 +3621,8 @@
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_twitch_zombie_radiation_right"/>
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" particle="Entities/Industrial/barrelAcidQuadBPrefab" local_offset="0,0.25,-0.75" local_rotation="0,0,0" parent_transform="Spine">
-					<requirement name="!HasPrefab" particle="Entities/Industrial/barrelAcidQuadBPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" particle="@:Entities/Industrial/barrelAcidQuadBPrefab.prefab" local_offset="0,0.25,-0.75" local_rotation="0,0,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" particle="@:Entities/Industrial/barrelAcidQuadBPrefab.prefab" />
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_twitch_zombie_radiation_left" local_offset="0,0,0.15" local_rotation="0,0,90" parent_transform="Head">
 					<requirement name="!HasParticle" particle="p_twitch_zombie_radiation_left" />
@@ -3535,7 +3652,7 @@
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?Blue_Spruce45Prefab.prefab" local_offset="0.1,0.4,0" local_rotation="-90,0,0" local_scale="0.05,0.05,0.0510207" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?OakMed03Prefab.prefab" local_offset="0,-0.2,0" local_rotation="-90,0,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="Spine"/>
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?AzaleaPrefab.prefab" local_offset="0,-0.2,0" local_rotation="0,0,0" local_scale="0.7,0.7,0.7" parent_transform="Spine"/> -->
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Plants/cactus06Prefab" local_offset="0,0.2,0" local_rotation="0,0,0" local_scale="0.5,0.5,0.5" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Plants/cactus06Prefab.prefab" local_offset="0,0.2,0" local_rotation="0,0,0" local_scale="0.5,0.5,0.5" parent_transform="Head"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?SnakeweedPrefab.prefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.4,0.4,0.4" parent_transform="LeftLeg"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?AzaleaPrefab.prefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.5,0.5,0.5" parent_transform="RightLeg"/>
 			</effect_group>
@@ -3564,8 +3681,8 @@
 					<requirement name="!HasPrefab" prefab="#Entities/Trees?AzaleaPrefab.prefab" parent_transform="Spine"/>
 				</triggered_effect> -->
 
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Plants/cactus06Prefab" local_offset="0,0.2,0" local_rotation="0,0,0" local_scale="0.5,0.5,0.5" parent_transform="Head">
-					<requirement name="!HasPrefab" prefab="Entities/Plants/cactus06Prefab" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Plants/cactus06Prefab.prefab" local_offset="0,0.2,0" local_rotation="0,0,0" local_scale="0.5,0.5,0.5" parent_transform="Head">
+					<requirement name="!HasPrefab" prefab="@:Entities/Plants/cactus06Prefab.prefab" parent_transform="Head"/>
 				</triggered_effect>
 
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?SnakeweedPrefab.prefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.4,0.4,0.4" parent_transform="LeftLeg">
@@ -3627,10 +3744,10 @@
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?Haunted_Tree_Wasteland39Prefab.prefab" local_offset="0.1,0.4,0" local_rotation="-90,0,0" local_scale="0.07,0.07,0.07" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?Haunted_Tree_Wasteland42Prefab.prefab" local_offset="0,-0.2,0" local_rotation="-90,0,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="Spine"/>
 
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Debris/pileEmberBurntLogs2Prefab" local_offset="0,0.18,0.25" local_rotation="50,0,0" local_scale="0.19,0.19,0.19" parent_transform="Spine2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Debris/pileEmberBurntLogs2Prefab.prefab" local_offset="0,0.18,0.25" local_rotation="50,0,0" local_scale="0.19,0.19,0.19" parent_transform="Spine2"/>
 
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Plants/plantShrubDeadPrefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.4,0.4,0.4" parent_transform="LeftLeg"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Plants/plantShrubDeadPrefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.5,0.5,0.5" parent_transform="RightLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Plants/plantShrubDeadPrefab.prefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.4,0.4,0.4" parent_transform="LeftLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Plants/plantShrubDeadPrefab.prefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.5,0.5,0.5" parent_transform="RightLeg"/>
 			</effect_group>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?FirMed01BurntPrefab.prefab" local_offset="-0.2,0,0" local_rotation="-33,0,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="LeftShoulder">
@@ -3650,38 +3767,38 @@
 					<requirement name="!HasPrefab" prefab="#Entities/Trees?Haunted_Tree_Wasteland42Prefab.prefab" parent_transform="Spine"/>
 				</triggered_effect>
 
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Debris/pileEmberBurntLogs2Prefab" local_offset="0,0.18,0.25" local_rotation="50,0,0" local_scale="0.19,0.19,0.19" parent_transform="Spine2">
-					<requirement name="!HasPrefab" prefab="Entities/Debris/pileEmberBurntLogs2Prefab" parent_transform="Spine2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Debris/pileEmberBurntLogs2Prefab.prefab" local_offset="0,0.18,0.25" local_rotation="50,0,0" local_scale="0.19,0.19,0.19" parent_transform="Spine2">
+					<requirement name="!HasPrefab" prefab="@:Entities/Debris/pileEmberBurntLogs2Prefab.prefab" parent_transform="Spine2"/>
 				</triggered_effect>
 
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Plants/plantShrubDeadPrefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.4,0.4,0.4" parent_transform="LeftLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Plants/plantShrubDeadPrefab" parent_transform="LeftLeg"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Plants/plantShrubDeadPrefab.prefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.4,0.4,0.4" parent_transform="LeftLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Plants/plantShrubDeadPrefab.prefab" parent_transform="LeftLeg"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Plants/plantShrubDeadPrefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.5,0.5,0.5" parent_transform="RightLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Plants/plantShrubDeadPrefab" parent_transform="RightLeg"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Plants/plantShrubDeadPrefab.prefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.5,0.5,0.5" parent_transform="RightLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Plants/plantShrubDeadPrefab.prefab" parent_transform="RightLeg"/>
 				</triggered_effect>
 				
 			</effect_group>
 		</buff>
 		<buff name="DecoBossEarthDesert" hidden="true">
 			<effect_group> 
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Plants/cactus05Prefab" local_offset="-0.2,0.2,0" local_rotation="-33,0,0" local_scale="0.25,0.25,0.25" parent_transform="LeftShoulder"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Plants/cactus05Prefab" local_offset="0.17,-0.2,0" local_rotation="180,66,0" local_scale="0.25,0.25,0.25" parent_transform="RightShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Plants/cactus05Prefab.prefab" local_offset="-0.2,0.2,0" local_rotation="-33,0,0" local_scale="0.25,0.25,0.25" parent_transform="LeftShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Plants/cactus05Prefab.prefab" local_offset="0.17,-0.2,0" local_rotation="180,66,0" local_scale="0.25,0.25,0.25" parent_transform="RightShoulder"/>
 				
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?Saguaro_Cactus_20Prefab.prefab" local_offset="-0.2,0.4,0" local_rotation="-90,0,0" local_scale="0.17,0.17,0.17" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?Saguaro_Cactus_16Prefab.prefab" local_offset="0.1,0.4,0" local_rotation="-90,0,0" local_scale="0.17,0.17,0.17" parent_transform="Spine"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/driftwood_02Prefab" local_offset="0,0.2,-0.2" local_rotation="0,90,0" local_scale="0.70,0.70,0.70" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/OutdoorDecor/driftwood_02Prefab.prefab" local_offset="0,0.2,-0.2" local_rotation="0,90,0" local_scale="0.70,0.70,0.70" parent_transform="Spine"/>
 
-				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/cowSkullPrefab" local_offset="0,0.18,0.25" local_rotation="50,0,0" local_scale="0.19,0.19,0.19" parent_transform="Spine2"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/OutdoorDecor/cowSkullPrefab.prefab" local_offset="0,0.18,0.25" local_rotation="50,0,0" local_scale="0.19,0.19,0.19" parent_transform="Spine2"/> -->
 
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Plants/plantShrubDeadPrefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.4,0.4,0.4" parent_transform="LeftLeg"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Plants/plantShrubDeadPrefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.5,0.5,0.5" parent_transform="RightLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Plants/plantShrubDeadPrefab.prefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.4,0.4,0.4" parent_transform="LeftLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Plants/plantShrubDeadPrefab.prefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.5,0.5,0.5" parent_transform="RightLeg"/>
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Plants/cactus05Prefab" local_offset="-0.2,0.2,0" local_rotation="-33,0,0" local_scale="0.25,0.25,0.25" parent_transform="LeftShoulder">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Plants/cactus05Prefab.prefab" local_offset="-0.2,0.2,0" local_rotation="-33,0,0" local_scale="0.25,0.25,0.25" parent_transform="LeftShoulder">
 					<requirement name="!HasPrefab" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" parent_transform="LeftShoulder"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Plants/cactus05Prefab" local_offset="0.17,-0.2,0" local_rotation="180,66,0" local_scale="0.25,0.25,0.25" parent_transform="RightShoulder">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Plants/cactus05Prefab.prefab" local_offset="0.17,-0.2,0" local_rotation="180,66,0" local_scale="0.25,0.25,0.25" parent_transform="RightShoulder">
 					<requirement name="!HasPrefab" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" parent_transform="RightShoulder"/>
 				</triggered_effect>
 
@@ -3691,36 +3808,36 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?Saguaro_Cactus_16Prefab.prefab" local_offset="0.1,0.4,0" local_rotation="-90,0,0" local_scale="0.17,0.17,0.17" parent_transform="Spine">
 					<requirement name="!HasPrefab" prefab="#Entities/Trees?Saguaro_Cactus_16Prefab.prefab" parent_transform="Spine"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/driftwood_02Prefab" local_offset="0,0.2,-0.2" local_rotation="0,90,0" local_scale="0.70,0.70,0.70" parent_transform="Spine">
-					<requirement name="!HasPrefab" prefab="Entities/OutdoorDecor/driftwood_02Prefab" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/OutdoorDecor/driftwood_02Prefab.prefab" local_offset="0,0.2,-0.2" local_rotation="0,90,0" local_scale="0.70,0.70,0.70" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="@:Entities/OutdoorDecor/driftwood_02Prefab.prefab" parent_transform="Spine"/>
 				</triggered_effect>
 
-				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/cowSkullPrefab" local_offset="0,0.18,0.25" local_rotation="50,0,0" local_scale="0.19,0.19,0.19" parent_transform="Spine2">
-					<requirement name="!HasPrefab" prefab="Entities/OutdoorDecor/cowSkullPrefab" parent_transform="Spine2"/>
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/OutdoorDecor/cowSkullPrefab.prefab" local_offset="0,0.18,0.25" local_rotation="50,0,0" local_scale="0.19,0.19,0.19" parent_transform="Spine2">
+					<requirement name="!HasPrefab" prefab="@:Entities/OutdoorDecor/cowSkullPrefab.prefab" parent_transform="Spine2"/>
 				</triggered_effect> -->
 
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Plants/plantShrubDeadPrefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.4,0.4,0.4" parent_transform="LeftLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Plants/plantShrubDeadPrefab" parent_transform="LeftLeg"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Plants/plantShrubDeadPrefab.prefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.4,0.4,0.4" parent_transform="LeftLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Plants/plantShrubDeadPrefab.prefab" parent_transform="LeftLeg"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Plants/plantShrubDeadPrefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.5,0.5,0.5" parent_transform="RightLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Plants/plantShrubDeadPrefab" parent_transform="RightLeg"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Plants/plantShrubDeadPrefab.prefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.5,0.5,0.5" parent_transform="RightLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Plants/plantShrubDeadPrefab.prefab" parent_transform="RightLeg"/>
 				</triggered_effect>				
 			</effect_group>
 		</buff>
 		<buff name="DecoBossEarthSnow" hidden="true">
 			<effect_group> 
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?AlaskaCedar60Prefab.prefab" local_offset="-0.2,0,0" local_rotation="-33,0,0" local_scale="0.13,0.13,0.13" parent_transform="LeftShoulder"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?AlaskaCedar60Prefab.prefab" local_offset="0.17,-0.1,0" local_rotation="180,66,0" local_scale="0.13,0.13,0.13" parent_transform="RightShoulder"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?StudioGimbal/AlaskaCedar60/AlaskaCedar60LargeGimbalPrefab.prefa" local_offset="-0.2,0,0" local_rotation="-33,0,0" local_scale="0.13,0.13,0.13" parent_transform="LeftShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?StudioGimbal/AlaskaCedar60/AlaskaCedar60LargeGimbalPrefab.prefa" local_offset="0.17,-0.1,0" local_rotation="180,66,0" local_scale="0.13,0.13,0.13" parent_transform="RightShoulder"/>				
 
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?Blue_Spruce45Prefab.prefab" local_offset="-0.2,0.4,0" local_rotation="-90,0,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?Blue_Spruce55Prefab.prefab" local_offset="0.1,0.4,0" local_rotation="-90,0,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?Blue_Spruce66Prefab.prefab" local_offset="0,-0.2,0" local_rotation="-90,0,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="Spine"/>
 
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Plants/plantShrubSnowPrefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.4,0.4,0.4" parent_transform="LeftLeg"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Plants/plantShrubSnowPrefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.5,0.5,0.5" parent_transform="RightLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Plants/plantShrubSnowPrefab.prefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.4,0.4,0.4" parent_transform="LeftLeg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Plants/plantShrubSnowPrefab.prefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.5,0.5,0.5" parent_transform="RightLeg"/>
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Plants/AlaskaCedar60Prefab" local_offset="-0.2,0,0" local_rotation="-33,0,0" local_scale="0.13,0.13,0.13" parent_transform="LeftShoulder">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?StudioGimbal/AlaskaCedar60/AlaskaCedar60LargeGimbalPrefab.prefa" local_offset="-0.2,0,0" local_rotation="-33,0,0" local_scale="0.13,0.13,0.13" parent_transform="LeftShoulder">
 					<requirement name="!HasPrefab" prefab="Entities/Plants/AlaskaCedar60Prefab" parent_transform="LeftShoulder"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Plants/AlaskaCedar60Prefab" local_offset="0.17,-0.1,0" local_rotation="180,66,0" local_scale="0.13,0.13,0.13" parent_transform="RightShoulder">
@@ -3737,11 +3854,11 @@
 					<requirement name="!HasPrefab" prefab="#Entities/Trees?Blue_Spruce66Prefab.prefab" parent_transform="Spine"/>
 				</triggered_effect>
 
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Plants/plantShrubSnowPrefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.4,0.4,0.4" parent_transform="LeftLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Plants/plantShrubSnowPrefab" parent_transform="LeftLeg"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Plants/plantShrubSnowPrefab.prefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.4,0.4,0.4" parent_transform="LeftLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Plants/plantShrubSnowPrefab.prefab" parent_transform="LeftLeg"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Plants/plantShrubSnowPrefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.5,0.5,0.5" parent_transform="RightLeg">
-					<requirement name="!HasPrefab" prefab="Entities/Plants/plantShrubSnowPrefab" parent_transform="RightLeg"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Plants/plantShrubSnowPrefab.prefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.5,0.5,0.5" parent_transform="RightLeg">
+					<requirement name="!HasPrefab" prefab="@:Entities/Plants/plantShrubSnowPrefab.prefab" parent_transform="RightLeg"/>
 				</triggered_effect>
 				
 			</effect_group>
@@ -3794,19 +3911,19 @@
 		<!--BUFF BY SNUKFIN! Malen EDIT-->
 		<buff name="SirenDeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Electrical/speakerLoudWallPrefab" local_offset="0,-.15,.17" local_rotation="0,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Electrical/speakerLoudWallPrefab.prefab" local_offset="0,-.15,.17" local_rotation="0,0,0" parent_transform="Head"/>
 				<!-- Up/Down - Side/Side - Front/Back -->
 
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Electrical/speakerLoudWallPrefab" local_offset="0,-.15,.17" local_rotation="0,0,0" parent_transform="Head">
-					<requirement name="!HasPrefab" particle="Entities/Electrical/speakerLoudWallPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Electrical/speakerLoudWallPrefab.prefab" local_offset="0,-.15,.17" local_rotation="0,0,0" parent_transform="Head">
+					<requirement name="!HasPrefab" particle="@:Entities/Electrical/speakerLoudWallPrefab.prefab" />
 				</triggered_effect>
 			</effect_group>
 		</buff>
 		<buff name="zombiSBMiniSirenDeco" hidden="true">
 			<effect_group>																      <!--Entities/Electrical/loudspeakerPrefab-->
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Electrical/speakerLoudWallPrefab" local_offset="-.2,0,.5" local_rotation="0,0,90" parent_transform="Spine1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Electrical/speakerLoudWallPrefab.prefab" local_offset="-.2,0,.5" local_rotation="0,0,90" parent_transform="Spine1"/>
 				<!--<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Other/Items?Weapons/Melee/Club/Club_Wood_Branch.FBX" local_offset="-.3,0,0" local_rotation="-45,0,-90" parent_transform="Spine1"/>-->
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Club/Club_Wood_BranchPrefab.prefab" local_offset="-.55,0,0" local_rotation="0,0,-90" parent_transform="Spine1"/>
 			</effect_group>
@@ -3838,7 +3955,7 @@
 		</buff>
 		<buff name="JuggernautDeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Traps/hubcapPrefab" local_offset="0,0.18,.7" local_rotation="80,0,0" parent_transform="Spine2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Traps/hubcapPrefab.prefab" local_offset="0,0.18,.7" local_rotation="80,0,0" parent_transform="Spine2"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" local_offset="-0.25,0,0" local_rotation="0,0,0" parent_transform="LeftShoulder"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" local_offset="0.25,0,0" local_rotation="180,0,0" parent_transform="RightShoulder"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Tools/Auger/augerPrefab.prefab" local_offset="0.2,0,0" local_rotation="0,90,0" parent_transform="RightHand"/>
@@ -3899,8 +4016,8 @@
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Knives/machetePrefab.prefab" local_offset="0,0,0" local_rotation="90,90,180" parent_transform="LeftHand"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Knives/hunting_knifePrefab.prefab" local_offset="0.1,0.05,0" local_rotation="0,90,-90" parent_transform="RightHand"/>
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Gore/animalRemainsGorePrefab" local_offset="0.1,0,0.2" local_rotation="180,90,90" parent_transform="Spine"/> -->
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Gore/humanSkeletonGorePrefab" local_offset="0,0,-0.65" local_rotation="90,0,180" parent_transform="Spine"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Gore/humanSkullGorePrefab" local_offset="0,0.5,0" local_rotation="0,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Gore/humanSkeletonGorePrefab.prefab" local_offset="0,0,-0.65" local_rotation="90,0,180" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Gore/humanSkullGorePrefab.prefab" local_offset="0,0.5,0" local_rotation="0,0,0" parent_transform="Head"/>
 			</effect_group>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Knives/machetePrefab.prefab" local_offset="0,0,0" local_rotation="90,90,180" parent_transform="LeftHand">
@@ -3912,18 +4029,18 @@
 				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Gore/animalRemainsGorePrefab" local_offset="0.1,0,0.2" local_rotation="180,90,90" parent_transform="Spine">
 					<requirement name="!HasPrefab" prefab="Entities/Gore/animalRemainsGorePrefab" />
 				</triggered_effect> -->
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Gore/humanSkeletonGorePrefab" local_offset="0,0,-0.65" local_rotation="90,0,180" parent_transform="Spine">
-					<requirement name="!HasPrefab" prefab="Entities/Gore/humanSkeletonGorePrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Gore/humanSkeletonGorePrefab.prefab" local_offset="0,0,-0.65" local_rotation="90,0,180" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="@:Entities/Gore/humanSkeletonGorePrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Gore/humanSkullGorePrefab" local_offset="0,0.5,0" local_rotation="0,0,0" parent_transform="Head">
-					<requirement name="!HasPrefab" prefab="Entities/Gore/humanSkullGorePrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Gore/humanSkullGorePrefab.prefab" local_offset="0,0.5,0" local_rotation="0,0,0" parent_transform="Head">
+					<requirement name="!HasPrefab" prefab="@:Entities/Gore/humanSkullGorePrefab.prefab" />
 				</triggered_effect>
 			</effect_group>
 		</buff>
 
 		<buff name="adminDeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Industrial/hoistHookPrefab" local_offset="-.2,0,0" local_rotation="0,180,90" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/hoistHookPrefab.prefab" local_offset="-.2,0,0" local_rotation="0,180,90" parent_transform="LeftHand"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Tools/hammerPrefab.prefab" local_offset="0.1,0.02,0.0" local_rotation="187,-80,90" parent_transform="RightHand"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/weapon_bags_largePrefab.prefab" local_offset="0,-.3,-.5" local_rotation="360,0,0" parent_transform="Spine2"/>
 			</effect_group>
@@ -4765,8 +4882,8 @@
 				<requirement name="EntityTagCompare" tags="player"/>
 
 				<passive_effect name="PlayerExpGain" operation="perc_set" value=".5">
-					<requirement name="!HasBuff" buff="PPBF"/>
-					<requirement name="!HasBuff" buff="PPBF2"/>
+					<requirement name="!HasBuff" buff="prestigeBuff"/>
+					<requirement name="!HasBuff" buff="prestigeBuff2"/>
 				</passive_effect>
 
 			</effect_group>
@@ -4780,10 +4897,10 @@
 		</buff>
 		<buff name="adminDeco2_test1" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Electrical/speakerLoudWallPrefab" local_offset="0,-.15,.17" local_rotation="0,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Electrical/speakerLoudWallPrefab.prefab" local_offset="0,-.15,.17" local_rotation="0,0,0" parent_transform="Head"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" local_offset="-.2,.13,0" local_rotation="180,0,0" parent_transform="LeftShoulder"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Gore/humanSkeletonGorePrefab" local_offset="0,0,-0.65" local_rotation="90,0,180" parent_transform="Spine"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Traps/hubcapPrefab" local_offset="-.1,0,.55" local_rotation="90,0,0" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Gore/humanSkeletonGorePrefab.prefab" local_offset="0,0,-0.65" local_rotation="90,0,180" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Traps/hubcapPrefab.prefab" local_offset="-.1,0,.55" local_rotation="90,0,0" parent_transform="LeftHand"/>
 
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Tools/Auger/augerPrefab.prefab" local_offset="-.25,.35,-.1" local_rotation="-90,180,0" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Tools/Auger/augerPrefab.prefab" local_offset=".15,.35,-.1" local_rotation="-90,0,0" parent_transform="Spine"/>
@@ -4793,17 +4910,17 @@
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" prefab="@:Other/Items/Weapons/Ranged/JunkTurret/junkTurret_Prefab.prefab" local_offset=".18,-.20,0" local_rotation="0,0,0" parent_transform="Spine"/> -->
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Electrical/speakerLoudWallPrefab" local_offset="0,-.15,.17" local_rotation="0,0,0" parent_transform="Head">
-					<requirement name="!HasPrefab" particle="Entities/Electrical/speakerLoudWallPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Electrical/speakerLoudWallPrefab.prefab" local_offset="0,-.15,.17" local_rotation="0,0,0" parent_transform="Head">
+					<requirement name="!HasPrefab" particle="@:Entities/Electrical/speakerLoudWallPrefab.prefab" />
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" local_offset="-.2,.13,0" local_rotation="180,0,0" parent_transform="LeftShoulder">
 					<requirement name="!HasPrefab" particle="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Gore/humanSkeletonGorePrefab" local_offset="0,0,-0.65" local_rotation="90,0,180" parent_transform="Spine">
-					<requirement name="!HasPrefab" prefab="Entities/Gore/humanSkeletonGorePrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Gore/humanSkeletonGorePrefab.prefab" local_offset="0,0,-0.65" local_rotation="90,0,180" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="@:Entities/Gore/humanSkeletonGorePrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Traps/hubcapPrefab" local_offset="-.1,0,.55" local_rotation="90,0,0" parent_transform="LeftHand">
-					<requirement name="!HasPrefab" prefab="Entities/Traps/hubcapPrefab" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Traps/hubcapPrefab.prefab" local_offset="-.1,0,.55" local_rotation="90,0,0" parent_transform="LeftHand">
+					<requirement name="!HasPrefab" prefab="@:Entities/Traps/hubcapPrefab.prefab" />
 				</triggered_effect>
 
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Other/Items/Tools/Auger/augerPrefab.prefab" local_offset="-.25,.35,-.1" local_rotation="-90,180,0" parent_transform="Spine">
@@ -4865,7 +4982,7 @@
 		<buff name="decoBear" hidden="true">
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Tools/Auger/augerPrefab.prefab" local_offset="-.1,0,0" local_rotation="0,-90,0" parent_transform="Head"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/cowSkullPrefab" local_offset="0,.3,.45" local_rotation="60,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/OutdoorDecor/cowSkullPrefab.prefab" local_offset="0,.3,.45" local_rotation="60,0,0" parent_transform="Head"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" local_offset=".24,.85,0" local_rotation="0,0,0" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Zombies/Zombies/halfCorpsePrefab.prefab" local_offset=".30,.2,0" local_rotation="50,0,90" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Zombies/Zombies/halfCorpsePrefab.prefab" local_offset="-.90,.27,-.5" local_rotation="0,25,75" parent_transform="Head"/>
@@ -4994,14 +5111,14 @@
 		</buff>
 		<buff name="helllionDeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/cowSkullPrefab" local_offset="0,0.1,0.1" local_rotation="30,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/OutdoorDecor/cowSkullPrefab.prefab" local_offset="0,0.1,0.1" local_rotation="30,0,0" parent_transform="Head"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="torch02_firePrefab" local_offset=".1,0.05,0.2" local_rotation="90,0,180" parent_transform="Head"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="particleeffects/torch02_firePrefab" local_offset="-.1,0.05,0.2" local_rotation="90,0,180" parent_transform="Head"/>
+				
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/ClubIron/ClubIronPrefab.prefab" local_offset="-0.05,0.2,-0.25" local_rotation="0,0,180" parent_transform="Head"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Animals/Vulture/animalVultureStandard" local_offset="0,0,0" local_rotation="90,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Animals/Vulture/animalVultureStandard.prefab" local_offset="0,0,0" local_rotation="90,0,0" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Zombies/Zombies/zombieStandardSpiderRagdoll.prefab" local_offset="0,0.15,-0.2" local_rotation="0,0,0" parent_transform="Spine2"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/ClubIron/ClubIronPrefab.prefab" local_offset="0.13,0,0.4" local_rotation="0,90,-180" parent_transform="Spine3"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Plants/pumpkinJackoLanternPrefab" local_offset="0,0.54,0.33" local_rotation="30,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Plants/pumpkinJackoLanternPrefab.prefab" local_offset="0,0.54,0.33" local_rotation="30,0,0" parent_transform="Spine"/>
 			</effect_group>
 		</buff>	
 
@@ -5061,7 +5178,7 @@
 		<buff name="rayodeco" hidden="true">
 			<effect_group>
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_wire_tool_sparks" />
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/OutdoorDecor/cowSkullPrefab" local_offset="-.3,0,.3" local_rotation="0,50,90" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/OutdoorDecor/cowSkullPrefab.prefab" local_offset="-.3,0,.3" local_rotation="0,50,90" parent_transform="Head"/>
 			</effect_group>
 		</buff>
 		<buff name="MILITAR" hidden="true">
@@ -5146,7 +5263,7 @@
 		</buff>
 		<buff name="RAIDERdeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="Entities/Plants/pumpkinJackoLanternPrefab" local_offset="-.5,0,0" local_rotation="0,0,90" parent_transform="Head"/>
+				
 				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Melee/ClubIron/ClubIronPrefab.prefab" local_offset="-.1,0,0" local_rotation="180,90,180" parent_transform="RightHand"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_fire_small" local_offset="-.1,0,.3" local_rotation="0,-60,90" parent_transform="Head"/>
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_fire_small" />

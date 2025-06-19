@@ -17,9 +17,9 @@
             <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="800" width="1280">
                 <rect name="tabsHeader" height="56" depth="3">                    <!--Change rows to the number of "buttons you need"-->
                     <grid name="tabButtons" pos="0,-400" depth="2" rows="8" cols="1" cell_width="250" cell_height="56" repeat_content="true" arrangement="vertical">
-                        <rect>
-                            <simplebutton name="tabButton" depth="2" pos="2,-2" width="250" height="46" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="[black]" foregroundlayer="true"/>
-
+                        <rect controller="TabSelectorButton"> 
+                            
+                            <simplebutton name="tabButton" depth="2" pos="2,-2" width="250" height="46" font_size="34" bordercolor="[black]" selectedsprite="menu_empty" selectedcolor="[black]" foregroundlayer="true" caption="{tab_name_localized}" />
                         </rect>
                     </grid>
                 </rect>
@@ -30,7 +30,7 @@
                     <sprite depth="-2" pos="2,0" width="1276" height="800" name="backgroundMain" sprite="menu_empty3px" color="[mediumGrey]" type="sliced" fillcenter="true"/>
                     <sprite name="border" sprite="menu_empty3px" height="802" pos="0,1" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
                     <!-- Main, links and PNG -->
-                    <rect tab_key="Hooligans Force">
+                    <rect  controller="TabSelectorTab" tab_key="Hooligans Force">
                         <panel name="rheader" pos="0,46" height="46" width="1280" depth="0" disableautobackground="true">
                             <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
                             <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1276" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
@@ -117,7 +117,7 @@
                         </panel>
                     </rect>
                     <!-- Reglas del servidor -->
-                    <rect tab_key="HeaderR">
+                    <rect  controller="TabSelectorTab" tab_key="HeaderR">
                         <panel name="rheader" pos="0,46" height="46" width="1280" depth="0" disableautobackground="true">
                             <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
                             <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1276" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
@@ -129,18 +129,18 @@
                                 <sprite depth="7" pos="366,-30" color="255, 128, 0" width="36" height="36" sprite="ui_game_symbol_map_trader" foregroundlayer="true"/>
                                 <sprite depth="7" pos="723,-30" color="0, 255, 0" width="36" height="36" sprite="ui_game_symbol_resource" foregroundlayer="true"/>
                                 <grid name="tabButtons" pos="0,-20" depth="4" rows="1" cols="3" cell_width="358" cell_height="51" repeat_content="true" arrangement="horizontal">
-                                    <rect>
-                                        <simplebutton2 name="tabButton" borderW="336" iconC="0, 0, 0" buttonIcon="" depth="2" pos="2,-3" width="336" height="48" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
+                                    <rect controller="TabSelectorButton">
+                                        <simplebutton2 name="tabButton" borderW="336" iconC="0, 0, 0" buttonIcon="" depth="2" pos="2,-3" width="336" height="48" font_size="30" caption="{tab_name_localized}" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
                                     </rect>
                                 </grid>
                             </rect>
                             <rect name="tabsContents" depth="2" pos="0,-50" height="713">
-                                <rect tab_key="HeaderR">
+                                <rect  controller="TabSelectorTab" tab_key="HeaderR">
                                     <rect name="tabs" controller="TabSelector" pivot="center" height="100" width="100">
                                         <rect name="tabsHeader" pos="190,-150" width="100%" height="650" depth="0">
                                             <grid name="tabButtons" pos="0,-150" depth="4" rows="10" cols="3" cell_width="308" cell_height="51" repeat_content="true" arrangement="horizontal">
-                                                <rect>
-                                                    <simplebutton2 name="tabButton" iconC="200, 200, 100" borderW="306" buttonIcon="ui_game_symbol_perk" depth="2" pos="2,-3" width="306" height="48" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
+                                                <rect controller="TabSelectorButton">
+                                                    <simplebutton2 name="tabButton" iconC="200, 200, 100" borderW="306" buttonIcon="ui_game_symbol_perk" depth="2" pos="2,-3" width="306" height="48" font_size="30" caption="{tab_name_localized}" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
                                                 </rect>
                                             </grid>
                                         </rect>
@@ -149,75 +149,75 @@
                                                 <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
                                                 <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1082" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
                                             </panel>
-                                            <rect tab_key="R1N">
+                                            <rect  controller="TabSelectorTab" tab_key="R1N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R1N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R1SCR"/>
                                             </rect>
-                                            <rect tab_key="R2N">
+                                            <rect  controller="TabSelectorTab" tab_key="R2N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R2N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R2SCR"/>
                                             </rect>
-                                            <rect tab_key="R3N">
+                                            <rect  controller="TabSelectorTab" tab_key="R3N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R3N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R3SCR"/>
                                             </rect>
-                                            <rect tab_key="R4N">
+                                            <rect  controller="TabSelectorTab" tab_key="R4N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R4N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R4SCR"/>
                                             </rect>
-                                            <rect tab_key="R5N">
+                                            <rect  controller="TabSelectorTab" tab_key="R5N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R5N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R5SCR"/>
                                             </rect>
-                                            <rect tab_key="R6N">
+                                            <rect  controller="TabSelectorTab" tab_key="R6N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R6N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R6SCR"/>
                                             </rect>
-                                            <rect tab_key="R7N">
+                                            <rect  controller="TabSelectorTab" tab_key="R7N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R7N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R7SCR"/>
                                             </rect>
-                                            <rect tab_key="R8N">
+                                            <rect  controller="TabSelectorTab" tab_key="R8N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R8N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R8SCR"/>
                                             </rect>
-                                            <rect tab_key="R9N">
+                                            <rect  controller="TabSelectorTab" tab_key="R9N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R9N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R9SCR"/>
                                             </rect>
-                                            <rect tab_key="R10N">
+                                            <rect  controller="TabSelectorTab" tab_key="R10N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R10N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R10SCR"/>
                                             </rect>
-                                            <rect tab_key="R11N">
+                                            <rect  controller="TabSelectorTab" tab_key="R11N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R11N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R11SCR"/>
                                             </rect>
-                                            <rect tab_key="R12N">
+                                            <rect  controller="TabSelectorTab" tab_key="R12N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R12N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R12SCR"/>
                                             </rect>
-                                            <rect tab_key="R13N">
+                                            <rect  controller="TabSelectorTab" tab_key="R13N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R13N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R13SCR"/>
                                             </rect>
-                                            <rect tab_key="R14N">
+                                            <rect  controller="TabSelectorTab" tab_key="R14N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R14N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R14SCR"/>
                                             </rect>
-                                            <rect tab_key="R15N">
+                                            <rect  controller="TabSelectorTab" tab_key="R15N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R15N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="200, 200, 100" txtIcon="ui_game_symbol_perk" justTxt="left" txt2="R15SCR"/>
                                             </rect>
                                         </rect>
                                     </rect>
                                 </rect>
-                                <rect tab_key="HeaderRM">
+                                <rect  controller="TabSelectorTab" tab_key="HeaderRM">
                                     <rect name="tabs" controller="TabSelector" pivot="center" height="100" width="100">
                                         <rect name="tabsHeader" pos="190,-200" width="100%" height="650" depth="0">
                                             <grid name="tabButtons" pos="0,-98" depth="4" rows="10" cols="3" cell_width="308" cell_height="51" repeat_content="true" arrangement="horizontal">
-                                                <rect>
-                                                    <simplebutton2 name="tabButton" iconC="255, 128, 0" borderW="306" buttonIcon="ui_game_symbol_map_trader" depth="2" pos="2,-3" width="306" height="48" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
+                                                <rect controller="TabSelectorButton">
+                                                    <simplebutton2 name="tabButton" iconC="255, 128, 0" borderW="306" buttonIcon="ui_game_symbol_map_trader" depth="2" pos="2,-3" width="306" height="48" font_size="30" caption="{tab_name_localized}" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
                                                 </rect>
                                             </grid>
                                         </rect>
@@ -227,70 +227,70 @@
                                                 <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1082" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
 
                                             </panel>
-                                            <rect tab_key="R1N">
+                                            <rect  controller="TabSelectorTab" tab_key="R1N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R1N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M1SCR"/>
                                             </rect>
-                                            <rect tab_key="R2N">
+                                            <rect  controller="TabSelectorTab" tab_key="R2N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R2N"/>
                                                 <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M2SCR"/>
                                             </rect>
-                                            <rect tab_key="R3N">
+                                            <rect  controller="TabSelectorTab" tab_key="R3N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R3N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M3SCR"/>
                                             </rect>
-                                            <rect tab_key="R4N">
+                                            <rect  controller="TabSelectorTab" tab_key="R4N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R4N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M4SCR"/>
                                             </rect>
-                                            <rect tab_key="R5N">
+                                            <rect  controller="TabSelectorTab" tab_key="R5N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R5N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M5SCR"/>
                                             </rect>
-                                            <rect tab_key="R6N">
+                                            <rect  controller="TabSelectorTab" tab_key="R6N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R6N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M6SCR"/>
                                             </rect>
-                                            <rect tab_key="R7N">
+                                            <rect  controller="TabSelectorTab" tab_key="R7N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R7N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M7SCR"/>
                                             </rect>
-                                            <rect tab_key="R8N">
+                                            <rect  controller="TabSelectorTab" tab_key="R8N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R8N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M8SCR"/>
                                             </rect>
-                                            <rect tab_key="R9N">
+                                            <rect  controller="TabSelectorTab" tab_key="R9N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R9N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M9SCR"/>
                                             </rect>
-                                            <rect tab_key="R10N">
+                                            <rect  controller="TabSelectorTab" tab_key="R10N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R10N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M10SCR"/>
                                             </rect>
-                                            <rect tab_key="R11N">
+                                            <rect  controller="TabSelectorTab" tab_key="R11N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R11N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M11SCR"/>
                                             </rect>
-                                            <rect tab_key="R12N">
+                                            <rect  controller="TabSelectorTab" tab_key="R12N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R12N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M12SCR"/>
                                             </rect>
-                                            <rect tab_key="R13N">
+                                            <rect  controller="TabSelectorTab" tab_key="R13N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R13N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M13SCR"/>
                                             </rect>
-                                            <rect tab_key="R14N">
+                                            <rect  controller="TabSelectorTab" tab_key="R14N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R14N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M14SCR"/>
                                             </rect>
-                                            <rect tab_key="R15N">
+                                            <rect  controller="TabSelectorTab" tab_key="R15N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="R15N" />
                                                 <textEntry name="0" width="1086" height="163" tIconC="255, 128, 0" txtIcon="ui_game_symbol_map_trader" justTxt="left" txt2="M15SCR"/>
                                             </rect>
                                         </rect>
                                     </rect>
                                 </rect>
-                                <rect tab_key="HeaderR2">
+                                <rect  controller="TabSelectorTab" tab_key="HeaderR2">
                                     <rect name="rect" depth="2" pos="100,-35">
                                         <textEntry name="0" width="1086" height="135" tIconC="0, 255, 0" txtIcon="ui_game_symbol_resource" justTxt="center" txt2="LMH1"/>
                                     </rect>
@@ -300,8 +300,8 @@
                                     <rect name="tabs" controller="TabSelector" pivot="center" height="100" width="100">
                                         <rect name="tabsHeader" pos="100,-200" width="100%" height="650" depth="0">
                                             <grid name="tabButtons" pos="0,-122" depth="4" rows="8" cols="1" cell_width="308" cell_height="51" repeat_content="true" arrangement="horizontal">
-                                                <rect>
-                                                    <simplebutton2 name="tabButton" iconC="0, 255, 0" borderW="306" buttonIcon="ui_game_symbol_resource" depth="2" pos="2,-3" width="306" height="48" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
+                                                <rect controller="TabSelectorButton">
+                                                    <simplebutton2 name="tabButton" iconC="0, 255, 0" borderW="306" buttonIcon="ui_game_symbol_resource" depth="2" pos="2,-3" width="306" height="48" font_size="30" caption="{tab_name_localized}" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
                                                 </rect>
                                             </grid>
                                         </rect>
@@ -310,35 +310,35 @@
                                                 <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
                                                 <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="724" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
                                             </panel>
-                                            <rect tab_key="L1R">
+                                            <rect  controller="TabSelectorTab" tab_key="L1R">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="L1R" />
                                                 <textEntry name="0" width="728" height="357" tIconC="0, 255, 0" txtIcon="ui_game_symbol_resource" justTxt="left" txt2="L1RInf"/>
                                             </rect>
-                                            <rect tab_key="L2R">
+                                            <rect  controller="TabSelectorTab" tab_key="L2R">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="L2R" />
                                                 <textEntry name="0" width="728" height="357" tIconC="0, 255, 0" txtIcon="ui_game_symbol_resource" justTxt="left" txt2="L2RInf"/>
                                             </rect>
-                                            <rect tab_key="L3R">
+                                            <rect  controller="TabSelectorTab" tab_key="L3R">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="L3R" />
                                                 <textEntry name="0" width="728" height="357" tIconC="0, 255, 0" txtIcon="ui_game_symbol_resource" justTxt="left" txt2="L3RInf"/>
                                             </rect>
-                                            <rect tab_key="L4R">
+                                            <rect  controller="TabSelectorTab" tab_key="L4R">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="L4R" />
                                                 <textEntry name="0" width="728" height="357" tIconC="0, 255, 0" txtIcon="ui_game_symbol_resource" justTxt="left" txt2="L4RInf"/>
                                             </rect>
-                                            <rect tab_key="L5R">
+                                            <rect  controller="TabSelectorTab" tab_key="L5R">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="L5R" />
                                                 <textEntry name="0" width="728" height="357" tIconC="0, 255, 0" txtIcon="ui_game_symbol_resource" justTxt="left" txt2="L5RInf"/>
                                             </rect>
-                                            <rect tab_key="L6R">
+                                            <rect  controller="TabSelectorTab" tab_key="L6R">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="L6R" />
                                                 <textEntry name="0" width="728" height="357" tIconC="0, 255, 0" txtIcon="ui_game_symbol_resource" justTxt="left" txt2="L6RInf"/>
                                             </rect>
-                                            <rect tab_key="L7R">
+                                            <rect  controller="TabSelectorTab" tab_key="L7R">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="L7R" />
                                                 <textEntry name="0" width="728" height="357" tIconC="0, 255, 0" txtIcon="ui_game_symbol_resource" justTxt="left" txt2="L7RInf"/>
                                             </rect>
-                                            <rect tab_key="L8R">
+                                            <rect  controller="TabSelectorTab" tab_key="L8R">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="L8R" />
                                                 <textEntry name="0" width="728" height="357" tIconC="0, 255, 0" txtIcon="ui_game_symbol_resource" justTxt="left" txt2="L8RInf"/>
                                             </rect>
@@ -349,7 +349,7 @@
                         </rect>
                     </rect>                    
                     <!-- Comandos del servidor -->
-                    <rect tab_key="HeaderC">
+                    <rect  controller="TabSelectorTab" tab_key="HeaderC">
                         <panel name="HeadCom" pos="0,46" height="46" width="1280" depth="0" disableautobackground="true">
                             <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
                             <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1276" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
@@ -362,18 +362,18 @@
                                 <sprite depth="7" pos="733,-27" color="255, 255, 0" width="36" height="36" sprite="ui_game_symbol_twitch_special" foregroundlayer="true"/>
 
                                 <grid name="tabButtons" pos="0,-20" depth="4" rows="1" cols="3" cell_width="358" cell_height="51" repeat_content="true" arrangement="horizontal">
-                                    <rect>
-                                        <simplebutton2 name="tabButton" borderW="336" iconC="0, 0, 0" buttonIcon="" depth="2" pos="2,-3" width="336" height="48" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
+                                    <rect controller="TabSelectorButton">
+                                        <simplebutton2 name="tabButton" borderW="336" iconC="0, 0, 0" buttonIcon="" depth="2" pos="2,-3" width="336" height="48" font_size="30" caption="{tab_name_localized}" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
                                     </rect>
                                 </grid>
                             </rect>
                             <rect name="tabsContents" depth="2" pos="0,-50" height="713">
-                                <rect tab_key="HeaderCG">
+                                <rect controller="TabSelectorTab" tab_key="HeaderCG">
                                     <rect name="tabs" controller="TabSelector" pivot="center" height="100" width="100">
                                         <rect name="tabsHeader" pos="190,-150" width="100%" height="650" depth="0">
                                             <grid name="tabButtons" pos="0,-250" depth="4" rows="5" cols="3" cell_width="308" cell_height="51" repeat_content="true" arrangement="horizontal">
-                                                <rect>
-                                                    <simplebutton2 name="tabButton" iconC="200, 200, 100" borderW="306" buttonIcon="ui_game_symbol_star" depth="2" pos="2,-3" width="306" height="48" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
+                                                <rect controller="TabSelectorButton">
+                                                    <simplebutton2 name="tabButton" iconC="200, 200, 100" borderW="306" buttonIcon="ui_game_symbol_star" depth="2" pos="2,-3" width="306" height="48" font_size="30" caption="{tab_name_localized}" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
                                                 </rect>
                                             </grid>
                                         </rect>
@@ -382,75 +382,75 @@
                                                 <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
                                                 <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1082" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
                                             </panel>
-                                            <rect tab_key="C1N">
+                                            <rect  controller="TabSelectorTab" tab_key="C1N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C1N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C1SCR"/>
                                             </rect>
-                                            <rect tab_key="C2N">
+                                            <rect  controller="TabSelectorTab" tab_key="C2N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C2N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C2SCR"/>
                                             </rect>
-                                            <rect tab_key="C3N">
+                                            <rect  controller="TabSelectorTab" tab_key="C3N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C3N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C3SCR"/>
                                             </rect>
-                                            <rect tab_key="C4N">
+                                            <rect  controller="TabSelectorTab" tab_key="C4N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C4N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C4SCR"/>
                                             </rect>
-                                            <rect tab_key="C5N">
+                                            <rect  controller="TabSelectorTab" tab_key="C5N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C5N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C5SCR"/>
                                             </rect>
-                                            <rect tab_key="C6N">
+                                            <rect  controller="TabSelectorTab" tab_key="C6N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C6N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C6SCR"/>
                                             </rect>
-                                            <rect tab_key="C7N">
+                                            <rect  controller="TabSelectorTab" tab_key="C7N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C7N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C7SCR"/>
                                             </rect>
-                                            <rect tab_key="C8N">
+                                            <rect  controller="TabSelectorTab" tab_key="C8N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C8N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C8SCR"/>
                                             </rect>
-                                            <rect tab_key="C9N">
+                                            <rect  controller="TabSelectorTab" tab_key="C9N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C9N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C9SCR"/>
                                             </rect>
-                                            <rect tab_key="C10N">
+                                            <rect  controller="TabSelectorTab" tab_key="C10N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C10N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C10SCR"/>
                                             </rect>
-                                            <rect tab_key="C11N">
+                                            <rect  controller="TabSelectorTab" tab_key="C11N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C11N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C11SCR"/>
                                             </rect>
-                                            <rect tab_key="C12N">
+                                            <rect  controller="TabSelectorTab" tab_key="C12N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C12N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C12SCR"/>
                                             </rect>
-                                            <rect tab_key="C13N">
+                                            <rect  controller="TabSelectorTab" tab_key="C13N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C13N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C13SCR"/>
                                             </rect>
-                                            <rect tab_key="C14N">
+                                            <rect  controller="TabSelectorTab" tab_key="C14N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C14N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C14SCR"/>
                                             </rect>
-                                            <rect tab_key="C15N">
+                                            <rect  controller="TabSelectorTab" tab_key="C15N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C15N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="200, 200, 100" txtIcon="ui_game_symbol_star" justTxt="left" txt2="C15SCR"/>
                                             </rect>
                                         </rect>
                                     </rect>
                                 </rect>
-                                <rect tab_key="HeaderCI">
+                                <rect controller="TabSelectorTab" tab_key="HeaderCI">
                                     <rect name="tabs" controller="TabSelector" pivot="center" height="100" width="100">
                                         <rect name="tabsHeader" pos="190,-150" width="100%" height="650" depth="0">
                                             <grid name="tabButtons" pos="0,-250" depth="4" rows="5" cols="3" cell_width="308" cell_height="51" repeat_content="true" arrangement="horizontal">
-                                                <rect>
-                                                    <simplebutton2 name="tabButton" iconC="[white]" borderW="306" buttonIcon="ui_game_symbol_quest" depth="2" pos="2,-3" width="306" height="48" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
+                                                <rect controller="TabSelectorButton">
+                                                    <simplebutton2 name="tabButton" iconC="[white]" borderW="306" buttonIcon="ui_game_symbol_quest" depth="2" pos="2,-3" width="306" height="48" font_size="30" caption="{tab_name_localized}" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
                                                 </rect>
                                             </grid>
                                         </rect>
@@ -459,51 +459,51 @@
                                                 <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
                                                 <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1082" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
                                             </panel>
-                                            <rect tab_key="CI1N">
+                                            <rect controller="TabSelectorTab" tab_key="CI1N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="CI1N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="[white]" txtIcon="ui_game_symbol_quest" justTxt="left" txt2="CI1SCR"/>
                                             </rect>
-                                            <rect tab_key="CI2N">
+                                            <rect controller="TabSelectorTab" tab_key="CI2N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="CI2N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="[white]" txtIcon="ui_game_symbol_quest" justTxt="left" txt2="CI2SCR"/>
                                             </rect>
-                                            <rect tab_key="CI3N">
+                                            <rect controller="TabSelectorTab" tab_key="CI3N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="CI3N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="[white]" txtIcon="ui_game_symbol_quest" justTxt="left" txt2="CI3SCR"/>
                                             </rect>
-                                            <rect tab_key="CI4N">
+                                            <rect controller="TabSelectorTab" tab_key="CI4N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="CI4N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="[white]" txtIcon="ui_game_symbol_quest" justTxt="left" txt2="CI4SCR"/>
                                             </rect>
-                                            <rect tab_key="CI5N">
+                                            <rect controller="TabSelectorTab" tab_key="CI5N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="CI5N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="[white]" txtIcon="ui_game_symbol_quest" justTxt="left" txt2="CI5SCR"/>
                                             </rect>
-                                            <rect tab_key="CI6N">
+                                            <rect controller="TabSelectorTab" tab_key="CI6N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="CI6N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="[white]" txtIcon="ui_game_symbol_quest" justTxt="left" txt2="CI6SCR"/>
                                             </rect>
-                                            <rect tab_key="CI7N">
+                                            <rect controller="TabSelectorTab" tab_key="CI7N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="CI7N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="[white]" txtIcon="ui_game_symbol_quest" justTxt="left" txt2="CI7SCR"/>
                                             </rect>
-                                            <rect tab_key="CI8N">
+                                            <rect controller="TabSelectorTab" tab_key="CI8N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="CI8N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="[white]" txtIcon="ui_game_symbol_quest" justTxt="left" txt2="CI8SCR"/>
                                             </rect>
-                                            <rect tab_key="CI9N">
+                                            <rect controller="TabSelectorTab" tab_key="CI9N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="CI9N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="[white]" txtIcon="ui_game_symbol_quest" justTxt="left" txt2="CI9SCR"/>
                                             </rect>
                                         </rect>
                                     </rect>
                                 </rect>
-                                <rect tab_key="HeaderCP">
+                                <rect controller="TabSelectorTab" tab_key="HeaderCP">
                                     <rect name="tabs" controller="TabSelector" pivot="center" height="100" width="100">
                                         <rect name="tabsHeader" pos="190,-150" width="100%" height="650" depth="0">
                                             <grid name="tabButtons" pos="0,-250" depth="4" rows="3" cols="3" cell_width="308" cell_height="51" repeat_content="true" arrangement="horizontal">
-                                                <rect>
-                                                    <simplebutton2 name="tabButton" iconC="255, 255, 0" borderW="306" buttonIcon="ui_game_symbol_twitch_special" depth="2" pos="2,-3" width="306" height="48" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
+                                                <rect controller="TabSelectorButton">
+                                                    <simplebutton2 name="tabButton" iconC="255, 255, 0" borderW="306" buttonIcon="ui_game_symbol_twitch_special" depth="2" pos="2,-3" width="306" height="48" font_size="30" caption="{tab_name_localized}" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
                                                 </rect>
                                             </grid>
                                         </rect>
@@ -512,39 +512,39 @@
                                                 <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
                                                 <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1082" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
                                             </panel>
-                                            <rect tab_key="CP1N">
+                                            <rect controller="TabSelectorTab" tab_key="CP1N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C1N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="255, 255, 0" txtIcon="ui_game_symbol_twitch_special" justTxt="left" txt2="CP1SCR"/>
                                             </rect>
-                                            <rect tab_key="CP2N">
+                                            <rect controller="TabSelectorTab" tab_key="CP2N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C2N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="255, 255, 0" txtIcon="ui_game_symbol_twitch_special" justTxt="left" txt2="CP2SCR"/>
                                             </rect>
-                                            <rect tab_key="CP3N">
+                                            <rect controller="TabSelectorTab" tab_key="CP3N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C3N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="255, 255, 0" txtIcon="ui_game_symbol_twitch_special" justTxt="left" txt2="CP3SCR"/>
                                             </rect>
-                                            <rect tab_key="CP4N">
+                                            <rect controller="TabSelectorTab" tab_key="CP4N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C4N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="255, 255, 0" txtIcon="ui_game_symbol_twitch_special" justTxt="left" txt2="CP4SCR"/>
                                             </rect>
-                                            <rect tab_key="CP5N">
+                                            <rect controller="TabSelectorTab" tab_key="CP5N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C5N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="255, 255, 0" txtIcon="ui_game_symbol_twitch_special" justTxt="left" txt2="CP5SCR"/>
                                             </rect>
-                                            <rect tab_key="CP6N">
+                                            <rect controller="TabSelectorTab" tab_key="CP6N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C6N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="255, 255, 0" txtIcon="ui_game_symbol_twitch_special" justTxt="left" txt2="CP6SCR"/>
                                             </rect>
-                                            <rect tab_key="CP7N">
+                                            <rect controller="TabSelectorTab" tab_key="CP7N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C6N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="255, 255, 0" txtIcon="ui_game_symbol_twitch_special" justTxt="left" txt2="CP7SCR"/>
                                             </rect>
-                                            <rect tab_key="CP8N">
+                                            <rect controller="TabSelectorTab" tab_key="CP8N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C6N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="255, 255, 0" txtIcon="ui_game_symbol_twitch_special" justTxt="left" txt2="CP8SCR"/>
                                             </rect>
-                                            <rect tab_key="CP9N">
+                                            <rect controller="TabSelectorTab" tab_key="CP9N">
                                                 <label style="header.name" depth="3" pos="6,40" height="34" width="1074" justify="Center" text_key="C6N" />
                                                 <textEntry name="0" width="1086" height="263" tIconC="255, 255, 0" txtIcon="ui_game_symbol_twitch_special" justTxt="left" txt2="CP9SCR"/>
                                             </rect>
@@ -608,13 +608,13 @@
                         -->
                     </rect>
                     <!-- Tienda de HC -->
-                    <rect tab_key="HeaderCT">
+                    <rect  controller="TabSelectorTab" tab_key="HeaderCT">
                         <panel name="headTienda" pos="0,46" height="46" width="1280" depth="0" disableautobackground="true">
                             <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
                             <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1276" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
                             <label style="header.name" pos="6,-6" height="34" width="1268" justify="Center" text_key="HeaderCT" />
                         </panel>
-                        <rect tab_key="HeaderCT">
+                        <rect controller="TabSelectorTab" tab_key="HeaderCT">
                             <!-- Intro panel -->
                             <panel name="headIntro" pos="100,-15" height="46" width="1086" depth="0" disableautobackground="true">
                                 <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
@@ -647,25 +647,25 @@
                             <rect name="tabs" controller="TabSelector" pivot="center" height="100" width="100">
                                 <rect name="tabsHeader" pos="100,-200" width="100%" height="650" depth="0">
                                     <grid name="tabButtons" pos="0,-202" depth="4" rows="8" cols="1" cell_width="308" cell_height="47" repeat_content="true" arrangement="horizontal">
-                                        <rect>
-                                            <simplebutton2 name="tabButton" iconC="0, 255, 0" borderW="306" buttonIcon="ui_game_symbol_map_trader" depth="2" pos="0,0" width="306" height="48" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
+                                        <rect controller="TabSelectorButton"> 
+                                            <simplebutton2 name="tabButton" iconC="0, 255, 0" borderW="306" buttonIcon="ui_game_symbol_map_trader" depth="2" pos="0,0" width="306" height="48" font_size="30" caption="{tab_name_localized}" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
                                         </rect>
                                     </grid>
                                 </rect>
                                 <!-- Tabs Contents-->
                                 <rect name="tabsContents" depth="2" pos="440,-400" height="713">
-                                    <rect tab_key="tiendaCate1">
+                                    <rect controller="TabSelectorTab" tab_key="tiendaCate1">
                                         <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="tiendaCate1" />
                                         <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
                                             <rect name="tabsHeader" height="40">
                                                 <grid name="tabButtons" pos="704,-45" rows="2" cols="1" cell_width="33" cell_height="35" repeat_content="true" arrangement="vertical">
-                                                    <rect>
-                                                        <simplebutton depth="4" name="tabButton" pos="2,-2" width="30" height="30" font_size="20" caption_key="xuiBack" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
+                                                    <rect controller="TabSelectorButton">
+                                                        <simplebutton depth="4" name="tabButton" pos="2,-2" width="30" height="30" font_size="20" caption="{tab_name_localized}" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
                                                     </rect>
                                                 </grid>
                                             </rect>
                                             <rect name="tabsContents">
-                                                <rect tab_key="1">
+                                                <rect controller="TabSelectorTab" tab_key="1">
                                                     <rect height="360">
                                                         <rect pos="45,-6">
                                                             <shop_row name="0" posty="-38" itxt="1" otxt="tname001" ctxt="tcant1" ptxt="tprec0010" utxt="/buy 1"/>
@@ -682,7 +682,7 @@
                                                         </rect>
                                                     </rect>
                                                 </rect>
-                                                <rect tab_key="2">
+                                                <rect controller="TabSelectorTab" tab_key="2">
                                                     <rect height="360">
                                                         <rect pos="45,-6">
                                                             <shop_row name="0" posty="-38" itxt="11" otxt="tname011" ctxt="tcant1" ptxt="tprec0050" utxt="/buy 11"/>
@@ -702,18 +702,18 @@
                                         </rect>
 
                                     </rect>
-                                    <rect tab_key="tiendaCate2">
+                                    <rect controller="TabSelectorTab" tab_key="tiendaCate2">
                                         <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="tiendaCate2" />
                                         <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
                                             <rect name="tabsHeader" height="40">
                                                 <grid name="tabButtons" pos="704,-45" rows="1" cols="1" cell_width="33" cell_height="35" repeat_content="true" arrangement="vertical">
-                                                    <rect>
-                                                        <simplebutton depth="4" name="tabButton" pos="2,-2" width="30" height="30" font_size="20" caption_key="xuiBack" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
+                                                    <rect controller="TabSelectorButton">
+                                                        <simplebutton depth="4" name="tabButton" pos="2,-2" width="30" height="30" font_size="20" caption="{tab_name_localized}" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
                                                     </rect>
                                                 </grid>
                                             </rect>
                                             <rect name="tabsContents">
-                                                <rect tab_key="1">
+                                                <rect controller="TabSelectorTab" tab_key="1">
                                                     <rect height="360">
                                                         <rect pos="45,-6">
                                                             <shop_row name="0" posty="-38" itxt="21" otxt="tname021" ctxt="tcant1" ptxt="tprec3500" utxt="/buy 21"/>
@@ -730,18 +730,18 @@
                                             </rect>
                                         </rect>
                                     </rect>
-                                    <rect tab_key="tiendaCate3">
+                                    <rect controller="TabSelectorTab" tab_key="tiendaCate3">
                                         <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="tiendaCate3" />
                                         <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
                                             <rect name="tabsHeader" height="40">
                                                 <grid name="tabButtons" pos="704,-45" rows="2" cols="1" cell_width="33" cell_height="35" repeat_content="true" arrangement="vertical">
-                                                    <rect>
-                                                        <simplebutton depth="4" name="tabButton" pos="2,-2" width="30" height="30" font_size="20" caption_key="xuiBack" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
+                                                    <rect controller="TabSelectorButton">
+                                                        <simplebutton depth="4" name="tabButton" pos="2,-2" width="30" height="30" font_size="20" caption="{tab_name_localized}" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
                                                     </rect>
                                                 </grid>
                                             </rect>
                                             <rect name="tabsContents">
-                                                <rect tab_key="1">
+                                                <rect controller="TabSelectorTab" tab_key="1">
                                                     <rect height="360">
                                                         <rect pos="45,-6">
                                                             <shop_row name="0" posty="-38" itxt="29" otxt="tname029" ctxt="tcant1" ptxt="tprec0100" utxt="/buy 29"/>
@@ -757,7 +757,7 @@
                                                         </rect>
                                                     </rect>
                                                 </rect>
-                                                <rect tab_key="2">
+                                                <rect controller="TabSelectorTab" tab_key="2">
                                                     <rect height="360">
                                                         <rect pos="45,-6">
                                                             <shop_row name="0" posty="-38" itxt="39" otxt="tname039" ctxt="tcant1" ptxt="tprec0010" utxt="/buy 39"/>
@@ -774,18 +774,18 @@
                                             </rect>
                                         </rect>
                                     </rect>
-                                    <rect tab_key="tiendaCate4">
+                                    <rect controller="TabSelectorTab" tab_key="tiendaCate4">
                                         <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="tiendaCate4" />
                                         <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
                                             <rect name="tabsHeader" height="40">
                                                 <grid name="tabButtons" pos="704,-45" rows="1" cols="1" cell_width="33" cell_height="35" repeat_content="true" arrangement="vertical">
-                                                    <rect>
-                                                        <simplebutton depth="4" name="tabButton" pos="2,-2" width="30" height="30" font_size="20" caption_key="xuiBack" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
+                                                    <rect controller="TabSelectorButton">
+                                                        <simplebutton depth="4" name="tabButton" pos="2,-2" width="30" height="30" font_size="20" caption="{tab_name_localized}" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
                                                     </rect>
                                                 </grid>
                                             </rect>
                                             <rect name="tabsContents">
-                                                <rect tab_key="1">
+                                                <rect controller="TabSelectorTab" tab_key="1">
                                                     <rect height="360">
                                                         <rect pos="45,-6">
                                                             <shop_row name="0" posty="-38" itxt="47" otxt="tname047" ctxt="tcant1" ptxt="tprec0200" utxt="/buy 47"/>
@@ -802,18 +802,18 @@
                                             </rect>
                                         </rect>
                                     </rect>
-                                    <rect tab_key="tiendaCate5">
+                                    <rect controller="TabSelectorTab" tab_key="tiendaCate5">
                                         <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="tiendaCate5" />
                                         <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
                                             <rect name="tabsHeader" height="40">
                                                 <grid name="tabButtons" pos="704,-45" rows="2" cols="1" cell_width="33" cell_height="35" repeat_content="true" arrangement="vertical">
-                                                    <rect>
-                                                        <simplebutton depth="4" name="tabButton" pos="2,-2" width="30" height="30" font_size="20" caption_key="xuiBack" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
+                                                    <rect controller="TabSelectorButton">
+                                                        <simplebutton depth="4" name="tabButton" pos="2,-2" width="30" height="30" font_size="20" caption="{tab_name_localized}" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
                                                     </rect>
                                                 </grid>
                                             </rect>
                                             <rect name="tabsContents">
-                                                <rect tab_key="1">
+                                                <rect controller="TabSelectorTab" tab_key="1">
                                                     <rect height="360">
                                                         <rect pos="45,-6">
                                                             <shop_row name="0" posty="-38" itxt="55" otxt="tname055" ctxt="tcant1" ptxt="tprec0025" utxt="/buy 55"/>
@@ -829,7 +829,7 @@
                                                         </rect>
                                                     </rect>
                                                 </rect>
-                                                <rect tab_key="2">
+                                                <rect controller="TabSelectorTab" tab_key="2">
                                                     <rect height="360">
                                                         <rect pos="45,-6">
                                                             <shop_row name="0" posty="-38" itxt="65" otxt="tname065" ctxt="tcant1" ptxt="tprec0150" utxt="/buy 65"/>
@@ -844,18 +844,18 @@
                                             </rect>
                                         </rect>
                                     </rect>
-                                    <rect tab_key="tiendaCate6">
+                                    <rect controller="TabSelectorTab" tab_key="tiendaCate6">
                                         <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="tiendaCate6" />
                                         <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
                                             <rect name="tabsHeader" height="40">
                                                 <grid name="tabButtons" pos="704,-45" rows="3" cols="1" cell_width="33" cell_height="35" repeat_content="true" arrangement="vertical">
-                                                    <rect>
-                                                        <simplebutton depth="4" name="tabButton" pos="2,-2" width="30" height="30" font_size="20" caption_key="xuiBack" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
+                                                    <rect controller="TabSelectorButton">
+                                                        <simplebutton depth="4" name="tabButton" pos="2,-2" width="30" height="30" font_size="20" caption="{tab_name_localized}" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
                                                     </rect>
                                                 </grid>
                                             </rect>
                                             <rect name="tabsContents">
-                                                <rect tab_key="1">
+                                                <rect controller="TabSelectorTab" tab_key="1">
                                                     <rect height="360">
                                                         <rect pos="45,-6">
                                                             <shop_row name="0" posty="-38" itxt="71" otxt="tname071" ctxt="tcant1" ptxt="tprec1000" utxt="/buy 71"/>
@@ -871,7 +871,7 @@
                                                         </rect>
                                                     </rect>
                                                 </rect>
-                                                <rect tab_key="2">
+                                                <rect controller="TabSelectorTab" tab_key="2">
                                                     <rect height="360">
                                                         <rect pos="45,-6">
                                                             <shop_row name="0" posty="-38" itxt="81" otxt="tname081" ctxt="tcant1" ptxt="tprec1000" utxt="/buy 81"/>
@@ -887,7 +887,7 @@
                                                         </rect>
                                                     </rect>
                                                 </rect>
-                                                <rect tab_key="3">
+                                                <rect controller="TabSelectorTab" tab_key="3">
                                                     <rect height="360">
                                                         <rect pos="45,-6">
                                                             <shop_row name="0" posty="-38" itxt="91" otxt="tname091" ctxt="tcant1" ptxt="tprec1000" utxt="/buy 91"/>
@@ -899,18 +899,18 @@
                                             </rect>
                                         </rect>
                                     </rect>
-                                    <rect tab_key="tiendaCate7">
+                                    <rect controller="TabSelectorTab" tab_key="tiendaCate7">
                                         <label style="header.name" depth="3" pos="6,40" height="34" width="716" justify="Center" text_key="tiendaCate7" />
                                         <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
                                             <rect name="tabsHeader" height="40">
                                                 <grid name="tabButtons" pos="704,-45" rows="2" cols="1" cell_width="33" cell_height="35" repeat_content="true" arrangement="vertical">
-                                                    <rect>
-                                                        <simplebutton depth="4" name="tabButton" pos="2,-2" width="30" height="30" font_size="20" caption_key="xuiBack" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
+                                                    <rect controller="TabSelectorButton">
+                                                        <simplebutton depth="4" name="tabButton" pos="2,-2" width="30" height="30" font_size="20" caption="{tab_name_localized}" hovercolor="0,0,0,240" selectedcolor="0,0,0,240"/>
                                                     </rect>
                                                 </grid>
                                             </rect>
                                             <rect name="tabsContents">
-                                                <rect tab_key="1">
+                                                <rect controller="TabSelectorTab" tab_key="1">
                                                     <rect height="360">
                                                         <rect pos="45,-6">
                                                             <shop_row name="0" posty="-38" itxt="94" otxt="tname094" ctxt="tcant1" ptxt="tprec0050" utxt="/buy 94"/>
@@ -926,7 +926,7 @@
                                                         </rect>
                                                     </rect>
                                                 </rect>
-                                                <rect tab_key="2">
+                                                <rect controller="TabSelectorTab" tab_key="2">
                                                     <rect height="360">
                                                         <rect pos="45,-6">
                                                             <shop_row name="0" posty="-38" itxt="104" otxt="tname104" ctxt="tcant1" ptxt="tprec1000" utxt="/buy 104"/>
@@ -944,7 +944,7 @@
                         </rect>
                     </rect>
                     <!-- Donaciones -->
-                    <rect tab_key="HeadDon">
+                    <rect  controller="TabSelectorTab" tab_key="HeadDon">
                         <panel name="testUI" pos="0,46" height="46" width="1280" depth="0" disableautobackground="true">
                             <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
                             <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1276" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
@@ -975,13 +975,13 @@
                                 <sprite depth="7" pos="7,-30" color="200, 200, 100" width="36" height="36" sprite="ui_game_symbol_shopping_cart" foregroundlayer="true"/>
                                 <sprite depth="7" pos="553,-30" color="200, 200, 100" width="36" height="36" sprite="ui_game_symbol_perk" foregroundlayer="true"/>
                                 <grid name="tabButtons" pos="0,-20" depth="4" rows="1" cols="2" cell_width="546" cell_height="51" repeat_content="true" arrangement="horizontal">
-                                    <rect>
-                                        <simplebutton2 name="tabButton" borderW="336" iconC="0, 0, 0" buttonIcon="" depth="2" pos="2,-3" width="506" height="48" font_size="30" caption_key="xuiBack" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
+                                    <rect controller="TabSelectorButton">
+                                        <simplebutton2 name="tabButton" borderW="336" iconC="0, 0, 0" buttonIcon="" depth="2" pos="2,-3" width="506" height="48" font_size="30" caption="{tab_name_localized}" color="[transparent]" defaultbordercolor="[black]" selectedsprite="menu_empty" selectedcolor="0,0,0,240" foregroundlayer="true"/>
                                     </rect>
                                 </grid>
                             </rect>
                             <rect name="tabsContents" depth="2" pos="0,0" height="713">
-                                <rect tab_key="DonItN">
+                                <rect controller="TabSelectorTab" tab_key="DonItN">
                                     <label depth="4" name="Name" pos="140,-640" width="1014" height="94" text_key="DonItT" font_size="27" justify="Center"/>
                                     <rect name ="footDon" height="123" pos="100,-634" disabled_font_color="[disabledLabelColor]" enabled_font_color="[labelColor]" sound="[recipe_click]" sound_play_on_hover="[default_hover]">
                                         <sprite depth="3" name="border" sprite="menu_empty3px" width="1086" height="106" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
@@ -1060,7 +1060,7 @@
                                         <label pos="10, -5" width="312" height="36"  text="Contacta a Malen por Discord" justify="center"  font_size="30" upper_case="false" />
                                     </panel>
                                 </rect>
-                                <rect tab_key="DonSvN">
+                                <rect controller="TabSelectorTab" tab_key="DonSvN">
 
                                     <!-- X 
                                     <rect name ="listService" pos="100,-300" height="50" disabled_font_color="[disabledLabelColor]" enabled_font_color="[labelColor]" sound="[recipe_click]" sound_play_on_hover="[default_hover]">
@@ -1123,48 +1123,7 @@
                             </rect>
                         </rect>
                     </rect>
-                    <!--Avisos
-                    <rect tab_key="HeaderA">
-                        <panel name="HeadAv" pos="0,46" height="46" width="1280" depth="0" disableautobackground="true">
-                            <sprite name="border" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="2" />
-                            <sprite depth="-1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="44" width="1276" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
-                            <label style="header.name" pos="6,-6" height="34" width="1268" justify="Center" text_key="HeaderA" />
-                        </panel>
-
-                        
-                        <label style="header.name" pos="3,-10" height="34" width="1240" justify="Center" text_key="AVEN" />
-                        <table columns="1" depth="3" padding="20,5" pos="3,-50">
-                            <label style="header.name" font_size="27" overflow="resizeheight" width="1240" justify="Center" text_key="A1N" />
-                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A1SCR" />
-
-                            <label style="header.name" font_size="27" overflow="resizeheight" width="1240" justify="Center" text_key="A2N" />
-                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A2SCR" />
-
-                            <label style="header.name" font_size="27" overflow="resizeheight" width="1240" justify="Center" text_key="A6N" />
-                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A6SCR" />
-
-                            <label parse_actions="true" width="160" font_size="25" overflow="resizeheight" justify="right" pivot="topleft" text_key="AEN"/>
-
-                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A7N" />
-                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A7SCR" />
-
-                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A3N" />
-                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A3SCR" />
-
-
-                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A4N" />
-                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A4SCR" />
-
-                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A5N" />
-                            <label style="header.name" font_size="25" overflow="resizeheight" width="1240" justify="Center" text_key="A5SCR" />
-
-                        </table>
-                    </rect>
-                    
-                    <rect tab_key="testUI">
-                        
-                    </rect>
-                    -->
+                   
                 </rect>
             </rect>
         </window>

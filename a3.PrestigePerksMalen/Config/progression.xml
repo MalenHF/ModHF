@@ -11,7 +11,7 @@
 			</book>
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Prestige 2 Book ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-			<book name="perkprestige2" name_key="pr2namekey" parent="skillPrestige" max_level="1" base_skill_point_cost="0" desc_key="prbkeydesc2" long_desc_key="prbkeylongdesc2">
+			<book name="perkprestige2" name_key="prestige2Badgenamekey" parent="skillPrestige" max_level="1" base_skill_point_cost="0" desc_key="prbkeydesc2" long_desc_key="prbkeylongdesc2">
 				<effect_group>
 					<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="ancientCraft"/>
 				</effect_group>
@@ -400,7 +400,7 @@
 					<effect_description level="5" desc_key="perkMindesc5" long_desc_key="perkMinlongdesc5"/>
 				</effect_group>
 				<effect_group>
-					<requirement name="HasBuff" buff="PPBF"/>
+					<requirement name="HasBuff" buff="prestigeBuff"/>
 					<passive_effect name="PlayerExpGain" operation="perc_add" level="1,5" value=".025,.1" tags="Harvesting">
 						<requirement name="HoldingItemHasTags" tags="perkMiner69r"/>
 					</passive_effect>
@@ -409,7 +409,7 @@
 					</passive_effect>
 				</effect_group>
 				<effect_group>
-					<requirement name="HasBuff" buff="PPBF2"/>
+					<requirement name="HasBuff" buff="prestigeBuff2"/>
 					<passive_effect name="PlayerExpGain" operation="perc_add" level="1,5" value=".0375,.15" tags="Harvesting">
 						<requirement name="HoldingItemHasTags" tags="perkMiner69r"/>
 					</passive_effect>
@@ -418,7 +418,7 @@
 					</passive_effect>
 				</effect_group>
 				<effect_group>
-					<requirement name="HasBuff" buff="PPBF3"/>
+					<requirement name="HasBuff" buff="prestigeBuff3"/>
 					<passive_effect name="PlayerExpGain" operation="perc_add" level="1,5" value=".0375,.15" tags="Harvesting">
 						<requirement name="HoldingItemHasTags" tags="perkMiner69r"/>
 					</passive_effect>
@@ -565,19 +565,19 @@
 	<append xpath="/progression/perks/perk[@name='perkMiner69r']">
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Prestige Mining XP Adjust ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 			<effect_group>
-				<requirement name="HasBuff" buff="PPBF"/>
+				<requirement name="HasBuff" buff="prestigeBuff"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" level="1,5" value=".05,.2" tags="Harvesting">
 					<requirement name="HoldingItemHasTags" tags="perkMiner69r"/>
 				</passive_effect>
 			</effect_group>
 			<effect_group>
-				<requirement name="HasBuff" buff="PPBF2"/>
+				<requirement name="HasBuff" buff="prestigeBuff2"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" level="1,5" value=".075,.3" tags="Harvesting">
 					<requirement name="HoldingItemHasTags" tags="perkMiner69r"/>
 				</passive_effect>
 			</effect_group>
 			<effect_group>
-				<requirement name="HasBuff" buff="PPBF3"/>
+				<requirement name="HasBuff" buff="prestigeBuff3"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" level="1,5" value=".075,.3" tags="Harvesting">
 					<requirement name="HoldingItemHasTags" tags="perkMiner69r"/>
 				</passive_effect>
@@ -588,19 +588,19 @@
 	<append xpath="/progression/perks/perk[@name='perkSalvageOperations']">
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Prestige Salvage XP Adjust ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 			<effect_group>
-				<requirement name="HasBuff" buff="PPBF"/>
+				<requirement name="HasBuff" buff="prestigeBuff"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" level="1,5" value=".05,.2" tags="Harvesting">
 					<requirement name="HoldingItemHasTags" tags="perkMiner69r"/>
 				</passive_effect>
 			</effect_group>
 			<effect_group>
-				<requirement name="HasBuff" buff="PPBF2"/>
+				<requirement name="HasBuff" buff="prestigeBuff2"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" level="1,5" value=".075,.3" tags="Harvesting">
 					<requirement name="HoldingItemHasTags" tags="perkMiner69r"/>
 				</passive_effect>
 			</effect_group>
 			<effect_group>
-				<requirement name="HasBuff" buff="PPBF3"/>
+				<requirement name="HasBuff" buff="prestigeBuff3"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" level="1,5" value=".075,.3" tags="Harvesting">
 					<requirement name="HoldingItemHasTags" tags="perkSalvageOperations"/>
 				</passive_effect>

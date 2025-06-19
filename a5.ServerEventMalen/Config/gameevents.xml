@@ -172,6 +172,31 @@
 				<property name="added_item_counts" value="1" param1="item_number2"/>								
 			</action>
         </action_sequence>
+
+        <action_sequence name="action_repairLS">
+		<action class="PlaySound">
+			<property name="sound" value="twitch_good_action" />
+			<property name="phase" value="1" />
+			<property name="inside_head" value="true" />
+			<property name="target_group" value="party" />
+		</action>
+
+		<action class="PlaySound">
+			<property name="phase" value="1" />
+			<property name="sound" value="twitch_repair" />
+			<property name="inside_head" value="true" />
+			<property name="target_group" value="party" />
+		</action>
+
+		<action class="AddItemDurability">
+			<property name="phase" value="1" />
+            <property name="items_location" value="Toolbelt" />
+			<property name="items_tags" value="lastStand" />
+			<property name="amount" value=".2" />
+			<property name="is_percent" value="true" />			
+		</action>
+
+	</action_sequence>
     </append>
 
     

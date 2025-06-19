@@ -26,9 +26,10 @@
 			<property name="Shape" value="New"/>
 
 			<property name="Path" value="solid"/>
-			<property name="Model" value="counter"/>
+			<property name="Model" value="@:Shapes/counter.fbx"/>
+			
 			<property name="Place" value="TowardsPlacerInverted"/>
-			<!--<property name="Model" value="cube"/>-->
+			<!--<property name="Model" value="@:Shapes/Cube.fbx" />-->
 			<property name="DescriptionKey" value="cntStorageGenericDesc"/>
 			<property name="Tags" value="door"/>
 			<property name="Class" value="CompositeTileEntity"/>
@@ -101,7 +102,7 @@
 		<block name="CSPaintable">
 			<property name="Extends" value="cSeguridad"/>
 			<property name="Shape" value="New"/>
-			<property name="Model" value="counter"/>
+			<property name="Model" value="@:Shapes/counter.fbx"/>
 			<property name="CustomIconTint" value="30,30,30"/>
 			<property name="CustomIcon" value="shapeCube"/>
 		</block>
@@ -265,14 +266,16 @@
 		<block name="cSHalfblockInsecured">
 			<property name="CustomIconTint" value="150,150,150"/>
 			<property name="Extends" value="cSeguridadInsegura"/>
-			<property name="Model" value="cube_half"/>
+			
+			<property name="Model" value="@:Shapes/cube_half.fbx"/>
 			<property name="CustomIcon" value="shapeCubeHalf"/>
 			<property name="CustomIcon" value="rScrapIronHalf"/>
 		</block>
 		<block name="cSHalfblock">
 			<property name="CustomIconTint" value="150,150,150"/>
 			<property name="Extends" value="CSPaintable"/>
-			<property name="Model" value="cube_half"/>
+			
+			<property name="Model" value="@:Shapes/cube_half.fbx"/>
 			<property name="CustomIcon" value="shapeCubeHalf"/>
 			<property name="DowngradeBlock" value="cSHalfblockInsecured"/>
 		</block>
@@ -283,7 +286,7 @@
 			<property name="Shape" value="ModelEntity"/>
 			<property name="MultiBlockDim" value="1,2,1"/>
 			<property name="CustomIcon" value="cntRetroFridgeVer1Closed"/>
-			<property name="Model" value="Entities/Appliances/fridgeRetroClosedPrefab" param1="main_mesh"/>
+			<property name="Model" value="@:Entities/Appliances/fridgeRetroClosedPrefab.prefab" param1="main_mesh"/>
 		</block>
 
 		<block name="cntFridgeStainlessSteelCS">
@@ -292,7 +295,7 @@
 			<property name="Shape" value="ModelEntity"/>
 			<property name="MultiBlockDim" value="1,2,1"/>
 			<property name="CustomIcon" value="cntFridgeStainlessSteel"/>
-			<property name="Model" value="Entities/Appliances/fridgeStainlessSteelClosedPrefab" param1="main_mesh"/>
+			<property name="Model" value="@:Entities/Appliances/fridgeStainlessSteelClosedPrefab.prefab" param1="main_mesh"/>
 		</block>
 		<block name="cntPillCaseClosedCS">
 			<property name="CustomIconTint" value="150,150,150"/>
@@ -314,6 +317,64 @@
 			<property name="Shape" value="ModelEntity"/>
 			<property name="CustomIcon" value="cntMedicineCabinetClosed"/>
 			<property name="Model" value="@:Entities/LootContainers/medicine_cabinet_closedPrefab.prefab"/>
+		</block>
+		<block name="cntFootlockerClosedWhite_SS">
+			<property name="Extends" value="CSPaintable"/>
+			<property name="CustomIcon" value="cntFootlockerClosedWhite"/>			
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="@:Entities/LootContainers/storageChest_01Prefab.prefab"/>	
+			<property name="CustomIconTint" value="FFFFFF"/>
+			<property name="TintColor" value="FFFFFF"/>		
+		</block>
+		<block name="cntFootlockerClosedBrown_SS">
+			<property name="Extends" value="cntFootlockerClosedWhite_SS"/>
+			<property name="CustomIconTint" value="504235"/>
+			<property name="TintColor" value="504235"/>
+		</block>
+		<block name="cntFootlockerClosedRed_SS">
+			<property name="Extends" value="cntFootlockerClosedWhite_SS"/>
+			<property name="CustomIconTint" value="931F13"/>
+			<property name="TintColor" value="931F13"/>
+		</block>
+		<block name="cntFootlockerClosedOrange_SS">
+			<property name="Extends" value="cntFootlockerClosedWhite_SS"/>
+			<property name="CustomIconTint" value="8F5A29"/>
+			<property name="TintColor" value="8F5A29"/>
+		</block>
+		<block name="cntFootlockerClosedYellow_SS">
+			<property name="Extends" value="cntFootlockerClosedWhite_SS"/>
+			<property name="CustomIconTint" value="726B38"/>
+			<property name="TintColor" value="726B38"/>
+		</block>
+		<block name="cntFootlockerClosedGreen_SS">
+			<property name="Extends" value="cntFootlockerClosedWhite_SS"/>
+			<property name="CustomIconTint" value="5F8A5E"/>
+			<property name="TintColor" value="5F8A5E"/>
+		</block>
+		<block name="cntFootlockerClosedBlue_SS">
+			<property name="Extends" value="cntFootlockerClosedWhite_SS"/>
+			<property name="CustomIconTint" value="517AC0"/>
+			<property name="TintColor" value="517AC0"/>
+		</block>
+		<block name="cntFootlockerClosedGrey_SS">
+			<property name="Extends" value="cntFootlockerClosedWhite_SS"/>
+			<property name="CustomIconTint" value="757575"/>
+			<property name="TintColor" value="757575"/>
+		</block>
+		<block name="cntFootlockerClosedBlack_SS">
+			<property name="Extends" value="cntFootlockerClosedWhite_SS"/>
+			<property name="CustomIconTint" value="000000"/>
+			<property name="TintColor" value="000000"/>
+		</block>
+		<block name="cntFootlockerClosedPink_SS">
+			<property name="Extends" value="cntFootlockerClosedWhite_SS"/>
+			<property name="CustomIconTint" value="B086AF"/>
+			<property name="TintColor" value="B086AF"/>
+		</block>
+		<block name="cntFootlockerClosedArmyGreen_SS">
+			<property name="Extends" value="cntFootlockerClosedWhite_SS"/>
+			<property name="CustomIconTint" value="4D5F41"/>
+			<property name="TintColor" value="4D5F41"/>
 		</block>
 		
 

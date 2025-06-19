@@ -1,5 +1,9 @@
 <MalenEI>
 	<!-- MalenEI Recipe Start -->
+	<set xpath="/recipes/recipe[@craft_area='forge']/@is_trackable">true</set>
+	<remove xpath="/recipes/recipe[@name='ironBars']"/>
+	<remove xpath="/recipes/recipe[@name='ironBarsCNR']"/>
+	<remove xpath="/recipes/recipe[@name='ammoArrowSteelAP']"/>
 
 	<append xpath="/recipes">
 		<!--Stations-->
@@ -278,21 +282,7 @@
 				<ingredient name="ammoJunkTurretRegular" count="1"/>
 			</recipe>
 		<!---->
-		<!--Extra recipes-->
-			<!--
-			<recipe name="woodBarsVariantHelper" count="1">
-				<ingredient name="resourceWood" count="10"/>
-			</recipe>
-			-->
-			<!--
-			<recipe name="steelBarsVariantHelper" count="1" material_based="true" craft_area="forgeHF" craft_tool="toolAndDieSetHF" tags="perkAdvancedEngineering">
-				<ingredient name="unit_iron" count="240"/>
-				<ingredient name="unit_clay" count="50"/>
-				<effect_group>
-					<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_iron"/>
-				</effect_group>
-			</recipe>
-			-->
+		
 			<recipe name="resourceAcid" count="6" craft_time="30" craft_area="chemistryStation" tags="learnable,chemStationCrafting">
 				<ingredient name="carBattery" count="2"/>
 			</recipe>
@@ -384,14 +374,15 @@
 				<ingredient name="modArmorCustomizedFittings" count="1"/>
 				<ingredient name="resourceDuctTape" count="50"/>				
 			</recipe>
-			<recipe name="modArmorCursed" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr1">
+			<!--TODO-->
+			<!-- <recipe name="modArmorCursed" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr1">
 				<ingredient name="Practonium" count="10"/>
 				<ingredient name="drinkJarGrandpasLearningElixir" count="5"/>
 				<ingredient name="modArmorCoolingMesh" count="1"/>
 				<ingredient name="modArmorInsulatedLiner" count="1"/>
 				<ingredient name="resourceForgedIron" count="500"/>
 				<ingredient name="casinoCoin" count="6000"/>
-			</recipe>
+			</recipe> -->
 			<recipe name="Cursed_mod" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr3">
 				<ingredient name="modCursedStone" count="1"/>
 				<ingredient name="ResourceForgedPractonium" count="1"/>
@@ -1464,7 +1455,7 @@
 					<ingredient name="ResourceForgedPlatinum" count="1"/>
 				</recipe>
 
-				<recipe name="uniqueArmorLighHelm2" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
+				<!-- <recipe name="uniqueArmorLighHelm2" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
 					<ingredient name="resourceArmorCraftingKit" count="20"/>
 					<ingredient name="Practonium" count="10"/>
@@ -1491,9 +1482,9 @@
 					<ingredient name="Practonium" count="10"/>
 					<ingredient name="resourceUniqueLightPart" count="1"/>
 					<ingredient name="ResourceForgedPlatinum" count="1"/>
-				</recipe>
+				</recipe> -->
 			<!--Medium-->
-				<recipe name="uniqueArmorMediHelm" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
+				<!-- <recipe name="uniqueArmorMediHelm" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
 					<ingredient name="resourceArmorCraftingKit" count="20"/>
 					<ingredient name="Practonium" count="10"/>
@@ -1549,9 +1540,9 @@
 					<ingredient name="Practonium" count="10"/>
 					<ingredient name="resourceUniqueMediumtPart" count="1"/>
 					<ingredient name="ResourceForgedPlatinum" count="1"/>
-				</recipe>
+				</recipe> -->
 			<!--Heavy-->
-				<recipe name="uniqueArmorHeavHelm" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
+				<!-- <recipe name="uniqueArmorHeavHelm" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
 					<ingredient name="resourceArmorCraftingKit" count="20"/>
 					<ingredient name="Practonium" count="10"/>
@@ -1607,7 +1598,7 @@
 					<ingredient name="Practonium" count="10"/>
 					<ingredient name="resourceUniqueHeavyPart" count="1"/>
 					<ingredient name="ResourceForgedPlatinum" count="1"/>
-				</recipe>
+				</recipe> -->
 				
 				<!-- 
 				
@@ -2173,18 +2164,10 @@
 				<ingredient name="ammoArrowStone" count="2"/>
 			</recipe>
 
-
-
 		<!---->
 	</append>
 
-	<set xpath="/recipes/recipe[@craft_area='forge']/@is_trackable">true</set>
-	<!--<set xpath="/recipes/recipe[@name='woodBarsCentered']/@name">woodBarsVariantHelper</set>
-	<set xpath="/recipes/recipe[@name='ironBarsCentered']/@name">ironBarsVariantHelper</set>-->
-
-	<remove xpath="/recipes/recipe[@name='ironBars']"/>
-	<remove xpath="/recipes/recipe[@name='ironBarsCNR']"/>
-	<remove xpath="/recipes/recipe[@name='ammoArrowSteelAP']"/>
+	
 
 	
 
