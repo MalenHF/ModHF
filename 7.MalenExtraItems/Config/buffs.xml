@@ -4,6 +4,13 @@
 		<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffxpst">
 			<requirement name="PlayerLevel" operation="GT" value="100"/>
 		</triggered_effect>
+		<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$zombiekills" operation="set" value="0"/>
+		<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$playerdeaths" operation="set" value="0"/>
+
+		<!-- <triggered_effect trigger="onSelfDied"  action="ModifyCVar" cvar="$playerdeaths" operation="add" value="1"/>
+		<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="$zombiekills" operation="add" value="1">
+			<requirement name="EntityTagCompare" target="other" tags="zombie,specialZ,boss,animal"/>
+		</triggered_effect>	 -->
 	</append>
 	<append xpath="buffs/buff[@name='buffStatusCheck01']/effect_group/triggered_effect[@trigger='onSelfFallImpact']">
 		<requirement name="NotHasBuff" buff="AguaDivina"/>
