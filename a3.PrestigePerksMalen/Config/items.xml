@@ -70,8 +70,7 @@
 				<property name="SellableToTrader" value="false"/>					
 				<property name="Group" value="Special Items"/>				
 				<property name="ShowQuality" value="false"/>
-				<property class="Action0">
-					<requirement name="HasBuff" buff="prestigeBuff"/>
+				<property class="Action0">					
 					<property name="Class" value="Eat"/>
 					<property name="Delay" value="1"/>	
 					<property name="Sound_start" value="read_mod"/>					
@@ -94,10 +93,9 @@
 		<!-- ▼▲Prestige Medal 2▲▼ -->
 			<item name="prestige2Badge">
 				<property name="Extends" value="prestige1Badge"/>
-				<property name="CustomIconTint" value="EA4224"/>
-				<property name="DescriptionKey" value="prestige2BadgeDesc"/>
+				<property name="CustomIconTint" value="EA4224"/>				
 				<property class="Action0">
-					<requirement name="HasBuff" buff="prestigeBuff2"/>					
+					<requirement name="HasBuff" buff="prestigeBuff"/>					
 					<property name="Class" value="Eat"/>
 					<property name="Delay" value="1.0"/>
 					<property name="Sound_start" value="read_mod"/>
@@ -117,14 +115,12 @@
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="prestigeBuff"/>					
 				</effect_group>
 			</item>
-
 		<!-- ▼▲Prestige Medal 3▲▼ -->
 			<item name="prestige3Badge">
 				<property name="Extends" value="prestige1Badge"/>
-				<property name="CustomIconTint" value="EA4224"/>
-				<property name="DescriptionKey" value="prestige2BadgeDesc"/>
+				<property name="CustomIconTint" value="00B0F6 "/>				
 				<property class="Action0">
-					<requirement name="HasBuff" buff="prestigeBuff3"/>					
+					<requirement name="HasBuff" buff="prestigeBuff2"/>					
 					<property name="Class" value="Eat"/>
 					<property name="Delay" value="1.0"/>
 					<property name="Sound_start" value="read_mod"/>
@@ -453,7 +449,7 @@
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Bundles de Nivel P2 ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<item name="lvlUpChallengeBoxP2_50">
-			<property name="CustomIcon" value="block_missing"/>
+			<property name="CustomIcon" value="poiPartHelper"/>
 			<property name="ItemTypeIcon" value="perk"/>
 			<property name="CustomIconTint" value="100,0,0"/>
 			<property name="TintColor" value="100,0,0"/>
@@ -478,7 +474,7 @@
 			
 		</item>
 		<item name="lvlUpChallengeBoxP2_100">
-			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property name="Extends" value="lvlUpChallengeBoxP2_50"/>			
 			<property class="Action0">				
 				<requirement name="PlayerLevel" operation="GT" value="149"/>				
 				<property name="Create_item" value="Mineral_Bag,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,q_EnemigsRandom"/>
@@ -486,7 +482,7 @@
 			</property>			
 		</item>
 		<item name="lvlUpChallengeBoxP2_150">
-			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property name="Extends" value="lvlUpChallengeBoxP2_50"/>			
 			<property class="Action0">				
 				<requirement name="PlayerLevel" operation="GT" value="99"/>				
 				<property name="Create_item" value="survivorRations,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,questTokenT2"/>
@@ -494,7 +490,7 @@
 			</property>			
 		</item>
 		<item name="lvlUpChallengeBoxP2_200">
-			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property name="Extends" value="lvlUpChallengeBoxP2_50"/>			
 			<property class="Action0">				
 				<requirement name="PlayerLevel" operation="GT" value="199"/>				
 				<property name="Create_item" value="Mineral_Bag,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,q_EnemigsRandom"/>
@@ -502,7 +498,7 @@
 			</property>			
 		</item>
 		<item name="lvlUpChallengeBoxP2_250">
-			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property name="Extends" value="lvlUpChallengeBoxP2_50"/>			
 			<property class="Action0">				
 				<requirement name="PlayerLevel" operation="GT" value="249"/>				
 				<property name="Create_item" value="survivorRations,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,questTokenT3"/>
@@ -510,7 +506,7 @@
 			</property>			
 		</item>
 		<item name="lvlUpChallengeBoxP2_300">
-			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property name="Extends" value="lvlUpChallengeBoxP2_50"/>			
 			<property class="Action0">				
 				<requirement name="PlayerLevel" operation="GT" value="299"/>				
 				<property name="Create_item" value="resourcePlatinumNugget,special_bag,Practonium,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,q_EnemigsRandom"/>
@@ -518,7 +514,7 @@
 			</property>			
 		</item>
 		<item name="lvlUpChallengeBoxP2_350">
-			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property name="Extends" value="lvlUpChallengeBoxP2_50"/>			
 			<property class="Action0">				
 				<requirement name="PlayerLevel" operation="GT" value="349"/>				
 				<property name="Create_item" value="prestige3Badge,survivorRations,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,questTokenT3,q_Lucky"/>
@@ -526,7 +522,7 @@
 			</property>			
 		</item>
 		<item name="lvlUpChallengeBoxP2_400">
-			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property name="Extends" value="lvlUpChallengeBoxP2_50"/>			
 			<property class="Action0">				
 				<requirement name="PlayerLevel" operation="GT" value="399"/>				
 				<property name="Create_item" value="ResourceForgedPractonium,ResourceForgedPlatinum,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,q_EnemigsRandom"/>
@@ -534,7 +530,7 @@
 			</property>			
 		</item>
 		<item name="lvlUpChallengeBoxP2_450">
-			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property name="Extends" value="lvlUpChallengeBoxP2_50"/>			
 			<property class="Action0">				
 				<requirement name="PlayerLevel" operation="GT" value="449"/>				
 				<property name="Create_item" value="agua_divina,q_Hooligan_Force,allSkillMagazineHF,survivorRations,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,questTokenT3,q_Lucky"/>
@@ -543,13 +539,13 @@
 		</item>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Bundles de Nivel P2 ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<item name="challengeRewardPrestige0Apply">
-			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>	
+			<property name="Extends" value="lvlUpChallengeBoxP2_50"/>	
 			<property name="CustomIcon" value="cntQuestTestLoot"/>
 			<property name="DescriptionKey" value="challengeRewardPrestigeApplyDesc"/>
 			<property name="CustomIconTint" value="F0EA4C"/>
+			
 			<property class="Action0">
-				<requirement name="HasBuff" buff="prestigeBuff"/>				
-				<requirement name="PlayerLevel" operation="LT" value="10"/>				
+				<requirement name="HasBuff" buff="prestigeBuff"/>							
 				<property name="Create_item" value="modGunMeleeBlessedMetal,q_Hooligan_Force,divineWaterEvent,fourSkillPoint_P1"/>
 				<property name="Create_item_count" value="1,1,1,3"/>
 			</property>
@@ -562,7 +558,7 @@
 		</item>
 		<item name="challengeRewardPrestige1Apply">
 			<property name="Extends" value="challengeRewardPrestige0Apply"/>
-			<property name="CustomIconTint" value="F0EA4C"/>
+			<property name="CustomIconTint" value="234,66,36"/>
 			<property class="Action0">
 				<requirement name="HasBuff" buff="prestigeBuff2"/>							
 				<property name="Create_item" value="modCursedStone,divineWaterEvent,q_Hooligan_Force,fourSkillPoint_P1"/>
@@ -577,13 +573,11 @@
 			</effect_group>	
 		</item>
 		<item name="challengeRewardPrestige2Apply">
-			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>	
-			<property name="CustomIcon" value="cntQuestTestLoot"/>
-			<property name="DescriptionKey" value="challengeRewardPrestige0ApplyDesc"/>
-			<property name="CustomIconTint" value="F0EA4C"/>
+			<property name="Extends" value="challengeRewardPrestige0Apply"/>						
+			<property name="CustomIconTint" value="0,176,246"/>
 			<property class="Action0">	
 				<requirement name="HasBuff" buff="prestigeBuff3"/>							
-				<property name="Create_item" value="modGunMDivine_mod,Cursed_mod,agua_divina,q_Hooligan_Force"/>
+				<property name="Create_item" value="Divine_mod,Cursed_mod,agua_divina,q_Hooligan_Force"/>
 				<property name="Create_item_count" value="1,1,1,3"/>
 			</property>	
 			<effect_group tiered="false">				
@@ -602,7 +596,7 @@
 
 		
 		
-|	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Bundles de Nivel ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+|	
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	<!-- ▼▲▼▲▼▲ Ancient Range Weap ▲▼▲▼▲▼ -->

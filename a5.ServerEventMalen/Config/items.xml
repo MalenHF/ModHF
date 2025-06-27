@@ -829,7 +829,35 @@
 				<property name="QuestGiven" value="q_EventPascua2"/>
 			</property>
 		</item> -->
-
+		<item name="q_ShowEvents">
+			<property name="CustomIcon" value="questMaster"/>						
+            <property name="ItemTypeIcon" value="twitch_special"/>	
+			<property name="TintColor" value="255,255,0"/>	
+			<property name="CustomIconTint" value="255,255,0"/>	
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="Morganic"/>		
+			<property name="EconomicValue" value="1"/>
+			<property name="HoldType" value="31"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Use_time" value="..."/>				
+			</property>	
+			<effect_group tiered="false">				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varShowEvents" operation="set" value="1"/>
+			</effect_group>
+		</item>
+		<item name="q_eventUnlocker">
+			<property name="Extends" value="q_ShowEvents"/>
+			<property name="CustomIcon" value="biomeBadge2"/>
+			<property name="DescriptionKey" value="eventUnlockerDesc"/>
+		</item>
+		
 		<item name="q_eventPascua">
 			<property name="CustomIcon" value="questMaster"/>
 			<property name="DescriptionKey" value="qPascuaDesc"/>
@@ -851,32 +879,48 @@
 				<property name="Delay" value="1.0"/>
 				<property name="Use_time" value="..."/>
 				<!-- <property name="Sound_start" value="player_drinking"/> -->
-			</property>
-			
-		</item>		
-
-		<item name="q_eventUnlocker">
-			<property name="CustomIcon" value="questMaster"/>
-			<property name="DescriptionKey" value="eventUnlockerDesc"/>
-            <property name="CustomIconTint" value="255,255,0"/>
-            <property name="ItemTypeIcon" value="twitch_special"/>			
-			<property name="CreativeMode" value="Dev"/>
-			<property name="Stacknumber" value="10"/>
-			<property name="Material" value="Morganic"/>		
-			<property name="EconomicValue" value="100"/>
-			<property name="TintColor" value="255,255,0"/>
-			<property name="HoldType" value="31"/>
-			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
-			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-			<property name="SellableToTrader" value="false"/>
-			<property name="Candrop" value="false"/>
-			<property class="Action0">
-				<property name="Class" value="Eat"/>
-				<property name="Delay" value="1.0"/>
-				<property name="Use_time" value="..."/>
-				<!-- <property name="Sound_start" value="player_drinking"/> -->
 			</property>			
-		</item>	
+		</item>
+		
+		<item name="q_SummerFesta">
+			<property name="Extends" value="q_Ticket"/>
+			<property name="CreativeMode" value="Player"/>					
+			<property name="CustomIcon" value="resourcePaper"/>
+			<property name="CustomIconTint" value="FF00E0"/>
+			<property name="TintColor" value="218,232,9"/>
+			<property name="ItemTypeIcon" value="tracking_rabbit"/>			
+			<property class="Action0">											
+				<requirement name="!HasBuff" buff="buffQuestCD"/>											
+				<property name="PromptTitle" value="q_Conejosaurio" />
+				<property name="PromptDescription" value="tixConejoPromp" />
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="hf_buffCelebrate_Summer"/>				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+				
+			</effect_group>
+		</item>
+		<item name="q_Conejosaurio">
+			<property name="Extends" value="q_Ticket"/>
+			<property name="CreativeMode" value="Player"/>					
+			<property name="CustomIcon" value="resourcePaper"/>
+			<property name="CustomIconTint" value="FF00E0"/>
+			<property name="TintColor" value="218,232,9"/>
+			<property name="ItemTypeIcon" value="tracking_rabbit"/>			
+			<property class="Action0">											
+				<requirement name="!HasBuff" buff="buffQuestCD"/>											
+				<property name="PromptTitle" value="q_Conejosaurio" />
+				<property name="PromptDescription" value="tixConejoPromp" />
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffSaurus"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestGatchaCD"/>																	
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestGatchaCD" target="selfOtherPlayers" target_tags="ally,party"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+			</effect_group>
+		</item>
+		
+
 		<item name="kitDeCom">
 			<property name="CustomIcon" value="bundleAmmo"/>
 			<property name="ItemTypeIcon" value="treasure"/>
@@ -1032,44 +1076,7 @@
 			</effect_group>			
         </item>
 
-		<item name="q_Conejosaurio">
-			<property name="Extends" value="q_Ticket"/>
-			<property name="CreativeMode" value="Player"/>					
-			<property name="CustomIcon" value="resourcePaper"/>
-			<property name="CustomIconTint" value="FF00E0"/>
-			<property name="TintColor" value="218,232,9"/>
-			<property name="ItemTypeIcon" value="tracking_rabbit"/>			
-			<property class="Action0">											
-				<requirement name="!HasBuff" buff="buffQuestCD"/>											
-				<property name="PromptTitle" value="q_Conejosaurio" />
-				<property name="PromptDescription" value="tixConejoPromp" />
-			</property>
-			<effect_group tiered="false">
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffSaurus"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestGatchaCD"/>																	
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestGatchaCD" target="selfOtherPlayers" target_tags="ally,party"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
-			</effect_group>
-		</item>	
-
-		<item name="q_SummerFesta">
-			<property name="Extends" value="q_Ticket"/>
-			<property name="CreativeMode" value="Player"/>					
-			<property name="CustomIcon" value="resourcePaper"/>
-			<property name="CustomIconTint" value="FF00E0"/>
-			<property name="TintColor" value="218,232,9"/>
-			<property name="ItemTypeIcon" value="tracking_rabbit"/>			
-			<property class="Action0">											
-				<requirement name="!HasBuff" buff="buffQuestCD"/>											
-				<property name="PromptTitle" value="q_Conejosaurio" />
-				<property name="PromptDescription" value="tixConejoPromp" />
-			</property>
-			<effect_group tiered="false">
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="hf_buffCelebrate_Summer"/>				
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varEventTest" operation="set" value="1"/>
-			</effect_group>
-		</item>	
+		
 
 	</append>
 </configs>
