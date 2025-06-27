@@ -9,12 +9,9 @@
 			<property name="repeatable" value="false" />			
 			<property name="category_key" value="qSName" />
 			<property name="icon" value="ui_game_symbol_star" />				
-			<property name="difficulty" value="easy" />
+			<property name="difficulty" value="easy" />			
 			<reward type="Exp" value="100"/>
-			<reward type="LootItem" id="newPlayerKitGroup" value="1"/>
-			<reward type="LootItem" id="juguito_de_chaleGroup" value="1"/>
-			<reward type="LootItem" id="Pistola_electricaGroup" value="1"/>
-			<reward type="LootItem" id="mitico_Martillo_Divino_UsosGroup" value="1"/>
+			<reward type="LootItem" id="newPlayerKitGroup" value="1"/>			
 			<reward type="LootItem" id="startTipsGroup" value="1"/>
 		</quest>
 
@@ -28,6 +25,11 @@
 			<property name="category_key" value="qTCat" />
 			<property name="icon" value="ui_game_symbol_star" />				
 			<property name="difficulty" value="easy" />
+			<action type="SetCVar">
+				<property name="cvar" value=".dukeNoteRead"/>
+				<property name="value" value="1"/>
+				<property name="on_complete" value="true"/>
+			</action>
 			<reward type="SkillPoints" value="1"/>
 		</quest>
 	

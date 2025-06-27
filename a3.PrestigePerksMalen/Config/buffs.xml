@@ -29,6 +29,34 @@
 			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige0_450" count="1">
 				<requirement name="PlayerLevel" operation="GT" value="449"/>		
 			</triggered_effect>
+
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_50" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="49"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_100" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="99"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_150" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="149"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_200" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="199"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_250" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="249"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_300" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="299"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_350" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="349"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_400" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="399"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_450" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="449"/>		
+			</triggered_effect>
 		</effect_group>
 		<effect_group>
 			<requirement name="HasBuff" buff="prestigeBuff"/>
@@ -57,6 +85,34 @@
 				<requirement name="PlayerLevel" operation="GT" value="399"/>		
 			</triggered_effect>
 			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige1_450" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="449"/>		
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_50" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="49"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_100" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="99"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_150" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="149"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_200" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="199"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_250" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="249"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_300" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="299"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_350" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="349"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_400" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="399"/>		
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_450" count="1">
 				<requirement name="PlayerLevel" operation="GT" value="449"/>		
 			</triggered_effect>
 		</effect_group>
@@ -89,95 +145,35 @@
 			<triggered_effect trigger="onSelfBuffStart" action="AwardChallenge" challenge_stat="prestige1_450" count="1">
 				<requirement name="PlayerLevel" operation="GT" value="449"/>		
 			</triggered_effect>
-		</effect_group>
-		<!-- <effect_group>
-			<requirement name="!HasBuff" buff="prestigeBuff,prestigeBuff2,prestigeBuff3"/>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfProgressionTracker" operation="add" value="0">
-				<requirement name="PlayerLevel" operation="GT" value="1"/>
-				<requirement name="CVarCompare" cvar="$hfProgressionTracker" operation="LT" value="1"/>			
+
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_50" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="49"/>		
 			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfProgressionTracker" operation="add" value="1">
-				<requirement name="PlayerLevel" operation="GT" value="49"/>
-				<requirement name="CVarCompare" cvar="$hfProgressionTracker" operation="LT" value="0"/>			
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_100" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="99"/>		
 			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfProgressionTracker" operation="add" value="1">
-				<requirement name="PlayerLevel" operation="GT" value="99"/>
-				<requirement name="CVarCompare" cvar="$hfProgressionTracker" operation="LT" value="1"/>			
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_150" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="149"/>		
 			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfProgressionTracker" operation="add" value="1">
-				<requirement name="PlayerLevel" operation="GT" value="149"/>
-				<requirement name="CVarCompare" cvar="$hfProgressionTracker" operation="LT" value="2"/>			
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_200" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="199"/>		
 			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfProgressionTracker" operation="add" value="1">
-				<requirement name="PlayerLevel" operation="GT" value="199"/>
-				<requirement name="CVarCompare" cvar="$hfProgressionTracker" operation="LT" value="3"/>			
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_250" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="249"/>		
 			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfProgressionTracker" operation="add" value="1">
-				<requirement name="PlayerLevel" operation="GT" value="249"/>
-				<requirement name="CVarCompare" cvar="$hfProgressionTracker" operation="LT" value="4"/>			
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_300" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="299"/>		
 			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfProgressionTracker" operation="add" value="1">
-				<requirement name="PlayerLevel" operation="GT" value="299"/>
-				<requirement name="CVarCompare" cvar="$hfProgressionTracker" operation="LT" value="5"/>			
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_350" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="349"/>		
 			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfProgressionTracker" operation="add" value="1">
-				<requirement name="PlayerLevel" operation="GT" value="349"/>
-				<requirement name="CVarCompare" cvar="$hfProgressionTracker" operation="LT" value="6"/>						
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_400" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="399"/>		
 			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfProgressionTracker" operation="add" value="1">
-				<requirement name="PlayerLevel" operation="GT" value="399"/>
-				<requirement name="CVarCompare" cvar="$hfProgressionTracker" operation="LT" value="7"/>	
-							
+			<triggered_effect trigger="onSelfBuffRemove" action="AwardChallenge" challenge_stat="prestige0_450" count="1">
+				<requirement name="PlayerLevel" operation="GT" value="449"/>		
 			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfProgressionTracker" operation="add" value="1">
-				<requirement name="PlayerLevel" operation="GT" value="449"/>
-				<requirement name="CVarCompare" cvar="$hfProgressionTracker" operation="LT" value="8"/>
-								
-			</triggered_effect>
-		</effect_group>
-		<effect_group>
-			<requirement name="HasBuff" buff="prestigeBuff"/>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfPrestige0Tracker" operation="add" value="0">
-				<requirement name="PlayerLevel" operation="GT" value="1"/>
-				<requirement name="CVarCompare" cvar="$hfPrestige0Tracker" operation="LT" value="1"/>							
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfPrestige0Tracker" operation="add" value="1">
-				<requirement name="PlayerLevel" operation="GT" value="49"/>
-				<requirement name="CVarCompare" cvar="$hfPrestige0Tracker" operation="LT" value="0"/>			
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfPrestige0Tracker" operation="add" value="1">
-				<requirement name="PlayerLevel" operation="GT" value="99"/>
-				<requirement name="CVarCompare" cvar="$hfPrestige0Tracker" operation="LT" value="1"/>			
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfPrestige0Tracker" operation="add" value="1">
-				<requirement name="PlayerLevel" operation="GT" value="149"/>
-				<requirement name="CVarCompare" cvar="$hfPrestige0Tracker" operation="LT" value="2"/>			
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfPrestige0Tracker" operation="add" value="1">
-				<requirement name="PlayerLevel" operation="GT" value="199"/>
-				<requirement name="CVarCompare" cvar="$hfPrestige0Tracker" operation="LT" value="3"/>			
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfPrestige0Tracker" operation="add" value="1">
-				<requirement name="PlayerLevel" operation="GT" value="249"/>
-				<requirement name="CVarCompare" cvar="$hfPrestige0Tracker" operation="LT" value="4"/>			
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfPrestige0Tracker" operation="add" value="1">
-				<requirement name="PlayerLevel" operation="GT" value="299"/>
-				<requirement name="CVarCompare" cvar="$hfPrestige0Tracker" operation="LT" value="5"/>			
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfPrestige0Tracker" operation="add" value="1">
-				<requirement name="PlayerLevel" operation="GT" value="349"/>
-				<requirement name="CVarCompare" cvar="$hfPrestige0Tracker" operation="LT" value="6"/>						
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfPrestige0Tracker" operation="add" value="1">
-				<requirement name="PlayerLevel" operation="GT" value="399"/>
-				<requirement name="CVarCompare" cvar="$hfPrestige0Tracker" operation="LT" value="7"/>	
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$hfPrestige0Tracker" operation="add" value="1">
-				<requirement name="PlayerLevel" operation="GT" value="449"/>
-				<requirement name="CVarCompare" cvar="$hfPrestige0Tracker" operation="LT" value="8"/>				
-			</triggered_effect>
-		</effect_group> -->
+		</effect_group>		
 	</append>
 
 	<append xpath="/buffs">

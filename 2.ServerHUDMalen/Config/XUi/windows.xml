@@ -1,18 +1,18 @@
 <configs>
 	<!-- Remover HUD vanilla -->
 	<remove xpath="/windows/window[@name='windowCompass']/sprite[@pos='240,-60']"/>
-	<remove xpath="/windows/window[@name='windowTargetBar']"/> 
-	<!-- <remove xpath="/windows/window[@name='windowToolbelt']"/>  -->
-	<remove xpath="/windows/window[@name='HUDLeftStatBars']"/>	
+	<remove xpath="/windows/window[@name='windowTargetBar']"/>
+	<remove xpath="/windows/window[@name='windowToolbelt']"/>
+	<remove xpath="/windows/window[@name='HUDLeftStatBars']"/>
 	<remove xpath="/windows/window[@name='chatoutput']"/>
-    <remove xpath="/windows/window[@name='chat']"/>
+	<remove xpath="/windows/window[@name='chat']"/>
 	<remove xpath="/windows/window[@name='windowGroupBars']"/>
 	<remove xpath="/windows/window[@name='windowQuestTracker']" />
-    <remove xpath="/windows/window[@name='windowCraftingQueue']"/>
+	<remove xpath="/windows/window[@name='windowCraftingQueue']"/>
 
 	<!--Mueve el tooltip -->
 	<set xpath="/windows/window[@name='toolTipPopups']/@pos">0,125</set>
-	<!--Agregar al compas-->	
+	<!--Agregar al compas-->
 	<append xpath="/windows/window[@name='windowCompass']">
 		<label depth="20" name="TextContent" pos="50,2" width="380" height="41" text="I" font_size="41" color="[white]" justify="center"/>
 		<!--Day-->
@@ -40,12 +40,12 @@
 			</rect>
 		</rect>
 
-	
+
 	</append>
 
-	<!--Toolbelt-->	
+	<!--Toolbelt-->
 	<append xpath="/windows">
-        <window name="windowCraftingQueue" width="397" height="78" panel="Left" cursor_area="true" >
+		<window name="windowCraftingQueue" width="397" height="78" panel="Left" cursor_area="true">
 			<!--#$-IGS END.-$#-->
 			<rect depth="0" pos="-52,-90" width="303" controller="CraftingQueue">
 				<!-- <sprite name="background" color="[black]" type="sliced" pos="0,-10" /> -->
@@ -56,44 +56,44 @@
 			</rect>
 		</window>
 		<!--////-->
-		<window name="windowTargetBar" controller="TargetBar" visibility="always">
-            <rect pos="-200,-95" width="400" height="36" visible="{isnotboss}">
-                <sprite depth="1" name="border" color="0,0,0,100" type="sliced" width="400" globalopacity="false"/>
-                <filledsprite depth="2" name="BarContent" height="30" pos="2,-3" type="filled" color="255,0,0,255" width="396" fill="{fill}" globalopacity="false"/>
-				<label  pos="-6,-6" height="30" depth="3" name="TextContent" font_size="24" color="[white]" justify="center" pivot="topleft" text="{name}: {currentwithmax}"  effect="outline8" effect_distance="2,2" effect_color="0,0,0,255"/>
+		<window name="windowTargetBar" controller="TargetBar" visibility="always" anchor="CenterTop">
+			<rect pos="-200,-95" width="400" height="36" visible="{isnotboss}">
+				<sprite depth="1" name="border" color="0,0,0,100" type="sliced" width="400" globalopacity="false"/>
+				<filledsprite depth="2" name="BarContent" height="30" pos="2,-3" type="filled" color="255,0,0,255" width="396" fill="{fill}" globalopacity="false"/>
+				<label pos="-6,-6" height="30" depth="3" name="TextContent" font_size="24" color="[white]" justify="center" pivot="topleft" text="{name}: {currentwithmax}" effect="outline8" effect_distance="2,2" effect_color="0,0,0,255"/>
 				<sprite depth="8" name="border" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false"/>
-            </rect>
-            <rect pos="-267,-95" width="725" height="25" visible="{isboss}">
-                <sprite pos="60,-45" width="448" depth="1" name="border" color="0,0,0,255" type="sliced" globalopacity="false"/>
-                <filledsprite pos="60,-45" width="448" depth="2" name="BarContent" type="filled" fill="{fill}" globalopacity="false" sprite="ui_game_symbol_twitch_boss_bar_HP" />
-                <sprite depth="3" name="Icon" size="84,84" pos="45,-42" pivot="center" sprite="{boss_sprite}" globalopacity="false" />
-                <sprite depth="4" name="overlay" width="517" height="84" type="sliced" globalopacity="false" sprite="ui_game_symbol_twitch_boss_bar" />
-                <label depth="5" name="TextContent" pos="100,-13" font_size="30" color="[white]" justify="left" pivot="topleft" text="{name}" height="30" effect="Outline8" effect_color="0,0,0,255" effect_distance="2,2"/>
-                <label depth="5" name="MinionCount" pos="482,-13" font_size="30" color="[white]" justify="left" pivot="topleft" text="x{minioncount}" height="30" effect="Outline8" effect_color="0,0,0,255" effect_distance="2,2" />
-            </rect>
-        </window>
+			</rect>
+			<rect pos="-267,-95" width="725" height="25" visible="{isboss}">
+				<sprite pos="60,-45" width="448" depth="1" name="border" color="0,0,0,255" type="sliced" globalopacity="false"/>
+				<filledsprite pos="60,-45" width="448" depth="2" name="BarContent" type="filled" fill="{fill}" globalopacity="false" sprite="ui_game_symbol_twitch_boss_bar_HP" />
+				<sprite depth="3" name="Icon" size="84,84" pos="45,-42" pivot="center" sprite="{boss_sprite}" globalopacity="false" />
+				<sprite depth="4" name="overlay" width="517" height="84" type="sliced" globalopacity="false" sprite="ui_game_symbol_twitch_boss_bar" />
+				<label depth="5" name="TextContent" pos="100,-13" font_size="30" color="[white]" justify="left" pivot="topleft" text="{name}" height="30" effect="Outline8" effect_color="0,0,0,255" effect_distance="2,2"/>
+				<label depth="5" name="MinionCount" pos="482,-13" font_size="30" color="[white]" justify="left" pivot="topleft" text="x{minioncount}" height="30" effect="Outline8" effect_color="0,0,0,255" effect_distance="2,2" />
+			</rect>
+		</window>
 		<!--//// -->
-        
+
 		<window name="windowToolbelt" width="753" height="78" depth="5" anchor="CenterBottom" pos="-187, 104" backgroundcolor="[black]" controller="ToolbeltWindow" visible="{toolbeltvisible}" cursor_area="true" xp_fill_speed="2.5">
-		
-        	<!--Toolbelt Slots-->
+
+			<!--Toolbelt Slots-->
 			<rect pos="-189,0" controller="Toolbelt">
 				<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" on_press="true" />
 				<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="0,92" color="[black]" type="sliced" fillcenter="false" on_press="true" visible="{secondrow}"/>
 				<rect pos="3,-3">
-                    <grid depth="10" name="inventory" rows="1" cols="10" pos="0,0" cell_width="75" cell_height="75" repeat_content="true">
-                        <item_stack name="0"/>
-                    </grid>					
+					<grid depth="10" name="inventory" rows="1" cols="10" pos="0,0" cell_width="75" cell_height="75" repeat_content="true">
+						<item_stack name="0"/>
+					</grid>
 					<grid depth="10" name="inventory2" rows="1" cols="10" pos="0,92" cell_width="75" cell_height="75" repeat_content="true" visible="{secondrow}">
 						<item_stack name="0"/>
-					</grid>                    
-                </rect>				
+					</grid>
+				</rect>
 				<button depth="3" name="btnClearInventory1" sprite="ui_game_symbol_trash" tooltip_key="lblClearInventory" pos="850, -32" style="icon32px, press, hover" pivot="center" sound="[paging_click]" visible="{creativewindowopen}" />
-				
-                <!--Extra Toolbelt Prefab Editor-->			
+
+				<!--Extra Toolbelt Prefab Editor-->
 				<button depth="3" name="btnClearInventory2" sprite="ui_game_symbol_trash" tooltip_key="lblClearInventory" pos="850, 50" style="icon32px, press, hover" pivot="center" sound="[paging_click]" visible="{# creativewindowopen and secondrow}" />
-				
-                <!-- Toolbelt Numbers -->
+
+				<!-- Toolbelt Numbers -->
 				<grid depth="16" pos="58,-6" rows="1" cols="10" cell_width="75" cell_height="70" repeat_content="false">
 					<invetNum txtNum="[FFFFFF]1" vwidth="14" vwidth2="14"/>
 					<invetNum txtNum="[FFFFFF]2" vwidth="14" vwidth2="14"/>
@@ -104,7 +104,7 @@
 					<invetNum txtNum="[FFFFFF]7" vwidth="14" vwidth2="14"/>
 					<invetNum txtNum="[FFFFFF]8" vwidth="14" vwidth2="14"/>
 					<invetNum txtNum="[FFFFFF]9" vwidth="14" vwidth2="14"/>
-					<invetNum txtNum="[FFFFFF]0" vwidth="14" vwidth2="14"/>					
+					<invetNum txtNum="[FFFFFF]0" vwidth="14" vwidth2="14"/>
 				</grid>
 
 				<grid depth="16" pos="56,86" rows="1" cols="10" cell_width="75" cell_height="70" repeat_content="false" visible="{secondrow}">
@@ -117,245 +117,163 @@
 					<invetNum txtNum="[FFFFFF]S7" vwidth="19" vwidth2="16"/>
 					<invetNum txtNum="[FFFFFF]S8" vwidth="19" vwidth2="16"/>
 					<invetNum txtNum="[FFFFFF]S9" vwidth="19" vwidth2="16"/>
-					<invetNum txtNum="[FFFFFF]S0" vwidth="19" vwidth2="16"/>					
-				</grid>			
+					<invetNum txtNum="[FFFFFF]S0" vwidth="19" vwidth2="16"/>
+				</grid>
 			</rect>
 			<!--XP BAR-->
 			<!-- ♦♦ Special thx to Scomar Death/kill Counter are based on Scomar82 HUD MOD ♦♦ -->
 			<rect name="HUD">
-                <rect>
-                    <sprite depth="2" pos="-190,8" height="8" width="753" name="background" color="0,0,0,140" type="sliced" />
-                    <sprite depth="9" pos="-190,8" height="8" width="753" color="[black]" sprite="menu_empty2px" type="sliced" fillcenter="false" />
-                    <!--////--><sprite depth="4" pos="-188,6" height="6" width="750" color="{xpcolor}" type="filled" fill="{xp}" />
-                </rect>
-                <rect width="378" height="21" pos="-189,-78" controller="HUDStatBar" stat_type="Food" visible="{statvisible}">
-                    <sprite depth="1" name="border" color="0,0,0,128" type="sliced"/>
-                    <sprite depth="2" name="background" color="0,0,0,165" type="sliced" />
-                    <filledsprite depth="3" name="background" color="64,64,64,100" width="377" type="filled" fill="{statmodifiedmax}" />
-                    <filledsprite depth="5" width="374" height="16" pos="2,-2" name="BarContent" color="0,255,54,194" type="filled" fill="0" />
-                    <sprite depth="8" name="border" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false"/>
-                    <filledsprite depth="8" name="background" color="0,0,0,255" width="377" fillcenter="false" type="filled" fill="{statmodifiedmax}" />
-                    <filledsprite depth="3" name="background" color="0,0,0,255" width="377" fillcenter="false" type="filled" fill="{statmodifiedmax}" />
-                    <sprite depth="7" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="16,16" pos="4,-3" foregroundlayer="true"/>  
-                    <label depth="7" name="TextContent" pos="0,-3" font_size="16" color="[white]" justify="center" pivot="topleft" text="{statcurrentwithmax}" height="35" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
-                </rect>
-                <rect width="377" height="21" pos="187,-78" controller="HUDStatBar" stat_type="Water" visible="{statvisible}">
-                    <sprite depth="1" name="border" color="0,0,0,128" type="sliced"/>
-                    <sprite depth="2" name="background" color="0,0,0,165" type="sliced" />
-                    <filledsprite depth="3" name="background" color="110,110,110,128" width="376" type="filled" fill="{statmodifiedmax}" />
-                    <filledsprite depth="5" width="373" height="16" pos="2,-2" name="BarContent" color="64,164,223,200" type="filled" fill="0" />
-                    <sprite depth="8" name="border" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false"/>
-                    <filledsprite depth="8" name="background" color="0,0,0,255" width="376" fillcenter="false" type="filled" fill="{statmodifiedmax}" />
-                    <filledsprite depth="3" name="background" color="0,0,0,255" width="376" fillcenter="false" type="filled" fill="{statmodifiedmax}" />
-                    <sprite depth="7" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="16,16" pos="4,-3" foregroundlayer="true"/>                   
-                    <label depth="7" name="TextContent" pos="0,-3" font_size="16" color="[white]" justify="center" pivot="topleft" text="{statcurrentwithmax}" height="35" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
-                </rect>                
-                <rect size="35,35" pos="0,16" visible="{cvar(_crouching:true;false;false)}">
-                    <rect width="377" height="8" controller="HUDStatBar" stat_type="Stealth">
-                        <sprite depth="1" name="border" color="0,0,0,150" height="8" type="sliced" />
-                        <sprite depth="2" name="background" color="0,0,0,140" type="sliced" />
-                        <filledsprite depth="3" name="background" color="110,110,110,128" type="filled" fill="1" />
-                        <filledsprite depth="4" name="BarContent" height="6" pos="1,-1" color="255,255,255,194" type="sliced" fill="0" />
-                        <sprite depth="5" name="Icon" color="255,255,255,200" sprite="ui_game_symbol_stealth" size="16,16" pos="188,0" pivot="center" foregroundlayer="true"/>
-                        <sprite depth="8" name="border" color="0,0,0,255" type="sliced" fillcenter="false"/>
-                        <filledsprite depth="8" name="background" color="0,0,0,255" width="377" fillcenter="false" type="filled" fill="1" />
-                        <filledsprite depth="3" name="background" color="0,0,0,255" width="376" fillcenter="false" type="filled" fill="1" />
-                    </rect>
-                </rect>
-            </rect>
+				<!-- Player XP BAR -->
+				<rect>
+					<sprite depth="2" pos="-189,8" height="8" width="753" name="background" color="0,0,0,140" type="sliced" />
+					<sprite depth="9" pos="-189,8" height="8" width="753" color="[black]" sprite="menu_empty2px" type="sliced" fillcenter="false" />
+					<sprite depth="9" pos="-189,8" height="8" width="753" color="[black]" sprite="menu_empty2px" type="sliced" fillcenter="false" />
+					<sprite depth="4" pos="-187,6" height="6" width="750" color="{xpcolor}" type="filled" fill="{xp}" />
+				</rect>
+				<rect width="378" height="21" pos="-189,-78" controller="HUDStatBar" stat_type="Food" visible="{statvisible}">
+					<sprite depth="1" name="border" color="0,0,0,128" type="sliced"/>
+					<sprite depth="2" name="background" color="0,0,0,165" type="sliced" />
+					<filledsprite depth="3" name="background" color="64,64,64,100" width="377" type="filled" fill="{statmodifiedmax}" />
+					<filledsprite depth="5" width="374" height="16" pos="2,-2" name="BarContent" color="0,255,54,194" type="filled" fill="0" />
+					<sprite depth="8" name="border" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false"/>
+					<filledsprite depth="8" name="background" color="0,0,0,255" width="377" fillcenter="false" type="filled" fill="{statmodifiedmax}" />
+					<filledsprite depth="3" name="background" color="0,0,0,255" width="377" fillcenter="false" type="filled" fill="{statmodifiedmax}" />
+					<sprite depth="7" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="16,16" pos="4,-3" foregroundlayer="true"/>
+					<label depth="7" name="TextContent" pos="0,-3" font_size="16" color="[white]" justify="center" pivot="topleft" text="{statcurrentwithmax}" height="35" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
+				</rect>
+				<rect width="377" height="21" pos="187,-78" controller="HUDStatBar" stat_type="Water" visible="{statvisible}">
+					<sprite depth="1" name="border" color="0,0,0,128" type="sliced"/>
+					<sprite depth="2" name="background" color="0,0,0,165" type="sliced" />
+					<filledsprite depth="3" name="background" color="110,110,110,128" width="376" type="filled" fill="{statmodifiedmax}" />
+					<filledsprite depth="5" width="373" height="16" pos="2,-2" name="BarContent" color="64,164,223,200" type="filled" fill="0" />
+					<sprite depth="8" name="border" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false"/>
+					<filledsprite depth="8" name="background" color="0,0,0,255" width="376" fillcenter="false" type="filled" fill="{statmodifiedmax}" />
+					<filledsprite depth="3" name="background" color="0,0,0,255" width="376" fillcenter="false" type="filled" fill="{statmodifiedmax}" />
+					<sprite depth="7" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="16,16" pos="4,-3" foregroundlayer="true"/>
+					<label depth="7" name="TextContent" pos="0,-3" font_size="16" color="[white]" justify="center" pivot="topleft" text="{statcurrentwithmax}" height="35" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
+				</rect>
+				<rect size="35,35" pos="0,16" visible="{cvar(_crouching:true;false;false)}">
+					<rect width="377" height="8" controller="HUDStatBar" stat_type="Stealth">
+						<sprite depth="1" name="border" color="0,0,0,150" height="8" type="sliced" />
+						<sprite depth="2" name="background" color="0,0,0,140" type="sliced" />
+						<filledsprite depth="3" name="background" color="110,110,110,128" type="filled" fill="1" />
+						<filledsprite depth="4" name="BarContent" height="6" pos="1,-1" color="255,255,255,194" type="sliced" fill="0" />
+						<sprite depth="5" name="Icon" color="255,255,255,200" sprite="ui_game_symbol_stealth" size="16,16" pos="188,0" pivot="center" foregroundlayer="true"/>
+						<sprite depth="8" name="border" color="0,0,0,255" type="sliced" fillcenter="false"/>
+						<filledsprite depth="8" name="background" color="0,0,0,255" width="377" fillcenter="false" type="filled" fill="1" />
+						<filledsprite depth="3" name="background" color="0,0,0,255" width="376" fillcenter="false" type="filled" fill="1" />
+					</rect>
+				</rect>
+
+			</rect>
 			<!---->
 			<rect name="stats" controller="CharacterFrameWindow">
-				<panel name="header" height="43" depth="1" pos="6000,6000">						
-					<label depth="2" name="characterName" pos="42,-6" width="150" height="32" text="" font_size="32" />						
+				<panel name="header" height="43" depth="1" pos="6000,6000">
+					<label depth="2" name="characterName" pos="42,-6" width="150" height="32" text="" font_size="32" />
 					<label depth="2" name="levelNumber" pos="240,-10" width="80" height="28" text="" />
-				</panel>		
-				<rect visible="{showcharactersdcs}">					
-					<panel name="previewFrameSDCS" depth="0" pos="0,-86" width="327" on_press="true" on_hover="true" disableautobackground="true" snap="false" gamepad_selectable="false">
-						<rect>								
-							<texture depth="2" name="playerPreviewSDCS" material="Materials/Transparent Colored" size="327,622" globalopacity="false"/>
+				</panel>
+				<rect visible="{showstats}">
+
+					<panel name="previewFrameSDCS" depth="0" pos="9999,9999" width="327" on_press="true" on_hover="true" disableautobackground="true" snap="false" gamepad_selectable="false" visible="false">
+						<rect visible="false">
+							<texture depth="2" name="playerPreviewSDCS" size="163,311" globalopacity="false" visible="false"/>
+						</rect>
+						<rect name="btnCosmetic" pos="243,0 " depth="3" height="83" width="83" visible="false">
+							<rect depth="3" pos="3,-3" width="80" height="80" visible="false">
+								<button name="clickable" sprite="menu_empty" defaultcolor="[mediumGrey]" tooltip_key="xuiCosmetics" hoversprite="ui_game_select_row" hovercolor="[white]" type="sliced" hoverscale="1.0" visible="false"/>
+
+							</rect>
 						</rect>
 					</panel>
-					<rect depth="2" name="pve" width="16" height="16" pos="578,-79">
-                        <button depth="2" name="statButton" sound="[paging_click]" sprite="" tooltip_key="hudOptions">
-                            <sprite depth="2" name="Icon" color="255,255,255" sprite="ui_game_symbol_modded" size="24,24" pos="4,-10" pivot="center" foregroundlayer="true"/>
-                        </button>
-                    </rect>                    
-                    <rect name="plevel" pos="-267,-2" width="75" height="37"  tooltip_key="tplvl">
-                        <sprite depth="9" color="[black]" sprite="menu_empty2px" type="sliced" fillcenter="false" />		
-                        <sprite depth="3" width="73" height="35" pos="1,-1" name="background" color="0,0,0,230" type="sliced"/>
-                        <sprite depth="11" name="icon" width="21" height="21" pos="4,-7" sprite="ui_game_symbol_trophy" color="255,255,255" foregroundlayer="true"/>
-                        <label depth="12" name="coins" width="50" height="22" text="{cvar($LastPlayerLevel)}" font_size="18" color="[white]" pos="24,-10" justify="center" controller="ToolbeltWindow" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
-					</rect>                    
-                    <rect name="plootstage" pos="-267,-41" width="75" height="37"  tooltip_key="tpls">
-                        <sprite depth="9" color="[black]" sprite="menu_empty2px" type="sliced" fillcenter="false" />
-                        <sprite depth="3" width="73" height="35" pos="1,-1" name="background" color="0,0,0,230" type="sliced"/>
-                        <sprite depth="5" name="Looticon" width="22" height="22" pos="3,-7" sprite="ui_game_symbol_loot_sack" color="255,255,255" foregroundlayer="true"/>
-                        <label depth="9" name="Lootstage" width="50" height="22" text="{playerlootstage}" font_size="18" color="[white]" pos="24,-10" justify="center" controller="ToolbeltWindow" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
-                    </rect>
-                    <rect name="zkills" pos="566,-2" width="75" height="37"  tooltip_key="tpzk">
-                        <sprite depth="9" color="[black]" sprite="menu_empty2px" type="sliced" fillcenter="false" />
-                        <sprite depth="3" width="73" height="35" pos="1,-1" name="background" color="0,0,0,230" type="sliced"/>
-                        <sprite depth="5" name="TodeIcon" width="24" height="24" pos="3,-7" sprite="ui_game_symbol_marksmanship" color="255,255,255" foregroundlayer="true"/>
-                        <label depth="9" name="zombieKillsText" width="50" height="22" pos="24,-10" text="{playerzombiekills}" font_size="18" color="[white]" justify="center" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
-                    </rect>
-                    <rect name="pdeaths" pos="566,-41" width="75" height="37"  tooltip_key="tpdea">
-                        <sprite depth="9" color="[black]" sprite="menu_empty2px" type="sliced" fillcenter="false" />
-                        <sprite depth="3" width="73" height="35" pos="1,-1" name="background" color="0,0,0,230" type="sliced"/>
-                        <sprite depth="5" name="TodeIcon" width="22" height="22" pos="3,-7" sprite="ui_game_symbol_near_death_trauma" color="255,0,0" foregroundlayer="true"/>
-                        <label depth="9" name="deathsText" width="50" height="22" text="{playerdeaths}" font_size="18" color="[white]" pos="24,-10" justify="center" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
-                    </rect>						
-				</rect> 
-                <rect visible="{showstats}">
-                    <rect depth="2" name="pvp" width="16" height="16" pos="578,-79">
-                        <button depth="2" name="characterButton" sound="[paging_click]" sprite="" tooltip_key="hudOptionsHF">
-                            <sprite depth="2" name="Icon" color="255,0,0" sprite="ui_game_symbol_modded" size="24,24" pos="4,-10" pivot="center" foregroundlayer="true"/>
-                        </button>
-                    </rect>
-                    <panel name="previewFrame" depth="0" pos="9999,9999" width="10" on_press="true" on_hover="true" disableautobackground="true" snap="false">
-                        <rect>
-                            <texture depth="2" name="playerPreview" material="Materials/Transparent Colored" size="8,8" globalopacity="false"/>
-                        </rect>
-                    </panel>
-                </rect>                
-            </rect> 
+
+					<panel name="previewFrame" depth="0" pos="9999,9999" width="10" on_press="true" on_hover="true" disableautobackground="true" snap="false" visible="false">
+						<rect>
+							<texture depth="2" name="playerPreview" material="Materials/Transparent Colored" size="8,8" globalopacity="false" visible="false"/>
+						</rect>
+					</panel>
+					<!-- Boton para cambiar -->
+					<rect depth="2" name="pvp" width="16" height="16" pos="578,-79">
+						<button depth="2" name="characterButton" sound="[paging_click]" sprite="" tooltip_key="hudOptionsHF">
+							<sprite depth="2" name="Icon" color="255,0,0" sprite="ui_game_symbol_modded" size="24,24" pos="4,-10" pivot="center" foregroundlayer="true"/>
+						</button>
+					</rect>
 
 
-			<!---->
-			<!-- <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
-                <rect name="tabsHeader" height="34">
-                    <grid name="tabButtons" pos="100,100" rows="1" cols="2" cell_width="26" cell_height="29" repeat_content="true" arrangement="horizontal">
-                        <rect>
-                            <simplebutton depth="-3" defaultsprite="ui_game_symbol_shape_text" selectedsprite="ui_game_symbol_shape_text" hoversprite="ui_game_symbol_shape_text" name="tabButton" pos="2,-2" width="24" height="24" font_size="30" caption_key="xuiBack" selectedcolor="255,255,255" hovercolor="255,200,0,180" defaultcolor="0,0,0,240"/>
-                        </rect>
-                    </grid>
-                </rect>
-                
-                <rect name="tabsContents">
-                    <rect tab_key="">
-                        <rect name="plevel" pos="-267,-2" width="75" height="37"  tooltip_key="tplvl" controller="HUDStatBar">
-						<sprite depth="9" color="[black]" sprite="menu_empty2px" type="sliced" fillcenter="false" />		
+				</rect>
+				<rect visible="{showcharactersdcs}">
+
+					<rect name="plevel" pos="-267,-2" width="75" height="37" tooltip_key="tplvl">
+						<sprite depth="9" color="[black]" sprite="menu_empty2px" type="sliced" fillcenter="false" />
 						<sprite depth="3" width="73" height="35" pos="1,-1" name="background" color="0,0,0,230" type="sliced"/>
 						<sprite depth="11" name="icon" width="21" height="21" pos="4,-7" sprite="ui_game_symbol_trophy" color="255,255,255" foregroundlayer="true"/>
 						<label depth="12" name="coins" width="50" height="22" text="{cvar($LastPlayerLevel)}" font_size="18" color="[white]" pos="24,-10" justify="center" controller="ToolbeltWindow" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
 					</rect>
-					
-					<rect name="stats"  controller="CharacterFrameWindow">					
-						<panel name="header" height="43" depth="1" pos="6000,6000">						
-							<label depth="2" name="characterName" pos="42,-6" width="150" height="32" text="" font_size="32" />						
-							<label depth="2" name="levelNumber" pos="240,-10" width="80" height="28" text="" />
-						</panel>		
-						<rect visible="{showcharactersdcs}">					
-							<panel name="previewFrameSDCS" depth="0" pos="0,-86" width="327" on_press="true" on_hover="true" disableautobackground="true" snap="false" gamepad_selectable="false">
-								<rect>								
-									<texture depth="2" name="playerPreviewSDCS" material="Materials/Transparent Colored" size="327,622" globalopacity="false"/>
-								</rect>
-							</panel>						
-						</rect>
-						
-						<rect name="plootstage" pos="-267,-41" width="75" height="37"  tooltip_key="tpls" controller="HUDStatBar">
-							<sprite depth="9" color="[black]" sprite="menu_empty2px" type="sliced" fillcenter="false" />
-							<sprite depth="3" width="73" height="35" pos="1,-1" name="background" color="0,0,0,230" type="sliced"/>
-							<sprite depth="5" name="Looticon" width="22" height="22" pos="3,-7" sprite="ui_game_symbol_loot_sack" color="255,255,255" foregroundlayer="true"/>
-							<label depth="9" name="Lootstage" width="50" height="22" text="{playerlootstage}" font_size="18" color="[white]" pos="24,-10" justify="center" controller="ToolbeltWindow" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
-						</rect>				
-						<rect name="zkills" pos="566,-2" width="75" height="37"  tooltip_key="tpzk">
-							<sprite depth="9" color="[black]" sprite="menu_empty2px" type="sliced" fillcenter="false" />
-							<sprite depth="3" width="73" height="35" pos="1,-1" name="background" color="0,0,0,230" type="sliced"/>
-							<sprite depth="5" name="TodeIcon" width="24" height="24" pos="3,-7" sprite="ui_game_symbol_marksmanship" color="255,255,255" foregroundlayer="true"/>
-							<label depth="9" name="zombieKillsText" width="50" height="22" pos="24,-10" text="{playerzombiekills}" font_size="18" color="[white]" justify="center" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
-						</rect>
-						<rect name="pdeaths" pos="566,-41" width="75" height="37"  tooltip_key="tpdea">
-							<sprite depth="9" color="[black]" sprite="menu_empty2px" type="sliced" fillcenter="false" />
-							<sprite depth="3" width="73" height="35" pos="1,-1" name="background" color="0,0,0,230" type="sliced"/>
-							<sprite depth="5" name="TodeIcon" width="22" height="22" pos="3,-7" sprite="ui_game_symbol_near_death_trauma" color="255,0,0" foregroundlayer="true"/>
-							<label depth="9" name="deathsText" width="50" height="22" text="{playerdeaths}" font_size="18" color="[white]" pos="24,-10" justify="center" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
-						</rect> 
-					</rect>
-                    </rect>
-                    <rect tab_key="">
-                    </rect>
-                </rect>
-            </rect> -->
-
-
-
-
-                <!-- <rect name="plevel" pos="-267,-2" width="75" height="37"  tooltip_key="tplvl" controller="HUDStatBar">
-                    <sprite depth="9" color="[black]" sprite="menu_empty2px" type="sliced" fillcenter="false" />		
-                    <sprite depth="3" width="73" height="35" pos="1,-1" name="background" color="0,0,0,230" type="sliced"/>
-                    <sprite depth="11" name="icon" width="21" height="21" pos="4,-7" sprite="ui_game_symbol_trophy" color="255,255,255" foregroundlayer="true"/>
-                    <label depth="12" name="coins" width="50" height="22" text="{cvar($LastPlayerLevel)}" font_size="18" color="[white]" pos="24,-10" justify="center" controller="ToolbeltWindow" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
-                </rect>
-				
-				 <rect name="stats"  controller="CharacterFrameWindow">					
-					<panel name="header" height="43" depth="1" pos="6000,6000">						
-						<label depth="2" name="characterName" pos="42,-6" width="150" height="32" text="" font_size="32" />						
-						<label depth="2" name="levelNumber" pos="240,-10" width="80" height="28" text="" />
-					</panel>		
-					<rect visible="{showcharactersdcs}">					
-						<panel name="previewFrameSDCS" depth="0" pos="0,-86" width="327" on_press="true" on_hover="true" disableautobackground="true" snap="false" gamepad_selectable="false">
-							<rect>								
-								<texture depth="2" name="playerPreviewSDCS" material="Materials/Transparent Colored" size="327,622" globalopacity="false"/>
-							</rect>
-						</panel>						
-					</rect>
-					
-					<rect name="plootstage" pos="-267,-41" width="75" height="37"  tooltip_key="tpls" controller="HUDStatBar">
+					<rect name="plootstage" pos="-267,-41" width="75" height="37" tooltip_key="tpls">
 						<sprite depth="9" color="[black]" sprite="menu_empty2px" type="sliced" fillcenter="false" />
 						<sprite depth="3" width="73" height="35" pos="1,-1" name="background" color="0,0,0,230" type="sliced"/>
 						<sprite depth="5" name="Looticon" width="22" height="22" pos="3,-7" sprite="ui_game_symbol_loot_sack" color="255,255,255" foregroundlayer="true"/>
 						<label depth="9" name="Lootstage" width="50" height="22" text="{playerlootstage}" font_size="18" color="[white]" pos="24,-10" justify="center" controller="ToolbeltWindow" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
-					</rect>				
-					<rect name="zkills" pos="566,-2" width="75" height="37"  tooltip_key="tpzk">
+					</rect>
+					<rect name="zkills" pos="566,-2" width="75" height="37" tooltip_key="tpzk">
 						<sprite depth="9" color="[black]" sprite="menu_empty2px" type="sliced" fillcenter="false" />
 						<sprite depth="3" width="73" height="35" pos="1,-1" name="background" color="0,0,0,230" type="sliced"/>
 						<sprite depth="5" name="TodeIcon" width="24" height="24" pos="3,-7" sprite="ui_game_symbol_marksmanship" color="255,255,255" foregroundlayer="true"/>
 						<label depth="9" name="zombieKillsText" width="50" height="22" pos="24,-10" text="{playerzombiekills}" font_size="18" color="[white]" justify="center" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
 					</rect>
-					<rect name="pdeaths" pos="566,-41" width="75" height="37"  tooltip_key="tpdea">
+					<rect name="pdeaths" pos="566,-41" width="75" height="37" tooltip_key="tpdea">
 						<sprite depth="9" color="[black]" sprite="menu_empty2px" type="sliced" fillcenter="false" />
 						<sprite depth="3" width="73" height="35" pos="1,-1" name="background" color="0,0,0,230" type="sliced"/>
 						<sprite depth="5" name="TodeIcon" width="22" height="22" pos="3,-7" sprite="ui_game_symbol_near_death_trauma" color="255,0,0" foregroundlayer="true"/>
 						<label depth="9" name="deathsText" width="50" height="22" text="{playerdeaths}" font_size="18" color="[white]" pos="24,-10" justify="center" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
-					</rect> 
-				 </rect>		 -->
-                 
+					</rect>
+
+					<!-- Boton para cambiar -->
+					<rect depth="2" name="pve" width="16" height="16" pos="578,-79">
+						<button depth="2" name="statButton" sound="[paging_click]" sprite="" tooltip_key="hudOptions">
+							<sprite depth="2" name="Icon" color="255,255,255" sprite="ui_game_symbol_modded" size="24,24" pos="4,-10" pivot="center" foregroundlayer="true"/>
+						</button>
+					</rect>
+				</rect>
+			</rect>
+
+
 		</window>
 		<!--////-->
-		<window name="HUDLeftStatBars">
+		<window name="HUDLeftStatBars" anchor="LeftBottom">
+
 			<rect name="hud" pos="9,156" rows="2" cols="1" width="168" side="right">
-			<!-- <grid name="hud" pos="9,52" rows="3" cols="1" width="171" cell_width="168" cell_height="47" repeat_content="false" side="left" pivot="BottomLeft"> -->
+				<!-- <grid name="hud" pos="9,52" rows="3" cols="1" width="171" cell_width="168" cell_height="47" repeat_content="false" side="left" pivot="BottomLeft"> -->
 				<rect width="201" height="34" pos="0,-62" controller="HUDStatBar" stat_type="Stamina" visible="{statvisible}">
 					<sprite depth="1" name="border" color="0,0,0,128" type="sliced"/>
 					<sprite depth="2" name="background" color="0,0,0,140" type="sliced" />
-	
+
 					<filledsprite depth="3" name="background" color="110,110,110,128" width="199" type="filled" fill="{statmodifiedmax}" />
-	
-					<filledsprite depth="5" name="BarContent" color="0,54,255,245" width="199" type="filled" fill="0"  />
+
+					<filledsprite depth="5" name="BarContent" color="0,54,255,245" width="199" type="filled" fill="0" />
 					<sprite depth="6" name="Icon" atlas="{staticonatlas|once}" sprite="ui_game_symbol_agility" size="23,23" pos="26,-18" pivot="center" foregroundlayer="true"/>
 					<label depth="7" name="TextContent" pos="44,-17" font_size="20" color="[white]" justify="center" pivot="left" text="{statcurrentwithmax}" width="125" height="35"/>
-	
+
 					<sprite depth="8" name="border" color="0,0,0,255" type="sliced" fillcenter="false"/>
 					<filledsprite depth="8" name="background" color="0,0,0,255" width="201" fillcenter="false" type="filled" fill="{statmodifiedmax}" />
 					<filledsprite depth="3" name="background" color="0,0,0,255" width="200" fillcenter="false" type="filled" fill="{statmodifiedmax}" />
-				</rect>	
+				</rect>
 				<rect width="201" height="34" pos="0,-100" controller="HUDStatBar" stat_type="Health" visible="{statvisible}">
-					<sprite depth="1" name="border" color="0,0,0,128" type="sliced"/>	
+					<sprite depth="1" name="border" color="0,0,0,128" type="sliced"/>
 					<sprite depth="2" name="background" color="0,0,0,140" type="sliced" />
 					<filledsprite depth="3" name="background" color="110,110,110,128" width="199" type="filled" fill="{statmodifiedmax}" />
-	
+
 					<filledsprite depth="5" name="BarContent" color="255,0,0,245" width="199" type="filled" fill="0" />
 					<sprite depth="6" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="23,23" pos="26,-18" pivot="center" foregroundlayer="true"/>
 					<label depth="7" name="TextContent" pos="44,-17" font_size="20" color="[white]" justify="center" pivot="left" text="{statcurrentwithmax}" width="125" height="35"/>
-	
+
 					<sprite depth="8" name="border" color="0,0,0,255" type="sliced" fillcenter="false"/>
 					<filledsprite depth="8" name="background" color="0,0,0,255" width="201" fillcenter="false" type="filled" fill="{statmodifiedmax}" />
 					<filledsprite depth="3" name="background" color="0,0,0,255" width="200" fillcenter="false" type="filled" fill="{statmodifiedmax}" />
 				</rect>
 			</rect>
-			<rect name="hud" pos="107,120" side="left" controller="BuffPopoutList" pivot="BottomLeft" >
-				<panel width="198" height="34" name="item" visible="false" pivot="right" disableautobackground="true" pos="70, 0" style="press" sound="[recipe_click]" on_hover="true" >
-					<sprite depth="3" pos="0,0"  name="Background" sprite="ui_game_popup" height="34" width="192" pivot="center" flip="Horizontally" color="[transparent]" />
+			<rect name="hud" pos="107,120" side="left" controller="BuffPopoutList" pivot="BottomLeft">
+				<panel width="198" height="34" name="item" visible="false" pivot="right" disableautobackground="true" pos="70, 0" style="press" sound="[recipe_click]" on_hover="true">
+					<sprite depth="3" pos="0,0" name="Background" sprite="ui_game_popup" height="34" width="192" pivot="center" flip="Horizontally" color="[transparent]" />
 					<sprite depth="4" name="Icon" size="28,28" pos="-74,0" pivot="center" color="[transparent]"/>
 					<label depth="6" name="TextContent" pos="-57,0" font_size="17" color="[white]" justify="center" width="118" height="40" pivot="left"/>
 				</panel>
@@ -363,54 +281,57 @@
 		</window>
 		<!--////-->
 		<window name="chatoutput" pos="15, -250" depth="-1" width="500" height="250" anchor="LeftTop" controller="ChatOutput" fadeout_wait_time="5" fadeout_duration="2">
-            <sprite pos="487,-762" depth="3" width="22" height="22" sprite="ui_game_symbol_x" color="[red]" />
-            <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
-                <rect name="tabsHeader" height="34">
-                    <grid name="tabButtons" pos="457,-759" rows="1" cols="2" cell_width="26" cell_height="29" repeat_content="true" arrangement="horizontal">
-                        <rect controller="TabSelectorButton">						
-                            <simplebutton depth="-3" defaultsprite="ui_game_symbol_shape_text" selectedsprite="ui_game_symbol_shape_text" hoversprite="ui_game_symbol_shape_text" name="tabButton" pos="2,-2" width="24" height="24" font_size="30" caption="{tab_name_localized}" selectedcolor="255,255,255" hovercolor="255,200,0,180" defaultcolor="0,0,0,240" tooltip_key="chatHideOp"/>
-                        </rect>
-                    </grid>
-                </rect>
-                <!--Contenido de la tabulacion-->
-                <rect name="tabsContents">
-                    <rect controller="TabSelectorTab" tab_key="">
+			<sprite pos="487,-762" depth="3" width="22" height="22" sprite="ui_game_symbol_x" color="[red]" />
+			<rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
+				<rect name="tabsHeader" height="34">
+					<grid name="tabButtons" pos="457,-759" rows="1" cols="2" cell_width="26" cell_height="29" repeat_content="true" arrangement="horizontal">
+						<rect controller="TabSelectorButton">
+							<simplebutton depth="-3" defaultsprite="ui_game_symbol_shape_text" selectedsprite="ui_game_symbol_shape_text" hoversprite="ui_game_symbol_shape_text" name="tabButton" pos="2,-2" width="24" height="24" font_size="30" caption="{tab_name_localized}" selectedcolor="255,255,255" hovercolor="255,200,0,180" defaultcolor="0,0,0,240" tooltip_key="chatHideOp"/>
+						</rect>
+					</grid>
+				</rect>
+				<!--Contenido de la tabulacion-->
+				<rect name="tabsContents">
+					<rect controller="TabSelectorTab" tab_key="">
 						<textlist name="txtOutput" pos="8,-214" width="484" height="210" list_style="chat" pivot="bottomleft" depth="2" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" effect_color="[black]" on_press="true" prefix_first_line="   " support_urls="Chat,DiscordMessageButton" gamepad_selectable="false">
-                            <sprite pos="495,24" depth="5" width="30" height="30" sprite="ui_game_symbol_x" color="255,0,0,230" />
-                            <rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
-                                <rect name="tabsHeader" height="40">                                    <!--Change rows to the number of "buttons you need"-->
-                                    <grid name="tabButtons" pos="495,59" rows="2" cols="1" cell_width="30" cell_height="35" repeat_content="true" arrangement="vertical">
-                                        <rect controller="TabSelectorButton">
-                                            <simplebutton depth="3" name="tabButton" width="30" height="30" font_size="25" caption="{tab_name_localized}" defaultcolor="0,0,0,150" hovercolor="255,200,0,180" selectedcolor="255,255,255" defaultsprite="ui_game_symbol_stealth" selectedsprite="ui_game_symbol_stealth" hoversprite="ui_game_symbol_stealth" tooltip_key="chatBackOp"/>
-                                        </rect>
-                                    </grid>
-                                </rect>
-                                <!--Contenido de la tabulacion-->
-                                <rect name="tabsContents">
-                                    <rect controller="TabSelectorTab" tab_key="" >
-										<rect>
-											
-											<sprite depth="-1" name="border" pos="-7,213" width="500" height="219" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false"/>
-                                        	<sprite depth="-1" color="[darkGrey]" pos="-5,211" width="496" height="215" type="sliced" globalopacitymod=".95" />	
-
+							<sprite pos="495,24" depth="5" width="30" height="30" sprite="ui_game_symbol_x" color="255,0,0,230" />
+							<rect name="tabs" controller="TabSelector" pos="0,0" pivot="center" height="100" width="100">
+								<rect name="tabsHeader" height="40">									<!--Change rows to the number of "buttons you need"-->
+									<grid name="tabButtons" pos="495,59" rows="2" cols="1" cell_width="30" cell_height="35" repeat_content="true" arrangement="vertical">
+										<rect controller="TabSelectorButton">
+											<simplebutton depth="3" name="tabButton" width="30" height="30" font_size="25" caption="{tab_name_localized}" defaultcolor="0,0,0,150" hovercolor="255,200,0,180" selectedcolor="255,255,255" defaultsprite="ui_game_symbol_stealth" selectedsprite="ui_game_symbol_stealth" hoversprite="ui_game_symbol_stealth" tooltip_key="chatBackOp"/>
 										</rect>
-                                        
-										
-                                    </rect>
-                                    <rect controller="TabSelectorTab" tab_key="" >
-                                    </rect>                                    
-                                </rect>
-                            </rect>
-                        </textlist>
-                    </rect>
-                    <rect controller="TabSelectorTab" tab_key="" >
-                    </rect>
-                </rect>
-            </rect>
+									</grid>
+								</rect>
+								<!--Contenido de la tabulacion-->
+								<rect name="tabsContents">
+									<rect controller="TabSelectorTab" tab_key="">
+										<rect name="testF" depth="0" width="500" height="219" pos="-8,213" createuiwidget="true">
 
-			
-        </window>
-        <!-- <window name="chat" pos="15, -251" width="500" height="250" anchor="LeftTop" controller="Chat" cursor_area="true">
+											<!-- <sprite depth="-1" name="border" width="500" height="219" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false"/> -->
+											<sprite depth="-1" color="[darkGrey]" pos="2,-2" width="496" height="215" type="sliced" globalopacitymod="0.8"/>
+											<!-- <sprite color="[darkGrey]" type="sliced" globalopacitymod="0.7" anchor_left="testF,0,0" anchor_right="testF,0,0" anchor_top="testF,0,0" anchor_bottom="testF,0,0" /> -->
+											<sprite depth="-1" name="border" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false" anchor_left="testF,0,0" anchor_right="testF,1,0" anchor_top="testF,1,0" anchor_bottom="testF,0,-1" />
+											<sprite depth="-1" name="border" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false" anchor_left="testF,0,0" anchor_right="testF,1,0" anchor_top="testF,1,0" anchor_bottom="testF,0,-1" />
+											<!-- <sprite color="[darkGrey]" type="sliced" globalopacitymod="0.7" anchor_left="frame,0,0" anchor_right="frame,1,0" anchor_top="frame,1,0" anchor_bottom="text,0,-6" /> -->
+										</rect>
+
+
+									</rect>
+									<rect controller="TabSelectorTab" tab_key="">
+									</rect>
+								</rect>
+							</rect>
+						</textlist>
+					</rect>
+					<rect controller="TabSelectorTab" tab_key="">
+					</rect>
+				</rect>
+			</rect>
+
+
+		</window>
+		<!-- <window name="chat" pos="15, -251" width="500" height="250" anchor="LeftTop" controller="Chat" cursor_area="true">
             <sprite depth="3" name="border" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false" />
             <rect name="input" depth="2" pos="0,-218" height="32">
                 <sprite depth="3" name="border" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false" />
@@ -425,33 +346,33 @@
 					<label name="toLabel" pos="4,-17" width="100" height="22" pivot="left" justify="right" text_key="xuiChatTo" />
 					<combobox name="cbxTarget" type="ComboBoxList`1[XUiC_Chat+ChatTarget]" value_max="party" pos="108, -6" width="300" height="22" font_size="22" />
 					<textfield name="txtInput" backgroundcolor="[transparent]" depth="2" pos="6,-34" width="488" height="26" pivot="topleft" justify="left" effect="outline" overflow="resizeheight" character_limit="300" max_line_count="0" crispness="Never" focus_on_open="true" open_vk_on_open="false" ignore_up_down_keys="true" />
-
+					<sprite color="[darkGrey]" type="sliced" globalopacitymod="0.8" anchor_left="frame,0,0" anchor_right="frame,1,0" anchor_top="input,1,0" anchor_bottom="text,0,-6" />
+					<sprite depth="8" name="border" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false" anchor_left="frame,0,0" anchor_right="frame,1,0" anchor_top="input,1,0" anchor_bottom="text,0,-6" />
 					<sprite depth="8" name="border" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false" anchor_left="frame,0,0" anchor_right="frame,1,0" anchor_top="input,1,0" anchor_bottom="text,0,-6" />
 				</rect>
 
-				<sprite depth="8" name="border" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false" anchor_left="frame,0,0" anchor_right="frame,1,0" anchor_top="frame,1,0" anchor_bottom="text,0,-6" />
-				<sprite color="[darkGrey]" type="sliced" globalopacitymod="0.7" anchor_left="frame,0,0" anchor_right="frame,1,0" anchor_top="frame,1,0" anchor_bottom="text,0,-6" />
+				<!-- <sprite color="[darkGrey]" type="sliced" globalopacitymod="0.7" anchor_left="frame,0,0" anchor_right="frame,1,0" anchor_top="frame,1,0" anchor_bottom="text,0,-6" /> -->
 			</rect>
 		</window>
 		<!--////-->
-		<window name="windowGroupBars" controller="PartyWindow" depth="-20">
-            <sprite depth="8" name="voiceStatus" style="icon32px" pos="25,-68" sprite="ui_game_symbol_mic" visible="{# partyvisible and voicevisible}" pivot="center" color="{# voiceactive ? '255,255,255,255' : '128,128,128,255' }" />
-            <grid name="hud" pos="9,-88" rows="7" cols="1" width="168" cell_width="168" cell_height="45" side="left" repeat_content="true" controller="PartyEntryList">
-                <h7sbParty_entry />
-            </grid>
-            <grid name="hud" pos="9,-88" rows="7" cols="1" width="168" cell_width="168" cell_height="45" side="left" repeat_content="true" controller="CompanionEntryList">
-                <companion_entry />
-            </grid>
-        </window>
-		<window name="windowQuestTracker" pos="-255, -88" width="300" height="100" anchor="RightTop" controller="QuestTrackerWindow" visible="{showquest}" depth="-20">
-            <sprite pos="6,6" name="Background" sprite="ui_game_popup" height="43" width="240" />
-            <label depth="3" text="{questtitle}" font_size="26" justify="right" upper_case="true" pos="-100, -5" height="28" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
-            <sprite pos="210,0" name="windowIcon" style="icon32px" sprite="{questicon}" justify="right"/>
-            <sprite pos="6,-38" name="Background" sprite="ui_game_popup" height="{trackerheight}" width="240" />
-            <grid name="objectiveList" rows="8" cols="1" pos="-60,-44" cell_width="300" cell_height="26" repeat_content="true" arrangement="vertical" controller="QuestTrackerObjectiveList" complete_icon="ui_game_symbol_check" incomplete_icon="ui_game_symbol_x" complete_color="[green]">
-                <quest_objective_tracker_entry />
-            </grid>
-        </window>
+		<window name="windowGroupBars" controller="PartyWindow" depth="-20" anchor="LeftTop">
+			<sprite depth="8" name="voiceStatus" style="icon32px" pos="25,-68" sprite="ui_game_symbol_mic" visible="{# partyvisible and voicevisible}" pivot="center" color="{# voiceactive ? '255,255,255,255' : '128,128,128,255' }" />
+			<grid name="hud" pos="9,-88" rows="7" cols="1" width="168" cell_width="168" cell_height="45" side="left" repeat_content="true" controller="PartyEntryList">
+				<h7sbParty_entry />
+			</grid>
+			<grid name="hud" pos="9,-88" rows="7" cols="1" width="168" cell_width="168" cell_height="45" side="left" repeat_content="true" controller="CompanionEntryList">
+				<companion_entry />
+			</grid>
+		</window>
+		<window name="windowQuestTracker" pos="-255, -88" width="300" height="100" controller="QuestTrackerWindow" visible="{showquest}" depth="-20" anchor="RightTop">
+			<sprite pos="6,6" name="Background" sprite="ui_game_popup" height="43" width="240" />
+			<label depth="3" text="{questtitle}" font_size="26" justify="right" upper_case="true" pos="-100, -5" height="28" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
+			<sprite pos="210,0" name="windowIcon" style="icon32px" sprite="{questicon}" justify="right"/>
+			<sprite pos="6,-38" name="Background" sprite="ui_game_popup" height="{trackerheight}" width="240" />
+			<grid name="objectiveList" rows="8" cols="1" pos="-60,-44" cell_width="300" cell_height="26" repeat_content="true" arrangement="vertical" controller="QuestTrackerObjectiveList" complete_icon="ui_game_symbol_check" incomplete_icon="ui_game_symbol_x" complete_color="[green]">
+				<quest_objective_tracker_entry />
+			</grid>
+		</window>
 	</append>
 
 </configs>

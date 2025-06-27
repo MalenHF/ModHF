@@ -1,5 +1,6 @@
 <MalenCD>
     
+    
     <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Block Tag ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
         <!-- Claim -->
         <append xpath="/blocks/block[@name='keystoneBlock']">
@@ -196,6 +197,34 @@
             </property>
         </block>        
         <!--SPECIAL-->
+        <block name="iDB_InviSustent">
+            <property name="Group" value="Building,advBuilding"/>
+            <property name="DescriptionKey" value="stainlessSteelBlockGroupDesc"/>
+            <property name="DisplayType" value="blockHardened"/>
+            <property name="StabilityFull" value="true"/>
+            <!--  <property name="ImposterExchange" value="imposterBlock" param1="77"/>  -->
+            <property name="CreativeMode" value="Player"/>
+           
+            <drop event="Destroy" count="0"/>
+            <drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+            
+             <property name="Shape" value="ModelEntity"/>
+            <property name="Model" value="@:Entities/Quests/questMarkerHelper.prefab"/>
+            <property name="MultiBlockDim" value="1,1,1"/>
+
+            <property name="EconomicBundleSize" value="1"/>
+            <property name="SellableToTrader" value="false"/>
+           
+            
+            <property name="Material" value="MbedrockHF"/>
+            <property name="ItemTypeIcon" value="star"/>
+            <property name="CustomIcon" value="shapeCube"/>
+            <property name="CustomIconTint" value="10,10,10"/>
+
+            <property name="CreativeMode" value="Player"/>
+
+        </block> 
+        
         <block name="iDB_steelSheet">
 			<property name="CustomIcon" value="glassBusinessSheet"/>
 			<property name="CustomIconTint" value="434B4D"/>
@@ -1187,7 +1216,9 @@
                 <property name="UpgradeHitCount" value="1"/>
             </property>
         </block>
-        <!-- <block name="invDevShapes" shapes="All">
+
+        
+                <!-- <block name="invDevShapes" shapes="All">
             <property name="Group" value="Building,advBuilding"/>
             <property name="DescriptionKey" value="steelBlockGroupDesc"/>
             <property name="CreativeMode" value="None"/>

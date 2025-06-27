@@ -1,5 +1,34 @@
 <MalenEI>
 	<append xpath="/items">
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Chale ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+		<item name="juguito_de_chale_donacion">
+			<property name="Extends" value="juguito_de_chale"/>			
+			<property name="DescriptionKey" value="chaleJ"/>
+			<property class="Action0">				
+				<property name="Consume" value="false"/>				
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="0"/>
+				<display_value name="dStaminaRegen" value=".15"/>
+				<display_value name="dRunSpeed" value=".25"/>
+				<display_value name="dDuration" value="3600"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffchaleDuration" operation="add" value="3603">
+					<requirement name="!HasBuff" buff="buffowo"/>
+					<requirement name="CVarCompare" cvar="$chale" operation="GT" value="-1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffchaleDuration" operation="set" value="7203">
+					<requirement name="CVarCompare" cvar="$buffchaleDuration" operation="GT" value="7203"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables,buffchale">
+					<requirement name="!HasBuff" buff="buffowo"/>
+					<requirement name="CVarCompare" cvar="$chale" operation="GT" value="-1"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="HasBuff" buff="buffIsOnFire"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+			</effect_group>
+		</item>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Donation Tokens ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<item name="donationArmorPieceToken">
 			<property name="Extends" value="gunMGT1AK47Parts"/>
@@ -50,7 +79,7 @@
 			<property name="Group" value="Tools/Traps"/>
 			<property name="DescriptionKey" value="LTDesc"/>
 			<property name="SellableToTrader" value="false"/>
-			<property name="Candrop" value="false"/>
+			
 			<property class="Action1">
 				<property name="Class" value="Repair"/>
 				<property name="Delay" value=".4"/> <!-- Repair actions still need the delay amount -->
