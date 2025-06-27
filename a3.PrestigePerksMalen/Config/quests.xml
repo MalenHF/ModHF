@@ -21,10 +21,16 @@
 			<property name="offer_key" value="prestige1Desc" />
 			<property name="repeatable" value="false" />			
 			<property name="category_key" value="prestige1Title" />
-			<property name="icon" value="ui_game_symbol_star" />				
-			<property name="difficulty" value="easy" />			
-			<reward type="Item" id="Prkit" value="1"/>
-
+			<property name="icon" value="ui_game_symbol_star" />
+			<property name="difficulty_tier" value="0" param1="difficulty"/>
+			<property name="add_to_tier_complete" value="false"/>				
+			<property name="difficulty" value="easy" />	
+			<action type="ShowMessageWindow">
+				<property name="message" value="prestige1Desc"/>
+				<property name="title" value="prestige1Title"/>
+				<property name="delay" value="1"/>
+			</action> 		
+			<reward type="Exp" value="1000"/>
 		</quest>
 		<quest id="q_Presgio2">
 			<property name="name_key" value="prestige2Title" />
@@ -33,9 +39,34 @@
 			<property name="offer_key" value="prestige2Desc" />
 			<property name="repeatable" value="false" />			
 			<property name="category_key" value="prestige2Title" />
-			<property name="icon" value="ui_game_symbol_twitch_special" />				
+			<property name="icon" value="ui_game_symbol_twitch_special" />	
+			<property name="difficulty_tier" value="0" param1="difficulty"/>
+			<property name="add_to_tier_complete" value="false"/>			
 			<property name="difficulty" value="easy" />
-			<reward type="Item" id="Prkit2" value="1"/>
+			<action type="ShowMessageWindow">
+				<property name="message" value="prestige2Desc"/>
+				<property name="title" value="prestige2Title"/>
+				<property name="delay" value="1"/>
+			</action> 
+			<reward type="Exp" value="1000"/>
+		</quest>
+		<quest id="q_Presgio3">
+			<property name="name_key" value="prestige3Title" />
+			<property name="subtitle_key" value="" />
+			<property name="description_key" value="prequestDesc3" />
+			<property name="offer_key" value="prestige3Desc" />
+			<property name="repeatable" value="false" />			
+			<property name="category_key" value="prestige2Title" />
+			<property name="icon" value="ui_game_symbol_twitch_special" />
+			<property name="difficulty_tier" value="0" param1="difficulty"/>
+			<property name="add_to_tier_complete" value="false"/>				
+			<property name="difficulty" value="easy" />
+			<action type="ShowMessageWindow">
+				<property name="message" value="prestige3Desc"/>
+				<property name="title" value="prestige3Title"/>
+				<property name="delay" value="1"/>
+			</action> 
+			<reward type="Exp" value="1000"/>
 		</quest>
 
 	</append>

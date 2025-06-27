@@ -3,14 +3,16 @@
 	<append xpath="/items">
 		<item name="startBundle">
 			<property name="Extends" value="questMaster"/>
-			<property name="CustomIcon" value="cntWeaponsBagSmall"/>
-			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="CustomIcon" value="challengeQuestMaster"/>
+			<!-- <property name="ItemTypeIcon" value="bundle"/> -->
 			<property name="CreativeMode" value="Dev"/>
-			<property name="Stacknumber" value="10"/>
+			<property name="Stacknumber" value="1"/>
 			<property name="Material" value="Morganic"/>
 			<property name="PickupJournalEntry" value="noobiTip"/>
 			<property name="SellableToTrader" value="true"/>
+			<property name="KeepOnDeath" value="true"/>
 			<property name="EconomicValue" value="5000"/>
+			<property name="IsQuestItem" value="true" />
 			<property name="Group" value="Books"/>
 			<property class="Action0">
 				<property name="QuestGiven" value="q_Inicio"/>
@@ -30,6 +32,7 @@
 			</property>
 			<effect_group>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".dukeNoteRead" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffDukeNote"/>
 			</effect_group>
 		</item>
 		<!--+1 Skill point for events or compensation-->
@@ -60,82 +63,6 @@
 			<property class="Action0">
 				<property name="QuestGiven" value="c_sp10"/>
 			</property>
-		</item>
-		<!--Chale juice IS OP-->
-		<item name="juguito_de_chale">			
-			<property name="CreativeMode" value="Dev"/>			
-			<property name="ItemTypeIcon" value="agility"/>
-			<property name="CustomIcon" value="drinkJarBlackStrapCoffee"/>
-			<property name="CustomIconTint" value="C8BD51"/>
-			<property name="Meshfile" value="@:Other/Items/Food/bottled_waterPrefab.prefab"/>
-			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>			
-			<property name="TintColor" value="255, 255, 0"/>
-			<property name="DisplayType" value="JDC"/>			
-			<property name="HoldType" value="3"/>
-			<property name="EconomicValue" value="1500"/>
-			<property name="Material" value="Mglass"/>
-			<property name="Weight" value="10"/>
-			<property name="Stacknumber" value="100"/>
-			<property name="SellableToTrader" value="false"/>
-			<property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
-			<property name="ShowQuality" value="false"/>
-			<property name="DescriptionKey" value="chaleJ"/>
-			<property class="Action0">
-				<property name="Class" value="Eat"/>
-				<property name="Consume" value="true"/>
-				<property name="Delay" value="15"/>
-				<property name="Use_time" value="..."/>
-				<property name="Sound_start" value="player_drinking"/>
-			</property>
-			<effect_group tiered="false">
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="70"/>
-				<display_value name="dStaminaRegen" value=".15"/>
-				<display_value name="dRunSpeed" value=".25"/>
-				<display_value name="dDuration" value="3600"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffchaleDuration" operation="add" value="3603">
-					<requirement name="!HasBuff" buff="buffowo"/>
-					<requirement name="CVarCompare" cvar="$chale" operation="GT" value="-1"/>
-				</triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffchaleDuration" operation="set" value="7203">
-					<requirement name="CVarCompare" cvar="$buffchaleDuration" operation="GT" value="7203"/>
-				</triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables,buffchale">
-					<requirement name="!HasBuff" buff="buffowo"/>
-					<requirement name="CVarCompare" cvar="$chale" operation="GT" value="-1"/>
-				</triggered_effect>
-			</effect_group>
-			<effect_group tiered="false">
-				<requirement name="HasBuff" buff="buffIsOnFire"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
-			</effect_group>
-		</item>
-		<item name="juguito_de_chale_donacion">
-			<property name="Extends" value="juguito_de_chale"/>			
-			<property name="DescriptionKey" value="chaleJ"/>
-			<property class="Action0">				
-				<property name="Consume" value="false"/>				
-			</property>
-			<effect_group tiered="false">
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="0"/>
-				<display_value name="dStaminaRegen" value=".15"/>
-				<display_value name="dRunSpeed" value=".25"/>
-				<display_value name="dDuration" value="3600"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffchaleDuration" operation="add" value="3603">
-					<requirement name="!HasBuff" buff="buffowo"/>
-					<requirement name="CVarCompare" cvar="$chale" operation="GT" value="-1"/>
-				</triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffchaleDuration" operation="set" value="7203">
-					<requirement name="CVarCompare" cvar="$buffchaleDuration" operation="GT" value="7203"/>
-				</triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables,buffchale">
-					<requirement name="!HasBuff" buff="buffowo"/>
-					<requirement name="CVarCompare" cvar="$chale" operation="GT" value="-1"/>
-				</triggered_effect>
-			</effect_group>
-			<effect_group tiered="false">
-				<requirement name="HasBuff" buff="buffIsOnFire"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
-			</effect_group>
 		</item>
 		<!--Special OP Hammer-->
 		<item name="mitico_Martillo_Divino_Usos">
@@ -391,10 +318,11 @@
 			<property name="EconomicValue" value="600"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Special Items"/>
+			<property name="KeepOnDeath" value="true"/>
 		</item>
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Class Bundles ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 			<!--Constructor-->
-			<item name="cl_Constructor">
+			<item name="classBundle_Constructor">
 				<property name="CreativeMode" value="Player"/>				
 				<property name="ItemTypeIcon" value="bundle"/>
 				<property name="HoldType" value="45"/>
@@ -407,7 +335,8 @@
 				<property name="Group" value="Special Items"/>	
 
 				<property name="CustomIcon" value="bundleSledge"/>
-				<property name="DescriptionKey" value="CCDesc"/>			
+				<property name="DescriptionKey" value="CCDesc"/>
+				<property name="KeepOnDeath" value="true"/>			
 				<property class="Action0">		
 					<property name="Class" value="OpenBundle"/>
 					<property name="Delay" value="0"/>					
@@ -417,8 +346,8 @@
 				</property>
 			</item>		
 			<!--Engineer-->
-			<item name="cl_Ingeniero">
-				<property name="Extends" value="cl_Constructor"/>
+			<item name="classBundle_Ingeniero">
+				<property name="Extends" value="classBundle_Constructor"/>
 				<property name="CustomIcon" value="bundleGeneratorBank"/>
 				<property name="DescriptionKey" value="CIDesc"/>
 				<property class="Action0">				
@@ -427,8 +356,8 @@
 				</property>
 			</item>
 			<!--Miner-->
-			<item name="cl_Minero">
-				<property name="Extends" value="cl_Constructor"/>
+			<item name="classBundle_Minero">
+				<property name="Extends" value="classBundle_Constructor"/>
 				<property name="CustomIcon" value="bundleShotgun"/>
 				<property name="DescriptionKey" value="CMiDesc"/>			
 				<property class="Action0">				
@@ -437,8 +366,8 @@
 				</property>
 			</item>
 			<!--Medic-->
-			<item name="cl_Medico">
-				<property name="Extends" value="cl_Constructor"/>
+			<item name="classBundle_Medico">
+				<property name="Extends" value="classBundle_Constructor"/>
 				<property name="CustomIcon" value="bundleBooks"/>
 				<property name="DescriptionKey" value="CMdDesc"/>			
 				<property class="Action0">				
@@ -447,8 +376,8 @@
 				</property>
 			</item>	
 			<!--Mechanic-->
-			<item name="cl_Mecanico">
-				<property name="Extends" value="cl_Constructor"/>
+			<item name="classBundle_Mecanico">
+				<property name="Extends" value="classBundle_Constructor"/>
 				<property name="CustomIcon" value="bundleVehicleMotorCycle"/>
 				<property name="DescriptionKey" value="CMeDesc"/>			
 				<property class="Action0">
@@ -457,8 +386,8 @@
 				</property>
 			</item>
 			<!--Farmer-->
-			<item name="cl_Granjero">
-				<property name="Extends" value="cl_Constructor"/>
+			<item name="classBundle_Granjero">
+				<property name="Extends" value="classBundle_Constructor"/>
 				<property name="CustomIcon" value="bundleFarm"/>
 				<property name="DescriptionKey" value="CGDesc"/>
 				<property class="Action0">				
@@ -467,8 +396,8 @@
 				</property>
 			</item>
 			<!--Hunter-->
-			<item name="cl_Cazador">
-				<property name="Extends" value="cl_Constructor"/>
+			<item name="classBundle_Cazador">
+				<property name="Extends" value="classBundle_Constructor"/>
 				<property name="CustomIcon" value="bundleSecurity"/>
 				<property name="DescriptionKey" value="CCaDesc"/>						
 				<property class="Action0">				
@@ -477,8 +406,8 @@
 				</property>
 			</item>
 			<!--Shooter-->
-			<item name="cl_Tirador">
-				<property name="Extends" value="cl_Constructor"/>
+			<item name="classBundle_Tirador">
+				<property name="Extends" value="classBundle_Constructor"/>
 				<property name="CustomIcon" value="bundleRevolver"/>
 				<property name="DescriptionKey" value="CTDesc"/>
 				<property class="Action0">				
@@ -487,8 +416,8 @@
 				</property>
 			</item>
 			<!--Sniper-->
-			<item name="cl_Sniper">
-				<property name="Extends" value="cl_Constructor"/>
+			<item name="classBundle_Sniper">
+				<property name="Extends" value="classBundle_Constructor"/>
 				<property name="CustomIcon" value="bundleRifle"/>
 				<property name="DescriptionKey" value="CSDesc"/>			
 				<property class="Action0">				
@@ -497,8 +426,8 @@
 				</property>
 			</item>
 			<!--Demolition-->
-			<item name="cl_Demoledor">
-				<property name="Extends" value="cl_Constructor"/>
+			<item name="classBundle_Demoledor">
+				<property name="Extends" value="classBundle_Constructor"/>
 				<property name="CustomIcon" value="bundleShotgun"/>
 				<property name="DescriptionKey" value="CDeDesc"/>			
 				<property class="Action0">				
@@ -507,8 +436,8 @@
 				</property>
 			</item>
 			<!--Swat-->
-			<item name="cl_Swat">
-				<property name="Extends" value="cl_Constructor"/>
+			<item name="classBundle_Swat">
+				<property name="Extends" value="classBundle_Constructor"/>
 				<property name="CustomIcon" value="bundleMachineGun"/>
 				<property name="DescriptionKey" value="CSwDesc"/>			
 				<property class="Action0">				
@@ -517,8 +446,8 @@
 				</property>
 			</item>
 			<!--Survivor-->
-			<item name="cl_Superviviente">
-				<property name="Extends" value="cl_Constructor"/>
+			<item name="classBundle_Superviviente">
+				<property name="Extends" value="classBundle_Constructor"/>
 				<property name="CustomIcon" value="bundleAmmo"/>
 				<property name="DescriptionKey" value="CSuDesc"/>			
 				<property class="Action0">				
@@ -527,8 +456,8 @@
 				</property>
 			</item>
 			<!--Veteran-->
-			<item name="cl_Veterano">
-				<property name="Extends" value="cl_Constructor"/>
+			<item name="classHC_Veterano">
+				<property name="Extends" value="classBundle_Constructor"/>
 				<property name="CustomIcon" value="bundlePistol"/>
 				<property name="DescriptionKey" value="CVeDesc"/>			
 				<property class="Action0">				

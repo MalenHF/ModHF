@@ -96,33 +96,50 @@
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$opDuration" operation="set" value="0"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$op2Duration" operation="set" value="0"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$op3Duration" operation="set" value="0"/>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffchaleDuration" operation="set" value="0"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffchaleDuration" operation="set" value="0"/>
 
 			</effect_group>
 		</buff>
 
 		<buff name="hf_buffCelebrate" name_key="TwitchBuff_Celebrate" description_key="TwitchBuff_CelebrateDesc" icon="ui_game_symbol_twitch_celebrate" icon_color="175,175,255">
-			<stack_type value="replace"/>	
+			<stack_type value="replace"/>
 			<effect_group>
 				<!--<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="twitch_buffCelebrate"/>-->
 				<triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="twitch_buffCelebrate"/>
 				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="hf_buffCelebrate"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="twitch_good_buff_ended" play_in_head="true"/>
 
-			</effect_group>	
+			</effect_group>
 			<effect_group>
 				<passive_effect name="CelebrationKill" operation="base_set" value="1" />
 			</effect_group>
 		</buff>
+		
+		<buff name="hf_buffCelebrate_Summer" name_key="TwitchBuff_Celebrate" description_key="TwitchBuff_CelebrateDesc" icon="ui_game_symbol_twitch_celebrate" icon_color="175,175,255">
+			<stack_type value="replace"/>
+			<duration value="1800"/>
+			<display_value value="duration"/>
+			<tags value="hf_summerFesta" />
+			<effect_group>
+				<!--<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="twitch_buffCelebrate"/>-->
+				<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="twitch_good_buff_ended" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AltSounds" enabled="true"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AltSounds" enabled="false"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="CelebrationKill" operation="base_set" value="1" />
+				
+			</effect_group>
+		</buff>
 		<buff name="hf_buffSillySounds" name_key="TwitchBuff_Celebrate" description_key="TwitchBuff_CelebrateDesc" icon="ui_game_symbol_twitch_sound_effects" icon_color="175,175,255">
-			<stack_type value="replace"/>	
+			<stack_type value="replace"/>
 			<effect_group>
 				<!--<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="twitch_buffCelebrate"/>-->
 				<triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="hf_buffSillySounds"/>
 				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="hf_buffSillySounds"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="twitch_good_buff_ended" play_in_head="true"/>
 
-			</effect_group>	
+			</effect_group>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AltSounds" enabled="true"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="AltSounds" enabled="false"/>
@@ -131,25 +148,25 @@
 
 		<buff name="buffNote_Navidad" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
 			<duration value="6"/>
-			<display_value value="duration"/>	
+			<display_value value="duration"/>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>	
-				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNote_Navidad2"/>									
-			</effect_group>			
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNote_Navidad2"/>
+			</effect_group>
 		</buff>
-		<buff name="buffNote_Navidad2" hidden="true" >
+		<buff name="buffNote_Navidad2" hidden="true">
 			<duration value="11"/>
-			<display_value value="duration"/>	
+			<display_value value="duration"/>
 			<effect_group>
 				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_navidad"/>									
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_navidad"/>
 			</effect_group>
 			<effect_group>
 				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNote_Navidad2"/>									
-			</effect_group>							
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNote_Navidad2"/>
+			</effect_group>
 		</buff>
 		<buff name="buffEventXP" name_key="buffEventXP" description_key="buffPremmXPDesc" icon="ui_game_symbol_star" remove_on_death="false" icon_color="255,0,228">
 			<stack_type value="ignore"/>
@@ -162,7 +179,7 @@
 				</passive_effect>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375">
 					<requirement name="HasBuff" buff="prestigeBuff2"/>
-				</passive_effect>								
+				</passive_effect>
 			</effect_group>
 		</buff>
 
@@ -189,12 +206,12 @@
 				</passive_effect>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375">
 					<requirement name="HasBuff" buff="prestigeBuff2"/>
-				</passive_effect>								
+				</passive_effect>
 			</effect_group>
 		</buff>
 
-		
-				
+
+
 
 		<buff name="buffEventChallengePascuaAllies" name_key="challengeRewardPascuaEvent" tooltip_key="challengeRewardPascuaEventTool" description_key="challengeRewardPascuaEventDesc" icon="ui_game_symbol_twitch_fast" remove_on_death="false" icon_color="255,0,228">
 			<stack_type value="replace"/>
@@ -213,30 +230,30 @@
 				</passive_effect>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375">
 					<requirement name="HasBuff" buff="prestigeBuff2"/>
-				</passive_effect>								
+				</passive_effect>
 			</effect_group>
 		</buff>
 
 		<buff name="buffSaurus" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
 			<duration value="6"/>
-			<display_value value="duration"/>	
+			<display_value value="duration"/>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>				
-				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffSaurus2"/> 							
-			</effect_group>		
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffSaurus2"/>
+			</effect_group>
 		</buff>
 		<buff name="buffSaurus2" hidden="true" description_key="x" tooltip_key="x">
-			<duration value="10"/>						
-			<effect_group>	
+			<duration value="10"/>
+			<effect_group>
 				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_saurus"/>													
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_saurus"/>
 			</effect_group>
 			<effect_group>
 				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffSaurus2"/>									
-			</effect_group>						
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffSaurus2"/>
+			</effect_group>
 		</buff>
 
 		<buff name="resetChallengeHF" name_key="Resetea esa wea" description="Esta wea te reinicia los challenge" icon="ui_game_symbol_lightbulb" icon_color="255,175,175" hidden="true">

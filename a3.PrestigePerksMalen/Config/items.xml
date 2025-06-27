@@ -1,9 +1,58 @@
-<Malenprestige2Badge>
+<malenPrestigeItems>
 
 	<append xpath="/items/item[@name='resourceLegendaryParts']">
 		<property name="UnlockedBy" value="perkweapsp"/>
 	</append>
 	<append xpath="/items">	
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ +1 Skill point quest ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+		<item name="fourSkillPoint_P1">
+			<property name="Extends" value="schematicMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="CustomIcon" value="questMaster"/>
+			<property name="Stacknumber" value="10"/>
+			<property name="DescriptionKey" value="4SPDesc"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="EconomicValue" value="5000"/>
+			<property name="Group" value="Books"/>
+			<property class="Action0">
+				<requirement name="!HasBuff" buff="prestigeBuff,prestigeBuff2"/>
+			</property>
+			<effect_group tiered="false">				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffGiveFourPoints"/>
+			</effect_group>
+		</item>
+		<item name="fourSkillPoint_P1">
+			<property name="Extends" value="schematicMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="CustomIcon" value="questMaster"/>
+			<property name="Stacknumber" value="10"/>
+			<property name="DescriptionKey" value="4SPDesc"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="EconomicValue" value="5000"/>
+			<property name="Group" value="Books"/>
+			<property class="Action0">
+				<requirement name="HasBuff" buff="prestigeBuff"/>
+			</property>			
+			<effect_group tiered="false">				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffGiveFourPoints"/>
+			</effect_group>
+		</item>
+		<item name="fourSkillPoint_P2">
+			<property name="Extends" value="schematicMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="CustomIcon" value="questMaster"/>
+			<property name="Stacknumber" value="10"/>
+			<property name="DescriptionKey" value="4SPDesc"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="EconomicValue" value="5000"/>
+			<property name="Group" value="Books"/>	
+			<property class="Action0">
+				<requirement name="HasBuff" buff="prestigeBuff2"/>
+			</property>			
+			<effect_group tiered="false">				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffGiveFourPoints"/>
+			</effect_group>
+		</item>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Prestige Items ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<!-- ▼▲Prestige Medal▲▼ -->	
 			<item name="prestige1Badge">
@@ -28,11 +77,18 @@
 					<property name="Sound_start" value="read_mod"/>					
 				</property>
 				<effect_group tiered="false">
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="prestigeBuff"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestige1" level="-1"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestigeUnlock" level="-1">
-						<requirement name="PerksUnlocked" skill_name="skillPrestige" operation="GTE" value="2"/>
-					</triggered_effect>					
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ResetProgression" reset_skills="true" reset_levels="true" reset_books="true" reset_crafting="true"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$PlayerLevelBonus" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$LastPlayerLevel" operation="set" value="0"/>
+					
+					<passive_effect name="HealthMax" operation="base_set" value="100"/>
+					<passive_effect name="StaminaMax" operation="base_set" value="100"/>
+
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDeathFoodDrinkAdjust"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="read_skillbook_final" play_in_head="true"/>					
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkJarFullRespecAdminTooltip"/>	
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="prestigeBuff"/>			
 				</effect_group>
 			</item>
 		<!-- ▼▲Prestige Medal 2▲▼ -->
@@ -47,14 +103,18 @@
 					<property name="Sound_start" value="read_mod"/>
 					<property name="Sound_in_head" value="true"/>					
 				</property>
-				<effect_group tiered="false">					
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="prestigeBuff2"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="prestigeBuff"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestige1" level="-1"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestige2" level="-1"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestigeUnlock" level="-1">
-						<requirement name="PerksUnlocked" skill_name="skillPrestige" operation="GTE" value="2"/>
-					</triggered_effect>
+				<effect_group tiered="false">
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ResetProgression" reset_skills="true" reset_levels="true" reset_books="true" reset_crafting="true"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$PlayerLevelBonus" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$LastPlayerLevel" operation="set" value="0"/>					
+					<passive_effect name="HealthMax" operation="base_set" value="100"/>
+					<passive_effect name="StaminaMax" operation="base_set" value="100"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDeathFoodDrinkAdjust"/>	
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="read_skillbook_final" play_in_head="true"/>				
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkJarFullRespecAdminTooltip"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="prestigeBuff2"/>	
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="prestigeBuff"/>					
 				</effect_group>
 			</item>
 
@@ -71,13 +131,17 @@
 					<property name="Sound_in_head" value="true"/>					
 				</property>
 				<effect_group tiered="false">
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="prestigeBuff3"/>					
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="prestigeBuff2"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestige1" level="-1"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestige2" level="-1"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestigeUnlock" level="-1">
-						<requirement name="PerksUnlocked" skill_name="skillPrestige" operation="GTE" value="2"/>
-					</triggered_effect>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ResetProgression" reset_skills="true" reset_levels="true" reset_books="true" reset_crafting="true"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$PlayerLevelBonus" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$LastPlayerLevel" operation="set" value="0"/>					
+					<passive_effect name="HealthMax" operation="base_set" value="100"/>
+					<passive_effect name="StaminaMax" operation="base_set" value="100"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDeathFoodDrinkAdjust"/>	
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="read_skillbook_final" play_in_head="true"/>				
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkJarFullRespecAdminTooltip"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="prestigeBuff3"/>	
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="prestigeBuff2"/>					
 				</effect_group>
 			</item>
 		<!-- ▼▲Prestige Unlocker▲▼ -->
@@ -122,7 +186,7 @@
 				</property>
 			</item>
 		<!-- ▼▲Prestige Kit▲▼ -->
-			<item name="PrkitQuest">
+			<item name="challengeRewardPrestige0ApplyQuest">
 				<property name="Extends" value="questMaster"/>
 				<property name="CustomIcon" value="cntBookPile13"/>
 				<property name="CustomIconTint" value="F0EA4C"/>
@@ -139,7 +203,7 @@
 					<property name="QuestGiven" value="q_Presgio1"/>
 				</property>
 			</item>
-			<item name="PrkitQuest2">
+			<item name="challengeRewardPrestige0ApplyQuest2">
 				<property name="Extends" value="questMaster"/>
 				<property name="CustomIcon" value="cntBookPile14"/>
 				<property name="ItemTypeIcon" value="bundle"/>
@@ -158,56 +222,14 @@
 				</property>
 			</item>
 
-			<item name="Prkit">
-				<property name="CustomIcon" value="cntQuestTestLoot"/>
-				<property name="DescriptionKey" value="PrkitDesc"/>
-				<property name="HoldType" value="45"/>
-				<property name="CustomIconTint" value="F0EA4C"/>
-				<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
-				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-				
-				<property name="Material" value="Morganic"/>
-				<property name="Stacknumber" value="1"/>
-				<property name="ItemTypeIcon" value="perk"/>
-				<property name="Weight" value="0"/>
-				<property name="Group" value="Special Items"/>
-				<property class="Action0">
-					<requirement name="PlayerLevel" operation="GT" value="349"/>
-					<property name="Class" value="OpenBundle"/>
-					<property name="Sound_start" value="wrench_harvest"/>
-
-					<property name="PromptTitle" value="prestige1Title" />
-					<property name="PromptDescription" value="prestige1Desc" />
-
-					<property name="Create_item" value="prestige1Badge,modGunMeleeBlessedMetal,SkillPoints,divineWaterEvent,p_kitlvl50"/>
-					<property name="Create_item_count" value="1,1,1,2,1"/>
-				</property>
-				<effect_group tiered="false">
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="prestigeBuff"/>
-
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffxpst"/>
-
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ResetProgression" reset_skills="true" reset_levels="true" reset_books="true" reset_crafting="true"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$PlayerLevelBonus" operation="set" value="0"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$LastPlayerLevel" operation="set" value="0"/>
-					
-					<passive_effect name="HealthMax" operation="base_set" value="100"/>
-					<passive_effect name="StaminaMax" operation="base_set" value="100"/>
-
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffPerkAbilityUpdate"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDeathFoodDrinkAdjust"/>
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="read_skillbook_final" play_in_head="true"/>					
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkJarFullRespecAdminTooltip"/>
-				</effect_group>
-
-			</item>
+			
 		<!-- ▼▲Prestige Kit 2▲▼ -->
-			<item name="Prkit2">
+			<item name="challengePrestige1Apply">
 				<property name="CustomIcon" value="cntQuestTestLoot"/>
 				<property name="ItemTypeIcon" value="perk"/>
 				<property name="CustomIconTint" value="EA4224"/>
 				<property name="TintColor" value="100,0,0"/>
-				<property name="DescriptionKey" value="Prkit2Desc"/>
+				<property name="DescriptionKey" value="challengeRewardPrestige0Apply2Desc"/>
 				<property name="HoldType" value="45"/>
 				<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
 				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
@@ -245,6 +267,343 @@
 			</item>
 	<!--▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Bundles de Nivel P0 ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
+		<item name="lvlUpChallengeBoxP0_50">
+			<property name="CustomIcon" value="block_missing"/>
+			<property name="ItemTypeIcon" value="perk"/>
+			<property name="CustomIconTint" value="100,0,0"/>
+			<property name="TintColor" value="100,0,0"/>
+			<property name="DescriptionKey" value="lvlUpChallengeBoxDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="specialItems"/>
+			<property name="Candrop" value="false"/>
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="49"/>
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="read_skillbook_final"/>
+				<property name="Create_item" value="drinkJarGrandpasForgettingElixir,survivorRations,fourSkillPoint_P1,q_Gacha,juguito_de_chale,questTokenT2"/>
+				<property name="Create_item_count" value="1,1,1,3,3,1"/>
+			</property>
+			
+		</item>
+		<item name="lvlUpChallengeBoxP0_100">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="149"/>				
+				<property name="Create_item" value="Mineral_Bag,fourSkillPoint_P1,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
+				<property name="Create_item_count" value="1,1,4,4,1"/>
+			</property>			
+		</item>
+		<item name="lvlUpChallengeBoxP0_150">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="99"/>				
+				<property name="Create_item" value="survivorRations,fourSkillPoint_P1,q_Gacha,juguito_de_chale,questTokenT2"/>
+				<property name="Create_item_count" value="2,1,5,5,3"/>
+			</property>			
+		</item>
+		<item name="lvlUpChallengeBoxP0_200">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="199"/>				
+				<property name="Create_item" value="Mineral_Bag,fourSkillPoint_P1,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
+				<property name="Create_item_count" value="3,2,6,6,2"/>
+			</property>			
+		</item>
+		<item name="lvlUpChallengeBoxP0_250">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="249"/>				
+				<property name="Create_item" value="survivorRations,fourSkillPoint_P1,q_Gacha,juguito_de_chale,questTokenT3"/>
+				<property name="Create_item_count" value="3,2,7,7,1"/>
+			</property>			
+		</item>
+		<item name="lvlUpChallengeBoxP0_300">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="299"/>				
+				<property name="Create_item" value="resourcePlatinumNugget,special_bag,Practonium,fourSkillPoint_P1,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
+				<property name="Create_item_count" value="1,1,10,2,10,10,3"/>
+			</property>			
+		</item>
+		<item name="lvlUpChallengeBoxP0_350">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="349"/>				
+				<property name="Create_item" value="prestige1Badge,survivorRations,fourSkillPoint_P1,q_Gacha,juguito_de_chale,questTokenT3,q_Lucky"/>
+				<property name="Create_item_count" value="1,4,3,10,10,3,1"/>
+			</property>			
+		</item>
+		<item name="lvlUpChallengeBoxP0_400">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="399"/>				
+				<property name="Create_item" value="ResourceForgedPractonium,ResourceForgedPlatinum,fourSkillPoint_P1,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
+				<property name="Create_item_count" value="1,1,3,15,15,4"/>
+			</property>			
+		</item>
+		<item name="lvlUpChallengeBoxP0_450">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="449"/>				
+				<property name="Create_item" value="agua_divina,q_Hooligan_Force,allSkillMagazineHF,survivorRations,fourSkillPoint_P1,q_Gacha,juguito_de_chale,questTokenT3,q_Lucky"/>
+				<property name="Create_item_count" value="1,1,1,5,5,20,20,5,3"/>
+			</property>			
+		</item>
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Bundles de Nivel P0 ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Bundles de Nivel P1 ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+		<item name="lvlUpChallengeBoxP1_50">
+			<property name="CustomIcon" value="block_missing"/>
+			<property name="ItemTypeIcon" value="perk"/>
+			<property name="CustomIconTint" value="100,0,0"/>
+			<property name="TintColor" value="100,0,0"/>
+			<property name="DescriptionKey" value="lvlUpChallengeBoxP0Desc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="specialItems"/>
+			<property name="Candrop" value="false"/>
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="49"/>
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="read_skillbook_final"/>
+				<property name="Create_item" value="drinkJarGrandpasForgettingElixir,survivorRations,fourSkillPoint_P1,q_Gacha,juguito_de_chale,questTokenT2"/>
+				<property name="Create_item_count" value="1,2,1,6,6,2"/>
+			</property>
+			
+		</item>
+		<item name="lvlUpChallengeBoxP1_100">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="149"/>				
+				<property name="Create_item" value="Mineral_Bag,fourSkillPoint_P1,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
+				<property name="Create_item_count" value="2,1,8,8,2"/>
+			</property>			
+		</item>
+		<item name="lvlUpChallengeBoxP1_150">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="99"/>				
+				<property name="Create_item" value="survivorRations,fourSkillPoint_P1,q_Gacha,juguito_de_chale,questTokenT2"/>
+				<property name="Create_item_count" value="4,1,10,10,6"/>
+			</property>			
+		</item>
+		<item name="lvlUpChallengeBoxP1_200">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="199"/>				
+				<property name="Create_item" value="Mineral_Bag,fourSkillPoint_P1,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
+				<property name="Create_item_count" value="6,2,12,12,4"/>
+			</property>			
+		</item>
+		<item name="lvlUpChallengeBoxP1_250">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="249"/>				
+				<property name="Create_item" value="survivorRations,fourSkillPoint_P1,q_Gacha,juguito_de_chale,questTokenT3"/>
+				<property name="Create_item_count" value="6,2,14,14,2"/>
+			</property>			
+		</item>
+		<item name="lvlUpChallengeBoxP1_300">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="299"/>				
+				<property name="Create_item" value="resourcePlatinumNugget,special_bag,Practonium,fourSkillPoint_P1,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
+				<property name="Create_item_count" value="2,1,20,2,20,20,6"/>
+			</property>			
+		</item>
+		<item name="lvlUpChallengeBoxP1_350">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="349"/>				
+				<property name="Create_item" value="prestige2Badge,survivorRations,fourSkillPoint_P1,q_Gacha,juguito_de_chale,questTokenT3,q_Lucky"/>
+				<property name="Create_item_count" value="1,8,3,20,20,6,2"/>
+			</property>			
+		</item>
+		<item name="lvlUpChallengeBoxP1_400">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="399"/>				
+				<property name="Create_item" value="ResourceForgedPractonium,ResourceForgedPlatinum,fourSkillPoint_P1,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
+				<property name="Create_item_count" value="2,1,3,30,30,8"/>
+			</property>			
+		</item>
+		<item name="lvlUpChallengeBoxP1_450">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="449"/>				
+				<property name="Create_item" value="agua_divina,q_Hooligan_Force,allSkillMagazineHF,survivorRations,fourSkillPoint_P1,q_Gacha,juguito_de_chale,questTokenT3,q_Lucky"/>
+				<property name="Create_item_count" value="1,2,1,10,5,40,40,10,6"/>
+			</property>			
+		</item>
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Bundles de Nivel P1 ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Bundles de Nivel P2 ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+		<item name="lvlUpChallengeBoxP2_50">
+			<property name="CustomIcon" value="block_missing"/>
+			<property name="ItemTypeIcon" value="perk"/>
+			<property name="CustomIconTint" value="100,0,0"/>
+			<property name="TintColor" value="100,0,0"/>
+			<property name="DescriptionKey" value="lvlUpChallengeBoxP0Desc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="specialItems"/>
+			<property name="Candrop" value="false"/>
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="49"/>
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="read_skillbook_final"/>
+				<property name="Create_item" value="drinkJarGrandpasForgettingElixir,survivorRations,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,questTokenT2"/>
+				<property name="Create_item_count" value="1,3,1,9,9,3"/>
+			</property>
+			
+		</item>
+		<item name="lvlUpChallengeBoxP2_100">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="149"/>				
+				<property name="Create_item" value="Mineral_Bag,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,q_EnemigsRandom"/>
+				<property name="Create_item_count" value="3,1,12,12,3"/>
+			</property>			
+		</item>
+		<item name="lvlUpChallengeBoxP2_150">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="99"/>				
+				<property name="Create_item" value="survivorRations,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,questTokenT2"/>
+				<property name="Create_item_count" value="6,1,10,10,9"/>
+			</property>			
+		</item>
+		<item name="lvlUpChallengeBoxP2_200">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="199"/>				
+				<property name="Create_item" value="Mineral_Bag,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,q_EnemigsRandom"/>
+				<property name="Create_item_count" value="9,2,12,12,6"/>
+			</property>			
+		</item>
+		<item name="lvlUpChallengeBoxP2_250">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="249"/>				
+				<property name="Create_item" value="survivorRations,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,questTokenT3"/>
+				<property name="Create_item_count" value="9,2,21,21,3"/>
+			</property>			
+		</item>
+		<item name="lvlUpChallengeBoxP2_300">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="299"/>				
+				<property name="Create_item" value="resourcePlatinumNugget,special_bag,Practonium,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,q_EnemigsRandom"/>
+				<property name="Create_item_count" value="3,3,30,2,30,30,9"/>
+			</property>			
+		</item>
+		<item name="lvlUpChallengeBoxP2_350">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="349"/>				
+				<property name="Create_item" value="prestige3Badge,survivorRations,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,questTokenT3,q_Lucky"/>
+				<property name="Create_item_count" value="1,12,3,30,30,9,3"/>
+			</property>			
+		</item>
+		<item name="lvlUpChallengeBoxP2_400">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="399"/>				
+				<property name="Create_item" value="ResourceForgedPractonium,ResourceForgedPlatinum,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,q_EnemigsRandom"/>
+				<property name="Create_item_count" value="3,2,3,30,30,12"/>
+			</property>			
+		</item>
+		<item name="lvlUpChallengeBoxP2_450">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property class="Action0">				
+				<requirement name="PlayerLevel" operation="GT" value="449"/>				
+				<property name="Create_item" value="agua_divina,q_Hooligan_Force,allSkillMagazineHF,survivorRations,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,questTokenT3,q_Lucky"/>
+				<property name="Create_item_count" value="1,3,1,15,5,60,60,15,9"/>
+			</property>			
+		</item>
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Bundles de Nivel P2 ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+		<item name="challengeRewardPrestige0Apply">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>	
+			<property name="CustomIcon" value="cntQuestTestLoot"/>
+			<property name="DescriptionKey" value="challengeRewardPrestigeApplyDesc"/>
+			<property name="CustomIconTint" value="F0EA4C"/>
+			<property class="Action0">
+				<requirement name="HasBuff" buff="prestigeBuff"/>				
+				<requirement name="PlayerLevel" operation="LT" value="10"/>				
+				<property name="Create_item" value="modGunMeleeBlessedMetal,q_Hooligan_Force,divineWaterEvent,fourSkillPoint_P1"/>
+				<property name="Create_item_count" value="1,1,1,3"/>
+			</property>
+			<effect_group>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestige1" level="-1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestigeUnlock" level="-1">
+					<requirement name="PerksUnlocked" skill_name="skillPrestige" operation="GTE" value="2"/>
+				</triggered_effect>				
+			</effect_group>			
+		</item>
+		<item name="challengeRewardPrestige1Apply">
+			<property name="Extends" value="challengeRewardPrestige0Apply"/>
+			<property name="CustomIconTint" value="F0EA4C"/>
+			<property class="Action0">
+				<requirement name="HasBuff" buff="prestigeBuff2"/>							
+				<property name="Create_item" value="modCursedStone,divineWaterEvent,q_Hooligan_Force,fourSkillPoint_P1"/>
+				<property name="Create_item_count" value="1,1,2,6"/>
+			</property>			
+			<effect_group tiered="false">				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestige1" level="-1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestige2" level="-1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestigeUnlock" level="-1">
+					<requirement name="PerksUnlocked" skill_name="skillPrestige" operation="GTE" value="2"/>
+				</triggered_effect>
+			</effect_group>	
+		</item>
+		<item name="challengeRewardPrestige2Apply">
+			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>	
+			<property name="CustomIcon" value="cntQuestTestLoot"/>
+			<property name="DescriptionKey" value="challengeRewardPrestige0ApplyDesc"/>
+			<property name="CustomIconTint" value="F0EA4C"/>
+			<property class="Action0">	
+				<requirement name="HasBuff" buff="prestigeBuff3"/>							
+				<property name="Create_item" value="modGunMDivine_mod,Cursed_mod,agua_divina,q_Hooligan_Force"/>
+				<property name="Create_item_count" value="1,1,1,3"/>
+			</property>	
+			<effect_group tiered="false">				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestige1" level="-1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestige2" level="-1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestige3" level="-1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkprestigeUnlock" level="-1">
+					<requirement name="PerksUnlocked" skill_name="skillPrestige" operation="GTE" value="3"/>
+				</triggered_effect>
+			</effect_group>			
+		</item>
+
+		
+
+		
+
+		
+		
+|	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Bundles de Nivel ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	<!-- ▼▲▼▲▼▲ Ancient Range Weap ▲▼▲▼▲▼ -->
 		<!-- ▼▲SMG Group▲▼ -->
@@ -279,4 +638,4 @@
 	
 	</append>
 
-</Malenprestige2Badge>
+</malenPrestigeItems>

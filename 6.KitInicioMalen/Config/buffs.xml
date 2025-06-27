@@ -1,27 +1,25 @@
-<configs>
-	<append xpath="/buffs">	
-		<buff name="buffchale" name_key="chalebuff" description_key="chalebuffdesc" tooltip_key="buffbuffchaleTooltip" icon="ui_game_symbol_run" icon_color="0,255,255">
-			<stack_type value="replace"/>
-			<duration value="0"/>
-			<display_value value=".buffchaleDisplay"/>
-			<display_value_format value="time"/>
+<config>
+
+	<!-- <property name="CustomIconTint" value="100,0,0"/> -->
+	<append xpath="/buffs/buff[@name='buffNewbieCoat']">
+		<effect_group>
+			<requirements compare_type="or">
+				<requirement name="PlayerLevel" operation="GT" value="10"/>
+				<requirement name="CVarCompare" cvar=".dukeNoteRead" operation="Equals" value="1"/>
+			</requirements>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffHFNote"/>
+		</effect_group>
+
+	</append>
+
+	<append xpath="/buffs">
+		<buff name="buffHFNote" name_key="buffHFNoteName" description_key="buffHFNoteDesc" icon="ui_game_symbol_invite" icon_color="100,0,0">
+			<stack_type value="ignore"/>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffchaleDuration" operation="subtract" value="@$MetabolismDuration"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffchaleDisplay" operation="set" value="@$buffchaleDuration"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffchaleDisplay" operation="divide" value="@$MetabolismDuration"/>
-			</effect_group>
-			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffchale">
-					<requirement name="CVarCompare" cvar="$buffchaleDuration" operation="LTE" value="0"/>
-				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffchaleDisplay" operation="set" value="0"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffchaleDuration" operation="set" value="0"/>
-			</effect_group>
-			<effect_group>
-				<passive_effect name="RunSpeed" operation="perc_add" value=".25"/>
-				<passive_effect name="WaterLossPerStaminaPointGained" operation="perc_add" value="1.2"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="PinToolbeltMessage" message_key="buffHFNotelTip"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveToolbeltMessage" message_key="buffHFNoteTip"/>
 			</effect_group>
 		</buff>
-		
+
 	</append>
-</configs>
+</config>
