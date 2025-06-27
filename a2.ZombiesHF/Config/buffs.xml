@@ -3045,6 +3045,8 @@
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/JunkTurret/junkTurret_Prefab.prefab" parent_transform="LeftShoulder" local_offset="-.25,-.60,-.2" local_rotation="0,0,0"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/JunkTurret/junkTurret_Prefab.prefab" parent_transform="RightShoulder" local_offset=".25,.60,.2" local_rotation="180,0,0"/>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" local_offset="-0.25,0,0" local_rotation="0,0,0" parent_transform="LeftShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" local_offset="0.25,0,0" local_rotation="180,0,0" parent_transform="RightShoulder"/>				 -->
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelOilPrefab.prefab" local_offset=".45,.20,-.2" local_rotation="0,0,0" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelGasPrefab.prefab" local_offset="-.15,.20,-.2" local_rotation="0,0,0" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false"  parent_transform="RightShoulder" transform_path="BaseMesh"/>
@@ -3056,6 +3058,21 @@
 				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false"  parent_transform="LeftShoulder" transform_path="DiscMesh"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false"  parent_transform="LeftShoulder" transform_path="turret_laser"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false"  transform_path="Detonator"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/JunkTurret/junkTurret_Prefab.prefab" parent_transform="LeftShoulder" local_offset="-.25,-.60,-.2" local_rotation="0,0,0">
+					<requirement name="!HasPrefab" prefab="@:Other/Items/Weapons/Ranged/JunkTurret/junkTurret_Prefab.prefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/JunkTurret/junkTurret_Prefab.prefab" parent_transform="RightShoulder" local_offset=".25,.60,.2" local_rotation="180,0,0">
+					<requirement name="!HasPrefab" prefab="@:Other/Items/Weapons/Ranged/JunkTurret/junkTurret_Prefab.prefab" />
+				</triggered_effect>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelOilPrefab.prefab" local_offset=".45,.20,-.2" local_rotation="0,0,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="@:Entities/Industrial/barrelOilPrefab.prefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelGasPrefab.prefab" local_offset="-.15,.20,-.2" local_rotation="0,0,0" parent_transform="Spine">
+					<requirement name="!HasPrefab" prefab="@:Entities/Industrial/barrelGasPrefab.prefab" />
+				</triggered_effect>				
 			</effect_group>
 		</buff>
 		<buff name="mantisDeco" hidden="true">
@@ -3278,30 +3295,30 @@
 				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" target="self" prefab="@:Entities/OutdoorDecor/coffinWildWestOpenPrefab.prefab"/>
 			</effect_group>
 		</buff>
+
 		<buff name="soldierDeco" hidden="true">
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Electrical/satelliteUnitLargePrefab.prefab" target="self" local_offset="0,0,-0.5" local_rotation="0,180,0" parent_transform="Spine"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="@:Other/Items/Weapons/Ranged/Junk Drone/junkDrone_Prefab.prefab" target="self" local_offset="0,2,0" local_rotation="0,0,0" parent_transform="Spine" />
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" particle="@:Other/Items/Weapons/Ranged/Junk Drone/junkDrone_Prefab.prefab" target="self" local_offset="0,2,0" local_rotation="0,0,0" parent_transform="Spine" />
 
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine"/> -->
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Electrical/satelliteUnitLargePrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine"/> -->
-				
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/BanditProps/BanditSupport3mPrefab.prefab" local_offset="0,1,0" local_rotation="90,0,0" parent_transform="Spine2"/> -->
 
 				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" target="self" prefab="@:Entities/Electrical/satelliteUnitLargePrefab.prefab"/>
-				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="@:Other/Items/Weapons/Ranged/Junk Drone/junkDrone_Prefab.prefab"/>
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" target="self" particle="@:Other/Items/Weapons/Ranged/Junk Drone/junkDrone_Prefab.prefab"/>
 			</effect_group>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Electrical/satelliteUnitLargePrefab.prefab" local_offset="0,0,-0.5" local_rotation="0,180,0" parent_transform="Spine">
 					<requirement name="!HasPrefab" prefab="@:Entities/Electrical/satelliteUnitLargePrefab.prefab" />
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" target="self" particle="@:Other/Items/Weapons/Ranged/Junk Drone/junkDrone_Prefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" particle="@:Other/Items/Weapons/Ranged/Junk Drone/junkDrone_Prefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="Spine">
 					<requirement name="!HasPrefab" particle="@:Other/Items/Weapons/Ranged/Junk Drone/junkDrone_Prefab.prefab" />
 				</triggered_effect>
 				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" target="self" prefab="@:Entities/Electrical/satelliteUnitLargePrefab.prefab"/>
-				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="@:Other/Items/Weapons/Ranged/Junk Drone/junkDrone_Prefab.prefab"/>
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" target="self" particle="@:Other/Items/Weapons/Ranged/Junk Drone/junkDrone_Prefab.prefab"/>
 			</effect_group>
 		</buff>
+
 		<buff name="spartanDeco" hidden="true">
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/flagHonorDutyPrefab.prefab" local_offset="-0.18, 0.2, -1" local_rotation="-40, 180, 90" local_scale="0.65,0.4,1" parent_transform="Spine"/>
@@ -3971,7 +3988,7 @@
 					<requirement name="!HasPrefab" prefab="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" />
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Other/Items/Tools/Auger/augerPrefab.prefab" local_offset="0.2,0,0" local_rotation="0,90,0" parent_transform="RightHand">
-					<requirement name="!HasPrefab" prefab="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" />
+					<requirement name="!HasPrefab" prefab="@:Other/Items/Tools/Auger/augerPrefab.prefab" />
 				</triggered_effect>
 			</effect_group>
 		</buff>
