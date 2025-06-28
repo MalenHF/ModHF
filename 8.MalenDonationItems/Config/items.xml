@@ -4,6 +4,7 @@
 		<item name="juguito_de_chale_donacion">
 			<property name="Extends" value="juguito_de_chale"/>			
 			<property name="DescriptionKey" value="chaleJ"/>
+			<property name="KeepOnDeath" value="true"/>
 			<property class="Action0">				
 				<property name="Consume" value="false"/>				
 			</property>
@@ -63,6 +64,17 @@
 			<property name="EconomicValue" value="1"/>
 			<property name="Stacknumber" value="1"/>
         </item>
+		<item name="donacion_Upgrader">
+			<property name="Extends" value="gunMGT1AK47Parts"/>
+			<property name="Material" value="Morganic"/>
+			<property name="CustomIcon" value="orePotassiumNitrateBoulder"/>
+			<property name="CustomIconTint" value="B65FCF"/>
+			<property name="TintColor" value="B65FCF"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="DescriptionKey" value="practoniumdesc"/>
+			<property name="EconomicValue" value="50000"/>
+			<property name="Stacknumber" value="50"/>
+		</item>
 		
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Donation Items ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<item name="donatio_StoneHammer">
@@ -79,6 +91,7 @@
 			<property name="Group" value="Tools/Traps"/>
 			<property name="DescriptionKey" value="LTDesc"/>
 			<property name="SellableToTrader" value="false"/>
+			<property name="KeepOnDeath" value="true"/>
 			
 			<property class="Action1">
 				<property name="Class" value="Repair"/>
@@ -128,6 +141,7 @@
 		</item>	
 		<item name="donatio_Wrench">
 			<property name="Extends" value="epicToolT1_Wrench"/>
+			<property name="KeepOnDeath" value="true"/>
 			<effect_group>
 				<passive_effect name="AttacksPerMinute" operation="base_set" value="80"/>
 				<passive_effect name="EntityDamage" operation="base_set" value="1"/>
@@ -145,6 +159,7 @@
 		</item>
 		<item name="donatio_PickAxe">
 			<property name="Extends" value="epicToolT1_Pickaxe"/>
+			<property name="KeepOnDeath" value="true"/>
 			<effect_group>
 				<passive_effect name="EntityDamage" operation="base_set" value="1"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="250"/>
@@ -162,6 +177,7 @@
 		</item>
 		<item name="donatio_SteelAxe">
 			<property name="Extends" value="epicToolT1_SteelAxe"/>
+			<property name="KeepOnDeath" value="true"/>
 			<effect_group>
 				<passive_effect name="EntityDamage" operation="base_set" value="50"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="300"/>
@@ -182,6 +198,7 @@
 		</item>
 		<item name="donation_Ratchet">
 			<property name="Extends" value="legendToolT2_Ratchet"/>
+			<property name="KeepOnDeath" value="true"/>
 			<effect_group>
 				<passive_effect name="AttacksPerMinute" operation="base_set" value="150"/>
 				<passive_effect name="EntityDamage" operation="base_set" value="1"/>
@@ -204,6 +221,7 @@
 		</item>	
 		<item name="donation_Nailgun">
 			<property name="Extends" value="legendToolT2_Nailgun"/>
+			<property name="KeepOnDeath" value="true"/>
 			<effect_group>					
 				<display_value name="dBlockRepairAmount" value="10000"/>
 				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="0"/>
@@ -253,6 +271,7 @@
 		</item>
 		<item name="donation_Auger">
 			<property name="Extends" value="legendToolT2_Auger"/>
+			<property name="KeepOnDeath" value="true"/>
 			<effect_group name="meleeToolPickT3Auger">
 				<passive_effect name="EntityDamage" operation="base_set" value="10" tags="perkMiner69r"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="250" tags="perkMiner69r,miningTool"/>
@@ -285,6 +304,7 @@
 		</item>
 		<item name="donation_Chainsaw">
 			<property name="Extends" value="legendToolT2_Chainsaw"/>
+			<property name="KeepOnDeath" value="true"/>
 			<effect_group name="meleeToolAxeT3Chainsaw">
 				<passive_effect name="EntityDamage" operation="base_set" value="35" tags="perkMiner69r"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="600" tags="perkMiner69r"/>
@@ -321,7 +341,8 @@
 			</effect_group>
 		</item>
 		<item name="donation_DivineHammer">
-			<property name="Extends" value="mythTool_DivineHammer"/>			
+			<property name="Extends" value="mythTool_DivineHammer"/>	
+			<property name="KeepOnDeath" value="true"/>		
 			<effect_group>
 				<passive_effect name="AttacksPerMinute" operation="base_set" value="300"/>
 				<passive_effect name="EntityDamage" operation="base_set" value="1"/>
@@ -352,7 +373,8 @@
 			</effect_group>
 		</item>
 		<item name="donation_DivineDriver">
-			<property name="Extends" value="mythTool_DivineDriver"/>			
+			<property name="Extends" value="mythTool_DivineDriver"/>	
+			<property name="KeepOnDeath" value="true"/>		
 			<effect_group>
 				<passive_effect name="AttacksPerMinute" operation="base_set" value="300"/>
 				<passive_effect name="EntityDamage" operation="base_set" value="1"/>
@@ -388,7 +410,7 @@
 				</effect_group>
 		</item>
 
-		<!-- <item name="uniqueLightArmorSet">
+		<item name="uniqueLightArmorSet">
             <property name="CustomIcon" value="cntWoodWritableCrate"/>
 			<property name="CustomIconTint" value="150,150,150"/>
             <property name="DescriptionKey" value="uArmorDesc"/>
@@ -422,7 +444,22 @@
 				<property name="Create_item" value="uniqueArmorMediHelm,uniqueArmorMediArmor,uniqueArmorMediGloves,uniqueArmorMediLegs"/>
 				<property name="Create_item_count" value="5,5,5,5"/>
 			</property>
-		</item>		 -->
+		</item>	
+		<item name="uniqueHeavyArmorSet">
+			<property name="Extends" value="uniqueLightArmorSet"/>			
+			<property name="DescriptionKey" value="uArmorDesc3"/>
+			<property name="CustomIcon" value="cntSteelWritableCrate"/>
+			<property name="CustomIconTint" value="50,50,50"/>			
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="uniqueArmorHeavHelm,uniqueArmorHeavArmor,uniqueArmorHeavGloves,uniqueArmorHeavLegs"/>
+				<property name="Create_item_count" value="5,5,5,5"/>
+			</property>
+		</item>	
+		
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Legend Melee Weapon ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
@@ -1055,6 +1092,7 @@
 			<property name="Stacknumber" value="1"/>
 			<property name="Weight" value="0"/>
 			<property name="Group" value="Special Items"/>
+			
 			<property class="Action0">
 				<property name="Class" value="OpenBundle"/>
 				<property name="Delay" value="0.5"/>
@@ -1264,62 +1302,7 @@
 		</item>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 
-	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ extra ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-		<!-- <item name="uniqueHeavyArmorSet">
-			<property name="Extends" value="uniqueLightArmorSet"/>			
-			<property name="DescriptionKey" value="uArmorDesc3"/>
-			<property name="CustomIcon" value="cntSteelWritableCrate"/>
-			<property name="CustomIconTint" value="50,50,50"/>			
-			<property class="Action0">
-				<property name="Class" value="OpenBundle"/>
-				<property name="Delay" value="0.5"/>
-				<property name="Use_time" value="1"/>
-				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="uniqueArmorHeavHelm,uniqueArmorHeavArmor,uniqueArmorHeavGloves,uniqueArmorHeavLegs"/>
-				<property name="Create_item_count" value="5,5,5,5"/>
-			</property>
-		</item>	
-		<item name="uniqueLightArmorSet2">
-			<property name="Extends" value="uniqueLightArmorSet"/>			
-			<property name="DescriptionKey" value="uArmorDesc"/>
-			<property name="CustomIconTint" value="150,150,150"/>			
-			<property class="Action0">
-				<property name="Class" value="OpenBundle"/>
-				<property name="Delay" value="0.5"/>
-				<property name="Use_time" value="1"/>
-				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="uniqueArmorLighHelm2,uniqueArmorLighArmor2,uniqueArmorLighGloves2,uniqueArmorLighLegs2"/>
-				<property name="Create_item_count" value="5,5,5,5"/>
-			</property>
-		</item>	
-		<item name="uniqueMediumArmorSet2">
-			<property name="Extends" value="uniqueLightArmorSet"/>			
-			<property name="DescriptionKey" value="uArmorDesc2"/>
-			<property name="CustomIcon" value="cntIronWritableCrate"/>
-			<property name="CustomIconTint" value="100,100,100"/>			
-			<property class="Action0">
-				<property name="Class" value="OpenBundle"/>
-				<property name="Delay" value="0.5"/>
-				<property name="Use_time" value="1"/>
-				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="uniqueArmorMediHelm2,uniqueArmorMediArmor2,uniqueArmorMediGloves2,uniqueArmorMediLegs2"/>
-				<property name="Create_item_count" value="5,5,5,5"/>
-			</property>
-		</item>	
-		<item name="uniqueHeavyArmorSet2">
-			<property name="Extends" value="uniqueLightArmorSet"/>			
-			<property name="DescriptionKey" value="uArmorDesc3"/>
-			<property name="CustomIcon" value="cntSteelWritableCrate"/>
-			<property name="CustomIconTint" value="50,50,50"/>			
-			<property class="Action0">
-				<property name="Class" value="OpenBundle"/>
-				<property name="Delay" value="0.5"/>
-				<property name="Use_time" value="1"/>
-				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="uniqueArmorHeavHelm2,uniqueArmorHeavArmor2,uniqueArmorHeavGloves2,uniqueArmorHeavLegs2"/>
-				<property name="Create_item_count" value="5,5,5,5"/>
-			</property>
-		</item>	 -->
+	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ extra ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->		
 		<item name="donacion_extraItem5">
 			<property name="Extends" value="gunMGT1AK47Parts"/>
 			<property name="Material" value="Morganic"/>
