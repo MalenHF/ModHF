@@ -5,22 +5,7 @@
 	</append>
 	<append xpath="/items">	
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ +1 Skill point quest ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-		<item name="fourSkillPoint_P1">
-			<property name="Extends" value="schematicMaster"/>
-			<property name="CreativeMode" value="Dev"/>
-			<property name="CustomIcon" value="questMaster"/>
-			<property name="Stacknumber" value="10"/>
-			<property name="DescriptionKey" value="4SPDesc"/>
-			<property name="SellableToTrader" value="true"/>
-			<property name="EconomicValue" value="5000"/>
-			<property name="Group" value="Books"/>
-			<property class="Action0">
-				<requirement name="!HasBuff" buff="prestigeBuff,prestigeBuff2"/>
-			</property>
-			<effect_group tiered="false">				
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffGiveFourPoints"/>
-			</effect_group>
-		</item>
+		
 		<item name="fourSkillPoint_P1">
 			<property name="Extends" value="schematicMaster"/>
 			<property name="CreativeMode" value="Dev"/>
@@ -266,7 +251,7 @@
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Bundles de Nivel P0 ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
 		<item name="lvlUpChallengeBoxP0_50">
 			<property name="CustomIcon" value="block_missing"/>
-			<property name="ItemTypeIcon" value="perk"/>
+			<property name="ItemTypeIcon" value="star"/>
 			<property name="CustomIconTint" value="100,0,0"/>
 			<property name="TintColor" value="100,0,0"/>
 			<property name="DescriptionKey" value="lvlUpChallengeBoxDesc"/>
@@ -284,7 +269,7 @@
 				<property name="Delay" value="0.5"/>
 				<property name="Use_time" value="1"/>
 				<property name="Sound_start" value="read_skillbook_final"/>
-				<property name="Create_item" value="drinkJarGrandpasForgettingElixir,survivorRations,fourSkillPoint_P1,q_Gacha,juguito_de_chale,questTokenT2"/>
+				<property name="Create_item" value="drinkJarGrandpasForgettingElixir,survivorRations,fourSkillPoint_P0,q_Gacha,juguito_de_chale,questTokenT2"/>
 				<property name="Create_item_count" value="1,1,1,3,3,1"/>
 			</property>
 			
@@ -292,16 +277,16 @@
 		<item name="lvlUpChallengeBoxP0_100">
 			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
 			<property class="Action0">				
-				<requirement name="PlayerLevel" operation="GT" value="149"/>				
-				<property name="Create_item" value="Mineral_Bag,fourSkillPoint_P1,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
+				<requirement name="PlayerLevel" operation="GT" value="99"/>				
+				<property name="Create_item" value="Mineral_Bag,fourSkillPoint_P0,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
 				<property name="Create_item_count" value="1,1,4,4,1"/>
 			</property>			
 		</item>
 		<item name="lvlUpChallengeBoxP0_150">
 			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
 			<property class="Action0">				
-				<requirement name="PlayerLevel" operation="GT" value="99"/>				
-				<property name="Create_item" value="survivorRations,fourSkillPoint_P1,q_Gacha,juguito_de_chale,questTokenT2"/>
+				<requirement name="PlayerLevel" operation="GT" value="149"/>				
+				<property name="Create_item" value="survivorRations,fourSkillPoint_P0,q_Gacha,juguito_de_chale,questTokenT2"/>
 				<property name="Create_item_count" value="2,1,5,5,3"/>
 			</property>			
 		</item>
@@ -309,7 +294,7 @@
 			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
 			<property class="Action0">				
 				<requirement name="PlayerLevel" operation="GT" value="199"/>				
-				<property name="Create_item" value="Mineral_Bag,fourSkillPoint_P1,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
+				<property name="Create_item" value="Mineral_Bag,fourSkillPoint_P0,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
 				<property name="Create_item_count" value="3,2,6,6,2"/>
 			</property>			
 		</item>
@@ -317,7 +302,7 @@
 			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
 			<property class="Action0">				
 				<requirement name="PlayerLevel" operation="GT" value="249"/>				
-				<property name="Create_item" value="survivorRations,fourSkillPoint_P1,q_Gacha,juguito_de_chale,questTokenT3"/>
+				<property name="Create_item" value="survivorRations,fourSkillPoint_P0,q_Gacha,juguito_de_chale,questTokenT3"/>
 				<property name="Create_item_count" value="3,2,7,7,1"/>
 			</property>			
 		</item>
@@ -325,7 +310,7 @@
 			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
 			<property class="Action0">				
 				<requirement name="PlayerLevel" operation="GT" value="299"/>				
-				<property name="Create_item" value="resourcePlatinumNugget,special_bag,Practonium,fourSkillPoint_P1,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
+				<property name="Create_item" value="resourcePlatinumNugget,special_bag,Practonium,fourSkillPoint_P0,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
 				<property name="Create_item_count" value="1,1,10,2,10,10,3"/>
 			</property>			
 		</item>
@@ -333,7 +318,7 @@
 			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
 			<property class="Action0">				
 				<requirement name="PlayerLevel" operation="GT" value="349"/>				
-				<property name="Create_item" value="prestige1Badge,survivorRations,fourSkillPoint_P1,q_Gacha,juguito_de_chale,questTokenT3,q_Lucky"/>
+				<property name="Create_item" value="prestige1Badge,survivorRations,fourSkillPoint_P0,q_Gacha,juguito_de_chale,questTokenT3,q_Lucky"/>
 				<property name="Create_item_count" value="1,4,3,10,10,3,1"/>
 			</property>			
 		</item>
@@ -341,7 +326,7 @@
 			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
 			<property class="Action0">				
 				<requirement name="PlayerLevel" operation="GT" value="399"/>				
-				<property name="Create_item" value="ResourceForgedPractonium,ResourceForgedPlatinum,fourSkillPoint_P1,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
+				<property name="Create_item" value="ResourceForgedPractonium,ResourceForgedPlatinum,fourSkillPoint_P0,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
 				<property name="Create_item_count" value="1,1,3,15,15,4"/>
 			</property>			
 		</item>
@@ -349,7 +334,7 @@
 			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
 			<property class="Action0">				
 				<requirement name="PlayerLevel" operation="GT" value="449"/>				
-				<property name="Create_item" value="agua_divina,q_Hooligan_Force,allSkillMagazineHF,survivorRations,fourSkillPoint_P1,q_Gacha,juguito_de_chale,questTokenT3,q_Lucky"/>
+				<property name="Create_item" value="agua_divina,q_Hooligan_Force,allSkillMagazineHF,survivorRations,fourSkillPoint_P0,q_Gacha,juguito_de_chale,questTokenT3,q_Lucky"/>
 				<property name="Create_item_count" value="1,1,1,5,5,20,20,5,3"/>
 			</property>			
 		</item>
@@ -382,23 +367,23 @@
 			
 		</item>
 		<item name="lvlUpChallengeBoxP1_100">
-			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property name="Extends" value="lvlUpChallengeBoxP1_50"/>			
 			<property class="Action0">				
-				<requirement name="PlayerLevel" operation="GT" value="149"/>				
+				<requirement name="PlayerLevel" operation="GT" value="99"/>				
 				<property name="Create_item" value="Mineral_Bag,fourSkillPoint_P1,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
 				<property name="Create_item_count" value="2,1,8,8,2"/>
 			</property>			
 		</item>
 		<item name="lvlUpChallengeBoxP1_150">
-			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property name="Extends" value="lvlUpChallengeBoxP1_50"/>			
 			<property class="Action0">				
-				<requirement name="PlayerLevel" operation="GT" value="99"/>				
+				<requirement name="PlayerLevel" operation="GT" value="149"/>				
 				<property name="Create_item" value="survivorRations,fourSkillPoint_P1,q_Gacha,juguito_de_chale,questTokenT2"/>
 				<property name="Create_item_count" value="4,1,10,10,6"/>
 			</property>			
 		</item>
 		<item name="lvlUpChallengeBoxP1_200">
-			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property name="Extends" value="lvlUpChallengeBoxP1_50"/>			
 			<property class="Action0">				
 				<requirement name="PlayerLevel" operation="GT" value="199"/>				
 				<property name="Create_item" value="Mineral_Bag,fourSkillPoint_P1,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
@@ -406,7 +391,7 @@
 			</property>			
 		</item>
 		<item name="lvlUpChallengeBoxP1_250">
-			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property name="Extends" value="lvlUpChallengeBoxP1_50"/>			
 			<property class="Action0">				
 				<requirement name="PlayerLevel" operation="GT" value="249"/>				
 				<property name="Create_item" value="survivorRations,fourSkillPoint_P1,q_Gacha,juguito_de_chale,questTokenT3"/>
@@ -414,7 +399,7 @@
 			</property>			
 		</item>
 		<item name="lvlUpChallengeBoxP1_300">
-			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property name="Extends" value="lvlUpChallengeBoxP1_50"/>			
 			<property class="Action0">				
 				<requirement name="PlayerLevel" operation="GT" value="299"/>				
 				<property name="Create_item" value="resourcePlatinumNugget,special_bag,Practonium,fourSkillPoint_P1,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
@@ -422,7 +407,7 @@
 			</property>			
 		</item>
 		<item name="lvlUpChallengeBoxP1_350">
-			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property name="Extends" value="lvlUpChallengeBoxP1_50"/>			
 			<property class="Action0">				
 				<requirement name="PlayerLevel" operation="GT" value="349"/>				
 				<property name="Create_item" value="prestige2Badge,survivorRations,fourSkillPoint_P1,q_Gacha,juguito_de_chale,questTokenT3,q_Lucky"/>
@@ -430,7 +415,7 @@
 			</property>			
 		</item>
 		<item name="lvlUpChallengeBoxP1_400">
-			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property name="Extends" value="lvlUpChallengeBoxP1_50"/>			
 			<property class="Action0">				
 				<requirement name="PlayerLevel" operation="GT" value="399"/>				
 				<property name="Create_item" value="ResourceForgedPractonium,ResourceForgedPlatinum,fourSkillPoint_P1,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
@@ -438,11 +423,11 @@
 			</property>			
 		</item>
 		<item name="lvlUpChallengeBoxP1_450">
-			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
+			<property name="Extends" value="lvlUpChallengeBoxP1_50"/>			
 			<property class="Action0">				
 				<requirement name="PlayerLevel" operation="GT" value="449"/>				
-				<property name="Create_item" value="agua_divina,q_Hooligan_Force,allSkillMagazineHF,survivorRations,fourSkillPoint_P1,q_Gacha,juguito_de_chale,questTokenT3,q_Lucky"/>
-				<property name="Create_item_count" value="1,2,1,10,5,40,40,10,6"/>
+				<property name="Create_item" value="bossTokenAncient,agua_divina,q_Hooligan_Force,allSkillMagazineHF,survivorRations,fourSkillPoint_P1,q_Gacha,juguito_de_chale,questTokenT3,q_Lucky"/>
+				<property name="Create_item_count" value="1,1,2,1,10,5,40,40,10,6"/>
 			</property>			
 		</item>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Bundles de Nivel P1 ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
@@ -450,7 +435,7 @@
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Bundles de Nivel P2 ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<item name="lvlUpChallengeBoxP2_50">
 			<property name="CustomIcon" value="poiPartHelper"/>
-			<property name="ItemTypeIcon" value="perk"/>
+			<property name="ItemTypeIcon" value="twitch_leaderboard"/>
 			<property name="CustomIconTint" value="100,0,0"/>
 			<property name="TintColor" value="100,0,0"/>
 			<property name="DescriptionKey" value="lvlUpChallengeBoxP0Desc"/>
@@ -476,7 +461,7 @@
 		<item name="lvlUpChallengeBoxP2_100">
 			<property name="Extends" value="lvlUpChallengeBoxP2_50"/>			
 			<property class="Action0">				
-				<requirement name="PlayerLevel" operation="GT" value="149"/>				
+				<requirement name="PlayerLevel" operation="GT" value="99"/>				
 				<property name="Create_item" value="Mineral_Bag,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,q_EnemigsRandom"/>
 				<property name="Create_item_count" value="3,1,12,12,3"/>
 			</property>			
@@ -484,7 +469,7 @@
 		<item name="lvlUpChallengeBoxP2_150">
 			<property name="Extends" value="lvlUpChallengeBoxP2_50"/>			
 			<property class="Action0">				
-				<requirement name="PlayerLevel" operation="GT" value="99"/>				
+				<requirement name="PlayerLevel" operation="GT" value="149"/>				
 				<property name="Create_item" value="survivorRations,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,questTokenT2"/>
 				<property name="Create_item_count" value="6,1,10,10,9"/>
 			</property>			
@@ -533,14 +518,16 @@
 			<property name="Extends" value="lvlUpChallengeBoxP2_50"/>			
 			<property class="Action0">				
 				<requirement name="PlayerLevel" operation="GT" value="449"/>				
-				<property name="Create_item" value="agua_divina,q_Hooligan_Force,allSkillMagazineHF,survivorRations,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,questTokenT3,q_Lucky"/>
-				<property name="Create_item_count" value="1,3,1,15,5,60,60,15,9"/>
+				<property name="Create_item" value="bossTokenAncient,agua_divina,q_Hooligan_Force,allSkillMagazineHF,survivorRations,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,questTokenT3,q_Lucky"/>
+				<property name="Create_item_count" value="2,1,3,1,15,5,60,60,15,9"/>
 			</property>			
 		</item>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Bundles de Nivel P2 ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+		
 		<item name="challengeRewardPrestige0Apply">
-			<property name="Extends" value="lvlUpChallengeBoxP2_50"/>	
-			<property name="CustomIcon" value="cntQuestTestLoot"/>
+			<property name="Extends" value="lvlUpChallengeBoxP2_50"/>
+			<property name="ItemTypeIcon" value="star"/>	
+			<property name="CustomIcon" value="cntQuestTestLoot"/>			
 			<property name="DescriptionKey" value="challengeRewardPrestigeApplyDesc"/>
 			<property name="CustomIconTint" value="F0EA4C"/>
 			
@@ -558,6 +545,7 @@
 		</item>
 		<item name="challengeRewardPrestige1Apply">
 			<property name="Extends" value="challengeRewardPrestige0Apply"/>
+			<property name="ItemTypeIcon" value="perk"/>
 			<property name="CustomIconTint" value="234,66,36"/>
 			<property class="Action0">
 				<requirement name="HasBuff" buff="prestigeBuff2"/>							
@@ -573,7 +561,8 @@
 			</effect_group>	
 		</item>
 		<item name="challengeRewardPrestige2Apply">
-			<property name="Extends" value="challengeRewardPrestige0Apply"/>						
+			<property name="Extends" value="challengeRewardPrestige0Apply"/>	
+			<property name="ItemTypeIcon" value="twitch_leaderboard"/>					
 			<property name="CustomIconTint" value="0,176,246"/>
 			<property class="Action0">	
 				<requirement name="HasBuff" buff="prestigeBuff3"/>							

@@ -3,12 +3,15 @@
 		<buff name="buffPremmXP" name_key="buffPremmXP" description_key="buffPremmXPDesc" icon="ui_game_symbol_star" remove_on_death="false" icon_color="255,255,0">
 			<stack_type value="ignore"/>
 			<effect_group>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value=".5"/>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.25">
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".25"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.125">
 					<requirement name="HasBuff" buff="prestigeBuff"/>
 				</passive_effect>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375">
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1875">
 					<requirement name="HasBuff" buff="prestigeBuff2"/>
+				</passive_effect>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1875">
+					<requirement name="HasBuff" buff="prestigeBuff3"/>
 				</passive_effect>
 				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffPremmXP"/>
 				<triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="buffPremmXP"/>				

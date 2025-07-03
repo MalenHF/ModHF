@@ -1076,11 +1076,9 @@
             zombieNurse, 0.3
             zombieSteveCrawler, 0.15
             zombieFatHawaiian, 0.3
-
-            zombieScorcher, 0.1
+            zombieScorcher, 0.07
             zombieBossInfernal, .05
             zombieBossEarthBurntForest, 0.1
-
             <entitygroup name="allFireGroup" prob="1"/>
             <entitygroup name="allElectricalGroup" prob="1"/>
             <entitygroup name="allElectricalGroup" prob="1"/>
@@ -1113,7 +1111,7 @@
             HvInfernalNurse, 0.20
             HvInfernalMaleHazmat, 0.20
 
-            zombieScorcher, 0.2
+            zombieScorcher, 0.15
             zombieBossInfernal, .1
             zombieBossSiren, 0.1
 
@@ -1143,7 +1141,7 @@
             zombieSBBolt, 0.05
             zombieSBKnight, 0.05
 
-            zombieWendigo, .1
+            zombieWendigo, .07
         	zombieBossHoarfrost, .05
             zombieBossEarthSnow, 0.1
             
@@ -1186,7 +1184,7 @@
             HvSBToxic, 0.15
 			HvSBNurse, 0.15
 
-            zombieWendigo, .2
+            zombieWendigo, .15
             zombieBossSiren, 0.1
         	zombieBossHoarfrost, .1
 
@@ -1221,16 +1219,16 @@
             EliteDemo, .2
             ZombieEliteBomber, 0.3 
             
-            zombieGunner, .15
-            zombieSBRopa, .15
-            zombieSBKnight, .15
-            zombieSBBolt, .15
-            zombieScorcher, .15          
-			HvSBNurse, .15
+            zombieGunner, .1
+            zombieSBRopa, .1
+            zombieSBKnight, .1
+            zombieSBBolt, .1
+            zombieScorcher, .1          
+			HvSBNurse, .1
 
-            HvSBToxic, .2
-        	zombieBossToxic, .1
-            zombieBossSiren, 0.2
+            HvSBToxic, .15
+        	zombieBossToxic, .05
+            zombieBossSiren, 0.15
 
             <entitygroup name="allNightsGroup" prob="1"/>
             <entitygroup name="allElectricalGroup" prob="1"/>
@@ -1264,16 +1262,16 @@
             nightZombieHazmat, 0.35
             ZombieEliteBomber, 0.4 
             
-            zombieGunner, .25
-            zombieSBRopa, .25
-            zombieSBKnight, .25
-            zombieSBBolt, .25
-            zombieScorcher, .25          
-			HvSBNurse, .25
+            zombieGunner, .2
+            zombieSBRopa, .2
+            zombieSBKnight, .2
+            zombieSBBolt, .2
+            zombieScorcher, .2          
+			HvSBNurse, .2
 
-            HvSBToxic, .3
-        	zombieBossToxic, .2
-            zombieBossSiren, 0.3
+            HvSBToxic, .25
+        	zombieBossToxic, .1
+            zombieBossSiren, 0.25
 
             <entitygroup name="allElectricalGroup" prob="1"/>
             <entitygroup name="allElectricalGroup" prob="1"/>
@@ -2217,11 +2215,122 @@
         HvHoarfrostSolider, .05
         HvMortevodaSolider, .05
         HvShockerSolider, .05
-    </csv>   
-
-    <csv xpath="/entitygroups/entitygroup[@name='ZombieGhostTownGroupGS200']/text()" delim="\n" op="add">
-        zombieSpecialBanshee, .05
-    </csv>
+    </csv >   
+    <remove xpath="entitygroups/entitygroup[@name='ZombieGhostTownGroupGS200']"/>
+     <remove xpath="entitygroups/entitygroup[@name='ZombieGhostTownGroupGS400']"/>
+      <remove xpath="entitygroups/entitygroup[@name='ZombieGhostTownGroupGS800']"/>
+    <append  xpath="/entitygroups">
+        <entitygroup name="ZombieGhostTownGroupGS200">
+            zombieMarlene, .55
+            zombieMarleneFeral, .3
+            zombieMarleneRadiated, .15
+            zombieArlene, .55
+            zombieArleneFeral, .3
+            zombieArleneRadiated, .15
+            zombieJoe, .55
+            zombieJoeFeral, .3
+            zombieJoeRadiated, .15
+            zombieBoe, .55
+            zombieBoeFeral, .3
+            zombieBoeRadiated, .15
+            zombieMoe, .55
+            zombieMoeFeral, .3
+            zombieMoeRadiated, .15
+            zombieSteve, .55
+            zombieSteveFeral, .3
+            zombieSteveRadiated, .15
+            zombieTomClark, .55
+            zombieTomClarkFeral, .3
+            zombieTomClarkRadiated, .15
+            zombieFemaleFat, .55
+            zombieFemaleFatFeral, .3
+            zombieFemaleFatRadiated, .15
+            zombieSkateboarder, .55
+            zombieSkateboarderFeral, .3
+            zombieSkateboarderRadiated, .15            
+            zombieYo, .55
+            zombieYoFeral, .3
+            zombieYoRadiated, .15
+            zombieSpecialBanshee, .05
+        </entitygroup>
+        <entitygroup name="ZombieGhostTownGroupGS400">
+            zombieMarlene, .4
+            zombieMarleneFeral, .4
+            zombieMarleneRadiated, .3
+            zombieArlene, .4
+            zombieArleneFeral, .4
+            zombieArleneRadiated, .3
+            zombieJoe, .4
+            zombieJoeFeral, .4
+            zombieJoeRadiated, .3
+            zombieBoe, .4
+            zombieBoeFeral, .4
+            zombieBoeRadiated, .3
+            zombieMoe, .4
+            zombieMoeFeral, .4
+            zombieMoeRadiated, .3
+            zombieSteve, .4
+            zombieSteveFeral, .4
+            zombieSteveRadiated, .3
+            zombieTomClark, .4
+            zombieTomClarkFeral, .4
+            zombieTomClarkRadiated, .3
+            zombieFemaleFat, .4
+            zombieFemaleFatFeral, .4
+            zombieFemaleFatRadiated, .3
+            zombieSkateboarder, .4
+            zombieSkateboarderFeral, .4
+            zombieSkateboarderRadiated, .3            
+            zombieYo, .4
+            zombieYoFeral, .4
+            zombieYoRadiated, .3
+            zombieSpecialBanshee, .1
+        zombieSpecialVengeSpirit, .05
+        nightZombieTom, .01
+        </entitygroup>
+        <entitygroup name="ZombieGhostTownGroupGS800">
+            zombieMarlene, .25
+            zombieMarleneFeral, .5
+            zombieMarleneRadiated, .45
+            zombieArlene, .25
+            zombieArleneFeral, .5
+            zombieArleneRadiated, .45
+            zombieJoe, .25
+            zombieJoeFeral, .5
+            zombieJoeRadiated, .45
+            zombieBoe, .25
+            zombieBoeFeral, .5
+            zombieBoeRadiated, .45
+            zombieMoe, .25
+            zombieMoeFeral, .5
+            zombieMoeRadiated, .45
+            zombieSteve, .25
+            zombieSteveFeral, .5
+            zombieSteveRadiated, .45
+            zombieTomClark, .25
+            zombieTomClarkFeral, .5
+            zombieTomClarkRadiated, .45
+            zombieFemaleFat, .25
+            zombieFemaleFatFeral, .5
+            zombieFemaleFatRadiated, .45
+            zombieSkateboarder, .25
+            zombieSkateboarderFeral, .5
+            zombieSkateboarderRadiated, .45
+            <!-- zombieSteveCrawler, .25 -->
+            <!-- zombieSteveCrawlerFeral, .5 -->
+            zombieYo, .25
+            zombieYoFeral, .5
+            zombieYoRadiated, .45
+            zombieSpecialBanshee, .2
+            zombieSpecialVengeSpirit, .1
+            nightZombieTom, .05
+        </entitygroup>
+        
+    </append>
+    <!-- <csv xpath="/entitygroups/entitygroup[@name='ZombieGhostTownGroupGS200']/text()" delim="\n" op="add">
+        
+        
+    </csv> 
     <csv xpath="/entitygroups/entitygroup[@name='ZombieGhostTownGroupGS400']/text()" delim="\n" op="add">
         zombieSpecialBanshee, .1
         zombieSpecialVengeSpirit, .05
@@ -2231,7 +2340,7 @@
         zombieSpecialBanshee, .2
         zombieSpecialVengeSpirit, .1
         nightZombieTom, .05
-    </csv>
+    </csv>-->
 
     <csv xpath="/entitygroups/entitygroup[@name='zombieHospitalGroupGS400']/text()" delim="\n" op="add">        
         EliteNurse, .02

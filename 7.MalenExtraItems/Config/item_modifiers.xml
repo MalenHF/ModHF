@@ -35,7 +35,7 @@
       <!--Do double damage to evil / undead-->
       <effect_group tiered="false">
         <requirement name="EntityTagCompare" target="other" tags="zombie,boss,specialZ"/>
-        <passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
+        <passive_effect name="EntityDamage" operation="perc_add" value=".25"/>
       </effect_group>
     </item_modifier>
 
@@ -83,23 +83,23 @@
       
       <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
       <effect_group tiered="false">
-        <passive_effect name="PlayerExpGain" operation="perc_add" value=".5"/>
+        <passive_effect name="PlayerExpGain" operation="perc_add" value=".25"/>
         <passive_effect name="PhysicalDamageResist" operation="base_add" value="-15"/>
       </effect_group>
       <effect_group tiered="false">        
-        <passive_effect name="EntityDamage" operation="perc_add" value="-.5"/>
+        <passive_effect name="EntityDamage" operation="perc_add" value="-.3"/>
       </effect_group>
       <effect_group tiered="false">
         <requirement name="HasBuff" buff="prestigeBuff"/>
-        <passive_effect name="PlayerExpGain" operation="perc_add" value="-.25"/>
+        <passive_effect name="PlayerExpGain" operation="perc_add" value="-.125"/>
       </effect_group>
       <effect_group tiered="false">
         <requirement name="HasBuff" buff="prestigeBuff2"/>
-        <passive_effect name="PlayerExpGain" operation="perc_add" value="-.375"/>
+        <passive_effect name="PlayerExpGain" operation="perc_add" value="-.1875"/>
       </effect_group>
       <effect_group tiered="false">
         <requirement name="HasBuff" buff="prestigeBuff3"/>
-        <passive_effect name="PlayerExpGain" operation="perc_add" value="-.375"/>
+        <passive_effect name="PlayerExpGain" operation="perc_add" value="-.1875"/>
       </effect_group>
     </item_modifier>
     <item_modifier name="Cursed_mod" installable_tags="weapon,tool" modifier_tags="specialXpMod" blocked_tags="noMods" type="attachment">
@@ -114,21 +114,21 @@
       <property name="Candrop" value="false"/>
       <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
       <effect_group tiered="false">
-        <passive_effect name="PlayerExpGain" operation="perc_add" value="1"/>
+        <passive_effect name="PlayerExpGain" operation="perc_add" value=".5"/>
         <passive_effect name="PhysicalDamageResist" operation="base_add" value="-30"/>
-        <passive_effect name="EntityDamage" operation="perc_add" value="-1.1"/>
+        <passive_effect name="EntityDamage" operation="perc_add" value="-.6"/>
       </effect_group>
       <effect_group tiered="false">
         <requirement name="HasBuff" buff="prestigeBuff"/>
-        <passive_effect name="PlayerExpGain" operation="perc_add" value="-.5"/>
+        <passive_effect name="PlayerExpGain" operation="perc_add" value="-.25"/>
       </effect_group>
       <effect_group tiered="false">
         <requirement name="HasBuff" buff="prestigeBuff2"/>
-        <passive_effect name="PlayerExpGain" operation="perc_add" value="-.75"/>
+        <passive_effect name="PlayerExpGain" operation="perc_add" value="-.375"/>
       </effect_group>
       <effect_group tiered="false">
         <requirement name="HasBuff" buff="prestigeBuff3"/>
-        <passive_effect name="PlayerExpGain" operation="perc_add" value="-.75"/>
+        <passive_effect name="PlayerExpGain" operation="perc_add" value="-.375"/>
       </effect_group>
     </item_modifier>
     <item_modifier name="modArmorTreasureHunterLegend" installable_tags="armorHead" modifier_tags="attributeBoost" blocked_tags="noMods" type="attachment">
@@ -225,7 +225,7 @@
       <property name="Candrop" value="false"/>
       <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
       <effect_group tiered="false">
-        <passive_effect name="EntityDamage" operation="perc_add" value="1"/>
+        <passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
         <requirement name="EntityTagCompare" target="other" tags="zombie,boss,specialZ"/>
       </effect_group>
       <effect_group tiered="false">
