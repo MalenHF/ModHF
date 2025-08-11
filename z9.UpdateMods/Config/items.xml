@@ -16,6 +16,49 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffGiveFourPoints"/>
 			</effect_group>
 		</item>
+
+		<item name="q_Ventus">
+			<property name="name" value="The Ventus Quest" />
+			<property name="Group" value="Science"/>
+			<property name="Extends" value="challengeQuestMaster"/>
+			<property name="ItemTypeIcon" value="twitch_special"/>
+			<property name="CustomIconTint" value="7922AB"/>
+			<property name="TintColor" value="121,34,171"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="DescriptionKey" value="VentusQuest"/>
+			<property class="Action0">						
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="q_KillVentus"/>
+				<property name="Delay" value="0.5"/>
+				<property name="UseAnimation" value="false"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+			</effect_group>
+		</item>
+		<item name="q_VentusS">
+			<property name="name" value="The Ventus Quest" />
+			<property name="Group" value="Science"/>
+			<property name="Extends" value="challengeQuestMaster"/>
+			<property name="ItemTypeIcon" value="twitch_special"/>
+			<property name="CustomIconTint" value="F29A30"/>
+			<property name="TintColor" value="242,154,48"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="DescriptionKey" value="VentusQuestS"/>
+			<property class="Action0">						
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="q_KillVentusSpecial"/>
+				<property name="Delay" value="0.5"/>
+				<property name="UseAnimation" value="false"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+			</effect_group>
+		</item>		
 			
 				
 	</append>
