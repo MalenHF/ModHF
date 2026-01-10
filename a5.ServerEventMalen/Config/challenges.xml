@@ -1,25 +1,25 @@
 <config>
     
     <append xpath="/challenges">
-        <challenge_category name="Unlockers" title_key="Test" icon="ui_game_symbol_twitch_leaderboard" show_type="cvar" show_value="$varShowUnlockers"/>
-        <challenge_category name="Eventos" title_key="xuiEvents" icon="ui_game_symbol_twitch_special" show_type="cvar" show_value="$varShowEvents"/>
-            <challenge_group category="Unlockers" name="xmasUnlock" title_key="challengeGroupEventsUnlock" reward_text_key="challengeRewardEventUnlock" reward_event="challenge_group_reward_hfEvents"/>
+        <!-- <challenge_category name="Aniversario" title_key="xuiAniversario" icon="ui_game_symbol_twitch_special"/> -->
+        
+
+        <challenge_category name="Unlockers" title_key="Test" icon="ui_game_symbol_twitch_leaderboard" show_type="cvar" show_value="$varShowUnlockers"/>            
             <challenge_group category="Unlockers" name="pascuaUnlock" title_key="challengeGroupEventsUnlock" reward_text_key="challengeRewardEventUnlock" reward_event="challenge_group_reward_hfEvents"/>
-            <challenge_group category="Unlockers" name="halloweenUnlock" title_key="challengeGroupEventsUnlock" reward_text_key="challengeRewardEventUnlock" reward_event="challenge_group_reward_hfEvents"/>
-               
-        <challenge_group category="Eventos" name="summerUnlock" title_key="challengeGroupEventsUnlock" reward_text_key="challengeRewardEventUnlock" reward_event="challenge_group_reward_hfEvents"/>
-        <challenge_group category="Eventos" name="xmasEvent" title_key="challengeGrouXmas" reward_text_key="challengeRewardnewXmas" reward_event="challenge_group_reward_basics" link_challenges="true" hidden_by="xmasUnlock"/>
-        <challenge_group category="Eventos" name="newYearEvent" title_key="challengeGroupnewYear" reward_text_key="challengeRewardnewYearEvent" reward_event="challenge_group_reward_basics" link_challenges="true" hidden_by="xmasUnlock"/>
-        <challenge_group category="Eventos" name="pascuaEvent" title_key="challengeGroupPascua" reward_text_key="challengeRewardPascuaEvent" reward_event="challenge_group_reward_hfEvents_Pacua" link_challenges="true" hidden_by="pascuaUnlock"/>
-        <!-- <challenge_group category="Eventos" name="summerUnlock" title_key="challengeGroupsummerUnlock" reward_text_key="challengeRewardsummerEvent" reward_event="challenge_group_reward_basics" link_challenges="true"/> -->
-        <challenge_group category="Eventos" name="summerEvent" title_key="challengeGroupSummer" reward_text_key="challengeRewardsummerEvent" reward_event="challenge_group_reward_hfEvents_Summer" link_challenges="true" hidden_by="summerUnlock"/><!--summerUnlock-->
-        <!-- <challenge_group category="Eventos" name="halloweenUnlock" title_key="challengeGrouphalloweenUnlock" reward_text_key="challengeRewardhalloweenEvent" reward_event="challenge_group_reward_basics" link_challenges="true"/> -->
-        <challenge_group category="Eventos" name="halloweenEvent" title_key="challengeGroupHalloween" reward_text_key="challengeRewardhalloweenEvent" reward_event="challenge_group_reward_basics" link_challenges="true" hidden_by="halloweenUnlock"/>
-        <!-- <challenge_group category="Eventos" name="newYearUnlock" title_key="challengeGroupnewYearUnlock" reward_text_key="challengeRewardnewYearEvent" reward_event="challenge_group_reward_basics" link_challenges="true"/> -->
+            <challenge_group category="Unlockers" name="summerUnlock" title_key="challengeGroupEventsUnlock" reward_text_key="challengeRewardEventUnlock" reward_event="challenge_group_reward_hfEvents"/>
+            <challenge_group category="Unlockers" name="halloweenUnlock" title_key="challengeGroupEventsUnlock" reward_text_key="challengeRewardEventUnlock" reward_event="challenge_group_reward_hfEvents"/>    
+        <!-- show_type="cvar" show_value="$varShowEvents" -->
+        <challenge_category name="Eventos" title_key="xuiEvents" icon="ui_game_symbol_twitch_special" show_type="cvar" show_value="$varShowEvents"/>
+            <challenge_group category="Eventos" name="newYearUnlock" title_key="challengeGroupEventsUnlock" reward_text_key="challengeRewardEventUnlock" reward_event="challenge_group_reward_hfEvents" />            
+                <challenge_group category="Eventos" name="xmasEvent" title_key="challengeGrouXmas" reward_text_key="challengeRewardnewXmas" reward_event="challenge_Events_item_reward_xmas_Complete" />
+                <challenge_group category="Eventos" name="newYearEvent" title_key="challengeGroupnewYear" reward_text_key="challengeRewardnewYearEvent" reward_event="challenge_Events_item_reward_newYear_Complete"  hidden_by="newYearUnlock"/>
+                    <challenge_group category="Eventos" name="pascuaEvent" title_key="challengeGroupPascua" reward_text_key="challengeRewardPascuaEvent" reward_event="challenge_group_reward_hfEvents_Pacua"  hidden_by="pascuaUnlock"/>
+                    <challenge_group category="Eventos" name="summerEvent" title_key="challengeGroupSummer" reward_text_key="challengeRewardsummerEvent" reward_event="challenge_group_reward_hfEvents_Summer"  hidden_by="summerUnlock"/><!--summerUnlock-->
+                    <challenge_group category="Eventos" name="halloweenEvent" title_key="challengeGroupHalloween" reward_text_key="challengeRewardhalloweenEvent" reward_event="challenge_group_reward_hfEvents_Fall"  hidden_by="halloweenUnlock"/>
         
         
          <!-- prerequisite_hint="challengeRedeemChallengeHint1" hint="challengeRedeemChallengeHint2" -->
-        <challenge name="seasonChallengeUnlock0" title_key="challengeRedeemTitle" icon="ui_game_symbol_twitch_leaderboard" group="xmasUnlock"           
+        <challenge name="seasonChallengeUnlock0" title_key="challengeRedeemTitle" icon="ui_game_symbol_twitch_leaderboard" group="newYearUnlock"           
             short_description_key="challengeRedeemShort" description_key="challengeRedeemDesc" >
                 <objective type="Craft" item="q_eventUnlocker"/>
                 <objective type="UseItem" item="q_eventUnlocker" count="1"/>
@@ -42,8 +42,74 @@
 
         <!-- reward_event="xxx"> -->
         <!-- prerequisite_hint="challengeRedeemChallengeHint1" hint="challengeRedeemChallengeHint2" -->
-        
+    <!--XMAS-->
+        <challenge name="xmasChallenge1" title_key="challengeXmas1Title" icon="ui_game_symbol_cold" group="xmasEvent" short_description_key="challengeXmasShort1" description_key="challengeXmasDesc1" reward_event="challenge_Events_item_reward_xmas_1">
+           <objective type="EnterBiome" biome="snow"/>
+        </challenge>
+        <challenge name="xmasChallenge2" title_key="challengeXmas2Title" icon="ui_game_symbol_cold" group="xmasEvent" short_description_key="challengeXmasShort2" description_key="challengeXmasDesc2" reward_event="challenge_Events_reward_25000">
+            <objective type="BlockPlace" block="campfire" count="1" biome="snow"/>
+        </challenge>
+        <challenge name="xmasChallenge3" title_key="challengeXmas3Title" icon="ui_game_symbol_cold" group="xmasEvent" short_description_key="challengeXmasShort3" description_key="challengeXmasDesc3" reward_event="challenge_Events_reward_50000">
+            <objective type="Gather" item="resourceSnowBall" count="100"/>
+        </challenge>
+        <challenge name="xmasChallenge4" title_key="challengeXmas4Title" icon="ui_game_symbol_cold" group="xmasEvent" short_description_key="challengeXmasShort4" description_key="challengeXmasDesc4" reward_event="challenge_Events_item_reward_xmas_2">
+            <objective type="KillByTag" entity_tags="zombie" target_name_key="xuiZombies" count="40" biome="snow"/>
+        </challenge>
+        <challenge name="xmasChallenge5" title_key="challengeXmas5Title" icon="ui_game_symbol_cold" group="xmasEvent" short_description_key="challengeXmasShort5" description_key="challengeXmasDesc5" reward_event="challenge_Events_item_reward_xmas_3">
+             <objective type="KillByTag" entity_tags="specialZ" target_name_key="xuiSpecial" count="20" biome="snow"/>
+        </challenge>       
+        <challenge name="xmasChallenge7" title_key="challengeXmas7Title" icon="ui_game_symbol_cold" group="xmasEvent" short_description_key="challengeXmasShort7" description_key="challengeXmasDesc7" reward_event="challenge_Events_item_reward_xmas_4">
+            <objective type="KillByTag" entity_tags="elemental" target_name_key="xuiElementals" count="10" biome="snow"/>
+        </challenge>    
+         <challenge name="xmasChallenge6" title_key="challengeXmas6Title" icon="ui_game_symbol_twitch_special" group="xmasEvent" short_description_key="challengeXmasShort6" description_key="challengeXmasDesc6" reward_event="challenge_Events_item_reward_xmas_5">
+             <objective type="Gather" item="meleeWpnBladeT1CandyKnife" count="1"/> 
+             <objective type="Gather" item="meleeWpnClubT1CandyClub" count="1"/>
+             <objective type="Gather" item="armorSantaHatHelmet" count="1"/>              
+        </challenge>    
+        <challenge name="xmasChallenge8" title_key="challengeXmas8Title" icon="ui_game_symbol_twitch_celebrate" group="xmasEvent" short_description_key="challengeXmasShort8" description_key="challengeXmasDesc8" reward_event="challenge_Events_reward_100000">
+             <objective type="UseItem" item="foodXmasDinner" count="1"/>
+        </challenge>
+        <challenge name="xmasChallenge9" title_key="challengeXmas9Title" icon="ui_game_symbol_tree" group="xmasEvent" short_description_key="challengeXmasShort9" description_key="challengeXmasDesc9" reward_event="challenge_Events_item_reward_xmas_6">
+            <objective type="BlockPlace" block="xmasTree" count="1"/>
+        </challenge>
+        <challenge name="xmasChallengeComplete" title_key="challengeXmasCompleteTitle" icon="ui_game_symbol_twitch_leaderboard" group="xmasEvent" short_description_key="challengeXmasShortComplete" description_key="challengeXmasDescComplete" redeem_always="false">
+                <objective type="ChallengeComplete" challenge="xmasEvent" is_redeemed="true" is_group="true"/>
+        </challenge>
+    <!---->
+    <!--NewYear-->
+        <challenge name="newYearChallenge1" title_key="challengeNewYear1Title" icon="ui_game_symbol_twitch_celebrate" group="newYearEvent" short_description_key="challengeNewYearShort1" description_key="challengeNewYearDesc1" >
+           <objective type="BlockPlace" block="eventmachine" count="1"/>
+        </challenge>
+        <challenge name="newYearChallenge2" title_key="challengeNewYear2Title" icon="ui_game_symbol_zombie" group="newYearEvent" short_description_key="challengeNewYearShort2" description_key="challengeNewYearDesc2" reward_event="challenge_Events_reward_25000">
+            <objective type="KillByTag" entity_tags="zombie" target_name_key="xuiZombies" count="400"/>
+        </challenge>
+        <challenge name="newYearChallenge3" title_key="challengeNewYear3Title" icon="ui_game_symbol_twitch_celebrate" group="newYearEvent" short_description_key="challengeNewYearShort3" description_key="challengeNewYearDesc3" reward_event="challenge_Events_item_reward_1">
+            <objective type="Gather" item="eventSeasonItem1" count="100"/>
+        </challenge>
+        <challenge name="newYearChallenge4" title_key="challengeNewYear4Title" icon="ui_game_symbol_twitch_boss_overhead" group="newYearEvent" short_description_key="challengeNewYearShort4" description_key="challengeNewYearDesc4" reward_event="challenge_Events_reward_50000">
+            <objective type="KillByTag" entity_tags="specialZ" target_name_key="xuiSpecial" count="200"/>
+        </challenge>
+        <challenge name="newYearChallenge5" title_key="challengeNewYear5Title" icon="ui_game_symbol_twitch_celebrate" group="newYearEvent" short_description_key="challengeNewYearShort5" description_key="challengeNewYearDesc5" reward_event="challenge_Events_item_reward_2">
+            <objective type="Gather" item="eventSeasonItem1" count="500"/>
+        </challenge>
+        <challenge name="newYearChallenge6" title_key="challengeNewYear6Title" icon="ui_game_symbol_twitch_minion_overhead" group="newYearEvent" short_description_key="challengeNewYearShort6" description_key="challengeNewYearDesc6" reward_event="challenge_Events_reward_75000">
+            <objective type="KillByTag" entity_tags="elemental" target_name_key="xuiElementals" count="100"/>
+        </challenge>
+        <challenge name="newYearChallenge7" title_key="challengeNewYear7Title" icon="ui_game_symbol_twitch_celebrate" group="newYearEvent" short_description_key="challengeNewYearShort7" description_key="challengeNewYearDesc7" reward_event="challenge_Events_item_reward_3">
+            <objective type="Gather" item="eventSeasonItem1" count="1000"/>
+        </challenge>        
+        <challenge name="newYearChallenge8" title_key="challengeNewYear8Title" icon="ui_game_symbol_other" group="newYearEvent" short_description_key="challengeNewYearShort8" description_key="challengeNewYearDesc8" reward_event="challenge_Events_item_reward_4">
+            <objective type="Craft" item="q_NewYear" count="1"/>            
+        </challenge>
+        <challenge name="newYearChallenge9" title_key="challengeNewYear9Title" icon="ui_game_symbol_explosion" group="newYearEvent" short_description_key="challengeNewYearShort9" description_key="challengeNewYearDesc9" reward_event="challenge_Events_reward_100000">
+            <objective type="Kill" entity_names="MinieBomber" count="5"/>
+        </challenge>
+        <challenge name="newYearChallengeComplete" title_key="challengeNewYearCompleteTitle" icon="ui_game_symbol_twitch_leaderboard" group="newYearEvent" short_description_key="challengeNewYearShortComplete" description_key="challengeNewYearDescComplete" redeem_always="false">
+                <objective type="ChallengeComplete" challenge="newYearEvent" is_redeemed="true" is_group="true"/>
+        </challenge>
+    <!---->
 
+    <!--SPRING-->
         <challenge name="pascuaChallenge1" title_key="challengePascua1Title" icon="ui_game_symbol_tracking_rabbit" group="pascuaEvent" short_description_key="challengePascuaShort1" description_key="challengePascuaDesc1" >
            <objective type="BlockPlace" block="eventmachine" count="1"/>
         </challenge>
@@ -75,7 +141,8 @@
            short_description_key="challengePascuaShortComplete" description_key="challengePascuaDescComplete" redeem_always="false">
                 <objective type="ChallengeComplete" challenge="pascuaEvent" is_redeemed="true" is_group="true"/>
         </challenge>
-
+    <!---->
+    <!--SUMMER-->
         <challenge name="summerChallenge1" title_key="challengeSummer1Title" icon="ui_game_symbol_hot" group="summerEvent" short_description_key="challengeSummerShort1" description_key="challengeSummerDesc1" >
            <objective type="BlockPlace" block="eventmachine" count="1"/>
         </challenge>
@@ -108,5 +175,41 @@
            short_description_key="challengeSummerShortComplete" description_key="challengeSummerDescComplete" redeem_always="false">
                 <objective type="ChallengeComplete" challenge="summerEvent" is_redeemed="true" is_group="true"/>
         </challenge>
+    <!---->
+    <!--FALL-->
+        <challenge name="halloChallenge1" title_key="challengeFall1Title" icon="ui_game_symbol_knife" group="halloweenEvent" short_description_key="challengeFallShort1" description_key="challengeFallDesc1" >
+           <objective type="BlockPlace" block="eventmachine" count="1"/>
+        </challenge>
+        <challenge name="halloChallenge2" title_key="challengeFall2Title" icon="ui_game_symbol_stealth2" group="halloweenEvent" short_description_key="challengeFallShort2" description_key="challengeFallDesc2" reward_event="challenge_Events_reward_25000">        
+            <objective type="KillByTag" entity_tags="zombie" target_name_key="xuiZombies" count="400"/>
+        </challenge>
+        <challenge name="halloChallenge3" title_key="challengeFall3Title" icon="ui_game_symbol_zombie" group="halloweenEvent" short_description_key="challengeFallShort3" description_key="challengeFallDesc3" reward_event="challenge_Events_item_reward_1">
+             <objective type="Gather" item="eventSeasonItem1" count="100"/>
+        </challenge>
+        <challenge name="halloChallenge4" title_key="challengeFall4Title" icon="ui_game_symbol_sneak_attack" group="halloweenEvent" short_description_key="challengeFallShort4" description_key="challengeFallDesc4" reward_event="challenge_Events_reward_50000">
+             <objective type="KillByTag" entity_tags="specialZ" target_name_key="xuiSpecial" count="200"/>
+        </challenge>
+        <challenge name="halloChallenge5" title_key="challengeFall5Title" icon="ui_game_symbol_twitch_boss_overhead" group="halloweenEvent" short_description_key="challengeFallShort5" description_key="challengeFallDesc5" reward_event="challenge_Events_item_reward_2">
+             <objective type="Gather" item="eventSeasonItem1" count="500"/>   
+        </challenge>
+        <challenge name="halloChallenge6" title_key="challengeFall6Title" icon="ui_game_symbol_marksmanship" group="halloweenEvent" short_description_key="challengeFallShort6" description_key="challengeFallDesc6" reward_event="challenge_Events_reward_75000">
+            <objective type="KillByTag" entity_tags="elemental" target_name_key="xuiElementals" count="100"/>
+        </challenge>
+        <challenge name="halloChallenge7" title_key="challengeFall7Title" icon="ui_game_symbol_twitch_minion_overhead" group="halloweenEvent" short_description_key="challengeFallShort7" description_key="challengeFallDesc7" reward_event="challenge_Events_item_reward_3">
+            <objective type="Gather" item="eventSeasonItem1" count="1000"/>
+        </challenge>
+        <challenge name="halloChallenge8" title_key="challengeFall8Title" icon="ui_game_symbol_deep_cuts" group="halloweenEvent" short_description_key="challengeFallShort8" description_key="challengeFallDesc8" reward_event="challenge_Events_reward_100000">
+            <objective type="BlockPlace" block="decomachine" count="1"/>
+            <objective type="Gather" item="oldCash" count="7500"/>            
+        </challenge>        
+        <challenge name="halloChallenge9" title_key="challengeFall9Title" icon="ui_game_symbol_bat" group="halloweenEvent" short_description_key="challengeFallShort9" description_key="challengeFallDesc9" reward_event="challenge_Events_item_reward_4">
+            <objective type="BlockPlace" block="decoVariant_scary" count="5"/>            
+        </challenge>
+        <challenge name="halloChallengeComplete" title_key="challengeFallCompleteTitle" icon="ui_game_symbol_twitch_leaderboard" group="halloweenEvent"
+           short_description_key="challengeFallShortComplete" description_key="challengeFallDescComplete" redeem_always="false">
+                <objective type="ChallengeComplete" challenge="halloweenEvent" is_redeemed="true" is_group="true"/>
+        </challenge>
+    <!---->
+    
     </append>
 </config>

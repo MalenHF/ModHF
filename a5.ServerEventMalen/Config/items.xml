@@ -60,17 +60,18 @@
 			<!--<property name="CustomIcon" value="resourceConcreteMix"/> verano-->
 			<!--<property name="CustomIcon" value="decoPumpkinJackOLantern"/> Otoño
 			<property name="CustomIcon" value="thrownDynamite"/> Año nuevo-->			
-			<property name="CustomIcon" value="resourceConcreteMix"/>
+			<property name="CustomIcon" value="thrownDynamite"/>
 			<!--<property name="CustomIconTint" value="FFA200"/> verano/Otoño-->
 			<!--<property name="CustomIconTint" value="2E1503"/> san valentin -->
 			<!--<property name="CustomIconTint" value="FF00E0"/> Pacua -->
 			<!-- <property name="CustomIconTint" value="0CC7A8"/> año nuevo  -->
-			<property name="CustomIconTint" value="FFA200"/>			
+			<property name="CustomIconTint" value="0CC7A8"/>			
 			<property name="Material" value="Morganic"/>
-			<property name="Stacknumber" value="500"/>
+			<property name="Stacknumber" value="1000"/>
 			<property name="Group" value="Mods"/>
 			<property name="SellableToTrader" value="false"/>
-			<property name="EconomicValue" value="500"/>			
+			<property name="EconomicValue" value="500"/>	
+			<property name="Candrop" value="false"/>		
 		</item>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Tickets de evento ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<item name="eventTickets"><!--eventTickets-->
@@ -86,7 +87,8 @@
 			<property name="Stacknumber" value="500"/>
 			<property name="Group" value="Mods"/>
 			<property name="SellableToTrader" value="false"/>
-			<property name="EconomicValue" value="100"/>			
+			<property name="EconomicValue" value="100"/>
+			<property name="Candrop" value="false"/>			
 		</item>	
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Dulces de evento ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<item name="eventCandy1"><!--eventCandy_01-->
@@ -100,6 +102,7 @@
 			<property name="Group" value="Mods"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="EconomicValue" value="100"/>
+			<property name="Candrop" value="false"/>
 		</item>
 		<item name="eventCandy2"><!--eventCandy_02-->
 			<property name="Extends" value="partsMaster"/>
@@ -111,7 +114,8 @@
 			<property name="Stacknumber" value="500"/>
 			<property name="Group" value="Mods"/>	
 			<property name="SellableToTrader" value="false"/>
-			<property name="EconomicValue" value="100"/>		
+			<property name="EconomicValue" value="100"/>
+			<property name="Candrop" value="false"/>		
 		</item>
 		
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ HC ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
@@ -125,8 +129,8 @@
 			<property name="Material" value="MresourceScrapBrassSmall"/>
 			<property name="Stacknumber" value="30000"/>			
 			<property name="EconomicValue" value="1"/>
-			<property name="Group" value="aSeries"/>
-			<property name="KeepOnDeath" value="true"/>			
+			<property name="Group" value="aSeries"/>			
+			<property name="Candrop" value="false"/>			
 		</item>
 		<item name="hooliganCheck">
 			<property name="CustomIcon" value="elevatorTest"/>
@@ -139,7 +143,7 @@
 			<property name="Stacknumber" value="100"/>			>	
 			<property name="SellableToTrader" value="false"/>
 			<property name="KeepOnDeath" value="true"/>
-					
+			<property name="Candrop" value="false"/>		
 			<property name="Group" value="Science"/>
 			<property class="Action0">
 				<property name="Class" value="OpenBundle"/>
@@ -499,7 +503,7 @@
 		</item>
 		<item name="navidadKit">
 			<property name="CustomIcon" value="cntLootChestHeroInsecureT1"/>
-			<property name="DescriptionKey" value="PVPBDesc"/>
+			<property name="DescriptionKey" value="naviKitDesc"/>
 			<property name="ItemTypeIcon" value="twitch_special"/>
 			<property name="HoldType" value="45"/>
 			<property name="TintColor" value="00AAE4"/>
@@ -516,36 +520,9 @@
 				<property name="Delay" value="0.5"/>
 				<property name="Use_time" value="1"/>
 				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="gunLSHF,ammo762mmBulletBall,casinoCoinD,eventSeasonItem1"/>
-				<property name="Create_item_count" value="1,5,1,2,400"/>
+				<property name="Create_item" value="armorSantaHatHelmet,gunLSHF,special_bag,ammo762mmBulletBall,casinoCoinD,eventSeasonItem1,oldCash"/>				
+				<property name="Create_item_count" value="1,1,3,5,1,2,4000"/>
 			</property>
-		</item>
-		<item name="aniKit">
-			<property name="CustomIcon" value="cntLootChestHeroInsecureT1"/>
-			<property name="DescriptionKey" value="PVPBDesc"/>
-			<property name="ItemTypeIcon" value="twitch_special"/>
-			<property name="HoldType" value="45"/>
-			<property name="TintColor" value="00AAE4"/>
-			<property name="CustomIconTint" value="00AAE4"/>
-			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
-			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-			<property name="Material" value="Morganic"/>
-			<property name="Stacknumber" value="1"/>
-			<property name="Weight" value="0"/>
-			<property name="Candrop" value="false"/>			
-			<property name="Group" value="Special Items"/>
-			<property class="Action0">
-				<requirement name="CVarCompare" cvar="$varHFAni" operation="LT" value="1"/>
-				<property name="Class" value="OpenBundle"/>
-				<property name="Delay" value="0.5"/>
-				<property name="Use_time" value="1"/>
-				<property name="Sound_start" value="wrench_harvest"/>
-				<property name="Create_item" value="gunLSHF,ammo762mmBulletBall,q_GachaPrem,q_Gallinazilla,questTokenT3,questTokenT2"/>				
-				<property name="Create_item_count" value="1,5,4,4,4,4"/>
-			</property>
-			<effect_group tiered="false">				
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varHFAni" operation="set" value="1"/>
-			</effect_group>
 		</item>
 
 		<item name="constRW1">
@@ -849,16 +826,7 @@
 			</effect_group>
 		</item>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Quest de Pascua ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
-		<item name="q_AniEvent">
-            <property name="Extends" value="questMaster"/>
-            <property name="CustomIcon" value="cntBookPile14"/>
-			 <property name="DescriptionKey" value="qPascuaDesc"/>
-            <property name="CustomIconTint" value="12E2F7"/>
-            <property name="ItemTypeIcon" value="twitch_special"/>
-            <property class="Action0">				
-                <property name="QuestGiven" value="q_eventAni4"/>
-            </property>
-        </item>
+		
 		
 		<!-- <item name="q_eventPascua">
 			<property name="Extends" value="questMaster"/>
@@ -894,7 +862,9 @@
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
-				<property name="Use_time" value="..."/>				
+				<!--<property name="Use_time" value="..."/>-->
+				<property name="PromptTitle" value="q_ShowEvents" />
+				<property name="PromptDescription" value="q_eventUnlock" />				
 			</property>	
 			<effect_group tiered="false">				
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varShowEvents" operation="set" value="1"/>
@@ -902,8 +872,12 @@
 		</item>
 		<item name="q_eventUnlocker">
 			<property name="Extends" value="q_ShowEvents"/>
-			<property name="CustomIcon" value="biomeBadge2"/>
+			<property name="CustomIcon" value="biomeBadge3"/>
 			<property name="DescriptionKey" value="eventUnlockerDesc"/>
+			<property class="Action0">														
+				<property name="PromptTitle" value="unlockChallengeTitle" />
+				<property name="PromptDescription" value="unlockChallengePromp" />
+			</property>
 		</item>
 		
 		<item name="q_eventPascua">
@@ -925,7 +899,7 @@
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
-				<property name="Use_time" value="..."/>
+				<!--<property name="Use_time" value="..."/>-->
 				<!-- <property name="Sound_start" value="player_drinking"/> -->
 			</property>			
 		</item>
@@ -933,14 +907,15 @@
 		<item name="q_SummerFesta">
 			<property name="Extends" value="q_Ticket"/>
 			<property name="CreativeMode" value="Player"/>					
-			<property name="CustomIcon" value="resourcePaper"/>
-			<property name="CustomIconTint" value="FF00E0"/>
-			<property name="TintColor" value="218,232,9"/>
-			<property name="ItemTypeIcon" value="tracking_rabbit"/>			
+			<property name="CustomIcon" value="resourcePaper"/>			
+			<property name="CustomIconTint" value="FFA200"/>	
+			<property name="TintColor" value="FFA200"/>
+			<property name="ItemTypeIcon" value="twitch_celebrate"/>	
+			<property name="Group" value="sEvent"/>					
 			<property class="Action0">											
 				<requirement name="!HasBuff" buff="buffQuestCD"/>											
-				<property name="PromptTitle" value="q_Conejosaurio" />
-				<property name="PromptDescription" value="tixConejoPromp" />
+				<property name="PromptTitle" value="q_eventSummer" />
+				<property name="PromptDescription" value="tixSummerPromp" />
 			</property>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="hf_buffCelebrate_Summer"/>				
@@ -962,6 +937,23 @@
 			</property>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffSaurus"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestGatchaCD"/>																	
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestGatchaCD" target="selfOtherPlayers" target_tags="ally,party"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+			</effect_group>
+		</item>
+		<item name="q_NewYear">
+			<property name="Extends" value="q_Ticket"/>
+			<property name="CreativeMode" value="Player"/>					
+			<property name="CustomIcon" value="resourcePaper"/>			
+			<property name="ItemTypeIcon" value="explosion"/>			
+			<property class="Action0">											
+				<requirement name="!HasBuff" buff="buffQuestCD"/>											
+				<property name="PromptTitle" value="q_NewYear" />
+				<property name="PromptDescription" value="q_NewYearDesc" />
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNewYear"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestGatchaCD"/>																	
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestGatchaCD" target="selfOtherPlayers" target_tags="ally,party"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
@@ -1123,6 +1115,83 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="resetChallengeHF"/>
 			</effect_group>			
         </item>
+
+		<item name="foodXmasDinner">
+			<property name="Tags" value="food"/>
+			<property name="HoldType" value="31"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="CustomIcon" value="foodMeatStew"/>
+			<property name="CustomIconTint" value="D87E2E"/>
+			<property name="TintColor" value="D87E2E"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="EconomicValue" value="900"/>
+			<property name="Stacknumber" value="50"/>
+			<property name="UnlockedBy" value="craftingFood"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<!--<property name="Use_time" value="..."/>-->
+				<property name="Sound_start" value="player_drinking"/>
+
+				
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffXmasDinner"/>
+			</effect_group>
+		</item>
+
+		<item name="bundleXmasTools">          
+            <property name="CustomIcon" value="questMaster"/>
+			<property name="DescriptionKey" value="qPascuaDesc"/>
+            <property name="CustomIconTint" value="FF00E0"/>
+            <property name="ItemTypeIcon" value="twitch_special"/>
+			
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">	
+				<requirement name="CVarCompare" cvar="$varEventPascua" operation="LT" value="1"/>
+				<property name="PromptTitle" value="xmasquest" />
+				<property name="PromptDescription" value="xmasquestoffer" />
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="meleeWpnClubT1CandyClub,meleeWpnBladeT1CandyKnife,armorSantaHatHelmet"/>
+				<property name="Create_item_count" value="500"/>
+			</property>
+			<effect_group tiered="false">				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveCVar" cvar="$varPascua"/>				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varEventPascua" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="resetChallengeHF"/>
+			</effect_group>			
+        </item>
+
+		<item name="vehiclesSledBikePlaceable">					
+			<property name="Extends" value="vehicleMinibikePlaceable"/>
+			<property name="Tags" value="vehicle,vengine,vfuel,vlight,vseat,canHaveCosmetic"/>
+			<property name="DescriptionKey" value="vehiclesSledBikePlaceableDesc"/>
+			<property name="CustomIconTint" value="FF00E0"/>
+			<property name="ItemTypeIcon" value="twitch_special"/>
+			<property name="CustomIcon" value="vehicleMinibikePlaceable"/>			
+			<property class="Action1">
+				<property name="Class" value="SpawnVehicle"/>
+				<property name="Vehicle" value="vehiclesSledBike"/>
+			</property>
+			<effect_group name="vehicleMinibikePlaceable" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="3"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="1" tags="EconomicValue"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="10000"/>
+			</effect_group>
+		</item>
 
 		
 

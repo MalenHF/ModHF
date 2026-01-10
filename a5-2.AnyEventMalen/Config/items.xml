@@ -1,0 +1,43 @@
+<configs>
+
+	<append xpath="/items">
+	
+		<item name="aniKit">
+			<property name="CustomIcon" value="cntLootChestHeroInsecureT1"/>
+			<property name="DescriptionKey" value="PVPBDesc"/>
+			<property name="ItemTypeIcon" value="twitch_special"/>
+			<property name="HoldType" value="45"/>
+			<property name="TintColor" value="00AAE4"/>
+			<property name="CustomIconTint" value="00AAE4"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Candrop" value="false"/>			
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">
+				<requirement name="CVarCompare" cvar="$varHFAni" operation="LT" value="1"/>
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="gunLSHF,lsUnlockBundle,special_bag,ammo762mmBulletBall,q_EnemigsRandom,q_GachaPrem,q_Gacha,q_Gallinazilla,questTokenT3,questTokenT2"/>				
+				<property name="Create_item_count" value="1,1,1,5,5,5,5,5,5,5"/>
+			</property>
+			<effect_group tiered="false">				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varHFAni" operation="set" value="1"/>
+			</effect_group>
+		</item>	
+		<item name="q_AniEvent">
+            <property name="Extends" value="questMaster"/>
+            <property name="CustomIcon" value="cntBookPile14"/>
+			 <property name="DescriptionKey" value="qPascuaDesc"/>
+            <property name="CustomIconTint" value="12E2F7"/>
+            <property name="ItemTypeIcon" value="twitch_special"/>
+            <property class="Action0">				
+                <property name="QuestGiven" value="q_eventAni"/>
+            </property>
+        </item>
+	</append>
+</configs>

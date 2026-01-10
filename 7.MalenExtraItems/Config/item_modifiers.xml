@@ -27,7 +27,7 @@
     <item_modifier name="modGunMeleeBlessedMetal" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
       <property name="Extends" value="modGeneralMaster"/>
       <property name="CustomIcon" value="resourceRawDiamond"/>
-
+    <property name="Candrop" value="false"/>
       <property name="CustomIconTint" value="81, 209, 246"/>
 			<property name="TintColor" value="81, 209, 246"/>
       <property name="UnlockedBy" value="PBMT"/>
@@ -48,6 +48,7 @@
       <property name="DescriptionKey" value="modArmorCursedDesc"/>      
       <property name="Group" value="Mods"/>      
 			<property name="ShowQuality" value="false"/>
+      <property name="Candrop" value="false"/>
       <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
       <effect_group tiered="false">
         <display_value name="dPlayerExpGain" value=".05"/>
@@ -72,7 +73,7 @@
     <item_modifier name="modCursedStone" installable_tags="weapon,tool" modifier_tags="specialXpMod" blocked_tags="noMods" type="attachment">
       <property name="Extends" value="modGeneralMaster"/>
       <property name="ItemTypeIcon" value="gear"/>
-
+      <property name="Candrop" value="false"/>
       <!--<property name="DisplayType" value="modArmor"/>-->
       <property name="CustomIcon" value="resourceRawDiamond"/>
       <property name="CustomIconTint" value="302929"/>
@@ -110,7 +111,7 @@
       <property name="UnlockedBy" value="special"/>
       <property name="DescriptionKey" value="modDPDesc"/>
       <property name="Stacknumber" value="1"/>
-      <property name="Group" value="MSeries"/>
+      <property name="Group" value="MSeries,sEvent"/>
       <property name="Candrop" value="false"/>
       <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
       <effect_group tiered="false">
@@ -139,10 +140,10 @@
        <property name="SellableToTrader" value="false"/>	
 			<property name="DisplayType" value="LLD"/>
 			<property name="CustomIconTint" value="255,255,0"/>
-			<property name="Group" value="Tools/Traps"/>
+			<property name="Group" value="Tools/Traps,sEvent"/>
 			<property name="UnlockedBy" value="special"/>
 			<property name="DescriptionKey" value="UGLDesc"/>
-
+      <property name="Candrop" value="false"/>
       <effect_group tiered="false">
         <passive_effect name="ModSlots" operation="base_set" value="0"/>
         <display_value name="LDatt" value="1"/>
@@ -187,6 +188,7 @@
       <property name="UnlockedBy" value="HML"/>
       <property name="Stacknumber" value="1"/>
       <property name="Group" value="Mods"/>
+      <property name="Candrop" value="false"/>
       <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
       <property name="DescriptionKey" value="modArmouni"/>
       <effect_group tiered="false">
@@ -201,6 +203,7 @@
       <property name="UnlockedBy" value="HML"/>
       <property name="Stacknumber" value="1"/>
       <property name="Group" value="Mods"/>
+      <property name="Candrop" value="false"/>
       <property name="DescriptionKey" value="modUNArmorCustDesc"/>
       <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
       <effect_group tiered="false">
@@ -221,7 +224,7 @@
       <property name="UnlockedBy" value="special"/>
       <property name="DescriptionKey" value="moddevinp"/>
       <property name="Stacknumber" value="1"/>
-      <property name="Group" value="MSeries"/>
+      <property name="Group" value="MSeries,sEvent"/>
       <property name="Candrop" value="false"/>
       <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
       <effect_group tiered="false">
@@ -254,6 +257,7 @@
 			<property name="TintColor" value="8000FF"/>
       <property name="UnlockedBy" value="PBMT"/>
       <property name="Group" value="Lmats"/>
+      <property name="Candrop" value="false"/>
       <!--Do double damage to evil / undead-->
       <effect_group tiered="false">        
         <passive_effect name="BlockDamage" operation="base_set" value="-1"/>

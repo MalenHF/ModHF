@@ -94,18 +94,18 @@
 					<property name="Weight" value="10"/>
 					<property name="Stacknumber" value="10"/>
 					<property name="EconomicBundleSize" value="11"/>					
-					<property name="Group" value="Special Items"/>
+					<property name="Group" value="Special Items"/>					
 					<property name="ShowQuality" value="false"/>
 					<property name="SellableToTrader" value="false"/>
-									
-					<property class="Action0">						
+					<property name="Candrop" value="false"/>				
+					<property class="Action0">			
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>			
 						<property name="Class" value="Eat"/>						
 						<property name="Sound_start" value="ui_mag_read"/>
 						<property name="PromptTitle" value="X" />
 						<property name="PromptDescription" value="X" />
 					</property>					
 				</item>
-
 				<item name="q_Special">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -114,6 +114,7 @@
 					<property name="TintColor" value="4,9,171"/>
 					<property class="Action0">	
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Special" />
 						<property name="PromptDescription" value="SpecialQuest2" />
@@ -124,8 +125,7 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
-				</item>
-				
+				</item>				
 				<item name="q_Minis">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -134,6 +134,7 @@
 					<property name="TintColor" value="4,9,171"/>
 					<property class="Action0">	
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Minis" />
 						<property name="PromptDescription" value="MinisQuest2" />
@@ -145,7 +146,27 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
 				</item>
-
+				<!--***-->	
+				<item name="q_Elementals">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="near_death_trauma"/>					
+					<property name="CustomIconTint" value="400261"/>
+					<property name="TintColor" value="64,2,97"/>
+					<property class="Action0">	
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_Elementals" />
+						<property name="PromptDescription" value="q_ElementalsPromp" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteElementals"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
 				<item name="q_SB">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -154,6 +175,7 @@
 					<property name="TintColor" value="255,255,255"/>
 					<property class="Action0">	
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_SB" />
 						<property name="PromptDescription" value="q_SBPromp" />
@@ -164,8 +186,7 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
-				</item>	
-
+				</item>
 				<item name="q_Nightmare">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -174,6 +195,7 @@
 					<property name="TintColor" value="64,2,97"/>
 					<property class="Action0">	
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Nightmare" />
 						<property name="PromptDescription" value="CriaturasQuest1" />
@@ -184,8 +206,7 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
-				</item>
-								
+				</item>								
 				<item name="q_Mutants">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -194,6 +215,7 @@
 					<property name="TintColor" value="87,254,24"/>
 					<property class="Action0">	
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Mutants" />
 						<property name="PromptDescription" value="ElitesQuest1" />
@@ -205,7 +227,6 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
 				</item>
-
 				<item name="q_Morte">	
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -214,12 +235,33 @@
 					<property name="TintColor" value="255,255,255"/>
 					<property class="Action0">	
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Morte" />
 						<property name="PromptDescription" value="q_MortePromp" />
 					</property>
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteMorte"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+				<!--***-->
+				<item name="q_rock">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="electric_power"/>
+					<property name="CustomIconTint" value="6b08c6"/>
+					<property name="TintColor" value="255,255,255"/>
+					<property class="Action0">							
+						<requirement name="!HasBuff" buff="buffQuestCD"/>	
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>										
+						<property name="PromptTitle" value="q_rock" />
+						<property name="PromptDescription" value="q_rockPromp" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteRocks"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
@@ -233,6 +275,7 @@
 					<property name="TintColor" value="255,255,255"/>
 					<property class="Action0">	
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Frozen" />
 						<property name="PromptDescription" value="q_FrozenPromp" />
@@ -252,6 +295,7 @@
 					<property name="TintColor" value="255,0,0"/>
 					<property class="Action0">	
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Infernal" />
 						<property name="PromptDescription" value="q_InfernalPromp" />
@@ -270,7 +314,8 @@
 					<property name="CustomIconTint" value="6b08c6"/>
 					<property name="TintColor" value="255,255,255"/>
 					<property class="Action0">							
-						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<requirement name="!HasBuff" buff="buffQuestCD"/>	
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>										
 						<property name="PromptTitle" value="q_shock" />
 						<property name="PromptDescription" value="q_shockPromp" />
 					</property>
@@ -291,8 +336,10 @@
 					<property name="ItemTypeIcon" value="diamond"/>
 					<property name="CustomIconTint" value="C20707"/>
 					<property name="TintColor" value="194,7,7"/>
+					<property name="Group" value="Special Items,sEvent"/>
 					<property class="Action0">	
 					<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+					<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_EnemigosHF" />
 						<property name="PromptDescription" value="q_EnemigosHFPromp" />
@@ -312,8 +359,10 @@
 					<property name="ItemTypeIcon" value="tracking_chicken"/>
 					<property name="CustomIconTint" value="EFB810"/>
 					<property name="TintColor" value="218,232,9"/>
+					<property name="Group" value="Special Items,sEvent"/>
 					<property class="Action0">											
-						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<requirement name="!HasBuff" buff="buffQuestCD"/>	
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>										
 						<property name="PromptTitle" value="¿?" />
 						<property name="PromptDescription" value="¿?" />
 					</property>
@@ -332,7 +381,8 @@
 					<property name="CustomIconTint" value="EFB810"/>
 					<property name="TintColor" value="218,232,9"/>
 					<property class="Action0">					
-						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<requirement name="!HasBuff" buff="buffQuestCD"/>	
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>										
 						<property name="PromptTitle" value="q_EnemigosHF" />
 						<property name="PromptDescription" value="q_EnemigosHFPromp" />
 					</property>
@@ -388,6 +438,27 @@
 				</item>			
 
 			<!--Bosses-->	
+				<item name="q_Gaia">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="near_death_trauma"/>
+					<property name="CustomIconTint" value="0B0139"/>
+					<property name="TintColor" value="4,9,171"/>
+					<property class="Action0">	
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_Gaia" />
+						<property name="PromptDescription" value="q_Gaia_Prompt" />
+					</property>
+					<effect_group tiered="false">						
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteGaia"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>	
+
 				<item name="q_Honor">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -396,6 +467,7 @@
 					<property name="ItemTypeIcon" value="skull"/>
 					<property class="Action0">	
 					<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Honor" />
 						<property name="PromptDescription" value="SoldierQuest1" />
@@ -406,8 +478,7 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
-				</item>		
-
+				</item>
 				<item name="q_Jugger">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -416,6 +487,7 @@
 					<property name="TintColor" value="120,66,18"/>
 					<property class="Action0">	
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Jugger" />
 						<property name="PromptDescription" value="JugQuest1" />
@@ -427,8 +499,6 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
 				</item>
-
-
 				<item name="q_Gladiator">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -437,6 +507,7 @@
 					<property name="ItemTypeIcon" value="skull"/>
 					<property class="Action0">	
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Gladiator" />
 						<property name="PromptDescription" value="MxQuest2" />
@@ -448,7 +519,6 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
 				</item>
-
 				<item name="q_Momia">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -457,6 +527,7 @@
 					<property name="TintColor" value="218,232,9"/>
 					<property class="Action0">	
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Momia" />
 						<property name="PromptDescription" value="MummyQuest1" />
@@ -468,7 +539,6 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
 				</item>
-
 				<item name="q_Cirujano">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -477,6 +547,7 @@
 					<property name="TintColor" value="127,218,215"/>
 					<property class="Action0">	
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Cirujano" />
 						<property name="PromptDescription" value="CiruQuest1" />
@@ -487,9 +558,7 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
-				</item>
-
-	
+				</item>	
 				<item name="q_Pesadilla">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -498,6 +567,7 @@
 					<property name="TintColor" value="4,9,171"/>
 					<property class="Action0">	
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Pesadilla" />
 						<property name="PromptDescription" value="SirenQuest1" />
@@ -517,6 +587,7 @@
 					<property name="TintColor" value="255,255,255"/>
 					<property class="Action0">	
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_vodjaoj" />
 						<property name="PromptDescription" value="q_vodjaojPromp" />
@@ -536,6 +607,7 @@
 					<property name="TintColor" value="255,255,255"/>
 					<property class="Action0">	
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_berial" />
 						<property name="PromptDescription" value="q_berialPromp" />
@@ -555,6 +627,7 @@
 					<property name="TintColor" value="255,255,255"/>
 					<property class="Action0">	
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_jack" />
 						<property name="PromptDescription" value="q_jackPromp" />
@@ -574,6 +647,7 @@
 					<property name="TintColor" value="255,255,255"/>
 					<property class="Action0">	
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_raijin" />
 						<property name="PromptDescription" value="q_raijinPromp" />
@@ -593,12 +667,33 @@
 					<property name="TintColor" value="255,255,255"/>
 					<property class="Action0">
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_patient0" />
 						<property name="PromptDescription" value="q_patient0Promp" />
 					</property>
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNotePacient"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
+				<item name="q_Spartan">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="skull"/>
+					<property name="CustomIconTint" value="213ab3"/>
+					<property name="TintColor" value="255,255,255"/>
+					<property class="Action0">	
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_Spartan" />
+						<property name="PromptDescription" value="q_SpartanPromp" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteSpartan"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
@@ -616,8 +711,30 @@
 					<property name="DescriptionKey" value="HFBRQuest"/>
 					<property class="Action0">
 						<property name="QuestGiven" value="q_noteHF"/>
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 					</property>
-				</item>				
+				</item>
+				<!--***-->
+				<item name="q_Shine">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="skull"/>
+					<property name="CustomIconTint" value="07F00D"/>
+					<property name="TintColor" value="255,255,255"/>
+					<property class="Action0">
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>											
+						<property name="PromptTitle" value="q_Shine" />
+						<property name="PromptDescription" value="q_ShinePrompt" />
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteShine"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>																	
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>					
 				<item name="q_Hooligan_Force">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -626,9 +743,11 @@
 					<property name="TintColor" value="0,0,0"/>
 					<property class="Action0">							
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>
 						<property name="PromptTitle" value="q_Hooligan_Force" />
 						<property name="PromptDescription" value="HFQuest1" />
+						
 					</property>
 					<effect_group tiered="false">						
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteHF"/>		
@@ -637,6 +756,28 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
 				</item>	
+				<!--***-->
+				<item name="q_Hooligan_ForceV">
+					<property name="Extends" value="q_Ticket"/>
+					<property name="CreativeMode" value="Player"/>
+					<property name="ItemTypeIcon" value="trophy"/>
+					<property name="CustomIconTint" value="000000"/>
+					<property name="TintColor" value="0,0,0"/>
+					<property class="Action0">							
+						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
+						<requirement name="!HasBuff" buff="buffQuestCD"/>
+						<property name="PromptTitle" value="q_Hooligan_Force_V" />
+						<property name="PromptDescription" value="q_Hooligan_Force_V_Prompt" />
+						
+					</property>
+					<effect_group tiered="false">						
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteHFV"/>		
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>				
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
+					</effect_group>
+				</item>
 				
 			<!--Randoms-->
 				<item name="q_Lucky">
@@ -647,6 +788,7 @@
 					<property name="TintColor" value="243,253,27"/>
 					<property class="Action0">	
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Lucky" />
 						<property name="PromptDescription" value="QuestLucky2" />
@@ -671,13 +813,15 @@
 					<property name="EconomicValue" value="10000"/>
 					<property name="Group" value="Special Items"/>
 					<property name="ShowQuality" value="false"/>
-					
+
 					<property name="SellableToTrader" value="false"/>
 					<property name="ItemTypeIcon" value="treasure"/>
 					<property name="CustomIconTint" value="9A41C4"/>
-					<property name="TintColor" value="234,121,26"/>					
+					<property name="TintColor" value="234,121,26"/>	
+					<property name="Candrop" value="false"/>				
 					<property class="Action0">	
-						<requirement name="!HasBuff" buff="buffQuestGatchaCD"/>					
+						<requirement name="!HasBuff" buff="buffQuestGatchaCD"/>	
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>				
 						<property name="Class" value="Eat"/>						
 						<property name="Sound_start" value="ui_mag_read"/>
 					</property>
@@ -690,8 +834,10 @@
 				</item>
 				<item name="q_GachaPrem">
 					<property name="Extends" value="q_Gacha"/>
+					<property name="Group" value="Special Items,sEvent"/>
 					<property class="Action0">						
 						<requirement name="!HasBuff" buff="buffQuestGatchaCD"/>
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 					</property>						
 					<effect_group tiered="false">						
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteGatchPrem"/>						
@@ -706,6 +852,7 @@
 					<property name="ItemTypeIcon" value="skull"/>
 					<property class="Action0">						
 						<requirement name="!HasBuff" buff="buffQuestGatchaCD"/>
+						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 					</property>					
 					<effect_group tiered="false">						
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteTotalRandom"/>						
@@ -729,7 +876,8 @@
 
 				<property name="ItemTypeIcon" value="tree"/>				
 				<property name="CustomIconTint" value="E2F70F"/>
-				<property name="TintColor" value="115,220,18"/>	
+				<property name="TintColor" value="115,220,18"/>
+				<property name="Group" value="Resources,sEvent"/>
 			</item>
 			<item name="bossTokenMineral">
 				<property name="Extends" value="bossTokenNatu"/>				

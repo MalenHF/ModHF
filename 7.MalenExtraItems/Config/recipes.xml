@@ -244,21 +244,35 @@
 		<!---->
 		
 		<!--Legen armor mats-->
-			<recipe name="resourceUniqueHeavyPart" count="4" craft_time="10" craft_area="legenstation" tags="workbenchCrafting">
+			<recipe name="resourceUniqueHeavyKit" count="4" craft_time="10" craft_area="legenstation" tags="workbenchCrafting">				
+				<ingredient name="bookMaster_UCombat" count="1"/>								
+			</recipe>	
+			<recipe name="resourceUniqueMediumKit" count="4" craft_time="10" craft_area="legenstation" tags="workbenchCrafting">				
+				<ingredient name="bookMaster_UCombat" count="1"/>								
+			</recipe>
+			<recipe name="resourceUniqueLightKit" count="4" craft_time="10" craft_area="legenstation" tags="workbenchCrafting">				
+				<ingredient name="bookMaster_UCombat" count="1"/>								
+			</recipe>
+
+			<recipe name="resourceUniqueHeavyPart" count="1" craft_time="5" craft_area="legenstation" tags="workbenchCrafting">
 				<ingredient name="resourceLegendaryParts" count="40"/>
-				<ingredient name="bookMaster_UCombat" count="1"/>				
-				<ingredient name="modUNArmorPlat" count="4"/>				
+				<ingredient name="resourceUniqueHeavyKit" count="1"/>
+				<ingredient name="modUNArmorPlat" count="1"/>				
 			</recipe>			
-			<recipe name="resourceUniqueMediumtPart" count="4" craft_time="10" craft_area="legenstation" tags="workbenchCrafting">
-				<ingredient name="resourceLegendaryParts" count="40"/>
-				<ingredient name="bookMaster_GreatHeist" count="1"/>
-				<ingredient name="modUNArmorCust" count="2"/>	
-				<ingredient name="modUNArmorPlat" count="2"/>			
-			</recipe>			
-			<recipe name="resourceUniqueLightPart" count="4" craft_time="10" craft_area="legenstation" tags="workbenchCrafting">
-				<ingredient name="resourceLegendaryParts" count="40"/>
-				<ingredient name="bookMaster_Preacher" count="1"/>
-				<ingredient name="modUNArmorCust" count="4"/>							
+			<recipe name="resourceUniqueMediumtPart" count="1" craft_time="5" craft_area="legenstation" tags="workbenchCrafting">
+				<ingredient name="resourceLegendaryParts" count="10"/>
+				<ingredient name="resourceUniqueMediumKit" count="1"/>
+				<ingredient name="modUNArmorPlat" count="1"/>			
+			</recipe>	
+			<recipe name="resourceUniqueMediumtPart2" count="1" craft_time="5" craft_area="legenstation" tags="workbenchCrafting">
+				<ingredient name="resourceLegendaryParts" count="10"/>
+				<ingredient name="resourceUniqueMediumKit" count="1"/>
+				<ingredient name="modUNArmorCust" count="1"/>							
+			</recipe>		
+			<recipe name="resourceUniqueLightPart" count="1" craft_time="5" craft_area="legenstation" tags="workbenchCrafting">
+				<ingredient name="resourceLegendaryParts" count="10"/>
+				<ingredient name="resourceUniqueLightKit" count="1"/>
+				<ingredient name="modUNArmorCust" count="1"/>							
 			</recipe>
 					
 			<!-- DEPRECATED
@@ -1419,187 +1433,99 @@
 				<ingredient name="drugHackers" count="30"/>
 			</recipe>
 		<!---->			
-			<recipe name="resourceScrapPolymers" count="1" craft_area="chemistryStation" craft_time="30" tags="learnable,PerkIngeS1,chemStationCrafting">
-				<ingredient name="resourceOilShale" count="10"/>
-				<ingredient name="resourceCoal" count="1"/>				
+			<recipe name="resourceScrapPolymers" count="10" craft_area="chemistryStation" craft_time="30" tags="learnable,PerkIngeS1,chemStationCrafting">
+				<ingredient name="resourceOilShale" count="50"/>
+				<ingredient name="resourceCoal" count="5"/>				
 				<ingredient name="drinkJarRiverWater" count="1"/>				
 			</recipe>
 		<!--Armors-->
 			<!--Light-->
 				<recipe name="uniqueArmorLighHelm" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
-					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
+					<ingredient name="resourceArmorCraftingKit" count="20"/>					
 					<ingredient name="resourceUniqueLightPart" count="1"/>
 					<ingredient name="ResourceForgedPlatinum" count="1"/>
+					<ingredient name="Practonium" count="20"/>
 				</recipe>
 				<recipe name="uniqueArmorLighArmor" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
-					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
+					<ingredient name="resourceArmorCraftingKit" count="20"/>					
 					<ingredient name="resourceUniqueLightPart" count="1"/>
 					<ingredient name="ResourceForgedPlatinum" count="1"/>
+					<ingredient name="Practonium" count="20"/>
 				</recipe>
 				<recipe name="uniqueArmorLighGloves" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
-					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
+					<ingredient name="resourceArmorCraftingKit" count="20"/>					
 					<ingredient name="resourceUniqueLightPart" count="1"/>
 					<ingredient name="ResourceForgedPlatinum" count="1"/>
+					<ingredient name="Practonium" count="20"/>
 				</recipe>
 				<recipe name="uniqueArmorLighLegs" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
-					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
+					<ingredient name="resourceArmorCraftingKit" count="20"/>					
 					<ingredient name="resourceUniqueLightPart" count="1"/>
 					<ingredient name="ResourceForgedPlatinum" count="1"/>
+					<ingredient name="Practonium" count="20"/>
 				</recipe>
-
-				<!-- <recipe name="uniqueArmorLighHelm2" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
-					<ingredient name="armorParts" count="300"/>					
-					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
-					<ingredient name="resourceUniqueLightPart" count="1"/>
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-				</recipe>
-				<recipe name="uniqueArmorLighArmor2" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
-					<ingredient name="armorParts" count="300"/>					
-					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
-					<ingredient name="resourceUniqueLightPart" count="1"/>
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-				</recipe>
-				<recipe name="uniqueArmorLighGloves2" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
-					<ingredient name="armorParts" count="300"/>					
-					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
-					<ingredient name="resourceUniqueLightPart" count="1"/>
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-				</recipe>
-				<recipe name="uniqueArmorLighLegs2" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
-					<ingredient name="armorParts" count="300"/>					
-					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
-					<ingredient name="resourceUniqueLightPart" count="1"/>
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-				</recipe> -->
 			<!--Medium-->
-				<!-- <recipe name="uniqueArmorMediHelm" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
+				 <recipe name="uniqueArmorMediHelm" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">					
 					<ingredient name="armorParts" count="300"/>					
 					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
-					<ingredient name="resourceUniqueMediumtPart" count="1"/>
+					<ingredient name="resourceUniqueMediumtPart" count="1"/>									
 					<ingredient name="ResourceForgedPlatinum" count="1"/>
+					<ingredient name="Practonium" count="20"/>	
 				</recipe>
 				<recipe name="uniqueArmorMediArmor" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
 					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
-					<ingredient name="resourceUniqueMediumtPart" count="1"/>
+					<ingredient name="resourceUniqueMediumtPart" count="1"/>									
 					<ingredient name="ResourceForgedPlatinum" count="1"/>
+					<ingredient name="Practonium" count="20"/>
 				</recipe>
 				<recipe name="uniqueArmorMediGloves" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
 					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
-					<ingredient name="resourceUniqueMediumtPart" count="1"/>
+					<ingredient name="resourceUniqueMediumtPart2" count="1"/>									
 					<ingredient name="ResourceForgedPlatinum" count="1"/>
+					<ingredient name="Practonium" count="20"/>
 				</recipe>
 				<recipe name="uniqueArmorMediLegs" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
 					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
-					<ingredient name="resourceUniqueMediumtPart" count="1"/>
+					<ingredient name="resourceUniqueMediumtPart2" count="1"/>									
 					<ingredient name="ResourceForgedPlatinum" count="1"/>
-				</recipe>
-
-				<recipe name="uniqueArmorMediHelm2" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
-					<ingredient name="armorParts" count="300"/>					
-					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
-					<ingredient name="resourceUniqueMediumtPart" count="1"/>
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-				</recipe>
-				<recipe name="uniqueArmorMediArmor2" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
-					<ingredient name="armorParts" count="300"/>					
-					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
-					<ingredient name="resourceUniqueMediumtPart" count="1"/>
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-				</recipe>
-				<recipe name="uniqueArmorMediGloves2" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
-					<ingredient name="armorParts" count="300"/>					
-					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
-					<ingredient name="resourceUniqueMediumtPart" count="1"/>
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-				</recipe>
-				<recipe name="uniqueArmorMediLegs2" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
-					<ingredient name="armorParts" count="300"/>					
-					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
-					<ingredient name="resourceUniqueMediumtPart" count="1"/>
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-				</recipe> -->
+					<ingredient name="Practonium" count="20"/>
+				</recipe>			
 			<!--Heavy-->
-				<!-- <recipe name="uniqueArmorHeavHelm" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
+				<recipe name="uniqueArmorHeavHelm" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
-					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
+					<ingredient name="resourceArmorCraftingKit" count="20"/>					
 					<ingredient name="resourceUniqueHeavyPart" count="1"/>
 					<ingredient name="ResourceForgedPlatinum" count="1"/>
+					<ingredient name="Practonium" count="20"/>
 				</recipe>
 				<recipe name="uniqueArmorHeavArmor" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
-					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
+					<ingredient name="resourceArmorCraftingKit" count="20"/>					
 					<ingredient name="resourceUniqueHeavyPart" count="1"/>
 					<ingredient name="ResourceForgedPlatinum" count="1"/>
+					<ingredient name="Practonium" count="20"/>
 				</recipe>
 				<recipe name="uniqueArmorHeavGloves" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
-					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
+					<ingredient name="resourceArmorCraftingKit" count="20"/>					
 					<ingredient name="resourceUniqueHeavyPart" count="1"/>
 					<ingredient name="ResourceForgedPlatinum" count="1"/>
+					<ingredient name="Practonium" count="20"/>
 				</recipe>
 				<recipe name="uniqueArmorHeavLegs" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
-					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
+					<ingredient name="resourceArmorCraftingKit" count="20"/>					
 					<ingredient name="resourceUniqueHeavyPart" count="1"/>
 					<ingredient name="ResourceForgedPlatinum" count="1"/>
-				</recipe>
-
-				<recipe name="uniqueArmorHeavHelm2" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
-					<ingredient name="armorParts" count="300"/>					
-					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
-					<ingredient name="resourceUniqueHeavyPart" count="1"/>
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-				</recipe>
-				<recipe name="uniqueArmorHeavArmor2" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
-					<ingredient name="armorParts" count="300"/>					
-					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
-					<ingredient name="resourceUniqueHeavyPart" count="1"/>
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-				</recipe>
-				<recipe name="uniqueArmorHeavGloves2" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
-					<ingredient name="armorParts" count="300"/>					
-					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
-					<ingredient name="resourceUniqueHeavyPart" count="1"/>
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-				</recipe>
-				<recipe name="uniqueArmorHeavLegs2" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
-					<ingredient name="armorParts" count="300"/>					
-					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
-					<ingredient name="resourceUniqueHeavyPart" count="1"/>
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-				</recipe> -->
-				
+					<ingredient name="Practonium" count="20"/>
+				</recipe>				
 				<!-- 
 				
 				<recipe name="LSAA" count="1" craft_time="60" craft_area="legenstation" tags="workbenchCrafting,LCLvl">
@@ -2163,6 +2089,11 @@
 				<ingredient name="resourceArrowHeadSteelAP" count="1"/>
 				<ingredient name="ammoArrowStone" count="2"/>
 			</recipe>
+			<recipe name="gunLSHF" count="1" craft_time="10" >
+				<ingredient name="lsUnlockBundle" count="1"/>				
+			</recipe>
+
+			
 
 		<!---->
 	</append>

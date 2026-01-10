@@ -5,7 +5,24 @@
 	</append>
 	<append xpath="/items">	
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ +1 Skill point quest ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-		
+		<item name="fourSkillPoint_P0">
+			<property name="Extends" value="schematicMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="CustomIcon" value="questMaster"/>
+			<property name="Stacknumber" value="10"/>
+			<property name="DescriptionKey" value="4SPDesc"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="EconomicValue" value="5000"/>
+			<property name="Group" value="Books"/>
+			<property name="Candrop" value="false"/>
+			<property class="Action0">
+				<requirement name="!HasBuff" buff="prestigeBuff"/>
+				<requirement name="!HasBuff" buff="prestigeBuff2"/>
+			</property>
+			<effect_group tiered="false">				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffGiveFourPoints"/>
+			</effect_group>
+		</item>
 		<item name="fourSkillPoint_P1">
 			<property name="Extends" value="schematicMaster"/>
 			<property name="CreativeMode" value="Dev"/>
@@ -15,6 +32,7 @@
 			<property name="SellableToTrader" value="true"/>
 			<property name="EconomicValue" value="5000"/>
 			<property name="Group" value="Books"/>
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<requirement name="HasBuff" buff="prestigeBuff"/>
 			</property>			
@@ -31,6 +49,7 @@
 			<property name="SellableToTrader" value="true"/>
 			<property name="EconomicValue" value="5000"/>
 			<property name="Group" value="Books"/>	
+			<property name="Candrop" value="false"/>
 			<property class="Action0">
 				<requirement name="HasBuff" buff="prestigeBuff2"/>
 			</property>			
@@ -55,6 +74,7 @@
 				<property name="SellableToTrader" value="false"/>					
 				<property name="Group" value="Special Items"/>				
 				<property name="ShowQuality" value="false"/>
+				<property name="Candrop" value="false"/>
 				<property class="Action0">					
 					<property name="Class" value="Eat"/>
 					<property name="Delay" value="1"/>	
@@ -135,12 +155,13 @@
 				<property name="CustomIconTint" value="EA4224"/>
 				<property name="DescriptionKey" value="ancientUnlockerDesc"/>
 				<property name="Group" value="Books"/>
+				<property name="Candrop" value="false"/>
 
 				<property class="Action0">				
 					<property name="Class" value="Eat"/>
 					<property name="Delay" value="1.0"/>
 					<property name="UseAnimation" value="false"/>
-					<property name="Use_time" value="..."/>
+					<!--<property name="Use_time" value="..."/>-->
 					<property name="Sound_start" value="read_mod"/>
 					<property name="Sound_in_head" value="true"/>
 					<property name="PromptTitle" value="drinkJarFullRespecAdminPromptTitle" />
@@ -179,6 +200,7 @@
 				<property name="SellableToTrader" value="true"/>				
 				<property name="EconomicValue" value="1"/>
 				<property name="Group" value="Books"/>
+				<property name="Candrop" value="false"/>
 				<property class="Action0">
 					<requirement name="PlayerLevel" operation="GT" value="349"/>
 					<property name="QuestGiven" value="q_Presgio1"/>
@@ -196,6 +218,7 @@
 				<property name="SellableToTrader" value="true"/>
 				<property name="EconomicValue" value="1"/>
 				<property name="Group" value="Books"/>
+				<property name="Candrop" value="false"/>
 				<property class="Action0">
 					<requirement name="HasBuff" buff="prestigeBuff"/>
 					<requirement name="PlayerLevel" operation="GT" value="349"/>
@@ -549,7 +572,7 @@
 			<property name="CustomIconTint" value="234,66,36"/>
 			<property class="Action0">
 				<requirement name="HasBuff" buff="prestigeBuff2"/>							
-				<property name="Create_item" value="modCursedStone,divineWaterEvent,q_Hooligan_Force,fourSkillPoint_P1"/>
+				<property name="Create_item" value="modCursedStone,divineWaterEvent,q_Hooligan_Force,fourSkillPoint_P2"/>
 				<property name="Create_item_count" value="1,1,2,6"/>
 			</property>			
 			<effect_group tiered="false">				

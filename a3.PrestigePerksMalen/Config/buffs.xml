@@ -240,18 +240,25 @@
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Prestige Extra Debuff ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
-		<buff name="prestigeBuff3" name_key="prestige3" description_key="PPdesc3" icon="ui_game_symbol_twitch_leaderboard" remove_on_death="false" icon_color="0,176,246">
-			<update_rate value="300"/>
+		<buff name="prestigeBuff3" name_key="prestige3" description_key="PPdesc3" icon="ui_game_symbol_twitch_leaderboard" remove_on_death="false" icon_color="0,176,246">			
 			<stack_type value="ignore"/>
+			<display_value value="$legend"/>
 			<effect_group>
-				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.75"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffxpst"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prestigeBuff"/>
-				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prestigeBuff2"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="prestigeBuff"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="prestigeBuff2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prestigeBuff2"/>	
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$legend" operation="set" value="3"/>				
+				<triggered_effect trigger="onSelfDied" action="ModifyCVar" cvar="$legend" operation="add" value="-1">	
+					<requirement name="!HasBuff" buff="prismacore_tooltip_eventHFZone_enter"/>
+				</triggered_effect>				
+			</effect_group>			
+			<effect_group>				
+				<requirement name="CVarCompare" cvar="$legend" operation="LT" value="1"/>				
+				<triggered_effect trigger="onSelfDied" target="self" action="AddBuff" buff="buffPrestigeReset"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyCVar" cvar="$PlayerLevelBonus" operation="set" value="3"/>
 			</effect_group>
 			<effect_group>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.75"/>				
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.15">
 					<requirement name="HasBuff" buff="buffDrunkGrandpasLearningElixir"/>
 				</passive_effect>
@@ -259,13 +266,12 @@
 					<requirement name="HasBuff" buff="OP3!"/>
 				</passive_effect>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.0375" tags="Kill">
+					<requirement name="IsNight"/>
 					<requirement name="ProgressionLevel" progression_name="perkNightStalkerTwilightThief" operation="Equals" value="1"/>
 				</passive_effect>				
-			</effect_group>
-			<effect_group>
-				<requirement name="CVarCompare" cvar="$chale" operation="GT" value="-1"/>
-				<triggered_effect trigger="onSelfDied" target="self" action="AddBuff" buff="buffPrestigeReset"/>										
-			</effect_group>			
+			</effect_group>	
+
+
 		</buff>
 
 		<buff name="buffPrestigeReset" name_key="buffPrestigeResetName" description_key="buffPrestigeResetDesc" icon="ui_game_symbol_skull" remove_on_death="false" icon_color="0,176,246">

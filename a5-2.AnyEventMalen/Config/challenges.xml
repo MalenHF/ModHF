@@ -1,0 +1,56 @@
+<config>    
+    <append xpath="/challenges">
+        <!-- <challenge_category name="Aniversario" title_key="xuiAniversario" icon="ui_game_symbol_twitch_special"/> -->
+        <challenge_category name="Aniversario" title_key="xuiAniversario" icon="ui_game_symbol_twitch_celebrate" show_type="BiomeProgression" display_key="weather"/>
+        <challenge_group category="Aniversario" name="aniMisisons1" title_key="challengeGroupAniversary1" reward_text_key="xuiAniKitReward" objective_text="Completa las misiones para tu regalo de aniversario!" link_challenges="true"/> 
+  
+        <challenge name="aniChallenge1" title_key="aniChallengeTitle1" icon="ui_game_symbol_marksmanship" group="aniMisisons1"
+            short_description_key="aniChallengeShort1" description_key="aniChallengeDesc1"
+            hint="challengeBurntShelterHint1"
+            reward_text_key="xuiGatchaReward" reward_event="challenge_reward_ani0">
+            <objective type="KillByTag" entity_tags="zombie" target_name_key="xuiZombies" count="5"/>
+        </challenge>
+
+            <!-- *** 02_HARVEST_CROP_IN_BIOME -->
+        <challenge name="aniChallenge2" title_key="aniChallengeTitle2" icon="ui_game_symbol_marksmanship" group="aniMisisons1"
+            short_description_key="aniChallengeShort2" description_key="aniChallengeDesc2"
+            reward_text_key="xuiGatchaReward" reward_event="challenge_reward_ani0">
+            <objective type="KillByTag" entity_tags="specialZ" target_name_key="xuiSpecial" count="5"/>
+        </challenge>
+
+            <!-- *** 03_CRAFT_HARZARD_REDUCER -->
+        <challenge name="aniChallenge3" title_key="aniChallengeTitle3" icon="ui_game_symbol_marksmanship" group="aniMisisons1"
+            short_description_key="aniChallengeShort3" description_key="aniChallengeDesc3"
+            reward_text_key="xuiGatchaReward" reward_event="challenge_reward_ani0">
+            <objective type="KillByTag" entity_tags="elemental" target_name_key="xuiElementals" count="5"/>
+        </challenge>
+
+            <!-- *** 04_USE_HARZARD_REDUCER -->
+        <challenge name="aniChallenge4" title_key="aniChallengeTitle4" icon="ui_game_symbol_marksmanship" group="aniMisisons1"
+            short_description_key="aniChallengeShort4" description_key="aniChallengeDesc4"
+            reward_text_key="xuiGatchaReward" reward_event="challenge_reward_ani0">
+            <objective type="KillByTag" entity_tags="subBoss" target_name_key="xuiSubBoss" count="5"/>
+        </challenge>
+
+            <!-- *** 05_KILL_ZOMBIE_IN_BIOME -->
+        <challenge name="aniChallenge5" title_key="aniChallengeTitle5" icon="ui_game_symbol_marksmanship" group="aniMisisons1"
+            short_description_key="aniChallengeShort5" description_key="aniChallengeDesc5"
+            reward_text_key="xuiGatchaReward" reward_event="challenge_reward_ani0">            
+            <objective type="KillByTag" entity_tags="bossChallenge" target_name_key="xuiBoss" count="5"/>
+        </challenge>
+
+            <!-- *** 06_HARVEST_ORE_IN_BIOME -->
+        <challenge name="aniChallenge6" title_key="aniChallengeTitle6" icon="ui_game_symbol_marksmanship" group="aniMisisons1"
+            short_description_key="aniChallengeShort6" description_key="aniChallengeDesc6"
+            reward_text_key="xuiGatchaReward" reward_event="challenge_reward_ani0">
+            <objective type="UseItem" item="q_EnemigsRandom" count="5"/>
+        </challenge>
+
+            <!-- *** 07_GATHER_FOR_GEAR -->
+        <challenge name="aniChallenge7" title_key="aniChallengeTitle7" icon="ui_game_symbol_twitch_celebrate" group="aniMisisons1"
+            short_description_key="aniChallengeShort7" description_key="aniChallengeDesc7"
+            reward_text_key="xuiAniKitReward" reward_event="challenge_reward_ani1">
+            <objective type="ChallengeComplete" challenge="aniMisisons1" is_redeemed="true" is_group="true"/>
+        </challenge>
+    </append>
+</config>

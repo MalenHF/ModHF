@@ -1,0 +1,52 @@
+<configs>
+  <append xpath="/quests">
+     <quest id="q_eventAni">
+      <property name="name" value="Evento de Aniversario!" />
+      <property name="description_key" value="anniDesc" />
+      <property name="subtitle_key" value="Evento de Aniversario!" />
+      <property name="category_key" value="quest"/>
+      <property name="completion_key" value="anniComplete"/>
+      <property name="offer_key" value="aniOffer"/>
+      <property name="icon" value="ui_game_symbol_twitch_special"/>
+      <property name="repeatable" value="false"/>
+      <property name="shareable" value="false" />
+      <property name="difficulty" value="easy"/>
+      <property name="completiontype" value="TurnIn"/>
+      <action type="ShowMessageWindow">
+        <property name="message" value="quest_aniversario_description"/>
+        <property name="title" value="aniKit"/>
+        <property name="delay" value="2"/>
+      </action>
+
+      <objective type="InteractWithNPC">
+        <property name="phase" value="1"/>
+      </objective>
+
+      <reward type="Exp" value="100000"/>
+      <reward type="Item" id="aniKit" value="1"/>
+          
+    </quest>
+    <quest id="q_eventAni4">
+      <property name="name" value="Evento de Aniversario!" />
+      <property name="description_key" value="anniDesc" />
+      <property name="subtitle_key" value="Evento de Aniversario!" />
+      <property name="category_key" value="quest"/>
+      <property name="completion_key" value="anniComplete"/>
+      <property name="offer_key" value="aniOffer"/>
+      <property name="icon" value="ui_game_symbol_twitch_special"/>
+      <property name="repeatable" value="false"/>
+      <property name="shareable" value="false" />
+      <property name="difficulty" value="easy"/>
+      <property name="completiontype" value="TurnIn"/>
+      <objective type="EntityKill" id="animalChicken" value="4" phase="1"/>
+      <objective type="EntityKill" id="animalRabbit" value="4" phase="2"/>      
+      <objective type="EntityKill" id="animalStag" value="4" phase="3"/>  
+      <objective type="EntityKill" id="Gallinazilla" value="4" phase="4"/>     
+      <objective type="InteractWithNPC">
+        <property name="phase" value="5"/>
+      </objective>
+      <reward type="Exp" value="30000"/>
+      <reward type="Item" id="aniKit" value="1"/>          
+    </quest>
+  </append>
+</configs>

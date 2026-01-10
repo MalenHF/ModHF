@@ -1,0 +1,30 @@
+<config>
+    <append xpath="/gameevents">	
+		<action_sequence name="challenge_reward_ani0">
+            <property name="allow_user_trigger" value="false" />
+            <property name="action_type" value="Game" />
+                    
+            <action class="Delay">
+                <property name="time" value="2" />
+            </action>           
+			<action class="AddItems">
+				<property name="phase" value="1" />
+				<property name="added_items" value="q_EnemigsRandom"/>
+				<property name="added_item_counts" value="1"/>								
+			</action>
+
+        </action_sequence>		
+		<action_sequence name="challenge_reward_ani1">
+            <property name="allow_user_trigger" value="false" />
+            <property name="action_type" value="Game" />
+            <action class="Delay">
+                <property name="time" value="2" />
+            </action>            
+            <action class="AddQuest">
+                <property name="phase" value="1" />
+                <property name="quest" value="q_eventAni" />
+            </action>
+        </action_sequence>
+    </append>    
+</config>
+

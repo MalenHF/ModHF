@@ -1,7 +1,7 @@
 <configs>
   <append xpath="/quests">
 
-    <quest id="xmas">
+    <quest id="xmasDeprecated">
       <property name="name_key" value="xmasquest"/>
       <property name="subtitle_key" value="xmassubkey"/>
       <property name="description_key" value="xmasfindesc"/>
@@ -28,15 +28,33 @@
 			</objective>
       <reward type="Quest" id="xmas2"/>
     </quest>
-
-    <quest id="xmas2">
-      <property name="group_name_key" value="quest_BasicSurvival"/>
+    <quest id="q_EventXmas1">      
       <property name="name_key" value="xmasquest"/>
       <property name="subtitle_key" value="xmassubkey"/>
       <property name="description_key" value="xmasfindesc2"/>
       <property name="icon" value="ui_game_twitch_special"/>
       <property name="repeatable" value="true"/>
-      <property name="offer_key" value="Nota de compensacion por error en el evento"/>
+      <property name="offer_key" value="xmasquestoffer"/>
+      <property name="login_rally_reset" value="true"/>
+      <property name="category_key" value="reward"/>
+      <property name="difficulty" value="easy"/>
+      <property name="shareable" value="false"/>      
+      <property name="add_to_tier_complete" value="false" />
+      <property name="completion_key" value="xmascompletekey"/>
+      <action type="ShowMessageWindow">
+        <property name="message" value="xmasquestoffer"/>
+        <property name="title" value="q_xmas"/>
+        <property name="delay" value="1"/>
+      </action>      
+      <reward type="Exp" value="1000"/>
+    </quest>
+    <quest id="q_EventXmas2">      
+      <property name="name_key" value="xmasquest"/>
+      <property name="subtitle_key" value="xmassubkey"/>
+      <property name="description_key" value="xmasfindesc2"/>
+      <property name="icon" value="ui_game_twitch_special"/>
+      <property name="repeatable" value="true"/>
+      <property name="offer_key" value="xmasquestoffer"/>
       <property name="login_rally_reset" value="true"/>
       <property name="category_key" value="reward"/>
       <property name="difficulty" value="easy"/>
@@ -44,86 +62,59 @@
       <property name="completiontype" value="TurnIn"/>
       <property name="add_to_tier_complete" value="false" />
       <property name="completion_key" value="xmascompletekey"/>
+      <action type="ShowMessageWindow">
+        <property name="message" value="xmasCompleteMsg"/>
+        <property name="title" value="q_xmas"/>
+        <property name="delay" value="2"/>
+      </action>
       <objective type="InteractWithNPC">
         <property name="phase" value="1"/>
       </objective>
       <reward type="Exp" value="250000"/>
       <reward type="Item" id="navidadKit" value="1"/>
     </quest>
+    <quest id="q_EventNewYear">
+			<property name="name_key" value="q_EventNewYear" />
+			<property name="subtitle_key" value="q_EventNewYear" />
+			<property name="description_key" value="quest_ny_description" />			
+			<property name="repeatable" value="false" />			
+			<property name="category_key" value="q_hfEvent" />
+			<property name="icon" value="ui_game_symbol_star" />				
+			<property name="difficulty" value="easy"/>		
 
-    <quest id="q_eventPascua">
-      <property name="name" value="Evento de Pascua" />
-      <property name="description_key" value="KillTaco" />
-      <property name="subtitle_key" value="Evento de Pascua" />
-      <property name="category_key" value="quest"/>
-      <property name="completion_key" value="comletePascua"/>
-      <property name="offer_key" value="eventPacuaOffer"/>
+      <action type="ShowMessageWindow">
+        <property name="message" value="quest_ny_description"/>
+        <property name="title" value="challengeRewardnewYearEvent"/>
+        <property name="delay" value="2"/>
+      </action>
 
-      <property name="icon" value="ui_game_symbol_adventure"/>
-      <property name="repeatable" value="false"/>
-      <property name="shareable" value="false" />
-
-      <property name="difficulty" value="easy"/>
-      <property name="completiontype" value="TurnIn"/>
-
-      <objective type="EntityKill" id="animalRabbit" value="100" phase="1"/>
-      <action type="SpawnEnemy" id="Conejosaurio" value="1" phase="2"/>      
-      <objective type="InteractWithNPC">
-        <property name="phase" value="2"/>
-      </objective>
-
-      <reward type="Item" id="casinoCoinD" value="2"/>
-      <reward type="Item" id="gunLSHF" value="1"/>      
-      <reward type="Item" id="eventSeasonItem1" value="200"/>
-    </quest>
-
-     <quest id="q_eventAni3">
-      <property name="name" value="Evento de Aniversario!" />
-      <property name="description_key" value="anniDesc" />
-      <property name="subtitle_key" value="Evento de Aniversario!" />
-      <property name="category_key" value="quest"/>
-      <property name="completion_key" value="anniComplete"/>
-      <property name="offer_key" value="aniOffer"/>
+			<reward type="Exp" value="1000"/>
+		</quest>
+    <quest id="q_EventNewYear2">
+			<property name="name_key" value="q_EventNewYear" />
+      <property name="description_key" value="eventNYEndPromp" />
+      <property name="subtitle_key" value="q_EventNewYear" />
+      <property name="category_key" value="q_hfEvent"/>
+      <property name="completion_key" value="eventNYEndPromp"/>      
       <property name="icon" value="ui_game_symbol_twitch_special"/>
       <property name="repeatable" value="false"/>
       <property name="shareable" value="false" />
       <property name="difficulty" value="easy"/>
-      <property name="completiontype" value="TurnIn"/>
-
-      <objective type="EntityKill" value="10" phase="1"/>
-      <objective type="EntityKill" id="animalChicken" value="3" phase="2"/>
-
+      <property name="completiontype" value="TurnIn"/>  
+      <action type="ShowMessageWindow">
+        <property name="title" value="q_EventNewYear"/>
+        <property name="message" value="eventNYEndPromp"/>    
+        <property name="delay" value="2"/>
+      </action>      
       <objective type="InteractWithNPC">
-        <property name="phase" value="3"/>
+        <property name="phase" value="1"/>
       </objective>
+      <reward type="Item" id="special_bag" value="3"/>
+      <reward type="Item" id="casinoCoinD" value="5"/>
+      <reward type="Item" id="lsUnlockBundle" value="1"/>
+		</quest>
 
-      <reward type="Exp" value="30000"/>
-      <reward type="Item" id="aniKit" value="1"/>
-          
-    </quest>
-
-    <quest id="q_eventAni4">
-      <property name="name" value="Evento de Aniversario!" />
-      <property name="description_key" value="anniDesc" />
-      <property name="subtitle_key" value="Evento de Aniversario!" />
-      <property name="category_key" value="quest"/>
-      <property name="completion_key" value="anniComplete"/>
-      <property name="offer_key" value="aniOffer"/>
-      <property name="icon" value="ui_game_symbol_twitch_special"/>
-      <property name="repeatable" value="false"/>
-      <property name="shareable" value="false" />
-      <property name="difficulty" value="easy"/>
-      <property name="completiontype" value="TurnIn"/>
-      <objective type="EntityKill" id="animalChicken" value="4" phase="1"/>
-      <objective type="EntityKill" id="animalRabbit" value="4" phase="2"/>      
-      <objective type="EntityKill" id="animalStag" value="4" phase="3"/>  
-      <objective type="EntityKill" id="Gallinazilla" value="4" phase="4"/>     
-      <objective type="InteractWithNPC">
-        <property name="phase" value="5"/>
-      </objective>
-      <reward type="Exp" value="30000"/>
-      <reward type="Item" id="aniKit" value="1"/>          
-    </quest>
+    
 
     <quest id="q_Boom1">
       <property name="name" value="Evento de Pascua" />
@@ -177,6 +168,31 @@
       <reward type="Item" id="gunLSHF" value="1"/>
       <reward type="Item" id="eventTickets" value="100"/>
     </quest>
+    <quest id="q_eventPascua">
+      <property name="name" value="Evento de Pascua" />
+      <property name="description_key" value="KillTaco" />
+      <property name="subtitle_key" value="Evento de Pascua" />
+      <property name="category_key" value="quest"/>
+      <property name="completion_key" value="comletePascua"/>
+      <property name="offer_key" value="eventPacuaOffer"/>
+
+      <property name="icon" value="ui_game_symbol_adventure"/>
+      <property name="repeatable" value="false"/>
+      <property name="shareable" value="false" />
+
+      <property name="difficulty" value="easy"/>
+      <property name="completiontype" value="TurnIn"/>
+
+      <objective type="EntityKill" id="animalRabbit" value="100" phase="1"/>
+      <action type="SpawnEnemy" id="Conejosaurio" value="1" phase="2"/>      
+      <objective type="InteractWithNPC">
+        <property name="phase" value="2"/>
+      </objective>
+
+      <reward type="Item" id="casinoCoinD" value="2"/>
+      <reward type="Item" id="gunLSHF" value="1"/>      
+      <reward type="Item" id="eventSeasonItem1" value="200"/>
+    </quest>
     <quest id="q_EventPascua2">
 			<property name="name_key" value="q_hfEvent" />
 			<property name="subtitle_key" value="q_eventPascua" />
@@ -194,8 +210,7 @@
 
 			<reward type="Exp" value="1000"/>
 		</quest>
-
-    <quest id="q_EventPascua3">
+     <quest id="q_EventPascua3">
 			<property name="name" value="q_hfEvent" />
       <property name="description_key" value="comletePascua" />
       <property name="subtitle_key" value="challengeRewardPascuaEvent" />
@@ -219,7 +234,90 @@
       <reward type="Item" id="gunLSHF" value="1"/>      
       <reward type="Item" id="eventSeasonItem1" value="200"/>
 		</quest>
+
+     <quest id="q_EventSummer">
+			<property name="name_key" value="q_eventSummer" />
+			<property name="subtitle_key" value="q_eventSummer" />
+			<property name="description_key" value="quest_summer_description" />			
+			<property name="repeatable" value="false" />			
+			<property name="category_key" value="q_hfEvent" />
+			<property name="icon" value="ui_game_symbol_star" />				
+			<property name="difficulty" value="easy"/>		
+
+      <action type="ShowMessageWindow">
+        <property name="message" value="quest_summer_description"/>
+        <property name="title" value="q_eventSummer"/>
+        <property name="delay" value="2"/>
+      </action>
+
+			<reward type="Exp" value="1000"/>
+		</quest>
+    <quest id="q_EventSummer2">
+			<property name="name_key" value="q_eventSummer" />
+      <property name="description_key" value="comleteSummer" />
+      <property name="subtitle_key" value="challengeRewardSummerEvent" />
+      <property name="category_key" value="q_hfEvent"/>
+      <property name="completion_key" value="comleteSummer"/>      
+      <property name="icon" value="ui_game_symbol_twitch_special"/>
+      <property name="repeatable" value="false"/>
+      <property name="shareable" value="false" />
+      <property name="difficulty" value="easy"/>
+      <property name="completiontype" value="TurnIn"/>  
+      <action type="ShowMessageWindow">
+        <property name="title" value="q_eventSummer"/>
+        <property name="message" value="eventSummerEndPromp"/>    
+        <property name="delay" value="2"/>
+      </action>      
+      <objective type="InteractWithNPC">
+        <property name="phase" value="1"/>
+      </objective>
+      <reward type="Item" id="resourceLegendaryParts" value="25"/>
+      <reward type="Item" id="casinoCoinD" value="5"/>
+      <reward type="Item" id="gunLSHF" value="1"/>      
+      <reward type="Item" id="eventSeasonItem1" value="300"/>
+		</quest>
     
+    <quest id="q_EventFall">
+			<property name="name_key" value="q_EventFall" />
+			<property name="subtitle_key" value="q_EventFall" />
+			<property name="description_key" value="quest_fall_description" />			
+			<property name="repeatable" value="false" />			
+			<property name="category_key" value="q_hfEvent" />
+			<property name="icon" value="ui_game_symbol_star" />				
+			<property name="difficulty" value="easy"/>		
+
+      <action type="ShowMessageWindow">
+        <property name="message" value="quest_fall_description"/>
+        <property name="title" value="q_EventFall"/>
+        <property name="delay" value="2"/>
+      </action>
+
+			<reward type="Exp" value="1000"/>
+		</quest>
+    <quest id="q_EventFall2">
+			<property name="name_key" value="q_EventFall" />
+      <property name="description_key" value="comleteFall" />
+      <property name="subtitle_key" value="challengeRewardFallEvent" />
+      <property name="category_key" value="q_hfEvent"/>
+      <property name="completion_key" value="challengeRewardFallEvent"/>      
+      <property name="icon" value="ui_game_symbol_twitch_special"/>
+      <property name="repeatable" value="false"/>
+      <property name="shareable" value="false" />
+      <property name="difficulty" value="easy"/>
+      <property name="completiontype" value="TurnIn"/>  
+      <action type="ShowMessageWindow">
+        <property name="title" value="q_EventFall"/>
+        <property name="message" value="eventFallEndPromp"/>    
+        <property name="delay" value="2"/>
+      </action>      
+      <objective type="InteractWithNPC">
+        <property name="phase" value="1"/>
+      </objective>
+      <reward type="Item" id="scaryBundle" value="1"/>
+      <reward type="Item" id="casinoCoinD" value="5"/>
+      <reward type="Item" id="lsUnlockBundle" value="1"/>      
+		</quest>
+
 
     <!--
     <quest id="qlab1">

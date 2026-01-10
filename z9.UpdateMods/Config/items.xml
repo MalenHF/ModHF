@@ -1,22 +1,60 @@
 <config>
-	<append xpath="/items">		
-		<item name="fourSkillPoint_P0">
-			<property name="Extends" value="schematicMaster"/>
-			<property name="CreativeMode" value="Dev"/>
-			<property name="CustomIcon" value="questMaster"/>
-			<property name="Stacknumber" value="10"/>
-			<property name="DescriptionKey" value="4SPDesc"/>
-			<property name="SellableToTrader" value="true"/>
-			<property name="EconomicValue" value="5000"/>
-			<property name="Group" value="Books"/>
-			<property class="Action0">
-				<requirement name="!HasBuff" buff="prestigeBuff,prestigeBuff2"/>
-			</property>
-			<effect_group tiered="false">				
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffGiveFourPoints"/>
-			</effect_group>
+	<append xpath="/items">
+		<item name="resourceUniqueMediumtPart2">
+			<property name="Extends" value="resourceUniqueMediumtPart"/>			
+			<property name="CustomIcon" value="resourceCloth"/>	
+		</item>		
+		<item name="resourceUniqueMediumtPart2">
+			<property name="Extends" value="resourceUniqueMediumtPart"/>			
+			<property name="CustomIcon" value="resourceCloth"/>	
 		</item>
-			
+
+		<item name="resourceUniqueHeavyKit">
+			<property name="Extends" value="partsMaster"/>
+			<property name="ItemTypeIcon" value="computer"/>
+			<property name="DescriptionKey" value="modArmounipart"/>
+			<property name="CustomIconTint" value="50,50,50"/>
+			<property name="TintColor" value="50,50,50"/>
+			<property name="CustomIcon" value="resourceLegendaryParts"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="UnlockedBy" value="special"/>
+			<property name="Group" value="Lmats"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Candrop" value="false"/>			
+		</item>
+		<item name="resourceUniqueMediumKit">
+			<property name="Extends" value="resourceUniqueHeavyKit"/>			
+			<property name="CustomIconTint" value="100,100,100"/>
+			<property name="TintColor" value="100,100,100"/>
+		</item>		
+		<item name="resourceUniqueLightKit">
+			<property name="Extends" value="resourceUniqueHeavyKit"/>										
+			<property name="CustomIconTint" value="150,150,150"/>
+			<property name="TintColor" value="150,150,150"/>			
+		</item>
+		
+		<item name="scaryBundle">
+			<property name="CustomIcon" value="cntCoffinWildWestClosed"/>
+			<property name="ItemTypeIcon" value="twitch_special"/>
+			<property name="HoldType" value="45"/>
+			<property name="DescriptionKey" value="scaryBundleDesc"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">			
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Use_time" value="1"/>
+				<property name="Sound_start" value="wrench_harvest"/>
+				<property name="Create_item" value="special_bag,eventCandy1,eventCandy2,eventSeasonItem1,oldCash"/>
+				<property name="Create_item_count" value="1,50,150,1000,30000"/>
+			</property>			
+		</item>
+		
 				
 	</append>
 </config>

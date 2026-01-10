@@ -1,5 +1,12 @@
 <configs>
+	<append xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group">
+		<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="VehicleEventChecker">
+			<requirement name="NotHasBuff" buff="VehicleEventChecker"/>
+		</triggered_effect>
+	</append>
+
 	<append xpath="/buffs">
+
 		<buff name="buffSecure" name_key="ProtectDN" description_key="INDNDesc" tooltip_key="ProtectDNDesc" icon="ui_game_symbol_add" icon_color="253,238,0">
 			<stack_type value="replace"/>
 			<duration value="3"/>
@@ -115,7 +122,7 @@
 			</effect_group>
 		</buff>
 		
-		<buff name="hf_buffCelebrate_Summer" name_key="TwitchBuff_Celebrate" description_key="TwitchBuff_CelebrateDesc" icon="ui_game_symbol_twitch_celebrate" icon_color="175,175,255">
+		<buff name="hf_buffCelebrate_Summer" name_key="buffCelebrate_Summer_Name" description_key="buffCelebrate_Summer_Desc" icon="ui_game_symbol_twitch_celebrate" icon_color="175,175,255">
 			<stack_type value="replace"/>
 			<duration value="1800"/>
 			<display_value value="duration"/>
@@ -125,12 +132,18 @@
 				<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="twitch_good_buff_ended" play_in_head="true"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AltSounds" enabled="true"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="AltSounds" enabled="false"/>
-			</effect_group>
-			<effect_group>
-				<passive_effect name="CelebrationKill" operation="base_set" value="1" />
-				
-			</effect_group>
+			</effect_group>			
 		</buff>
+		<buff name="hf_buffCelebrate_Summer" name_key="buffCelebrate_Summer_Name" description_key="buffCelebrate_Summer_Desc" icon="ui_game_symbol_twitch_celebrate" icon_color="175,175,255">
+			<stack_type value="replace"/>			
+			<display_value value="duration"/>
+			<tags value="hf_summerFesta" />
+			<effect_group>
+				<passive_effect name="DisableItem" operation="base_set" value="1" tags="xmasEvent" />
+			</effect_group>			
+		</buff>
+
+		 
 		<buff name="hf_buffSillySounds" name_key="TwitchBuff_Celebrate" description_key="TwitchBuff_CelebrateDesc" icon="ui_game_symbol_twitch_sound_effects" icon_color="175,175,255">
 			<stack_type value="replace"/>
 			<effect_group>
@@ -213,6 +226,32 @@
 
 
 
+		<buff name="buffEventChallengePascua" name_key="challengeRewardPascuaEvent" tooltip_key="challengeRewardPascuaEventTool" description_key="challengeRewardPascuaEventDesc" icon="ui_game_symbol_twitch_fast" remove_on_death="false" icon_color="255,0,228">
+			<stack_type value="replace"/>
+			<display_value value="duration"/>
+			<duration value="7200"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffEventChallengePascua">
+					<requirement name="HasBuff" buff="buffEventChallengePascuaAllies"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffEventChallengePascuaAllies" target="selfOtherPlayers" target_tags="ally"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="WalkSpeed" operation="base_set" value="1.15"/>
+				<passive_effect name="RunSpeed" operation="base_set" value="1.5"/>
+				<passive_effect name="VehicleMotorTorquePer" operation="perc_add" value="0.15"/>
+				<passive_effect name="VehicleVelocityMaxPer" operation="perc_add" value="0.25"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".3" tags="running"/>
+
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".5"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.25">
+					<requirement name="HasBuff" buff="prestigeBuff"/>
+				</passive_effect>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375">
+					<requirement name="HasBuff" buff="prestigeBuff2"/>
+				</passive_effect>
+			</effect_group>
+		</buff>
 		<buff name="buffEventChallengePascuaAllies" name_key="challengeRewardPascuaEvent" tooltip_key="challengeRewardPascuaEventTool" description_key="challengeRewardPascuaEventDesc" icon="ui_game_symbol_twitch_fast" remove_on_death="false" icon_color="255,0,228">
 			<stack_type value="replace"/>
 			<display_value value="duration"/>
@@ -233,6 +272,133 @@
 				</passive_effect>
 			</effect_group>
 		</buff>
+
+		<buff name="buffEventChallengeSummer" name_key="challengeRewardSummerEvent" tooltip_key="challengeRewardSummerEventTool" description_key="challengeRewardSummerEventDesc" icon="ui_game_symbol_twitch_celebrate" remove_on_death="false" icon_color="255,255,0">
+			<stack_type value="replace"/>
+			<display_value value="duration"/>
+			<duration value="7200"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffEventChallengeSummer">
+					<requirement name="HasBuff" buff="buffEventChallengeSummerAllies"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffEventChallengeSummerAllies" target="selfOtherPlayers" target_tags="ally"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="LootStage" operation="perc_add" value=".5"/>
+				<passive_effect name="LootDropProb" operation="perc_add" value=".2"/>
+				<passive_effect name="LootStageMax" operation="base_add" value="9999"/>
+
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".5"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.25">
+					<requirement name="HasBuff" buff="prestigeBuff"/>
+				</passive_effect>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375">
+					<requirement name="HasBuff" buff="prestigeBuff2"/>
+				</passive_effect>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375">
+					<requirement name="HasBuff" buff="prestigeBuff3"/>
+				</passive_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffEventChallengeSummerAllies" name_key="challengeRewardSummerEvent" tooltip_key="challengeRewardSummerEvent" description_key="challengeRewardSummerEventDesc" icon="ui_game_symbol_twitch_celebrate" remove_on_death="false" icon_color="255,255,0">
+			<stack_type value="replace"/>
+			<display_value value="duration"/>
+			<duration value="7200"/>
+			<effect_group>
+				
+
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".5"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.25">
+					<requirement name="HasBuff" buff="prestigeBuff"/>
+				</passive_effect>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375">
+					<requirement name="HasBuff" buff="prestigeBuff2"/>
+				</passive_effect>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.375">
+					<requirement name="HasBuff" buff="prestigeBuff3"/>
+				</passive_effect>
+			</effect_group>
+		</buff>
+
+		<buff name="buffEventChallengeFall" name_key="challengeRewardFallEvent" tooltip_key="challengeRewardFallEventTool" description_key="challengeRewardFallEventDesc" icon="ui_game_symbol_bat" remove_on_death="false" icon_color="0,0,0">
+			<stack_type value="replace"/>
+			<display_value value="duration"/>
+			<duration value="7200"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffEventChallengeFall">
+					<requirement name="HasBuff" buff="buffEventChallengeFallAllies"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffEventChallengeFallAllies" target="selfOtherPlayers" target_tags="ally"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="LootStage" operation="perc_add" value="1"/>
+				<passive_effect name="LootDropProb" operation="perc_add" value=".4"/>
+				<passive_effect name="LootStageMax" operation="base_add" value="9999"/>
+
+				<passive_effect name="WalkSpeed" operation="base_set" value="1.15"/>
+				<passive_effect name="RunSpeed" operation="base_set" value="1.5"/>
+				<passive_effect name="VehicleMotorTorquePer" operation="perc_add" value="0.15"/>
+				<passive_effect name="VehicleVelocityMaxPer" operation="perc_add" value="0.25"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".3" tags="running"/>
+			</effect_group>
+		</buff>
+		<buff name="buffEventChallengeFallAllies" name_key="challengeRewardFallEvent" tooltip_key="challengeRewardFallEventTool" description_key="challengeRewardFallEventDesc" icon="ui_game_symbol_bat" remove_on_death="false" icon_color="0,0,0">
+			<stack_type value="replace"/>
+			<display_value value="duration"/>
+			<duration value="7200"/>
+			<effect_group>
+				<passive_effect name="LootStage" operation="perc_add" value="1"/>
+				<passive_effect name="LootDropProb" operation="perc_add" value=".4"/>
+				<passive_effect name="LootStageMax" operation="base_add" value="9999"/>
+
+				<passive_effect name="WalkSpeed" operation="base_set" value="1.15"/>
+				<passive_effect name="RunSpeed" operation="base_set" value="1.25"/>
+				<passive_effect name="VehicleMotorTorquePer" operation="perc_add" value="0.15"/>
+				<passive_effect name="VehicleVelocityMaxPer" operation="perc_add" value="0.15"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".3" tags="running"/>
+			</effect_group>
+		</buff>
+
+		<buff name="buffEventChallengeNewYear" name_key="challengeRewardnewYearEvent" tooltip_key="challengeRewardnewYearEvent" description_key="challengeRewardNewYearEventDesc" icon="ui_game_symbol_explosion" remove_on_death="false" icon_color="255,255,0">
+			<stack_type value="replace"/>
+			<display_value value="duration"/>
+			<duration value="7200"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffEventChallengeNewYear">
+					<requirement name="HasBuff" buff="buffEventChallengeNewYearAllies"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffEventChallengeNewYearAllies" target="selfOtherPlayers" target_tags="ally"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="LootStage" operation="perc_add" value="1"/>
+				<passive_effect name="LootDropProb" operation="perc_add" value=".4"/>
+				<passive_effect name="LootStageMax" operation="base_add" value="9999"/>
+
+				<passive_effect name="WalkSpeed" operation="base_set" value="1.15"/>
+				<passive_effect name="RunSpeed" operation="base_set" value="1.5"/>
+				<passive_effect name="VehicleMotorTorquePer" operation="perc_add" value="0.15"/>
+				<passive_effect name="VehicleVelocityMaxPer" operation="perc_add" value="0.25"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".3" tags="running"/>
+			</effect_group>
+		</buff>
+		<buff name="buffEventChallengeNewYearAllies" name_key="challengeRewardnewYearEvent" tooltip_key="challengeRewardnewYearEvent" description_key="challengeRewardNewYearEventDesc" icon="ui_game_symbol_explosion" remove_on_death="false" icon_color="255,255,0">
+			<stack_type value="replace"/>
+			<display_value value="duration"/>
+			<duration value="7200"/>
+			<effect_group>
+				<passive_effect name="LootStage" operation="perc_add" value="1"/>
+				<passive_effect name="LootDropProb" operation="perc_add" value=".4"/>
+				<passive_effect name="LootStageMax" operation="base_add" value="9999"/>
+
+				<passive_effect name="WalkSpeed" operation="base_set" value="1.15"/>
+				<passive_effect name="RunSpeed" operation="base_set" value="1.25"/>
+				<passive_effect name="VehicleMotorTorquePer" operation="perc_add" value="0.15"/>
+				<passive_effect name="VehicleVelocityMaxPer" operation="perc_add" value="0.15"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".3" tags="running"/>
+			</effect_group>
+		</buff>
+
+		
 
 		<buff name="buffSaurus" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
 			<duration value="6"/>
@@ -256,6 +422,30 @@
 			</effect_group>
 		</buff>
 
+		<buff name="buffNewYear" name_key="buffQuestBeReady" description_key="buffQuestBeReadyDesc" tooltip_key="buffQuestBeReadyTool" icon="ui_game_symbol_defense">
+			<duration value="6"/>
+			<display_value value="duration"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$questFlag" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNewYear2"/>
+			</effect_group>
+		</buff>
+		<buff name="buffNewYear2" hidden="true" description_key="x" tooltip_key="x">
+			<duration value="10"/>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="note_saurus"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$questFlag" operation="Equals" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNewYear2"/>
+			</effect_group>
+		</buff>
+
+		
+
 		<buff name="resetChallengeHF" name_key="Resetea esa wea" description="Esta wea te reinicia los challenge" icon="ui_game_symbol_lightbulb" icon_color="255,175,175" hidden="true">
 			<stack_type value="ignore"/>
 			<duration value="1"/>
@@ -273,13 +463,49 @@
 		</buff>
 		<buff name="testLSRepair" name_key="Resetea esa wea" description="Esta wea te reinicia los challenge" icon="ui_game_symbol_lightbulb" icon_color="255,175,175" hidden="true">
 			<stack_type value="ignore"/>
-			<duration value="3"/>
+			<duration value="1"/>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="action_repairLS" />
-				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="action_repairLS" />
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="action_repairLS" />
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="action_repairLS" />				
+			</effect_group>
+		</buff>
+		
+		<buff name="hfxmasevent" name_key="buffTreeFloor" description_key="treeFloor" icon="ui_game_symbol_tree" icon_color="175,175,255">
+			<stack_type value="replace"/>
+			<duration value="3"/>
+		</buff>
+		<buff name="buffXmasDinner" name_key="buffXmasDinnerName" description_key="TwitchBuff_NourishmentDesc" icon="ui_game_symbol_stomach" icon_color="175,175,255">
+			<stack_type value="replace"/>
+			<duration value="7200"/>
+			<display_value value="duration"/>
+			<!-- <display_value_format value="time"/>			 -->
+			<effect_group>				
+				<passive_effect name="WaterChangeOT" operation="base_set" value="3"/>
+				<passive_effect name="FoodChangeOT" operation="base_set" value="3"/>				
 			</effect_group>
 		</buff>
 
+		<buff name="VehicleEventChecker" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="500"/>
+			<update_rate value=".1"/>
+			<effect_group>				
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="100" buff="vehicleSledBikeCheck">
+					<requirement name="EntityTagCompare" target="other" tags="vehiclesSledBike"/>
+					<requirement name="NotHasBuff" target="other" buff="vehicleSledBikeCheck"/>
+				</triggered_effect>
+			</effect_group>			
+		</buff>
+		<buff name="vehicleSledBikeCheck" hidden="true">
+			<damage_type value="heat"/>		
+			<stack_type value="ignore"/>			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/weapon_bags_largePrefab.prefab" local_offset="0.05,.45,-1.05" local_rotation="0,0,0" parent_transform="GameObject"/>							
+				
+			</effect_group>
+		</buff>	
+
 	</append>
+
+	
+		
 </configs>

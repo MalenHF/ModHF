@@ -134,7 +134,7 @@
 					<sprite depth="1" name="border" color="0,0,0,128" type="sliced"/>
 					<sprite depth="2" name="background" color="0,0,0,165" type="sliced" />
 					<filledsprite depth="3" name="background" color="64,64,64,100" width="377" type="filled" fill="{statmodifiedmax}" />
-					<filledsprite depth="5" width="374" height="16" pos="2,-2" name="BarContent" color="0,255,54,194" type="filled" fill="0" />
+					<filledsprite depth="5" width="374" height="16" pos="2,-2" name="BarContent" color="0,255,54,194" type="filled" fill="{statfill}" />
 					<sprite depth="8" name="border" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false"/>
 					<filledsprite depth="8" name="background" color="0,0,0,255" width="377" fillcenter="false" type="filled" fill="{statmodifiedmax}" />
 					<filledsprite depth="3" name="background" color="0,0,0,255" width="377" fillcenter="false" type="filled" fill="{statmodifiedmax}" />
@@ -145,25 +145,37 @@
 					<sprite depth="1" name="border" color="0,0,0,128" type="sliced"/>
 					<sprite depth="2" name="background" color="0,0,0,165" type="sliced" />
 					<filledsprite depth="3" name="background" color="110,110,110,128" width="376" type="filled" fill="{statmodifiedmax}" />
-					<filledsprite depth="5" width="373" height="16" pos="2,-2" name="BarContent" color="64,164,223,200" type="filled" fill="0" />
+					<filledsprite depth="5" width="373" height="16" pos="2,-2" name="BarContent" color="64,164,223,200" type="filled" fill="{statfill}" />
 					<sprite depth="8" name="border" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false"/>
 					<filledsprite depth="8" name="background" color="0,0,0,255" width="376" fillcenter="false" type="filled" fill="{statmodifiedmax}" />
 					<filledsprite depth="3" name="background" color="0,0,0,255" width="376" fillcenter="false" type="filled" fill="{statmodifiedmax}" />
 					<sprite depth="7" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="16,16" pos="4,-3" foregroundlayer="true"/>
 					<label depth="7" name="TextContent" pos="0,-3" font_size="16" color="[white]" justify="center" pivot="topleft" text="{statcurrentwithmax}" height="35" effect="outline" effect_distance="1,1" effect_color="0,0,0,255"/>
 				</rect>
-				<rect size="35,35" pos="0,16" visible="{cvar(_crouching:true;false;false)}">
+				<rect width="171" pos="0,16" height="46" controller="HUDStatBar" stat_type="Stealth" visible="{statvisible}">
 					<rect width="377" height="8" controller="HUDStatBar" stat_type="Stealth">
 						<sprite depth="1" name="border" color="0,0,0,150" height="8" type="sliced" />
 						<sprite depth="2" name="background" color="0,0,0,140" type="sliced" />
 						<filledsprite depth="3" name="background" color="110,110,110,128" type="filled" fill="1" />
-						<filledsprite depth="4" name="BarContent" height="6" pos="1,-1" color="255,255,255,194" type="sliced" fill="0" />
-						<sprite depth="5" name="Icon" color="255,255,255,200" sprite="ui_game_symbol_stealth" size="16,16" pos="188,0" pivot="center" foregroundlayer="true"/>
+						<filledsprite depth="4" name="BarContent" height="6" pos="1,-1" color="255,255,255,194" type="sliced" fill="{statfill}" />
+						<sprite depth="5" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="16,16" pos="188,0" pivot="center" foregroundlayer="true"/>						
 						<sprite depth="8" name="border" color="0,0,0,255" type="sliced" fillcenter="false"/>
 						<filledsprite depth="8" name="background" color="0,0,0,255" width="377" fillcenter="false" type="filled" fill="1" />
 						<filledsprite depth="3" name="background" color="0,0,0,255" width="376" fillcenter="false" type="filled" fill="1" />
 					</rect>
 				</rect>
+				<!-- <rect size="35,35" pos="0,16" visible="{cvar(_crouching:true;false;false)}">
+					<rect width="377" height="8" controller="HUDStatBar" stat_type="Stealth">
+						<sprite depth="1" name="border" color="0,0,0,150" height="8" type="sliced" />
+						<sprite depth="2" name="background" color="0,0,0,140" type="sliced" />
+						<filledsprite depth="3" name="background" color="110,110,110,128" type="filled" fill="1" />
+						<filledsprite depth="4" name="BarContent" height="6" pos="1,-1" color="255,255,255,194" type="sliced" fill="{statfill}" />
+						<sprite depth="5" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="16,16" pos="188,0" pivot="center" foregroundlayer="true"/>						
+						<sprite depth="8" name="border" color="0,0,0,255" type="sliced" fillcenter="false"/>
+						<filledsprite depth="8" name="background" color="0,0,0,255" width="377" fillcenter="false" type="filled" fill="1" />
+						<filledsprite depth="3" name="background" color="0,0,0,255" width="376" fillcenter="false" type="filled" fill="1" />
+					</rect>
+				</rect> -->
 
 			</rect>
 			<!---->
@@ -201,7 +213,6 @@
 
 				</rect>
 				<rect visible="{showcharactersdcs}">
-
 					<rect name="plevel" pos="-267,-2" width="75" height="37" tooltip_key="tplvl">
 						<sprite depth="9" color="[black]" sprite="menu_empty2px" type="sliced" fillcenter="false" />
 						<sprite depth="3" width="73" height="35" pos="1,-1" name="background" color="0,0,0,230" type="sliced"/>
@@ -249,7 +260,7 @@
 
 					<filledsprite depth="3" name="background" color="110,110,110,128" width="199" type="filled" fill="{statmodifiedmax}" />
 
-					<filledsprite depth="5" name="BarContent" color="0,54,255,245" width="199" type="filled" fill="0" />
+					<filledsprite depth="5" name="BarContent" color="0,54,255,245" width="199" type="filled" fill="{statfill}" />
 					<sprite depth="6" name="Icon" atlas="{staticonatlas|once}" sprite="ui_game_symbol_agility" size="23,23" pos="26,-18" pivot="center" foregroundlayer="true"/>
 					<label depth="7" name="TextContent" pos="44,-17" font_size="20" color="[white]" justify="center" pivot="left" text="{statcurrentwithmax}" width="125" height="35"/>
 
@@ -261,11 +272,9 @@
 					<sprite depth="1" name="border" color="0,0,0,128" type="sliced"/>
 					<sprite depth="2" name="background" color="0,0,0,140" type="sliced" />
 					<filledsprite depth="3" name="background" color="110,110,110,128" width="199" type="filled" fill="{statmodifiedmax}" />
-
-					<filledsprite depth="5" name="BarContent" color="255,0,0,245" width="199" type="filled" fill="0" />
+					<filledsprite depth="5" name="BarContent" color="255,0,0,245" width="199" type="filled" fill="{statfill}"/>
 					<sprite depth="6" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="23,23" pos="26,-18" pivot="center" foregroundlayer="true"/>
 					<label depth="7" name="TextContent" pos="44,-17" font_size="20" color="[white]" justify="center" pivot="left" text="{statcurrentwithmax}" width="125" height="35"/>
-
 					<sprite depth="8" name="border" color="0,0,0,255" type="sliced" fillcenter="false"/>
 					<filledsprite depth="8" name="background" color="0,0,0,255" width="201" fillcenter="false" type="filled" fill="{statmodifiedmax}" />
 					<filledsprite depth="3" name="background" color="0,0,0,255" width="200" fillcenter="false" type="filled" fill="{statmodifiedmax}" />

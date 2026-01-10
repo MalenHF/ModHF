@@ -1,0 +1,167 @@
+<configs>
+	<append xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group">
+		<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="VehicleChecker">
+			<requirement name="NotHasBuff" buff="VehicleChecker"/>
+		</triggered_effect>
+	</append>
+	
+	<append xpath="/buffs">
+		<buff name="VehicleChecker" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="500"/>
+			<update_rate value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="100" buff="vehicleHellBeastBikeCheck">
+					<requirement name="EntityTagCompare" target="other" tags="vehiclehellbeast"/>
+					<requirement name="NotHasBuff" target="other" buff="vehicleHellBeastBikeCheck"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="100" buff="vehicleHellFireBikeCheck">
+					<requirement name="EntityTagCompare" target="other" tags="vehiclehellfire"/>
+					<requirement name="NotHasBuff" target="other" buff="vehicleHellFireBikeCheck"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="100" buff="vehicleHellDogBikeCheck">
+					<requirement name="EntityTagCompare" target="other" tags="vehiclehelldog"/>
+					<requirement name="NotHasBuff" target="other" buff="vehicleHellDogBikeCheck"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="100" buff="vehicleSpiderBikeCheck">
+					<requirement name="EntityTagCompare" target="other" tags="vehiclespider"/>
+					<requirement name="NotHasBuff" target="other" buff="vehicleSpiderBikeCheck"/>
+				</triggered_effect>				
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="100" buff="vehicleHellHound4x4Check">
+					<requirement name="EntityTagCompare" target="other" tags="vehiclehellhound4x4"/>
+					<requirement name="NotHasBuff" target="other" buff="vehicleHellHound4x4Check"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="100" buff="vehicleHellSpikey4x4Check">
+					<requirement name="EntityTagCompare" target="other" tags="vehiclehellspikey4x4"/>
+					<requirement name="NotHasBuff" target="other" buff="vehicleHellSpikey4x4Check"/>
+				</triggered_effect>			
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="100" buff="vehicleWhirligigCheck">
+					<requirement name="EntityTagCompare" target="other" tags="vehiclewhirligig"/>
+					<requirement name="NotHasBuff" target="other" buff="vehicleWhirligigCheck"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="100" buff="vehicleSharkBlimpCheck">
+					<requirement name="EntityTagCompare" target="other" tags="vehiclesharkblimp"/>
+					<requirement name="NotHasBuff" target="other" buff="vehicleSharkBlimpCheck"/>
+				</triggered_effect>			
+			</effect_group>			
+		</buff>
+		
+<!-- Motorcycles -->		
+
+		<buff name="vehicleHellBeastBikeCheck" hidden="true">
+			<damage_type value="heat"/>		
+			<stack_type value="ignore"/>			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/OutdoorDecor/cowSkullPrefab.prefab" local_offset="0,.175,.45" local_rotation="45,0,0" parent_transform="Forks"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/weapon_bags_smallPrefab.prefab" local_offset="0,.8,-1.85" local_rotation="0,0,0" parent_transform="GameObject"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Spear/spear_steel_Prefab.prefab" local_offset=".24,.58,0.9" local_rotation="90,0,0" parent_transform="M"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Spear/spear_iron_Prefab.prefab" local_offset="-.24,.58,0.9" local_rotation="90,0,0" parent_transform="GameObject"/>
+			</effect_group>
+		</buff>
+
+		<buff name="vehicleHellFireBikeCheck" hidden="true">
+			<damage_type value="heat"/>
+			<stack_type value="ignore"/>			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/OutdoorDecor/cowSkullPrefab.prefab" local_offset="0,.175,.45" local_rotation="45,0,0" parent_transform="Forks"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/weapon_bags_smallPrefab.prefab" local_offset="0,.8,-1.85" local_rotation="0,0,0" parent_transform="GameObject"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Spear/spear_steel_Prefab.prefab" local_offset=".24,.58,0.9" local_rotation="90,0,0" parent_transform="M"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Spear/spear_iron_Prefab.prefab" local_offset="-.24,.58,0.9" local_rotation="90,0,0" parent_transform="GameObject"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Vehicles/Car/motorPrefab.prefab" local_offset="0,.6,0" local_rotation="0,0,0" parent_transform="GameObject"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Axe/steelAxePrefab.prefab" local_offset=".27,1,-1.4" local_rotation="-30,0,0" parent_transform="M"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Axe/fireaxe_ironPrefab.prefab" local_offset="-.27,1,-1.4" local_rotation="-25,0,0" parent_transform="GameObject"/>
+			</effect_group>
+		</buff>
+
+		<buff name="vehicleHellDogBikeCheck" hidden="true">
+			<damage_type value="heat"/>
+			<stack_type value="ignore"/>			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab" local_offset="0,-0.48,.5" local_rotation="45,0,-45" parent_transform="Forks"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/weapon_bags_smallPrefab.prefab" local_offset="0,.8,-1.85" local_rotation="0,0,0" parent_transform="GameObject"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Spear/spear_steel_Prefab.prefab" local_offset=".24,.58,0.9" local_rotation="90,0,0" parent_transform="M"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Spear/spear_iron_Prefab.prefab" local_offset="-.24,.58,0.9" local_rotation="90,0,0" parent_transform="GameObject"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Vehicles/Car/motorPrefab.prefab" local_offset="0,.6,0" local_rotation="0,0,0" parent_transform="GameObject"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Axe/steelAxePrefab.prefab" local_offset=".27,1,-1.4" local_rotation="-30,0,0" parent_transform="M"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Axe/fireaxe_ironPrefab.prefab" local_offset="-.27,1,-1.4" local_rotation="-25,0,0" parent_transform="GameObject"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="vehicleSpiderBikeCheck" hidden="true">
+			<damage_type value="heat"/>		
+			<stack_type value="ignore"/>			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/LootContainers/weapon_bags_largePrefab.prefab" local_offset="0.05,.45,-1.05" local_rotation="0,0,0" parent_transform="GameObject"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Traps/ironSpikesTrapPrefab.prefab" local_offset="0,0.5,-0.86" local_rotation="0,0,0" parent_transform="GameObject"/>				
+			
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="1.2" buff="buffInjuryKnockdown01">
+					<requirement name="EntityTagCompare" target="other" tags="zombie,enemy"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>		
+		
+<!-- Cars, Jeeps, Trucks, and Buses -->		
+
+		<buff name="vehicleHellHound4x4Check" hidden="true">
+			<damage_type value="heat"/>
+			<stack_type value="ignore"/>		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Zombies/Zombies/halfCorpsePrefab.prefab" local_offset="0,1,-2" local_rotation="0,0,0" parent_transform="GameObject"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Zombies/Zombies/corpse2Prefab.prefab" local_offset="0,1.1,2.3" local_rotation="0,90,0" parent_transform="GameObject"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Plants/pumpkinJackoLanternPrefab.prefab" local_offset="0,2.95,0.05" local_rotation="0,0,0" parent_transform="GameObject"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/BanditProps/Barbedwire/barbedwire_spindle_diagonal_1mPrefab.prefab" local_offset="0,0.45,2.4" local_rotation="0,45,0" parent_transform="GameObject"/>
+			</effect_group>
+		</buff>
+
+		<buff name="vehicleHellSpikey4x4Check" hidden="true">
+			<damage_type value="heat"/>
+			<stack_type value="ignore"/>		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Zombies/Zombies/halfCorpsePrefab.prefab" local_offset="0,1,-2" local_rotation="0,0,0" parent_transform="GameObject"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Zombies/Zombies/corpse2Prefab.prefab" local_offset="0,1.1,2.3" local_rotation="0,90,0" parent_transform="GameObject"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Plants/pumpkinJackoLanternPrefab.prefab" local_offset="0,2.95,0.05" local_rotation="0,0,0" parent_transform="GameObject"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/BanditProps/Barbedwire/barbedwire_spindle_diagonal_1mPrefab.prefab" local_offset="0,0.45,2.4" local_rotation="0,45,0" parent_transform="GameObject"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Traps/ironSpikesTrap2BloodPrefab.prefab" local_offset="-.68,1.2,2.3" local_rotation="-60,90,45" parent_transform="GameObject"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Traps/ironSpikesTrapPrefab.prefab" local_offset=".68,1.2,2.3" local_rotation="70,90,45" parent_transform="M"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Traps/ironSpikesTrap1BloodPrefab.prefab" local_offset="-.25,.7,2.45" local_rotation="90,0,0" parent_transform="GameObject"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Traps/ironSpikesTrap2Prefab.prefab" local_offset=".25,.7,2.45" local_rotation="90,0,0" parent_transform="M"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Spear/spear_steel_Prefab.prefab" local_offset=".8,1,1.55" local_rotation="90,0,0" parent_transform="GameObject"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/Spear/spear_iron_Prefab.prefab" local_offset="-.8,1,1.55" local_rotation="90,0,0" parent_transform="GameObject"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/ClubIron/clubIronPrefab.prefab" local_offset="1.1,0.55,-1.425" local_rotation="0,0,-90" parent_transform="GameObject"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Melee/ClubIron/clubIronPrefab.prefab" local_offset="-1.1,0.55,-1.425" local_rotation="0,0,90" parent_transform="M"/>
+			</effect_group>
+		</buff>		
+
+<!-- Flyers -->
+
+		<buff name="vehicleWhirligigCheck" hidden="true">
+			<damage_type value="heat"/>
+			<stack_type value="ignore"/>			
+			<effect_group>
+			
+			<!-- Local offset parameters attach the prefab onto the model - 0,0,0 - First expresses left to right from central origin. / Second expresses up and down from central origin. / Third expresses front to back from central origin. -->
+			<!-- Local rotation parameters direct the angle of the prefab onto the model - 0,0,0 - First expresses forwards/backwards angle. / Second expresses left/right twist angle. / Third expresses left/right lean angle. -->
+			
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Electrical/smallGeneratorPrefab.prefab" local_offset="0,1.3,-0.14" local_rotation="0,0,0" parent_transform="GameObject"/>				
+			</effect_group>
+		</buff>
+		
+		<buff name="vehicleSharkBlimpCheck" hidden="true">
+			<damage_type value="heat"/>
+			<stack_type value="ignore"/>		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true"  transform_path="headlight"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Lighting/lantern_02PlayerPrefab.prefab" local_offset="0,1.0,1.25" local_rotation="90,0,0" parent_transform="GameObject"/>
+				<!--<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Animals/Shark/animalSharkStandard.prefab" local_offset="0,.9,0" local_rotation="0,0,0" parent_transform="GameObject"/>-->
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Vehicles/jokeblimp_Prefab.prefab" local_offset="0,0.1,-0.8" local_rotation="0,0,0" local_scale=".45,.45,.45" parent_transform="GameObject"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false"  parent_transform="GameObject" transform_path="M"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false"  parent_transform="GameObject" transform_path="Wheel0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false"  parent_transform="GameObject" transform_path="Wheel1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false"  parent_transform="GameObject" transform_path="Wheel2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false"  parent_transform="GameObject" transform_path="Wheel3"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false"  parent_transform="GameObject" transform_path="Particles"/>
+			</effect_group>
+		</buff>	
+		
+	</append>
+</configs>

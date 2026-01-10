@@ -1,10 +1,24 @@
 <config>
-    <remove xpath="/buffs/buff[@name='cpm_tooltip_enterpvpclaim']"/>
-    <remove xpath="/buffs/buff[@name='cpm_tooltip_exitpvpclaim']"/>
-    <remove xpath="/buffs/buff[@name='cpm_tooltip_enterpveclaim']"/>
-    <remove xpath="/buffs/buff[@name='cpm_tooltip_exitpveclaim']"/>
+
+    <append xpath="/buffs/buff[@name='buffBurnt_Hazard']/effect_group[@name='Reset Timer and Display Burnt Done']/requirement[@name='!HasBuff']/@buff">,prismacore_tooltip_marketNoHazarZone_enter,prismacore_tooltip_eventHFZone_enter</append>
+    <append xpath="/buffs/buff[@name='buffBurnt_Hazard']/effect_group[@name='Update Time']/requirement[@name='!HasBuff']/@buff">,prismacore_tooltip_marketNoHazarZone_enter,prismacore_tooltip_eventHFZone_enter</append>
+    
+    <append xpath="/buffs/buff[@name='buffDesert_Hazard']/effect_group[@name='Reset Timer and Display Desert Done']/requirement[@name='!HasBuff']/@buff">,prismacore_tooltip_marketNoHazarZone_enter,prismacore_tooltip_eventHFZone_enter</append>
+    <append xpath="/buffs/buff[@name='buffDesert_Hazard']/effect_group[@name='Update Time']/requirement[@name='!HasBuff']/@buff">,prismacore_tooltip_marketNoHazarZone_enter,prismacore_tooltip_eventHFZone_enter</append>
+
+    <append xpath="/buffs/buff[@name='buffSnow_Hazard']/effect_group[@name='Reset Timer and Display Snow Done']/requirement[@name='!HasBuff']/@buff">,prismacore_tooltip_marketNoHazarZone_enter,prismacore_tooltip_eventHFZone_enter</append>
+    <append xpath="/buffs/buff[@name='buffSnow_Hazard']/effect_group[@name='Update Time']/requirement[@name='!HasBuff']/@buff">,prismacore_tooltip_marketNoHazarZone_enter,prismacore_tooltip_eventHFZone_enter</append>
+
+    <append xpath="/buffs/buff[@name='buffWasteland_Hazard']/effect_group[@name='Reset Timer and Display Wasteland Done']/requirement[@name='!HasBuff']/@buff">,prismacore_tooltip_marketNoHazarZone_enter,prismacore_tooltip_eventHFZone_enter</append>
+    <append xpath="/buffs/buff[@name='buffWasteland_Hazard']/effect_group[@name='Update Time']/requirement[@name='!HasBuff']/@buff">,prismacore_tooltip_marketNoHazarZone_enter,prismacore_tooltip_eventHFZone_enter</append>
+
+    
+    <remove xpath="/buffs/buff[@name='prismacore_tooltip_enterpvpclaim']"/>
+    <remove xpath="/buffs/buff[@name='prismacore_tooltip_exitpvpclaim']"/>
+    <remove xpath="/buffs/buff[@name='prismacore_tooltip_enterpveclaim']"/>
+    <remove xpath="/buffs/buff[@name='prismacore_tooltip_exitpveclaim']"/>
     <append xpath="/buffs">
-        <buff name="cpm_tooltip_enterpvpclaim" name_key="buffZoneHCName" escription_key="buffZoneHCDesc"  remove_on_death="false" tooltip_key="buffZoneHCTooltip" icon="ui_game_symbol_twitch_minion_overhead" icon_blink="true">
+        <buff name="prismacore_tooltip_enterpvpclaim" name_key="buffZoneHCName" escription_key="buffZoneHCDesc"  remove_on_death="false" tooltip_key="buffZoneHCTooltip" icon="ui_game_symbol_twitch_minion_overhead" icon_blink="true">
             <display_value_key value="buffZoneHCNameShort"/>
             <display_value value="xxx"/>
             <stack_type value="ignore"/>
@@ -33,21 +47,21 @@
 			</effect_group>
         </buff>
 
-        <buff name="cpm_tooltip_exitpvpclaim" name_key="cpm_tooltip_exitpvpclaim" hidden="true" icon="ui_game_symbol_block_repair">
+        <buff name="prismacore_tooltip_exitpvpclaim" name_key="prismacore_tooltip_exitpvpclaim" hidden="true" icon="ui_game_symbol_block_repair">
             <display_value_key value="CPM"/>
             <display_value value="xxx"/>
             <stack_type value="ignore"/>
             <duration value="0"/>
             <effect_group>
                 <!-- <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffZoneHC" /> -->
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_enterpvpclaim"/>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_exitpvpclaim"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_enterpvpclaim"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_exitpvpclaim"/>
             </effect_group>
         </buff>
 
         
 
-        <buff name="cpm_tooltip_enterpveclaim" name_key="cpm_tooltip_enterpveclaim" icon="ui_game_symbol_block_repair" icon_color="255,0,0" tooltip_key="[00FF00]You are entering a PVE zone! Killing is not possible.[-]">
+        <buff name="prismacore_tooltip_enterpveclaim" name_key="prismacore_tooltip_enterpveclaim" icon="ui_game_symbol_block_repair" icon_color="255,0,0" tooltip_key="[00FF00]You are entering a PVE zone! Killing is not possible.[-]">
             <display_value_key value="In PVE zone"/>
             <display_value value="xxx"/>
             <stack_type value="ignore"/>
@@ -56,66 +70,66 @@
                 <passive_effect name="DisableItem" operation="base_set" value="1" tags="noblocks" />
                 <triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="hfNoConstructionZone"/>
                 <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfNoConstructionZone" />
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_enterpveclaim"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_enterpveclaim"/>
             </effect_group>
         </buff>
 
-        <buff name="cpm_tooltip_exitpveclaim" name_key="cpm_tooltip_exitpveclaim" icon="ui_game_symbol_block_repair" tooltip_key="[00FF00]You are leaving a PVE zone! Killing is possible again![-]">
+        <buff name="prismacore_tooltip_exitpveclaim" name_key="prismacore_tooltip_exitpveclaim" icon="ui_game_symbol_block_repair" tooltip_key="[00FF00]You are leaving a PVE zone! Killing is possible again![-]">
             <display_value_key value="CPM"/>
             <display_value value="xxx"/>
             <stack_type value="ignore"/>
             <duration value="0"/>
             <effect_group>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="hfNoConstructionZone" />
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_enterpveclaim" />
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_exitpveclaim"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_enterpveclaim" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_exitpveclaim"/>
             </effect_group>
         </buff>
 
         <!--CPM-->
-        <buff name="cpm_tooltip_ProtectedLobby_enter" name_key="cpm_tooltip_ProtectedLobby_exit" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
+        <buff name="prismacore_tooltip_ProtectedLobby_enter" name_key="prismacore_tooltip_ProtectedLobby_exit" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
             <display_value_key value="Lobby"/>
             <display_value value="xxx"/>
             <stack_type value="ignore"/>
             <effect_group>
                 <requirement name="NotHasBuff" buff="god"/>
                 <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfProtectZone" />
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_ProtectedLobby_enter"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_ProtectedLobby_enter"/>
             </effect_group>
         </buff>
-        <buff name="cpm_tooltip_ProtectedLobby_exit" name_key="cpm_tooltip_ProtectedLobby_exit" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
+        <buff name="prismacore_tooltip_ProtectedLobby_exit" name_key="prismacore_tooltip_ProtectedLobby_exit" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
             <display_value_key value="Lobby"/>
             <display_value value="xxx"/>
             <stack_type value="ignore"/>
             <effect_group>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="hfProtectZone" />
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_ProtectedLobby_enter" />
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_ProtectedLobby_exit" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_ProtectedLobby_enter" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_ProtectedLobby_exit" />
             </effect_group>
         </buff>
         
-        <buff name="cpm_tooltip_ProtectedMarket_enter" name_key="cpm_tooltip_ProtectedLobby_exit" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
+        <buff name="prismacore_tooltip_ProtectedMarket_enter" name_key="prismacore_tooltip_ProtectedLobby_exit" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
             <display_value_key value="Lobby"/>
             <display_value value="xxx"/>
             <stack_type value="ignore"/>
             <effect_group>
                 <requirement name="NotHasBuff" buff="god"/>
                 <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfProtectZone" />
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_ProtectedMarket_enter"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_ProtectedMarket_enter"/>
             </effect_group>
         </buff>
-        <buff name="cpm_tooltip_ProtectedMarket_exit" name_key="cpm_tooltip_ProtectedMarket_enter" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
+        <buff name="prismacore_tooltip_ProtectedMarket_exit" name_key="prismacore_tooltip_ProtectedMarket_enter" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
             <display_value_key value="Lobby"/>
             <display_value value="xxx"/>
             <stack_type value="ignore"/>
             <effect_group>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="hfProtectZone" />
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_ProtectedMarket_enter" />
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_ProtectedMarket_exit" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_ProtectedMarket_enter" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_ProtectedMarket_exit" />
             </effect_group>
         </buff>
 
-        <buff name="cpm_tooltip_ProtectedPOI_enter" name_key="cpm_tooltip_ProtectedLobby_exit" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
+        <buff name="prismacore_tooltip_ProtectedPOI_enter" name_key="prismacore_tooltip_ProtectedLobby_exit" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
             <display_value_key value="Lobby"/>
             <display_value value="xxx"/>
             <stack_type value="ignore"/>
@@ -125,14 +139,14 @@
                 <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="hfNoConstructionZone" />
             </effect_group>
         </buff>
-        <buff name="cpm_tooltip_ProtectedPOI_exit" name_key="cpm_tooltip_ProtectedMarket_enter" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
+        <buff name="prismacore_tooltip_ProtectedPOI_exit" name_key="prismacore_tooltip_ProtectedMarket_enter" hidden="true" icon="ui_game_symbol_destruction2" icon_color="46,244,41" tooltip_key="[00FF00]Welcome to the lobby[-]">
             <display_value_key value="Lobby"/>
             <display_value value="xxx"/>
             <stack_type value="ignore"/>
             <effect_group>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="hfNoConstructionZone" />
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_ProtectedPOI_enter" />
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_ProtectedPOI_exit" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_ProtectedPOI_enter" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_ProtectedPOI_exit" />
             </effect_group>
         </buff>
 
@@ -156,7 +170,7 @@
         </buff>
 
 
-         <buff name="cpm_tooltip_Coliseo1_enter" name_key="Coliseo" remove_on_death="false" hidden="false" icon="ui_game_symbol_spear" icon_color="244,93,41" tooltip_key="coloEnterKey">
+         <buff name="prismacore_tooltip_Coliseo1_enter" name_key="Coliseo" remove_on_death="false" hidden="false" icon="ui_game_symbol_spear" icon_color="244,93,41" tooltip_key="coloEnterKey">
             <display_value_key value="Coliseo"/>
             <display_value value="xxx"/>
             <stack_type value="ignore"/>
@@ -172,17 +186,17 @@
 				</passive_effect>      
             </effect_group>
         </buff>
-        <buff name="cpm_tooltip_Coliseo1_exit" name_key="cpm_tooltip_ProtectedLobby_exit" hidden="true" icon="ui_game_symbol_destruction2" icon_color="244,93,41" tooltip_key="coloExitKey">
+        <buff name="prismacore_tooltip_Coliseo1_exit" name_key="prismacore_tooltip_ProtectedLobby_exit" hidden="true" icon="ui_game_symbol_destruction2" icon_color="244,93,41" tooltip_key="coloExitKey">
             <display_value_key value="Lobby"/>
             <display_value value="xxx"/>
             <stack_type value="ignore"/>
             <effect_group>                
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_Coliseo1_enter" />
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_Coliseo1_exit" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_Coliseo1_enter" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_Coliseo1_exit" />
             </effect_group>
         </buff>
 
-        <buff name="cpm_tooltip_Coliseo2_enter" name_key="Coliseo" remove_on_death="false" hidden="false" icon="ui_game_symbol_spear" icon_color="244,93,41" tooltip_key="coloEnterKey">
+        <buff name="prismacore_tooltip_Coliseo2_enter" name_key="Coliseo" remove_on_death="false" hidden="false" icon="ui_game_symbol_spear" icon_color="244,93,41" tooltip_key="coloEnterKey">
             <display_value_key value="Coliseo"/>
             <display_value value="xxx"/>
             <stack_type value="ignore"/>
@@ -198,17 +212,17 @@
 				</passive_effect>     
             </effect_group>
         </buff>
-        <buff name="cpm_tooltip_Coliseo2_exit" name_key="x" hidden="true" icon="ui_game_symbol_destruction2" icon_color="244,93,41" tooltip_key="coloExitKey">
+        <buff name="prismacore_tooltip_Coliseo2_exit" name_key="x" hidden="true" icon="ui_game_symbol_destruction2" icon_color="244,93,41" tooltip_key="coloExitKey">
             <display_value_key value="Lobby"/>
             <display_value value="xxx"/>
             <stack_type value="ignore"/>
             <effect_group>                
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_Coliseo2_enter" />
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_Coliseo2_exit" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_Coliseo2_enter" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_Coliseo2_exit" />
             </effect_group>
         </buff>
 
-        <buff name="cpm_tooltip_Coliseo3_enter" name_key="Coliseo" remove_on_death="false" hidden="false" icon="ui_game_symbol_spear" icon_color="244,93,41" tooltip_key="coloEnterKey">
+        <buff name="prismacore_tooltip_Coliseo3_enter" name_key="Coliseo" remove_on_death="false" hidden="false" icon="ui_game_symbol_spear" icon_color="244,93,41" tooltip_key="coloEnterKey">
             <display_value_key value="Coliseo"/>
             <display_value value="xxx"/>
             <stack_type value="ignore"/>
@@ -224,17 +238,126 @@
 				</passive_effect>      
             </effect_group>
         </buff>
-        <buff name="cpm_tooltip_Coliseo3_exit" name_key="x" hidden="true" icon="ui_game_symbol_destruction2" icon_color="244,93,41" tooltip_key="coloExitKey">
+        <buff name="prismacore_tooltip_Coliseo3_exit" name_key="x" hidden="true" icon="ui_game_symbol_destruction2" icon_color="244,93,41" tooltip_key="coloExitKey">
             <display_value_key value="Lobby"/>
             <display_value value="xxx"/>
             <stack_type value="ignore"/>
             <effect_group>                
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_Coliseo3_enter" />
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="cpm_tooltip_Coliseo3_exit" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_Coliseo3_enter" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_Coliseo3_exit" />
             </effect_group>
         </buff>
 
+        <buff name="prismacore_tooltip_Coliseo4_enter" name_key="Coliseo" remove_on_death="false" hidden="false" icon="ui_game_symbol_spear" icon_color="244,93,41" tooltip_key="coloEnterKey">
+            <display_value_key value="Coliseo"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
+            <effect_group>
+                <requirement name="NotHasBuff" buff="god"/>
+                <passive_effect name="DisableItem" operation="base_set" value="1" tags="noblocks,ranged" />  
+                <passive_effect name="AttacksPerMinute" operation="perc_add" value=".5" tags="melee">
+					<requirement name="!HoldingItemHasTags" tags="ancienthammer"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value="8">
+					<requirement name="HoldingItemHasTags" tags="melee"/>
+					<requirement name="!HoldingItemHasTags" tags="ancienthammer"/>
+				</passive_effect>      
+            </effect_group>
+        </buff>
+        <buff name="prismacore_tooltip_Coliseo4_exit" name_key="x" hidden="true" icon="ui_game_symbol_destruction2" icon_color="244,93,41" tooltip_key="coloExitKey">
+            <display_value_key value="Lobby"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
+            <effect_group>                
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_Coliseo3_enter" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_Coliseo3_exit" />
+            </effect_group>
+        </buff>
 
+        <buff name="prismacore_tooltip_Coliseo5_enter" name_key="Coliseo" remove_on_death="false" hidden="false" icon="ui_game_symbol_spear" icon_color="244,93,41" tooltip_key="coloEnterKey">
+            <display_value_key value="Coliseo"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
+            <effect_group>
+                <requirement name="NotHasBuff" buff="god"/>
+                <passive_effect name="DisableItem" operation="base_set" value="1" tags="noblocks,ranged" />  
+                <passive_effect name="AttacksPerMinute" operation="perc_add" value=".5" tags="melee">
+					<requirement name="!HoldingItemHasTags" tags="ancienthammer"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value="8">
+					<requirement name="HoldingItemHasTags" tags="melee"/>
+					<requirement name="!HoldingItemHasTags" tags="ancienthammer"/>
+				</passive_effect>      
+            </effect_group>
+        </buff>
+        <buff name="prismacore_tooltip_Coliseo5_exit" name_key="x" hidden="true" icon="ui_game_symbol_destruction2" icon_color="244,93,41" tooltip_key="coloExitKey">
+            <display_value_key value="Lobby"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
+            <effect_group>                
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_Coliseo3_enter" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_Coliseo3_exit" />
+            </effect_group>
+        </buff>
+        <buff name="prismacore_tooltip_Coliseo6_enter" name_key="Coliseo" remove_on_death="false" hidden="false" icon="ui_game_symbol_spear" icon_color="244,93,41" tooltip_key="coloEnterKey">
+            <display_value_key value="Coliseo"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
+            <effect_group>
+                <requirement name="NotHasBuff" buff="god"/>
+                <passive_effect name="DisableItem" operation="base_set" value="1" tags="noblocks,ranged" />  
+                <passive_effect name="AttacksPerMinute" operation="perc_add" value=".5" tags="melee">
+					<requirement name="!HoldingItemHasTags" tags="ancienthammer"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value="8">
+					<requirement name="HoldingItemHasTags" tags="melee"/>
+					<requirement name="!HoldingItemHasTags" tags="ancienthammer"/>
+				</passive_effect>      
+            </effect_group>
+        </buff>
+        <buff name="prismacore_tooltip_Coliseo6_exit" name_key="x" hidden="true" icon="ui_game_symbol_destruction2" icon_color="244,93,41" tooltip_key="coloExitKey">
+            <display_value_key value="Lobby"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
+            <effect_group>                
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_Coliseo3_enter" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_Coliseo3_exit" />
+            </effect_group>
+        </buff>
+
+        <buff name="prismacore_tooltip_marketNoHazarZone_enter" name_key="Proteccion del Mercado" description_key="Estas dentro de la zona de proteccion del mercado, los daños elementales no te afectaran" remove_on_death="false" hidden="false" icon="ui_game_symbol_coin" icon_color="0, 232, 255" tooltip_key="coloEnterKey">
+            <display_value_key value="Proteccion del Mercado"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>                     
+        </buff>
+        <buff name="prismacore_tooltip_marketNoHazarZone_exit" name_key="x" hidden="true" icon="ui_game_symbol_coin" icon_color="244,93,41" tooltip_key="coloExitKey">
+            <display_value_key value="Mercado"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
+            <effect_group>                
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_marketNoHazarZone_enter" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_marketNoHazarZone_exit" />
+            </effect_group>
+        </buff>
+
+        <buff name="prismacore_tooltip_eventHFZone_enter" name_key="Proteccion de Eventos" description_key="Estas dentro de la zona de proteccion de la zona de eventos, los daños elementales y el prestigio 3 no te afectaran" remove_on_death="false" hidden="false" icon="ui_game_symbol_twitch_celebrate" icon_color="0, 232, 255" tooltip_key="coloEnterKey">
+            <display_value_key value="Eventos"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
+            <effect_group>
+                <requirement name="NotHasBuff" buff="god"/>
+                <passive_effect name="DisableItem" operation="base_set" value="1" tags="noblocks" />
+            </effect_group>            
+        </buff>
+        <buff name="prismacore_tooltip_eventHFZone_exit" name_key="x" hidden="true" icon="ui_game_symbol_twitch_celebrate" icon_color="244,93,41" tooltip_key="coloExitKey">
+            <display_value_key value="Eventos"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>
+            <effect_group>                
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_eventHFZone_enter" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prismacore_tooltip_eventHFZone_exit" />
+            </effect_group>
+        </buff>
 
 
     </append>

@@ -10,8 +10,17 @@
             
             <action class="AddQuest">
                 <property name="phase" value="1" />
-                <property name="quest" value="q_EventPascua2" />
+                <property name="quest" value="q_EventNewYear" />
+				<!--<property name="quest" value="q_EventSummer" />-->
+                <!--<property name="quest" value="q_EventPascua2" />-->
+                <!--<property name="quest" value="q_EventFall" />-->
+
             </action>
+			<action class="AddItems">
+				<property name="phase" value="2" />
+				<property name="added_items" value="eventSeasonItem1"/>
+				<property name="added_item_counts" value="1"/>								
+			</action>
 
         </action_sequence>
 
@@ -30,18 +39,16 @@
 
             <action class="AddBuff">
 				<property name="phase" value="1" />
-				<property name="buff_name" value="buffEventChallengePascua" />	
+				<property name="buff_name" value="buffEventChallengePascua" param1="buffReward"/>	
 				<property name="target_group" value="party" />			
 			</action>	
             
             <action class="AddQuest">
                 <property name="phase" value="2" />
-                <property name="quest" value="q_EventPascua3" />
+                <property name="quest" value="q_EventPascua3" param1="questReward"/>
             </action>
-
-
-
         </action_sequence>
+		
 
 		<action_sequence name="challenge_group_reward_hfEvents_Summer">
             <property name="allow_user_trigger" value="false" />
@@ -58,17 +65,19 @@
 
             <action class="AddBuff">
 				<property name="phase" value="1" />
-				<property name="buff_name" value="buffEventChallengePascua" />	
+				<property name="buff_name" value="buffEventChallengeSummer" />	
 				<property name="target_group" value="party" />			
 			</action>	
             
             <action class="AddQuest">
                 <property name="phase" value="2" />
-                <property name="quest" value="q_EventPascua3" />
+                <property name="quest" value="q_EventSummer2" />
             </action>
+        </action_sequence>
 
-
-
+        <action_sequence name="challenge_group_reward_hfEvents_Fall" template="challenge_group_reward_hfEvents_Pacua">
+            <variable name="buffReward" value="buffEventChallengeFall" />
+            <variable name="questReward" value="q_EventFall2" />
         </action_sequence>
 
         <action_sequence name="note_saurus">			
@@ -83,8 +92,8 @@
 			</action>
 			
 			<action class="SpawnEntity">
-				<property name="entity_names" value="ConejosaurioEvent" param1="zombiename"/>				
-				<property name="spawn_count" value="1" param1="zombiecount" />				
+				<property name="entity_names" value="MinieBomber" param1="zombiename"/>				
+				<property name="spawn_count" value="5" param1="zombiecount" />				
 				<property name="phase" value="0" />
 				<property name="safe_spawn" value="false" />
 				<property name="air_spawn" value="true" />
@@ -168,7 +177,9 @@
             <action class="AddItems">
 				<property name="added_items" value="AmmoKit"/>
 				<property name="added_item_counts" value="2" param1="item_number2"/>								
-			</action>
+			</action>	
+
+			
         </action_sequence>
 
          <action_sequence name="challenge_Events_item_reward_2">
@@ -201,30 +212,108 @@
 			</action>
         </action_sequence>
 
-        <action_sequence name="action_repairLS">
-		<action class="PlaySound">
-			<property name="sound" value="twitch_good_action" />
-			<property name="phase" value="1" />
-			<property name="inside_head" value="true" />
-			<property name="target_group" value="party" />
-		</action>
+		<action_sequence name="action_repairLS">
+			<action class="PlaySound">
+				<property name="sound" value="twitch_good_action" />
+				<property name="phase" value="1" />
+				<property name="inside_head" value="true" />
+				<property name="target_group" value="party" />
+			</action>
 
-		<action class="PlaySound">
-			<property name="phase" value="1" />
-			<property name="sound" value="twitch_repair" />
-			<property name="inside_head" value="true" />
-			<property name="target_group" value="party" />
-		</action>
+			<action class="PlaySound">
+				<property name="phase" value="1" />
+				<property name="sound" value="twitch_repair" />
+				<property name="inside_head" value="true" />
+				<property name="target_group" value="party" />
+			</action>
 
-		<action class="AddItemDurability">
-			<property name="phase" value="1" />
-            <property name="items_location" value="Toolbelt" />
-			<property name="items_tags" value="lastStand" />
-			<property name="amount" value=".2" />
-			<property name="is_percent" value="true" />			
-		</action>
+			<action class="AddItemDurability">
+				<property name="phase" value="1" />
+				<property name="items_location" value="Toolbelt" />
+				<property name="items_tags" value="lastStand" />
+				<property name="amount" value=".2" />
+				<property name="is_percent" value="true" />			
+			</action>
 
-	</action_sequence>
+		</action_sequence>
+
+		<action_sequence name="challenge_Events_item_reward_xmas_1">
+			<property name="allow_user_trigger" value="false" />
+			<property name="action_type" value="Game" />
+			
+			<action class="AddQuest">
+                <property name="phase" value="1" />
+                <property name="quest" value="q_EventXmas1" param1="quest_name"/>
+            </action>
+		</action_sequence>
+
+
+		<action_sequence name="challenge_Events_item_reward_xmas_2">
+			<property name="allow_user_trigger" value="false" />
+			<property name="action_type" value="Game" />			
+			<action class="AddItems">
+				<property name="added_items" value="meleeWpnBladeT1CandyKnife" param1="item_name"/>
+				<property name="added_item_counts" value="6" param1="item_number"/>								
+			</action>
+		</action_sequence>
+
+		<action_sequence name="challenge_Events_item_reward_xmas_3" template="challenge_Events_item_reward_xmas_2">            
+            <variable name="item_name" value="meleeWpnClubT1CandyClub" />
+        </action_sequence>
+
+		<action_sequence name="challenge_Events_item_reward_xmas_4" template="challenge_Events_item_reward_xmas_2">            
+            <variable name="item_name" value="armorSantaHatHelmet" />
+        </action_sequence>		
+		
+
+		<action_sequence name="challenge_Events_item_reward_xmas_5">
+			<property name="allow_user_trigger" value="false" />
+			<property name="action_type" value="Game" />			
+			<action class="AddItems">
+				<property name="added_items" value="foodXmasDinner" param1="item_name"/>
+				<property name="added_item_counts" value="2" param1="item_number"/>								
+			</action>
+		</action_sequence>
+		<action_sequence name="challenge_Events_item_reward_xmas_6">
+			<property name="allow_user_trigger" value="false" />
+			<property name="action_type" value="Game" />			
+			<action class="AddItems">
+				<property name="added_items" value="vehiclesSledBikePlaceable,ammoGasCan" param1="item_name"/>
+				<property name="added_item_counts" value="1,1000" param1="item_number"/>								
+			</action>
+		</action_sequence>
+
+					
+		<action_sequence name="challenge_Events_item_reward_xmas_Complete" template="challenge_Events_item_reward_xmas_1">
+			<variable name="quest_name" value="q_EventXmas2" />
+		</action_sequence>
+
+		<action_sequence name="challenge_Events_item_reward_newYear_Complete">
+            <property name="allow_user_trigger" value="false" />
+            <property name="action_type" value="Game" />
+            <action class="AddPartyToGroup">
+				<property name="phase" value="0" />
+				<property name="group_name" value="party" />
+				<property name="twitch_negative" value="false" />
+			</action>
+                    
+            <action class="Delay">
+                <property name="time" value="2" />
+            </action>
+
+            <action class="AddBuff">
+				<property name="phase" value="1" />
+				<property name="buff_name" value="buffEventChallengeNewYear" param1="buffReward"/>	
+				<property name="target_group" value="party" />			
+			</action>	
+            
+            <action class="AddQuest">
+                <property name="phase" value="2" />
+                <property name="quest" value="q_EventNewYear2" param1="questReward"/>
+            </action>
+        </action_sequence>
+
+	
     </append>
 
     

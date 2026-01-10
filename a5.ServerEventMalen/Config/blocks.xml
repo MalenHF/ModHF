@@ -5,7 +5,8 @@
 	<append xpath="/blocks">
 		<block name="eventmachine">
 			<property name="ItemTypeIcon" value="star"/>
-			<property name="Tags" value="noblocks"/>
+			<property name="Tags" value="noblocks"/>		
+			
 			<property name="CustomIcon" value="cntVendingMachine"/>
 
 			<property name="CustomIconTint" value="cc8899"/>
@@ -46,6 +47,60 @@
 			<property name="SortOrder1" value="70i0"/>
 			<property name="WorkstationWindow" value="workstation_workbench" />
 		</block>
+
+		<block name="xmasTree">			
+			<property name="Class" value="GameEvent"/>
+			<property name="ActivateEvent" value="test_POIReset"/>
+			<!-- <property name="ActivateTime" value="60"/> -->			
+			<property name="CustomIcon" value="treeJuniper4m"/>
+			<property name="DescriptionKey" value="xmasTreeDesc"/>
+			<property name="Tags" value="xmasEvent"/>
+			<property name="Material" value="Mstone"/>
+			<property name="Shape" value="New"/>
+			<property name="Model" value="@:Shapes/poi_part_helper.fbx"/>
+			<property name="Texture" value="8,8,539,8,537,8"/>
+			<property name="DestroyOnEvent" value="false"/>
+
+			<property name="CustomCommandName1" value="Spawn Zombie"/>
+			<property name="CustomCommandIcon1" value="ui_game_symbol_zombie"/>
+			<property name="CustomCommandEvent1" value="spawn_standard"/>
+
+			<property name="CustomCommandName2" value="Spawn Vulture"/>
+			<property name="CustomCommandIcon2" value="ui_game_symbol_hand"/>
+			<property name="CustomCommandEvent2" value="spawn_vulture"/>
+		</block>
+		<block name="event_xmasTreeFloor">
+            <property name="Group" value="Building,advBuilding"/>
+            <property name="DescriptionKey" value="stainlessSteelBlockGroupDesc"/>
+            <property name="DisplayType" value="blockHardened"/>
+            <property name="StabilityFull" value="true"/>
+            <!--  <property name="ImposterExchange" value="imposterBlock" param1="77"/>  -->
+            <property name="CreativeMode" value="Player"/>
+            <drop event="Harvest" name="resourceScrapIron" count="15" tag="allHarvest"/>
+            <drop event="Destroy" count="0"/>
+            <drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+             
+
+            <property name="EconomicBundleSize" value="1"/>
+            <property name="SellableToTrader" value="false"/>
+            <property name="FilterTags" value="fbuilding,fsteel"/>
+
+            <property name="Material" value="MbedrockHF"/>
+            <property name="ItemTypeIcon" value="star"/>
+            <property name="CustomIcon" value="shapeCube"/>
+            <property name="CustomIconTint" value="200,200,200"/>
+
+            <property name="CreativeMode" value="Player"/>
+            <property name="BuffsWhenWalkedOn" value="hfxmasevent"/>
+            <!--<property name="BuffsWhenWalkedOn" value="hfBossRoom"/>-->
+            <property name="Texture" value="62"/>
+            <property class="UpgradeBlock">
+                <property name="ToBlock" value="woodMaster"/>
+                <property name="Item" value="CD"/>
+                <property name="ItemCount" value="1"/>
+                <property name="UpgradeHitCount" value="1"/>
+            </property>
+        </block>  
 			
 	</append>
 

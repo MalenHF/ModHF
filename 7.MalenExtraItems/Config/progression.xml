@@ -6,7 +6,21 @@
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ increases player max lvl to 450 ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
     <set xpath="/progression/level/@max_level">450</set>
 
+    <insertAfter xpath="/progression/perks/perk[@name='perkPackMule']/effect_group/requirement[@buff='buffTwitchBurn,buffTwitchShocked,buffTwitchRadiation']">
+      <requirement name="EntityTagCompare" target="other" tags="zombie,animal"/>      
+    </insertAfter>
+
   <!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Unlock New Workbench ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+      
+    <insertAfter xpath="/progression/perks/perk[@name='perkHardTarget']/effect_group/requirement[@name='EntityHasMovementTag']">
+      <requirement name="NotHasBuff" buff="OP3!"/>      
+    </insertAfter>
+     <insertAfter xpath="/progression/perks/book[@name='perkUrbanCombatRoomClearing']/effect_group/requirement[@name='IsIndoors']">
+      <requirement name="NotHasBuff" buff="OP3!"/>      
+    </insertAfter>
+
+
+
     <!-- <append xpath="/progression/perks/perk[@name='perkAdvancedEngineering']">
       <effect_group>
         <passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,5" value="1" tags="SPWK"/>
@@ -254,7 +268,7 @@
       </skill>
     </insertAfter>
     <insertAfter xpath="/progression/perks/perk[@name='perkGreaseMonkey']">
-      <perk name="PBMA" parent="skillbooks" max_level="3" base_skill_point_cost="3" cost_multiplier_per_level="1.2" name_key="PMASKILL" desc_key="PBdesc1" long_desc_key="" icon="ui_game_symbol_book">
+      <perk name="PBMA" parent="skillbooks" max_level="3" base_skill_point_cost="3" cost_multiplier_per_level="1.2" name_key="PMASKILL" desc_key="perkMasterBooksDesc" long_desc_key="" icon="ui_game_symbol_book">
         <!--
         <level_requirements level="1">
           <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="1" desc_key="perkSpdesc1"/>
@@ -276,7 +290,7 @@
         </effect_group>
       </perk>
       <!--Melee-->
-      <perk name="PBMAr" parent="skillbooks" max_level="3" name_key="PBMArname" desc_key="PBdesc2" long_desc_key="" icon="ui_game_symbol_book">
+      <perk name="PBMAr" parent="skillbooks" max_level="3" name_key="PBMArname" desc_key="perkMasterAdventurerDesc" long_desc_key="" icon="ui_game_symbol_adventure">
         <level_requirements level="1">
           <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="1" desc_key="perkSpdesc1"/>
         </level_requirements>
@@ -310,7 +324,7 @@
         </effect_group>
       </perk>
       <!--Wastelan-->
-      <perk name="PBMH" parent="skillbooks" max_level="5" name_key="PMMSKILL" base_skill_point_cost="20" desc_key="PBdesc3" long_desc_key="" icon="ui_game_symbol_book">
+      <perk name="PBMH" parent="skillbooks" max_level="5" name_key="PMMSKILL" base_skill_point_cost="20" desc_key="perkMasterWastelandDesc" long_desc_key="" icon="ui_game_symbol_fortitude_mastery">
         <level_requirements level="1">
           <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="10" desc_key="perkSpdesc10"/>
         </level_requirements>
@@ -363,7 +377,7 @@
         </effect_group>
       </perk>
       <!--Blacksmith-->
-      <perk name="HML" parent="skillherramientas" max_level="3" name_key="SHLS" desc_key="PHLD" long_desc_key="" icon="ui_game_symbol_mining">
+      <perk name="HML" parent="skillherramientas" max_level="3" name_key="SHLS" desc_key="PHLD" long_desc_key="" icon="ui_game_symbol_forge">
         <level_requirements level="1">
           <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="3" desc_key="perkSpdesc3"/>
         </level_requirements>
@@ -412,7 +426,7 @@
         </effect_group>
       </perk>
       <!--Shotgun-->
-      <perk name="PEL" parent="skillarmas" max_level="3" name_key="PELN" desc_key="PELD" long_desc_key="PELLD" icon="ui_game_symbol_shotgun">
+      <perk name="PEL" parent="skillarmas" max_level="3" name_key="PELN" desc_key="perkMasterShotgunsDesc" long_desc_key="PELLD" icon="ui_game_symbol_shotgun">
         <level_requirements level="1">
           <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="2" desc_key="perkSpdesc2"/>
         </level_requirements>
@@ -435,7 +449,7 @@
         </effect_group>
       </perk>
       <!--Rifle-->
-      <perk name="PRL" parent="skillarmas" max_level="3" name_key="PRLN" desc_key="PRLD" long_desc_key="PRLLD" icon="ui_game_symbol_map_cursor">
+      <perk name="PRL" parent="skillarmas" max_level="3" name_key="PRLN" desc_key="perkMasterRiflesDesc" long_desc_key="PRLLD" icon="ui_game_symbol_map_cursor">
         <level_requirements level="1">
           <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="2" desc_key="perkSpdesc2"/>
         </level_requirements>
@@ -458,7 +472,7 @@
         </effect_group>
       </perk>
       <!--Automatic-->
-      <perk name="PML" parent="skillarmas" max_level="3" name_key="PMLN" desc_key="PMLD" long_desc_key="PMLLD" icon="ui_game_symbol_rifle">
+      <perk name="PML" parent="skillarmas" max_level="3" name_key="PMLN" desc_key="perkMasterAutomaticDesc" long_desc_key="PMLLD" icon="ui_game_symbol_rifle">
         <level_requirements level="1">
           <requirement name="ProgressionLevel" progression_name="Special" operation="GTE" value="2" desc_key="perkSpdesc2"/>
         </level_requirements>

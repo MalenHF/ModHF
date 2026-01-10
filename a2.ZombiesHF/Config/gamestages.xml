@@ -1,9 +1,5 @@
 <configs>
 	<append xpath="/gamestages">
-	
-
-
-		
 		<group name="3animalAnaconda" spawner="ANACONDA"/>	
 		<group name="4ZomSpecialOnly" spawner="alltavos"/>
 		<group name="4ZomSnufuckinOnly" spawner="allsnukfin"/>	
@@ -13,8 +9,13 @@
 		<group name="5ZomBossSoldier" spawner="zombieBossSoldier"/>		
 		<group name="5ZomBossAny" spawner="ZombieABOSS"/>		
 		<group name="5ZomBossDiamon" spawner="zombieBossDiamon"/>
-	
-			
+		<group name="5ZomBossMummy" spawner="mummyBossSpawn"/>	
+		
+	<spawner name="mummyBossSpawn">
+		<gamestage stage="1">
+			<spawn group="ZombiesBM" num="1" maxAlive="1" duration="1"/>
+		</gamestage>
+	</spawner>				
 	<spawner name="allelites">
 		<gamestage stage="1">
 			<spawn group="allelitesgroup" num="1" maxAlive="1" duration="1"/>
@@ -61,7 +62,16 @@
 				<spawn group="allNightsGroup" num="1" maxAlive="1" duration="1"/>
 			</gamestage>
 		</spawner>
-		
+		<spawner name="allRocks">
+			<gamestage stage="1">
+				<spawn group="allRockGroup" num="1" maxAlive="1" duration="1"/>
+			</gamestage>
+		</spawner>
+		<spawner name="allElementals">
+			<gamestage stage="1">
+				<spawn group="allElementalGroup" num="1" maxAlive="1" duration="1"/>
+			</gamestage>
+		</spawner>
 		<spawner name="allWater">
 			<gamestage stage="1">
 				<spawn group="allWaterGroup" num="1" maxAlive="1" duration="1"/>

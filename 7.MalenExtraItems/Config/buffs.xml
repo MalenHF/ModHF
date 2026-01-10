@@ -1,4 +1,16 @@
 <configs>
+
+			
+	<append xpath="/buffs/buff[@name='buffStatusCheck01']">
+		<effect_group>
+			<requirement name="NotHasBuff" buff="god"/>
+			<requirement name="IsBloodMoon" operation="Equals" value="1"/>
+			<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="hfNoVehicle"/>
+			<passive_effect name="NoVehicle" operation="base_set" value="1" />
+			<passive_effect name="VehicleMotorTorquePer" operation="perc_set" value="0"/>
+			<passive_effect name="VehicleVelocityMaxPer" operation="perc_set" value="0"/>
+		</effect_group>
+	</append>
 	<append xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group">
 		<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffxpst"/>
 		<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffxpst">
@@ -1717,14 +1729,24 @@
 		</effect_group>
 	</append>
 
-	<insertAfter xpath="/buffs/buff[@name='buffPlayerFallingDamage']/effect_group/requirement[@buff='buffDrugOhShitzDrops']">
-		<requirement name="!HasBuff" buff="buffUniqueMediumSetBonus"/>
+	<insertAfter xpath="/buffs/buff[@name='buffPlayerFallingDamage']/effect_group/requirement[@buff='buffDontBreakMyLeg,buffDrugOhShitzDrops,buffTwitchDontBreakLeg']">
+		<requirement name="!HasBuff" buff="buffUniqueMediumSetBonus,buffAncientSetBonus"/>
 	</insertAfter>
-	<insertAfter xpath="/buffs/buff[@name='buffPlayerFallingDamage']/effect_group/triggered_effect/requirement[@buff='buffDrugOhShitzDrops']">
-		<requirement name="!HasBuff" buff="buffUniqueMediumSetBonus"/>
+	<insertAfter xpath="/buffs/buff[@name='buffPlayerFallingDamage']/effect_group/triggered_effect/requirement[@buff='buffDrugOhShitzDrops,buffTwitchDontBreakLeg']">
+		<requirement name="!HasBuff" buff="buffUniqueMediumSetBonus,buffAncientSetBonus"/>
 	</insertAfter>
-	<insertAfter xpath="/buffs/buff[@name='buffLegSprainedFallTrigger']/effect_group/requirement[@buff='buffDrugOhShitzDrops']">
-		<requirement name="!HasBuff" buff="buffUniqueMediumSetBonus"/>
+	<insertAfter xpath="/buffs/buff[@name='buffPlayerFallingDamage']/effect_group/triggered_effect/requirement[@buff='buffDrugOhShitzDrops,buffTwitchDontBreakLeg,buffDontBreakMyLeg,god']">
+		<requirement name="!HasBuff" buff="buffUniqueMediumSetBonus,buffAncientSetBonus"/>
 	</insertAfter>
+	<insertAfter xpath="/buffs/buff[@name='buffLegSprainedFallTrigger']/effect_group/requirement[@buff='buffLegBroken,buffLegSplinted,buffLegCast,buffDontBreakMyLeg,buffDrugOhShitzDrops,buffTwitchDontBreakLeg']">
+		<requirement name="!HasBuff" buff="buffUniqueMediumSetBonus,buffAncientSetBonus"/>
+	</insertAfter>
+
+	<append xpath="/buffs/buff[@name='buffTreasureHunterAOE']/effect_group">
+		<requirement name="NotHasBuff" buff="OP3!"/>
+	</append>
+	<append xpath="/buffs/buff[@name='buffTreasureHunterAOEEnd']/effect_group">
+		<requirement name="NotHasBuff" buff="OP3!"/>
+	</append>
 	
 </configs>
