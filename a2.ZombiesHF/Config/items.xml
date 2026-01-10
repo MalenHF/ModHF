@@ -393,7 +393,7 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
 
-				</item>					
+				</item>
 				<item name="q_Taco">
 					<property name="name" value="The Taco Quest" />
 					<property name="Group" value="Science"/>
@@ -435,7 +435,7 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 					</effect_group>
-				</item>			
+				</item>		
 
 			<!--Bosses-->	
 				<item name="q_Gaia">
@@ -589,8 +589,8 @@
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
-						<property name="PromptTitle" value="q_vodjaoj" />
-						<property name="PromptDescription" value="q_vodjaojPromp" />
+						<property name="PromptTitle" value="q_vodjanoj" />
+						<property name="PromptDescription" value="q_vodjanojPromp" />
 					</property>
 					<effect_group tiered="false">
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteVod"/>
@@ -2331,7 +2331,7 @@
 				<property class="Action0">
 					<property name="Range" value="3"/>
 					<property name="Block_range" value="4"/>
-					<property name="DamageEntity" value="125"/>
+					<property name="DamageEntity" value="250"/>
 					<property name="DamageBlock" value="2500"/>
 					<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01,buffbosshit"/>
 					<property name="Sound_start" value="Auger_Fire_Start"/>
@@ -2356,7 +2356,7 @@
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
 					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
 					<passive_effect name="MaxRange" operation="base_set" value="100"/>
-					<passive_effect name="MagazineSize" operation="base_set" value="4"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="2"/>
 					<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
 					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1"/>
 					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3"/>
@@ -2515,12 +2515,14 @@
 				<property name="CreativeMode" value="None"/>
 				<property class="Action1">
 					<property name="Class" value="Projectile"/>
-					<property name="DamageEntity" value="200"/>
+					<property name="DamageEntity" value="300"/>
 					<property name="DamageBlock" value="5000"/>
 					<property name="Explosion.Buff" value="BossProjectileEarthHit,buffArmBroken,buffInjuryKnockdown01"/> <!-- index 7 has ExplosionDamageArea script -->
 					<!--property name="Explosion.ParticleIndex" value="4"/-->
-					<!-- EL VALOR 5 PROVOCA QUE SEA VISUALMENTE UNA EXPLOSION AL COLISIONAR -->
-					<property name="Explosion.ParticleIndex" value="5"/> 
+					<!-- EL VALOR 5 PROVOCA QUE SEA VISUALMENTE UNA EXPLOSION AL COLISIONAR Y EL 36 ES DESTRUCCION DE ROCA, MISMA QUE USA
+						 LOS FROSTCLAW.
+					-->
+					<property name="Explosion.ParticleIndex" value="36"/> 
 					<!-- which Prefab/particle is used -->
 					<property name="Explosion.RadiusBlocks" value="4"/>
 					<!-- damage radius for blocks -->
@@ -2698,7 +2700,7 @@
 				<property class="Action0">
 					<property name="Range" value="3"/>
 					<property name="Block_range" value="4"/>
-					<property name="DamageEntity" value="260"/>
+					<property name="DamageEntity" value="500"/>
 					<property name="DamageBlock" value="5000"/>
 					<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01,buffbosshitSP"/>
 					<property name="Sound_start" value="Auger_Fire_Start"/>
