@@ -1015,8 +1015,7 @@
 		<entity_class name="zombieMummyDog" extends="animalDireWolf">
 			<property name="Tags" value="entity,animal,hostile,wolf,perkAT02,perkAT03"/>		
 			<property name="SizeScale" value=".8"/>
-			<!-- <property name="AltMats" value="entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder"/> -->
-			<property name="AltMats" value="@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
+			
 			<property name="MoveSpeed" value=".60"/>
 			<property name="MoveSpeedNight" value=".4"/>
 			<property name="MoveSpeedAggro" value="1.5, 1.6"/>
@@ -1126,7 +1125,7 @@
 		<entity_class name="TAVOANACONDA" extends="animalSnake">
 			<property name="Tags" value="entity,animal,hostile"/>
 			<property name="EntityType" value="Animal"/>
-			<property name="ReplaceMaterial0" value="entities/animals/boar/materials/grace"/>
+			<property name="SwapMats" value="@:Entities/Animals/Boar/Materials/Grace.mat"/>
 			<property name="Class" value="EntityAnimalSnake"/>
 			<property name="Parent" value="Enemies"/>
 			<property name="PhysicsBody" value="snake"/>
@@ -1254,7 +1253,8 @@
 			<!--<property name="ReplaceMaterial0" value="entities/electrical/materials/solarpanel"/> -->
 			<property name="ReplaceMaterial0" value="Entities/Animals/Bear/Materials/zBear"/>
 			<!--<property name="ReplaceMaterial1" value="Materials/UMAFur_ZombieBear"/> -->
-			<property name="ReplaceMaterial0" value="@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
+
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreCoalBoulder.mat"/>
 			<property name="ParticleOnSpawn" value="@:ParticleEffects/RadiatedParticlesOnMesh.prefab" param1="SetShapeToMesh0"/>
 			<!--<property name="AddFurToMaterial" param1="zBear" param2="Materials/UMAFur_ZombieBear"/>-->
 			<property name="AvatarController" value="AvatarAnimalController"/>
@@ -1312,12 +1312,7 @@
 		<entity_class name="EliteCop" extends="TemplateHF_Zombie_Special_Cop">
 			<property name="Tags" value="entity,zombie,walker,radiated"/>
 			<property name="MatColor" value="ZMutated"/>
-			<!-- <property name="AltMats" value="entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace"/> -->
-			
-			<!--property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/-->
-			
-			
-			<!-- <property name="ParticleOnSpawn" value="@:ParticleEffects/RadiatedParticlesOnMesh.prefab" param1="SetShapeToMesh0"/> -->
+			<property name="SwapMats" value="@:Entities/Animals/Boar/Materials/Grace.mat"/>
 			<property name="DismemberMultiplierHead" value=".4"/>
 			<property name="DismemberMultiplierArms" value=".4"/>
 			<property name="DismemberMultiplierLegs" value=".4"/>
@@ -1362,9 +1357,7 @@
 		<entity_class name="EliteSolider" extends="TemplateHF_Zombie_Special_Soldier">
 			<property name="Tags" value="entity,zombie,walker,radiated"/>
 			<property name="MatColor" value="ZMutated"/>
-			<!-- <property name="AltMats" value="entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace"/> -->
-			<!--property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/-->
-			<!--<property name="ParticleOnSpawn" value="@:ParticleEffects/RadiatedParticlesOnMesh.prefab" param1="SetShapeToMesh0"/>-->
+			<property name="SwapMats" value="@:Entities/Animals/Boar/Materials/Grace.mat"/>
 			<property name="DismemberMultiplierHead" value=".4"/>
 			<property name="DismemberMultiplierArms" value=".4"/>
 			<property name="DismemberMultiplierLegs" value=".4"/>
@@ -1412,9 +1405,7 @@
 		<entity_class name="EliteHawai" extends="TemplateHF_Zombie_Special_Hawaiian">
 			<property name="Tags" value="entity,zombie,walker,radiated"/>
 			<property name="MatColor" value="ZMutated"/>
-			<!-- <property name="AltMats" value="entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace"/> -->
-			<!--property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/-->
-			<!-- <property name="ParticleOnSpawn" value="@:ParticleEffects/RadiatedParticlesOnMesh.prefab" param1="SetShapeToMesh0"/> -->
+			<property name="SwapMats" value="@:Entities/Animals/Boar/Materials/Grace.mat"/>
 			<property name="DismemberMultiplierHead" value=".4"/>
 			<property name="DismemberMultiplierArms" value=".4"/>
 			<property name="DismemberMultiplierLegs" value=".4"/>
@@ -1457,9 +1448,7 @@
 		<entity_class name="EliteSkater" extends="TemplateHF_Zombie_Special_Skater">
 			<property name="Tags" value="entity,zombie,walker,radiated"/>
 			<property name="MatColor" value="ZMutated"/>
-			<!-- <property name="AltMats" value="entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace"/> -->
-			<!--property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/-->
-			<!-- <property name="ParticleOnSpawn" value="@:ParticleEffects/RadiatedParticlesOnMesh.prefab" param1="SetShapeToMesh0"/> -->
+			<property name="SwapMats" value="@:Entities/Animals/Boar/Materials/Grace.mat"/>
 			<property name="DismemberMultiplierHead" value=".4"/>
 			<property name="DismemberMultiplierArms" value=".4"/>
 			<property name="DismemberMultiplierLegs" value=".4"/>
@@ -1502,9 +1491,7 @@
 		<entity_class name="EliteTomClark" extends="TemplateHF_Zombie_Special_TomClark">
 			<property name="Tags" value="entity,zombie,walker,radiated"/>
 			<property name="MatColor" value="ZMutated"/>
-			<!-- <property name="AltMats" value="entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace"/> -->
-			<!--property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/-->
-			<!-- <property name="ParticleOnSpawn" value="@:ParticleEffects/RadiatedParticlesOnMesh.prefab" param1="SetShapeToMesh0"/> -->
+			<property name="SwapMats" value="@:Entities/Animals/Boar/Materials/Grace.mat"/>
 			<property name="DismemberMultiplierHead" value=".4"/>
 			<property name="DismemberMultiplierArms" value=".4"/>
 			<property name="DismemberMultiplierLegs" value=".4"/>
@@ -1547,18 +1534,8 @@
 		<entity_class name="eliteBurn" extends="TemplateHF_Zombie_Special_Burn">
 			<property name="Tags" value="entity,zombie,walker,radiated"/>
 			<property name="MatColor" value="ZMutated"/>
-			<!-- <property name="AltMats" value="entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace"/> -->
-
-			<property name="ReplaceMaterial1" value="entities/animals/boar/materials/grace"/>
-			<property name="ReplaceMaterial2" value="entities/animals/boar/materials/grace"/>
-			<property name="ReplaceMaterial3" value="entities/animals/boar/materials/grace"/>
-			<property name="ReplaceMaterial4" value="entities/animals/boar/materials/grace"/>
-			<property name="ReplaceMaterial5" value="entities/animals/boar/materials/grace"/>
-			<property name="ReplaceMaterial6" value="entities/animals/boar/materials/grace"/>
-			<property name="ReplaceMaterial7" value="entities/animals/boar/materials/grace"/>
-			<property name="ReplaceMaterial8" value="entities/animals/boar/materials/grace"/>
-			<!--property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/-->
-			<!-- <property name="ParticleOnSpawn" value="@:ParticleEffects/RadiatedParticlesOnMesh.prefab" param1="SetShapeToMesh0"/> -->
+			<property name="SwapMats" value="@:Entities/Animals/Boar/Materials/Grace.mat"/>
+			
 			<property name="DismemberMultiplierHead" value=".4"/>
 			<property name="DismemberMultiplierArms" value=".4"/>
 			<property name="DismemberMultiplierLegs" value=".4"/>
@@ -1601,10 +1578,8 @@
 		<entity_class name="EliteNurse" extends="TemplateHF_Zombie_Special_Nurse">
 			<property name="Tags" value="entity,zombie,walker,radiated"/>
 			<property name="MatColor" value="ZMutated"/>			
-			<!-- <property name="AltMats" value="entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace"/> -->
-			
-			<!--property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/-->
-			<!-- <property name="ParticleOnSpawn" value="@:ParticleEffects/RadiatedParticlesOnMesh.prefab" param1="SetShapeToMesh0"/> -->
+			<property name="SwapMats" value="@:Entities/Animals/Boar/Materials/Grace.mat"/>
+
 			<property name="DismemberMultiplierHead" value=".4"/>
 			<property name="DismemberMultiplierArms" value=".4"/>
 			<property name="DismemberMultiplierLegs" value=".4"/>
@@ -1647,7 +1622,8 @@
 		<entity_class name="EliteSpider" extends="TemplateHF_Zombie_Special_Spider">
 			<property name="Tags" value="entity,zombie,walker,radiated"/>
 			<property name="MatColor" value="ZMutated"/>
-			<!-- <property name="AltMats" value="entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace"/> -->
+			<property name="SwapMats" value="@:Entities/Animals/Boar/Materials/Grace.mat"/>
+
 			<property name="DismemberMultiplierHead" value=".4"/>
 			<property name="DismemberMultiplierArms" value=".4"/>
 			<property name="DismemberMultiplierLegs" value=".4"/>
@@ -1690,7 +1666,8 @@
 		<entity_class name="EliteFeral" extends="TemplateHF_Zombie_Special_Wight">
 			<property name="Tags" value="entity,zombie,walker,radiated"/>
 			<property name="MatColor" value="ZMutated"/>
-			<!-- <property name="AltMats" value="entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace"/> -->
+			<property name="SwapMats" value="@:Entities/Animals/Boar/Materials/Grace.mat"/>
+			
 			<property name="DismemberMultiplierHead" value=".4"/>
 			<property name="DismemberMultiplierArms" value=".4"/>
 			<property name="DismemberMultiplierLegs" value=".4"/>
@@ -1732,8 +1709,8 @@
 		<!-- Demo -->
 		<entity_class name="EliteDemo" extends="TemplateHF_Zombie_Special_Demolition">
 			<property name="Tags" value="entity,zombie,walker,boss"/>
-			<!-- <property name="MatColor" value="ZMutated"/> -->
-			<!-- <property name="AltMats" value="entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace"/> -->
+			<property name="SwapMats" value="@:Entities/Animals/Boar/Materials/Grace.mat"/>
+			
 			<property name="Mesh" value="@:Entities/Zombies/Demolition/ZDemolition.prefab"/>
 			<property name="Class" value="EntityZombieCop"/>
 			<property name="Mass" value="170"/>
@@ -1786,8 +1763,7 @@
 			
 			<property name="Tags" value="entity,walker,boss,bomber,umazombie,bomber" />
 			<property name="HandItem" value="meleeHandBomberelite"/>
-
-			<!-- <property name="AltMats" value="entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace"/> -->
+			<property name="SwapMats" value="@:Entities/Animals/Boar/Materials/Grace.mat"/>
 
 			<property name="ExperienceGain" value="9000"/>
 			<property name="WalkType" value="3"/>
@@ -1868,10 +1844,9 @@
 			<property name="ParticleOnSpawn" value="RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>
 			<property name="Mesh" value="@:Entities/Zombies/Cop/ZCopRadiated.prefab"/>
 			<property name="MatColor" value="ZNightmare"/>
-			<!-- <property name="AltMats" value="@:Entities/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Minerals/OreCoalBoulder.mat,@:Entities/Minerals/OreCoalBoulderPrefab.mat,@:Entities/Minerals/oreCoalBoulderPrefab,@:Entities/Minerals/oreCoalBoulder,@:Entities/Minerals/oreCoalBoulder.mat"/> -->
-			<property name="MoveSpeed" value="1.1"/>
-			<property name="ReplaceMaterial0" value="@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
-			<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/rad_eye.mat"/>
+			
+			<property name="MoveSpeed" value="1.1"/>			
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreCoalBoulder.mat"/>
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
 			<property name="DismemberMultiplierHead" value=".2"/>
@@ -1921,10 +1896,9 @@
 			<property name="SizeScale" value="1.2"/>
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="Mesh" value="@:Entities/Zombies/Soldier/ZSoldierRadiated.prefab"/>
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreCoalBoulder.mat"/>
 			<property name="MatColor" value="ZNightmare"/>
-			<!-- <property name="AltMats" value="@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat"/> -->
-						
-
+			
 			<!-- <property name="ParticleOnSpawn" value="@:ParticleEffects/RadiatedParticlesOnMesh.prefab" param1="SetShapeToMesh0"/> -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -1973,16 +1947,16 @@
 		</entity_class>
 		<!-- nightZombieHawai -->
 		<entity_class name="nightZombieHawai" extends="TemplateHF_Zombie_Special_Hawaiian">
-
+			<property name="Mesh" value="@:Entities/Zombies/Hawaiian/ZHawaiianRadiated.prefab"/>
 			<property name="ParticleOnSpawn" value="@:ParticleEffects/RadiatedParticlesOnMesh.prefab" param1="SetShapeToMesh0"/>
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreCoalBoulder.mat"/>
+
 			<property name="Tags" value="entity,boss,walker,feral,radiated"/>
 			<property name="SizeScale" value="1.2"/>
 			<property name="SizeScale" value="1.0"/>
 			<property name="MoveSpeed" value="1.1"/>
-			<property name="Mesh" value="@:Entities/Zombies/Hawaiian/ZHawaiianRadiated.prefab"/>
+			
 			<property name="MatColor" value="ZNightmare"/>
-			<!-- <property name="AltMats" value="@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat"/> -->
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/> -->
 			
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
@@ -2035,11 +2009,9 @@
 			<property name="MoveSpeed" value="1.1"/>
 
 			<property name="Mesh" value="@:Entities/Zombies/Thug/ZThugRadiated.prefab"/>
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreCoalBoulder.mat"/>
 			<property name="MatColor" value="ZNightmare"/>
-			<!-- <property name="AltMats" value="@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat"/> -->
-			<property name="AltMats" value="@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab,@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab"/>
-			<property name="SwapMats" value="@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab"/>
-			<property name="SwapMats" value="@:Entities/Debris/Minerals/oreCoalBoulderPrefab.prefab"/>
+			
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
 			
@@ -2090,11 +2062,10 @@
 			<property name="Tags" value="entity,boss,walker,feral,radiated"/>
 			<property name="SizeScale" value="1.2"/>
 			<property name="MoveSpeed" value="1.1"/>
-			<property name="MatColor" value="ZNightmare"/>
-			<!-- <property name="AltMats" value="@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat"/> -->
-
+			<property name="MatColor" value="ZNightmare"/>						
 			<property name="Mesh" value="@:Entities/Zombies/TomClark/ZTomClarkRadiated.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="@:ParticleEffects/RadiatedParticlesOnMesh.prefab" param1="SetShapeToMesh0"/> -->
+			
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreCoalBoulder.mat"/>
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
 
@@ -2146,9 +2117,9 @@
 			<property name="SizeScale" value="1.2"/>			
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="Mesh" value="@:Entities/Zombies/Burnt/ZBurntRadiated.prefab"/>
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreCoalBoulder.mat"/>
 			<property name="MatColor" value="ZNightmare"/>
-			<!-- <property name="AltMats" value="@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat"/> -->
-
+		
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
 
@@ -2202,9 +2173,9 @@
 			<property name="MoveSpeed" value="0.8"/>
 			<property name="JumpMaxDistance" value="2, 4"/>
 			<property name="Mesh" value="@:Entities/Zombies/Spider/ZSpiderRadiated.prefab"/>
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreCoalBoulder.mat"/>
 			<property name="MatColor" value="ZNightmare"/>
-			<!-- <property name="AltMats" value="@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat"/> -->
-
+			
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
 			<property name="DismemberMultiplierHead" value=".2"/>
@@ -2254,9 +2225,9 @@
 			<property name="SizeScale" value="1.2"/>
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="Mesh" value="@:Entities/Zombies/Nurse/ZNurseRadiated.prefab"/>
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreCoalBoulder.mat"/>
 			<property name="MatColor" value="ZNightmare"/>
-			<!-- <property name="AltMats" value="@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat"/> -->
-
+			
 			<property name="HandItem" value="meleeHandNightmare"/>
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2299,12 +2270,9 @@
 			<property name="SizeScale" value="1.2"/>
 			<property name="ParticleOnSpawn" value="@:ParticleEffects/RadiatedParticlesOnMesh.prefab" param1="SetShapeToMesh0"/>
 			<property name="MoveSpeed" value="1.1"/>
-			<property name="Mesh" value="@:Entities/Zombies/Hazmat/ZHazmatRadiated.prefab"/>
+			<property name="Mesh" value="@:Entities/Zombies/Hazmat/ZHazmatRadiated.prefab"/>			
 			<property name="MatColor" value="ZNightmare"/>
-			<!-- <property name="AltMats" value="@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat"/> -->
-			<property name="AltMats" value="@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat"/>
-			<property name="SwapMats" value="@:Entities/Debris/Materials/OreCoalBoulder.mat"/>
-			<!-- <property name="SwapMats" value="@:Entities/Debris/Materials/pileEmberBurntLogsBarrel.mat"/> -->
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreCoalBoulder.mat"/>
 			<!--   Radiated   -->
 			<property name="HandItem" value="meleeHandNightmare"/>
 			<property name="DismemberMultiplierHead" value=".2"/>
@@ -2352,12 +2320,9 @@
 			<property name="Tags" value="entity,boss,walker,feral,radiated"/>
 			<property name="SizeScale" value="1.2"/>
 			<property name="Mesh" value="@:Entities/Zombies/Wight/ZWightRadiated.prefab"/>
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreCoalBoulder.mat"/>
 			<property name="MatColor" value="ZNightmare"/>
-			<!-- <property name="AltMats" value="@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat"/> -->		
-			<property name="AltMats" value="@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat"/>
-			<property name="SwapMats" value="@:Entities/Debris/Materials/OreCoalBoulder.mat"/>
-			<property name="SwapMats" value="@:Entities/Debris/Materials/pileEmberBurntLogsBarrel.mat"/>
-
+			
 			<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>			
 			<property name="MoveSpeed" value="1.1"/>
 
@@ -2410,9 +2375,7 @@
 			<property name="SizeScale" value="1.1"/>
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="Mesh" value="@:Entities/Zombies/Demolition/ZDemolition.prefab"/>
-			<!-- <property name="SwapMats" value="@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat"/> -->
-			<property name="SwapMats" value="@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat,@:Entities/Debris/Materials/OreCoalBoulder.mat"/>
-
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreCoalBoulder.mat"/>	
 			
 			<property name="Class" value="EntityZombieCop"/>
 			<property name="Mass" value="170"/>
@@ -2485,10 +2448,9 @@
 			<property name="MoveSpeed" value="1.1"/>
 			<property name="ParticleOnSpawn" value="ParticleEffects/p_nozzlesmoke" param1="SetShapeToMesh0"/>
 			<property name="Mesh" value="@:Entities/Zombies/Hazmat/ZHazmatRadiated.prefab"/>
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreCoalBoulder.mat"/>
 			<property name="MatColor" value="ZNightmare"/>
-			<property name="AltMats" value="@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat,@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat,@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat,@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat,@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat,@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat,@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat,@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat,@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat,@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat,@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat,@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat,@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat,@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat,@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat,@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat,@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat,@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat,@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat,@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat,@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat,@:Entities/Zombies/Hazmat/Materials/HD_Hazmat_Radiated2.mat"/>
-			<!-- <property name="AltMats" value="@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat"/> -->
-
+			
 			<!--   Radiated   -->
 			<property name="HandItem" value="meleeHandNightmare"/>
 			<property name="DismemberMultiplierHead" value="0"/>
@@ -4075,11 +4037,12 @@
 			<property name="MapIcon" value="ui_game_symbol_twitch_minion_overhead"/>
 			<property name="TrackerIcon" value="ui_game_symbol_twitch_minion_overhead"/>
 			<property name="NavObject" value="zombietracking_special" />
-			<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/rad_eye.mat"/>
-			<!--<property name="ReplaceMaterial0" value="entities/resources/materials/oreshaleboulder"/>	-->
-			<property name="ReplaceMaterial1" value="materials/nightvisionmaterial"/>
-			<property name="ReplaceMaterial0" value="entities/resources/materials/oreleadboulder"/>
+			
 			<property name="Mesh" value="@:Entities/Zombies/Biker/ZBiker.prefab"/>
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreLeadBoulder.mat"/>
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreIronBoulder.mat"/>
+
+			
 
 			<property name="RootMotion" value="true"/>
 			<property name="PainResistPerHit" value="1"/>
@@ -4119,7 +4082,7 @@
 			<property name="Tags" value="entity,specialZ,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Burnt/ZBurnt.prefab"/>
 			<property name="MatColor" value="ZRainbow"/>
-			<!-- <property name="AltMats" value="entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder"/> -->
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreShaleBoulder.mat"/>
 			<property name="MapIcon" value="ui_game_symbol_twitch_minion_overhead"/>
 			<property name="TrackerIcon" value="ui_game_symbol_twitch_minion_overhead"/>
 			<property name="NavObject" value="zombietracking_special" />
@@ -4435,19 +4398,10 @@
 			<property name="SizeScale" value="1.2"/>
 			<property name="MoveSpeed" value="0.7"/>
 
-			<property name="Mesh" value="@:Entities/Zombies/Screamer/ZScreamerRadiated.prefab"/>
-			<property name="ReplaceMaterial-1" value="@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
-			<property name="ReplaceMaterial0" value="@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
-			<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/rad_eye.mat"/>
-
-			<property name="ReplaceMaterial1" value="@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
-			<property name="ReplaceMaterial2" value="@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
-			<property name="ReplaceMaterial3" value="@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
-			<property name="ReplaceMaterial4" value="@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
-			<property name="ReplaceMaterial5" value="@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
-			<property name="ReplaceMaterial6" value="@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
-			<property name="ReplaceMaterial7" value="@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
+			<property name="Mesh" value="@:Entities/Zombies/Screamer/ZScreamerRadiated.prefab"/>			
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreCoalBoulder.mat"/>
 			<!-- <property name="ParticleOnSpawn" value="@:ParticleEffects/RadiatedParticlesOnMesh.prefab" param1="SetShapeToMesh0"/> -->
+
 			<property name="DismemberMultiplierHead" value=".4"/>
 			<property name="DismemberMultiplierArms" value=".4"/>
 			<property name="DismemberMultiplierLegs" value=".4"/>
@@ -4508,8 +4462,7 @@
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Spider/ZSpider.prefab"/> -->
 			<property name="Mesh" value="@:Entities/Zombies/Frostclaw/ZFrostClaw.prefab"/>
 
-			<property name="SizeScale" value="1.2"/>
-			<property name="ReplaceMaterial0" value="@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
+			<property name="SizeScale" value="1.2"/>			
 			
 			<property name="HandItem" value="meleeHandWendigo"/>
 			<property name="RightHandJointName" value="Boulder"/>
@@ -4667,10 +4620,7 @@
 			<property name="SizeScale" value=".5"/>
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,siren"/>
 
-			<!-- <property name="AltMats" value="@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
-			<property name="AltMats" value="entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel,entities/electrical/materials/solarpanel"/> -->
-			
-
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreCoalBoulder.mat"/>
 			
 			<property name="WalkType" value="7"/>
 			<property name="SoundRandomTime" value="7"/>
@@ -4753,7 +4703,7 @@
 			<property name="Parent" value="Animals"/>
 			<property name="HasDeathAnim" value="true"/>
 			<property name="RootMotion" value="true"/>
-			<property name="HasRagdoll" value="true"/>
+			<property name="HasRagdoll" value="false"/>
 			<property name="Faction" value="animals"/>
 			<property name="PhysicsBody" value="chicken"/>
 			<property name="Mass" value="40"/>
@@ -4818,7 +4768,7 @@
 
 			<property name="Parent" value="Animals"/>
 			<property name="HasDeathAnim" value="true"/>
-			<property name="HasRagdoll" value="true"/>
+			<property name="HasRagdoll" value="false"/>
 			<property name="Faction" value="animals"/>
 			<property name="PhysicsBody" value="rabbit"/>
 			<property name="Mass" value="36"/>
@@ -4889,7 +4839,7 @@
 
 			<property name="Parent" value="Animals"/>
 			<property name="HasDeathAnim" value="true"/>
-			<property name="HasRagdoll" value="true"/>
+			<property name="HasRagdoll" value="false"/>
 			<property name="Faction" value="animals"/>
 			<property name="PhysicsBody" value="rabbit"/>
 			<property name="Mass" value="36"/>
@@ -5052,7 +5002,8 @@
 			<property name="HideInSpawnMenu" value="true"/>
 			<property name="Tags" value="entity,animal,zombie,hostile"/>
 			<property name="Prefab" value="/Entities/Animals/CHICKEN/chickenPrefab"/>
-			<property name="ReplaceMaterial0" value="entities/animals/boar/materials/grace"/>
+			<property name="SwapMats" value="@:Entities/Animals/Boar/Materials/Grace.mat"/>
+
 			<property name="Class" value="EntityEnemyAnimal"/>
 			<property name="IsEntityAnimal" value="true"/>
 			<property name="IsEnemyEntity" value="True"/>
@@ -5127,6 +5078,8 @@
 			<property name="SoundDeath" value="malehatedeath"/>
 			<property name="SoundAttack" value="malehateattack"/>
 
+			<property name="HasRagdoll" value="false"/>
+
 			<property name="LootDropProb" value="1"/>
 			<property name="ExperienceGain" value="15000"/>
 
@@ -5168,8 +5121,9 @@
 			<property name="ReplaceMaterial1" value="particleeffects/materials/p_spark_electricity"/> -->
 			
 			<property name="Mesh" value="@:Entities/Zombies/Thug/ZThug.prefab"/>
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreLeadBoulder.mat"/>
 			<!-- <property name="ReplaceMaterial0" value="@:Entities/Minerals/oreIronBoulderPrefab.prefab"/> -->
-
+			<property name="HasRagdoll" value="false"/>
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="LootDropEntityClass" value="MiniBossLootContainer"/>
 			<property name="Tags" value="entity,walker,boss,tavoR,umazombie,spobosses,subBoss" />
@@ -5216,7 +5170,7 @@
 
 			<property name="ParticleOnSpawn" value="@:ParticleEffects/RadiatedParticlesOnMesh.prefab.prefab" param1="SetShapeToMesh0"/>
 			
-				
+			<property name="HasRagdoll" value="false"/>	
 			<!--
 			molotov_flame
 			molotov_fire
@@ -5278,14 +5232,19 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,subBoss"/>
 
-			<property name="Mesh" value="@:Entities/Zombies/Demolition/ZDemolition.prefab"/>
-			<property name="AltMats" value="entities/doors/materials/steel_door_2,entities/doors/materials/steel_door_2,entities/doors/materials/steel_door_2,entities/doors/materials/steel_door_2,entities/doors/materials/steel_door_2,entities/doors/materials/steel_door_2,entities/doors/materials/steel_door_2,entities/doors/materials/steel_door_2,entities/doors/materials/steel_door_2,entities/doors/materials/steel_door_2,entities/doors/materials/steel_door_2,entities/doors/materials/steel_door_2,entities/doors/materials/steel_door_2,entities/doors/materials/steel_door_2,entities/doors/materials/steel_door_2,entities/doors/materials/steel_door_2,entities/doors/materials/steel_door_2,entities/doors/materials/steel_door_2,entities/doors/materials/steel_door_2"/>
+			<property name="Mesh" value="@:Entities/Zombies/Soldier/ZSoldier.prefab"/>
+			
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreIronBoulder.mat"/>
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreLeadBoulder.mat"/>
+			<property name="SwapMats" value="@:Entities/Doors/Materials/VaultDoor.mat"/>
+			<property name="SwapMats" value="@:Entities/Doors/Materials/IronDoor.mat"/>
 			
 			<property name="ReplaceMaterial0" value="entities/doors/materials/steel_door_2"/>			
 			<property name="WalkType" value="7"/>
 			<property name="RightHandJointName" value="RightHand"/>
 			<property name="Mass" value="380"/>
 
+			<property name="HasRagdoll" value="false"/>
 			<property name="AITask" value="
 			BreakBlock|
 			DestroyArea|
@@ -5334,7 +5293,8 @@
 			<property name="Mass" value="300"/>
 
 			<!-- <property name="RightHandJointName" value="RightShoulder"/> -->
-			
+
+			<property name="HasRagdoll" value="false"/>
 			<property name="AITask" value="
 			BreakBlock|
 			DestroyArea|
@@ -5394,8 +5354,9 @@
 		</entity_class>	
 		<!-- Added by HolyVentus -->
 		<entity_class name="HvSBToxic" extends="zombieMutatedFeral">
-			<!-- <property name="AltMats" value="entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace"/> -->
-
+			
+			<property name="Mesh" value="@:Entities/Zombies/Mutated/ZMutated.prefab"/>
+			<property name="SwapMats" value="@:Entities/Animals/Boar/Materials/Grace.mat"/>
 			<property name="SizeScale" value="1.3"/>
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Archetype" value="ToxicMiniBoss" />
@@ -5413,6 +5374,7 @@
 			<property name="LootDropProb" value="1"/>
 			<property name="ExperienceGain" value="15000"/>
 		
+			<property name="HasRagdoll" value="false"/>
 			<property name="AITask" value="
 			BreakBlock|
 			DestroyArea|
@@ -5458,6 +5420,7 @@
 			<property name="SizeScale" value="1.3"/>
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Archetype" value="ArchMiniBossEnfermera" />
+			<property name="HasRagdoll" value="false"/>
 			
 			<property name="LootDropEntityClass" value="MiniBossLootContainer"/>
 			<property name="Tags" value="entity,walker,boss,spobosses,subBoss"/>
@@ -5796,17 +5759,11 @@
 			<property name="Mesh" value="@:Entities/Zombies/Cop/ZCop.prefab"/>
 			<property name="Class" value="EntityZombieCop"/>
 
-			<property name="ExplodeHealthThreshold" value="0"/>
-			<!-- <property name="AltMats" value="entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder,entities/resources/materials/oreshaleboulder"/> -->
-			<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/rad_eye.mat"/>
-			<property name="ReplaceMaterial0" value=""/>
-			<property name="ReplaceMaterial2" value="entities/resources/materials/oreleadboulder"/>
-			<property name="ReplaceMaterial1" value="shapes/materials/wrought_iron_metal"/>
-
+			<property name="ExplodeHealthThreshold" value="0"/>			
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreShaleBoulder.mat"/>
 
 			<property name="Mass" value="250"/>
 			<property name="SizeScale" value="1.7"/>
-
 
 			<property name="SoundFootstepModifier" value="bear_footstep"/>
 			<property name="PainResistPerHit" value="3"/>
@@ -5880,9 +5837,9 @@
 		<entity_class name="ZombieBossMineralSpider" extends="zombieSpider">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,boss,bossrad,bossChallenge,spider"/>
-			<property name="Mesh" value="@:Entities/Zombies/Cop/ZCop.prefab"/>
-			<!-- <property name="AltMats" value="entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder"/> -->
-			
+			<property name="Mesh" value="@:Entities/Zombies/Chuck/ZChuck.prefab"/>
+			<property name="RightHandJointName" value="Jaw"/>
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreLeadBoulder.mat"/>	
 			<property name="Class" value="EntityZombieCop"/>
 			<property name="ExplodeHealthThreshold" value="0"/>
 			<property name="SizeScale" value="1.7"/>
@@ -5958,9 +5915,8 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Mesh" value="@:Entities/Zombies/Soldier/ZSoldier.prefab"/>
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses,bossrad,bossChallenge" />
-			<property name="ReplaceMaterial0" value="@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
-			<property name="ReplaceMaterial0" value="entities/animals/boar/materials/grace"/>
-				
+			
+
 			<property name="MoveSpeedAggro" value="1.7, 2.1"/>						
 			<property name="HandItem" value="meleeHandBOSS"/>
 			<property name="ExperienceGain" value="90000"/>
@@ -5985,8 +5941,8 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,boss,spobosses,bossrad,bossChallenge" />
 			<property name="Mesh" value="@:Entities/Zombies/Thug/ZThugFeral.prefab"/>
-			<!-- <property name="AltMats" value="entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder"/> -->
 			
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreLeadBoulder.mat"/>
 			<property name="LootDropEntityClass" value="zombieBossZombieKnightLootContainer"/>			
 			<property name="HandItem" value="meleeHandGladBOSS"/>
 			<property name="ExperienceGain" value="90000"/>
@@ -6059,14 +6015,13 @@
 		<entity_class name="zombieBossSiren" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,walker,boss,siren"/>	
-			<property name="SwapMats" value="@:Entities/Minerals/OreCoalBoulderPrefab.prefab"/>					
-			
+							
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreCoalBoulder.mat"/>
 			<property name="SizeScale" value="1.7"/>	
 			<property name="WalkType" value="7"/>
 			<property name="Mesh" value="@:Entities/Zombies/Suit/ZSuitFeral.prefab"/>
 			<property name="Mesh" value="@:Entities/Zombies/Spider/ZSpiderFeral.prefab"/>
 			<property name="Mesh" value="@:Entities/Zombies/Burnt/ZBurnt.prefab"/>
-			<!-- <property name="AltMats" value="@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat"/> -->
 			
 			<property name="SoundRandomTime" value="7"/>
 			<property name="SurfaceCategory" value="organic"/>
@@ -6507,7 +6462,9 @@
 			<property name="SizeScale" value="1.7"/>
 			<property name="Tags" value="entity,walker,boss,umazombie,spobosses,bossrad,bossChallenge" />
 			<property name="Mesh" value="@:Entities/Zombies/BigMama/ZBigMama.prefab"/>
-			<!-- <property name="AltMats" value="@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat"/> -->
+
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreCoalBoulder.mat"/>
+
 			<property name="AITask" value="
 			BreakBlock|
 			DestroyArea|
@@ -6705,43 +6662,14 @@
 
 		<entity_class name="zombieBossAdminHF" extends="bossZombieTemplate">			
 			<property name="Mesh" value="@:Entities/Zombies/Lumberjack/ZLumberjackFeral.prefab"/>	
-
-			<property name="SoundRandom" value="Enemies/Base_Zombie_Male2/zombiemale2roam"/>
-			<property name="SoundAlert" value="Enemies/Base_Zombie_Male2/zombiemale2alert"/>
-			<property name="SoundAttack" value="Enemies/Base_Zombie_Male2/zombiemale2attack"/>
-			<property name="SoundHurt" value="Enemies/Base_Zombie_Male2/zombiemale2pain"/>
-			<property name="SoundDeath" value="Enemies/Base_Zombie_Male2/zombiemale2death"/>
-			<property name="SoundSense" value="Enemies/Base_Zombie_Male2/zombiemale2sense"/>
-
-			<property name="AITask" value="
-			BreakBlock|
-			DestroyArea|
-			Territorial|
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal,0,EntityAnimal|		
-			ApproachSpot|
-			Look|
-			Wander|
-			"/>
-			<property name="AITarget" value="			                      
-			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
-			BlockingTargetTask|
-			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,0|
-			"/>		
-            <property name="MoveSpeedAggro" value="2.0, 2.8"/>						
-			<property name="HandItem" value="meleeHandBOSS"/>
-			<property name="ExperienceGain" value="50000"/>
-			<property name="LootDropEntityClass" value="EntityLootContainerRegular"/>
-
-
-			
+		
 			<property name="ReplaceMaterial1" value="particleeffects/models/materials/p_gib"/>
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="SizeScale" value="1.8"/>
 			<property name="Tags" value="entity,walker,boss,spobosses,bossrad,bossChallenge"/>		
 
 			
-			<property name="WalkType" value="2"/>
-			<property name="HasRagdoll" value="true"/>
+			<property name="WalkType" value="2"/>			
 			<property name="AITask" value="
 			BreakBlock|
 			DestroyArea|
@@ -6760,7 +6688,7 @@
 			<property name="SoundDeath" value="malehatedeath"/>
 			<property name="SoundAttack" value="malehateattack"/>
 			
-			<property name="MoveSpeedAggro" value="1.50, 1.80"/>
+			<property name="MoveSpeedAggro" value="2.2, 3"/>
 			<property name="HandItem" value="meleeHandBossHF"/>
 			<property name="ExperienceGain" value="200000"/>
 			<property name="LootDropEntityClass" count="1" value="BossHFLootContainer"/>
@@ -6778,6 +6706,9 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
+				
+				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->				<!-- Feral damage -->
 				
 			</effect_group>
 			<property name="TimeStayAfterDeath" value="5"/>
@@ -6825,11 +6756,10 @@
 			<property name="UserSpawnType" value="Menu"/>
 
 			<property name="Tags" value="entity,walker,bossrad,bossChallenge,boss,mantis"/>
-			<property name="Mesh" value="@:Entities/Zombies/Cop/ZCop.prefab"/>
-			<property name="ExplodeHealthThreshold" value="0"/>
+			<property name="Mesh" value="@:Entities/Zombies/Cop/ZCop.prefab"/>			<property name="ExplodeHealthThreshold" value="0"/>
 
-			<property name="ReplaceMaterial0" value="@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
-			<property name="ReplaceMaterial2" value="entities/resources/materials/oreleadboulder"/>
+			
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreCoalBoulder.mat"/>
 
 			<property name="HasDeathAnim" value="true"/>
 			<property name="Mass" value="250"/>
@@ -6922,9 +6852,7 @@
 			<!-- <property name="ParticleOnSpawn" value="@:ParticleEffects/RadiatedParticlesOnMesh.prefab" param1="SetShapeToMesh0"/> -->
 			<property name="Tags" value="entity,boss,umazombie,bossrad,bossChallenge,norail"/>
 			<property name="Mesh" value="@:Entities/Zombies/PlagueSpitter/ZPlagueSpitter.prefab"/>
-			<!-- <property name="AltMats" value="@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat"/> -->
-			<property name="ReplaceMaterial0" value="@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
-			<property name="ReplaceMaterial2" value="entities/resources/materials/oreleadboulder"/>
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreCoalBoulder.mat"/>
 
 			<property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/>
 			<property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/>
@@ -6964,11 +6892,7 @@
 			<property name="Tags" value="entity,walker,boss,umazombie,siren,norail"/>
 			<property name="Mesh" value="@:Entities/Zombies/Burnt/ZBurnt.prefab"/>
 			<property name="SizeScale" value="2"/>
-			<property name="ReplaceMaterial0" value="@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
-			<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/rad_eye.mat"/>
-
-			<property name="ReplaceMaterial0" value="entities/resources/materials/oreshaleboulder"/>
-			
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreShaleBoulder.mat"/>			
 			
 			<property name="StompsSpikes" value="false"/>
 			<property name="WalkType" value="7"/>
@@ -7069,8 +6993,9 @@
 			<property name="Mesh" value="@:Entities/Zombies/Soldier/ZSoldier.prefab"/>
 			<property name="SizeScale" value="2"/>
 			<property name="ParticleOnSpawn" value="@:ParticleEffects/RadiatedParticlesOnMesh.prefab" param1="SetShapeToMesh0"/>
-			<property name="ReplaceMaterial0" value="@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
-			<property name="ReplaceMaterial1" value="@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
+			<!---->
+			<property name="SwapMats" value="@:Entities/Animals/Boar/Materials/Grace.mat"/>
+			
 			<property name="WalkType" value="7"/>			
 			<property name="MoveSpeedAggro" value="2.0, 2.5"/>
 			<property name="HandItem" value="meleeHandSpecialBOSS"/>
@@ -7100,8 +7025,7 @@
 			<property name="SizeScale" value="2"/>
 			<property name="Mesh" value="@:Entities/Zombies/Thug/ZThugFeral.prefab"/>
 
-			<!-- <property name="AltMats" value="entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder,entities/resources/materials/oreLeadBoulder"/> -->
-			
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreLeadBoulder.mat"/>
 			<property name="ParticleOnDeath" value="blood_death"/>
 			<property name="SoundRandom" value="demolitionzroam"/>
 			<property name="SoundAlert" value="demolitionzalert"/>
@@ -7292,7 +7216,7 @@
 			<property name="Tags" value="entity,walker,boss,umazombie,spobosses,bossrad,bossChallenge" />
 			<property name="Mesh" value="@:Entities/Zombies/Lumberjack/ZLumberjack.prefab"/>
 			<property name="AltMats" value="entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder,entities/resources/materials/oreNitrateBoulder"/>
-			
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreNitrateBoulder.mat"/>
 			<property name="SoundRandom" value="zombielumberjack_roam"/>
 			<property name="SoundAlert" value="zombielumberjack_alert"/>
 			<property name="SoundAttack" value="zombielumberjack_attack"/>
@@ -7532,9 +7456,16 @@
 			<property name="Mesh" value="@:Entities/Zombies/PlagueSpitter/ZPlagueSpitter.prefab"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Burnt/ZBurnt.prefab"/> -->
 			<!-- <property name="AltMats" value="particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood,particleeffects/models/materials/p_wood"/> -->
-			<property name="AltMats" value="@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
-			
+						
 			<property name="ReplaceMaterial0" value="particleeffects/models/materials/p_wood"/>
+			<!-- <property name="SwapMats" value="@:ParticleEffects/Models/Materials/p_wood.mat"/>
+			-->
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/ResourceRock.mat"/>
+			<!-- @:Entities/Minerals/resourceRock01Prefab.prefab -->
+
+			
+
+			<!--CHECAME-->
 			<property name="SizeScale" value="1.5"/>
 			<property name="SizeScale" value="1.7"/>
 			<property name="LootDropProb" value="0"/>
@@ -7561,8 +7492,8 @@
 		<entity_class name="dummyGladi" extends="bossZombieTemplate">			
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses,bossrad,bossChallenge" />
 			<property name="Mesh" value="@:Entities/Zombies/Thug/ZThug.prefab"/>
-			<property name="ReplaceMaterial0" value="entities/resources/materials/oreLeadBoulder"/>
-			<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/rad_eye.mat"/>
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreLeadBoulder.mat"/>
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/ResourceRock.mat"/>
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="LootDropEntityClass" value="zombieBossZombieKnightLootContainer"/>			
 			<property name="HandItem" value="meleeHandGladBOSS"/>
@@ -7591,8 +7522,8 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Mesh" value="@:Entities/Zombies/Soldier/ZSoldier.prefab"/>
 			<property name="Tags" value="entity,zombie,walker,boss,umazombie,spobosses,bossrad,bossChallenge" />
-			<property name="ReplaceMaterial0" value="@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
-			<property name="ReplaceMaterial0" value="entities/animals/boar/materials/grace"/>
+			<!--CHECAR-->			
+			
 
 			<property name="MoveSpeedAggro" value="2.0, 2.8"/>						
 			<property name="HandItem" value="meleeHandBOSS"/>
@@ -7737,135 +7668,6 @@
 		</entity_class>	
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->	
 	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- TEST SKIN ZOMBIES -->
-<!--
-@:Entities/Minerals/oreCoalBoulderPrefab.prefab, -> 2.0
-@:Entities/Minerals/oreCoalBoulderPrefab,
-Entities/Minerals/oreCoalBoulderPrefab.prefab,
-Entities/Minerals/oreCoalBoulderPrefab,
-
-@:Entities/Minerals/oreCoalBoulder.prefab,
-@:Entities/Minerals/oreCoalBoulder,
-Entities/Minerals/oreCoalBoulder.prefab,
-Entities/Minerals/oreCoalBoulder,
-
-@:Entities/Minerals/oreCoalBoulderPrefab.mat,
-@:Entities/Minerals/oreCoalBoulder.mat,
-Entities/Minerals/oreCoalBoulderPrefab.mat,
-	~~~~ RESULTADO FALLIDO ~~~~
-
-
-@:Entities/Resources/Materials/oreCoalBoulder.prefab,
-@:Entities/Resources/Materials/oreCoalBoulder,
-Entities/Resources/Materials/oreCoalBoulder.prefab,
-Entities/Resources/Materials/oreCoalBoulder,
-
-@:Entities/Resources/Materials/oreCoalBoulderPrefab.mat,
-@:Entities/Resources/Materials/oreCoalBoulder.mat,
-Entities/Resources/Materials/oreCoalBoulder.mat,
-
-@:Entities/Resources/Materials/oreCoalBoulderPrefab.prefab,
-@:Entities/Resources/Materials/oreCoalBoulderPrefab,
-Entities/Resources/Materials/oreCoalBoulderPrefab.prefab,
-Entities/Resources/Materials/oreCoalBoulderPrefab,
-	~~~~ RESULTADO FALLIDO ~~~~	
--->	
-
-
-
-			<!-- TEST con OreCoalBoulder (O mayuscula) -->
-<!--
-@:Entities/Minerals/OreCoalBoulderPrefab.prefab, -> 2.0
-@:Entities/Minerals/OreCoalBoulderPrefab,
-Entities/Minerals/OreCoalBoulderPrefab.prefab,
-Entities/Minerals/OreCoalBoulderPrefab,
-
-@:Entities/Minerals/OreCoalBoulder.prefab,
-@:Entities/Minerals/OreCoalBoulder,
-Entities/Minerals/OreCoalBoulder.prefab,
-Entities/Minerals/OreCoalBoulder,
-
-@:Entities/Minerals/OreCoalBoulderPrefab.mat,
-@:Entities/Minerals/OreCoalBoulder.mat,
-Entities/Minerals/OreCoalBoulderPrefab.mat,
-	~~~~ RESULTADO FALLIDO ~~~~
-
-
-@:Entities/Resources/Materials/OreCoalBoulder.prefab,
-@:Entities/Resources/Materials/OreCoalBoulder,
-Entities/Resources/Materials/OreCoalBoulder.prefab,
-Entities/Resources/Materials/OreCoalBoulder,
-
-@:Entities/Resources/Materials/OreCoalBoulderPrefab.mat,
-@:Entities/Resources/Materials/OreCoalBoulder.mat,
-Entities/Resources/Materials/OreCoalBoulder.mat,
-
-@:Entities/Resources/Materials/OreCoalBoulderPrefab.prefab,
-@:Entities/Resources/Materials/OreCoalBoulderPrefab,
-Entities/Resources/Materials/OreCoalBoulderPrefab.prefab,
-Entities/Resources/Materials/OreCoalBoulderPrefab,
-	~~~~ RESULTADO FALLIDO ~~~~	
-
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	
--->
-			<!-- TEST con Resources/Minerals -->
-<!-- 
-@:Entities/Resources/Minerals/oreCoalBoulderPrefab.prefab, -> 2.0
-@:Entities/Resources/Minerals/oreCoalBoulderPrefab,
-Entities/Resources/Minerals/oreCoalBoulderPrefab.prefab,
-Entities/Resources/Minerals/oreCoalBoulderPrefab,
-
-@:Entities/Resources/Minerals/oreCoalBoulder.prefab,
-@:Entities/Resources/Minerals/oreCoalBoulder,
-Entities/Resources/Minerals/oreCoalBoulder.prefab,
-Entities/Resources/Minerals/oreCoalBoulder,
-
-@:Entities/Minerals/oreCoalBoulderPrefab.mat,
-@:Entities/Minerals/oreCoalBoulder.mat,
-Entities/Minerals/oreCoalBoulderPrefab.mat,
-	~~~~ RESULTADO FALLIDO ~~~~
-
-
-@:Entities/Resources/Materials/oreCoalBoulder.prefab,
-@:Entities/Resources/Materials/oreCoalBoulder,
-Entities/Resources/Materials/oreCoalBoulder.prefab,
-Entities/Resources/Materials/oreCoalBoulder,
-
-@:Entities/Resources/Materials/oreCoalBoulderPrefab.mat,
-@:Entities/Resources/Materials/oreCoalBoulder.mat,
-Entities/Resources/Materials/oreCoalBoulder.mat,
-
-@:Entities/Resources/Materials/oreCoalBoulderPrefab.prefab,
-@:Entities/Resources/Materials/oreCoalBoulderPrefab,
-Entities/Resources/Materials/oreCoalBoulderPrefab.prefab,
-Entities/Resources/Materials/oreCoalBoulderPrefab,
-	~~~~ RESULTADO FALLIDO ~~~~	 
--->
-			<!-- TEST con entities (e minuscula) -->
-
-
-
-
-
-
-<!-- @:Entities/Minerals/oreCoalBoulderPrefab.prefab
-entities/resources/materials/oreCoalBoulder -> 1.4 -->
-
 		<!-- ElementalFireSkater -->
 
 		<entity_class name="ZTestSkin1" extends="TemplateHF_Zombie_Special_Skater">
@@ -7874,7 +7676,7 @@ entities/resources/materials/oreCoalBoulder -> 1.4 -->
 			<property name="MoveSpeed" value="1.1"/>
 
 			<property name="Mesh" value="@:Entities/Zombies/Thug/ZThugRadiated.prefab"/>
-			<property name="AltMats" value="@:Entities/Resources/Materials/OreCoalBoulder.prefab,@:Entities/Resources/Materials/OreCoalBoulder.prefab,@:Entities/Resources/Materials/OreCoalBoulder.prefab,@:Entities/Resources/Materials/OreCoalBoulder.prefab,@:Entities/Resources/Materials/OreCoalBoulder.prefab"/>
+			
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
 			<!--  Gameplay  -->
@@ -7894,7 +7696,7 @@ entities/resources/materials/oreCoalBoulder -> 1.4 -->
 			<property name="MoveSpeed" value="1.1"/>
 
 			<property name="Mesh" value="@:Entities/Zombies/Thug/ZThugRadiated.prefab"/>
-			<property name="AltMats" value="@:Entities/Resources/Materials/OreCoalBoulder,@:Entities/Resources/Materials/OreCoalBoulder,@:Entities/Resources/Materials/OreCoalBoulder,@:Entities/Resources/Materials/OreCoalBoulder,@:Entities/Resources/Materials/OreCoalBoulder"/>
+			
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
 			<!--  Gameplay  -->
@@ -7914,8 +7716,7 @@ entities/resources/materials/oreCoalBoulder -> 1.4 -->
 			<property name="MoveSpeed" value="1.1"/>
 
 			<property name="Mesh" value="@:Entities/Zombies/Thug/ZThugRadiated.prefab"/>
-			<property name="AltMats" value="Entities/Resources/Materials/OreCoalBoulder.prefab,Entities/Resources/Materials/OreCoalBoulder.prefab,Entities/Resources/Materials/OreCoalBoulder.prefab,Entities/Resources/Materials/OreCoalBoulder.prefab,Entities/Resources/Materials/OreCoalBoulder.prefab"/>
-			<!--  Radiated  -->
+			
 			<property name="HandItem" value="meleeHandNightmare"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="6000"/>
@@ -7934,7 +7735,7 @@ entities/resources/materials/oreCoalBoulder -> 1.4 -->
 			<property name="MoveSpeed" value="1.1"/>
 
 			<property name="Mesh" value="@:Entities/Zombies/Thug/ZThugRadiated.prefab"/>
-			<property name="AltMats" value="Entities/Resources/Materials/OreCoalBoulder,Entities/Resources/Materials/OreCoalBoulder,Entities/Resources/Materials/OreCoalBoulder,Entities/Resources/Materials/OreCoalBoulder,Entities/Resources/Materials/OreCoalBoulder,Entities/Resources/Materials/OreCoalBoulder"/>
+			
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
 			<!--  Gameplay  -->
@@ -7954,7 +7755,8 @@ entities/resources/materials/oreCoalBoulder -> 1.4 -->
 			<property name="MoveSpeed" value="1.1"/>
 
 			<property name="Mesh" value="@:Entities/Zombies/Thug/ZThugRadiated.prefab"/>
-			<property name="AltMats" value="@:Entities/Resources/Materials/OreCoalBoulderPrefab.mat,@:Entities/Resources/Materials/OreCoalBoulderPrefab.mat,@:Entities/Resources/Materials/OreCoalBoulderPrefab.mat,@:Entities/Resources/Materials/OreCoalBoulderPrefab.mat,@:Entities/Resources/Materials/OreCoalBoulderPrefab.mat"/>
+			
+			
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
 			<!--  Gameplay  -->
@@ -7974,7 +7776,7 @@ entities/resources/materials/oreCoalBoulder -> 1.4 -->
 			<property name="MoveSpeed" value="1.1"/>
 
 			<property name="Mesh" value="@:Entities/Zombies/Thug/ZThugRadiated.prefab"/>
-			<property name="AltMats" value="@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat,@:Entities/Resources/Materials/OreCoalBoulder.mat"/>
+			
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
 			<!--  Gameplay  -->
@@ -7994,7 +7796,7 @@ entities/resources/materials/oreCoalBoulder -> 1.4 -->
 			<property name="MoveSpeed" value="1.1"/>
 
 			<property name="Mesh" value="@:Entities/Zombies/Thug/ZThugRadiated.prefab"/>
-			<property name="AltMats" value="Entities/Resources/Materials/OreCoalBoulder.mat,Entities/Resources/Materials/OreCoalBoulder.mat,Entities/Resources/Materials/OreCoalBoulder.mat,Entities/Resources/Materials/OreCoalBoulder.mat,Entities/Resources/Materials/OreCoalBoulder.mat"/>
+			
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
 			<!--  Gameplay  -->
@@ -8014,7 +7816,7 @@ entities/resources/materials/oreCoalBoulder -> 1.4 -->
 			<property name="MoveSpeed" value="1.1"/>
 
 			<property name="Mesh" value="@:Entities/Zombies/Thug/ZThugRadiated.prefab"/>
-			<property name="AltMats" value="@:Entities/Resources/Materials/OreCoalBoulderPrefab.prefab,@:Entities/Resources/Materials/OreCoalBoulderPrefab.prefab,@:Entities/Resources/Materials/OreCoalBoulderPrefab.prefab,@:Entities/Resources/Materials/OreCoalBoulderPrefab.prefab,@:Entities/Resources/Materials/OreCoalBoulderPrefab.prefab"/>
+			
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
 			<!--  Gameplay  -->
@@ -8034,8 +7836,7 @@ entities/resources/materials/oreCoalBoulder -> 1.4 -->
 			<property name="MoveSpeed" value="1.1"/>
 
 			<property name="Mesh" value="@:Entities/Zombies/Thug/ZThugRadiated.prefab"/>
-			<property name="AltMats" value="@:Entities/Resources/Materials/OreCoalBoulderPrefab,@:Entities/Resources/Materials/OreCoalBoulderPrefab,@:Entities/Resources/Materials/OreCoalBoulderPrefab,@:Entities/Resources/Materials/OreCoalBoulderPrefab,@:Entities/Resources/Materials/OreCoalBoulderPrefab"/>
-			<!--  Radiated  -->
+			
 			<property name="HandItem" value="meleeHandNightmare"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="6000"/>
@@ -8054,8 +7855,7 @@ entities/resources/materials/oreCoalBoulder -> 1.4 -->
 			<property name="MoveSpeed" value="1.1"/>
 
 			<property name="Mesh" value="@:Entities/Zombies/Thug/ZThugRadiated.prefab"/>
-			<property name="AltMats" value="Entities/Resources/Materials/OreCoalBoulderPrefab.prefab,Entities/Resources/Materials/OreCoalBoulderPrefab.prefab,Entities/Resources/Materials/OreCoalBoulderPrefab.prefab,Entities/Resources/Materials/OreCoalBoulderPrefab.prefab,Entities/Resources/Materials/OreCoalBoulderPrefab.prefab"/>
-			<!--  Radiated  -->
+			
 			<property name="HandItem" value="meleeHandNightmare"/>
 			<!--  Gameplay  -->
 			<property name="ExperienceGain" value="6000"/>
@@ -8074,7 +7874,7 @@ entities/resources/materials/oreCoalBoulder -> 1.4 -->
 			<property name="MoveSpeed" value="1.1"/>
 
 			<property name="Mesh" value="@:Entities/Zombies/Thug/ZThugRadiated.prefab"/>
-			<property name="AltMats" value="Entities/Resources/Materials/OreCoalBoulderPrefab,Entities/Resources/Materials/OreCoalBoulderPrefab,Entities/Resources/Materials/OreCoalBoulderPrefab,Entities/Resources/Materials/OreCoalBoulderPrefab,Entities/Resources/Materials/OreCoalBoulderPrefab"/>
+			
 			<!--  Radiated  -->
 			<property name="HandItem" value="meleeHandNightmare"/>
 			<!--  Gameplay  -->
