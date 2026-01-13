@@ -953,6 +953,49 @@
 			<property name="TimeStayAfterDeath" value="5"/>
 			
 		</entity_class>
+		<entity_class name="TemplateHF_Zombie_Special_Chuck" extends="zombieChuckFeral">
+			<property name="Tags" value="entity,zombie,walker,feral,radiated,elemental"/>			
+
+			<!-- DISMEMBER AND DAMAGE -->
+			<property name="DismemberMultiplierHead" value=".4"/>
+			<property name="DismemberMultiplierArms" value=".4"/>
+			<property name="DismemberMultiplierLegs" value=".4"/>
+			<property name="PainResistPerHit" value="1"/>
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.6"/>
+			<property name="KnockdownProneStunDuration" value="0.5,1.8"/>
+			<property name="KnockdownProneRefillRate" value="0.045,0.045"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.38"/>
+			<property name="KnockdownKneelStunDuration" value="0.5,1.8"/>
+			<property name="KnockdownKneelRefillRate" value="0.045,0.045"/>
+			<property name="LegsExplosionDamageMultiplier" value=".85"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".85"/>
+			<property name="HeadExplosionDamageMultiplier" value=".85"/>
+			<property name="ChestExplosionDamageMultiplier" value=".85"/>
+			
+			<!-- IA -->
+			<property name="AITarget" value="
+			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask|
+			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
+			"/>	
+			<property name="AITask" value="
+			BreakBlock|
+			ApproachDistraction|
+			RangedAttackTarget startAnimType=2;itemType=1;cooldown=4;duration=5;minRange=5;maxRange=43;releaseDelay=.41;sndStart=chuckwarning;sndRelease=chuckrelease|
+			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal,0,EntityAnimal|
+			ApproachSpot|
+			Look|
+			Wander|
+			"/>
+			
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="DeadBodyHitPoints" value="1000"/>
+			<property name="TimeStayAfterDeath" value="5"/>
+			
+		</entity_class>
+
 		<entity_class name="TemplateHF_Zombie_Special_Demolition" extends="zombieDemolition">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated,boss,elemental"/>
 			<property name="Mesh" value="@:Entities/Zombies/Demolition/ZDemolition.prefab"/>
@@ -3595,8 +3638,7 @@
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="5000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="50"/>
-																												   
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="50"/>																												   
 																													 
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
@@ -5789,96 +5831,16 @@
 			
 		</entity_class>
 
-		<entity_class name="zombieBossPractoSpider" extends="zombieSpider">
-			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,boss,bossrad,bossChallenge,spider"/>
-			<property name="Mesh" value="@:Entities/Zombies/Cop/ZCop.prefab"/>
-			<property name="Class" value="EntityZombieCop"/>
-
-			<property name="ExplodeHealthThreshold" value="0"/>			
-			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreShaleBoulder.mat"/>
-
-			<property name="Mass" value="250"/>
-			<property name="SizeScale" value="1.7"/>
-
-			<property name="SoundFootstepModifier" value="bear_footstep"/>
-			<property name="PainResistPerHit" value="3"/>
-			<property name="DismemberMultiplierHead" value="0"/>
-			<property name="DismemberMultiplierArms" value="0"/>
-			<property name="DismemberMultiplierLegs" value="0"/>
-			<property name="LegCrawlerThreshold" value="0"/>
-			<property name="LegCrippleThreshold" value="0"/>
-			<property name="KnockdownProneDamageThreshold" value="3"/>
-			<property name="KnockdownKneelDamageThreshold" value="3"/>
-			<property name="AINoiseSeekDist" value="3"/>
-			<property name="AIPathCostScale" value=".6, 1"/>
-
-			<property name="AITask" value="
-			Leap|
-			BreakBlock|
-			DestroyArea|
-			Territorial|
-			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
-			ApproachSpot|
-			Look|
-			Wander|
-			"/>
-			<property name="AITarget" value="			                        
-			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
-			BlockingTargetTask|
-			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
-			"/>
-
-			
-			<property name="MoveSpeed" value="2.6"/>
-			<property name="MoveSpeedAggro" value="2.0, 2.6"/>
-			<property name="MoveSpeedPanic" value="2.5"/>
-			<property name="SwimSpeed" value="3.5"/>
-			<property name="SwimStrokeRate" value="1.5,1.7"/>
-			<property name="CanClimbVertical" value="true"/>
-			<property name="JumpMaxDistance" value="1.5, 1.7"/>
-
-			<property name="ExperienceGain" value="45000"/>
-
-			<property name="HandItem" value="meleeHandZombieIronSpiderFeral"/>
-
-			<property name="LootDropEntityClass" count="1" value="PractoLootContainer"/>
-			<property name="LootDropProb" value="1"/>
-			<!--
-			<drop event="Harvest" name="resourceRawDiamond" count="0" tool_category="Disassemble"/>
-			<drop event="Harvest" name="resourceSteelPolishR" tag="allToolsHarvest" count="1,10"/>
-			<drop event="Harvest" name="oldCash" tag="allToolsHarvest" count="10,35"/>
-			<drop event="Harvest" name="bossTokenMineral" tag="allToolsHarvest" count="1"/>
-			<drop event="Harvest" name="resourceRawDiamond" tag="allToolsHarvest" count="5"/>
-			<drop event="Harvest" name="resourceSilverNugget" tag="allToolsHarvest" count="10"/>
-			<drop event="Harvest" name="resourceGoldNugget" tag="allToolsHarvest" count="15"/>
-			<drop event="Harvest" name="Practonium" tag="allToolsHarvest" count="5,6"/>
-			<drop event="Harvest" name="Practonium" prob=".18" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
-			<drop event="Harvest" name="resourceRawDiamond" prob=".20" count="3" tag="artOfMiningLuckyStrikeHarvest"/>
-			<drop event="Harvest" name="resourceGoldNugget" prob=".30" count="3" tag="artOfMiningLuckyStrikeHarvest"/>
-			<drop event="Harvest" name="resourceSilverNugget" prob=".40" count="3" tag="artOfMiningLuckyStrikeHarvest"/>
-			-->
-			<property name="DeadBodyHitPoints" value="1000"/>
-			<effect_group name="Base Effects">
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="SPIDER2"/>
-				<passive_effect name="HealthMax" operation="base_set" value="55000"/>
-				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="55"/>
-				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
-			</effect_group>
-			<property name="TimeStayAfterDeath" value="5"/>
-		</entity_class>
-
-		<entity_class name="ZombieBossMineralSpider" extends="zombieSpider">
+		<entity_class name="zombieBossSpider_Template" extends="zombieSpider">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,boss,bossrad,bossChallenge,spider"/>
 			<property name="Mesh" value="@:Entities/Zombies/Chuck/ZChuck.prefab"/>
-			<property name="RightHandJointName" value="Jaw"/>
-			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreLeadBoulder.mat"/>	
-			<property name="Class" value="EntityZombieCop"/>
-			<property name="ExplodeHealthThreshold" value="0"/>
+			<property name="RightHandJointName" value="RightHand"/>			
 			<property name="SizeScale" value="1.7"/>
+			<property name="HasDeathAnim" value="true"/>
+			<property name="SoundFootstepModifier" value="bear_footstep"/>			
+			<property name="Mass" value="250"/>
+			<property name="HasRagdoll" value="false"/>
 
 			<property name="PainResistPerHit" value="3"/>
 			<property name="DismemberMultiplierHead" value="0"/>
@@ -5890,18 +5852,20 @@
 			<property name="KnockdownKneelDamageThreshold" value="3"/>
 			
 			<property name="MoveSpeed" value="2.5"/>
-			<property name="MoveSpeedAggro" value="2.0, 2.5"/>
+			<property name="MoveSpeedAggro" value="2.0, 2.6"/>
 			<property name="MoveSpeedPanic" value="2.5"/>
 			<property name="SwimSpeed" value="3.5"/>
 			<property name="SwimStrokeRate" value="1.5,1.7"/>
 			<property name="CanClimbVertical" value="true"/>
 			<property name="JumpMaxDistance" value="1.5, 1.7"/>
-			<property name="ExperienceGain" value="45000"/>
-			
+
+			<property name="ExperienceGain" value="45000"/>			
 			<property name="HandItem" value="meleeHandZombieIronSpiderFeral"/>
 			<property name="LootDropEntityClass" count="1" value="MineralLootContainer"/>
 			<property name="LootDropProb" value="1"/>
 			
+			<property name="AINoiseSeekDist" value="3"/>
+			<property name="AIPathCostScale" value=".6, 1"/>
 			<property name="AITask" value="
 			Leap|
 			BreakBlock|
@@ -5917,35 +5881,44 @@
 			BlockingTargetTask|
 			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
 			"/>
-			
-			<!-- <drop event="Harvest" name="resourceRawDiamond" count="0" tool_category="Disassemble"/>
-			<drop event="Harvest" name="resourceSteelPolishR" tag="allSpeTools" count="1,10"/>
-			<drop event="Harvest" name="oldCash" tag="allSpeTools" count="10,35"/>
-			<drop event="Harvest" name="bossTokenMineral" tag="allSpeTools" count="1"/>
-			<drop event="Harvest" name="Practonium" tag="allSpeTools" count="1" prob="0.25"/>
-			<drop event="Harvest" name="resourceRawDiamond" tag="allSpeTools" count="25"/>
-			<drop event="Harvest" name="resourceSilverNugget" tag="allSpeTools" count="75"/>
-			<drop event="Harvest" name="resourceGoldNugget" tag="allSpeTools" count="50"/>
-			<drop event="Harvest" name="resourceRawDiamond" prob=".20" count="3" tag="artOfMiningLuckyStrikeHarvest"/>
-			<drop event="Harvest" name="resourceGoldNugget" prob=".30" count="3" tag="artOfMiningLuckyStrikeHarvest"/>
-			<drop event="Harvest" name="resourceSilverNugget" prob=".40" count="3" tag="artOfMiningLuckyStrikeHarvest"/> -->
-			
+			<property name="DeadBodyHitPoints" value="1000"/>
+			<property name="TimeStayAfterDeath" value="5"/>			
+			<effect_group name="Base Effects">				
+				<passive_effect name="HealthMax" operation="base_set" value="55000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>				
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
+			</effect_group>	
+		</entity_class>	
+
+		<entity_class name="zombieBossPractoSpider" extends="zombieBossSpider_Template">
+			<property name="UserSpawnType" value="Menu"/>			
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreShaleBoulder.mat"/>			
+			<property name="HandItem" value="meleeHandZombieIronSpiderFeral"/>
+			<property name="LootDropEntityClass" count="1" value="PractoLootContainer"/>
+			<effect_group name="Base Effects">
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="SPIDER2"/>
+				<passive_effect name="HealthMax" operation="base_set" value="55000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="55"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
+			</effect_group>
+		</entity_class>
+
+		<entity_class name="ZombieBossMineralSpider" extends="zombieBossSpider_Template">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreLeadBoulder.mat"/>									
+			<property name="HandItem" value="meleeHandZombieIronSpiderFeral"/>
+			<property name="LootDropEntityClass" count="1" value="MineralLootContainer"/>
 			<effect_group name="Base Effects">
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="SPIDER"/>
 				<passive_effect name="HealthMax" operation="base_set" value="55000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
-				<!-- Zombie HP scale -->
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="50"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
-				<!-- <passive_effect name="InternalDamageModifier" operation="perc_add" value="-5" tags="melee,tool"/>
-				<passive_effect name="InternalDamageModifier" operation="perc_add" value="5" tags="corpseRemoval"/> -->
-				<!-- <passive_effect name="InternalDamageModifier" operation="base_set" value="2" tags="melee,tool"/> -->
-					
 			</effect_group>
-			<property name="DeadBodyHitPoints" value="1000"/>
-			<property name="TimeStayAfterDeath" value="5"/>
-		</entity_class>	
+		</entity_class>
 
 		<entity_class name="zombieBossSoldier" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
@@ -6492,6 +6465,7 @@
 			<property name="DeadBodyHitPoints" value="1000"/>
 			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
+
 		<entity_class name="zombieBossEarthBurntForest" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="SizeScale" value="1.7"/>
@@ -6543,6 +6517,7 @@
 			<property name="DeadBodyHitPoints" value="1000"/>
 			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
+
 		<entity_class name="zombieBossEarthDesert" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="SizeScale" value="1.7"/>
@@ -6645,6 +6620,7 @@
 			<property name="DeadBodyHitPoints" value="1000"/>
 			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
+
 		<!-- <entity_class name="zombieBossEarthWasteland" extends="bossZombieTemplate">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="SizeScale" value="1.7"/>
@@ -6787,37 +6763,12 @@
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Special Bosses ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 	
-		<entity_class name="zombieSpecialBossNightSpider" extends="zombieSpider">
-
-			<property name="SizeScale" value="2"/>
+		<entity_class name="zombieSpecialBossNightSpider" extends="zombieBossSpider_Template">
 			<property name="UserSpawnType" value="Menu"/>
-
+			<property name="SizeScale" value="2"/>
 			<property name="Tags" value="entity,walker,bossrad,bossChallenge,boss,mantis"/>
-			<property name="Mesh" value="@:Entities/Zombies/Cop/ZCop.prefab"/>			<property name="ExplodeHealthThreshold" value="0"/>
-
-			
+			<property name="Mesh" value="@:Entities/Zombies/Cop/ZCop.prefab"/>
 			<property name="SwapMats" value="@:Entities/Minerals/Materials/OreCoalBoulder.mat"/>
-
-			<property name="HasDeathAnim" value="true"/>
-			<property name="Mass" value="250"/>
-			<property name="LookAtAngle" value="0"/>
-			<property name="SoundRandom" value="Enemies/Spider_Zombie/spiderroam"/>
-			<!--	<property name="SoundAlert" value="Enemies/Spider_Zombie/spideralert"/> -->
-			<property name="SoundAttack" value="Enemies/Spider_Zombie/spiderattack"/>
-			<property name="SoundDeath" value="Enemies/Spider_Zombie/spiderdeath"/>
-			<property name="SoundHurt" value="Enemies/Spider_Zombie/spiderpain"/>
-			<property name="SoundSense" value="Enemies/Spider_Zombie/spidersense"/>
-			<property name="SoundFootstepModifier" value="bear_footstep"/>
-			<property name="PainResistPerHit" value="3"/>
-			<property name="DismemberMultiplierHead" value="0"/>
-			<property name="DismemberMultiplierArms" value="0"/>
-			<property name="DismemberMultiplierLegs" value="0"/>
-			<property name="LegCrawlerThreshold" value="0"/>
-			<property name="LegCrippleThreshold" value="0"/>
-			<property name="KnockdownProneDamageThreshold" value="3"/>
-			<property name="KnockdownKneelDamageThreshold" value="3"/>
-			<property name="AINoiseSeekDist" value="3"/>
-			<property name="AIPathCostScale" value=".6, 1"/>
 
 			<property name="AITask" value="
 			BreakBlock|
@@ -6831,16 +6782,8 @@
 			Wander|
 			"/>
 			
-			<property name="AITarget" value="                        
-			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
-			BlockingTargetTask|
-			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
-			"/>
-			
 			<property name="LootDropEntityClass" count="1" value="MineralLootContainerS"/>
 			<property name="LootDropProb" value="1"/>
-			<property name="HasRagdoll" value="true"/>
-
 			<property name="HandItem" value="meleeHandBossNigh"/>
 			<property name="MoveSpeed" value="2.6"/>
 			<property name="MoveSpeedAggro" value="2.0, 2.6"/>
@@ -6850,12 +6793,11 @@
 			<property name="CanClimbVertical" value="true"/>
 			<property name="JumpMaxDistance" value="3, 5"/>
 			<property name="ExperienceGain" value="90000"/>
-			<property name="DeadBodyHitPoints" value="1000"/>
 
 			<drop event="Harvest" name="resourceRawDiamond" count="0" tool_category="Disassemble"/>
 			<!-- <drop event="Harvest" name="oldCash" tag="allToolsHarvest" count="50,120"/>
 			<drop event="Harvest" name="bossTokenMineral" tag="allToolsHarvest" count="1"/>
-
+			
 			<drop event="Harvest" name="resourceRawDiamond" tag="allToolsHarvest" count="50"/>
 			<drop event="Harvest" name="resourceSilverNugget" tag="allToolsHarvest" count="150"/>
 			<drop event="Harvest" name="resourceGoldNugget" tag="allToolsHarvest" count="100"/>
@@ -6877,8 +6819,7 @@
 				<!-- Zombie HP scale -->
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="55"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
-			</effect_group>
-			<property name="TimeStayAfterDeath" value="5"/>
+			</effect_group>			
 		</entity_class>	
 
 		<entity_class name="zombieSpecialBossMummy" extends="bossZombieTemplate">
