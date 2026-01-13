@@ -1010,6 +1010,70 @@
 			
 		</entity_class>
 
+		<entity_class name="TemplateHF_Zombie_Special_Chuck" extends="zombieChuckFeral">
+			<property name="Tags" value="entity,zombie,walker,feral,radiated,boss,elemental"/>
+			<property name="Mesh" value="@:Entities/Zombies/Chuck/ZChuck.prefab"/>
+			<property name="RightHandJointName" value="Boulder"/>
+			<property name="Class" value="EntityZombieCop"/>
+			<property name="Mass" value="170"/>
+
+			<!-- BEHAVIOR -->
+			<property name="SoundRandom" value="demolitionzroam"/>
+			<property name="SoundAlert" value="demolitionzalert"/>
+			<property name="SoundAttack" value="demolitionzattack"/>
+			<property name="SoundHurt" value="demolitionzpain"/>
+			<property name="SoundDeath" value="demolitionzdeath"/>
+			<property name="SoundSense" value="demolitionzsense"/>
+			<property name="SoundFootstepModifier" value="bear_footstep"/>
+			<property name="JumpMaxDistance" value="1, 2"/>
+			<property name="StompsSpikes" value="true"/>
+			<property name="ExplodeDelay" value="2"/>
+			<property name="ExplodeHealthThreshold" value="0"/>
+			<property name="SoundExplodeWarn" value="demolitionzexplodewarning"/>
+			<property name="SoundTick" value="demolitionz_beep,.5,.9"/>
+
+			<!-- DISMEMBER AND DAMAGE -->
+			<property name="DismemberMultiplierHead" value=".4"/>
+			<property name="DismemberMultiplierArms" value=".4"/>
+			<property name="DismemberMultiplierLegs" value=".4"/>
+			<property name="PainResistPerHit" value=".5"/>
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.6"/>
+			<property name="KnockdownProneStunDuration" value="0.5,1.8"/>
+			<property name="KnockdownProneRefillRate" value="0.045,0.045"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.38"/>
+			<property name="KnockdownKneelStunDuration" value="0.5,1.8"/>
+			<property name="KnockdownKneelRefillRate" value="0.045,0.045"/>
+			<property name="LegsExplosionDamageMultiplier" value=".85"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".85"/>
+			<property name="HeadExplosionDamageMultiplier" value=".85"/>
+			<property name="ChestExplosionDamageMultiplier" value=".85"/>
+
+			<!-- Chuck vanila -->
+			<property name="AITask" value="
+			BreakBlock|
+			ApproachDistraction|
+			RangedAttackTarget startAnimType=2;itemType=1;cooldown=4;duration=5;minRange=5;maxRange=43;releaseDelay=.41;sndStart=chuckwarning;sndRelease=chuckrelease|
+			ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal,0,EntityAnimal|
+			ApproachSpot|
+			Look|
+			Wander|
+			"/>
+			<!-- FIN Chuck vanila -->
+
+			<property name="AITarget" value="
+			SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+			BlockingTargetTask|
+			SetNearestEntityAsTarget class=EntityPlayer,0,0,EntityBandit,0,-10|
+			"/>		
+			
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="DeadBodyHitPoints" value="1000"/>
+			<property name="TimeStayAfterDeath" value="5"/>			
+		</entity_class>
+
+
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Animals ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<entity_class name="zombieMummyDog" extends="animalDireWolf">
@@ -1729,13 +1793,14 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 			</effect_group>
-		</entity_class>		
+		</entity_class>
 		<!-- Demo -->
 		<entity_class name="EliteDemo" extends="TemplateHF_Zombie_Special_Demolition">
 			<property name="Tags" value="entity,zombie,walker,boss"/>
 			<!-- <property name="MatColor" value="ZMutated"/> -->
 			<!-- <property name="AltMats" value="entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace,entities/animals/boar/materials/grace"/> -->
-			<property name="Mesh" value="@:Entities/Zombies/Demolition/ZDemolition.prefab"/>
+			<!-- <property name="Mesh" value="@:Entities/Zombies/Demolition/ZDemolition.prefab"/> -->
+			
 			<property name="Class" value="EntityZombieCop"/>
 			<property name="Mass" value="170"/>
 
@@ -1771,6 +1836,36 @@
 			<property name="MoveSpeedAggro" value=".8, .9"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="3000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="head"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="10"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="eliteDeco"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+			</effect_group>
+		</entity_class>
+		<!-- Chuck -->
+		<entity_class name="EliteChuck" extends="TemplateHF_Zombie_Special_Chuck">
+			<!-- <property name="Tags" value="entity,zombie,walker,radiated"/> -->
+			
+			<property name="Class" value="EntityZombieCop"/>
+			<property name="Mass" value="170"/>
+
+			<!--property name="ReplaceMaterial0" value="@:Entities/Zombies/Zombies/Materials/feral_radiated.mat"/-->
+			<property name="ReplaceMaterial1" value="particleeffects/materials/p_spark_electricity"/>
+			<!--  Gameplay  -->
+			<!-- <property name="HandItem" value="meleeHandZombieDemolition"/> -->
+			<property name="HandItem" value="meleeHandZombieChuck"/>
+			<property name="JumpMaxDistance" value="1, 2"/>
+			<property name="PainResistPerHit" value=".6"/>
+			<property name="StompsSpikes" value="true"/>
+			<!--  Disable Health explosion  -->
+			<property name="ExperienceGain" value="3750"/>
+			<property name="LootDropProb" value=".2"/>
+			<property name="MoveSpeedAggro" value=".9, 1"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="4000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
 				<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="head"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="10"/>
@@ -2479,6 +2574,55 @@
 			</effect_group>
 			<property name="TimeStayAfterDeath" value="5"/>
 		</entity_class>
+		<!-- nightZombieChuck -->
+		<entity_class name="nightZombieChuck" extends="TemplateHF_Zombie_Special_Chuck">
+			<!-- <property name="Tags" value="entity,zombie,walker,radiated"/> -->
+			<property name="SizeScale" value="1.1"/>
+			<property name="MoveSpeed" value="1.1"/>
+			<property name="SwapMats" value="@:Entities/Debris/Materials/OreCoalBoulder.mat"/>
+			
+			<property name="Class" value="EntityZombieCop"/>
+			<property name="Mass" value="170"/>
+
+			<property name="DismemberMultiplierHead" value=".2"/>
+			<property name="DismemberMultiplierArms" value=".2"/>
+			<property name="DismemberMultiplierLegs" value=".2"/>
+			<property name="PainResistPerHit" value="2"/>
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownProneDamageThreshold" value="3"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownProneStunDuration" value="3,0"/>
+			<property name="KnockdownProneRefillRate" value="0,0"/>
+			<property name="KnockdownKneelDamageThreshold" value="3"/>
+			<property name="KnockdownKneelStunDuration" value="3,0"/>
+			<property name="KnockdownKneelRefillRate" value="0,0"/>
+			<property name="LegsExplosionDamageMultiplier" value=".85"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".85"/>
+			<property name="HeadExplosionDamageMultiplier" value=".85"/>
+			<property name="ChestExplosionDamageMultiplier" value=".85"/>
+
+			<!--  Gameplay  -->
+			<!-- <property name="HandItem" value="meleeHandZombieChuck"/> -->
+			<property name="HandItem" value="meleeHandNightmareChuckProjectile"/>
+			<property name="JumpMaxDistance" value="1, 2"/>
+			<property name="StompsSpikes" value="true"/>
+			
+			<property name="ExperienceGain" value="6000"/>
+			<property name="LootDropProb" value=".4"/>
+			<property name="MoveSpeedAggro" value="1.5, 2"/>
+			<property name="DeadBodyHitPoints" value="1000"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="8000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="30"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="head"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+			</effect_group>
+		</entity_class>
 		<!-- Nightmare Bomber Elite -->
 		<entity_class name="nightZombieEliteBomber" extends="TemplateHF_Zombie_Special_Hazmat">
 			<property name="Tags" value="entity,boss,walker,bomber,feral,radiated"/>
@@ -2779,7 +2923,7 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon"/>
 			</effect_group>
-		</entity_class>		
+		</entity_class>
 		<!-- ElementalFireBoomer -->
 		<entity_class name="HvInfernalBoomer" extends="TemplateHF_Zombie_Special_Demolition">
 			<property name="SizeScale" value="1.1"/>
@@ -2794,6 +2938,36 @@
 			<property name="ExperienceGain" value="4400"/>
 			<property name="LootDropProb" value=".25"/>
 			<property name="MoveSpeedAggro" value="1.5, 1.9"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="5000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="10"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="head"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalFire"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon"/>
+			</effect_group>
+		</entity_class>
+		<!-- HvInfernalChuck -->
+		<entity_class name="HvInfernalChuck" extends="TemplateHF_Zombie_Special_Chuck">
+			<!-- <property name="Tags" value="entity,zombie,walker,radiated"/> -->
+			<property name="SizeScale" value="1.1"/>
+			<property name="MoveSpeed" value="1.1"/>
+			<property name="SoundSpawn" value="Ambient_Loops/a_fire_embersmoke_sm_lp"/>
+			<property name="SwapMats" value="@:Entities/Debris/Materials/pileEmberBurntLogsBarrel.mat"/>
+
+			<!--  Gameplay  -->
+			<!-- <property name="HandItem" value="meleeHandZombieChuck"/> -->
+			<property name="HandItem" value="meleeHandElementalFire"/>
+			<property name="JumpMaxDistance" value="1, 2"/>
+			<property name="StompsSpikes" value="true"/>
+			
+			<property name="ExperienceGain" value="4400"/>
+			<property name="LootDropProb" value=".25"/>
+			<property name="MoveSpeedAggro" value="1.5, 1.9"/>
+			<property name="DeadBodyHitPoints" value="1000"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="5000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
@@ -3374,6 +3548,38 @@
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon"/>
 			</effect_group>
 		</entity_class>
+		<!-- HvMortevodaChuck -->
+		<entity_class name="HvMortevodaChuck" extends="TemplateHF_Zombie_Special_Chuck">
+			<!-- <property name="Tags" value="entity,zombie,walker,radiated"/> -->
+			<property name="SizeScale" value="1.1"/>
+			<property name="MoveSpeed" value="1.1"/>
+			<property name="ReplaceMaterial0" value="materials/waterinbucket"/>
+			<property name="ReplaceMaterial2" value="particleeffects/materials/waterfallslope"/>
+			<property name="SoundFootstepModifier" value="stepwater"/>
+			<property name="SurfaceCategory" value="water"/>
+
+			<!--  Gameplay  -->
+			<!-- <property name="HandItem" value="meleeHandZombieChuck"/> -->
+			<property name="HandItem" value="meleeHandElementalWater"/>
+			<property name="JumpMaxDistance" value="1, 2"/>
+			<property name="StompsSpikes" value="true"/>
+			
+			<property name="ExperienceGain" value="4100"/>
+			<property name="LootDropProb" value=".25"/>
+			<property name="MoveSpeedAggro" value="1.3, 1.7"/>
+			<property name="DeadBodyHitPoints" value="1000"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="6000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="30"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="head"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalWater"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon"/>
+			</effect_group>
+		</entity_class>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ SHOCKER ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<!-- HvShockerCop -->
@@ -3598,6 +3804,33 @@
 			<property name="ExperienceGain" value="4400"/>
 			<property name="LootDropProb" value=".25"/>
 			<property name="MoveSpeedAggro" value="1.5, 2"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="5000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="25"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="head"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalElectrical"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffShocked"/>
+			</effect_group>
+		</entity_class>
+		<!-- HvSchockerChuck -->
+		<entity_class name="HvShockerChuck" extends="TemplateHF_Zombie_Special_Chuck">
+			<!-- <property name="Tags" value="entity,zombie,walker,radiated"/> -->
+			<property name="SizeScale" value="1.1"/>
+			<property name="MoveSpeed" value="1.1"/>
+
+			<!--  Gameplay  -->
+			<property name="HandItem" value="meleeHandElementalElectrical"/>
+			<property name="JumpMaxDistance" value="1, 2"/>
+			<property name="StompsSpikes" value="true"/>
+			
+			<property name="ExperienceGain" value="4400"/>
+			<property name="LootDropProb" value=".25"/>
+			<property name="MoveSpeedAggro" value="1.5, 2"/>
+			<property name="DeadBodyHitPoints" value="1000"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="5000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
@@ -3895,6 +4128,30 @@
 				<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="head"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="70"/>
 				<!-- <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ElementalFrozen"/>-->
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffShocked"/>
+			</effect_group>
+		</entity_class>
+		<!-- HvMortevodaChuck -->
+		<entity_class name="HvShockerChuck" extends="TemplateHF_Zombie_Special_Chuck">
+			<!-- <property name="Tags" value="entity,zombie,walker,radiated"/> -->
+			<property name="SizeScale" value="1.1"/>
+			<property name="MoveSpeed" value="0.7"/>
+			<property name="SwapMats" value="@:Entities/Industrial/Materials/boxCardboard.mat"/>
+
+			<!--  Gameplay  -->
+			<property name="HandItem" value="meleeHandElementalEarth"/>			
+			<property name="ExperienceGain" value="2800"/>
+			<property name="LootDropProb" value=".28"/>
+			<property name="MoveSpeedAggro" value="0.4, 0.8"/>
+			<property name="DeadBodyHitPoints" value="1000"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="5000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="1" tags="head"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="70"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="15"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
@@ -5361,14 +5618,13 @@
 		</entity_class>
 		<entity_class name="zombieScorcher" extends="zombieSoldier">
 			<property name="SizeScale" value="1.2"/>
-
-			<property name="Tags" value="entity,walker,boss,tavoR,scorcher,subBoss" />			
-			<property name="Mesh" value="@:Entities/Zombies/Demolition/ZDemolition.prefab"/>
+			<property name="Tags" value="entity,walker,boss,tavoR,scorcher,subBoss" />
+			<property name="Mesh" value="@:Entities/Zombies/Chuck/ZChuck.prefab"/>
+			<property name="SwapMats" value="@:Entities/Debris/Materials/pileEmberBurntLogsBarrel.mat"/>
+			<property name="RightHandJointName" value="Boulder"/>
 
 			<property name="Class" value="EntityZombieCop"/>
 			<property name="Mass" value="300"/>
-
-			<!-- <property name="RightHandJointName" value="RightShoulder"/> -->
 			
 			<property name="AITask" value="
 			BreakBlock|
