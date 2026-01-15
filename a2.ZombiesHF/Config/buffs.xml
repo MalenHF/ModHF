@@ -3522,7 +3522,7 @@
 		<!-- DECO BOSSES ELEMENTALES -->
 		<buff name="DecoBossMortevoda" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelPlasticQuadBPrefab.prefab" local_offset="0,0.25,-0.75" local_rotation="0,0,0" parent_transform="Spine"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelPlasticQuadBPrefab.prefab" local_offset="0,0.25,-0.75" local_rotation="0,0,0" local_scale="0.85,0.85,0.85" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Commercial/bollardConcreteKnockedBPrefab.prefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="LeftLeg"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Commercial/bollardConcreteKnockedBPrefab.prefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="RightLeg"/>
 				
@@ -3535,7 +3535,7 @@
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/hangingMossPrefab.prefab" local_offset="0,-0.2,0.2" local_rotation="-25,0,0" parent_transform="RightLeg"/>
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelPlasticQuadBPrefab.prefab" local_offset="0,0.25,-0.75" local_rotation="0,0,0" parent_transform="Spine">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/barrelPlasticQuadBPrefab.prefab" local_offset="0,0.25,-0.75" local_rotation="0,0,0" local_scale="0.85,0.85,0.85" parent_transform="Spine">
 					<requirement name="!HasPrefab" prefab="@:Entities/Industrial/barrelPlasticQuadBPrefab.prefab" />
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Commercial/bollardConcreteKnockedBPrefab.prefab" local_offset="0.05,0,-0.25" local_rotation="-45,45,-50" parent_transform="LeftLeg">
@@ -3751,7 +3751,7 @@
 		</buff>
 		<buff name="DecoBossEarth" hidden="true">
 			<effect_group> 
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" local_offset="-0.2,0,0" local_rotation="-33,0,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="LeftShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?StudioGimbal/MountainPineMed01/MountainPineMed01GimbalPrefab.prefab" local_offset="-0.2,0,0" local_rotation="-33,0,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="LeftShoulder"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?White_Oak22Prefab.prefab" local_offset="0.17,-0.1,0" local_rotation="180,66,0" local_scale="0.17,0.17,0.17" parent_transform="RightShoulder"/>				
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?Hollywood_Juniper15mPrefab.prefab" local_offset="-0.2,0.4,0" local_rotation="-90,0,0" local_scale="0.17,0.17,0.17" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?Blue_Spruce45Prefab.prefab" local_offset="0.1,0.4,0" local_rotation="-90,0,0" local_scale="0.05,0.05,0.0510207" parent_transform="Spine"/>
@@ -3762,12 +3762,12 @@
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?AzaleaPrefab.prefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.5,0.5,0.5" parent_transform="RightLeg"/>
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" local_offset="-0.2,0,0" local_rotation="-33,0,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="LeftShoulder">
-					<requirement name="!HasPrefab" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" parent_transform="LeftShoulder"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?StudioGimbal/MountainPineMed01/MountainPineMed01GimbalPrefab.prefab" local_offset="-0.2,0,0" local_rotation="-33,0,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="LeftShoulder">
+					<requirement name="!HasPrefab" prefab="#Entities/Trees?StudioGimbal/MountainPineMed01/MountainPineMed01GimbalPrefab.prefab" parent_transform="LeftShoulder"/>
 				</triggered_effect>
 
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?White_Oak22Prefab.prefab" local_offset="0.17,-0.1,0" local_rotation="180,66,0" local_scale="0.17,0.17,0.17" parent_transform="RightShoulder">
-					<requirement name="!HasPrefab" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" parent_transform="RightShoulder"/>
+					<requirement name="!HasPrefab" prefab="#Entities/Trees?StudioGimbal/MountainPineMed01/MountainPineMed01GimbalPrefab.prefab" parent_transform="RightShoulder"/>
 				</triggered_effect>
 
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?Hollywood_Juniper15mPrefab.prefab" local_offset="-0.2,0.4,0" local_rotation="-90,0,0" local_scale="0.17,0.17,0.17" parent_transform="Spine">
@@ -3802,8 +3802,8 @@
 		</buff>
 		<buff name="DecoBossEarthForest" hidden="true">
 			<effect_group> 
-				<triggered_effect biome="burnt_forest" trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" local_offset="-0.2,0,0" local_rotation="-33,0,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="LeftShoulder"/>
-				<triggered_effect biome="burnt_forest" trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" local_offset="0.17,-0.1,0" local_rotation="180,66,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="RightShoulder"/>				
+				<triggered_effect biome="burnt_forest" trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?StudioGimbal/MountainPineMed01/MountainPineMed01GimbalPrefab.prefab" local_offset="-0.2,0,0" local_rotation="-33,0,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="LeftShoulder"/>
+				<triggered_effect biome="burnt_forest" trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?StudioGimbal/MountainPineMed01/MountainPineMed01GimbalPrefab.prefab" local_offset="0.17,-0.1,0" local_rotation="180,66,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="RightShoulder"/>				
 
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?Hollywood_Juniper15mPrefab.prefab" local_offset="-0.2,0.4,0" local_rotation="-90,0,0" local_scale="0.17,0.17,0.17" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?MountainPineLrg01Prefab.prefab" local_offset="0.1,0.4,0" local_rotation="-90,0,0" local_scale="0.0235461,0.0235461,0.0235461" parent_transform="Spine"/>
@@ -3814,11 +3814,11 @@
 			</effect_group>
 			<effect_group>
 
-				<triggered_effect biome="burnt_forest" trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" local_offset="-0.2,0,0" local_rotation="-33,0,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="LeftShoulder">
-					<requirement name="!HasPrefab" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" parent_transform="LeftShoulder"/>
+				<triggered_effect biome="burnt_forest" trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?StudioGimbal/MountainPineMed01/MountainPineMed01GimbalPrefab.prefab" local_offset="-0.2,0,0" local_rotation="-33,0,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="LeftShoulder">
+					<requirement name="!HasPrefab" prefab="#Entities/Trees?StudioGimbal/MountainPineMed01/MountainPineMed01GimbalPrefab.prefab" parent_transform="LeftShoulder"/>
 				</triggered_effect>
-				<triggered_effect  biome="burnt_forest" trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" local_offset="0.17,-0.1,0" local_rotation="180,66,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="RightShoulder">
-					<requirement name="!HasPrefab" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" parent_transform="RightShoulder"/>
+				<triggered_effect  biome="burnt_forest" trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?StudioGimbal/MountainPineMed01/MountainPineMed01GimbalPrefab.prefab" local_offset="0.17,-0.1,0" local_rotation="180,66,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="RightShoulder">
+					<requirement name="!HasPrefab" prefab="#Entities/Trees?StudioGimbal/MountainPineMed01/MountainPineMed01GimbalPrefab.prefab" parent_transform="RightShoulder"/>
 				</triggered_effect>
 
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?Hollywood_Juniper15mPrefab.prefab" local_offset="-0.2,0.4,0" local_rotation="-90,0,0" local_scale="0.17,0.17,0.17" parent_transform="Spine">
@@ -3901,10 +3901,10 @@
 			</effect_group>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Plants/cactus05Prefab.prefab" local_offset="-0.2,0.2,0" local_rotation="-33,0,0" local_scale="0.25,0.25,0.25" parent_transform="LeftShoulder">
-					<requirement name="!HasPrefab" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" parent_transform="LeftShoulder"/>
+					<requirement name="!HasPrefab" prefab="#Entities/Trees?StudioGimbal/MountainPineMed01/MountainPineMed01GimbalPrefab.prefab" parent_transform="LeftShoulder"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Plants/cactus05Prefab.prefab" local_offset="0.17,-0.2,0" local_rotation="180,66,0" local_scale="0.25,0.25,0.25" parent_transform="RightShoulder">
-					<requirement name="!HasPrefab" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" parent_transform="RightShoulder"/>
+					<requirement name="!HasPrefab" prefab="#Entities/Trees?StudioGimbal/MountainPineMed01/MountainPineMed01GimbalPrefab.prefab" parent_transform="RightShoulder"/>
 				</triggered_effect>
 
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?Saguaro_Cactus_20Prefab.prefab" local_offset="-0.2,0.4,0" local_rotation="-90,0,0" local_scale="0.17,0.17,0.17" parent_transform="Spine">
@@ -3931,8 +3931,8 @@
 		</buff>
 		<buff name="DecoBossEarthSnow" hidden="true">
 			<effect_group> 
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?StudioGimbal/AlaskaCedar60/AlaskaCedar60LargeGimbalPrefab.prefa" local_offset="-0.2,0,0" local_rotation="-33,0,0" local_scale="0.13,0.13,0.13" parent_transform="LeftShoulder"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?StudioGimbal/AlaskaCedar60/AlaskaCedar60LargeGimbalPrefab.prefa" local_offset="0.17,-0.1,0" local_rotation="180,66,0" local_scale="0.13,0.13,0.13" parent_transform="RightShoulder"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?StudioGimbal/AlaskaCedar60/AlaskaCedar60LargeGimbalPrefab.prefab" local_offset="-0.2,0,0" local_rotation="-33,0,0" local_scale="0.10,0.10,0.10" parent_transform="LeftShoulder"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?StudioGimbal/AlaskaCedar60/AlaskaCedar60LargeGimbalPrefab.prefab" local_offset="0.17,-0.1,0" local_rotation="180,66,0" local_scale="0.10,0.10,0.10" parent_transform="RightShoulder"/>				
 
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?Blue_Spruce45Prefab.prefab" local_offset="-0.2,0.4,0" local_rotation="-90,0,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="Spine"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?Blue_Spruce55Prefab.prefab" local_offset="0.1,0.4,0" local_rotation="-90,0,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="Spine"/>
@@ -3942,10 +3942,10 @@
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Plants/plantShrubSnowPrefab.prefab" local_offset="0,-0.6,0" local_rotation="0,0,0" local_scale="0.5,0.5,0.5" parent_transform="RightLeg"/>
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?StudioGimbal/AlaskaCedar60/AlaskaCedar60LargeGimbalPrefab.prefa" local_offset="-0.2,0,0" local_rotation="-33,0,0" local_scale="0.13,0.13,0.13" parent_transform="LeftShoulder">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?StudioGimbal/AlaskaCedar60/AlaskaCedar60LargeGimbalPrefab.prefab" local_offset="-0.2,0,0" local_rotation="-33,0,0" local_scale="0.10,0.10,0.10" parent_transform="LeftShoulder">
 					<requirement name="!HasPrefab" prefab="Entities/Plants/AlaskaCedar60Prefab" parent_transform="LeftShoulder"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="Entities/Plants/AlaskaCedar60Prefab" local_offset="0.17,-0.1,0" local_rotation="180,66,0" local_scale="0.13,0.13,0.13" parent_transform="RightShoulder">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?StudioGimbal/AlaskaCedar60/AlaskaCedar60LargeGimbalPrefab.prefab" local_offset="0.17,-0.1,0" local_rotation="180,66,0" local_scale="0.10,0.10,0.10" parent_transform="RightShoulder">
 					<requirement name="!HasPrefab" prefab="Entities/Plants/AlaskaCedar60Prefab" parent_transform="RightShoulder"/>
 				</triggered_effect>
 
@@ -3973,8 +3973,8 @@
 			<effect_group> 
 				<!--Bosque-->
 				<requirement name="InBiome" biome="3"/>
-					<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" local_offset="-0.2,0,0" local_rotation="-33,0,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="LeftShoulder"/>
-					<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" local_offset="0.17,-0.1,0" local_rotation="180,66,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="RightShoulder"/>				
+					<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?StudioGimbal/MountainPineMed01/MountainPineMed01GimbalPrefab.prefab" local_offset="-0.2,0,0" local_rotation="-33,0,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="LeftShoulder"/>
+					<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?StudioGimbal/MountainPineMed01/MountainPineMed01GimbalPrefab.prefab" local_offset="0.17,-0.1,0" local_rotation="180,66,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="RightShoulder"/>				
 
 					<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?Hollywood_Juniper15mPrefab.prefab" local_offset="-0.2,0.4,0" local_rotation="-90,0,0" local_scale="0.17,0.17,0.17" parent_transform="Spine"/>
 					<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#Entities/Trees?MountainPineLrg01Prefab.prefab" local_offset="0.1,0.4,0" local_rotation="-90,0,0" local_scale="0.0235461,0.0235461,0.0235461" parent_transform="Spine"/>
@@ -3986,11 +3986,11 @@
 			<effect_group>
 				<!--Bosque-->
 				<requirement name="InBiome" biome="3"/>
-					<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" local_offset="-0.2,0,0" local_rotation="-33,0,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="LeftShoulder">
-						<requirement name="!HasPrefab" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" parent_transform="LeftShoulder"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?StudioGimbal/MountainPineMed01/MountainPineMed01GimbalPrefab.prefab" local_offset="-0.2,0,0" local_rotation="-33,0,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="LeftShoulder">
+						<requirement name="!HasPrefab" prefab="#Entities/Trees?StudioGimbal/MountainPineMed01/MountainPineMed01GimbalPrefab.prefab" parent_transform="LeftShoulder"/>
 					</triggered_effect>
-					<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" local_offset="0.17,-0.1,0" local_rotation="180,66,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="RightShoulder">
-						<requirement name="!HasPrefab" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" parent_transform="RightShoulder"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?StudioGimbal/MountainPineMed01/MountainPineMed01GimbalPrefab.prefab" local_offset="0.17,-0.1,0" local_rotation="180,66,0" local_scale="0.04827034,0.04084482,0.0510207" parent_transform="RightShoulder">
+						<requirement name="!HasPrefab" prefab="#Entities/Trees?StudioGimbal/MountainPineMed01/MountainPineMed01GimbalPrefab.prefab" parent_transform="RightShoulder"/>
 					</triggered_effect>
 
 					<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?Hollywood_Juniper15mPrefab.prefab" local_offset="-0.2,0.4,0" local_rotation="-90,0,0" local_scale="0.17,0.17,0.17" parent_transform="Spine">
@@ -4077,10 +4077,10 @@
 				<!--Desierto-->
 				<requirement name="InBiome" biome="5"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Plants/cactus05Prefab.prefab" local_offset="-0.2,0.2,0" local_rotation="-33,0,0" local_scale="0.25,0.25,0.25" parent_transform="LeftShoulder">
-						<requirement name="!HasPrefab" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" parent_transform="LeftShoulder"/>
+						<requirement name="!HasPrefab" prefab="#Entities/Trees?StudioGimbal/MountainPineMed01/MountainPineMed01GimbalPrefab.prefab" parent_transform="LeftShoulder"/>
 					</triggered_effect>
 					<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Plants/cactus05Prefab.prefab" local_offset="0.17,-0.2,0" local_rotation="180,66,0" local_scale="0.25,0.25,0.25" parent_transform="RightShoulder">
-						<requirement name="!HasPrefab" prefab="#Entities/Trees?MountainPineMed01Prefab.prefab" parent_transform="RightShoulder"/>
+						<requirement name="!HasPrefab" prefab="#Entities/Trees?StudioGimbal/MountainPineMed01/MountainPineMed01GimbalPrefab.prefab" parent_transform="RightShoulder"/>
 					</triggered_effect>
 
 					<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#Entities/Trees?Saguaro_Cactus_20Prefab.prefab" local_offset="-0.2,0.4,0" local_rotation="-90,0,0" local_scale="0.17,0.17,0.17" parent_transform="Spine">

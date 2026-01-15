@@ -1544,6 +1544,7 @@
 					<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
 				</effect_group>
 			</item>
+			
 			<!-- Zombies hands by Holy Ventus -->
 			<item name="meleeHandElementalFire">
 				<property name="Extends" value="meleeHandZombieStrong"/>
@@ -1581,6 +1582,8 @@
 					<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
 				</effect_group>
 			</item>
+
+			<!---->
 			<item name="meleeHandElementalFrozen">
 				<property name="Extends" value="meleeHandZombieStrong"/>
 				<property name="CreativeMode" value="None"/>
@@ -1619,6 +1622,31 @@
 					<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
 				</effect_group>
 			</item>
+			<item name="projectilFrozen">
+				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
+				<property name="Material" value="Morganic"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action1">
+					<property name="Class" value="Projectile"/>
+					<property name="DamageEntity" value="65"/>
+					<property name="DamageBlock" value="200"/>
+					<property name="Explosion.ParticleIndex" value="7"/>
+					<property name="Velocity" value="15"/>
+					<property name="FlyTime" value="1"/>
+					<property name="LifeTime" value="3"/>
+					<property name="CollisionRadius" value="0.7"/>
+					<requirement name="EntityTagCompare" tags="player"/>
+					<requirement name="NotHasBuff" buff="god"/>
+					<property name="Buff" value="ElementalFrozenHit"/>
+				</property>
+				<effect_group name="projectilFrozen" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="metal"/>
+					<!-- <passive_effect name="BuffProcChance" operation="base_set" value="0.50" tags="ElementalFrozenHit"/> -->
+				</effect_group>
+			</item>	
+			<!---->
 			<item name="meleeHandElementalWater">
 				<property name="Extends" value="meleeHandZombieStrong"/>
 				<property name="CreativeMode" value="None"/>
@@ -1654,11 +1682,13 @@
 					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInfectionCatch"/>
 				</effect_group>
 			</item>
+
+			<!---->
 			<item name="meleeHandElementalElectrical">
 				<property name="Extends" value="meleeHandZombieStrong"/>
 				<property name="CreativeMode" value="None"/>
 				<property class="Action0">
-					<property name="DamageEntity" value="15"/>
+					<property name="DamageEntity" value="25"/>
 					<property name="Buff" value="ElementalNormalHit"/>
 					<property name="DamageBlock" value="200"/>
 				</property>
@@ -1690,56 +1720,8 @@
 					<!-- <triggered_effect trigger="onSelfAttackedOther" action="CallGameEvent" target="other" event="HelicopterHelicopteeer"/> -->
 				</effect_group>
 			</item>	
-			<item name="projectilFrozen">
-				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="CreativeMode" value="None"/>
-				<property class="Action1">
-					<property name="Class" value="Projectile"/>
-					<property name="DamageEntity" value="65"/>
-					<property name="DamageBlock" value="200"/>
-					<property name="Explosion.ParticleIndex" value="7"/>
-					<property name="Velocity" value="15"/>
-					<property name="FlyTime" value="1"/>
-					<property name="LifeTime" value="3"/>
-					<property name="CollisionRadius" value="0.7"/>
-					<requirement name="EntityTagCompare" tags="player"/>
-					<requirement name="NotHasBuff" buff="god"/>
-					<property name="Buff" value="ElementalFrozenHit"/>
-				</property>
-				<effect_group name="projectilFrozen" tiered="false">
-					<passive_effect name="ModSlots" operation="base_set" value="0"/>
-					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
-					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="metal"/>
-					<!-- <passive_effect name="BuffProcChance" operation="base_set" value="0.50" tags="ElementalFrozenHit"/> -->
-				</effect_group>
-			</item>
-			
-			<item name="projectilEarth">
-				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
-				<property name="Material" value="Morganic"/>
-				<property name="CreativeMode" value="None"/>
-				<property class="Action1">
-					<property name="Class" value="Projectile"/>
-					<property name="DamageEntity" value="65"/>
-					<property name="DamageBlock" value="400"/>
-					<property name="Explosion.ParticleIndex" value="7"/>
-					<property name="Velocity" value="15"/>
-					<property name="FlyTime" value="1"/>
-					<property name="LifeTime" value="3"/>
-					<property name="CollisionRadius" value="0.7"/>
-					<requirement name="EntityTagCompare" tags="player"/>
-					<requirement name="NotHasBuff" buff="god"/>
-					<property name="Buff" value="ElementalEarthHit"/>
-				</property>
-				<effect_group name="projectilEarth" tiered="false">
-					<passive_effect name="ModSlots" operation="base_set" value="0"/>
-					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
-					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="metal"/>
-					<!-- <passive_effect name="BuffProcChance" operation="base_set" value="0.50" tags="ElementalFrozenHit"/> -->
-				</effect_group>
-			</item>
-			
+
+			<!---->		
 			<item name="meleeHandElementalEarth">
 				<property name="Extends" value="meleeHandZombieStrong"/>
 				<property name="CreativeMode" value="None"/>
@@ -1777,12 +1759,36 @@
 					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInfectionCatch"/>
 				</effect_group>
 			</item>
+			<item name="projectilEarth">
+				<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
+				<property name="Material" value="Morganic"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action1">
+					<property name="Class" value="Projectile"/>
+					<property name="DamageEntity" value="65"/>
+					<property name="DamageBlock" value="400"/>
+					<property name="Explosion.ParticleIndex" value="7"/>
+					<property name="Velocity" value="15"/>
+					<property name="FlyTime" value="1"/>
+					<property name="LifeTime" value="3"/>
+					<property name="CollisionRadius" value="0.7"/>
+					<requirement name="EntityTagCompare" tags="player"/>
+					<requirement name="NotHasBuff" buff="god"/>
+					<property name="Buff" value="ElementalEarthHit"/>
+				</property>
+				<effect_group name="projectilEarth" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="metal"/>
+					<!-- <passive_effect name="BuffProcChance" operation="base_set" value="0.50" tags="ElementalFrozenHit"/> -->
+				</effect_group>
+			</item>
 			<!---->
 			<item name="meleeHandNightmare">
 				<property name="Extends" value="meleeHandZombieStrong"/>
 				<property name="CreativeMode" value="None"/>
 				<property class="Action0">
-					<property name="DamageEntity" value="65"/>
+					<property name="DamageEntity" value="80"/>
 					<property name="Buff" value="Nigthit,buffDark2"/>
 					<property name="DamageBlock" value="400"/>
 				</property>
@@ -1793,6 +1799,7 @@
 					<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
 				</effect_group>
 			</item>
+
 			<!-- Specials-->
 			<item name="meleeHandRAINBOW">
 				<property name="Tags" value="blunt,melee,light,perkFlurryOfBlows"/>

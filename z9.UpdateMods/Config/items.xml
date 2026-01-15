@@ -97,7 +97,377 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 			</effect_group>
 		</item>
-		
+
+
+		<item name="meleeHandZombieChuck_Template">
+			<property name="Extends" value="meleeHandZombieChuck"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">				
+				<property name="Buff" value="elitehit"/>
+				<property name="DamageEntity" value="70"/>
+				<property name="DamageBlock" value="320"/>
+			</property>
+			<property class="Action1"> <!-- UseAction -->				
+				<property name="Magazine_items" value="ammoProjectileZombieBoulder_Template"/>
+			</property>
+			<effect_group tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+				<passive_effect name="MaxRange" operation="base_set" value="100"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+				<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".05,.05,.05,.2,.2,.05,.4"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>
+		<item name="ammoProjectileZombieBoulder_Template">
+			<property name="Extends" value="ammoProjectileZombieBoulder"/>			
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="DamageEntity" value="50"/>
+				<property name="DamageBlock" value="200"/>
+				<property name="Explosion.ParticleIndex" value="36"/>
+				<property name="Explosion.RadiusBlocks" value="2.5"/>
+				<property name="Explosion.RadiusEntities" value="4.7"/>
+				<property name="Explosion.EntityDamage" value="80"/>
+				<property name="Explosion.BlockDamage" value="750"/>
+				<property name="Explosion.DamageBonus.earth" value="0"/>
+				<property name="Explosion.DamageBonus.water" value="0"/>
+				<property name="FlyTime" value="-5"/><!-- -value calculates ballistic velocity to target over this +duration -->
+				<property name="Velocity" value="50"/><!-- ballistic max distance for duration -->
+				<property name="Gravity" value="-8"/>
+				<property name="LifeTime" value="7"/>
+				<property name="CollisionRadius" value=".22"/>
+				<property name="Buff" value="elitehit,buffInjuryStunned03"/>				
+			</property>
+			<effect_group name="ammoProjectileZombieBoulder" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>
+		<!---->
+		<item name="meleeHandZombieChuck_Elite">
+			<property name="Extends" value="meleeHandZombieChuck_Template"/>			
+			<property class="Action0">				
+				<property name="Buff" value="elitehit"/>
+				<property name="DamageEntity" value="70"/>
+				<property name="DamageBlock" value="320"/>
+			</property>
+			<property class="Action1"> <!-- UseAction -->				
+				<property name="Magazine_items" value="ammoProjectileZombieBoulder_Elite"/>
+			</property>
+			<effect_group tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+				<passive_effect name="MaxRange" operation="base_set" value="100"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+				<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".05,.05,.05,.2,.2,.05,.4"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>
+		<item name="ammoProjectileZombieBoulder_Elite">			
+			<property name="Extends" value="ammoProjectileZombieBoulder_Template"/>	
+			<property class="Action1">				
+				<property name="DamageEntity" value="65"/>
+				<property name="DamageBlock" value="200"/>				
+				<property name="Buff" value="elitehit,buffInjuryStunned03"/>				
+			</property>
+			<effect_group name="ammoProjectileZombieBoulder" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>		
+		<!---->
+		<item name="meleeHandZombieChuck_Fire">
+			<property name="Extends" value="meleeHandZombieChuck_Template"/>			
+			<property class="Action0">				
+				<property name="Buff" value="ElementalNormalHit,buffBurningMolotov"/>
+				<property name="DamageEntity" value="70"/>
+				<property name="DamageBlock" value="275"/>
+			</property>
+			<property class="Action1"> <!-- UseAction -->				
+				<property name="Magazine_items" value="ammoProjectileZombieBoulder_Fire"/>
+			</property>
+			<effect_group tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+				<passive_effect name="MaxRange" operation="base_set" value="100"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+				<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".05,.05,.05,.2,.2,.05,.4"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>
+		<item name="ammoProjectileZombieBoulder_Fire">			
+			<property name="Extends" value="ammoProjectileZombieBoulder_Template"/>	
+			<property class="Action1">				
+				<property name="DamageEntity" value="65"/>
+				<property name="DamageBlock" value="175"/>				
+				<property name="Buff" value="ElementalNormalHit,buffBurningMolotov,buffInjuryStunned03"/>				
+			</property>
+			<effect_group name="ammoProjectileZombieBoulder" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>
+		<!---->
+		<item name="meleeHandZombieChuck_Water">
+			<property name="Extends" value="meleeHandZombieChuck_Template"/>			
+			<property class="Action0">				
+				<property name="Buff" value="ElementalNormalHit,buffDrowned"/>
+				<property name="DamageEntity" value="55"/>
+				<property name="DamageBlock" value="200"/>
+			</property>
+			<property class="Action1"> <!-- UseAction -->				
+				<property name="Magazine_items" value="ammoProjectileZombieBoulder_Water"/>
+			</property>
+			<effect_group tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+				<passive_effect name="MaxRange" operation="base_set" value="100"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+				<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".05,.05,.05,.2,.2,.05,.4"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>
+		<item name="ammoProjectileZombieBoulder_Water">			
+			<property name="Extends" value="ammoProjectileZombieBoulder_Template"/>	
+			<property class="Action1">				
+				<property name="DamageEntity" value="55"/>
+				<property name="DamageBlock" value="100"/>				
+				<property name="Buff" value="ElementalNormalHit,buffDrowned,buffInjuryStunned03"/>				
+			</property>
+			<effect_group name="ammoProjectileZombieBoulder" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>
+		<!---->
+		<item name="meleeHandZombieChuck_Frozen">
+			<property name="Extends" value="meleeHandZombieChuck_Template"/>			
+			<property class="Action0">				
+				<property name="Buff" value="ElementalFrozenHit"/>
+				<property name="DamageEntity" value="80"/>
+				<property name="DamageBlock" value="330"/>
+			</property>
+			<property class="Action1"> <!-- UseAction -->				
+				<property name="Magazine_items" value="ammoProjectileZombieBoulder_Frozen"/>
+			</property>
+			<effect_group tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+				<passive_effect name="MaxRange" operation="base_set" value="100"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+				<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".05,.05,.05,.2,.2,.05,.4"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>
+		<item name="ammoProjectileZombieBoulder_Frozen">			
+			<property name="Extends" value="ammoProjectileZombieBoulder_Template"/>	
+			<property class="Action1">				
+				<property name="DamageEntity" value="70"/>
+				<property name="DamageBlock" value="275"/>				
+				<property name="Buff" value="ElementalFrozenHit,buffInjuryStunned03"/>				
+			</property>
+			<effect_group name="ammoProjectileZombieBoulder" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>
+		<!---->
+		<item name="meleeHandZombieChuck_Shock">
+			<property name="Extends" value="meleeHandZombieChuck_Template"/>			
+			<property class="Action0">				
+				<property name="Buff" value="ElementalNormalHit,buffShockedElectric"/>
+				<property name="DamageEntity" value="40"/>
+				<property name="DamageBlock" value="125"/>
+			</property>
+			<property class="Action1"> <!-- UseAction -->				
+				<property name="Magazine_items" value="ammoProjectileZombieBoulder_Shock"/>
+			</property>
+			<effect_group tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+				<passive_effect name="MaxRange" operation="base_set" value="100"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+				<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".05,.05,.05,.2,.2,.05,.4"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>
+		<item name="ammoProjectileZombieBoulder_Shock">			
+			<property name="Extends" value="ammoProjectileZombieBoulder_Template"/>	
+			<property class="Action1">				
+				<property name="DamageEntity" value="30"/>
+				<property name="DamageBlock" value="100"/>				
+				<property name="Buff" value="ElementalNormalHit,buffShockedElectric,buffInjuryStunned03"/>				
+			</property>
+			<effect_group name="ammoProjectileZombieBoulder" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>
+		<!---->
+		<item name="meleeHandZombieChuck_Rock">
+			<property name="Extends" value="meleeHandZombieChuck_Template"/>			
+			<property class="Action0">				
+				<property name="Buff" value="ElementalNormalHit,ElementalEarthHit"/>
+				<property name="DamageEntity" value="100"/>
+				<property name="DamageBlock" value="350"/>
+			</property>
+			<property class="Action1"> <!-- UseAction -->				
+				<property name="Magazine_items" value="ammoProjectileZombieBoulder_Rock"/>
+			</property>
+			<effect_group tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+				<passive_effect name="MaxRange" operation="base_set" value="100"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+				<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".05,.05,.05,.2,.2,.05,.4"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>
+		<item name="ammoProjectileZombieBoulder_Rock">			
+			<property name="Extends" value="ammoProjectileZombieBoulder_Template"/>	
+			<property class="Action1">				
+				<property name="DamageEntity" value="80"/>
+				<property name="DamageBlock" value="300"/>				
+				<property name="Buff" value="ElementalNormalHit,ElementalEarthHit,buffInjuryStunned03"/>				
+			</property>
+			<effect_group name="ammoProjectileZombieBoulder" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>
+		<!---->
+		<item name="meleeHandZombieChuck_Night">
+			<property name="Extends" value="meleeHandZombieChuck_Template"/>			
+			<property class="Action0">				
+				<property name="Buff" value="Nigthit,buffDark2"/>
+				<property name="DamageEntity" value="100"/>
+				<property name="DamageBlock" value="400"/>
+			</property>
+			<property class="Action1"> <!-- UseAction -->				
+				<property name="Magazine_items" value="ammoProjectileZombieBoulder_Night"/>
+			</property>
+			<effect_group tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+				<passive_effect name="MaxRange" operation="base_set" value="100"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+				<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".05,.05,.05,.2,.2,.05,.4"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>
+		<item name="ammoProjectileZombieBoulder_Night">			
+			<property name="Extends" value="ammoProjectileZombieBoulder_Template"/>	
+			<property class="Action1">				
+				<property name="DamageEntity" value="90"/>
+				<property name="DamageBlock" value="350"/>				
+				<property name="Buff" value="Nigthit,buffDark2,buffInjuryStunned03"/>				
+			</property>
+			<effect_group name="ammoProjectileZombieBoulder" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>
+
+		<!--Extra items-->
+		<item name="foodRawChickenBundle">
+			<property name="Extends" value="foodRawMeatBundle"/>			
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="CustomIconTint" value="E6E614"/>
+			<property name="TintColor" value="E6E614"/>			
+			<property class="Action0">				
+				<property name="Create_item" value="foodRawChicken"/>				
+			</property>
+		</item>
+				
 				
 	</append>
 </config>
