@@ -359,6 +359,23 @@
             </effect_group>
         </buff>
 
+        <buff name="pvpCastigo" name_key="Castigo Zona HC"  icon="ui_game_symbol_x" icon_color="255,0,0" description_key="Castigo por abusar de la zona hardcore">
+            <display_value_key value="Castigo"/>
+            <display_value value="xxx"/>
+            <stack_type value="ignore"/>            
+            <effect_group>
+				<requirement name="HasBuff" buff="prismacore_tooltip_enterpvpclaim" />
+                <passive_effect name="EntityDamage" operation="perc_add" value="-3"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value=".85"/>				
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".85"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".85"/>
+				<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".85"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".85"/>	      				  
+			</effect_group>	
+        </buff>
+
+        
+        
 
     </append>
 </config>

@@ -768,6 +768,24 @@
 				<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInjuryStunned01CHTrigger,buffInjuryStunned00,buffInjuryStunned01,buffInjuryStunned01Shotgun,buffInjuryStunned02,buffInjuryStunned02Shotgun,buffInjuryStunned03,buffInjuryStunned03Shotgun"/>
 			</effect_group>
 		</buff>
+		<buff name="buffMentis" name_key="buffMentisName" description_key="buffMentisDesc" icon="ui_game_symbol_pills">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<display_value value=".buffMentisDisplay"/>
+			<display_value_format value="time"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffMentisDuration" operation="subtract" value="@$MetabolismDuration"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffMentisDisplay" operation="set" value="@$buffMentisDuration"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffMentisDisplay" operation="divide" value="@$MetabolismDuration"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffSmellGrace,buffSmell"/>
+				<triggered_effect trigger="onSelfBuffStack" action="RemoveBuff" buff="buffSmellGrace,buffSmell"/>
+			</effect_group>
+			
+		</buff>
+
+		
 		<buff name="buffComenciant" name_key="buffComenciantName" description_key="buffComenciantDesc" icon="ui_game_symbol_coin">
 			<stack_type value="replace"/>
 			<duration value="0"/>
@@ -1252,7 +1270,7 @@
 				<passive_effect name="EntityDamage" operation="perc_add" value="3"/>
 			</effect_group>
 			<effect_group>
-				<requirement name="HasBuff" buff="cpm_tooltip_enterpvpclaim" />
+				<requirement name="HasBuff" buff="prismacore_tooltip_enterpvpclaim" />
 				<passive_effect name="Mobility" operation="perc_subtract" value=".85"/>				
 				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".85"/>
 				<passive_effect name="RunSpeed" operation="perc_subtract" value=".85"/>
@@ -1282,7 +1300,7 @@
 				<passive_effect name="QuestRewardChoiceCount" operation="base_add" value="1"/>
 			</effect_group>
 			<effect_group>
-				<requirement name="HasBuff" buff="cpm_tooltip_enterpvpclaim" />
+				<requirement name="HasBuff" buff="prismacore_tooltip_enterpvpclaim" />
 				<passive_effect name="Mobility" operation="perc_subtract" value=".85"/>				
 				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".85"/>
 				<passive_effect name="RunSpeed" operation="perc_subtract" value=".85"/>
@@ -1310,7 +1328,7 @@
 				<passive_effect name="GeneralDamageResist" operation="base_add" value=".10"/>				
 			</effect_group>
 			<effect_group>
-				<requirement name="HasBuff" buff="cpm_tooltip_enterpvpclaim" />
+				<requirement name="HasBuff" buff="prismacore_tooltip_enterpvpclaim" />
 				<passive_effect name="Mobility" operation="perc_subtract" value=".85"/>				
 				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".85"/>
 				<passive_effect name="RunSpeed" operation="perc_subtract" value=".85"/>
@@ -1386,7 +1404,7 @@
 				</passive_effect>				
 			</effect_group>			
 			<effect_group>
-				<requirement name="HasBuff" buff="cpm_tooltip_enterpvpclaim" />
+				<requirement name="HasBuff" buff="prismacore_tooltip_enterpvpclaim" />
 				<passive_effect name="Mobility" operation="perc_subtract" value=".85"/>				
 				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".85"/>
 				<passive_effect name="RunSpeed" operation="perc_subtract" value=".85"/>
@@ -1748,5 +1766,9 @@
 	<append xpath="/buffs/buff[@name='buffTreasureHunterAOEEnd']/effect_group">
 		<requirement name="NotHasBuff" buff="OP3!"/>
 	</append>
+
+	 <append xpath="/buffs/buff[@name='buffSmellCheck']/effect_group[@name='Smell Other Food']">
+		<requirement name="NotHasBuff" buff="buffMentis"/>
+	</append> 
 	
 </configs>

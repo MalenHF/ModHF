@@ -467,6 +467,46 @@
 				<property name="Create_item" value="foodRawChicken"/>				
 			</property>
 		</item>
+		<item name="foodFatBottle">
+			<property name="Extends" value="foodRawMeatBundle"/>
+			<property name="Meshfile" value="@:Other/Items/Food/masonJarMurkeyWaterPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="CustomIcon" value="drinkJarRiverWater"/>						
+			
+			<property name="CustomIconTint" value="E6E614"/>
+			<property name="TintColor" value="E6E614"/>			
+			<property class="Action0">				
+				<property name="Create_item" value="resourceAnimalFat,drinkJarEmpty"/>
+				<property name="Create_item_count" value="5,1"/>				
+			</property>
+		</item>
+
+		<item name="foodMentis">
+			<property name="Extends" value="drugPainkillers"/>
+			<property name="CustomIcon" value="drugPainkillers"/>	
+
+			<property name="CustomIconTint" value="E63E66"/>
+			<property name="TintColor" value="E63E66"/>
+
+			<property name="EconomicValue" value="200"/>
+			<property name="Stacknumber" value="50"/>			
+			<property name="SellableToTrader" value="true"/>
+			<property name="Candrop" value="false"/>
+			<!-- <property name="DisplayType" value="uwuprofen"/> -->
+			<property name="UnlockedBy" value="craftingMedical"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>				
+				<property name="Sound_start" value="player_painkillers"/>				
+			</property>
+			<effect_group tiered="false">				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="smell" operation="set" value="1"/>
+				<!-- <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffMentisDuration" operation="set" value="543">
+					<requirement name="CVarCompare" cvar="$buffMentisDuration" operation="GT" value="543"/></triggered_effect>-->
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffMentis"/> 
+			</effect_group>
+		</item>
 				
 				
 	</append>

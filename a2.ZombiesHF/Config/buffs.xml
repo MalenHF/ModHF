@@ -3355,7 +3355,6 @@
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftShoulder"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="LeftLeg"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightLeg"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="RadiatedParticlesOnMesh" local_offset="0,0,0"/>
 				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" target="self" prefab="@:Entities/OutdoorDecor/coffinWildWestOpenPrefab.prefab"/>
 			</effect_group>
 			<effect_group>
@@ -3376,10 +3375,7 @@
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" prefab="@:Entities/Decor/cobwebPrefab.prefab" local_offset="0,0,0" local_rotation="0,0,0" parent_transform="RightLeg">
 					<requirement name="!HasPrefab" prefab="@:Entities/Decor/cobwebPrefab.prefab" />
-				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="RadiatedParticlesOnMesh" local_offset="0,0,0">
-					<requirement name="!Hasparticle" particle="RadiatedParticlesOnMesh" />
-				</triggered_effect>
+				</triggered_effect>				
 				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" target="self" prefab="@:Entities/OutdoorDecor/coffinWildWestOpenPrefab.prefab"/>
 			</effect_group>
 		</buff>
