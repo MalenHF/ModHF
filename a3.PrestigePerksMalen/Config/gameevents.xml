@@ -94,6 +94,8 @@
             <variable name="kititem" value="challengeRewardPrestige2Apply" />
         </action_sequence>
 
+       
+
         <action_sequence name="challenge_Prestige0_reward_350">           
             <property name="allow_user_trigger" value="false" />
             <property name="action_type" value="Game" />
@@ -117,7 +119,22 @@
             <variable name="questName" value="q_Presgio3" />
         </action_sequence>
 
-        
+         
+
+    <action_sequence name="action_removecoins">
+		<property name="category" value="user_actions" />
+
+		
+		<action class="RemoveItems">
+			<property name="phase" value="0" />
+			<property name="items_location" value="Backpack" />
+			<property name="replaced_by_item" value="foodRottingFlesh" />
+			<property name="items_tags" value="coin" />			
+		</action>
+		
+	</action_sequence>
+
+              
 
     </append>
 </config>

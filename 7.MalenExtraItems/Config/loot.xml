@@ -6,9 +6,18 @@
 	-->
 
 	<append xpath="/lootcontainers">
+		<lootqualitytemplates>
+			<lootqualitytemplate name="upradeweaponloot">
+				<qualitytemplate level="1,999999" default_quality="6">
+					<loot quality="6" prob="1"/>
+				</qualitytemplate>
+			</lootqualitytemplate>
+		</lootqualitytemplates>
+
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ New vehicles storage ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<lootcontainer name="betsyStorage" count="0" size="12,12" sound_open="UseActions/vehicle_storage_open" open_time="0" sound_close="UseActions/vehicle_storage_close" loot_quality_template="qualBaseTemplate">
-		</lootcontainer>		
+		</lootcontainer>
+			
 		<lootcontainer name="proBetsyStorage" count="0" size="14,12" sound_open="UseActions/vehicle_storage_open" open_time="0" sound_close="UseActions/vehicle_storage_close" loot_quality_template="qualBaseTemplate">
 		</lootcontainer>
 		<lootcontainer name="sPOStorage" count="0" size="10,10" sound_open="UseActions/vehicle_storage_open" open_time="0" sound_close="UseActions/vehicle_storage_close" loot_quality_template="qualBaseTemplate">
@@ -16,7 +25,130 @@
 		
 		<lootgroup name="juguito_de_chaleGroup" count="1">
 			<item name="juguito_de_chale" count="10"/>
+		</lootgroup>		
+
+		<lootgroup name="lootPistolT1" count="all">
+			<item name="epicRangedT1_Pistol" count="1"/>			
 		</lootgroup>
+		<lootgroup name="lootPistolT2" count="all">
+			<item name="legendRangedT2_SMG5" count="1"/>			
+		</lootgroup>
+		<lootgroup name="lootPistolT3" count="all">
+			<item name="mythRanged_Delta01" count="1"/>			
+		</lootgroup>
+
+		<lootgroup name="lootMagnumT1" count="all">
+			<item name="epicRangedT1_Revolver" count="1"/>			
+		</lootgroup>
+		<lootgroup name="lootMagnumT2" count="all">
+			<item name="legendRangedT2_Magnum44" count="1"/>			
+		</lootgroup>
+		<lootgroup name="lootMagnumT3" count="all">
+			<item name="mythRanged_Peacemaker" count="1"/>			
+		</lootgroup>
+
+		<lootgroup name="lootShotgunlT1" count="all">
+			<item name="epicRangedT1_Sawed-off" count="1"/>			
+		</lootgroup>
+		<lootgroup name="lootShotgunlT2" count="all">
+			<item name="legendRangedT2_Shotgun" count="1"/>			
+		</lootgroup>
+		<lootgroup name="lootShotgunlT3" count="all">
+			<item name="mythRanged_Destroyer" count="1"/>			
+		</lootgroup>
+
+		<lootgroup name="lootRifleT1" count="all">
+			<item name="epicRangedT1_Rifle" count="1"/>			
+		</lootgroup>
+		<lootgroup name="lootRifleT2" count="all">
+			<item name="legendRangedT2_Sniper" count="1"/>			
+		</lootgroup>
+		<lootgroup name="lootRifleT3" count="all">
+			<item name="mythRanged_OneShot" count="1"/>			
+		</lootgroup>
+
+
+		<lootgroup name="lootAutoT1" count="all">
+			<item name="epicRangedT1_AK47" count="1"/>			
+		</lootgroup>
+		<lootgroup name="lootAutoT2" count="all">
+			<item name="legendRangedT2_TacticalAR" count="1"/>			
+		</lootgroup>
+		<lootgroup name="lootAutoT3" count="all">
+			<item name="mythRanged_Dominator" count="1"/>			
+		</lootgroup>
+
+		<lootgroup name="lootCrossBT1" count="all">
+			<item name="epicRangedT1_Crossbow" count="1"/>			
+		</lootgroup>
+		<lootgroup name="lootCrossBT2" count="all">
+			<item name="legendRangedT2_CompoundCrossbow" count="1"/>			
+		</lootgroup>
+		<lootgroup name="lootCrossBT3" count="all">
+			<item name="mythRanged_Arbalest" count="1"/>			
+		</lootgroup>
+
+
+		<lootcontainer name="lootUpgradePistolT1" open_time="5" count="1" size="1,1" destroy_on_close="empty" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" loot_quality_template="upradeweaponloot">
+			<item group="lootPistolT1" count="1"/>			
+		</lootcontainer>
+		<lootcontainer name="lootUpgradePistolT2" open_time="5" count="1" size="1,1" destroy_on_close="empty" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" loot_quality_template="upradeweaponloot">
+			<item group="lootPistolT2" count="1"/>			
+		</lootcontainer>
+		<lootcontainer name="lootUpgradePistolT3" open_time="5" count="1" size="1,1" destroy_on_close="empty" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" loot_quality_template="upradeweaponloot">
+			<item group="lootPistolT3" count="1"/>			
+		</lootcontainer>
+
+		<lootcontainer name="lootUpgradeMagnumT1" open_time="5" count="1" size="1,1" destroy_on_close="empty" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" loot_quality_template="upradeweaponloot">
+			<item group="lootMagnumT1" count="1"/>			
+		</lootcontainer>
+		<lootcontainer name="lootUpgradeMagnumT2" open_time="5" count="1" size="1,1" destroy_on_close="empty" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" loot_quality_template="upradeweaponloot">
+			<item group="lootMagnumT2" count="1"/>			
+		</lootcontainer>
+		<lootcontainer name="lootUpgradeMagnumT3" open_time="5" count="1" size="1,1" destroy_on_close="empty" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" loot_quality_template="upradeweaponloot">
+			<item group="lootMagnumT3" count="1"/>			
+		</lootcontainer>		
+
+		<lootcontainer name="lootUpgradeShotgunT1" open_time="5" count="1" size="1,1" destroy_on_close="empty" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" loot_quality_template="upradeweaponloot">
+			<item group="lootShotgunlT1" count="1"/>			
+		</lootcontainer>
+		<lootcontainer name="lootUpgradeShotgunT2" open_time="5" count="1" size="1,1" destroy_on_close="empty" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" loot_quality_template="upradeweaponloot">
+			<item group="lootShotgunlT2" count="1"/>			
+		</lootcontainer>
+		<lootcontainer name="lootUpgradeShotgunT3" open_time="5" count="1" size="1,1" destroy_on_close="empty" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" loot_quality_template="upradeweaponloot">
+			<item group="lootShotgunlT3" count="1"/>			
+		</lootcontainer>
+
+		<lootcontainer name="lootUpgradeRifleT1" open_time="5" count="1" size="1,1" destroy_on_close="empty" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" loot_quality_template="upradeweaponloot">
+			<item group="lootRifleT1" count="1"/>			
+		</lootcontainer>
+		<lootcontainer name="lootUpgradeRifleT2" open_time="5" count="1" size="1,1" destroy_on_close="empty" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" loot_quality_template="upradeweaponloot">
+			<item group="lootRifleT2" count="1"/>			
+		</lootcontainer>
+		<lootcontainer name="lootUpgradeRifleT3" open_time="5" count="1" size="1,1" destroy_on_close="empty" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" loot_quality_template="upradeweaponloot">
+			<item group="lootRifleT3" count="1"/>			
+		</lootcontainer>
+
+		<lootcontainer name="lootUpgradeAutoT1" open_time="5" count="1" size="1,1" destroy_on_close="empty" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" loot_quality_template="upradeweaponloot">
+			<item group="lootAutoT1" count="1"/>			
+		</lootcontainer>
+		<lootcontainer name="lootUpgradeAutoT2" open_time="5" count="1" size="1,1" destroy_on_close="empty" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" loot_quality_template="upradeweaponloot">
+			<item group="lootAutoT2" count="1"/>			
+		</lootcontainer>
+		<lootcontainer name="lootUpgradeAutoT3" open_time="5" count="1" size="1,1" destroy_on_close="empty" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" loot_quality_template="upradeweaponloot">
+			<item group="lootAutoT3" count="1"/>			
+		</lootcontainer>
+
+		<lootcontainer name="lootUpgradeCrossBT1" open_time="5" count="1" size="1,1" destroy_on_close="empty" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" loot_quality_template="upradeweaponloot">
+			<item group="lootCrossBT1" count="1"/>			
+		</lootcontainer>
+		<lootcontainer name="lootUpgradeCrossBT2" open_time="5" count="1" size="1,1" destroy_on_close="empty" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" loot_quality_template="upradeweaponloot">
+			<item group="lootCrossBT2" count="1"/>			
+		</lootcontainer>
+		<lootcontainer name="lootUpgradeCrossBT3" open_time="5" count="1" size="1,1" destroy_on_close="empty" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" loot_quality_template="upradeweaponloot">
+			<item group="lootCrossBT3" count="1"/>			
+		</lootcontainer>
+		
 	</append>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ 
 	

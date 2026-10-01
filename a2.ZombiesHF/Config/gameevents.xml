@@ -2402,6 +2402,148 @@
 			<action class="RandomizeRotation">
 				<property name="phase" value="2" />
 			</action>			
+		</action_sequence>	
+		
+		<action_sequence name="event_zilla_xp">
+			<property name="allow_user_trigger" value="false" />
+			<property name="action_type" value="Game" />
+			<action class="AddBuff">
+				<property name="buff_name" value="buffZillaFlagXP" />
+				<property name="phase" value="0" />				
+			</action>
+			<action class="AddXP">
+				<property name="xp_amount" value="50000" />
+				<property name="phase" value="1" />	
+			</action>
+		</action_sequence>
+
+		<action_sequence name="challenge_fix_quest">           
+            <property name="allow_user_trigger" value="true" />
+            <property name="action_type" value="Game" />           
+             <action class="AddQuest">
+                <property name="phase" value="1" />
+                <property name="quest" value="q_fixQuests" />
+            </action>
+        </action_sequence>  
+
+			
+		<action_sequence name="event_Normal_Reward">
+			<action class="AddBuff">
+				<property name="buff_name" value="buffRewardFlagOFF_Normals" />
+				<property name="phase" value="0" />				
+			</action>
+			<action class="AddItems">
+				<property name="added_items" value="eventBossBundle"/>
+				<property name="added_item_counts" value="1"/>
+				<property name="phase" value="1" />
+			</action>
+		</action_sequence>
+		<action_sequence name="event_Special_Reward">
+			<action class="AddBuff">
+				<property name="buff_name" value="buffRewardFlagOFF_Special" />
+				<property name="phase" value="0" />				
+			</action>
+			<action class="AddItems">
+				<property name="added_items" value="eventBossSpecialBundle"/>
+				<property name="added_item_counts" value="1"/>
+				<property name="phase" value="1" />
+			</action>
+		</action_sequence>
+		<action_sequence name="event_Espartan_Reward">
+			<action class="AddBuff">
+				<property name="buff_name" value="buffRewardFlagOFF_Espartan" />
+				<property name="phase" value="0" />				
+			</action>
+			<action class="AddItems">
+				<property name="added_items" value="eventBossEspartanBundle"/>
+				<property name="added_item_counts" value="1"/>
+				<property name="phase" value="1" />
+			</action>
+		</action_sequence>
+		<action_sequence name="event_Minerals_Reward">
+			<action class="AddBuff">
+				<property name="buff_name" value="buffRewardFlagOFF_Minerals" />
+				<property name="phase" value="0" />				
+			</action>
+			<action class="AddItems">
+				<property name="added_items" value="eventBossMineralBundle"/>
+				<property name="added_item_counts" value="1"/>
+				<property name="phase" value="1" />
+			</action>
+		</action_sequence>	
+		<action_sequence name="event_Admin_Reward">
+			<action class="AddBuff">
+				<property name="buff_name" value="buffRewardFlagOFF_Admin" />
+				<property name="phase" value="0" />				
+			</action>
+			<action class="AddItems">
+				<property name="added_items" value="eventBossAdminBundle"/>
+				<property name="added_item_counts" value="1"/>
+				<property name="phase" value="1" />
+			</action>
+		</action_sequence>
+
+		<action_sequence name="event_Minerals_SHINY_Reward">
+			<action class="AddBuff">
+				<property name="buff_name" value="buffRewardFlagOFF_Minerals" />
+				<property name="phase" value="0" />				
+			</action>
+			<action class="AddItems">
+				<property name="added_items" value="eventBossMineralBundle"/>
+				<property name="added_item_counts" value="3"/>
+				<property name="phase" value="1" />
+			</action>
 		</action_sequence>		
+		<action_sequence name="event_Normal_SHINY_Reward">
+			<action class="AddBuff">
+				<property name="buff_name" value="buffRewardFlagOFF_Normals" />
+				<property name="phase" value="0" />				
+			</action>
+			<action class="AddItems">
+				<property name="added_items" value="eventBossBundle"/>
+				<property name="added_item_counts" value="3"/>
+				<property name="phase" value="1" />
+			</action>
+		</action_sequence>
+		<action_sequence name="event_Special_SHINY_Reward">
+			<action class="AddBuff">
+				<property name="buff_name" value="buffRewardFlagOFF_Special" />
+				<property name="phase" value="0" />				
+			</action>
+			<action class="AddItems">
+				<property name="added_items" value="eventBossSpecialBundle"/>
+				<property name="added_item_counts" value="3"/>
+				<property name="phase" value="1" />
+			</action>
+		</action_sequence>
+		<action_sequence name="event_Espartan_SHINY_Reward">
+			<action class="AddBuff">
+				<property name="buff_name" value="buffRewardFlagOFF_Espartan" />
+				<property name="phase" value="0" />				
+			</action>
+			<action class="AddItems">
+				<property name="added_items" value="eventBossEspartanBundle"/>
+				<property name="added_item_counts" value="3"/>
+				<property name="phase" value="1" />
+			</action>
+		</action_sequence>
+		<action_sequence name="event_Admin_SHINY_Reward">
+			<action class="AddBuff">
+				<property name="buff_name" value="buffRewardFlagOFF_Admin" />
+				<property name="phase" value="0" />				
+			</action>
+			<action class="AddItems">
+				<property name="added_items" value="eventBossAdminBundle"/>
+				<property name="added_item_counts" value="3"/>
+				<property name="phase" value="1" />
+			</action>
+		</action_sequence>
+
+
+ModifyVarInt - Modifies the int value of a variable.
+			var_name - The name of the variable
+			value - The value to set the variable to.
+			operation - what operation should happen (Set, Add, Subtract, Multiply)
+			
 	</append>
 </configs>

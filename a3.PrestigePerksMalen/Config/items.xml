@@ -3,6 +3,40 @@
 	<append xpath="/items/item[@name='resourceLegendaryParts']">
 		<property name="UnlockedBy" value="perkweapsp"/>
 	</append>
+	<append xpath="/items/item[@name='armorScavengerHelmet']">
+		<effect_group tiered="false"> 
+            <requirement name="HasBuff" buff="prestigeBuff"/>           
+            <requirement name="HoldingItemHasTags" tags="salvageTool"/>
+			<passive_effect name="PlayerExpGain" operation="perc_add" value="-.05,-.1,-.15,-.2,-.25,-.3" tier="1,2,3,4,5,6" tags="Harvesting"/>           
+        </effect_group>
+		<effect_group tiered="false"> 
+            <requirement name="HasBuff" buff="prestigeBuff2"/>           
+            <requirement name="HoldingItemHasTags" tags="salvageTool"/>
+			<passive_effect name="PlayerExpGain" operation="perc_add" value="-.075,-.15,-.225,-.3,-.375,-.4.5" tier="1,2,3,4,5,6" tags="Harvesting"/>           
+        </effect_group>
+		<effect_group tiered="false"> 
+            <requirement name="HasBuff" buff="prestigeBuff3"/>           
+            <requirement name="HoldingItemHasTags" tags="salvageTool"/>
+			<passive_effect name="PlayerExpGain" operation="perc_add" value="-.075,-.15,-.225,-.3,-.375,-.4.5" tier="1,2,3,4,5,6" tags="Harvesting"/>           
+        </effect_group>        
+	</append>
+
+	<append xpath="/items/item[@name='armorNerdHelmet']">
+		<effect_group tiered="false"> 
+            <requirement name="HasBuff" buff="prestigeBuff"/>            
+			<passive_effect name="PlayerExpGain" operation="perc_add" value="-.01,-.02,-.03,-.04,-.05,-.1" tier="1,2,3,4,5,6"/>        
+        </effect_group>
+		<effect_group tiered="false"> 
+            <requirement name="HasBuff" buff="prestigeBuff2"/>            
+			<passive_effect name="PlayerExpGain" operation="perc_add" value="-.015,-.03,-.045,-.06,-.075,-.15" tier="1,2,3,4,5,6"/>        
+        </effect_group>
+		<effect_group tiered="false"> 
+            <requirement name="HasBuff" buff="prestigeBuff3"/>            
+			<passive_effect name="PlayerExpGain" operation="perc_add" value="-.015,-.03,-.045,-.06,-.075,-.15" tier="1,2,3,4,5,6"/>        
+        </effect_group>       
+	</append>
+	
+
 	<append xpath="/items">	
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ +1 Skill point quest ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 		<item name="fourSkillPoint_P0">
@@ -84,7 +118,7 @@
 					<property name="Sound_start" value="read_mod"/>					
 				</property>
 				<effect_group tiered="false">
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ResetProgression" reset_skills="true" reset_levels="true" reset_books="true" reset_crafting="true"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ResetProgression" reset_skills="true" reset_levels="true" reset_books="true" reset_crafting="false"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$PlayerLevelBonus" operation="set" value="0"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$LastPlayerLevel" operation="set" value="0"/>
 					
@@ -110,7 +144,7 @@
 					<property name="Sound_in_head" value="true"/>					
 				</property>
 				<effect_group tiered="false">
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ResetProgression" reset_skills="true" reset_levels="true" reset_books="true" reset_crafting="true"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ResetProgression" reset_skills="true" reset_levels="true" reset_books="true" reset_crafting="false"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$PlayerLevelBonus" operation="set" value="0"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$LastPlayerLevel" operation="set" value="0"/>					
 					<passive_effect name="HealthMax" operation="base_set" value="100"/>
@@ -135,7 +169,7 @@
 					<property name="Sound_in_head" value="true"/>					
 				</property>
 				<effect_group tiered="false">
-					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ResetProgression" reset_skills="true" reset_levels="true" reset_books="true" reset_crafting="true"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ResetProgression" reset_skills="true" reset_levels="true" reset_books="true" reset_crafting="false"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$PlayerLevelBonus" operation="set" value="0"/>
 					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$LastPlayerLevel" operation="set" value="0"/>					
 					<passive_effect name="HealthMax" operation="base_set" value="100"/>
@@ -331,7 +365,7 @@
 		<item name="lvlUpChallengeBoxP0_300">
 			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
 			<property class="Action0">								
-				<property name="Create_item" value="resourcePlatinumNugget,special_bag,Practonium,fourSkillPoint_P0,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
+				<property name="Create_item" value="resourcePlatinumNugget,special_bag,resourcePractonium,fourSkillPoint_P0,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
 				<property name="Create_item_count" value="1,1,10,2,10,10,3"/>
 			</property>			
 		</item>
@@ -345,7 +379,7 @@
 		<item name="lvlUpChallengeBoxP0_400">
 			<property name="Extends" value="lvlUpChallengeBoxP0_50"/>			
 			<property class="Action0">								
-				<property name="Create_item" value="ResourceForgedPractonium,ResourceForgedPlatinum,fourSkillPoint_P0,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
+				<property name="Create_item" value="resourceForgedPractonium,resourceForgedPlatinum,fourSkillPoint_P0,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
 				<property name="Create_item_count" value="1,1,3,15,15,4"/>
 			</property>			
 		</item>
@@ -415,7 +449,7 @@
 		<item name="lvlUpChallengeBoxP1_300">
 			<property name="Extends" value="lvlUpChallengeBoxP1_50"/>			
 			<property class="Action0">								
-				<property name="Create_item" value="resourcePlatinumNugget,special_bag,Practonium,fourSkillPoint_P1,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
+				<property name="Create_item" value="resourcePlatinumNugget,special_bag,resourcePractonium,fourSkillPoint_P1,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
 				<property name="Create_item_count" value="2,1,20,2,20,20,6"/>
 			</property>			
 		</item>
@@ -429,7 +463,7 @@
 		<item name="lvlUpChallengeBoxP1_400">
 			<property name="Extends" value="lvlUpChallengeBoxP1_50"/>			
 			<property class="Action0">								
-				<property name="Create_item" value="ResourceForgedPractonium,ResourceForgedPlatinum,fourSkillPoint_P1,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
+				<property name="Create_item" value="resourceForgedPractonium,resourceForgedPlatinum,fourSkillPoint_P1,q_Gacha,juguito_de_chale,q_EnemigsRandom"/>
 				<property name="Create_item_count" value="2,1,3,30,30,8"/>
 			</property>			
 		</item>
@@ -499,7 +533,7 @@
 		<item name="lvlUpChallengeBoxP2_300">
 			<property name="Extends" value="lvlUpChallengeBoxP2_50"/>			
 			<property class="Action0">
-				<property name="Create_item" value="resourcePlatinumNugget,special_bag,Practonium,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,q_EnemigsRandom"/>
+				<property name="Create_item" value="resourcePlatinumNugget,special_bag,resourcePractonium,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,q_EnemigsRandom"/>
 				<property name="Create_item_count" value="3,3,30,2,30,30,9"/>
 			</property>			
 		</item>
@@ -513,7 +547,7 @@
 		<item name="lvlUpChallengeBoxP2_400">
 			<property name="Extends" value="lvlUpChallengeBoxP2_50"/>			
 			<property class="Action0">								
-				<property name="Create_item" value="ResourceForgedPractonium,ResourceForgedPlatinum,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,q_EnemigsRandom"/>
+				<property name="Create_item" value="resourceForgedPractonium,resourceForgedPlatinum,fourSkillPoint_P2,q_GachaPrem,juguito_de_chale,q_EnemigsRandom"/>
 				<property name="Create_item_count" value="3,2,3,30,30,12"/>
 			</property>			
 		</item>

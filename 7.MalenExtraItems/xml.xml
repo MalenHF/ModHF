@@ -1,0 +1,905 @@
+<config>
+	*
+	<!--EPIC-->
+	<stats>
+		<stat name="EntityDamage" 			value="0,0,1,1.08,1.08"/>
+		<stat name="MagazineSize" 			value="0,0,1,1,1"/>
+		<stat name="RoundsPerMinute" 		value="0,0,1,.3,.3"/>
+		<stat name="DamageFalloffRange" 	value="0,0,1,.9,.9"/>
+		<stat name="DegradationMax" 		value="0,0,0,0,0"/>
+	</stats>
+	<effect_group name="gunHandgunT3SMG5 ">
+		<!--25/50/100-->
+		<passive_effect name="EntityDamage" operation="base_add" value="30.5" tags="perkGunslinger"> <!-- damage offset -->
+			<requirement name="PlayerLevel" operation="GT" value="49"/>
+			<requirement name="NotHasBuff" buff="prismacore_tooltip_enterpvpclaim" />
+		</passive_effect>
+		<!--10/20/40-->
+		<passive_effect name="MaxRange" operation="base_set" value="72" tags="perkGunslinger,9mmGun"/>
+		<!--25/50/100-->
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="37" tags="perkGunslinger,9mmGun"/>	
+		<!--5/10/20-->	
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="504" tags="perkGunslinger"/>
+		<!--20/40/80-->
+		<passive_effect name="MagazineSize" operation="base_set" value="36" tags="perkGunslinger"/>
+		<!--25/50/100-->
+		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.25" tags="perkGunslinger"/> <!-- 4s -->		
+		<!--10/20/40-->
+		<passive_effect name="WeaponHandling" operation="base_set" value=".88" tags="perkGunslinger"/>
+		<passive_effect name="WeaponHandling" operation="perc_add" value=".08" tags="perkGunslinger"/> <!-- random WeaponHandling -->
+		<!--12.5/25/50-->
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1.181" tags="perkGunslinger"/>
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1.181" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".30" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".7" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.3" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="1.9" tags="perkGunslinger"/>
+		<!--12.5/25/50-->
+		<passive_effect name="KickDegreesVerticalMin" operation="base_set" value=".44" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="0.875" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-0.26" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="0.26" tags="perkGunslinger"/>
+		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1.4" tags="perkGunslinger,9mmGun"/>	
+		<!---->
+		<passive_effect name="BurstRoundCount" operation="base_set" value="0" tags="perkGunslinger"/>		
+		<passive_effect name="ModSlots" operation="base_set" value="5"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".08" tags="EntityDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>				
+		<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="perkGunslinger,9mmGun"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkGunslinger,9mmGun"/>
+	</effect_group> 
+	*
+	<!--LEGEND-->
+	<stats>
+		<stat name="EntityDamage" 			value="0,0,1,1.08,1.08"/>
+		<stat name="MagazineSize" 			value="0,0,1,1,1"/>
+		<stat name="RoundsPerMinute" 		value="0,0,1,.3,.3"/>
+		<stat name="DamageFalloffRange" 	value="0,0,1,.9,.9"/>
+		<stat name="DegradationMax" 		value="0,0,0,0,0"/>
+	</stats>	
+	<effect_group name="gunHandgunT3SMG5 ">	
+		<passive_effect name="EntityDamage" operation="base_add" value="43" tags="perkGunslinger"> <!-- damage offset -->
+			<requirement name="PlayerLevel" operation="GT" value="99"/>
+			<requirement name="NotHasBuff" buff="prismacore_tooltip_enterpvpclaim" />
+		</passive_effect>
+		<passive_effect name="MaxRange" operation="base_set" value="78" tags="perkGunslinger,9mmGun"/>
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="45" tags="perkGunslinger,9mmGun"/>		
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="528" tags="perkGunslinger"/>
+		<passive_effect name="MagazineSize" operation="base_set" value="36" tags="perkGunslinger"/>
+		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.5" tags="perkGunslinger"/> <!-- 4s -->
+		<passive_effect name="WeaponHandling" operation="base_set" value=".96" tags="perkGunslinger"/>
+		<passive_effect name="WeaponHandling" operation="perc_add" value=".08" tags="perkGunslinger"/> <!-- random WeaponHandling -->
+		<!---->
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1.01" tags="perkGunslinger"/>
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1.01" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".26" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".6" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.12" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="1.65" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="0.37" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".75" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-0.22" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="0.22" tags="perkGunslinger"/>
+		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1.2" tags="perkGunslinger,9mmGun"/>	
+		<!---->
+		<passive_effect name="BurstRoundCount" operation="base_set" value="0" tags="perkGunslinger"/>		
+		<passive_effect name="ModSlots" operation="base_set" value="5"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".08" tags="EntityDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>				
+		<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="perkGunslinger,9mmGun"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkGunslinger,9mmGun"/>
+	</effect_group> 
+	*
+	<!--MYTH-->
+	<stats>
+		<stat name="EntityDamage" 			value="0,0,1,1.08,1.08"/>
+		<stat name="MagazineSize" 			value="0,0,1,1,1"/>
+		<stat name="RoundsPerMinute" 		value="0,0,1,.3,.3"/>
+		<stat name="DamageFalloffRange" 	value="0,0,1,.9,.9"/>
+		<stat name="DegradationMax" 		value="0,0,0,0,0"/>
+	</stats>
+	<effect_group name="gunHandgunT3SMG5 ">	
+		<passive_effect name="EntityDamage" operation="base_add" value="38" tags="perkGunslinger"> <!-- damage offset -->
+			<requirement name="PlayerLevel" operation="GT" value="149"/>
+			<requirement name="NotHasBuff" buff="prismacore_tooltip_enterpvpclaim" />
+		</passive_effect>
+		<passive_effect name="MaxRange" operation="base_set" value="91" tags="perkGunslinger,9mmGun"/>
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="60" tags="perkGunslinger,9mmGun"/>		
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="576" tags="perkGunslinger"/>
+		<passive_effect name="MagazineSize" operation="base_set" value="54" tags="perkGunslinger"/>
+		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="2" tags="perkGunslinger"/> <!-- 4s -->
+		<passive_effect name="WeaponHandling" operation="base_set" value="1.12" tags="perkGunslinger"/>
+		<passive_effect name="WeaponHandling" operation="perc_add" value=".08" tags="perkGunslinger"/> <!-- random WeaponHandling -->
+		<!---->
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="0.67" tags="perkGunslinger"/>
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="0.67" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierAiming" operation="base_set" value="0.17" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".4" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="0.75" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="1.1" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesVerticalMin" operation="base_set" value=".25" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".5" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.15" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".15" tags="perkGunslinger"/>
+		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value=".8" tags="perkGunslinger,9mmGun"/>	
+		<!---->
+		<passive_effect name="BurstRoundCount" operation="base_set" value="0" tags="perkGunslinger"/>		
+		<passive_effect name="ModSlots" operation="base_set" value="5"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".08" tags="EntityDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>				
+		<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="perkGunslinger,9mmGun"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkGunslinger,9mmGun"/>
+	</effect_group> 
+	*
+	*
+	*
+	*
+	*
+	<!--EPIC-->
+	<stats>
+		<stat name="EntityDamage" 			value="0,0,1,1.08,1.08"/>
+		<stat name="MagazineSize" 			value="0,0,1,1,1"/>
+		<stat name="RoundsPerMinute" 		value="0,0,1,.3,.3"/>
+		<stat name="DamageFalloffRange" 	value="0,0,1,.9,.9"/>
+		<stat name="DegradationMax" 		value="0,0,0,0,0"/>
+	</stats>
+	<effect_group name="gunHandgunT3DesertVulture">
+		<passive_effect name="EntityDamage" operation="base_add" value="42.5" tags="perkGunslinger">
+			<requirement name="PlayerLevel" operation="GT" value="49"/>
+			<requirement name="NotHasBuff" buff="prismacore_tooltip_enterpvpclaim" />
+		</passive_effect>
+		<passive_effect name="MaxRange" operation="base_set" value="55" tags="perkGunslinger"/>
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="38" tags="perkGunslinger"/>		
+		
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="137" tags="perkGunslinger"/>
+		
+		<passive_effect name="MagazineSize" operation="base_set" value="10" tags="perkGunslinger"/>
+
+		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.25" tags="perkGunslinger"/> <!-- 2s -->
+		
+		<passive_effect name="WeaponHandling" operation="perc_add" value=".08" tags="perkGunslinger"/> <!-- random WeaponHandling -->
+		<passive_effect name="WeaponHandling" operation="base_set" value=".66" tags="perkGunslinger"/>
+
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1.13" tags="perkGunslinger"/>
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1.13" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".30" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".7" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.3" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="1.9" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="3" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="3.5" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.26" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".13" tags="perkGunslinger"/>
+		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2.8" tags="perkGunslinger"/>
+
+		<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkGunslinger"/>
+		<passive_effect name="ModSlots" operation="base_set" value="5"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".08" tags="EntityDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="perkGunslinger"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkGunslinger"/>
+	</effect_group>
+	*
+	<!--LEGEND-->
+	<stats>
+		<stat name="EntityDamage" 			value="0,0,1,1.08,1.08"/>
+		<stat name="MagazineSize" 			value="0,0,1,1,1"/>
+		<stat name="RoundsPerMinute" 		value="0,0,1,.3,.3"/>
+		<stat name="DamageFalloffRange" 	value="0,0,1,.9,.9"/>
+		<stat name="DegradationMax" 		value="0,0,0,0,0"/>
+	</stats>
+	<effect_group name="gunHandgunT3DesertVulture">
+		<passive_effect name="EntityDamage" operation="base_add" value="65" tags="perkGunslinger">
+			<requirement name="PlayerLevel" operation="GT" value="99"/>
+			<requirement name="NotHasBuff" buff="prismacore_tooltip_enterpvpclaim" />
+		</passive_effect>
+		<passive_effect name="MaxRange" operation="base_set" value="60" tags="perkGunslinger"/>
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="45" tags="perkGunslinger"/>		
+		
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="143" tags="perkGunslinger"/>
+		
+		<passive_effect name="MagazineSize" operation="base_set" value="12" tags="perkGunslinger"/>
+
+		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.5" tags="perkGunslinger"/> <!-- 2s -->
+		
+		<passive_effect name="WeaponHandling" operation="perc_add" value=".08" tags="perkGunslinger"/> <!-- random WeaponHandling -->
+		<passive_effect name="WeaponHandling" operation="base_set" value=".72" tags="perkGunslinger"/>
+
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value=".97" tags="perkGunslinger"/>
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value=".97" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".26" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".6" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.12" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="1.65" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="2.6" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="3" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.22" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".11" tags="perkGunslinger"/>
+		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2.4" tags="perkGunslinger"/>
+
+		<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkGunslinger"/>
+		<passive_effect name="ModSlots" operation="base_set" value="5"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".08" tags="EntityDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="perkGunslinger"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkGunslinger"/>
+	</effect_group>
+	*
+	<!--MYTH-->
+	<stats>
+		<stat name="EntityDamage" 			value="0,0,1,1.08,1.08"/>
+		<stat name="MagazineSize" 			value="0,0,1,1,1"/>
+		<stat name="RoundsPerMinute" 		value="0,0,1,.3,.3"/>
+		<stat name="DamageFalloffRange" 	value="0,0,1,.9,.9"/>
+		<stat name="DegradationMax" 		value="0,0,0,0,0"/>
+	</stats>
+	<effect_group name="gunHandgunT3DesertVulture">
+		<passive_effect name="EntityDamage" operation="base_add" value="110" tags="perkGunslinger">
+			<requirement name="PlayerLevel" operation="GT" value="149"/>
+			<requirement name="NotHasBuff" buff="prismacore_tooltip_enterpvpclaim" />
+		</passive_effect>
+		<passive_effect name="MaxRange" operation="base_set" value="70" tags="perkGunslinger"/>
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="60" tags="perkGunslinger"/>		
+		
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="156" tags="perkGunslinger"/>
+		
+		<passive_effect name="MagazineSize" operation="base_set" value="16" tags="perkGunslinger"/>
+
+		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="2" tags="perkGunslinger"/> <!-- 2s -->
+		
+		<passive_effect name="WeaponHandling" operation="perc_add" value=".08" tags="perkGunslinger"/> <!-- random WeaponHandling -->
+		<passive_effect name="WeaponHandling" operation="base_set" value=".85" tags="perkGunslinger"/>
+
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value=".65" tags="perkGunslinger"/>
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value=".65" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".17" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".4" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierWalking" operation="base_set" value=".75" tags="perkGunslinger"/>
+		<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="1.1" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="1.75" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="2" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.15" tags="perkGunslinger"/>
+		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".07" tags="perkGunslinger"/>
+		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1.6" tags="perkGunslinger"/>
+
+		<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkGunslinger"/>
+		<passive_effect name="ModSlots" operation="base_set" value="5"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".08" tags="EntityDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="perkGunslinger"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkGunslinger"/>
+	</effect_group>
+	*
+	*
+	*
+	*
+	<!--DAÑO 25/50/100-->
+	<!--RANGO 10/20/40-->
+	<!--FALL OUT 25/50/100-->
+	<!--RPM 5/10/20-->
+	<!--MAGA 20/40/80-->
+	<!--RELOAD 25/50/100-->
+	<!--HANDLING 10/20/40-->
+	<!--SPEAD 12.5/25/50-->
+	<!--KICK 12.5/25/50-->
+	<!--ESCOPETA 10.1 / 215 -->
+	<!--ESCOPETA rango 10 FOR 4 / 18 FOR 9 -->
+	*
+	<!--EPIC-->
+	<append xpath="/items/item[@name='ammoShotgunSlug']">
+		<effect_group name="destroyerbalance" tiered="false">
+			<requirement name="NotHasBuff" buff="prismacore_tooltip_enterpvpclaim" />
+			<passive_effect name="EntityDamage" operation="base_add" value="41.6" tags="perkBoomstick">
+				<requirement name="HoldingItemHasTags" tags="epic"/>
+				<requirement name="PlayerLevel" operation="GT" value="49"/>
+			</passive_effect>
+			<passive_effect name="EntityDamage" operation="base_add" value="82.25" tags="perkBoomstick">
+				<requirement name="HoldingItemHasTags" tags="legend"/>
+				<requirement name="PlayerLevel" operation="GT" value="99"/>
+			</passive_effect>
+			<passive_effect name="EntityDamage" operation="base_add" value="164.5" tags="perkBoomstick">
+				<requirement name="HoldingItemHasTags" tags="myth"/>
+				<requirement name="PlayerLevel" operation="GT" value="149"/>
+			</passive_effect>
+			<passive_effect name="MaxRange" operation="base_add" value=".8">
+				<requirement name="HoldingItemHasTags" tags="epic"/>
+			</passive_effect>
+			<passive_effect name="DamageFalloffRange" operation="base_add" value="1.45">
+				<requirement name="HoldingItemHasTags" tags="epic"/>
+			</passive_effect>
+			<passive_effect name="MaxRange" operation="base_add" value="1.6">
+				<requirement name="HoldingItemHasTags" tags="legend"/>
+			</passive_effect>
+			<passive_effect name="DamageFalloffRange" operation="base_add" value="2.5">
+				<requirement name="HoldingItemHasTags" tags="legend"/>
+			</passive_effect>
+			<passive_effect name="MaxRange" operation="base_add" value="3.2">
+				<requirement name="HoldingItemHasTags" tags="myth"/>
+			</passive_effect>
+			<passive_effect name="DamageFalloffRange" operation="base_add" value="5">
+				<requirement name="HoldingItemHasTags" tags="myth"/>
+			</passive_effect>
+
+			<passive_effect name="EntityDamage" operation="base_add" value="40" tags="perkBoomstick">
+				<requirement name="HoldingItemHasTags" tags="unique"/>
+				<requirement name="PlayerLevel" operation="GT" value="49"/>
+			</passive_effect>
+			<passive_effect name="EntityDamage" operation="base_add" value="40" tags="perkBoomstick">
+				<requirement name="HoldingItemHasTags" tags="unique"/>
+				<requirement name="PlayerLevel" operation="GT" value="49"/>
+			</passive_effect>
+			<passive_effect name="EntityDamage" operation="base_add" value="40" tags="perkBoomstick">
+				<requirement name="HoldingItemHasTags" tags="unique"/>
+				<requirement name="PlayerLevel" operation="GT" value="49"/>
+			</passive_effect>
+
+			
+		</effect_group>
+	</append>	
+	<!--ESCOPETA rango 10 FOR 4 / 18 FOR 9 -->
+	*
+	<!--EPIC-->
+	<stats>
+		<stat name="EntityDamage" 			value="0,0,1,1.08,1.08"/>
+		<stat name="MagazineSize" 			value="0,0,1,1,1"/>
+		<stat name="RoundsPerMinute" 		value="0,0,1,.3,.3"/>
+		<stat name="DamageFalloffRange" 	value="0,0,1,.9,.9"/>
+		<stat name="DegradationMax" 		value="0,0,0,0,0"/>
+	</stats>
+	<effect_group name="gunShotgunT3AutoShotgun">
+		<passive_effect name="EntityDamage" operation="base_add" value="14.6" tags="perkBoomstick"/>
+			<requirement name="PlayerLevel" operation="GT" value="49"/>
+			<requirement name="NotHasBuff" buff="prismacore_tooltip_enterpvpclaim" />
+		</passive_effect>
+		<passive_effect name="MaxRange" operation="base_add" value="1" />
+		<passive_effect name="DamageFalloffRange" operation="base_add" value=".8" />
+
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="74" tags="perkBoomstick"/>
+		<passive_effect name="BurstRoundCount" operation="base_set" value="0" tags="perkBoomstick"/>
+
+		<passive_effect name="MagazineSize" operation="base_set" value="19" tags="perkBoomstick"/>
+
+		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.25" tags="perkBoomstick"/> <!-- 2.3s -->
+
+		
+		 <!-- damage offset -->
+
+		<passive_effect name="WeaponHandling" operation="perc_add" value=".085" tags="perkBoomstick"/> <!-- random WeaponHandling -->
+		<passive_effect name="WeaponHandling" operation="base_set" value="1.9" tags="perkBoomstick"/>
+
+		<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="3.68" tags="perkBoomstick"/>
+		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="3.68" tags="perkBoomstick"/>
+		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-2.18" tags="perkBoomstick"/>
+		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="2.18" tags="perkBoomstick"/>
+		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1.75" tags="perkBoomstick"/>
+		
+		<passive_effect name="ModSlots" operation="base_set" value="5"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".08" tags="EntityDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="perkBoomstick"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkBoomstick"/>
+		<display_value name="dStatStunEffect" value="4"/>
+	</effect_group>
+	*
+	<!--LEGEND-->
+	<stats>
+		<stat name="EntityDamage" 			value="0,0,1,1.08,1.08"/>
+		<stat name="MagazineSize" 			value="0,0,1,1,1"/>
+		<stat name="RoundsPerMinute" 		value="0,0,1,.3,.3"/>
+		<stat name="DamageFalloffRange" 	value="0,0,1,.9,.9"/>
+		<stat name="DegradationMax" 		value="0,0,0,0,0"/>
+	</stats>
+	<effect_group name="gunShotgunT3AutoShotgun">
+		<passive_effect name="EntityDamage" operation="base_add" value="20.25" tags="perkBoomstick"/>
+			<requirement name="PlayerLevel" operation="GT" value="99"/>
+			<requirement name="NotHasBuff" buff="prismacore_tooltip_enterpvpclaim" />
+		</passive_effect>
+		<passive_effect name="MaxRange" operation="base_add" value="2" />
+		<passive_effect name="DamageFalloffRange" operation="base_add" value="2" />
+
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="77" tags="perkBoomstick"/>
+		<passive_effect name="BurstRoundCount" operation="base_set" value="0" tags="perkBoomstick"/>
+
+		<passive_effect name="MagazineSize" operation="base_set" value="22" tags="perkBoomstick"/>
+
+		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.5" tags="perkBoomstick"/> <!-- 2.3s -->
+
+		<!-- damage offset -->
+		<passive_effect name="WeaponHandling" operation="perc_add" value=".085" tags="perkBoomstick"/> <!-- random WeaponHandling -->
+		<passive_effect name="WeaponHandling" operation="base_set" value="2.04" tags="perkBoomstick"/>
+
+		<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="3.15" tags="perkBoomstick"/>
+		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="3.15" tags="perkBoomstick"/>
+		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-1.8" tags="perkBoomstick"/>
+		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="1.8" tags="perkBoomstick"/>
+		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1.5" tags="perkBoomstick"/>
+		
+		<passive_effect name="ModSlots" operation="base_set" value="5"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".08" tags="EntityDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="perkBoomstick"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkBoomstick"/>
+		<display_value name="dStatStunEffect" value="4"/>
+	</effect_group>
+	*
+	<!--MYTH-->	
+	<stats>
+		<stat name="EntityDamage" 			value="0,0,1,1.08,1.08"/>
+		<stat name="MagazineSize" 			value="0,0,1,1,1"/>
+		<stat name="RoundsPerMinute" 		value="0,0,1,.3,.3"/>
+		<stat name="DamageFalloffRange" 	value="0,0,1,.9,.9"/>
+		<stat name="DegradationMax" 		value="0,0,0,0,0"/>
+	</stats>
+	<effect_group name="gunShotgunT3AutoShotgun">
+		<passive_effect name="EntityDamage" operation="base_add" value="30.5" tags="perkBoomstick"/>
+			<requirement name="PlayerLevel" operation="GT" value="149"/>
+			<requirement name="NotHasBuff" buff="prismacore_tooltip_enterpvpclaim" />
+		</passive_effect>
+		<passive_effect name="MaxRange" operation="base_add" value="4" />
+		<passive_effect name="DamageFalloffRange" operation="base_add" value="4" />
+
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="84" tags="perkBoomstick"/>
+		<passive_effect name="BurstRoundCount" operation="base_set" value="0" tags="perkBoomstick"/>
+
+		<passive_effect name="MagazineSize" operation="base_set" value="29" tags="perkBoomstick"/>
+
+		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="2" tags="perkBoomstick"/> <!-- 2.3s -->
+		
+		 <!-- damage offset -->
+		<passive_effect name="WeaponHandling" operation="perc_add" value=".085" tags="perkBoomstick"/> <!-- random WeaponHandling -->
+		<passive_effect name="WeaponHandling" operation="base_set" value="2.4" tags="perkBoomstick"/>
+
+		<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="2.1" tags="perkBoomstick"/>
+		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="2.1" tags="perkBoomstick"/>
+		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-1.25" tags="perkBoomstick"/>
+		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="1.25" tags="perkBoomstick"/>
+		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1" tags="perkBoomstick"/>
+		
+		<passive_effect name="ModSlots" operation="base_set" value="5"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".08" tags="EntityDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="perkBoomstick"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkBoomstick"/>
+		<display_value name="dStatStunEffect" value="4"/>
+	</effect_group>
+	*
+	*
+	*	
+	*
+	*	
+	*
+	<!--EPIC-->
+	<stats>
+		<stat name="EntityDamage" 			value="0,0,1,1.08,1.08"/>
+		<stat name="MagazineSize" 			value="0,0,1,1,1"/>
+		<stat name="RoundsPerMinute" 		value="0,0,1,.3,.3"/>
+		<stat name="DamageFalloffRange" 	value="0,0,1,.9,.9"/>
+		<stat name="DegradationMax" 		value="0,0,0,0,0"/>
+	</stats>
+	<effect_group name="gunRifleT3SniperRifle">
+		<passive_effect name="EntityDamage" operation="base_add" value="78" tags="perkDeadEye"> <!-- damage offset -->
+			<requirement name="PlayerLevel" operation="GT" value="49"/>
+			<requirement name="NotHasBuff" buff="prismacore_tooltip_enterpvpclaim" />
+		</passive_effect>
+
+		<passive_effect name="MaxRange" operation="base_set" value="165" tags="perkDeadEye"/>
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="100" tags="perkDeadEye"/>
+		
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="147" tags="perkDeadEye"/>
+		<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkDeadEye"/>
+
+		<passive_effect name="MagazineSize" operation="base_set" value="14" tags="perkDeadEye"/>
+
+		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.25" tags="perkDeadEye"/> <!-- 2.7s -->
+				
+		
+		<passive_effect name="WeaponHandling" operation="perc_add" value=".08" tags="perkDeadEye"/> <!-- random WeaponHandling -->
+		<passive_effect name="WeaponHandling" operation="base_set" value=".83" tags="perkDeadEye"/>
+
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="5.25" tags="perkDeadEye"/>
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="5.25" tags="perkDeadEye"/>
+		<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".05" tags="perkDeadEye"/>
+		<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".7" tags="perkDeadEye"/>
+		<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.3" tags="perkDeadEye"/>
+		<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="1.75" tags="perkDeadEye"/>
+
+		<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="1.3" tags="perkDeadEye"/>
+		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="2.6" tags="perkDeadEye"/>
+		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.17" tags="perkDeadEye"/>
+		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".17" tags="perkDeadEye"/>
+		
+		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="9.6" tags="perkDeadEye"/>
+				
+		<passive_effect name="ModSlots" operation="base_set" value="5"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".08" tags="EntityDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+
+		<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="perkDeadEye"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkDeadEye"/>
+		<passive_effect name="DamageModifier" operation="base_add" value="200" tags="head"/>
+	</effect_group>
+	*
+	<!--LEGEND-->
+				<stats>
+					<stat name="EntityDamage" 			value="0,0,1,1.08,1.08"/>
+					<stat name="MagazineSize" 			value="0,0,1,1,1"/>
+					<stat name="RoundsPerMinute" 		value="0,0,1,.3,.3"/>
+					<stat name="DamageFalloffRange" 	value="0,0,1,.9,.9"/>
+					<stat name="DegradationMax" 		value="0,0,0,0,0"/>
+				</stats>
+				<effect_group name="gunRifleT3SniperRifle">
+					<passive_effect name="EntityDamage" operation="base_add" value="103" tags="perkDeadEye"> <!-- damage offset -->
+						<requirement name="PlayerLevel" operation="GT" value="99"/>
+						<requirement name="NotHasBuff" buff="prismacore_tooltip_enterpvpclaim" />
+					</passive_effect>
+
+					<passive_effect name="MaxRange" operation="base_set" value="180" tags="perkDeadEye"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="120" tags="perkDeadEye"/>
+					
+					<passive_effect name="RoundsPerMinute" operation="base_set" value="154" tags="perkDeadEye"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkDeadEye"/>
+
+					<passive_effect name="MagazineSize" operation="base_set" value="17" tags="perkDeadEye"/>
+
+					<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.5" tags="perkDeadEye"/> <!-- 2.7s -->
+							
+					
+					<passive_effect name="WeaponHandling" operation="perc_add" value=".08" tags="perkDeadEye"/> <!-- random WeaponHandling -->
+					<passive_effect name="WeaponHandling" operation="base_set" value=".9" tags="perkDeadEye"/>
+
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="4.5" tags="perkDeadEye"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4.5" tags="perkDeadEye"/>
+					<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".04" tags="perkDeadEye"/>
+					<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".6" tags="perkDeadEye"/>
+					<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.1" tags="perkDeadEye"/>
+					<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="1.5" tags="perkDeadEye"/>
+
+					<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="1.1" tags="perkDeadEye"/>
+					<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="2.2" tags="perkDeadEye"/>
+					<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.15" tags="perkDeadEye"/>
+					<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".15" tags="perkDeadEye"/>
+					
+					<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="8.25" tags="perkDeadEye"/>
+							
+					<passive_effect name="ModSlots" operation="base_set" value="5"/>
+					<passive_effect name="ModPowerBonus" operation="perc_add" value=".08" tags="EntityDamage"/>
+					<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+
+					<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="perkDeadEye"/>
+					<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkDeadEye"/>
+					<passive_effect name="DamageModifier" operation="base_add" value="200" tags="head"/>
+				</effect_group>
+	*
+	<!--MYTH-->
+	<stats>
+		<stat name="EntityDamage" 			value="0,0,1,1.08,1.08"/>
+		<stat name="MagazineSize" 			value="0,0,1,1,1"/>
+		<stat name="RoundsPerMinute" 		value="0,0,1,.3,.3"/>
+		<stat name="DamageFalloffRange" 	value="0,0,1,.9,.9"/>
+		<stat name="DegradationMax" 		value="0,0,0,0,0"/>
+	</stats>
+	<effect_group name="gunRifleT3SniperRifle">
+		<passive_effect name="EntityDamage" operation="base_add" value="153" tags="perkDeadEye"> <!-- damage offset -->
+			<requirement name="PlayerLevel" operation="GT" value="149"/>
+			<requirement name="NotHasBuff" buff="prismacore_tooltip_enterpvpclaim" />
+		</passive_effect>
+
+		<passive_effect name="MaxRange" operation="base_set" value="210" tags="perkDeadEye"/>
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="160" tags="perkDeadEye"/>
+		
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="168" tags="perkDeadEye"/>
+		<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkDeadEye"/>
+
+		<passive_effect name="MagazineSize" operation="base_set" value="22" tags="perkDeadEye"/>
+
+		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="2" tags="perkDeadEye"/> <!-- 2.7s -->
+				
+		
+		<passive_effect name="WeaponHandling" operation="perc_add" value=".08" tags="perkDeadEye"/> <!-- random WeaponHandling -->
+		<passive_effect name="WeaponHandling" operation="base_set" value="1.05" tags="perkDeadEye"/>
+
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="3" tags="perkDeadEye"/>
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3" tags="perkDeadEye"/>
+		<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".03" tags="perkDeadEye"/>
+		<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".4" tags="perkDeadEye"/>
+		<passive_effect name="SpreadMultiplierWalking" operation="base_set" value=".75" tags="perkDeadEye"/>
+		<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="1" tags="perkDeadEye"/>
+
+		<passive_effect name="KickDegreesVerticalMin" operation="base_set" value=".75" tags="perkDeadEye"/>
+		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="1.5" tags="perkDeadEye"/>
+		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.1" tags="perkDeadEye"/>
+		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".1" tags="perkDeadEye"/>
+		
+		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="6.5" tags="perkDeadEye"/>
+				
+		<passive_effect name="ModSlots" operation="base_set" value="5"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".08" tags="EntityDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+
+		<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="perkDeadEye"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkDeadEye"/>
+		<passive_effect name="DamageModifier" operation="base_add" value="200" tags="head"/>
+	</effect_group>
+	*
+	*
+	*
+	*
+	*
+	*
+	<!--EPIC-->
+				<stats>
+					<stat name="EntityDamage" 			value="0,0,1,1.08,1.08"/>
+					<stat name="MagazineSize" 			value="0,0,1,1,1"/>
+					<stat name="RoundsPerMinute" 		value="0,0,1,.3,.3"/>
+					<stat name="DamageFalloffRange" 	value="0,0,1,.9,.9"/>
+					<stat name="DegradationMax" 		value="0,0,0,0,0"/>
+				</stats>
+				<effect_group name="gunMGT3M60">
+					<passive_effect name="EntityDamage" operation="base_add" value="40.5" tags="perkMachineGunner"> <!-- damage offset -->
+						<requirement name="PlayerLevel" operation="GT" value="49"/>
+						<requirement name="NotHasBuff" buff="prismacore_tooltip_enterpvpclaim" />
+					</passive_effect>
+
+					<passive_effect name="MaxRange" operation="base_set" value="99" tags="perkMachineGunner"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="72.5" tags="perkMachineGunner"/>		
+					
+					<passive_effect name="BlockDamage" operation="base_add" value="-2" tags="perkMachineGunner"/> <!-- damage offset -->		
+					
+					<passive_effect name="WeaponHandling" operation="perc_add" value=".08" tags="perkMachineGunner"/> <!-- random WeaponHandling -->
+					<passive_effect name="WeaponHandling" operation="base_set" value=".91" tags="perkMachineGunner"/> <!-- M60 -->
+
+					<passive_effect name="RoundsPerMinute" operation="base_set" value="462" tags="perkMachineGunner"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="0" tags="perkMachineGunner"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="72" tags="perkMachineGunner"/>
+					<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.25" tags="perkMachineGunner"/>
+
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2.45" tags="perkMachineGunner"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="2.45" tags="perkMachineGunner"/>
+					<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".29" tags="perkMachineGunner"/>
+					<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".7" tags="perkMachineGunner"/>
+					<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.3" tags="perkMachineGunner"/>
+					<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="1.9" tags="perkMachineGunner"/>
+
+					<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="-.35" tags="perkMachineGunner"/>
+					<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".96" tags="perkMachineGunner"/>
+					<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.87" tags="perkMachineGunner"/>
+					<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".87" tags="perkMachineGunner"/>
+
+					<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1.3" tags="perkMachineGunner"/>
+					
+
+					<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="perkMachineGunner,perkBookAutoWeapons"/>
+					<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkMachineGunner,perkBookAutoWeapons"/>
+
+					<passive_effect name="ModSlots" operation="base_set" value="5"/>
+					<passive_effect name="ModPowerBonus" operation="perc_add" value=".08" tags="EntityDamage"/>
+					<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				</effect_group>
+	*
+	<!--LEGEND-->
+				<stats>
+					<stat name="EntityDamage" 			value="0,0,1,1.08,1.08"/>
+					<stat name="MagazineSize" 			value="0,0,1,1,1"/>
+					<stat name="RoundsPerMinute" 		value="0,0,1,.3,.3"/>
+					<stat name="DamageFalloffRange" 	value="0,0,1,.9,.9"/>
+					<stat name="DegradationMax" 		value="0,0,0,0,0"/>
+				</stats>
+				<effect_group name="gunMGT3M60">
+					<passive_effect name="EntityDamage" operation="base_add" value="58" tags="perkMachineGunner"> <!-- damage offset -->
+						<requirement name="PlayerLevel" operation="GT" value="99"/>
+						<requirement name="NotHasBuff" buff="prismacore_tooltip_enterpvpclaim" />
+					</passive_effect>
+
+					<passive_effect name="MaxRange" operation="base_set" value="108" tags="perkMachineGunner"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="87" tags="perkMachineGunner"/>		
+					
+					<passive_effect name="BlockDamage" operation="base_add" value="-2" tags="perkMachineGunner"/> <!-- damage offset -->		
+					
+					<passive_effect name="WeaponHandling" operation="perc_add" value=".08" tags="perkMachineGunner"/> <!-- random WeaponHandling -->
+					<passive_effect name="WeaponHandling" operation="base_set" value=".99" tags="perkMachineGunner"/>
+
+					<passive_effect name="RoundsPerMinute" operation="base_set" value="484" tags="perkMachineGunner"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="0" tags="perkMachineGunner"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="84" tags="perkMachineGunner"/>
+					<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1" tags="perkMachineGunner"/>
+
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2.1" tags="perkMachineGunner"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="2.1" tags="perkMachineGunner"/>
+					<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".25" tags="perkMachineGunner"/>
+					<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".6" tags="perkMachineGunner"/>
+					<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.12" tags="perkMachineGunner"/>
+					<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="1.65" tags="perkMachineGunner"/>
+
+					<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="-.3" tags="perkMachineGunner"/>
+					<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".82" tags="perkMachineGunner"/>
+					<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.75" tags="perkMachineGunner"/>
+					<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".75" tags="perkMachineGunner"/>
+
+					<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1.12" tags="perkMachineGunner"/>
+					<!-- M60 -->
+
+					<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="perkMachineGunner,perkBookAutoWeapons"/>
+					<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkMachineGunner,perkBookAutoWeapons"/>
+
+					<passive_effect name="ModSlots" operation="base_set" value="5"/>
+					<passive_effect name="ModPowerBonus" operation="perc_add" value=".08" tags="EntityDamage"/>
+					<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				</effect_group>	
+	*
+	<!--MYTH-->
+				<stats>
+					<stat name="EntityDamage" 			value="0,0,1,1.08,1.08"/>
+					<stat name="MagazineSize" 			value="0,0,1,1,1"/>
+					<stat name="RoundsPerMinute" 		value="0,0,1,.3,.3"/>
+					<stat name="DamageFalloffRange" 	value="0,0,1,.9,.9"/>
+					<stat name="DegradationMax" 		value="0,0,0,0,0"/>
+				</stats>
+				<effect_group name="gunMGT3M60">
+					<passive_effect name="EntityDamage" operation="base_add" value="93" tags="perkMachineGunner"> <!-- damage offset -->
+						<requirement name="PlayerLevel" operation="GT" value="149"/>
+						<requirement name="NotHasBuff" buff="prismacore_tooltip_enterpvpclaim" />
+					</passive_effect>
+
+					<passive_effect name="MaxRange" operation="base_set" value="126" tags="perkMachineGunner"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="116" tags="perkMachineGunner"/>		
+					
+					<passive_effect name="BlockDamage" operation="base_add" value="-2" tags="perkMachineGunner"/> <!-- damage offset -->		
+					
+					<passive_effect name="WeaponHandling" operation="perc_add" value=".08" tags="perkMachineGunner"/> <!-- random WeaponHandling -->
+					<passive_effect name="WeaponHandling" operation="base_set" value="1.16" tags="perkMachineGunner"/> <!-- M60 -->
+
+					<passive_effect name="RoundsPerMinute" operation="base_set" value="528" tags="perkMachineGunner"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="0" tags="perkMachineGunner"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="108" tags="perkMachineGunner"/>
+					<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1" tags="perkMachineGunner"/>
+
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1.4" tags="perkMachineGunner"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1.4" tags="perkMachineGunner"/>
+					<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".16" tags="perkMachineGunner"/>
+					<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".4" tags="perkMachineGunner"/>
+					<passive_effect name="SpreadMultiplierWalking" operation="base_set" value=".75" tags="perkMachineGunner"/>
+					<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="1.1" tags="perkMachineGunner"/>
+
+					<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="-.2" tags="perkMachineGunner"/>
+					<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".55" tags="perkMachineGunner"/>
+					<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.5" tags="perkMachineGunner"/>
+					<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".5" tags="perkMachineGunner"/>
+
+					<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value=".75" tags="perkMachineGunner"/>		
+
+					<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="perkMachineGunner,perkBookAutoWeapons"/>
+					<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkMachineGunner,perkBookAutoWeapons"/>
+
+					<passive_effect name="ModSlots" operation="base_set" value="5"/>
+					<passive_effect name="ModPowerBonus" operation="perc_add" value=".08" tags="EntityDamage"/>
+					<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				</effect_group>
+	*
+	*
+	*
+	*
+	<!--DAÑO 25/50/100-->
+	<!--RANGO 10/20/40-->
+	<!--FALL OUT 25/50/100-->
+	<!--RPM 5/10/20-->
+	<!--MAGA 20/40/80-->
+	<!--RELOAD 25/50/100-->
+	<!--HANDLING 10/20/40-->
+	<!--SPEAD 12.5/25/50-->
+	<!--KICK 12.5/25/50-->
+	<!--METRA 47-->
+	<!--ARCO 42-->
+	<stats>
+					<stat name="EntityDamage" 			value="0,0,1,1.08,1.08"/>
+					<stat name="MagazineSize" 			value="0,0,1,1,1"/>
+					<stat name="RoundsPerMinute" 		value="0,0,1,.3,.3"/>
+					<stat name="DamageFalloffRange" 	value="0,0,1,.9,.9"/>
+					<stat name="DegradationMax" 		value="0,0,0,0,0"/>
+				</stats>
+	<effect_group name="gunBowT3CompoundBow">
+		<passive_effect name="ProjectileVelocity" operation="perc_add" value=".2" tags="perkArchery"/>
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="34" tags="perkArchery"/>
+		
+		<passive_effect name="MaxRange" operation="base_set" value="100" tags="perkArchery"/>
+		<passive_effect name="MagazineSize" operation="base_set" value="1" tags="perkArchery"/>
+		<passive_effect name="EntityDamage" operation="base_add" value="29" tags="perkArchery"/> <!-- damage offset -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".07,.35" tier="2,6" tags="perkArchery"/> <!-- tier bonus -->
+		
+		<passive_effect name="ProjectileVelocity" operation="perc_add" value="-.08,.08" tags="perkArchery"/> <!-- random Veloc -->
+		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkArchery"/> <!-- random WeaponHandling -->
+
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2.67" tags="perkArchery"/>
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="2.67" tags="perkArchery"/>
+		<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".06" tags="perkArchery"/>
+		<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".5" tags="perkArchery"/>
+		<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.2" tags="perkArchery"/>
+		<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.0" tags="perkArchery"/>
+
+		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value=".9" tags="perkArchery"/>
+		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2" tags="perkArchery"/>
+		<passive_effect name="WeaponHandling" operation="base_set" value=".9" tags="perkArchery"/> <!-- crosshair reset speed -->
+
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="75" tags="perkArchery,bowDrawPenalty"/>
+		<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkArchery"/>
+
+		<passive_effect name="KickDegreesVerticalMin" operation="base_set" value=".5" tags="perkArchery"/>
+		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".5" tags="perkArchery"/>
+		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.2" tags="perkArchery"/>
+		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".2" tags="perkArchery"/>
+
+		<passive_effect name="DegradationMax" operation="base_set" value="350,600" tier="1,6" tags="perkArchery"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkArchery"/>
+		<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+	</effect_group>
+	<effect_group name="sneak damage bonus">
+		<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+		<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+			<passive_effect name="DamageBonus" operation="base_add" value="2"/>
+			<passive_effect name="EntityDamage" operation="perc_add" value="2" tags="perkArchery"/>
+			<display_value name="dEntityDamageSneak" value="2"/>
+	</effect_group>
+	*
+	*
+	*
+	*
+	<!--Ballesta 63-->
+	<effect_group name="gunBowT3CompoundCrossbow">
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="40" tags="perkArchery"/>
+		
+		<passive_effect name="MaxRange" operation="base_set" value="100" tags="perkArchery"/>
+		<passive_effect name="MagazineSize" operation="base_set" value="1" tags="perkArchery"/>
+		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value=".5" tags="perkArchery"/> <!-- 3.4s -->
+		<passive_effect name="EntityDamage" operation="base_add" value="25" tags="perkArchery"/> <!-- damage offset -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".08,.4" tier="2,6" tags="perkArchery"/> <!-- tier bonus -->
+		
+		<passive_effect name="ProjectileVelocity" operation="perc_add" value="-.08,.08" tags="perkArchery"/> <!-- random Veloc -->
+		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkArchery"/> <!-- random WeaponHandling -->
+
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="3.35" tags="perkArchery"/>
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3.35" tags="perkArchery"/>
+		<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".10" tags="perkArchery"/>
+		<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkArchery"/>
+		<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" tags="perkArchery"/>
+		<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.2" tags="perkArchery"/>
+
+		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2" tags="perkArchery"/>
+		<passive_effect name="WeaponHandling" operation="base_set" value=".6" tags="perkArchery"/> <!-- crosshair reset speed -->
+
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="75" tags="perkArchery"/>
+		<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkArchery"/>
+
+		<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="2" tags="perkArchery"/>
+		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="2" tags="perkArchery"/>
+		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-1" tags="perkArchery"/>
+		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="1" tags="perkArchery"/>
+
+		<passive_effect name="DegradationMax" operation="base_set" value="350,600" tier="1,6" tags="perkArchery"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkArchery"/>
+		<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+	</effect_group>
+	<effect_group name="sneak damage bonus">
+		<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+		<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+			<passive_effect name="DamageBonus" operation="base_add" value="2"/>
+			<passive_effect name="EntityDamage" operation="perc_add" value="2" tags="perkArchery"/>
+			<display_value name="dEntityDamageSneak" value="2"/>
+	</effect_group>
+
+	<stats>		
+		<stat name="EntityDamage" 			value="0,0,1,1.08,1.08"/>
+		<stat name="ProjectileVelocity" 	value="0,0,1,1,1"/>
+		<stat name="DamageFalloffRange" 	value="0,0,1,.9,.9"/>
+		<stat name="DegradationMax" 		value="0,0,0,0,0"/>
+
+		<stat name="EntityDamage" 			value="6,20,.3,.5,.7"/>
+		<stat name="MagazineSize" 			value="6,20,.3,.5,1"/>
+		<stat name="RoundsPerMinute" 		value="6,20,.3,.2,.3"/>
+		<stat name="DamageFalloffRange" 	value="6,20,.3,.5,.7"/>
+		<stat name="DegradationMax" 		value="6,20,.3,.5,.7"/>
+	</stats>
+
+</config>

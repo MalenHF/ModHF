@@ -87,7 +87,12 @@
 				<property name="Class" value="DynamicMelee"/>
 				<property name="Sphere" value=".1"/>
 				<property name="Sound_start" value="swoosh"/>
-				<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+				<property class="ToolCategory">
+					<property name="harvestingTools" value="1" param1="1"/>
+				</property>		
+				<property class="ToolCategory">
+					<property name="harvestingTools" value="1" param1="1"/>
+				</property>
 				<property name="GrazeStart" value=".12"/>
 				<property name="GrazeEnd" value=".3"/>
 				<property name="SwingDegrees" value="45"/>
@@ -180,10 +185,9 @@
 			<effect_group name="PistolasCreadas" tiered="false">
 				<passive_effect name="MaxRange" operation="base_set" value="10"/>
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="10"/>
-				<passive_effect name="RoundsPerMinute" operation="base_set" value="25"/>
-				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="25"/>				
 				<passive_effect name="RoundRayCount" operation="base_set" value="8"/>
-				<passive_effect name="BurstRoundCount" operation="base_set" value="1000"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
 				<passive_effect name="EntityDamage" operation="base_set" value="1"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
 				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="-.2"/>
@@ -256,26 +260,15 @@
 				<display_value name="POWAA" value="300"/>
 				<display_value name="VELOO" value="900"/>
 				<display_value name="DEFEE" value="1800"/>
-				<!-- <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$AguaDivinaDuration" operation="add" value="8"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$AguaDivinaDuration" operation="set" value="8">
-					<requirement name="CVarCompare" cvar="$AguaDivinaDuration" operation="GT" value="8"/>
-				</triggered_effect> -->
+				
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="AguaDivina"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$opDuration" operation="add" value="303"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$opDuration" operation="set" value="903">
-					<requirement name="CVarCompare" cvar="$opDuration" operation="GT" value="903"/>
-				</triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$opDuration" operation="add" value="303"/>				
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="OP!"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$op2Duration" operation="add" value="603"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$op2Duration" operation="set" value="1803">
-					<requirement name="CVarCompare" cvar="$op2Duration" operation="GT" value="1803"/>
-				</triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$op2Duration" operation="add" value="603"/>				
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="OP2!"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$op3Duration" operation="add" value="903"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$op3Duration" operation="set" value="2703">
-					<requirement name="CVarCompare" cvar="$op3Duration" operation="GT" value="2703"/>
-				</triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$op3Duration" operation="add" value="903"/>				
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="OP3!"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDivineCD" operation="set" value="903"/>
 			</effect_group>
 			<effect_group tiered="false">
 				<requirement name="HasBuff" buff="buffDrunkGrandpasAwesomeSauce"/>
@@ -403,8 +396,8 @@
 				<property name="CustomIcon" value="bundleSecurity"/>
 				<property name="DescriptionKey" value="CCaDesc"/>						
 				<property class="Action0">				
-					<property name="Create_item" value="medicalBandage,medicalFirstAidBandage,drugPainkillers,resourceRepairKit,drinkJarPureMineralWater,foodCanBeef,gunRifleT1HuntingRifle,ammo762mmBulletBall,gunBowT1WoodenBow,ammoArrowSteelAP,meleeWpnBladeT1HuntingKnife,modGunMeleeTheHunter,modGunScopeMedium,modGunSoundSuppressorSilencer,bookHuntingJournalWolves,bookHuntingJournalCoyotes,bookHuntingJournalDeer,bookRangersArrowRecovery,bookRangersAPAmmo,bookRangersForestGuide,resourceArrowHeadSteelAP,ammoArrowStone,tier03AthleticSK"/>
-					<property name="Create_item_count" value="10,4,5,5,5,10,6,250,6,100,6,2,1,1,1,1,1,1,1,1,200,400,1"/>
+					<property name="Create_item" value="medicalBandage,medicalFirstAidBandage,drugPainkillers,resourceRepairKit,drinkJarPureMineralWater,foodCanBeef,gunRifleT1HuntingRifle,ammo762mmBulletBall,gunBowT1WoodenBow,ammoArrowSteelAP,meleeWpnBladeT1HuntingKnife,modGunMeleeTheHunter,modGunMeleeTheHunter,modGunScopeMedium,modGunSoundSuppressorSilencer,bookHuntingJournalWolves,bookHuntingJournalCoyotes,bookHuntingJournalDeer,bookRangersArrowRecovery,bookRangersAPAmmo,bookRangersForestGuide,resourceArrowHeadSteelAP,ammoArrowStone,tier03AthleticSK"/>
+					<property name="Create_item_count" value="10,4,5,5,5,10,6,250,6,100,6,3,3,1,1,1,1,1,1,1,1,200,400,1"/>
 				</property>
 			</item>
 			<!--Shooter-->
@@ -414,7 +407,7 @@
 				<property name="DescriptionKey" value="CTDesc"/>
 				<property class="Action0">				
 					<property name="Create_item" value="medicalBandage,drugPainkillers,resourceRepairKit,drinkJarPureMineralWater,foodCanBeef,gunHandgunT1Pistol,gunHandgunT2Magnum44,ammo9mmBulletBall,ammo44MagnumBulletHP,meleeWpnBladeT3Machete,bookPistolPeteTakeAim,bookPistolPeteDamage,bookEnforcerDamage,bookEnforcerPunks,modGunMuzzleBrake,modGunReflexSight,modGunMagazineExtender,kitHandgunsSkillMagazine,tier03RangerSK"/>
-					<property name="Create_item_count" value="5,5,2,1,2,6,5,300,400,5,1,1,1,1,1,1,1,1,1"/>
+					<property name="Create_item_count" value="5,5,2,1,2,6,5,300,400,5,1,1,1,1,1,1,3,1,1"/>
 				</property>
 			</item>
 			<!--Sniper-->
@@ -424,7 +417,7 @@
 				<property name="DescriptionKey" value="CSDesc"/>			
 				<property class="Action0">				
 					<property name="Create_item" value="medicalBandage,drugPainkillers,resourceRepairKit,drinkJarPureMineralWater,foodCanBeef,gunRifleT1HuntingRifle,gunRifleT2LeverActionRifle,ammo762mmBulletBall,modGunScopeSmall,modGunScopeLarge,modGunMagazineExtender,bookSniperHeadShot,bookSniperDamage,bookSniperReload,kitRiflesSkillMagazine,tier03AssassinSK"/>
-					<property name="Create_item_count" value="5,5,1,1,2,6,5,200,1,1,1,1,1,1,1,1"/>
+					<property name="Create_item_count" value="5,5,1,1,2,6,5,200,1,1,3,1,1,1,1,1"/>
 				</property>
 			</item>
 			<!--Demolition-->
@@ -434,7 +427,7 @@
 				<property name="DescriptionKey" value="CDeDesc"/>			
 				<property class="Action0">				
 					<property name="Create_item" value="medicalBandage,drugPainkillers,resourceRepairKit,drinkJarPureMineralWater,foodCanBeef,gunShotgunT1DoubleBarrel,gunShotgunT2PumpShotgun,ammoShotgunShell,modGunCrippleEm,modGunShotgunTubeExtenderMagazine,modGunChoke,bookShotgunMessiahDamage,bookShotgunMessiahLimbShot,bookShotgunMessiahPartyStarter,kitShotgunsSkillMagazine,tier03RaiderSK"/>
-					<property name="Create_item_count" value="5,5,1,1,2,6,5,300,1,1,1,1,1,1,1,1"/>
+					<property name="Create_item_count" value="5,5,1,1,2,6,5,300,3,3,1,1,1,1,1,1"/>
 				</property>
 			</item>
 			<!--Swat-->
@@ -444,7 +437,7 @@
 				<property name="DescriptionKey" value="CSwDesc"/>			
 				<property class="Action0">				
 					<property name="Create_item" value="medicalBandage,drugPainkillers,resourceRepairKit,drinkJarPureMineralWater,foodCanBeef,gunMGT1AK47,gunMGT2TacticalAR,ammo762mmBulletBall,modGunDrumMagazineExtender,modGunForegrip,modGunLaserSight,bookAutoWeaponsDamage,bookAutoWeaponsUncontrolledBurst,bookAutoWeaponsRecoil,kitMachineGunsSkillMagazine,tier03CommandoSK"/>
-					<property name="Create_item_count" value="5,5,1,1,2,6,5,500,1,1,1,1,1,1,1,1"/>
+					<property name="Create_item_count" value="5,5,1,1,2,6,5,500,3,1,1,1,1,1,1,1"/>
 				</property>
 			</item>
 			<!--Survivor-->

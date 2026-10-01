@@ -69,7 +69,7 @@
 				<passive_effect name="HealthLoss" operation="base_set" value="0"/>
 				<passive_effect name="HealthLoss" operation="perc_set" value="0"/>
 
-				<passive_effect name="CarryCapacity" operation="base_set" value="60"/>
+				<passive_effect name="CarryCapacity" operation="base_set" value="300"/>
 				<passive_effect name="ElementalDamageResist" operation="base_add" value="2000" tags="cold,heat,electrical"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="2000"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="2000" tags="coredamageresist"/>
@@ -230,7 +230,7 @@
 				<passive_effect name="AttributeLevel" tags="attAgility" operation="base_add" value="2"/>
 				<passive_effect name="AttributeLevel" tags="attIntellect" operation="base_add" value="2"/>
 				<passive_effect name="AttributeLevel" tags="attStrength" operation="base_add" value="2"/>
-				<passive_effect name="CarryCapacity" operation="base_set" value="60"/>
+				<passive_effect name="CarryCapacity" operation="base_set" value="300"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RefreshPerks"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="RefreshPerks"/>				
 			</effect_group>
@@ -277,12 +277,12 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$op3Duration" operation="subtract" value="@$MetabolismDuration"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".op3Display" operation="set" value="@$op3Duration"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".op3Display" operation="divide" value="@$MetabolismDuration"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffDivineCD"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".op3Display,$op3Duration"/>
 			</effect_group>
 			<effect_group>
-				<requirement name="CVarCompare" cvar="$op3Duration" operation="LTE" value="0"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".op3Display" operation="set" value="0"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$op3Duration" operation="set" value="0"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="OP3!"/>
+				<requirement name="CVarCompare" cvar="$op3Duration" operation="LTE" value="0"/>				
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="OP3!"/>				
 			</effect_group>
 			<effect_group>
 				<passive_effect name="GeneralDamageResist" operation="base_add" value="0.5"/>
@@ -300,6 +300,23 @@
 				<passive_effect name="HyperthermalResist" operation="base_add" value="200"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="200"/>				
 			</effect_group>
+		</buff>
+
+		<buff name="buffDivineCD" name_key="buffDivineCDKey" description_key="buffDivineCDDesc" remove_on_death="false" icon="ui_game_symbol_clock" icon_color="0,0,124">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<display_value value=".buffDivineCDDisplay"/>
+			<display_value_format value="time"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffDivineCD" operation="subtract" value="@$MetabolismDuration"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffDivineCDDisplay" operation="set" value="@$buffDivineCD"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffDivineCDDisplay" operation="divide" value="@$MetabolismDuration"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".buffDivineCDDisplay,$buffDivineCD"/>				
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$buffDivineCD" operation="LTE" value="0"/>				
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDivineCD"/>				
+			</effect_group>			
 		</buff>
 
 		<buff name="mumySPBuff" name_key="mumySPBuffName" description_key="mumySPBuffDesc" remove_on_death="false" tooltip_key="optip" icon="ui_game_symbol_stunned" icon_color="0,255,255">
@@ -512,7 +529,7 @@
 				</passive_effect>
 				<passive_effect name="ElementalDamageResist" operation="base_add" value="1" tags="cold,heat,electrical"/>				
 							
-				<passive_effect name="CarryCapacity" operation="base_set" value="60"/>
+				<passive_effect name="CarryCapacity" operation="base_set" value="300"/>
 				<passive_effect name="ExpDeficitPerDeathPercentage" operation="base_set" value="0"/>
 				<passive_effect name="ExpDeficitMaxPercentage" operation="base_set" value="0"/>
 
@@ -566,7 +583,7 @@
 				<passive_effect name="ExpDeficitMaxPercentage" operation="base_set" value="0"/>
 				<passive_effect name="HealthMax" operation="base_set" value="150"/>
 				<passive_effect name="StaminaMax" operation="base_set" value="150"/>
-				<passive_effect name="CarryCapacity" operation="base_set" value="60"/>
+				<passive_effect name="CarryCapacity" operation="base_set" value="300"/>
 				<passive_effect name="ElementalDamageResist" operation="base_add" value="500" tags="cold,heat,electrical"/>
 				<passive_effect name="ElementalDamageResist" operation="base_add" value="500" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="25"/>
@@ -914,7 +931,7 @@
 			</effect_group>
 
 			<effect_group>
-				<passive_effect name="CarryCapacity" operation="base_set" value="60"/>
+				<passive_effect name="CarryCapacity" operation="base_set" value="300"/>
 				<passive_effect name="RunSpeed" operation="perc_add" value=".2"/>
 				<passive_effect name="WalkSpeed" operation="perc_add" value=".2"/>
 				<!-- <passive_effect name="GeneralDamageResist" operation="base_add" value="0.1"/>				 -->
@@ -1661,7 +1678,7 @@
 				<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
 				<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
 					<passive_effect name="DamageBonus" operation="base_add" value="1.2"/> <!--For UI-->
-					<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
+					<passive_effect name="EntityDamage" operation="perc_add" value="1.2"/>
 			</effect_group>
 			<effect_group name="sneak damage bonus">
 				<requirements>

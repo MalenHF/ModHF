@@ -183,6 +183,7 @@
 			<stack_type value="ignore"/>
 			<effect_group>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.5"/>
+				<passive_effect name="BagSize" operation="base_add" value="24"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffxpst"/>
 			</effect_group>
 			<effect_group>
@@ -228,6 +229,7 @@
 			<stack_type value="ignore"/>
 			<effect_group>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.75"/>
+				<passive_effect name="BagSize" operation="base_add" value="48"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffxpst"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prestigeBuff"/>
 			</effect_group>
@@ -277,6 +279,7 @@
 			<stack_type value="ignore"/>
 			<display_value value="$legend"/>
 			<effect_group>
+				
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffxpst"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prestigeBuff"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="prestigeBuff2"/>	
@@ -288,9 +291,10 @@
 			<effect_group>				
 				<requirement name="CVarCompare" cvar="$legend" operation="LT" value="1"/>				
 				<triggered_effect trigger="onSelfDied" target="self" action="AddBuff" buff="buffPrestigeReset"/>
-				<triggered_effect trigger="onSelfDied" action="ModifyCVar" cvar="$PlayerLevelBonus" operation="set" value="3"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyCVar" cvar="$legend" operation="set" value="3"/>
 			</effect_group>
 			<effect_group>
+				<passive_effect name="BagSize" operation="base_add" value="72"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.75"/>				
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.15">
 					<requirement name="HasBuff" buff="buffDrunkGrandpasLearningElixir"/>
@@ -330,7 +334,8 @@
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PlayerLevelBonus" operation="set" value="0"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$LastPlayerLevel" operation="set" value="0"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffPerkAbilityUpdate"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffDeathFoodDrinkAdjust"/>		
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffDeathFoodDrinkAdjust"/>
+					
 
 				<triggered_effect trigger="onSelfBuffRemove" action="ResetProgression" reset_skills="true" reset_levels="true" reset_books="false" reset_crafting="false"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$PlayerLevelBonus" operation="set" value="0"/>
@@ -338,7 +343,8 @@
 				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffPerkAbilityUpdate"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffDeathFoodDrinkAdjust"/>				
 				<passive_effect name="HealthMax" operation="base_set" value="100"/>
-				<passive_effect name="StaminaMax" operation="base_set" value="100"/>										
+				<passive_effect name="StaminaMax" operation="base_set" value="100"/>			
+											
 			</effect_group>			
 		</buff>
 		

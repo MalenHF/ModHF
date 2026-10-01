@@ -1,0 +1,21 @@
+<configs>	
+	<remove xpath="/templates/item_stack/rect/button"/>
+	<remove xpath="/templates/item_stack/rect/sprite[@name='iconSlotLock']"/>
+	<append xpath="/templates/item_stack/rect">		
+		<button name="rectSlotLock" depth="15" style="press, hover" width="${-2+cell_size}" height="${-2+cell_size}" visible="{# defined('userlockmode') and userlockmode}" sprite="" hoverscale="1" use_selection_box="true">
+			<sprite depth="16" name="slotLockIcon" width="22" height="22" sprite="{# !defined('userlockmode') ? '' : (userlockedslot ? 'ui_game_symbol_lock' : 'ui_game_symbol_unlock') }" pos="45, -14" style="icon32px" pivot="center" color="{# !defined('userlockmode') ? '255,255,255,1' : (userlockedslot ? '100,255,100' : '222,206,163,255') }" />
+		</button>		
+		<sprite depth="3" name="background" sprite="menu_empty3px" type="sliced" fillcenter="false" width="${-2+cell_size}" height="${-2+cell_size}" visible="{# userlockedslot and !userlockmode}" globalopacity="true" color="100,255,100"/>
+
+		
+	</append>
+
+	<append xpath="/templates">
+		<forge_material_hf>
+			<table depth="1" cols="2">
+				<label depth="2" name="material" style="workstation.reserve.name.hf"/>
+				<label depth="2" name="weight" style="workstation.reserve.weight.hf"/>
+			</table>
+		</forge_material_hf>		
+	</append>
+</configs>

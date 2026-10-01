@@ -56,7 +56,7 @@
 			<property name="ModelType" value="Standard"/>
 			<property name="SurfaceCategory" value="metal"/>
 			<property name="IgnoreTrigger" value="true"/>
-			<property name="LootListAlive" value="0"/>
+			<property name="LootList" value="0"/>
 			<property name="IsEnemyEntity" value="false"/>
 			<property name="WakeUpTime" value="0.5"/>
 			<property name="FallAsleepTime" value="10"/>
@@ -77,10 +77,13 @@
 			<property name="FireSound" value="junkturret_fire"/>
 			<property name="ParticlesMuzzleFire" value="gunfire_junkturret"/>
 			<!--  <property name="ParticlesMuzzleSmoke" value="nozzlesmokeuzi"/>  -->
-			<property name="TimeStayAfterDeath" value="0"/>
-			<property name="Explosion.ParticleIndex" value="6"/>
-			<property name="Explosion.RadiusBlocks" value="1"/>
-			<property name="Explosion.RadiusEntities" value="1"/>
+			<property name="TimeStayAfterDeath" value="0"/>			
+			
+			<property class="Explosion">
+				<property name="ParticleIndex" value="6" />
+				<property name="RadiusBlocks" value="1"/>
+				<property name="RadiusEntities" value="1"/>
+			</property>
 			<property name="RotateToGround" value="true"/>
 			<property name="Faction" value="none"/>
 			<!-- <property name="MapIcon" value="ui_game_symbol_electric_turret"/> -->
@@ -109,13 +112,14 @@
 			<property name="ModelType" value="Standard"/>
 			<property name="SurfaceCategory" value="metal"/>
 			<property name="IgnoreTrigger" value="true"/>
-			<property name="LootListAlive" value="vehicle4x4Truck"/>
+			<property name="LootList" value="vehicle4x4Truck"/>
 			<property name="IsEnemyEntity" value="false"/>
 			<property name="Explosion.ParticleIndex" value="6"/>
 			<property name="Explosion.RadiusBlocks" value="5"/>
 			<property name="Explosion.RadiusEntities" value="5"/>
 			<property name="Explosion.BlockDamage" value="100"/>
 			<property name="Explosion.EntityDamage" value="100"/>
+
 			<property name="RotateToGround" value="true"/>
 			<property name="Faction" value="none"/>
 			<property name="MapIcon" value="ui_game_symbol_4x4"/>
@@ -125,39 +129,43 @@
 
 		<entity_class name="Betsy">
 			<property name="Tags" value="vehicle,usesGas,bikerSetBonus,bts"/>
-			<property name="Class" value="EntityMotorcycle"/>
-			<property name="Parent" value="Cars"/>
+			<property name="Class" value="EntityMotorcycle"/>			
 			<property name="Prefab" value="@:Entities/Vehicles/VMotorcycle/VMotorcycleP.prefab"/>
 			<property name="ModelType" value="Standard"/>
 			<property name="SurfaceCategory" value="metal"/>
 			<property name="IgnoreTrigger" value="true"/>
-			<property name="LootListAlive" value="betsyStorage"/>
-			<property name="IsEnemyEntity" value="false"/>
-			<property name="Explosion.ParticleIndex" value="27"/>
-			<property name="Explosion.RadiusBlocks" value="4"/>
-			<property name="Explosion.RadiusEntities" value="4"/>
-			<property name="Explosion.BlockDamage" value="50"/>
-			<property name="Explosion.EntityDamage" value="50"/>
+			<property name="LootList" value="betsyStorage"/>
+			<property name="IsEnemyEntity" value="false"/>		
+
+			<property class="Explosion">
+				<property name="ParticleIndex" value="27" />
+				<property name="RadiusBlocks" value="4"/>
+				<property name="RadiusEntities" value="4"/>
+				<property name="BlockDamage" value="50"/>
+				<property name="EntityDamage" value="50"/>
+			</property>
+
 			<property name="RotateToGround" value="true"/>
 			<property name="Faction" value="none"/>
 			<property name="MapIcon" value="ui_game_symbol_motorcycle"/>
 			<property name="NavObject" value="motorcycle"/>
-		</entity_class>
+		</entity_class>		
 		<entity_class name="Betsy2">			
 			<property name="Class" value="EntityVBlimp"/>
-			<property name="Tags" value="vehicle,usesGas,bikerSetBonus,bts"/>
-			<property name="Parent" value="Cars"/>
+			<property name="Tags" value="vehicle,usesGas,bikerSetBonus,bts"/>			
 			<property name="Prefab" value="@:Entities/Vehicles/VMotorcycle/VMotorcycleP.prefab"/>
 			<property name="ModelType" value="Standard"/>
 			<property name="SurfaceCategory" value="metal"/>
 			<property name="IgnoreTrigger" value="true"/>
-			<property name="LootListAlive" value="betsyStorage"/>
+			<property name="LootList" value="betsyStorage"/>
 			<property name="IsEnemyEntity" value="false"/>
-			<property name="Explosion.ParticleIndex" value="27"/>
-			<property name="Explosion.RadiusBlocks" value="4"/>
-			<property name="Explosion.RadiusEntities" value="4"/>
-			<property name="Explosion.BlockDamage" value="50"/>
-			<property name="Explosion.EntityDamage" value="50"/>
+			<property class="Explosion">
+				<property name="ParticleIndex" value="27" />
+				<property name="RadiusBlocks" value="4"/>
+				<property name="RadiusEntities" value="4"/>
+				<property name="BlockDamage" value="50"/>
+				<property name="EntityDamage" value="50"/>
+			</property>
 			<property name="RotateToGround" value="true"/>
 			<property name="Faction" value="none"/>
 			<property name="MapIcon" value="ui_game_symbol_motorcycle"/>
@@ -172,13 +180,16 @@
 			<property name="ModelType" value="Standard"/>
 			<property name="SurfaceCategory" value="metal"/>
 			<property name="IgnoreTrigger" value="true"/>
-			<property name="LootListAlive" value="betsyStorage"/>
+			<property name="LootList" value="betsyStorage"/>
 			<property name="IsEnemyEntity" value="false"/>
-			<property name="Explosion.ParticleIndex" value="29"/>
-			<property name="Explosion.RadiusBlocks" value="5"/>
-			<property name="Explosion.RadiusEntities" value="5"/>
-			<property name="Explosion.BlockDamage" value="100"/>
-			<property name="Explosion.EntityDamage" value="100"/>
+			
+			<property class="Explosion">
+				<property name="ParticleIndex" value="29" />
+				<property name="RadiusBlocks" value="4"/>
+				<property name="RadiusEntities" value="5"/>
+				<property name="BlockDamage" value="100"/>
+				<property name="EntityDamage" value="100"/>
+			</property>
 			<property name="RotateToGround" value="true"/>
 			<property name="Faction" value="none"/>
 			<property name="MapIcon" value="ui_game_symbol_motorcycle"/>
@@ -192,13 +203,16 @@
 			<property name="ModelType" value="Standard"/>
 			<property name="SurfaceCategory" value="metal"/>
 			<property name="IgnoreTrigger" value="true"/>
-			<property name="LootListAlive" value="betsyStorage"/>
+			<property name="LootList" value="betsyStorage"/>
 			<property name="IsEnemyEntity" value="false"/>
-			<property name="Explosion.ParticleIndex" value="29"/>
-			<property name="Explosion.RadiusBlocks" value="5"/>
-			<property name="Explosion.RadiusEntities" value="5"/>
-			<property name="Explosion.BlockDamage" value="100"/>
-			<property name="Explosion.EntityDamage" value="100"/>
+			
+			<property class="Explosion">
+				<property name="ParticleIndex" value="29" />
+				<property name="RadiusBlocks" value="5"/>
+				<property name="RadiusEntities" value="5"/>
+				<property name="BlockDamage" value="100"/>
+				<property name="EntityDamage" value="100"/>
+			</property>
 			<property name="RotateToGround" value="true"/>
 			<property name="Faction" value="none"/>
 			<property name="MapIcon" value="ui_game_symbol_motorcycle"/>
@@ -213,13 +227,16 @@
 			<property name="ModelType" value="Standard"/>
 			<property name="SurfaceCategory" value="metal"/>
 			<property name="IgnoreTrigger" value="true"/>
-			<property name="LootListAlive" value="betsyStorage"/>
+			<property name="LootList" value="betsyStorage"/>
 			<property name="IsEnemyEntity" value="false"/>
-			<property name="Explosion.ParticleIndex" value="29"/>
-			<property name="Explosion.RadiusBlocks" value="5"/>
-			<property name="Explosion.RadiusEntities" value="5"/>
-			<property name="Explosion.BlockDamage" value="100"/>
-			<property name="Explosion.EntityDamage" value="100"/>
+			
+			<property class="Explosion">
+				<property name="ParticleIndex" value="29" />
+				<property name="RadiusBlocks" value="5"/>
+				<property name="RadiusEntities" value="5"/>
+				<property name="BlockDamage" value="100"/>
+				<property name="EntityDamage" value="100"/>
+			</property>
 			<property name="RotateToGround" value="true"/>
 			<property name="Faction" value="none"/>
 			<property name="MapIcon" value="ui_game_symbol_4x4"/>
@@ -233,20 +250,21 @@
 			<property name="ModelType" value="Standard"/>
 			<property name="SurfaceCategory" value="metal"/>
 			<property name="IgnoreTrigger" value="true"/>
-			<property name="LootListAlive" value="sPOStorage"/>
+			<property name="LootList" value="sPOStorage"/>
 			<property name="IsEnemyEntity" value="false"/>
-			<property name="Explosion.ParticleIndex" value="28"/>
-			<property name="Explosion.RadiusBlocks" value="3"/>
-			<property name="Explosion.RadiusEntities" value="3"/>
-			<property name="Explosion.BlockDamage" value="30"/>
-			<property name="Explosion.EntityDamage" value="30"/>
+			
+			<property class="Explosion">
+				<property name="ParticleIndex" value="28" />
+				<property name="RadiusBlocks" value="3"/>
+				<property name="RadiusEntities" value="3"/>
+				<property name="BlockDamage" value="30"/>
+				<property name="EntityDamage" value="30"/>
+			</property>
 			<property name="RotateToGround" value="true"/>
 			<property name="Faction" value="none"/>
 			<property name="MapIcon" value="ui_game_symbol_gyrocopter"/>
 			<property name="NavObject" value="gyrocopter"/>
 		</entity_class>
-		
-
 		<!--
 			<entity_class name="betsy4">
 				<property name="Tags" value="vehicle,bts"/>
@@ -256,7 +274,7 @@
 				<property name="ModelType" value="Standard"/>
 				<property name="SurfaceCategory" value="metal"/>
 				<property name="IgnoreTrigger" value="true"/>
-				<property name="LootListAlive" value="200"/>
+				<property name="LootList" value="200"/>
 				<property name="IsEnemyEntity" value="false"/>
 				<property name="Explosion.ParticleIndex" value="6"/>
 				<property name="Explosion.RadiusBlocks" value="4"/>

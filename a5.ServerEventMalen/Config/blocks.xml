@@ -48,6 +48,49 @@
 			<property name="WorkstationWindow" value="workstation_workbench" />
 		</block>
 
+		<block name="hcMachine">
+			<property name="ItemTypeIcon" value="star"/>
+			<property name="Tags" value="noblocks"/>
+			
+			<property name="CustomIcon" value="cntATMSecure"/>
+
+			<property name="CustomIconTint" value="cc8899"/>
+			<property name="MultiBlockDim" value="1,2,1"/>
+			<property name="MaxDamage" value="100"/>
+			<property name="Model" value="@:Entities/Commercial/ATMPrefab.prefab" />									
+			<property name="Class" value="Workstation"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="DisplayType" value="blockMulti"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="Stacknumber" value="1"/>
+			<property class="Workstation">
+				<property name="Modules" value="output"/>
+				<property name="CraftingAreaRecipes" value="hcmachine"/>
+			</property>
+			<property name="WorkstationIcon" value="ui_game_symbol_workbench"/>
+			<property name="OpenSound" value="open_apache_artifact_chest"/>
+			<property name="CloseSound" value="close_workbench"/>
+			<property name="WorkstationJournalTip" value="workbenchTip"/>
+			<property class="RepairItems">
+				<property name="hooliganCoin" value="1"/>				
+			</property>
+			<drop event="Harvest" name="resourceScrapIron" count="200" tag="allHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
+			<property name="TakeDelay" value="5"/>
+			<property name="DescriptionKey" value="hcMachineDesc"/>
+			<property name="EconomicValue" value="2000"/>
+			<property name="Group" value="Building,advBuilding"/>
+			<property name="FilterTags" value="fdecor,fother,ffurniture"/>
+			<property name="SortOrder1" value="70i0"/>
+			<property name="WorkstationWindow" value="workstation_workbench" />
+		</block>		
+
 		<block name="xmasTree">			
 			<property name="Class" value="GameEvent"/>
 			<property name="ActivateEvent" value="test_POIReset"/>

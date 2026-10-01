@@ -441,7 +441,15 @@
             <property name="Material" value="MbedrockHF"/>      
 
             <!-- Class -->
-            <property name="Class" value="DoorSecure"/>
+            <property name="Class" value="CompositeTileEntity" />
+            <property class="CompositeFeatures">
+                <property class="TEFeatureDoor" />
+                <property class="TEFeatureDoor">
+                    <property name="OpenSound" value="open_door_vault" />
+                    <property name="CloseSound" value="close_door_vault" />
+                </property>
+                <property class="TEFeatureLockable" />
+            </property>
             <property name="OpenSound" value="open_door_vault"/>
             <property name="CloseSound" value="close_door_vault"/>
             <property name="IndexName" value="TraderOnOff"/>

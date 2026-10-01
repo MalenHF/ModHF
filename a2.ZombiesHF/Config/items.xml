@@ -327,9 +327,7 @@
 					</effect_group>
 				</item>
 
-
 			<!--Specials-->
-				
 				<item name="q_EnemigosHF">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -442,14 +440,14 @@
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
 					<property name="ItemTypeIcon" value="near_death_trauma"/>
-					<property name="CustomIconTint" value="0B0139"/>
-					<property name="TintColor" value="4,9,171"/>
+					<property name="CustomIconTint" value="5F4633"/>
+					<property name="TintColor" value="95, 70, 51"/>
 					<property class="Action0">	
 						<!-- <requirement name="HasBuff" buff="buffQuest"/>	-->
 						<requirement name="!IsBloodMoon" operation="Equals" value="1"/>
 						<requirement name="!HasBuff" buff="buffQuestCD"/>											
 						<property name="PromptTitle" value="q_Gaia" />
-						<property name="PromptDescription" value="q_Gaia_Prompt" />
+						<property name="PromptDescription" value="q_GaiaPrompt" />
 					</property>
 					<effect_group tiered="false">						
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNoteGaia"/>
@@ -457,8 +455,7 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
-				</item>	
-
+				</item>
 				<item name="q_Honor">
 					<property name="Extends" value="q_Ticket"/>
 					<property name="CreativeMode" value="Player"/>
@@ -778,6 +775,49 @@
 						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="questNoteTooltip"/>
 					</effect_group>
 				</item>
+
+				<item name="q_Ventus">
+					<property name="name" value="The Ventus Quest" />
+					<property name="Group" value="Science"/>
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="ItemTypeIcon" value="twitch_special"/>
+					<property name="CustomIconTint" value="7922AB"/>
+					<property name="TintColor" value="121,34,171"/>
+					<property name="Stacknumber" value="5"/>
+					<property name="DescriptionKey" value="VentusQuest"/>
+					<property class="Action0">						
+						<property name="Class" value="Quest"/>
+						<property name="QuestGiven" value="q_KillVentus"/>
+						<property name="Delay" value="0.5"/>
+						<property name="UseAnimation" value="false"/>
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item>
+				<item name="q_VentusS">
+					<property name="name" value="The Ventus Quest" />
+					<property name="Group" value="Science"/>
+					<property name="Extends" value="challengeQuestMaster"/>
+					<property name="ItemTypeIcon" value="twitch_special"/>
+					<property name="CustomIconTint" value="F29A30"/>
+					<property name="TintColor" value="242,154,48"/>
+					<property name="Stacknumber" value="5"/>
+					<property name="DescriptionKey" value="VentusQuestS"/>
+					<property class="Action0">						
+						<property name="Class" value="Quest"/>
+						<property name="QuestGiven" value="q_KillVentusSpecial"/>
+						<property name="Delay" value="0.5"/>
+						<property name="UseAnimation" value="false"/>
+					</property>
+					<effect_group tiered="false">
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$varQuestCD" operation="set" value="60"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffQuestCD" target="selfOtherPlayers" target_tags="ally,party"/>
+					</effect_group>
+				</item>
 				
 			<!--Randoms-->
 				<item name="q_Lucky">
@@ -877,7 +917,7 @@
 				<property name="ItemTypeIcon" value="tree"/>				
 				<property name="CustomIconTint" value="E2F70F"/>
 				<property name="TintColor" value="115,220,18"/>
-				<property name="Group" value="Resources,sEvent"/>
+				<property name="Group" value="extrasHCStore,sEvent"/>
 			</item>
 			<item name="bossTokenMineral">
 				<property name="Extends" value="bossTokenNatu"/>				
@@ -970,6 +1010,9 @@
 				<property name="ItemTypeIcon" value="add"/>
 				<property name="CustomIconTint" value="100,0,0"/>
 				<property name="TintColor" value="100,0,0"/>
+				<property name="Material" value="MresourceAncientNugget"/>	
+				<property name="Weight" value="20"/>
+				<property name="MeltTimePerUnit" value="1.5"/>					
 			</item>						
 			<item name="questFrag">
 				<property name="Extends" value="bossTokenNatu"/>
@@ -979,6 +1022,168 @@
 				<property name="TintColor" value="100,0,0"/>				
 				<property name="DescriptionKey" value="questfargDesc"/>
 			</item>
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ Boss Bundles ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
+			<item name="eventBossBundlePiezas">
+				<property name="Extends" value="questRewardBundleMaster"/>
+				<property name="CreativeMode" value="Player"/>
+				<property name="CustomIcon" value="cntShippingCrateShotgunMessiah"/>
+				<property name="CustomIconTint" value="B3B3B3"/>
+				<property name="ItemTypeIcon" value="bundle"/>
+				<property name="DescriptionKey" value="questRewardMeleeModsBundleDesc"/>
+				<property class="Action0">
+					<property name="Create_item" value="resourcePractonium"/>
+					<property name="Create_item_count" value="0"/>
+					<property name="Random_item" value="gunRifleT1HuntingRifleParts,gunShotgunT1DoubleBarrelParts,gunMGT1AK47Parts,gunHandgunT1PistolParts,gunBowT1WoodenBowParts,gunExplosivesT3RocketLauncherParts,gunBotRoboticsParts"/>
+					<property name="Random_item_count" value="2,2,2,2,2,2,2"/>
+					<property name="Random_count" value="1"/>
+					<property name="Unique_random_only" value="true"/>
+				</property>
+			</item>
+			<item name="eventBossBundlePiezasMelee">
+				<property name="Extends" value="questRewardBundleMaster"/>
+				<property name="CreativeMode" value="Player"/>
+				<property name="CustomIcon" value="cntShippingCrateShotgunMessiah"/>
+				<property name="CustomIconTint" value="B3B3B3"/>
+				<property name="ItemTypeIcon" value="bundle"/>
+				<property name="DescriptionKey" value="questRewardMeleeModsBundleDesc"/>
+				<property class="Action0">
+					<property name="Create_item" value="resourcePractonium"/>
+					<property name="Create_item_count" value="0"/>
+					<property name="Random_item" value="meleeWpnBatonT2StunBatonParts,meleeWpnKnucklesT3SteelKnucklesParts,meleeWpnBladeT3MacheteParts,meleeWpnSpearT3SteelSpearParts,meleeWpnClubT3SteelClubParts,meleeWpnSledgeT3SteelSledgehammerParts,meleeToolAllSteelParts,meleeToolAxeT3ChainsawParts"/>
+					<property name="Random_item_count" value="2,2,2,2,2,2,2"/>
+					<property name="Random_count" value="1"/>
+					<property name="Unique_random_only" value="true"/>
+				</property>
+			</item>
+			<item name="eventBossBundleCompress">
+				<property name="Extends" value="questRewardBundleMaster"/>
+				<property name="CreativeMode" value="Player"/>
+				<property name="CustomIcon" value="cntShippingCrateWorkingStiffs"/>
+				<property name="CustomIconTint" value="B3B3B3"/>
+				<property name="ItemTypeIcon" value="bundle"/>
+				<property name="DescriptionKey" value="questRewardMeleeModsBundleDesc"/>
+				<property class="Action0">
+					<property name="Create_item" value="resourcePractonium"/>
+					<property name="Create_item_count" value="0"/>
+					<property name="Random_item" value="resourceScrapBrassCompres,resourceLeadCompres,resourceScrapIronCompres,resourceRockSmallCompres,resourceCrushedSandCompres,resourceClayLumpCompres"/>
+					<property name="Random_item_count" value="1,1,1,1,1,1"/>
+					<property name="Random_count" value="1"/>
+					<property name="Unique_random_only" value="true"/>
+				</property>
+			</item>
+			<item name="eventBossBundleTokens">
+				<property name="Extends" value="questRewardBundleMaster"/>
+				<property name="CreativeMode" value="Player"/>
+				<property name="CustomIcon" value="cntWoodenChestClosed"/>
+				<property name="CustomIconTint" value="B3B3B3"/>
+				<property name="ItemTypeIcon" value="bundle"/>
+				<property name="DescriptionKey" value="questRewardMeleeModsBundleDesc"/>
+				<property class="Action0">
+					<property name="Create_item" value="resourcePractonium"/>
+					<property name="Create_item_count" value="0"/>
+					<property name="Random_item" value="bossTokenJugger,bossTokenSoldier,bossTokenMummy,bossTokenGadiador,bossTokenCirujano,bossTokenMortevoda,bossTokenInfernal,bossTokenHoarfrost,bossTokenShocker,bossTokenToxic"/>
+					<property name="Random_item_count" value="1,1,1,1,1,1,1,1,1,1"/>
+					<property name="Random_count" value="1"/>
+					<property name="Unique_random_only" value="true"/>
+				</property>
+			</item>
+			<item name="eventBossSpecialBundleTokens">
+				<property name="Extends" value="questRewardBundleMaster"/>
+				<property name="CreativeMode" value="Player"/>
+				<property name="CustomIcon" value="cntWoodenChestClosed"/>
+				<property name="CustomIconTint" value="B3B3B3"/>
+				<property name="ItemTypeIcon" value="bundle"/>
+				<property name="DescriptionKey" value="questRewardMeleeModsBundleDesc"/>
+				<property class="Action0">
+					<property name="Create_item" value="resourcePractonium"/>
+					<property name="Create_item_count" value="0"/>
+					<property name="Random_item" value="resourceBrokenGlass,bossTokenNatu,bossTokenTerra,bossTokenNight"/>
+					<property name="Random_item_count" value="1,1,1,1"/>
+					<property name="Random_count" value="1"/>
+					<property name="Unique_random_only" value="true"/>
+				</property>
+			</item>
+			
+			<item name="eventBossBundle">
+				<property name="Extends" value="questRewardBundleMaster"/>
+				<property name="CreativeMode" value="Player"/>
+				<property name="CustomIcon" value="cntLootChestHeroInsecureT1"/>
+				<property name="CustomIconTint" value="B3B3B3"/>
+				<property name="ItemTypeIcon" value="bundle"/>
+				<property name="DescriptionKey" value="questRewardMeleeModsBundleDesc"/>
+				<property class="Action0">
+					<property name="Create_item" value="resourceRawDiamond,resourceGoldNugget,resourceSilverNugget,resourceSteelPolishR,oldCash,eventBossBundlePiezas,eventBossBundleCompress"/>
+					<property name="Create_item_count" value="3,6,9,30,10,1,1"/>
+					<property name="Random_item" value="resourcePractonium,eventBossBundleTokens,resourceBrokenGlass"/>
+					<property name="Random_item_count" value="1,1,1"/>
+					<property name="Random_count" value="1"/>
+					<property name="Unique_random_only" value="true"/>
+				</property>
+			</item>	
+			<item name="eventBossSpecialBundle">
+				<property name="Extends" value="questRewardBundleMaster"/>
+				<property name="CreativeMode" value="Player"/>
+				<property name="CustomIcon" value="cntLootChestHeroInsecureT2"/>
+				<property name="CustomIconTint" value="B3B3B3"/>
+				<property name="ItemTypeIcon" value="bundle"/>
+				<property name="DescriptionKey" value="questRewardMeleeModsBundleDesc"/>
+				<property class="Action0">
+					<property name="Create_item" value="resourceSteelPolishR,oldCash,eventBossBundlePiezas,eventBossBundleCompress"/>
+					<property name="Create_item_count" value="50,10,1,1"/>
+					<property name="Random_item" value="resourcePractonium,eventBossSpecialBundleTokens,resourceBrokenGlass"/>
+					<property name="Random_item_count" value="1,1,1"/>
+					<property name="Random_count" value="1"/>
+					<property name="Unique_random_only" value="true"/>
+				</property>
+			</item>	
+			<item name="eventBossMineralBundle">
+				<property name="Extends" value="questRewardBundleMaster"/>
+				<property name="CreativeMode" value="Player"/>
+				<property name="CustomIcon" value="cntWallSafe"/>
+				<property name="CustomIconTint" value="B3B3B3"/>
+				<property name="ItemTypeIcon" value="bundle"/>
+				<property name="DescriptionKey" value="questRewardMeleeModsBundleDesc"/>
+				<property class="Action0">
+					<property name="Create_item" value="resourceRawDiamond,resourceGoldNugget,resourceSilverNugget,resourceSteelPolishR,oldCash,eventBossBundlePiezas,eventBossBundleCompress"/>
+					<property name="Create_item_count" value="10,15,20,50,50,1,1"/>
+					<property name="Random_item" value="resourcePractonium,bossTokenMineral,resourceBrokenGlass"/>
+					<property name="Random_item_count" value="1,1,1"/>
+					<property name="Random_count" value="1"/>
+					<property name="Unique_random_only" value="true"/>
+				</property>
+			</item>	
+			<item name="eventBossEspartanBundle">
+				<property name="Extends" value="questRewardBundleMaster"/>
+				<property name="CreativeMode" value="Player"/>
+				<property name="CustomIcon" value="cntLootChestHeroInsecureT1"/>
+				<property name="CustomIconTint" value="B3B3B3"/>
+				<property name="ItemTypeIcon" value="bundle"/>
+				<property name="DescriptionKey" value="questRewardMeleeModsBundleDesc"/>
+				<property class="Action0">
+					<property name="Create_item" value="resourceRawDiamond,resourceGoldNugget,resourceSilverNugget,resourceSteelPolishR,oldCash,eventBossBundlePiezasMelee,eventBossBundleCompress"/>
+					<property name="Create_item_count" value="3,6,9,30,10,1,1"/>
+					<property name="Random_item" value="resourcePractonium,bossTokenSpartan,resourceBrokenGlass"/>
+					<property name="Random_item_count" value="1,1,1"/>
+					<property name="Random_count" value="1"/>
+					<property name="Unique_random_only" value="true"/>
+				</property>
+			</item>	
+			<item name="eventBossAdminBundle">
+				<property name="Extends" value="questRewardBundleMaster"/>
+				<property name="CreativeMode" value="Player"/>
+				<property name="CustomIcon" value="cntHardenedChestSecure"/>
+				<property name="CustomIconTint" value="B3B3B3"/>
+				<property name="ItemTypeIcon" value="bundle"/>
+				<property name="DescriptionKey" value="questRewardMeleeModsBundleDesc"/>
+				<property class="Action0">
+					<property name="Create_item" value="resourcePractonium,resourceRawDiamond,resourceGoldNugget,resourceSilverNugget,resourceSteelPolishR,oldCash,eventBossBundlePiezas,eventBossBundleCompress"/>
+					<property name="Create_item_count" value="3,20,30,40,100,500,3,2"/>					
+				</property>
+			</item>	
+
+		
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
@@ -1104,23 +1309,25 @@
 				<property class="Action1">
 					<property name="Class" value="Projectile"/>
 					<property name="DamageEntity" value="20"/>
-					<property name="DamageBlock" value="10"/>
-					<property name="Explosion.ParticleIndex" value="12"/>
-					<!-- which Prefab/particle is used -->
-					<property name="Explosion.RadiusBlocks" value="3"/>
-					<!-- damage radius for blocks -->
-					<property name="Explosion.BlockDamage" value="20"/>
-					<!-- damage for blocks in the center of the explosion -->
-					<property name="Explosion.RadiusEntities" value="3"/>
-					<!-- damage radius for entities -->
-					<property name="Explosion.EntityDamage" value="20"/>
+					<property name="DamageBlock" value="10"/>					
+					<property class="Explosion">
+						<property name="ParticleIndex" value="12" />
+						<property name="RadiusBlocks" value="3"/>
+						<property name="RadiusEntities" value="3"/>
+						<property name="BlockDamage" value="20"/>
+						<property name="EntityDamage" value="30"/>						
+					</property>
+
 					<!-- damage for entities in the center of the explosion. Zombies take 2x this damage. -->
 					<property name="Velocity" value="15"/>
 					<property name="FlyTime" value="2"/>
-					<property name="LifeTime" value="4"/>
-					<property name="DamageBonus.earth" value="20"/>
-					<property name="DamageBonus.stone" value="25"/>
-					<property name="DamageBonus.metal" value="25"/>
+					<property name="LifeTime" value="4"/>					
+					<property name="DamageBonus">
+						<property name="earth" value="20"/>
+						<property name="stone" value="25"/>
+						<property name="metal" value="25"/>
+					</property>
+					
 					<property name="CollisionRadius" value="0.5"/>
 					<property name="Buff" value="buffShocked"/>
 				</property>
@@ -1238,7 +1445,7 @@
 				</effect_group>
 			</item>
 			<item name="GunVomitProjectile">
-				<property name="Meshfile" value="Entities/Electrical/steel_dartPrefab"/>
+				<property name="Meshfile" value="@:Entities/Electrical/steel_dartPrefab.prefab"/>
 				<property name="Material" value="Morganic" />
 				<property name="CreativeMode" value="None"/>
 				<property class="Action1">
@@ -1248,11 +1455,13 @@
 					<property name="DamageBlock" value="2"/>
 					<property name="Velocity" value="15"/>
 					<property name="FlyTime" value="3"/>
-					<property name="LifeTime" value="5"/>
-					<property name="DamageBonus.earth" value="0"/>
-					<property name="DamageBonus.wood" value="2"/>
-					<property name="DamageBonus.stone" value="1"/>
-					<property name="DamageBonus.metal" value="1"/>
+					<property name="LifeTime" value="5"/>					
+					<property name="DamageBonus">
+						<property name="earth" value="0"/>
+						<property name="wood" value="2"/>
+						<property name="stone" value="1"/>
+						<property name="metal" value="1"/>
+					</property>
 					<property name="CollisionRadius" value="0.5"/>
 					<!--<property name="Buff" value="buffInjuryBleedingZombie,buffInjuryStunnedX"/>-->
 				</property>
@@ -1301,8 +1510,10 @@
 				<property name="CreativeMode" value="None"/>
 				<property class="Action0">
 					<property name="DamageEntity" value="40"/>
-					<property name="DamageBlock" value="50"/>
-					<property name="DamageBonus.wood" value="2"/>
+					<property name="DamageBlock" value="50"/>					
+					<property name="DamageBonus">						
+						<property name="wood" value="2"/>						
+					</property>
 					<property name="Particles_muzzle_smoke" value="nozzlesmoke_chainsaw"/>
 					<property name="Sound_start" value="chainsaw_fire_start"/>
 					<property name="Buff" value="buffInjuryBleedingCowHead,buffInfectionCatch"/>
@@ -1349,19 +1560,21 @@
 				<property name="Material" value="Mmetal"/>
 				<property name="CreativeMode" value="None"/>
 				<property class="Action1">
-					<property name="Class" value="Projectile"/>
-					<!--property name="Explosion.ParticleIndex" value="4"/-->
-					<property name="Explosion.ParticleIndex" value="6"/>
-					<!-- which Prefab/particle is used -->
-					<property name="Explosion.RadiusBlocks" value="6"/>
-					<!-- damage radius for blocks -->
-					<property name="Explosion.RadiusEntities" value="6"/>
-					<!-- damage radius for entities -->
-					<property name="Explosion.DamageBonus.stone" value=".1"/>
-					<property name="Explosion.DamageBonus.metal" value=".05"/>
-					<property name="Explosion.DamageBonus.earth" value="0"/>
-					<property name="Explosion.DamageBonus.wood" value=".5"/>
-					<property name="Explosion.DamageBonus.water" value="0"/>
+					<property name="Class" value="Projectile"/>	
+
+					<property class="Explosion">
+						<property name="ParticleIndex" value="6" />
+						<property name="RadiusBlocks" value="6"/>
+						<property name="RadiusEntities" value="6"/>									
+						<property class="DamageBonus">
+							<property name="stone" value=".1"/>
+							<property name="metal" value=".05"/>
+							<property name="earth" value="0"/>
+							<property name="wood" value=".5"/>
+							<property name="water" value="0"/>
+						</property>
+					</property>
+
 					<property name="Velocity" value="0"/>
 					<property name="Gravity" value="-200"/>
 					<property name="FlyTime" value=".01"/>
@@ -1424,8 +1637,10 @@
 				<property class="Action1">
 					<property name="Class" value="Projectile"/>
 					<property name="DamageEntity" value="5"/>
-					<property name="DamageBlock" value="40"/>
-					<property name="Explosion.ParticleIndex" value="7"/>
+					<property name="DamageBlock" value="40"/>					
+					<property class="Explosion">
+						<property name="ParticleIndex" value="7" />						
+					</property>
 					<property name="Velocity" value="15"/>
 					<property name="FlyTime" value="1"/>
 					<property name="LifeTime" value="4"/>
@@ -1493,13 +1708,17 @@
 				<property class="Action1">
 					<property name="Class" value="Projectile"/>
 					<property name="DamageEntity" value="12"/>
-					<property name="DamageBlock" value="25"/>
-					<property name="Explosion.ParticleIndex" value="0"/>
+					<property name="DamageBlock" value="25"/>					
+					<property class="Explosion">
+						<property name="ParticleIndex" value="0" />						
+					</property>
 					<property name="Velocity" value="18"/>
 					<property name="FlyTime" value=".2"/>
 					<property name="LifeTime" value="2"/>
 					<property name="CollisionRadius" value=".5"/>
-					<property name="DamageBonus.earth" value="0"/>
+					<property name="DamageBonus">
+						<property name="earth" value="0"/>						
+					</property>
 					<property name="Buff" value="buffBurningZombie,scorcherExplo"/>
 				</property>
 				<effect_group name="ammoProjectileZombieVomit" tiered="false">
@@ -1630,7 +1849,9 @@
 					<property name="Class" value="Projectile"/>
 					<property name="DamageEntity" value="65"/>
 					<property name="DamageBlock" value="200"/>
-					<property name="Explosion.ParticleIndex" value="7"/>
+					<property class="Explosion">
+						<property name="ParticleIndex" value="7" />						
+					</property>
 					<property name="Velocity" value="15"/>
 					<property name="FlyTime" value="1"/>
 					<property name="LifeTime" value="3"/>
@@ -1767,7 +1988,9 @@
 					<property name="Class" value="Projectile"/>
 					<property name="DamageEntity" value="65"/>
 					<property name="DamageBlock" value="400"/>
-					<property name="Explosion.ParticleIndex" value="7"/>
+					<property class="Explosion">
+						<property name="ParticleIndex" value="7" />						
+					</property>
 					<property name="Velocity" value="15"/>
 					<property name="FlyTime" value="1"/>
 					<property name="LifeTime" value="3"/>
@@ -1789,7 +2012,7 @@
 				<property name="CreativeMode" value="None"/>
 				<property class="Action0">
 					<property name="DamageEntity" value="80"/>
-					<property name="Buff" value="Nigthit,buffDark2"/>
+					<property name="Buff" value="Nigthit,buffBoss_Siren"/>
 					<property name="DamageBlock" value="400"/>
 				</property>
 				<effect_group name="meleeHandZombieStrongFeral" tiered="false">
@@ -1814,7 +2037,7 @@
 					<property name="Class" value="Melee"/>
 					<property name="Delay" value="0.5"/>
 					<property name="Range" value="2.4"/>
-					<property name="Buff" value="buffmummy2"/>
+					<property name="Buff" value="buffBoss_Mummy"/>
 					<property name="Sound_start" value="chainsaw_fire_start"/>
 					<property name="Sphere" value=".1"/>
 					<property name="Block_range" value="2.5"/>
@@ -1876,7 +2099,9 @@
 					<property name="Class" value="Projectile"/>
 					<property name="DamageEntity" value="10"/>
 					<property name="DamageBlock" value="10"/>
-					<property name="Explosion.ParticleIndex" value="7"/>
+					<property class="Explosion">
+						<property name="ParticleIndex" value="7" />						
+					</property>
 					<property name="Velocity" value="15"/>
 					<property name="FlyTime" value="1"/>
 					<property name="LifeTime" value="3"/>
@@ -1940,8 +2165,10 @@
 				<property class="Action1">
 					<property name="Class" value="Projectile"/>
 					<property name="DamageEntity" value="10"/>
-					<property name="DamageBlock" value="10"/>
-					<property name="Explosion.ParticleIndex" value="7"/>
+					<property name="DamageBlock" value="10"/>					
+					<property class="Explosion">
+						<property name="ParticleIndex" value="7" />						
+					</property>
 					<property name="Velocity" value="15"/>
 					<property name="FlyTime" value="1"/>
 					<property name="LifeTime" value="3"/>
@@ -1984,7 +2211,7 @@
 				<property name="CreativeMode" value="None"/>
 				<property class="Action0">
 					<property name="DamageEntity" value="70"/>
-					<property name="Buff" value="buffDark2"/>
+					<property name="Buff" value="buffBoss_Siren"/>
 					<property name="DamageBlock" value="1000"/>
 				</property>
 				<!-- <property class="Action1">
@@ -2013,19 +2240,19 @@
 				<property name="Material" value="Mmetal"/>
 				<property name="CreativeMode" value="None"/>
 				<property class="Action1">
-					<property name="Class" value="Projectile"/>
-					<!--property name="Explosion.ParticleIndex" value="4"/-->
-					<property name="Explosion.ParticleIndex" value="6"/>
-					<!-- which Prefab/particle is used -->
-					<property name="Explosion.RadiusBlocks" value="3"/>
-					<!-- damage radius for blocks -->
-					<property name="Explosion.RadiusEntities" value="10"/>
-					<!-- damage radius for entities -->
-					<property name="Explosion.DamageBonus.stone" value=".5"/>
-					<property name="Explosion.DamageBonus.metal" value="1"/>
-					<property name="Explosion.DamageBonus.earth" value="0"/>
-					<property name="Explosion.DamageBonus.wood" value="0"/>
-					<property name="Explosion.DamageBonus.water" value="0"/>
+					<property name="Class" value="Projectile"/>					
+					<property class="Explosion">
+						<property name="ParticleIndex" value="6" />
+						<property name="RadiusBlocks" value="3"/>
+						<property name="RadiusEntities" value="10"/>														
+						<property class="DamageBonus">							
+							<property name="stone" value=".5"/>
+							<property name="metal" value="1"/>
+							<property name="earth" value="0"/>
+							<property name="wood" value="0"/>
+							<property name="water" value="0"/>
+						</property>
+					</property>
 					<property name="Velocity" value="0"/>
 					<property name="Gravity" value="-200"/>
 					<property name="FlyTime" value=".01"/>
@@ -2043,7 +2270,7 @@
 				<property name="Extends" value="meleeHandZombie02"/>
 				<property name="CreativeMode" value="None"/>
 				<property class="Action0">
-					<property name="DamageEntity" value="450"/>
+					<property name="DamageEntity" value="4500"/>
 					<property name="DamageBlock" value="700"/>
 					<!--<property name="Buff" value="buffsirenhit"/>-->
 				</property>
@@ -2380,27 +2607,30 @@
 				<property name="CreativeMode" value="None"/>
 				<property class="Action1">
 					<property name="Class" value="Projectile"/>
-					<property name="DamageEntity" value="200"/>
-					<property name="DamageBlock" value="5000"/>
-					<!--property name="Explosion.ParticleIndex" value="4"/-->
-					<property name="Explosion.ParticleIndex" value="5"/>
-					<!-- which Prefab/particle is used -->
-					<property name="Explosion.RadiusBlocks" value="4"/>
-					<!-- damage radius for blocks -->
-					<property name="Explosion.RadiusEntities" value="4"/>
-					<!-- damage radius for entities -->
-					<property name="Explosion.DamageBonus.water" value="0"/>
+					<property name="DamageEntity" value="250"/>
+					<property name="DamageBlock" value="10000"/>
+					<property class="Explosion">
+						<property name="ParticleIndex" value="5" />
+						<property name="RadiusBlocks" value="4"/>
+						<property name="RadiusEntities" value="4"/>														
+						<property class="DamageBonus">							
+							<property name="water" value="0"/>
+						</property>
+					</property>
 					<property name="Velocity" value="18"/>
 					<property name="FlyTime" value="2"/>
 					<property name="LifeTime" value="4"/>
 					<property name="CollisionRadius" value="0.75"/>
-					<property name="DamageBonus.earth" value="0"/>					
+					<property name="DamageBonus">
+						<property name="earth" value="0"/>						
+					</property>					
 				</property>
 				<effect_group name="JuggernautProjectile" tiered="false">
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
 					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="base_set" value="0" tags="earth"/>
 					<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
-					<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="metal"/>
+				
 				</effect_group>
 			</item>
 			<!---->
@@ -2523,24 +2753,27 @@
 				<property class="Action1">
 					<property name="Class" value="Projectile"/>
 					<property name="DamageEntity" value="300"/>
-					<property name="DamageBlock" value="5000"/>
-					<property name="Explosion.Buff" value="BossProjectileEarthHit,buffArmBroken,buffInjuryKnockdown01"/> <!-- index 7 has ExplosionDamageArea script -->
+					<property name="DamageBlock" value="5000"/>					
 					<!--property name="Explosion.ParticleIndex" value="4"/-->
 					<!-- EL VALOR 5 PROVOCA QUE SEA VISUALMENTE UNA EXPLOSION AL COLISIONAR Y EL 36 ES DESTRUCCION DE ROCA, MISMA QUE USA
 						 LOS FROSTCLAW.
 					-->
-					<property name="Explosion.ParticleIndex" value="36"/> 
-					<!-- which Prefab/particle is used -->
-					<property name="Explosion.RadiusBlocks" value="4"/>
-					<!-- damage radius for blocks -->
-					<property name="Explosion.RadiusEntities" value="4"/>
-					<!-- damage radius for entities -->
-					<property name="Explosion.DamageBonus.water" value="0"/>
+					<property class="Explosion">
+						<property name="ParticleIndex" value="36" />
+						<property name="RadiusBlocks" value="4"/>
+						<property name="RadiusEntities" value="4"/>	
+						<property name="Buff" value="BossProjectileEarthHit,buffArmBroken,buffInjuryKnockdown01"/>									
+						<property class="DamageBonus">							
+							<property name="water" value="0"/>
+						</property>
+					</property>
 					<property name="Velocity" value="18"/>
 					<property name="FlyTime" value="2"/>
 					<property name="LifeTime" value="4"/>
 					<property name="CollisionRadius" value="0.75"/>
-					<property name="DamageBonus.earth" value="0"/>
+					<property name="DamageBonus">
+						<property name="earth" value="0"/>						
+					</property>
 				</property>
 				<effect_group name="BossTerraProjectile" tiered="false">
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
@@ -2582,7 +2815,7 @@
 					<property name="Range" value="4"/>
 					<property name="Block_range" value="4"/>
 					<property name="DamageEntity" value="300"/>
-					<property name="DamageBlock" value="5000"/>
+					<property name="DamageBlock" value="20000"/>
 					<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01,buffBosshitHF"/>
 					<property name="Sound_start" value="Auger_Fire_Start"/>
 					<property class="HitSounds">
@@ -2625,22 +2858,29 @@
 				<property class="Action1">
 					<property name="Class" value="Projectile"/>
 					<property name="DamageEntity" value="500"/>
-					<property name="DamageBlock" value="8000"/>
-					<property name="Explosion.ParticleIndex" value="5"/>
-					<property name="Explosion.RadiusBlocks" value="5"/>
-					<property name="Explosion.RadiusEntities" value="4"/>
-					<property name="Explosion.DamageBonus.water" value="0"/>
+					<property name="DamageBlock" value="1"/>
+					<property class="Explosion">
+						<property name="ParticleIndex" value="5" />
+						<property name="RadiusBlocks" value="6"/>
+						<property name="RadiusEntities" value="7"/>										
+						<property class="DamageBonus">							
+							<property name="water" value="0"/>
+						</property>
+					</property>
 					<property name="Velocity" value="18"/>
 					<property name="FlyTime" value="2"/>
 					<property name="LifeTime" value="4"/>
 					<property name="CollisionRadius" value="0.75"/>
-					<property name="DamageBonus.earth" value="0"/>
+					<property name="DamageBonus">
+						<property name="earth" value="0"/>						
+					</property>
 				</property>
 				<effect_group name="BossHFProjectile" tiered="false">
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
 					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="base_set" value="0" tags="earth"/>
 					<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
-					<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="metal"/>
+					
 				</effect_group>
 			</item>			
 		<!--Shiny Bosses-->
@@ -2751,19 +2991,21 @@
 					<property name="Class" value="Projectile"/>
 					<property name="DamageEntity" value="800"/>
 					<property name="DamageBlock" value="8000"/>
-					<!--property name="Explosion.ParticleIndex" value="4"/-->
-					<property name="Explosion.ParticleIndex" value="5"/>
-					<!-- which Prefab/particle is used -->
-					<property name="Explosion.RadiusBlocks" value="5"/>
-					<!-- damage radius for blocks -->
-					<property name="Explosion.RadiusEntities" value="6"/>
-					<!-- damage radius for entities -->
-					<property name="Explosion.DamageBonus.water" value="0"/>
+					<property class="Explosion">
+						<property name="ParticleIndex" value="5" />
+						<property name="RadiusBlocks" value="5"/>
+						<property name="RadiusEntities" value="6"/>										
+						<property class="DamageBonus">							
+							<property name="water" value="0"/>
+						</property>
+					</property>
 					<property name="Velocity" value="25"/>
 					<property name="FlyTime" value="4"/>
 					<property name="LifeTime" value="4"/>
 					<property name="CollisionRadius" value="0.75"/>
-					<property name="DamageBonus.earth" value="0"/>
+					<property name="DamageBonus">
+						<property name="earth" value="0"/>						
+					</property>
 				</property>
 				<effect_group name="SpecialJuggernautProjectile" tiered="false">
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
@@ -2854,16 +3096,24 @@
 				<property class="Action1">
 					<property name="Class" value="Projectile"/>
 					<property name="DamageEntity" value="1000"/>
-					<property name="DamageBlock" value="20000"/>
-					<property name="Explosion.ParticleIndex" value="5"/>
-					<property name="Explosion.RadiusBlocks" value="8"/>
-					<property name="Explosion.RadiusEntities" value="8"/>
-					<property name="Explosion.DamageBonus.water" value="0"/>
+					<property name="DamageBlock" value="1"/>
+					
+
+					<property class="Explosion">
+						<property name="ParticleIndex" value="5" />
+						<property name="RadiusBlocks" value="8"/>
+						<property name="RadiusEntities" value="8"/>									
+						<property class="DamageBonus">							
+							<property name="water" value="0"/>
+						</property>
+					</property>
 					<property name="Velocity" value="20"/>
 					<property name="FlyTime" value="2"/>
 					<property name="LifeTime" value="4"/>
 					<property name="CollisionRadius" value="0.75"/>
-					<property name="DamageBonus.earth" value="0"/>
+					<property name="DamageBonus">
+						<property name="earth" value="0"/>						
+					</property>
 				</property>
 				<effect_group name="BossHFProjectile" tiered="false">
 					<passive_effect name="ModSlots" operation="base_set" value="0"/>
@@ -2935,7 +3185,7 @@
                 <property class="Action0">
                     <property name="Buff" value="buffInjuryKnockdown01"/>
                     <property name="DamageEntity" value="4"/>
-                    <!--<property name="Buff" value="buffDark2"/>-->
+                    <!--<property name="Buff" value="buffBoss_Siren"/>-->
                     <property name="DamageBlock" value="1000"/>
                 </property>
                 <!-- <property class="Action1">
@@ -2964,19 +3214,20 @@
                 <property name="Material" value="Mmetal"/>
                 <property name="CreativeMode" value="None"/>
                 <property class="Action1">
-                    <property name="Class" value="Projectile"/>
-                    <!--property name="Explosion.ParticleIndex" value="4"/-->
-                    <property name="Explosion.ParticleIndex" value="6"/>
-                    <!-- which Prefab/particle is used -->
-                    <property name="Explosion.RadiusBlocks" value="3"/>
-                    <!-- damage radius for blocks -->
-                    <property name="Explosion.RadiusEntities" value="10"/>
-                    <!-- damage radius for entities -->
-                    <property name="Explosion.DamageBonus.stone" value=".71"/>
-                    <property name="Explosion.DamageBonus.metal" value=".7"/>
-                    <property name="Explosion.DamageBonus.earth" value=".5"/>
-                    <property name="Explosion.DamageBonus.wood" value="0"/>
-                    <property name="Explosion.DamageBonus.water" value="0"/>
+                    <property name="Class" value="Projectile"/>                    
+					<property class="Explosion">
+						<property name="ParticleIndex" value="6" />
+						<property name="RadiusBlocks" value="3"/>
+						<property name="RadiusEntities" value="10"/>									
+						<property class="DamageBonus">
+							<property name="stone" value=".71"/>
+							<property name="metal" value=".7"/>
+							<property name="earth" value=".5"/>
+							<property name="wood" value="0"/>
+							<property name="water" value="0"/>
+						</property>
+					</property>
+
                     <property name="Velocity" value="0"/>
                     <property name="Gravity" value="-200"/>
                     <property name="FlyTime" value=".01"/>
@@ -2989,7 +3240,369 @@
                     <display_value name="dExRadius" value="6"/>
                 </effect_group>
             </item>
-		
+
+			<item name="meleeHandZombieChuck_Template">
+				<property name="Extends" value="meleeHandZombieChuck"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">				
+					<property name="Buff" value="elitehit"/>
+					<property name="DamageEntity" value="70"/>
+					<property name="DamageBlock" value="320"/>
+				</property>
+				<property class="Action1"> <!-- UseAction -->				
+					<property name="Magazine_items" value="ammoProjectileZombieBoulder_Template"/>
+				</property>
+				<effect_group tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+						buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+						weights=".05,.05,.05,.2,.2,.05,.4"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+						<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+				</effect_group>
+			</item>
+			<item name="ammoProjectileZombieBoulder_Template">
+				<property name="Extends" value="ammoProjectileZombieBoulder"/>			
+				<property class="Action1">
+					<property name="Class" value="Projectile"/>
+					<property name="DamageEntity" value="50"/>
+					<property name="DamageBlock" value="200"/>			
+
+					<property class="Explosion">
+						<property name="ParticleIndex" value="36" />
+						<property name="RadiusBlocks" value="3"/>
+						<property name="RadiusEntities" value="5"/>
+						<property name="BlockDamage" value="750"/>
+						<property name="EntityDamage" value="80"/>				
+						<property class="DamageBonus">						
+							<property name="earth" value="0"/>						
+							<property name="water" value="0"/>
+						</property>
+					</property>		
+					<property name="FlyTime" value="-5"/><!-- -value calculates ballistic velocity to target over this +duration -->
+					<property name="Velocity" value="50"/><!-- ballistic max distance for duration -->
+					<property name="Gravity" value="-8"/>
+					<property name="LifeTime" value="7"/>
+					<property name="CollisionRadius" value=".22"/>
+					<property name="Buff" value="elitehit,buffInjuryStunned03"/>				
+				</property>
+				<effect_group name="ammoProjectileZombieBoulder" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+				</effect_group>
+			</item>
+			<!---->
+			<item name="meleeHandZombieChuck_Elite">
+				<property name="Extends" value="meleeHandZombieChuck_Template"/>			
+				<property class="Action0">				
+					<property name="Buff" value="elitehit"/>
+					<property name="DamageEntity" value="70"/>
+					<property name="DamageBlock" value="320"/>
+				</property>
+				<property class="Action1"> <!-- UseAction -->				
+					<property name="Magazine_items" value="ammoProjectileZombieBoulder_Elite"/>
+				</property>
+				<effect_group tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+						buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+						weights=".05,.05,.05,.2,.2,.05,.4"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+						<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+				</effect_group>
+			</item>
+			<item name="ammoProjectileZombieBoulder_Elite">			
+				<property name="Extends" value="ammoProjectileZombieBoulder_Template"/>	
+				<property class="Action1">				
+					<property name="DamageEntity" value="65"/>
+					<property name="DamageBlock" value="200"/>				
+					<property name="Buff" value="elitehit,buffInjuryStunned03"/>				
+				</property>
+				<effect_group name="ammoProjectileZombieBoulder" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+				</effect_group>
+			</item>		
+			<!---->
+			<item name="meleeHandZombieChuck_Fire">
+				<property name="Extends" value="meleeHandZombieChuck_Template"/>			
+				<property class="Action0">				
+					<property name="Buff" value="ElementalNormalHit,buffBurningMolotov"/>
+					<property name="DamageEntity" value="70"/>
+					<property name="DamageBlock" value="275"/>
+				</property>
+				<property class="Action1"> <!-- UseAction -->				
+					<property name="Magazine_items" value="ammoProjectileZombieBoulder_Fire"/>
+				</property>
+				<effect_group tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+						buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+						weights=".05,.05,.05,.2,.2,.05,.4"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+						<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+				</effect_group>
+			</item>
+			<item name="ammoProjectileZombieBoulder_Fire">			
+				<property name="Extends" value="ammoProjectileZombieBoulder_Template"/>	
+				<property class="Action1">				
+					<property name="DamageEntity" value="65"/>
+					<property name="DamageBlock" value="175"/>				
+					<property name="Buff" value="ElementalNormalHit,buffBurningMolotov,buffInjuryStunned03"/>				
+				</property>
+				<effect_group name="ammoProjectileZombieBoulder" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+				</effect_group>
+			</item>
+			<!---->
+			<item name="meleeHandZombieChuck_Water">
+				<property name="Extends" value="meleeHandZombieChuck_Template"/>			
+				<property class="Action0">				
+					<property name="Buff" value="ElementalNormalHit,buffDrowned"/>
+					<property name="DamageEntity" value="55"/>
+					<property name="DamageBlock" value="200"/>
+				</property>
+				<property class="Action1"> <!-- UseAction -->				
+					<property name="Magazine_items" value="ammoProjectileZombieBoulder_Water"/>
+				</property>
+				<effect_group tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+						buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+						weights=".05,.05,.05,.2,.2,.05,.4"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+						<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+				</effect_group>
+			</item>
+			<item name="ammoProjectileZombieBoulder_Water">			
+				<property name="Extends" value="ammoProjectileZombieBoulder_Template"/>	
+				<property class="Action1">				
+					<property name="DamageEntity" value="55"/>
+					<property name="DamageBlock" value="100"/>				
+					<property name="Buff" value="ElementalNormalHit,buffDrowned,buffInjuryStunned03"/>				
+				</property>
+				<effect_group name="ammoProjectileZombieBoulder" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+				</effect_group>
+			</item>
+			<!---->
+			<item name="meleeHandZombieChuck_Frozen">
+				<property name="Extends" value="meleeHandZombieChuck_Template"/>			
+				<property class="Action0">				
+					<property name="Buff" value="ElementalFrozenHit"/>
+					<property name="DamageEntity" value="80"/>
+					<property name="DamageBlock" value="330"/>
+				</property>
+				<property class="Action1"> <!-- UseAction -->				
+					<property name="Magazine_items" value="ammoProjectileZombieBoulder_Frozen"/>
+				</property>
+				<effect_group tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+						buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+						weights=".05,.05,.05,.2,.2,.05,.4"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+						<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+				</effect_group>
+			</item>
+			<item name="ammoProjectileZombieBoulder_Frozen">			
+				<property name="Extends" value="ammoProjectileZombieBoulder_Template"/>	
+				<property class="Action1">				
+					<property name="DamageEntity" value="70"/>
+					<property name="DamageBlock" value="275"/>				
+					<property name="Buff" value="ElementalFrozenHit,buffInjuryStunned03"/>				
+				</property>
+				<effect_group name="ammoProjectileZombieBoulder" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+				</effect_group>
+			</item>
+			<!---->
+			<item name="meleeHandZombieChuck_Shock">
+				<property name="Extends" value="meleeHandZombieChuck_Template"/>			
+				<property class="Action0">				
+					<property name="Buff" value="ElementalNormalHit,buffShockedElectric"/>
+					<property name="DamageEntity" value="40"/>
+					<property name="DamageBlock" value="125"/>
+				</property>
+				<property class="Action1"> <!-- UseAction -->				
+					<property name="Magazine_items" value="ammoProjectileZombieBoulder_Shock"/>
+				</property>
+				<effect_group tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+						buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+						weights=".05,.05,.05,.2,.2,.05,.4"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+						<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+				</effect_group>
+			</item>
+			<item name="ammoProjectileZombieBoulder_Shock">			
+				<property name="Extends" value="ammoProjectileZombieBoulder_Template"/>	
+				<property class="Action1">				
+					<property name="DamageEntity" value="30"/>
+					<property name="DamageBlock" value="100"/>				
+					<property name="Buff" value="ElementalNormalHit,buffShockedElectric,buffInjuryStunned03"/>				
+				</property>
+				<effect_group name="ammoProjectileZombieBoulder" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+				</effect_group>
+			</item>
+			<!---->
+			<item name="meleeHandZombieChuck_Rock">
+				<property name="Extends" value="meleeHandZombieChuck_Template"/>			
+				<property class="Action0">				
+					<property name="Buff" value="ElementalNormalHit,ElementalEarthHit"/>
+					<property name="DamageEntity" value="100"/>
+					<property name="DamageBlock" value="350"/>
+				</property>
+				<property class="Action1"> <!-- UseAction -->				
+					<property name="Magazine_items" value="ammoProjectileZombieBoulder_Rock"/>
+				</property>
+				<effect_group tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+						buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+						weights=".05,.05,.05,.2,.2,.05,.4"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+						<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+				</effect_group>
+			</item>
+			<item name="ammoProjectileZombieBoulder_Rock">			
+				<property name="Extends" value="ammoProjectileZombieBoulder_Template"/>	
+				<property class="Action1">				
+					<property name="DamageEntity" value="80"/>
+					<property name="DamageBlock" value="300"/>				
+					<property name="Buff" value="ElementalNormalHit,ElementalEarthHit,buffInjuryStunned03"/>				
+				</property>
+				<effect_group name="ammoProjectileZombieBoulder" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+				</effect_group>
+			</item>
+			<!---->
+			<item name="meleeHandZombieChuck_Night">
+				<property name="Extends" value="meleeHandZombieChuck_Template"/>			
+				<property class="Action0">				
+					<property name="Buff" value="Nigthit,buffBoss_Siren"/>
+					<property name="DamageEntity" value="100"/>
+					<property name="DamageBlock" value="400"/>
+				</property>
+				<property class="Action1"> <!-- UseAction -->				
+					<property name="Magazine_items" value="ammoProjectileZombieBoulder_Night"/>
+				</property>
+				<effect_group tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="100"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+						buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+						weights=".05,.05,.05,.2,.2,.05,.4"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+						<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+				</effect_group>
+			</item>
+			<item name="ammoProjectileZombieBoulder_Night">			
+				<property name="Extends" value="ammoProjectileZombieBoulder_Template"/>	
+				<property class="Action1">				
+					<property name="DamageEntity" value="90"/>
+					<property name="DamageBlock" value="350"/>				
+					<property name="Buff" value="Nigthit,buffBoss_Siren,buffInjuryStunned03"/>				
+				</property>
+				<effect_group name="ammoProjectileZombieBoulder" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+				</effect_group>
+			</item>		
 		
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
 	</append>

@@ -1,0 +1,123 @@
+<config>
+    <!--Maximo de traders por bioma-->
+        <set xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_rekt']/@max_count">4</set>
+        <set xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_jen']/@max_count">4</set>
+        <set xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_bob']/@max_count">4</set>
+        <set xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_hugh']/@max_count">4</set>
+        <set xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_joel']/@max_count">4</set>
+
+    <!-- Generaciones de entorno-->
+                                                                                                    <!--Few,Default,Many-->
+        <set xpath="/rwgmixer/world[@name='medium']/property[@class='lakes']/property[@name='count']/@value">2,1,2</set>
+        <set xpath="/rwgmixer/world[@name='medium']/property[@class='rivers']/property[@name='count']/@value">2,1,2</set>
+        <set xpath="/rwgmixer/world[@name='medium']/property[@class='craters']/property[@name='count']/@value">0,0,0</set>
+        <set xpath="/rwgmixer/world[@name='medium']/property[@class='canyons']/property[@name='count']/@value">0,0,0</set>
+
+    <!--Generaciones de puntos de wilderness (POI fuera de ciudades)-->                                                                                                         
+        <set xpath="/rwgmixer/world[@name='medium']/property[@class='wilderness']/property[@name='count']/@value">60,60,60</set>
+        <set xpath="/rwgmixer/world[@name='medium']/property[@class='forest_wilderness']/property[@name='count']/@value">60,60,60</set>
+        <set xpath="/rwgmixer/world[@name='medium']/property[@class='wasteland_wilderness']/property[@name='count']/@value">90,90,90</set>
+
+    <!-- Control de Towns-->  
+        <!--cantidad--> <set xpath="/rwgmixer/world[@name='medium']/property[@class='town']/property[@name='count']/@value">0,0,2</set>
+
+    <!-- Control de forest countrytown-->         
+        <!--Tamaño-->   <set xpath="/rwgmixer/world[@name='medium']/property[@class='forest_countrytown']/property[@name='tiles']/@value">8,12</set>     
+        <!--cantidad--> <set xpath="/rwgmixer/world[@name='medium']/property[@class='forest_countrytown']/property[@name='count']/@value">1,1,2</set>
+
+    <!-- Control de bforest town/countrytown-->         
+        <!--cantidad--> <set xpath="/rwgmixer/world[@name='medium']/property[@class='bforest_countrytown']/property[@name='count']/@value">1,1,2</set>
+        <!--cantidad--> <set xpath="/rwgmixer/world[@name='medium']/property[@class='bforest_town']/property[@name='count']/@value">0,0,1</set>
+
+    <!-- Control de countrytown-->        
+        <!--cantidad--> <set xpath="/rwgmixer/world[@name='medium']/property[@class='countrytown']/property[@name='count']/@value">1,0,1</set>
+
+    <!-- Control de wasteland city-->  
+                                                                                                                          <!-- min tiles,max tiles -->
+        <!--Tamaño-->   <set xpath="/rwgmixer/world[@name='medium']/property[@class='wasteland_city']/property[@name='tiles']/@value">18,20</set>
+        <!--cantidad--> <set xpath="/rwgmixer/world[@name='medium']/property[@class='wasteland_city']/property[@name='count']/@value">1,1,1</set>
+
+    <!-- Control Cityss-->    
+        <!--Tamaño-->   <set xpath="/rwgmixer/world[@name='medium']/property[@class='city']/property[@name='tiles']/@value">15,18</set>
+        <!--cantidad--> <set xpath="/rwgmixer/world[@name='medium']/property[@class='city']/property[@name='count']/@value">0,0,0</set>
+        <!--biomas-->   <set xpath="/rwgmixer/township[@name='city']/property[@name='biomes']/@value">wasteland,burntforest</set> <!--DEFAULT desert/snow-->
+
+     <!-- Control citybig Wasteland--> 
+        <!--Tamaño-->   <set xpath="/rwgmixer/world[@name='medium']/property[@class='citybig']/property[@name='tiles']/@value">30,44</set> <!-- DEFAULT 28, 40 -->
+        <!--cantidad--> <set xpath="/rwgmixer/world[@name='medium']/property[@class='citybig']/property[@name='count']/@value">3,1,3</set>        
+    
+    <!-- Crea Nuevas citys y citybig y define sus biomas de spaw-->
+        <append xpath="/rwgmixer">
+            <township name="cityforest">
+                <property name="biomes" value="forest"/>
+                <property name="outskirt_district" value="rural, .65"/>
+            </township>
+            <township name="citysnow">
+                <property name="biomes" value="snow"/>
+                <property name="outskirt_district" value="rural, .65"/>
+            </township>
+            <township name="citydesert">
+                <property name="biomes" value="desert"/>
+                <property name="outskirt_district" value="rural, .65"/>
+            </township>
+
+            <township name="citybigforest">
+                <property name="biomes" value="forest"/>
+                <property name="outskirt_district" value="rural, .65"/>
+            </township>
+            <township name="citybigbrntforest">
+                <property name="biomes" value="burntforest"/>
+                <property name="outskirt_district" value="rural, .65"/>
+            </township>
+            <township name="citybigsnow">
+                <property name="biomes" value="snow"/>
+                <property name="outskirt_district" value="rural, .65"/>
+            </township>
+            <township name="citybigdesert">
+                <property name="biomes" value="desert"/>
+                <property name="outskirt_district" value="rural, .65"/>
+            </township>
+        </append>
+
+    <!--Agregar su spawn en mapas medianos y define su tamaño y cantidad de aparicion-->
+        <append xpath="/rwgmixer/world[@name='medium']">
+            <property class="cityforest">
+                <!--Few,Default,Many-->
+                <property name="count" value="0, 1, 0"/>
+                <!--Min tiles / Max Tiles-->
+                <property name="tiles" value="16,20"/>
+            </property>
+            <property class="citysnow">
+                <property name="count" value="0, 2, 0"/>
+                <property name="tiles" value="16,20"/>
+            </property>
+            <property class="citydesert">
+                <property name="count" value="0, 1, 0"/>
+                <property name="tiles" value="16,20"/>
+            </property>
+            <property class="citybigforest">
+                <property name="count" value="0, 1, 1"/>
+                <property name="tiles" value="28, 40"/>
+            </property>
+            <property class="citybigbrntforest">
+                <property name="count" value="0, 1, 1"/>
+                <property name="tiles" value="28, 40"/>
+            </property>
+            <property class="citybigsnow">
+                <property name="count" value="0, 0, 1"/>
+                <property name="tiles" value="28, 40"/>
+            </property>
+            <property class="citybigdesert">
+                <property name="count" value="0, 1, 1"/>
+                <property name="tiles" value="28, 40"/>
+            </property>     
+        </append>
+    <!--Agregar los diferentes distritos a los tines de las nuevas citybig / citys -->
+        <append xpath="/rwgmixer/district[@name='commercial']/property[@name='required_township']/@value">,cityforest,citysnow,citydesert,citybigforest,citybigbrntforest,citybigsnow,citybigdesert</append>
+        <append xpath="/rwgmixer/district[@name='downtown']/property[@name='required_township']/@value">,cityforest,citysnow,citydesert,citybigforest,citybigbrntforest,citybigsnow,citybigdesert</append>
+        <append xpath="/rwgmixer/district[@name='industrial']/property[@name='required_township']/@value">,cityforest,citysnow,citydesert,citybigforest,citybigbrntforest,citybigsnow,citybigdesert</append>
+        <append xpath="/rwgmixer/district[@name='residential']/property[@name='required_township']/@value">,cityforest,citysnow,citydesert,citybigforest,citybigbrntforest,citybigsnow,citybigdesert</append>
+        <append xpath="/rwgmixer/district[@name='rural']/property[@name='required_township']/@value">,cityforest,citysnow,citydesert,citybigforest,citybigbrntforest,citybigsnow,citybigdesert</append>
+
+
+</config>

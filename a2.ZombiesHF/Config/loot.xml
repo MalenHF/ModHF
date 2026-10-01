@@ -1,8 +1,13 @@
 <configs>
+	<append xpath="/lootcontainers/lootprobtemplates">
+		<lootprobtemplate name="eggLow">
+			<loot level="1,999999" prob=".02"/>
+		</lootprobtemplate>
+	</append>
 	<!-- ====================================Agregar quest al loot==================================== -->
 	<!--Gallinazila-->
 		<append xpath="/lootcontainers/lootgroup[@name='groupBirdNest01']">
-			<item name="q_Gallinazilla" loot_prob_template="veryLow" force_prob="true"/>
+			<item name="q_Gallinazilla" loot_prob_template="eggLow" force_prob="true"/>
 		</append>
 	<!---->
 	<append xpath="/lootcontainers">
@@ -16,6 +21,7 @@
 				</qualitytemplate>
 			</lootqualitytemplate>
 		</lootqualitytemplates>
+		
 	<!---->
 	<!-- ==============================================Drop De bosses========================================== -->
 		<!--Special Groups-->
@@ -204,7 +210,7 @@
 			<!---->
 		</lootgroup>
 		<lootgroup name="lootBossSiren2" count="all">
-			<item name="Practonium" count="1"/>
+			<item name="resourcePractonium" count="1"/>
 			<item name="bossTokenNight" count="1"/>
 			<!---->
 		</lootgroup>
@@ -212,7 +218,7 @@
 			<item name="resourceBrokenGlass" count="1"/>
 			<item name="bossTokenMineral" count="1"/>
 			<item name="resourceSteelPolishR" count="30,150" />
-			<item name="oldCash" count="10,50"/>
+			<item name="oldCash" count="25,100"/>
 			<item name="resourceSilverNugget" count="75,78"/>
 			<item name="resourceGoldNugget" count="50,53"/>
 			<item name="resourceRawDiamond" count="25,28"/>
@@ -222,9 +228,9 @@
 		<lootgroup name="lootBossMineral2" count="all">
 			<item name="resourceBrokenGlass" count="1"/>
 			<item name="bossTokenMineral" count="1"/>
-			<item name="Practonium" count="1"/>
+			<item name="resourcePractonium" count="1"/>
 			<item name="resourceSteelPolishR" count="30,150" />
-			<item name="oldCash" count="10,50"/>
+			<item name="oldCash" count="25,100"/>
 			<item name="resourceSilverNugget" count="75,78"/>
 			<item name="resourceGoldNugget" count="50,53"/>
 			<item name="resourceRawDiamond" count="25,28"/>
@@ -234,9 +240,9 @@
 		<lootgroup name="lootBossPracto" count="all">
 			<item name="resourceBrokenGlass" count="1"/>
 			<item name="bossTokenMineral" count="1"/>
-			<item name="Practonium" count="5"/>
+			<item name="resourcePractonium" count="5"/>
 			<item name="resourceSteelPolishR" count="30,150" />
-			<item name="oldCash" count="10,50"/>
+			<item name="oldCash" count="25,100"/>
 			<item name="resourceSilverNugget" count="4"/>
 			<item name="resourceGoldNugget" count="8"/>
 			<item name="resourceRawDiamond" count="12"/>
@@ -246,9 +252,9 @@
 		<lootgroup name="lootBossPracto2" count="all">
 			<item name="resourceBrokenGlass" count="1"/>
 			<item name="bossTokenMineral" count="1"/>
-			<item name="Practonium" count="6"/>
+			<item name="resourcePractonium" count="6"/>
 			<item name="resourceSteelPolishR" count="30,150" />
-			<item name="oldCash" count="10,50"/>
+			<item name="oldCash" count="25,100"/>
 			<item name="resourceSilverNugget" count="4"/>
 			<item name="resourceGoldNugget" count="8"/>
 			<item name="resourceRawDiamond" count="12"/>
@@ -259,9 +265,9 @@
 		<lootgroup name="lootBossNS" count="all">
 			<item name="resourceBrokenGlass" count="3"/>
 			<item name="bossTokenMineral" count="3"/>
-			<item name="Practonium" count="15,18"/>
+			<item name="resourcePractonium" count="15,18"/>
 			<item name="resourceSteelPolishR" count="30,150" />
-			<item name="oldCash" count="30,150"/>
+			<item name="oldCash" count="50,200"/>
 			<item name="resourceSilverNugget" count="225"/>
 			<item name="resourceGoldNugget" count="150"/>
 			<item name="resourceRawDiamond" count="75"/>
@@ -271,7 +277,7 @@
 		<lootgroup name="lootBossSoldier" count="all">
 			<item name="resourceBrokenGlass" count="1"/>
 			<item name="bossTokenSoldier" count="1"/>
-			<item name="Practonium" count="1"/>
+			<item name="resourcePractonium" count="1"/>
 			<item name="resourceSteelPolishR" count="30,150" />
 			<item name="oldCash" count="5,25"/>
 			<item group="oresraros"/>
@@ -282,7 +288,7 @@
 		<lootgroup name="lootBossJugger" count="all">
 			<item name="resourceBrokenGlass" count="1"/>
 			<item name="bossTokenJugger" count="1"/>
-			<item name="Practonium" count="1"/>
+			<item name="resourcePractonium" count="1"/>
 			<item name="resourceSteelPolishR" count="30,150" />
 			<item name="oldCash" count="5,25"/>
 			<item group="oresraros"/>
@@ -293,7 +299,7 @@
 		<lootgroup name="lootzombieBossMummy" count="all">
 			<item name="resourceBrokenGlass" count="1"/>
 			<item name="bossTokenMummy" count="1"/>
-			<item name="Practonium" count="1"/>
+			<item name="resourcePractonium" count="1"/>
 			<item name="resourceSteelPolishR" count="30,150" />
 			<item name="oldCash" count="5,25"/>
 			<item group="oresraros"/>
@@ -304,7 +310,7 @@
 		<lootgroup name="lootzombieBossKnight" count="all">
 			<item name="resourceBrokenGlass" count="1"/>
 			<item name="bossTokenGadiador" count="1"/>
-			<item name="Practonium" count="1"/>
+			<item name="resourcePractonium" count="1"/>
 			<item name="resourceSteelPolishR" count="30,150" />
 			<item name="oldCash" count="5,25"/>
 			<item group="oresraros"/>
@@ -316,7 +322,7 @@
 		<lootgroup name="lootBossCirujano" count="all">
 			<item name="resourceBrokenGlass" count="1"/>
 			<item name="bossTokenCirujano" count="1"/>
-			<item name="Practonium" count="1"/>
+			<item name="resourcePractonium" count="1"/>
 			<item name="resourceSteelPolishR" count="30,150" />
 			<item name="oldCash" count="5,25"/>
 			<item group="oresraros"/>
@@ -327,7 +333,7 @@
 		<lootgroup name="lootBossSpartan" count="all">
 			<item name="resourceBrokenGlass" count="1"/>
 			<item name="bossTokenSpartan" count="1"/>
-			<item name="Practonium" count="1"/>
+			<item name="resourcePractonium" count="1"/>
 			<item name="resourceSteelPolishR" count="30,150" />
 			<item name="oldCash" count="5,25"/>
 			<item group="oresraros"/>
@@ -338,7 +344,7 @@
 		<lootgroup name="lootBossMortevoda" count="all">
 			<item name="resourceBrokenGlass" count="1"/>
 			<item name="bossTokenMortevoda" count="1"/>
-			<item name="Practonium" count="1"/>
+			<item name="resourcePractonium" count="1"/>
 			<item name="resourceSteelPolishR" count="30,150" />
 			<item name="oldCash" count="5,25"/>
 			<item group="oresraros"/>
@@ -349,7 +355,7 @@
 		<lootgroup name="lootBossInfernal" count="all">
 			<item name="resourceBrokenGlass" count="1"/>
 			<item name="bossTokenInfernal" count="1"/>
-			<item name="Practonium" count="1"/>
+			<item name="resourcePractonium" count="1"/>
 			<item name="resourceSteelPolishR" count="30,150" />
 			<item name="oldCash" count="5,25"/>
 			<item group="oresraros"/>
@@ -360,7 +366,7 @@
 		<lootgroup name="lootBossHoarfrost" count="all">
 			<item name="resourceBrokenGlass" count="1"/>
 			<item name="bossTokenHoarfrost" count="1"/>
-			<item name="Practonium" count="1"/>
+			<item name="resourcePractonium" count="1"/>
 			<item name="resourceSteelPolishR" count="30,150" />
 			<item name="oldCash" count="5,25"/>
 			<item group="oresraros"/>
@@ -371,7 +377,7 @@
 		<lootgroup name="lootBossShocker" count="all">
 			<item name="resourceBrokenGlass" count="1"/>
 			<item name="bossTokenShocker" count="1"/>
-			<item name="Practonium" count="1"/>
+			<item name="resourcePractonium" count="1"/>
 			<item name="resourceSteelPolishR" count="30,150" />
 			<item name="oldCash" count="5,25"/>
 			<item group="oresraros"/>
@@ -382,7 +388,7 @@
 		<lootgroup name="lootBossToxic" count="all">
 			<item name="resourceBrokenGlass" count="1"/>
 			<item name="bossTokenToxic" count="1"/>
-			<item name="Practonium" count="1"/>
+			<item name="resourcePractonium" count="1"/>
 			<item name="resourceSteelPolishR" count="30,150" />
 			<item name="oldCash" count="5,25"/>
 			<item group="oresraros"/>
@@ -393,7 +399,7 @@
 		<lootgroup name="lootBossTerra" count="all">
 			<item name="resourceBrokenGlass" count="1"/>
 			<item name="bossTokenTerra" count="1"/>
-			<item name="Practonium" count="1"/>
+			<item name="resourcePractonium" count="1"/>
 			<item name="resourceSteelPolishR" count="30,150" />
 			<item name="oldCash" count="5,25"/>
 			<item group="oresraros"/>
@@ -404,7 +410,7 @@
 		<lootgroup name="lootBossTerra2" count="all">
 			<item name="resourceBrokenGlass" count="1"/>
 			<item name="bossTokenNatu" count="1"/>
-			<item name="Practonium" count="1"/>
+			<item name="resourcePractonium" count="1"/>
 			<item name="resourceSteelPolishR" count="30,150" />
 			<item name="oldCash" count="5,25"/>
 			<item group="oresraros"/>
@@ -415,7 +421,7 @@
 	<!-- END Added by HolyVentus -->
 		<lootgroup name="lootBossHF" count="all">
 			<item name="resourceBrokenGlass" count="1"/>
-			<item name="Practonium" count="5"/>
+			<item name="resourcePractonium" count="5"/>
 			<item name="resourceSteelPolishR" count="300" />
 			<item name="oldCash" count="2000"/>
 			<item group="oresraros" count="3"/>
@@ -588,7 +594,7 @@
 		<!-- ======================================Recomepnsas Quest Especiales T1================================= -->
 		<lootgroup name="sQuestlootLT1">
 			<item name="survivorRations" count="1" loot_prob_template="QuestT3Prob"/>
-			<item name="Practonium" count="1,2" loot_prob_template="QuestT3Prob"/>
+			<item name="resourcePractonium" count="1,2" loot_prob_template="QuestT3Prob"/>
 		</lootgroup>
 		<lootgroup name="groupQuestLUNATICOS1">
 			<item name="survivorRations" count="1" loot_prob_template="QuestT3Prob"/>
@@ -626,7 +632,7 @@
 		<!-- ======================================Recomepnsas Quest Especiales T2================================= -->
 		<lootgroup name="sQuestloot1">
 			<item name="Mineral_Bag" count="1" loot_prob_template="QuestT3Prob"/>
-			<item name="Practonium" count="1,2" loot_prob_template="QuestT3Prob"/>
+			<item name="resourcePractonium" count="1,2" loot_prob_template="QuestT3Prob"/>
 		</lootgroup>
 		<lootgroup name="sQuestloot2">
 			<item group="perkBooksHF" count="1" loot_prob_template="QuestT3Prob"/>
@@ -658,8 +664,8 @@
 		</lootgroup>
 		<!-- ======================================Recomepnsas Quest Especiales T3================================= -->
 		<lootgroup name="sQuestHFloot1">
-			<item name="ResourceForgedPlatinum" count="1" loot_prob_template="QuestT3Prob"/>
-			<item name="Practonium" count="25" loot_prob_template="QuestT3Prob"/>
+			<item name="resourceForgedPlatinum" count="1" loot_prob_template="QuestT3Prob"/>
+			<item name="resourcePractonium" count="25" loot_prob_template="QuestT3Prob"/>
 		</lootgroup>
 		<lootgroup name="sQuestHFloot2">
 			<item name="bookMaster_Pistol" count="1,2" loot_prob_template="QuestT3Prob"/>
@@ -705,7 +711,7 @@
 		<!--===============================================================================================-->
 		<lootgroup name="tQuestloot1">			
 			<item name="special_bag" count="1" loot_prob_template="QuestT3Prob"/>
-			<item name="Practonium" count="5" loot_prob_template="QuestT3Prob"/>
+			<item name="resourcePractonium" count="5" loot_prob_template="QuestT3Prob"/>
 		</lootgroup>
 		<lootgroup name="tQuestloot2">
 			<item name="q_Honor" count="1" loot_prob_template="QuestT3Prob"/>
@@ -719,7 +725,10 @@
 			<item name="q_jack" count="1" loot_prob_template="QuestT3Prob"/>
 			<item name="q_raijin" count="1" loot_prob_template="QuestT3Prob"/>
 			<item name="q_patient0" count="1" loot_prob_template="QuestT3Prob"/>
-
+			<item name="q_Gaia" count="1" loot_prob_template="QuestT3Prob"/>
+			<item name="q_Spartan" count="1" loot_prob_template="QuestT3Prob"/>
+				
+			<item name="q_Shine" count="1" loot_prob_template="QuestT3Prob"/>
 			<item name="q_TacoS" count="1" loot_prob_template="QuestT3Prob"/>
 			<item name="q_EnemigosHF" count="1" loot_prob_template="QuestT3Prob"/>
 			<item name="q_EnemigsRandom" count="1" loot_prob_template="QuestT3Prob"/>
@@ -750,9 +759,9 @@
 		</lootgroup>
 		<!--===============================================================================================-->
 		<lootgroup name="tsQuestloot1">
-			<item name="ResourceForgedPlatinum" count="1" loot_prob_template="QuestT3Prob"/>
+			<item name="resourceForgedPlatinum" count="1" loot_prob_template="QuestT3Prob"/>
 			<item name="q_Hooligan_Force" count="1" loot_prob_template="QuestT2Prob"/>
-			<item name="Practonium" count="25" loot_prob_template="QuestT3Prob"/>
+			<item name="resourcePractonium" count="25" loot_prob_template="QuestT3Prob"/>
 			<item name="agua_divina" count="3" loot_prob_template="QuestT3Prob"/>
 		</lootgroup>
 		<lootgroup name="tsQuestloot3">
@@ -784,7 +793,7 @@
 		<!--===============================================================================================-->
 		<lootgroup name="vQuestloot1">			
 			<item name="special_bag" count="1" loot_prob_template="QuestT3Prob"/>
-			<item name="Practonium" count="5" loot_prob_template="QuestT3Prob"/>
+			<item name="resourcePractonium" count="5" loot_prob_template="QuestT3Prob"/>
 		</lootgroup>
 		<lootgroup name="vQuestloot2">
 			<item name="q_Honor" count="1" loot_prob_template="QuestT3Prob"/>
@@ -798,7 +807,10 @@
 			<item name="q_jack" count="1" loot_prob_template="QuestT3Prob"/>
 			<item name="q_raijin" count="1" loot_prob_template="QuestT3Prob"/>
 			<item name="q_patient0" count="1" loot_prob_template="QuestT3Prob"/>
-
+			<item name="q_Gaia" count="1" loot_prob_template="QuestT3Prob"/>	
+			<item name="q_Spartan" count="1" loot_prob_template="QuestT3Prob"/>		
+			
+			<item name="q_Shine" count="1" loot_prob_template="QuestT3Prob"/>
 			<item name="q_VentusS" count="1" loot_prob_template="QuestT3Prob"/>
 			<item name="q_EnemigosHF" count="1" loot_prob_template="QuestT3Prob"/>
 			<item name="q_EnemigsRandom" count="1" loot_prob_template="QuestT3Prob"/>
@@ -829,9 +841,9 @@
 		</lootgroup>
 		<!--===============================================================================================-->
 		<lootgroup name="vsQuestloot1">
-			<item name="ResourceForgedPlatinum" count="1" loot_prob_template="QuestT3Prob"/>
+			<item name="resourceForgedPlatinum" count="1" loot_prob_template="QuestT3Prob"/>
 			<item name="q_Hooligan_Force" count="1" loot_prob_template="QuestT2Prob"/>
-			<item name="Practonium" count="25" loot_prob_template="QuestT3Prob"/>
+			<item name="resourcePractonium" count="25" loot_prob_template="QuestT3Prob"/>
 			<item name="agua_divina" count="3" loot_prob_template="QuestT3Prob"/>
 		</lootgroup>
 		<lootgroup name="vsQuestloot3">
@@ -922,18 +934,24 @@
 			<item name="q_berial" prob="0.5"/>
 			<item name="q_jack" prob="0.5"/>
 			<item name="q_raijin" prob="0.5"/>
-			<item name="q_patient0" prob="0.5"/>			
-
+			<item name="q_patient0" prob="0.5"/>
+			<item name="q_Gaia" prob="0.5"/>
+			<item name="q_Spartan" prob="0.5"/>						
+			
 			<item name="q_Nightmare" prob="1"/>
 			<item name="q_Mutants" prob="1"/>
 			<item name="q_Morte" prob="1"/>
 			<item name="q_Frozen" prob="1"/>
+			<item name="q_rock" prob="1"/>
+			
 			<item name="q_Infernal" prob="1"/>
 			<item name="q_shock" prob="1"/>			
 			<item name="q_Minis" prob="1"/>
 			<item name="q_Special" prob="1"/>
+			<item name="q_Elementals" prob="1"/>
 			
-			<item name="q_EnemigsRandom" prob="0.4"/>				
+			<item name="q_EnemigsRandom" prob="0.4"/>
+			<item name="q_Shine" prob="0.3"/>				
 			<item name="q_Taco" prob="0.1"/>
 			<item name="q_Lucky" prob=".8"/>
 			<item name="q_Gacha" prob="1" count="2,4"/>			
@@ -1298,19 +1316,25 @@
 			<item name="q_berial" prob="0.4"/>
 			<item name="q_jack" prob="0.4"/>
 			<item name="q_raijin" prob="0.4"/>
-			<item name="q_patient0" prob="0.4"/>					
-			<item name="q_EnemigsRandom" prob="0.3"/>
-			<item name="q_Lucky" prob=".3"/>
+			<item name="q_patient0" prob="0.4"/>
+			<item name="q_Spartan" prob="0.4"/>							
+			
 			<item name="q_Nightmare" prob="0.8"/>
 			<item name="q_Mutants" prob="0.8"/>
 			<item name="q_Morte" prob="0.8"/>
 			<item name="q_Frozen" prob="0.8"/>
+			<item name="q_rock" prob="0.8"/>			
 			<item name="q_Infernal" prob="0.8"/>
 			<item name="q_shock" prob="0.8"/>			
 			<item name="q_Minis" prob="0.8"/>
-			<item name="q_Special" prob="0.8"/>				
+			<item name="q_Special" prob="0.8"/>
+			<item name="q_Elementals" prob="0.8"/>			
+			<item name="q_Gaia" prob="0.8"/>						
 						
-			<item name="q_Gacha" prob="0.9" count="1,3"/>		
+			<item name="q_Gacha" prob="0.9" count="1,3"/>
+			<item name="q_EnemigsRandom" prob="0.3"/>
+			<item name="q_Shine" prob="0.2"/>
+			<item name="q_Lucky" prob=".3"/>		
 		</lootgroup>
 	</insertAfter>
 	<!--

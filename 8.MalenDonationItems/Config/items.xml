@@ -241,7 +241,7 @@
 				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="0"/>
 				<passive_effect name="AttacksPerMinute" operation="base_set" value="150"/>
 				<passive_effect name="RoundsPerMinute" operation="base_set" value="150" tags="perkMiner69r"/>
-				<passive_effect name="BurstRoundCount" operation="base_set" value="150" tags="perkMiner69r"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="0" tags="perkMiner69r"/>
 				<passive_effect name="EntityDamage" operation="base_set" value="1"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="1250"/>
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="10" tags="perkMiner69r"/>
@@ -250,8 +250,7 @@
 				<passive_effect name="StaminaLoss" operation="base_set" value="0" tags="primary"/>					
 				<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
-				<passive_effect name="ModSlots" operation="base_set" value="1"/>
-				<passive_effect name="BurstRoundCount" operation="base_set" value="1000" tags="perkMiner69r"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1"/>				
 				<display_value name="dPlayerExpGain" value=".4"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value=".4"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="2" tags="Upgrading"/>
@@ -294,7 +293,7 @@
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="150" tags="perkMiner69r"/>
 				<passive_effect name="PlayerExpGain" operation="base_set" value="20" tags="Harvesting"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-2" tags="wood"/>
-				<passive_effect name="BurstRoundCount" operation="base_set" value="1000" tags="perkMiner69r"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="0" tags="perkMiner69r"/>
 				<passive_effect name="MagazineSize" operation="base_set" value="1000" tags="perkMiner69r"/>
 				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="2" tags="perkMiner69r"/>
 				<!--  3.5s  -->
@@ -331,7 +330,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-2" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-2" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-2" tags="metal"/>
-				<passive_effect name="BurstRoundCount" operation="base_set" value="500" tags="perkMiner69r"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="0" tags="perkMiner69r"/>
 				<passive_effect name="MagazineSize" operation="base_set" value="300" tags="perkMiner69r"/>
 				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="2" tags="perkMiner69r"/>
 				<!--  3.5s  -->
@@ -498,7 +497,9 @@
 				<property name="Sphere" value=".15"/>
 				<!-- limit to 0.15, else the sphere cast can overlap the target already -->
 				<property name="Sound_start" value="machete_swinglight"/>
-				<property name="ToolCategory.Butcher" value="0" param1="4.7"/>
+				<property class="ToolCategory">					
+					<property name="Butcher" value="0" param1="5"/>
+				</property>
 				<!-- This triggers the use of the special corpse harvesting animation if there is a matching harvest event.
 					Also, param1  is the damage multiplier for corpse harvesting. -->
 				<property name="UseGrazingHits" value="true"/>
@@ -519,7 +520,9 @@
 				<property name="Sphere" value=".15"/>
 				<!-- limit to 0.15, else the sphere cast can overlap the target already -->
 				<property name="Sound_start" value="machete_swingheavy"/>
-				<property name="ToolCategory.Butcher" value="0" param1="4.7"/>
+				<property class="ToolCategory">					
+					<property name="Butcher" value="0" param1="5"/>
+				</property>
 				<property name="UsePowerAttackAnimation" value="true"/>
 
 				<property name="UseGrazingHits" value="true"/>
@@ -677,7 +680,9 @@
 				<property name="Sphere" value=".15"/>
 				<!-- limit to 0.15, else the sphere cast can overlap the target already -->
 				<property name="Sound_start" value="sledge_swinglight"/>
-				<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+				<property class="ToolCategory">
+					<property name="harvestingTools" value=".5" param1="1"/>					
+				</property>
 
 				<property name="UseGrazingHits" value="true"/>
 				<property name="GrazeStart" value=".515"/>
@@ -696,7 +701,9 @@
 				<property name="Sphere" value=".15"/>
 				<!-- limit to 0.15, else the sphere cast can overlap the target already -->
 				<property name="Sound_start" value="sledge_swingheavy"/>
-				<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+				<property class="ToolCategory">
+					<property name="harvestingTools" value=".5" param1="1"/>					
+				</property>
 				<property name="UsePowerAttackAnimation" value="true"/>
 
 				<property name="UseGrazingHits" value="true"/>
@@ -755,7 +762,9 @@
 			<property name="RepairTools" value=""/>
 			<property name="Stacknumber" value="1"/>
 			<property class="Action0">
-				<property name="ToolCategory.Butcher" value="5" param1="1.5"/>
+				<property class="ToolCategory">					
+					<property name="Butcher" value="0" param1="5"/>
+				</property>
 				<property class="HitSounds">
 					<property name="Override0" value="organic" param1="metalstaborganic"/>
 				</property>
@@ -764,7 +773,9 @@
 				</property>
 			</property>
 			<property class="Action1">
-				<property name="ToolCategory.Butcher" value="0" param1="1.5"/>
+				<property class="ToolCategory">					
+					<property name="Butcher" value="0" param1="5"/>
+				</property>
 				<property class="HitSounds">
 					<property name="Override0" value="organic" param1="metalstaborganic"/>
 				</property>
@@ -900,7 +911,9 @@
 				<property name="Class" value="DynamicMelee"/>
 				<property name="Sound_start" value="batwood_swinglight"/>
 				<property name="Sphere" value=".1"/>
-				<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+				<property class="ToolCategory">
+					<property name="harvestingTools" value=".5" param1="1"/>					
+				</property>
 				<property name="UseGrazingHits" value="true"/>
 				<property name="GrazeStart" value=".25"/>
 				<property name="GrazeEnd" value=".32"/>
@@ -917,7 +930,9 @@
 				<property name="Class" value="DynamicMelee"/>
 				<property name="Sound_start" value="batwood_swingheavy"/>
 				<property name="Sphere" value=".15"/>
-				<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+				<property class="ToolCategory">
+					<property name="harvestingTools" value=".5" param1="1"/>					
+				</property>
 				<property name="UsePowerAttackAnimation" value="true"/>
 
 				<property name="UseGrazingHits" value="true"/>

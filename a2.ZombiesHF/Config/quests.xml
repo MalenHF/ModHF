@@ -1060,6 +1060,34 @@
 			<reward type="Item" id="casinoCoin" value="5000"/>
 			<reward type="Exp" value="10000"/>
 		</quest>
+		<quest id="q_fixQuests">
+			<property name="name_key" value="quest_intro_buried_supplies" param1="name"/>
+			<property name="subtitle_key" value="quest_buried_supplies_subtitle"/>
+			<property name="description_key" value="quest_buried_supplies_description"/>
+			<property name="icon" value="ui_game_symbol_treasure"/>
+			<property name="repeatable" value="false"/>
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="quest_intro_buried_supplies_offer" param1="offer"/>
+			<property name="difficulty_tier" value="1" param1="difficulty"/>
+			<property name="statement_key" value="quest_buried_supplies_statement"/>
+			<property name="response_key" value="quest_intro_buried_supplies_response"/>
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_buried_supplies_completion"/>
+			<property name="shareable" value="false"/>
+			<property name="reward_choices_count" value="5"/>
+			<property name="single_quest" value="true"/>
+			<property name="always_allow" value="true"/>
+			<property name="unique_key" value="introquest"/>
+			<property name="quest_type" value="special"/>
+			<property name="extra_tags" value="introquest"/>
+
+			<action type="SetCVar">
+				<property name="cvar" value="IntroComplete"/>
+				<property name="value" value="1"/>
+				<property name="on_complete" value="true"/>
+			</action>
+			<reward type="Exp" value="1"/>
+		</quest>
 		
 
 		<!---->

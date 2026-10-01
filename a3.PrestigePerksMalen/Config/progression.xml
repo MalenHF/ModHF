@@ -5,6 +5,35 @@
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 	</insertAfter>
 
+	<append xpath="/progression/perks/book[@name='perkSledgeSagaSavageReaper']">
+		<effect_group>
+			<passive_effect name="PlayerExpGain" operation="perc_add" level="1" value="-.5" tags="Kill">
+				<requirement name="IsLocalPlayer"/>
+				<requirement name="IsInstigator"/>
+				<requirement name="HitLocation" body_parts="Head"/>
+				<requirement name="HoldingItemHasTags" tags="perkSkullCrusher"/>
+				<requirement name="HasBuff" buff="prestigeBuff"/>
+			</passive_effect>
+			<passive_effect name="PlayerExpGain" operation="perc_add" level="1" value="-.75" tags="Kill">
+				<requirement name="IsLocalPlayer"/>
+				<requirement name="IsInstigator"/>
+				<requirement name="HitLocation" body_parts="Head"/>
+				<requirement name="HoldingItemHasTags" tags="perkSkullCrusher"/>
+				<requirement name="HasBuff" buff="prestigeBuff2"/>
+			</passive_effect>
+			<passive_effect name="PlayerExpGain" operation="perc_add" level="1" value="-.75" tags="Kill">
+				<requirement name="IsLocalPlayer"/>
+				<requirement name="IsInstigator"/>
+				<requirement name="HitLocation" body_parts="Head"/>
+				<requirement name="HoldingItemHasTags" tags="perkSkullCrusher"/>
+				<requirement name="HasBuff" buff="prestigeBuff3"/>
+			</passive_effect>
+		</effect_group>
+	</append>
+
+	
+
+
 	<append xpath="/progression/perks">
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Prestige 1 Book ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 			<book name="perkprestige1" parent="skillPrestige" max_level="1" base_skill_point_cost="0" desc_key="prbkeydesc1" long_desc_key="prbkeylongdesc1">
@@ -20,7 +49,7 @@
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Prestige 3 Book ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 			<book name="perkprestige3" name_key="prestige3Badgenamekey" parent="skillPrestige" max_level="1" base_skill_point_cost="0" desc_key="prbkeydesc3" long_desc_key="prbkeylongdesc3">
 				<effect_group>
-					<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="ancientCraft2"/>
+					<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="ultiCraft"/>
 				</effect_group>
 			</book>
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
@@ -58,6 +87,12 @@
 			<skill name="skillRangedMasteries" parent="Prestige" name_key="Rang" desc_key="Perks for ranged masteries!" icon="ui_game_symbol_workbench">
 				<effect_group/>
 			</skill>
+			<!-- <skill name="test1" parent="Prestige" name_key="skillCattegoryPrestige3Key" desc_key="Perks for ranged masteries!" icon="ui_game_symbol_workbench" min_level="0" max_level="5">
+				<effect_group/>
+			</skill> -->
+
+			
+			
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 	</insertAfter>
 
@@ -227,7 +262,7 @@
 				</level_requirements>
 				<effect_group>
 					<passive_effect name="LootStage" operation="perc_add" level="1,5" value=".05,.25"/>
-					<passive_effect name="ScavengingTime" operation="perc_subtract" level="1,5" value=".05,.25"/>
+					<!-- <passive_effect name="ScavengingTime" operation="perc_subtract" level="1,5" value=".05,.25"/> -->
 					<passive_effect name="LootQuantity" operation="perc_add" level="1,5" value=".05,.25" tags="buriedTreasure"/>
 
 					<effect_description level="1" desc_key="perklootadesc1" long_desc_key="perklootalongdesc1"/>
@@ -558,6 +593,90 @@
 
 				</effect_group>
 			</perk>
+
+			<!-- <perk name="pertest1"  min_level="0" max_level="5" parent="test1" name_key="perkPrestige3_1" desc_key="perkMHSinfo" icon="ui_game_symbol_add" base_skill_point_cost="0" >
+				<level_requirements level="1">
+					<requirement name="ProgressionLevel" progression_name="perkprestige3" operation="GTE" value="1" desc_key="perkprestige3"/>
+				</level_requirements>
+				<level_requirements level="2">
+					<requirement name="PlayerLevel" operation="GTE" value="50" desc_key="req8"/>
+					<requirement name="ProgressionLevel" progression_name="perkprestige3" operation="GTE" value="1" desc_key="perkprestige3"/>
+				</level_requirements>
+				<level_requirements level="3">
+					<requirement name="PlayerLevel" operation="GTE" value="100" desc_key="req9"/>
+					<requirement name="ProgressionLevel" progression_name="perkprestige3" operation="GTE" value="1" desc_key="perkprestige3"/>
+				</level_requirements>
+				<level_requirements level="4">
+					<requirement name="PlayerLevel" operation="GTE" value="200" desc_key="req10"/>
+					<requirement name="ProgressionLevel" progression_name="perkprestige3" operation="GTE" value="1" desc_key="perkprestige3"/>
+				</level_requirements>
+				<level_requirements level="5">
+					<requirement name="PlayerLevel" operation="GTE" value="300" desc_key="req7"/>
+					<requirement name="ProgressionLevel" progression_name="perkprestige3" operation="GTE" value="1" desc_key="perkprestige3"/>					
+				</level_requirements>
+				<effect_group>
+					<passive_effect name="HealthMax" operation="base_add" value="10,50" level="1,5"/>
+					<passive_effect name="StaminaMax" operation="base_add" value="10,50" level="1,5"/>
+					<effect_description level="1" desc_key="perkMHSdec1" long_desc_key="perkMHSlongdec1"/>
+					<effect_description level="2" desc_key="perkMHSdec2" long_desc_key="perkMHSlongdec2"/>
+					<effect_description level="3" desc_key="perkMHSdec3" long_desc_key="perkMHSlongdec3"/>
+					<effect_description level="4" desc_key="perkMHSdec4" long_desc_key="perkMHSlongdec4"/>
+					<effect_description level="5" desc_key="perkMHSdec5" long_desc_key="perkMHSlongdec5"/>
+				</effect_group>
+			</perk>
+			<perk name="pertest2"  min_level="0" max_level="5" parent="test1" name_key="perkPrestige3_2" desc_key="perkMHSinfo" icon="ui_game_symbol_add" base_skill_point_cost="1">
+				<level_requirements level="1">
+					<requirement name="PlayerLevel" operation="GTE" value="50" desc_key="reqs1"/>
+				</level_requirements>				
+				<effect_group>
+				
+					<requirement name="PlayerLevel" operation="GTE" value="50"/>
+					<passive_effect name="HealthMax" operation="base_add" value="10" level="1"/>
+					<passive_effect name="StaminaMax" operation="base_add" value="10" level="1"/>
+					<effect_description level="1" desc_key="perkMHSdec1" long_desc_key="perkMHSlongdec1"/>
+					
+				</effect_group>
+			</perk>
+			<perk name="pertest3"  min_level="0" max_level="5" parent="test1" name_key="perkPrestige3_3" desc_key="perkMHSinfo" icon="ui_game_symbol_add" base_skill_point_cost="1">
+				<level_requirements level="1">
+					<requirement name="PlayerLevel" operation="GTE" value="50" desc_key="reqs1"/>
+				</level_requirements>				
+				<effect_group>
+				
+					<requirement name="PlayerLevel" operation="GTE" value="50"/>
+					<passive_effect name="HealthMax" operation="base_add" value="10" level="1"/>
+					<passive_effect name="StaminaMax" operation="base_add" value="10" level="1"/>
+					<effect_description level="1" desc_key="perkMHSdec1" long_desc_key="perkMHSlongdec1"/>
+					
+				</effect_group>
+			</perk>
+			<perk name="pertest4"  min_level="0" max_level="5" parent="test1" name_key="perkPrestige3_4" desc_key="perkMHSinfo" icon="ui_game_symbol_add" base_skill_point_cost="1">
+				<level_requirements level="1">
+					<requirement name="PlayerLevel" operation="GTE" value="50" desc_key="reqs1"/>
+				</level_requirements>				
+				<effect_group>
+				
+					<requirement name="PlayerLevel" operation="GTE" value="50"/>
+					<passive_effect name="HealthMax" operation="base_add" value="10" level="1"/>
+					<passive_effect name="StaminaMax" operation="base_add" value="10" level="1"/>
+					<effect_description level="1" desc_key="perkMHSdec1" long_desc_key="perkMHSlongdec1"/>
+					
+				</effect_group>
+			</perk>
+			<perk name="pertest5"  min_level="0" max_level="5" parent="test1" name_key="perkPrestige3_5" desc_key="perkMHSinfo" icon="ui_game_symbol_add" base_skill_point_cost="1">
+				<level_requirements level="1">
+					<requirement name="PlayerLevel" operation="GTE" value="50" desc_key="reqs1"/>
+				</level_requirements>				
+				<effect_group>
+				
+					<requirement name="PlayerLevel" operation="GTE" value="50"/>
+					<passive_effect name="HealthMax" operation="base_add" value="10" level="1"/>
+					<passive_effect name="StaminaMax" operation="base_add" value="10" level="1"/>
+					<effect_description level="1" desc_key="perkMHSdec1" long_desc_key="perkMHSlongdec1"/>
+					
+				</effect_group>
+			</perk> -->
+			
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 	</insertAfter>
 
@@ -574,6 +693,7 @@
 			<effect_group>
 				<requirement name="HasBuff" buff="prestigeBuff"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" level="1,5" value=".05,.2" tags="Harvesting">
+					<requirement name="ProgressionLevel" progression_name="perkprestige1" operation="GTE" value="1" desc_key="reqGenericPoints01"/>
 					<requirement name="HoldingItemHasTags" tags="perkMiner69r"/>
 				</passive_effect>
 			</effect_group>

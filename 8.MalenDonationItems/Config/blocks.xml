@@ -62,14 +62,15 @@
 				<property name="MaxDamage" value="5000"/>
 				<property name="Material" value="Mmetal"/>
 				<property name="CanPickup" value="true"/>
-				<property name="PlantGrowing.Next" value="autominerParentFull"/> 
-				<property name="PlantGrowing.GrowthRate" value="123"/>
-				<property name="PlantGrowing.FertileLevel" value="0"/>
-				<property name="PlantGrowing.IsRandom" value="false"/>
-				<property name="PlantGrowing.LightLevelGrow" value="0"/>
-				<property name="PlantGrowing.LightLevelStay" value="0"/>
-				<!-- <property name="PlantGrowing.GrowIfAnythinOnTop" value="false"/>
-				<property name="PlantGrowing.IsGrowOnTopEnabled" value="false"/> -->			
+				<property class="PlantGrowing"> 
+					<property name="Next" value="autominerParentFull"/> 
+					<property name="GrowthRate" value="123"/>
+					<property name="FertileLevel" value="0"/>
+					<property name="IsRandom" value="false"/>
+					<property name="LightLevelGrow" value="0"/>
+					<property name="LightLevelStay" value="0"/>
+				</property>				
+							
 				<property name="Shape" value="ModelEntity"/>
 				<property name="Model" value="@:Entities/Industrial/controlPanelBase_04Prefab.prefab"/>
 				<property name="Place" value="TowardsPlacerInverted"/>
@@ -86,44 +87,55 @@
 			<block name="autominerStone">
 				<property name="Extends" value="autominerParent"/>			
 				<property name="CreativeMode" value="Dev"/>
-							
-				<property name="PlantGrowing.Next" value="autominerStoneFull"/>
+				<property class="PlantGrowing">			
+					<property name="Next" value="autominerStoneFull"/>
+				</property>
 				<drop event="Destroy" name="autominerStone" count="1" />
 			</block>
 			<block name="autominerIron">
 				<property name="Extends" value="autominerParent"/>			
 				<property name="CreativeMode" value="Dev"/>
 							
-				<property name="PlantGrowing.Next" value="autominerIronFull"/>
+				<property class="PlantGrowing">			
+					<property name="Next" value="autominerIronFull"/>
+				</property>
 				<drop event="Destroy" name="autominerIron" count="1" />
 			</block>
 			<block name="autominerLead">
 				<property name="Extends" value="autominerParent"/>			
 				<property name="CreativeMode" value="Dev"/>
 							
-				<property name="PlantGrowing.Next" value="autominerLeadFull"/>
+				<property class="PlantGrowing">			
+					<property name="Next" value="autominerLeadFull"/>
+				</property>
 				<drop event="Destroy" name="autominerLead" count="1" />
 			</block>
 			<block name="autominerNitre">
 				<property name="Extends" value="autominerParent"/>			
 				<property name="CreativeMode" value="Dev"/>
 				
-				<property name="DescriptionKey" value="autominerNitreDesc"/>			
-				<property name="PlantGrowing.Next" value="autominerNitreFull"/>
+				<property name="DescriptionKey" value="autominerNitreDesc"/>				
+				<property class="PlantGrowing">			
+					<property name="Next" value="autominerNitreFull"/>
+				</property>
 				<drop event="Destroy" name="autominerNitre" count="1" />
 			</block>
 			<block name="autominerCoal">
 				<property name="Extends" value="autominerParent"/>			
 				<property name="CreativeMode" value="Dev"/>
 							
-				<property name="PlantGrowing.Next" value="autominerCoalFull"/>
+				<property class="PlantGrowing">			
+					<property name="Next" value="autominerCoalFull"/>
+				</property>
 				<drop event="Destroy" name="autominerCoal" count="1" />
 			</block>
 			<block name="autominerOil">
 				<property name="Extends" value="autominerParent"/>			
 				<property name="CreativeMode" value="Dev"/>
 							
-				<property name="PlantGrowing.Next" value="autominerOilFull"/>
+				<property class="PlantGrowing">			
+					<property name="Next" value="autominerOilFull"/>
+				</property>
 				<drop event="Destroy" name="autominerOil" count="1" />
 			</block>
 
@@ -132,9 +144,17 @@
 				<property name="CreativeMode" value="None"/>	
 				<property name="CustomIcon" value="controlPanelBase04"/>	
 				<property name="CustomIconTint" value="141414"/>
-				<property name="TintColor" value="20,20,20"/>
-				<property name="UMA.Overlay0Tint" value="20,20,20"/>
-				<property name="Class" value="Loot" />			
+				<property name="TintColor" value="20,20,20"/>				
+				<property name="UMA">
+					<property name="Overlay0Tint" value="20,20,20"/>
+				</property>
+				<property name="Class" value="CompositeTileEntity" />	
+				<property class="CompositeFeatures">
+					<property class="TEFeatureStorage">
+						<property name="LootList" value="autominerStone" />
+					</property>
+				</property>
+
 				<property name="DisplayType" value="blockMulti" />
 				<property name="Material" value="Mmetal"/>
 				<property name="Shape" value="ModelEntity"/>
@@ -147,10 +167,9 @@
 				<property name="Candrop" value="false"/>		
 				<property class="RepairItems">
 					<property name="resourceDuctTape" value="5"/>
-				</property>
-				<property name="LootList" value="autominerStone" />
-				<property name="SortOrder1" value="70e3"/>							
+				</property>	
 				
+				<property name="SortOrder1" value="70e3"/>
 			</block>
 			<block name="autominerStoneFull">
 				<property name="Extends" value="autominerParentFull"/>
@@ -158,10 +177,15 @@
 				
 
 				<property name="CustomIconTint" value="AAAA32"/>
-				<property name="TintColor" value="170,170,50"/>
-				<property name="UMA.Overlay0Tint" value="170,170,50"/>
-
-				<property name="LootList" value="autominerStone" />
+				<property name="TintColor" value="170,170,50"/>				
+				<property name="UMA">
+					<property name="Overlay0Tint" value="170,170,50"/>
+				</property>
+				<property class="CompositeFeatures">
+					<property class="TEFeatureStorage">
+						<property name="LootList" value="autominerStone" />
+					</property>
+				</property>
 				<drop event="Destroy" name="autominerStone" count="0" />			
 				<property name="DowngradeBlock" value="autominerStone"/>
 			</block>
@@ -171,10 +195,15 @@
 				
 
 				<property name="CustomIconTint" value="AAAA32"/>
-				<property name="TintColor" value="170,170,50"/>
-				<property name="UMA.Overlay0Tint" value="170,170,50"/>			
-				
-				<property name="LootList" value="autominerIron" />
+				<property name="TintColor" value="170,170,50"/>				
+				<property name="UMA">
+					<property name="Overlay0Tint" value="170,170,50"/>
+				</property>
+				<property class="CompositeFeatures">
+					<property class="TEFeatureStorage">
+						<property name="LootList" value="autominerIron" />
+					</property>
+				</property>
 				<drop event="Destroy" name="autominerIron" count="0" />			
 				<property name="DowngradeBlock" value="autominerIron"/>
 			</block>
@@ -184,10 +213,16 @@
 				
 
 				<property name="CustomIconTint" value="AAAA32"/>
-				<property name="TintColor" value="170,170,50"/>
-				<property name="UMA.Overlay0Tint" value="170,170,50"/>
+				<property name="TintColor" value="170,170,50"/>				
+				<property name="UMA">
+					<property name="Overlay0Tint" value="170,170,50"/>
+				</property>
+				<property class="CompositeFeatures">
+					<property class="TEFeatureStorage">
+						<property name="LootList" value="autominerLead" />
+					</property>
+				</property>
 				
-				<property name="LootList" value="autominerLead" />
 				<drop event="Destroy" name="autominerLead" count="0" />			
 				<property name="DowngradeBlock" value="autominerLead"/>
 			</block>
@@ -197,10 +232,16 @@
 				
 
 				<property name="CustomIconTint" value="AAAA32"/>
-				<property name="TintColor" value="170,170,50"/>
-				<property name="UMA.Overlay0Tint" value="170,170,50"/>
+				<property name="TintColor" value="170,170,50"/>				
+				<property name="UMA">
+					<property name="Overlay0Tint" value="170,170,50"/>
+				</property>
+				<property class="CompositeFeatures">
+					<property class="TEFeatureStorage">
+						<property name="LootList" value="autominerNitre" />
+					</property>
+				</property>
 				
-				<property name="LootList" value="autominerNitre" />
 				<drop event="Destroy" name="autominerNitre" count="0" />			
 				<property name="DowngradeBlock" value="autominerNitre"/>
 			</block>
@@ -210,23 +251,32 @@
 				
 
 				<property name="CustomIconTint" value="AAAA32"/>
-				<property name="TintColor" value="170,170,50"/>
-				<property name="UMA.Overlay0Tint" value="170,170,50"/>
+				<property name="TintColor" value="170,170,50"/>				
+				<property name="UMA">
+					<property name="Overlay0Tint" value="170,170,50"/>
+				</property>
+				<property class="CompositeFeatures">
+					<property class="TEFeatureStorage">
+						<property name="LootList" value="autominerCoal" />
+					</property>
+				</property>
 				
-				<property name="LootList" value="autominerCoal" />
 				<drop event="Destroy" name="autominerCoal" count="0" />				
 				<property name="DowngradeBlock" value="autominerCoal"/>
 			</block>
 			<block name="autominerOilFull">
 				<property name="Extends" value="autominerParentFull"/>
-				<property name="CreativeMode" value="Dev"/>				
-				
-
+				<property name="CreativeMode" value="Dev"/>
 				<property name="CustomIconTint" value="AAAA32"/>
 				<property name="TintColor" value="170,170,50"/>
-				<property name="UMA.Overlay0Tint" value="170,170,50"/>
-				
-				<property name="LootList" value="autominerOil" />
+				<property name="UMA">
+					<property name="Overlay0Tint" value="170,170,50"/>
+				</property>
+				<property class="CompositeFeatures">
+					<property class="TEFeatureStorage">
+						<property name="LootList" value="autominerOil" />
+					</property>
+				</property>				
 				<drop event="Destroy" name="autominerOil" count="0" />		
 				<property name="DowngradeBlock" value="autominerOil"/>
 			</block>

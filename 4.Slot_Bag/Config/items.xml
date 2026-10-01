@@ -1,0 +1,20 @@
+<config>
+	<append xpath="/items">
+        <item name="specialBackPack">
+            <property name="Extends" value="backpackMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="cntWeaponsBagLarge"/>            
+            <property name="DescriptionKey" value="backpackLargeDesc"/>
+            <property name="EquipSlot" value="Backpack"/>
+            <!-- <property name="TraderStageTemplate" value="clothingTier1"/> -->
+            <property name="SoundPickup" value="backpack_lrg_grab"/>
+            <property name="SoundPlace" value="backpack_lrg_place"/>
+            <property name="Tags" value="backpackT3"/>
+            <effect_group tiered="false">
+                <passive_effect name="ModSlots" operation="base_set" value="0"/>
+                <!-- Increases the number of inventory slots from 48 to 82,84,86,88,92,96 -->
+                <passive_effect name="BagSize" operation="base_add" value="72"/>
+                <display_value name="dSlotCount" value="72"/>
+            </effect_group>
+        </item>
+    </append>
+</config>

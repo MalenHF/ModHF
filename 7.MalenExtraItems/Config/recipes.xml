@@ -24,29 +24,7 @@
 					<ingredient name="resourceConcreteMix" count="500"/>					
 					<ingredient name="resourceMetalPipe" count="200"/>
 				</recipe>
-		<!---->
-		<!--New Items/Materials-->
-			<!-- OLD
-				<recipe name="mithril" count="1" craft_time="30" craft_area="legenstation" tags="perkMasterChef,learnable,PerkIngeS1">
-					<ingredient name="resourceSilverNugget" count="30"/>
-					<ingredient name="resourceGoldNugget" count="20"/>
-					<ingredient name="resourceRawDiamond" count="10"/>
-						<ingredient name="Practonium" count="6"/>
-				</recipe>
-				
-				<recipe name="ResourceForgedPlatinum" count="1" craft_time="60" craft_area="legenstation" tags="learnable,PerkIngeS1,workbenchCrafting,PerkIngeS1">
-					<ingredient name="resourceForgedSteel" count="1000"/>
-					<ingredient name="resourceForgedIron" count="2000"/>
-					<ingredient name="resourceSilverNugget" count="150"/>
-					<ingredient name="resourceGoldNugget" count="100"/>
-					<ingredient name="resourceRawDiamond" count="50"/>
-					<ingredient name="casinoCoinD" count="5"/>
-				</recipe>
-				<recipe name="ResourceForgedPractonium" count="1" craft_time="60" craft_area="legenstation" tags="PerkIngeS1,workbenchCrafting">
-					<ingredient name="Practonium" count="25"/>
-					<ingredient name="casinoCoinD" count="4"/>
-				</recipe>
-			-->
+			<!---->
 		<!---->
 		<!--Utencilios New Forja-->
 			<recipe name="toolAndDieSetHF" count="1" craft_time="120" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr1">			
@@ -107,13 +85,12 @@
 			
 		<!---->
 		<!--New Forja Craft-->
-			<recipe name="platinumMould" count="1" craft_time="30" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr1">
+			<recipe name="resourcePlatinumMould" count="1" craft_time="30" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr1">
 				<ingredient name="resourceForgedSteel" count="1000"/>
-				<ingredient name="resourceForgedIron" count="2000"/>
-				<ingredient name="casinoCoinD" count="3"/>
+				<ingredient name="resourceForgedIron" count="2000"/>				
 			</recipe>
-			<recipe name="ResourceForgedPlatinum" count="1" craft_time="5" craft_area="legenstation">			<!--tags="perkAdvancedEngineering" craft_tool="toolAndDieSetHF"-->
-				<ingredient name="platinumMould" count="1"/>
+			<recipe name="resourceForgedPlatinum" count="1" craft_time="5" craft_area="legenstation">			<!--tags="perkAdvancedEngineering" craft_tool="toolAndDieSetHF"-->
+				<ingredient name="resourcePlatinumMould" count="1"/>
 				<ingredient name="resourceLegenAlloy" count="1"/>
 				<ingredient name="drinkJarBoiledWater" count="100"/>
 			</recipe>
@@ -121,13 +98,14 @@
 				<ingredient name="unit_silver" count="4500"/>
 				<ingredient name="unit_gold" count="6000"/>
 				<ingredient name="unit_diamon" count="6000"/>
+				<ingredient name="unit_platinumM" count="30"/>
 			</recipe>
 			<recipe name="resourcePlatinumNugget" count="1" craft_time="120" material_based="true" craft_area="forgeHF">			<!--tags="perkAdvancedEngineering" craft_tool="toolAndDieSetHF"-->
+				<ingredient name="unit_platinumM" count="20"/>
 				<ingredient name="unit_silver" count="2250"/>
 				<ingredient name="unit_gold" count="3000"/>
-				<ingredient name="unit_diamon" count="3000"/>
-				<ingredient name="unit_iron" count="20000"/>
-				<ingredient name="unit_clay" count="10000"/>
+				<ingredient name="unit_diamon" count="3000"/>	
+				<ingredient name="unit_iron" count="20000"/>				
 			</recipe>
 			
 
@@ -140,30 +118,54 @@
 			<recipe name="resourceRawDiamond" count="1" craft_time="1" material_based="true" craft_area="forgeHF">			<!--tags="perkAdvancedEngineering" craft_tool="toolAndDieSetHF"-->
 				<ingredient name="unit_diamon" count="120"/>
 			</recipe>
-			<recipe name="Practonium" count="1" craft_time="1" material_based="true" craft_area="forgeHF">			<!--tags="perkAdvancedEngineering" craft_tool="toolAndDieSetHF"-->
+			<recipe name="resourcePractonium" count="1" craft_time="1" material_based="true" craft_area="forgeHF">			<!--tags="perkAdvancedEngineering" craft_tool="toolAndDieSetHF"-->
 				<ingredient name="unit_practo" count="100"/>
 			</recipe>
+			<recipe name="casinoCoinD" count="1" craft_time="1" material_based="true" craft_area="forgeHF">			<!--tags="perkAdvancedEngineering" craft_tool="toolAndDieSetHF"-->
+				<ingredient name="unit_platinumM" count="20"/>			
+			</recipe>			
 
-			<recipe name="practoniumMould" count="1" craft_time="30" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr1">
+			<recipe name="resourcePractoniumMould" count="1" craft_time="30" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr1">
 				<ingredient name="resourceForgedSteel" count="100"/>
-				<ingredient name="resourceForgedIron" count="200"/>
-				<ingredient name="casinoCoinD" count="2"/>
+				<ingredient name="resourceForgedIron" count="200"/>				
 			</recipe>
 			<recipe name="resourcePractoAlloy" count="1" craft_time="150" material_based="true" craft_area="forgeHF">			<!--tags="perkAdvancedEngineering" craft_tool="toolAndDieSetHF"-->
 				<ingredient name="unit_practo" count="2500"/>
+				<ingredient name="unit_platinumM" count="20"/>
 			</recipe>
-			<recipe name="ResourceForgedPractonium" count="1" craft_time="5" craft_area="legenstation">			<!--tags="perkAdvancedEngineering" craft_tool="toolAndDieSetHF"-->
-				<ingredient name="practoniumMould" count="1"/>
+			<recipe name="resourceForgedPractonium" count="1" craft_time="5" craft_area="legenstation">			<!--tags="perkAdvancedEngineering" craft_tool="toolAndDieSetHF"-->
+				<ingredient name="resourcePractoniumMould" count="1"/>
 				<ingredient name="resourcePractoAlloy" count="1"/>
 				<ingredient name="drinkJarBoiledWater" count="100"/>
 			</recipe>
 
-			<recipe name="mithril" count="1" craft_time="180" material_based="true" craft_area="forgeHF" tags="learnable,PLHr1">
+			<recipe name="resourceMithril" count="1" craft_time="180" material_based="true" craft_area="forgeHF" tags="learnable,PLHr1">
 				<ingredient name="unit_silver" count="900"/>
 				<ingredient name="unit_gold" count="1200"/>
 				<ingredient name="unit_diamon" count="1200"/>
 				<ingredient name="unit_practo" count="500"/>
+				<ingredient name="unit_platinumM" count="15"/>
 			</recipe>
+			<recipe name="resourcePlatinumMetalAlloy" count="1" craft_time="180" material_based="true" craft_area="forgeHF" tags="learnable,PLHr1">
+				<ingredient name="unit_platinumM" count="15"/>
+			</recipe>
+			<recipe name="bossTokenAncient" count="1" craft_time="30" material_based="true" craft_area="forgeHF" tags="learnable,PLHr1">
+				<ingredient name="unit_ancientM" count="20"/>
+			</recipe>
+			<recipe name="resourceMetalAlloyAncient" count="1" craft_area="forgeHF" craft_time="10"  material_based="true" tags="learnable,workbenchCrafting,ultiCraft">			
+				<ingredient name="unit_ancientM" count="5"/>
+				<ingredient name="unit_silver" count="900"/>
+				<ingredient name="unit_gold" count="1200"/>
+				<ingredient name="unit_diamon" count="1200"/>
+				<ingredient name="unit_practo" count="500"/>				
+			</recipe>
+			<recipe name="resourceMythicalParts" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr3,LCLvl">
+				<ingredient name="resourceLegendaryParts" count="10"/>
+				<ingredient name="resourcePlatinumMetalAlloy" count="2"/>					
+			</recipe>
+			
+
+			
 		<!---->
 		<!--New comsumibles-->
 			<recipe name="agua_divina" count="1" craft_area="campfire" craft_time="300" tags="learnable,perkMasterChef,chefTier5">
@@ -247,7 +249,7 @@
 				<ingredient name="resourcePaper" count="1"/>
 				<ingredient name="resourceYuccaFibers" count="1"/>
 			</recipe>
-			<recipe name="foodRawChickenBundle" count="1" craft_time="5">
+			<recipe name="foodFatBottle" count="1" craft_time="5">
 				<ingredient name="resourceAnimalFat" count="5"/>
 				<ingredient name="drinkJarEmpty" count="1"/>				
 			</recipe>
@@ -319,23 +321,22 @@
 				<ingredient name="ammoGasCan" count="100000"/>
 				<ingredient name="bookMasterCover_Tech" count="1"/>
 				<ingredient name="resourceForgedSteel" count="10000"/>
-				<ingredient name="casinoCoinD" count="6"/>
+				<ingredient name="resourcePlatinumMetalAlloy" count="6"/>
 			</recipe>
 			<recipe name="SPOGyroPlaceable" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr1">
 				<ingredient name="vehicleGyrocopterPlaceable" count="1"/>
 				<ingredient name="ammoGasCan" count="200000"/>
-				<ingredient name="bookMasterPages_Tech" count="1"/>
-				
+				<ingredient name="bookMasterPages_Tech" count="1"/>				
 				<ingredient name="resourceForgedSteel" count="15000"/>
-				<ingredient name="casinoCoinD" count="9"/>
+				<ingredient name="resourcePlatinumMetalAlloy" count="9"/>
 			</recipe>
 			<recipe name="SPO4x4Placeable" count="1" craft_area="legenstation" craft_time="60" tags="learnable,workbenchCrafting,PLHr3">
 				<ingredient name="vehicleTruck4x4Placeable" count="1"/>
-				<ingredient name="ResourceForgedPlatinum" count="1"/>
+				<ingredient name="resourceForgedPlatinum" count="1"/>
 				<ingredient name="ammoGasCan" count="200000"/>
 				<ingredient name="vehiclesSkillMagazine" count="100"/>
 				<ingredient name="resourceForgedSteel" count="15000"/>
-				<ingredient name="casinoCoinD" count="9"/>
+				<ingredient name="resourcePlatinumMetalAlloy" count="9"/>
 			</recipe>
 			<recipe name="SPOmotoPlaceable" count="1" craft_time="10" tags="workbenchCrafting">
 				<ingredient name="SPOmotoPlaceable" count="1"/>
@@ -353,19 +354,19 @@
 
 			<recipe name="BetsyPlaceable" count="1" craft_area="legenstation" craft_time="60" tags="learnable,workbenchCrafting">
 				<ingredient name="SPOmotoPlaceable" count="1"/>
-				<ingredient name="ResourceForgedPlatinum" count="1"/>
+				<ingredient name="resourceForgedPlatinum" count="1"/>
 				<ingredient name="ammoGasCan" count="200000"/>
 				<ingredient name="vehiclesSkillMagazine" count="100"/>
 				<ingredient name="resourceForgedSteel" count="10000"/>
-				<ingredient name="casinoCoinD" count="6"/>
+				<ingredient name="resourcePlatinumMetalAlloy" count="6"/>
 			</recipe>
 			<recipe name="Betsy2Placeable" count="1" craft_area="legenstation" craft_time="60" tags="learnable,workbenchCrafting">
 				<ingredient name="SPOmotoPlaceable" count="1"/>
-				<ingredient name="ResourceForgedPlatinum" count="1"/>
+				<ingredient name="resourceForgedPlatinum" count="1"/>
 				<ingredient name="ammoGasCan" count="200000"/>
 				<ingredient name="vehiclesSkillMagazine" count="100"/>
 				<ingredient name="resourceForgedSteel" count="10000"/>
-				<ingredient name="casinoCoinD" count="6"/>
+				<ingredient name="resourcePlatinumMetalAlloy" count="6"/>
 			</recipe>
 
 			<recipe name="BetsyPlaceable" count="1"  craft_time="5" tags="workbenchCrafting">
@@ -379,12 +380,12 @@
 		<!---->
 		<!--New Mods-->
 			<recipe name="modGunMeleeBlessedMetal" count="1" craft_area="legenstation" craft_time="60" tags="learnable,workbenchCrafting,PerkIngeS2">
-				<ingredient name="ResourceForgedPlatinum" count="1"/>
+				<ingredient name="resourceForgedPlatinum" count="1"/>
 				<ingredient name="resourceRockSmall" count="1"/>
 			</recipe>
 			<recipe name="modCursedStone" count="1" craft_area="legenstation" craft_time="60" tags="learnable,workbenchCrafting,PerkIngeS2">
 				<ingredient name="modGunMeleeBlessedMetal" count="1"/>
-				<ingredient name="ResourceForgedPractonium" count="1"/>
+				<ingredient name="resourceForgedPractonium" count="1"/>
 			</recipe>
 			<recipe name="modUNArmorPlat" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr1">	
 				<ingredient name="modArmorPlatingBasicSchematic" count="3"/>
@@ -402,7 +403,7 @@
 			</recipe>
 			<!--TODO-->
 			<!-- <recipe name="modArmorCursed" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr1">
-				<ingredient name="Practonium" count="10"/>
+				<ingredient name="resourcePractonium" count="10"/>
 				<ingredient name="drinkJarGrandpasLearningElixir" count="5"/>
 				<ingredient name="modArmorCoolingMesh" count="1"/>
 				<ingredient name="modArmorInsulatedLiner" count="1"/>
@@ -411,11 +412,11 @@
 			</recipe> -->
 			<recipe name="Cursed_mod" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr3">
 				<ingredient name="modCursedStone" count="1"/>
-				<ingredient name="ResourceForgedPractonium" count="1"/>
+				<ingredient name="resourceForgedPractonium" count="1"/>
 				<ingredient name="bookMaster_Looter" count="1"/>
 			</recipe>
 			<recipe name="Divine_mod" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr3">
-				<ingredient name="mithril" count="1"/>
+				<ingredient name="resourceMithril" count="1"/>
 				<ingredient name="modGunMeleeBlessedMetal" count="1"/>
 				<ingredient name="modGunMeleeTheHunter" count="1"/>
 				<ingredient name="modGunMeleeRadRemover" count="1"/>
@@ -521,7 +522,7 @@
 					<ingredient name="bookAutoWeaponsRecoil" count="1"/>
 					<ingredient name="bookAutoWeaponsRagdoll" count="1"/>
 					<ingredient name="bookAutoWeaponsMachineGuns" count="1"/>
-					<ingredient name="machineGunsSkillMagazine" count="20"/>					
+					<ingredient name="machineGunsSkillMagazine" count="30"/>					
 				</recipe>
 				<!-- <recipe name="PAMT2" count="1" craft_area="legenstation" tags="learnable,workbenchCrafting,PaLArms" craft_time="15">
 					<ingredient name="bookAutoWeaponsRagdoll" count="1"/>
@@ -748,29 +749,23 @@
 					<ingredient name="resourceSewingKit" count="20"/>
 				</recipe>
 			<!--Fireman/Demolition-->
-				<recipe name="bookMasterCover_Fireman" count="1" craft_area="legenstation" tags="learnable,workbenchCrafting,bookMasterCover_Shotgunlee" craft_time="15">
-					<ingredient name="bookFiremansAlmanacHeat" count="1"/>
-					<ingredient name="bookFiremansAlmanacAxes" count="1"/>
-					<ingredient name="bookFiremansAlmanacSpeed" count="1"/>
+				<recipe name="bookMasterCover_Demolition" count="1" craft_area="legenstation" tags="learnable,workbenchCrafting,bookMasterCover_Shotgunlee" craft_time="15">
+					<ingredient name="bookSledgeSagaKnockdown" count="1"/>
+					<ingredient name="bookSledgeSagaDegradation" count="1"/>
+					<ingredient name="bookSledgeSagaCrippledMorale" count="1"/>
 					<ingredient name="sledgehammersSkillMagazine" count="20"/>
 					<ingredient name="resourceLeather" count="200"/>
 				</recipe>
-				<recipe name="bookMasterPages_Fireman" count="1" craft_area="legenstation" tags="learnable,workbenchCrafting,PaLMelee" craft_time="15">
-					<ingredient name="bookFiremansAlmanacMolotov" count="1"/>
-					<ingredient name="bookFiremansAlmanacPrevention" count="1"/>
-					<ingredient name="bookFiremansAlmanacHarvest" count="1"/>
-					<ingredient name="bookFiremansAlmanacEquipment" count="1"/>
+				<recipe name="bookMasterPages_Demolition" count="1" craft_area="legenstation" tags="learnable,workbenchCrafting,PaLMelee" craft_time="15">
+					<ingredient name="bookSledgeSagaPulverizingFinishers" count="1"/>
+					<ingredient name="bookSledgeSagaSavageReaper" count="1"/>
+					<ingredient name="bookSledgeSagaConcussiveStrike" count="1"/>
+					<ingredient name="bookSledgeSagaArmorCrusher" count="1"/>
 					<ingredient name="sledgehammersSkillMagazine" count="30"/>					
-				</recipe>
-				<!-- <recipe name="bookMPa2Fire" count="1" craft_area="legenstation" tags="learnable,workbenchCrafting,PaLMelee" craft_time="15">
-					<ingredient name="bookFiremansAlmanacHarvest" count="1"/>
-					<ingredient name="bookFiremansAlmanacEquipment" count="1"/>
-					<ingredient name="sledgehammersSkillMagazine" count="20"/>
-					
-				</recipe> -->
-				<recipe name="bookMaster_Fireman" count="1" craft_area="legenstation" tags="learnable,workbenchCrafting,LMMelee" craft_time="15">
-					<ingredient name="bookMasterCover_Fireman" count="1"/>
-					<ingredient name="bookMasterPages_Fireman" count="1"/>					
+				</recipe>				
+				<recipe name="bookMaster_Demolition" count="1" craft_area="legenstation" tags="learnable,workbenchCrafting,LMMelee" craft_time="15">
+					<ingredient name="bookMasterCover_Demolition" count="1"/>
+					<ingredient name="bookMasterPages_Demolition" count="1"/>					
 					<ingredient name="sledgehammersSkillMagazine" count="50"/>
 					<ingredient name="resourcePaint" count="4000"/>
 					<ingredient name="resourceFeather" count="400"/>
@@ -976,7 +971,7 @@
 				<ingredient name="resourceScrapIron" count="200"/>
 				<ingredient name="resourceWood" count="100"/>
 			</recipe>			
-			<recipe name="legendModPart" count="1" craft_area="legenstation" craft_time="10" tags="learnable,workbenchCrafting,PLHr1">
+			<recipe name="resourceLegendModPart" count="1" craft_area="legenstation" craft_time="10" tags="learnable,workbenchCrafting,PLHr1">
 				<ingredient name="modArmorPerception" count="1"/>
 				<ingredient name="modArmorStrength" count="1"/>
 				<ingredient name="modArmorFortitude" count="1"/>
@@ -985,7 +980,7 @@
 			</recipe>
 			<recipe name="modArmorTreasureHunterLegend" count="1" craft_area="legenstation" craft_time="10" tags="learnable,workbenchCrafting,PLHr1">
 				<ingredient name="resourcePlatinumNugget" count="1"/>
-				<ingredient name="legendModPart" count="1"/>
+				<ingredient name="resourceLegendModPart" count="1"/>
 				<ingredient name="modArmorTreasureHunter" count="1"/>
 			</recipe>
 			<!-- 
@@ -1021,7 +1016,7 @@
 			</recipe>
 			<!--T2-->
 			<recipe name="legendToolT2_Nailgun" count="1" craft_area="legenstation" craft_time="10" tags="learnable,LCLvl,workbenchCrafting,PerkIngeS2">
-				<ingredient name="ResourceForgedPlatinum" count="1"/>
+				<ingredient name="resourceForgedPlatinum" count="1"/>
 				<ingredient name="epicToolT1_StoneHammer" count="1"/>
 				<ingredient name="bookMasterPages_Tech" count="1"/>
 				<ingredient name="repairToolsSkillMagazine" count="60"/>
@@ -1029,7 +1024,7 @@
 				<ingredient name="resourceLegendaryParts" count="10"/>
 			</recipe>
 			<recipe name="legendToolT2_Ratchet" count="1" craft_area="legenstation" craft_time="10" tags="learnable,PHL,workbenchCrafting,PLHr2,LCLvl">
-				<ingredient name="ResourceForgedPlatinum" count="1"/>
+				<ingredient name="resourceForgedPlatinum" count="1"/>
 				<ingredient name="epicToolT1_Wrench" count="1"/>				
 				<ingredient name="salvageToolsSkillMagazine" count="60"/>
 				<ingredient name="bookMasterPages_Tech" count="1"/>	
@@ -1037,14 +1032,14 @@
 				<ingredient name="resourceLegendaryParts" count="10"/>				
 			</recipe>
 			<recipe name="legendToolT2_Chainsaw" count="1" craft_area="legenstation" craft_time="10" tags="learnable,PHL,workbenchCrafting,PLHr2,LCLvl">
-				<ingredient name="ResourceForgedPlatinum" count="1"/>
+				<ingredient name="resourceForgedPlatinum" count="1"/>
 				<ingredient name="epicToolT1_SteelAxe" count="1"/>
 				<ingredient name="bookMasterPages_Tools" count="1"/>								
 				<ingredient name="meleeToolAxeT3ChainsawParts" count="200"/>
 				<ingredient name="resourceLegendaryParts" count="10"/>
 			</recipe>
 			<recipe name="legendToolT2_Auger" count="1" craft_area="legenstation" craft_time="10" tags="learnable,PHL,workbenchCrafting,PLHr2,LCLvl">
-				<ingredient name="ResourceForgedPlatinum" count="2"/>				
+				<ingredient name="resourceForgedPlatinum" count="1"/>				
 				<ingredient name="bookMasterPages_Tools" count="1"/>
 				<ingredient name="epicToolT1_Pickaxe" count="1"/>
 				<ingredient name="meleeToolAxeT3ChainsawParts" count="200"/>
@@ -1056,43 +1051,49 @@
 				<ingredient name="legendToolT2_Nailgun" count="1"/>
 				<ingredient name="legendToolT2_Ratchet" count="1"/>
 				<ingredient name="epicToolT1_Pickaxe" count="1"/>
-				<ingredient name="casinoCoinD" count="10"/>
+				<ingredient name="resourceMythicalParts" count="5"/>
 			</recipe>
 			<recipe name="mythTool_DivineHammer" count="1" craft_area="legenstation" craft_time="10" tags="learnable,workbenchCrafting,PLHr3,LCLvl">
 				<ingredient name="bookMaster_Tools" count="1"/>
 				<ingredient name="legendToolT2_Auger" count="1"/>
 				<ingredient name="legendToolT2_Chainsaw" count="1"/>
 				<ingredient name="epicToolT1_StoneHammer" count="1"/>
-				<ingredient name="casinoCoinD" count="10"/>
+				<ingredient name="resourceMythicalParts" count="5"/>
 			</recipe>
 		<!---->
 		<!--Weapons T1-->
 			<recipe name="epicRangedT1_Pistol" count="1" craft_area="legenstation" craft_time="10" tags="learnable,workbenchCrafting,PLHr1,LCLvl">
-				<ingredient name="ResourceForgedPlatinum" count="1"/>
+				<ingredient name="resourceForgedPlatinum" count="1"/>
 				<ingredient name="gunHandgunT1PistolParts" count="100"/>
 				<ingredient name="bookMasterCover_Pistol" count="1"/>				
 				<ingredient name="resourceLegendaryParts" count="10"/>				
 			</recipe>
+			<recipe name="epicRangedT1_Revolver" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr2,LCLvl">
+				<ingredient name="resourceForgedPlatinum" count="1"/>
+				<ingredient name="gunHandgunT1PistolParts" count="100"/>				
+				<ingredient name="bookMasterCover_Magnum" count="1"/>							
+				<ingredient name="resourceLegendaryParts" count="10"/>
+			</recipe>
 			<recipe name="epicRangedT1_Sawed-off" count="1" craft_area="legenstation" craft_time="10" tags="learnable,workbenchCrafting,PLHr1,LCLvl">
-				<ingredient name="ResourceForgedPlatinum" count="1"/>
+				<ingredient name="resourceForgedPlatinum" count="1"/>
 				<ingredient name="gunShotgunT1DoubleBarrelParts" count="100"/>
 				<ingredient name="bookMasterCover_Shotgun" count="1"/>
 				<ingredient name="resourceLegendaryParts" count="10"/>
 			</recipe>
 			<recipe name="epicRangedT1_Rifle" count="1" craft_area="legenstation" craft_time="10" tags="learnable,workbenchCrafting,PLHr1,LCLvl">
-				<ingredient name="ResourceForgedPlatinum" count="1"/>
+				<ingredient name="resourceForgedPlatinum" count="1"/>
 				<ingredient name="bookMasterCover_Snipers" count="1"/>
 				<ingredient name="gunRifleT1HuntingRifleParts" count="100"/>
 				<ingredient name="resourceLegendaryParts" count="10"/>
 			</recipe>
 			<recipe name="epicRangedT1_AK47" count="1" craft_area="legenstation" craft_time="10" tags="learnable,workbenchCrafting,PLHr1,LCLvl">
-				<ingredient name="ResourceForgedPlatinum" count="1"/>
+				<ingredient name="resourceForgedPlatinum" count="1"/>
 				<ingredient name="gunMGT1AK47Parts" count="100"/>
 				<ingredient name="bookMasterCover_Automatic" count="1"/>
 				<ingredient name="resourceLegendaryParts" count="10"/>
 			</recipe>
 			<recipe name="epicRangedT1_Crossbow" count="1" craft_time="10" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr1,LCLvl">
-				<ingredient name="ResourceForgedPlatinum" count="1"/>
+				<ingredient name="resourceForgedPlatinum" count="1"/>
 				<ingredient name="gunBowT1WoodenBowParts" count="100"/>
 				<ingredient name="bookMasterCover_Bows" count="1"/>	
 				<ingredient name="resourceLegendaryParts" count="10"/>
@@ -1100,21 +1101,21 @@
 		<!---->
 		<!--Weapons T2-->
 			<recipe name="legendRangedT2_SMG5" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr2,LCLvl">
-				<ingredient name="ResourceForgedPlatinum" count="2"/>
+				<ingredient name="resourceForgedPlatinum" count="2"/>
 				<ingredient name="epicRangedT1_Pistol" count="1"/>
 				<ingredient name="bookMasterPages_Pistol" count="1"/>				
 				<ingredient name="gunHandgunT1PistolParts" count="200"/>
 				<ingredient name="resourceLegendaryParts" count="20"/>
 			</recipe>
 			<recipe name="legendRangedT2_Magnum44" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr2,LCLvl">
-				<ingredient name="ResourceForgedPlatinum" count="2"/>
-				<ingredient name="epicRangedT1_Pistol" count="1"/>
+				<ingredient name="resourceForgedPlatinum" count="2"/>
+				<ingredient name="epicRangedT1_Revolver" count="1"/>
 				<ingredient name="bookMasterPages_Magnum" count="1"/>
 				<ingredient name="gunHandgunT1PistolParts" count="200"/>			
 				<ingredient name="resourceLegendaryParts" count="20"/>
 			</recipe>
 			<recipe name="legendRangedT2_Shotgun" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr2,LCLvl">
-				<ingredient name="ResourceForgedPlatinum" count="2"/>
+				<ingredient name="resourceForgedPlatinum" count="2"/>
 				<ingredient name="epicRangedT1_Sawed-off" count="1"/>
 				<ingredient name="bookMasterPages_Shotgun" count="1"/>				
 				<ingredient name="gunShotgunT1DoubleBarrelParts" count="200"/>
@@ -1122,7 +1123,7 @@
 				<!--<ingredient name="gunShotgunT2PumpShotgunSchematic" count="10"/>-->
 			</recipe>
 			<recipe name="legendRangedT2_Sniper" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr2,LCLvl">
-				<ingredient name="ResourceForgedPlatinum" count="2"/>
+				<ingredient name="resourceForgedPlatinum" count="2"/>
 				<ingredient name="epicRangedT1_Rifle" count="1"/>
 				<ingredient name="bookMasterPages_Snipers" count="1"/>				
 				<ingredient name="gunRifleT1HuntingRifleParts" count="200"/>
@@ -1130,7 +1131,7 @@
 				<!--<ingredient name="gunRifleT2LeverActionRifleSchematic" count="10"/>-->
 			</recipe>
 			<recipe name="legendRangedT2_TacticalAR" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr2,LCLvl">
-				<ingredient name="ResourceForgedPlatinum" count="2"/>
+				<ingredient name="resourceForgedPlatinum" count="2"/>
 				<ingredient name="epicRangedT1_AK47" count="1"/>
 				<ingredient name="bookMasterPages_Automatic" count="1"/>				
 				<ingredient name="gunMGT1AK47Parts" count="200"/>
@@ -1138,7 +1139,7 @@
 				<!--<ingredient name="gunMGT2TacticalARSchematic" count="10"/>-->
 			</recipe>
 			<recipe name="legendRangedT2_CompoundCrossbow" count="1" craft_time="1" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr2,LCLvl">
-				<ingredient name="ResourceForgedPlatinum" count="2"/>
+				<ingredient name="resourceForgedPlatinum" count="2"/>
 				<ingredient name="epicRangedT1_Crossbow" count="1"/>
 				<ingredient name="bookMasterPages_Bows" count="1"/>				
 				<ingredient name="gunBowT1WoodenBowParts" count="200"/>
@@ -1149,51 +1150,45 @@
 		<!--Weapons T3-->
 			<recipe name="mythRanged_Delta01" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr3,LCLvl">
 				<ingredient name="bookMaster_Pistol" count="1"/>
-				<ingredient name="ResourceForgedPlatinum" count="3"/>				
+				<ingredient name="resourceForgedPlatinum" count="3"/>				
 				<ingredient name="legendRangedT2_SMG5" count="1"/>
 				<ingredient name="gunHandgunT1PistolParts" count="400"/>
-				<ingredient name="resourceLegendaryParts" count="30"/>
-				<ingredient name="casinoCoinD" count="5"/>				
+				<ingredient name="resourceMythicalParts" count="3"/>				
 			</recipe>
 			<recipe name="mythRanged_Peacemaker" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr3,LCLvl">
 				<ingredient name="bookMaster_Magnum" count="1"/>
-				<ingredient name="ResourceForgedPlatinum" count="3"/>				
+				<ingredient name="resourceForgedPlatinum" count="3"/>				
 				<ingredient name="legendRangedT2_Magnum44" count="1"/>
 				<ingredient name="gunHandgunT1PistolParts" count="400"/>
-				<ingredient name="resourceLegendaryParts" count="30"/>
-				<ingredient name="casinoCoinD" count="5"/>				
+				<ingredient name="resourceMythicalParts" count="3"/>				
 			</recipe>
 			<recipe name="mythRanged_Destroyer" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr3,LCLvl">
 				<ingredient name="bookMaster_Shotgun" count="1"/>
-				<ingredient name="ResourceForgedPlatinum" count="3"/>				
+				<ingredient name="resourceForgedPlatinum" count="3"/>				
 				<ingredient name="legendRangedT2_Shotgun" count="1"/>
 				<ingredient name="gunShotgunT1DoubleBarrelParts" count="400"/>
-				<ingredient name="resourceLegendaryParts" count="30"/>
-				<ingredient name="casinoCoinD" count="5"/>
+				<ingredient name="resourceMythicalParts" count="3"/>
 			</recipe>
 			<recipe name="mythRanged_OneShot" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr3,LCLvl">
 				<ingredient name="bookMaster_Automatic" count="1"/>
-				<ingredient name="ResourceForgedPlatinum" count="3"/>				
+				<ingredient name="resourceForgedPlatinum" count="3"/>				
 				<ingredient name="legendRangedT2_Sniper" count="1"/>
 				<ingredient name="gunRifleT1HuntingRifleParts" count="400"/>
-				<ingredient name="resourceLegendaryParts" count="30"/>
-				<ingredient name="casinoCoinD" count="5"/>	
+				<ingredient name="resourceMythicalParts" count="3"/>
 			</recipe>
 			<recipe name="mythRanged_Dominator" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr3,LCLvl">
 				<ingredient name="bookMaster_Snipers" count="1"/>
-				<ingredient name="ResourceForgedPlatinum" count="3"/>				
+				<ingredient name="resourceForgedPlatinum" count="3"/>				
 				<ingredient name="legendRangedT2_TacticalAR" count="1"/>
 				<ingredient name="gunMGT1AK47Parts" count="400"/>
-				<ingredient name="resourceLegendaryParts" count="30"/>
-				<ingredient name="casinoCoinD" count="5"/>	
+				<ingredient name="resourceMythicalParts" count="3"/>					
 			</recipe>
 			<recipe name="mythRanged_Arbalest" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr3,LCLvl">
 				<ingredient name="bookMaster_Bows" count="1"/>
-				<ingredient name="ResourceForgedPlatinum" count="3"/>				
+				<ingredient name="resourceForgedPlatinum" count="3"/>				
 				<ingredient name="legendRangedT2_CompoundCrossbow" count="1"/>
 				<ingredient name="gunBowT1WoodenBowParts" count="400"/>
-				<ingredient name="resourceLegendaryParts" count="30"/>
-				<ingredient name="casinoCoinD" count="5"/>	
+				<ingredient name="resourceMythicalParts" count="3"/>					
 			</recipe>
 		<!---->
 		<!--UNIQUE-->
@@ -1202,46 +1197,46 @@
 				<ingredient name="legendToolT2_Nailgun" count="1"/>
 				<ingredient name="epicRangedT1_Pistol" count="1"/>				
 				<ingredient name="bookMaster_Hunter" count="1"/>
-				<ingredient name="ResourceForgedPractonium" count="2"/>				
+				<ingredient name="resourceForgedPractonium" count="2"/>				
 				<ingredient name="resourceLegendaryParts" count="25"/>	
 				<!--<ingredient name="meleeToolRepairT3NailgunSchematic" count="10"/>-->
 			</recipe>		
 			<recipe name="unique_HyperBlaster" count="1" craft_area="legenstation" craft_time="10" tags="workbenchCrafting,LCLvl">
 				<ingredient name="gunHandgunT1PistolParts" count="800"/>
-				<ingredient name="ResourceForgedPlatinum" count="4"/>
-				<ingredient name="ResourceForgedPractonium" count="4"/>
+				<ingredient name="resourceForgedPlatinum" count="4"/>
+				<ingredient name="resourceForgedPractonium" count="4"/>
 				<ingredient name="bookMaster_Pistol" count="1"/>
 				<ingredient name="resourceLegendaryParts" count="50"/>
 				<!--<ingredient name="gunHandgunT3SMG5Schematic" count="15"/>-->
 			</recipe>
 			<recipe name="unique_KronosXII" count="1" craft_area="legenstation" craft_time="10" tags="workbenchCrafting,LCLvl">
 				<ingredient name="gunShotgunT1DoubleBarrelParts" count="800"/>
-				<ingredient name="ResourceForgedPlatinum" count="4"/>
-				<ingredient name="ResourceForgedPractonium" count="4"/>
+				<ingredient name="resourceForgedPlatinum" count="4"/>
+				<ingredient name="resourceForgedPractonium" count="4"/>
 				<ingredient name="bookMaster_Shotgun" count="1"/>
 				<ingredient name="resourceLegendaryParts" count="50"/>
 				<!--<ingredient name="gunShotgunT3AutoShotgunSchematic" count="15"/>-->
 			</recipe>
 			<recipe name="unique_Vulcan" count="1" craft_area="legenstation" craft_time="10" tags="workbenchCrafting,LCLvl">
 				<ingredient name="gunMGT1AK47Parts" count="800"/>
-				<ingredient name="ResourceForgedPlatinum" count="4"/>
-				<ingredient name="ResourceForgedPractonium" count="4"/>
+				<ingredient name="resourceForgedPlatinum" count="4"/>
+				<ingredient name="resourceForgedPractonium" count="4"/>
 				<ingredient name="bookMaster_Snipers" count="1"/>
 				<ingredient name="resourceLegendaryParts" count="50"/>
 				<!--<ingredient name="gunMGT3M60Schematic" count="15"/>-->
 			</recipe>
 			<recipe name="unique_Savery" count="1" craft_area="legenstation" craft_time="10" tags="LCLvl,workbenchCrafting">
 				<ingredient name="gunHandgunT1PistolParts" count="800"/>
-				<ingredient name="ResourceForgedPlatinum" count="4"/>
-				<ingredient name="ResourceForgedPractonium" count="4"/>
+				<ingredient name="resourceForgedPlatinum" count="4"/>
+				<ingredient name="resourceForgedPractonium" count="4"/>
 				<ingredient name="bookMaster_Magnum" count="1"/>	
 				<ingredient name="resourceLegendaryParts" count="50"/>		
 				<!--<ingredient name="gunHandgunT3DesertVultureSchematic" count="15"/>-->
 			</recipe>
 			<recipe name="unique_BlackWidow" count="1" craft_area="legenstation" craft_time="10" tags="LCLvl,workbenchCrafting">
 				<ingredient name="gunBowT1WoodenBowParts" count="800"/>
-				<ingredient name="ResourceForgedPlatinum" count="4"/>
-				<ingredient name="ResourceForgedPractonium" count="4"/>
+				<ingredient name="resourceForgedPlatinum" count="4"/>
+				<ingredient name="resourceForgedPractonium" count="4"/>
 				<ingredient name="bookMaster_Bows" count="1"/>
 				<ingredient name="resourceLegendaryParts" count="50"/>
 				<!--<ingredient name="gunBowT3CompoundBowSchematic" count="15"/>-->
@@ -1257,16 +1252,16 @@
 			<!--
 			<recipe name="Dre X3" count="1" craft_area="legenstation" craft_time="10" tags="LCLvl,workbenchCrafting">
 				<ingredient name="gunExplosivesT3RocketLauncherParts" count="800"/>
-				<ingredient name="ResourceForgedPlatinum" count="5"/>
-				<ingredient name="ResourceForgedPractonium" count="5"/>
+				<ingredient name="resourceForgedPlatinum" count="5"/>
+				<ingredient name="resourceForgedPractonium" count="5"/>
 				<ingredient name="bookMaster_Fireman" count="1"/>>
 				<ingredient name="gunExplosivesT3RocketLauncherSchematic" count="15"/>
 			</recipe>
 			-->
 			<recipe name="unique_Railgun" count="1" craft_area="legenstation" craft_time="10" tags="LCLvl,workbenchCrafting">
 				<ingredient name="gunRifleT1HuntingRifleParts" count="800"/>
-				<ingredient name="ResourceForgedPlatinum" count="4"/>
-				<ingredient name="ResourceForgedPractonium" count="4"/>
+				<ingredient name="resourceForgedPlatinum" count="4"/>
+				<ingredient name="resourceForgedPractonium" count="4"/>
 				<ingredient name="bookMaster_Automatic" count="1"/>
 				<ingredient name="resourceLegendaryParts" count="50"/>
 				<!--<ingredient name="gunRifleT3SniperRifleSchematic" count="15"/>-->
@@ -1302,7 +1297,7 @@
 		<recipe name="epicMeleeT1_stoneSLHammer" count="1" craft_area="legenstation" craft_time="10" tags="learnable,workbenchCrafting,PLHr1,LCLvl">
 			<ingredient name="resourcePlatinumNugget" count="1"/>
 			<ingredient name="meleeWpnSpecialSLHammerPart" count="2"/>
-			<ingredient name="bookMasterCover_Fireman" count="1"/>
+			<ingredient name="bookMasterCover_Demolition" count="1"/>
 			<ingredient name="resourceLegendaryParts" count="10"/>
 		</recipe>
 		<recipe name="epicMeleeT1_stoneSpear" count="1" craft_area="legenstation" craft_time="10" tags="learnable,workbenchCrafting,PLHr1,LCLvl">
@@ -1310,6 +1305,7 @@
 			<ingredient name="meleeWpnSpecialSpearPart" count="2"/>
 			<ingredient name="bookMasterCover_Spear" count="1"/>
 			<ingredient name="resourceLegendaryParts" count="10"/>
+						
 		</recipe>
 		<recipe name="epicMeleeT1_LeatherKnuckles" count="1" craft_area="legenstation" craft_time="10" tags="learnable,workbenchCrafting,PLHr1,LCLvl">
 			<ingredient name="resourcePlatinumNugget" count="1"/>
@@ -1320,35 +1316,35 @@
 
 		<recipe name="legendMeleeT2_machete" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr2,LCLvl">
 			<ingredient name="epicMeleeT1_huntingKnife" count="1"/>
-			<ingredient name="ResourceForgedPlatinum" count="1"/>
+			<ingredient name="resourceForgedPlatinum" count="1"/>
 			<ingredient name="meleeWpnSpecialBladesPart" count="4"/>
 			<ingredient name="bookMasterPages_NightStalk" count="1"/>				
 			<ingredient name="resourceLegendaryParts" count="20"/>				
 		</recipe>
 		<recipe name="legendMeleeT2_bat" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr2,LCLvl">
 			<ingredient name="epicMeleeT1_club" count="1"/>
-			<ingredient name="ResourceForgedPlatinum" count="1"/>
+			<ingredient name="resourceForgedPlatinum" count="1"/>
 			<ingredient name="meleeWpnSpecialClubPart" count="4"/>
 			<ingredient name="bookMasterPages_BatterUp" count="1"/>				
 			<ingredient name="resourceLegendaryParts" count="20"/>				
 		</recipe>
 		<recipe name="legendMeleeT2_ironSLHammer" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr2,LCLvl">
 			<ingredient name="epicMeleeT1_stoneSLHammer" count="1"/>
-			<ingredient name="ResourceForgedPlatinum" count="1"/>
+			<ingredient name="resourceForgedPlatinum" count="1"/>
 			<ingredient name="meleeWpnSpecialSLHammerPart" count="4"/>
-			<ingredient name="bookMasterPages_Fireman" count="1"/>				
+			<ingredient name="bookMasterPages_Demolition" count="1"/>				
 			<ingredient name="resourceLegendaryParts" count="20"/>				
 		</recipe>
 		<recipe name="legendMeleeT2_ironSpear" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr2,LCLvl">
 			<ingredient name="epicMeleeT1_stoneSpear" count="1"/>
-			<ingredient name="ResourceForgedPlatinum" count="1"/>
+			<ingredient name="resourceForgedPlatinum" count="1"/>
 			<ingredient name="meleeWpnSpecialSpearPart" count="4"/>
 			<ingredient name="bookMasterPages_Spear" count="1"/>				
 			<ingredient name="resourceLegendaryParts" count="20"/>				
 		</recipe>
 		<recipe name="legendMeleeT2_IronKnuckles" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr2,LCLvl">
 			<ingredient name="epicMeleeT1_LeatherKnuckles" count="1"/>
-			<ingredient name="ResourceForgedPlatinum" count="1"/>
+			<ingredient name="resourceForgedPlatinum" count="1"/>
 			<ingredient name="meleeWpnSpecialKnucklesPart" count="4"/>
 			<ingredient name="bookMasterPages_BarBrawling" count="1"/>				
 			<ingredient name="resourceLegendaryParts" count="20"/>				
@@ -1356,80 +1352,75 @@
 
 		<recipe name="mythMelee_sword" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr3,LCLvl">
 			<ingredient name="legendMeleeT2_machete" count="1"/>
-			<ingredient name="ResourceForgedPlatinum" count="2"/>				
+			<ingredient name="resourceForgedPlatinum" count="2"/>				
 			<ingredient name="bookMaster_NightStalk" count="1"/>
 			<ingredient name="meleeWpnSpecialBladesPart" count="8"/>
-			<ingredient name="resourceLegendaryParts" count="30"/>
-			<ingredient name="casinoCoinD" count="3"/>	
+			<ingredient name="resourceMythicalParts" count="3"/>			>	
 		</recipe>
 		<recipe name="mythMelee_SteelClub" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr3,LCLvl">
 			<ingredient name="legendMeleeT2_bat" count="1"/>
-			<ingredient name="ResourceForgedPlatinum" count="2"/>				
+			<ingredient name="resourceForgedPlatinum" count="2"/>				
 			<ingredient name="bookMaster_BatterUp" count="1"/>
 			<ingredient name="meleeWpnSpecialClubPart" count="8"/>
-			<ingredient name="resourceLegendaryParts" count="30"/>
-			<ingredient name="casinoCoinD" count="3"/>	
+			<ingredient name="resourceMythicalParts" count="3"/>			
 		</recipe>
 		<recipe name="mythMelee_steelSLHammer" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr3,LCLvl">
 			<ingredient name="legendMeleeT2_ironSLHammer" count="1"/>
-			<ingredient name="ResourceForgedPlatinum" count="2"/>				
-			<ingredient name="bookMaster_Fireman" count="1"/>
+			<ingredient name="resourceForgedPlatinum" count="2"/>				
+			<ingredient name="bookMaster_Demolition" count="1"/>
 			<ingredient name="meleeWpnSpecialSLHammerPart" count="8"/>
-			<ingredient name="resourceLegendaryParts" count="30"/>
-			<ingredient name="casinoCoinD" count="3"/>	
+			<ingredient name="resourceMythicalParts" count="3"/>				
 		</recipe>
 		<recipe name="mythMelee_steelSpear" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr3,LCLvl">
 			<ingredient name="legendMeleeT2_ironSpear" count="1"/>
-			<ingredient name="ResourceForgedPlatinum" count="2"/>				
+			<ingredient name="resourceForgedPlatinum" count="2"/>				
 			<ingredient name="bookMaster_Spear" count="1"/>
 			<ingredient name="meleeWpnSpecialSpearPart" count="8"/>
-			<ingredient name="resourceLegendaryParts" count="30"/>
-			<ingredient name="casinoCoinD" count="3"/>	
+			<ingredient name="resourceMythicalParts" count="3"/>	
 		</recipe>
 		<recipe name="mythMelee_SteelKnuckles" count="1" craft_area="legenstation" craft_time="1" tags="learnable,workbenchCrafting,PLHr3,LCLvl">
 			<ingredient name="legendMeleeT2_IronKnuckles" count="1"/>
-			<ingredient name="ResourceForgedPlatinum" count="2"/>				
+			<ingredient name="resourceForgedPlatinum" count="2"/>				
 			<ingredient name="bookMaster_BarBrawling" count="1"/>
 			<ingredient name="meleeWpnSpecialKnucklesPart" count="8"/>
-			<ingredient name="resourceLegendaryParts" count="30"/>
-			<ingredient name="casinoCoinD" count="3"/>	
+			<ingredient name="resourceMythicalParts" count="3"/>			
 		</recipe>
 			<!-- <recipe name="legendMelee_BlackSword" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr1,LCLvl">
-				<ingredient name="mithril" count="1"/>
+				<ingredient name="resourceMithril" count="1"/>
 				<ingredient name="bookMaster_NightStalk" count="1"/>
-				<ingredient name="ResourceForgedPlatinum" count="2"/>
+				<ingredient name="resourceForgedPlatinum" count="2"/>
 				<ingredient name="drugSkullCrushers" count="30"/>
 				<ingredient name="bladesSkillMagazine" count="50"/>				
 				<ingredient name="meleeWpnBladeT3MacheteParts" count="600"/>
 			</recipe>
 			<recipe name="legendMelee_Spear" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr1,LCLvl">
-				<ingredient name="mithril" count="1"/>
+				<ingredient name="resourceMithril" count="1"/>
 				<ingredient name="bookMaster_Spear" count="1"/>
-				<ingredient name="ResourceForgedPlatinum" count="2"/>
+				<ingredient name="resourceForgedPlatinum" count="2"/>
 				<ingredient name="drugSkullCrushers" count="30"/>
 				<ingredient name="bladesSkillMagazine" count="50"/>				
 				<ingredient name="meleeWpnSpearT3SteelSpearParts" count="600"/>
 			</recipe>
 			<recipe name="legendMelee_GigaHammer" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr1,LCLvl">
-				<ingredient name="mithril" count="1"/>
+				<ingredient name="resourceMithril" count="1"/>
 				<ingredient name="bookMaster_Fireman" count="1"/>
-				<ingredient name="ResourceForgedPlatinum" count="2"/>
+				<ingredient name="resourceForgedPlatinum" count="2"/>
 				<ingredient name="drugSkullCrushers" count="30"/>
 				<ingredient name="clubsSkillMagazine" count="50"/>				
 				<ingredient name="meleeWpnSledgeT3SteelSledgehammerParts" count="600"/>
 			</recipe>
 			<recipe name="legendMelee_AssasinWeapon" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr1,LCLvl">
-				<ingredient name="mithril" count="1"/>
+				<ingredient name="resourceMithril" count="1"/>
 				<ingredient name="bookMaster_BarBrawling" count="1"/>
-				<ingredient name="ResourceForgedPlatinum" count="2"/>
+				<ingredient name="resourceForgedPlatinum" count="2"/>
 				<ingredient name="drugSkullCrushers" count="30"/>
 				<ingredient name="knucklesSkillMagazine" count="75"/>				
 				<ingredient name="meleeWpnKnucklesT3SteelKnucklesParts" count="600"/>
 			</recipe>
 			<recipe name="legendMelee_AmazingBat" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting,PLHr1,LCLvl">
-				<ingredient name="mithril" count="1"/>
+				<ingredient name="resourceMithril" count="1"/>
 				<ingredient name="bookMaster_BatterUp" count="1"/>
-				<ingredient name="ResourceForgedPlatinum" count="2"/>
+				<ingredient name="resourceForgedPlatinum" count="2"/>
 				<ingredient name="drugSkullCrushers" count="30"/>
 				<ingredient name="clubsSkillMagazine" count="50"/>				
 				<ingredient name="meleeWpnClubT3SteelClubParts" count="600"/>
@@ -1437,7 +1428,7 @@
 		<!---->
 		<!--Junk Turret Legend-->
 			<recipe name="legendBot_junkTurret" count="1" craft_area="legenstation" craft_time="30" tags="learnable,workbenchCrafting,PerkIngeS3,LCLvlInge">
-				<ingredient name="ResourceForgedPlatinum" count="1"/>
+				<ingredient name="resourceForgedPlatinum" count="1"/>
 				<ingredient name="gunBotRoboticsParts" count="500"/>				
 				<ingredient name="bookMaster_Tech" count="1"/>
 				<ingredient name="roboticsSkillMagazine" count="100"/>
@@ -1456,154 +1447,185 @@
 					<ingredient name="armorParts" count="300"/>					
 					<ingredient name="resourceArmorCraftingKit" count="20"/>					
 					<ingredient name="resourceUniqueLightPart" count="1"/>
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-					<ingredient name="Practonium" count="20"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
+					<ingredient name="resourcePractonium" count="20"/>
 				</recipe>
 				<recipe name="uniqueArmorLighArmor" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
 					<ingredient name="resourceArmorCraftingKit" count="20"/>					
 					<ingredient name="resourceUniqueLightPart" count="1"/>
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-					<ingredient name="Practonium" count="20"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
+					<ingredient name="resourcePractonium" count="20"/>
 				</recipe>
 				<recipe name="uniqueArmorLighGloves" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
 					<ingredient name="resourceArmorCraftingKit" count="20"/>					
 					<ingredient name="resourceUniqueLightPart" count="1"/>
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-					<ingredient name="Practonium" count="20"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
+					<ingredient name="resourcePractonium" count="20"/>
 				</recipe>
 				<recipe name="uniqueArmorLighLegs" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
 					<ingredient name="resourceArmorCraftingKit" count="20"/>					
 					<ingredient name="resourceUniqueLightPart" count="1"/>
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-					<ingredient name="Practonium" count="20"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
+					<ingredient name="resourcePractonium" count="20"/>
 				</recipe>
 			<!--Medium-->
 				 <recipe name="uniqueArmorMediHelm" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">					
 					<ingredient name="armorParts" count="300"/>					
 					<ingredient name="resourceArmorCraftingKit" count="20"/>
 					<ingredient name="resourceUniqueMediumtPart" count="1"/>									
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-					<ingredient name="Practonium" count="20"/>	
+					<ingredient name="resourceForgedPlatinum" count="1"/>
+					<ingredient name="resourcePractonium" count="20"/>	
 				</recipe>
 				<recipe name="uniqueArmorMediArmor" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
 					<ingredient name="resourceArmorCraftingKit" count="20"/>
 					<ingredient name="resourceUniqueMediumtPart" count="1"/>									
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-					<ingredient name="Practonium" count="20"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
+					<ingredient name="resourcePractonium" count="20"/>
 				</recipe>
 				<recipe name="uniqueArmorMediGloves" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
 					<ingredient name="resourceArmorCraftingKit" count="20"/>
 					<ingredient name="resourceUniqueMediumtPart2" count="1"/>									
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-					<ingredient name="Practonium" count="20"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
+					<ingredient name="resourcePractonium" count="20"/>
 				</recipe>
 				<recipe name="uniqueArmorMediLegs" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
 					<ingredient name="resourceArmorCraftingKit" count="20"/>
 					<ingredient name="resourceUniqueMediumtPart2" count="1"/>									
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-					<ingredient name="Practonium" count="20"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
+					<ingredient name="resourcePractonium" count="20"/>
 				</recipe>			
 			<!--Heavy-->
 				<recipe name="uniqueArmorHeavHelm" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
 					<ingredient name="resourceArmorCraftingKit" count="20"/>					
 					<ingredient name="resourceUniqueHeavyPart" count="1"/>
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-					<ingredient name="Practonium" count="20"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
+					<ingredient name="resourcePractonium" count="20"/>
 				</recipe>
 				<recipe name="uniqueArmorHeavArmor" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
 					<ingredient name="resourceArmorCraftingKit" count="20"/>					
 					<ingredient name="resourceUniqueHeavyPart" count="1"/>
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-					<ingredient name="Practonium" count="20"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
+					<ingredient name="resourcePractonium" count="20"/>
 				</recipe>
 				<recipe name="uniqueArmorHeavGloves" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
 					<ingredient name="resourceArmorCraftingKit" count="20"/>					
 					<ingredient name="resourceUniqueHeavyPart" count="1"/>
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-					<ingredient name="Practonium" count="20"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
+					<ingredient name="resourcePractonium" count="20"/>
 				</recipe>
 				<recipe name="uniqueArmorHeavLegs" count="1" craft_time="60" craft_area="legenstation" tags="learnable,workbenchCrafting">				
 					<ingredient name="armorParts" count="300"/>					
 					<ingredient name="resourceArmorCraftingKit" count="20"/>					
 					<ingredient name="resourceUniqueHeavyPart" count="1"/>
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
-					<ingredient name="Practonium" count="20"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
+					<ingredient name="resourcePractonium" count="20"/>
+				</recipe>	
+				<recipe name="ultimate_Armor_Helmet" count="1" craft_time="10" craft_area="legenstation" tags="learnable,workbenchCrafting,ultiCraft">				
+					<ingredient name="uniqueArmorLighHelm" count="1"/>					
+					<ingredient name="uniqueArmorMediHelm" count="1"/>					
+					<ingredient name="uniqueArmorHeavHelm" count="1"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
+					<ingredient name="resourceMetalAlloyAncient" count="1"/>					
+				</recipe>
+				<recipe name="ultimate_Armor_Outfit" count="1" craft_time="10" craft_area="legenstation" tags="learnable,workbenchCrafting,ultiCraft">				
+					<ingredient name="uniqueArmorLighArmor" count="1"/>					
+					<ingredient name="uniqueArmorMediArmor" count="1"/>					
+					<ingredient name="uniqueArmorHeavArmor" count="1"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
+					<ingredient name="resourceMetalAlloyAncient" count="1"/>
+				</recipe>
+				<recipe name="ultimate_Armor_Gloves" count="1" craft_time="10" craft_area="legenstation" tags="learnable,workbenchCrafting,ultiCraft">				
+					<ingredient name="uniqueArmorLighGloves" count="1"/>					
+					<ingredient name="uniqueArmorMediGloves" count="1"/>					
+					<ingredient name="uniqueArmorHeavGloves" count="1"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
+					<ingredient name="resourceMetalAlloyAncient" count="1"/>
 				</recipe>				
+				<recipe name="ultimate_Armor_Boots" count="1" craft_time="10" craft_area="legenstation" tags="learnable,workbenchCrafting,ultiCraft">				
+					<ingredient name="uniqueArmorLighLegs" count="1"/>					
+					<ingredient name="uniqueArmorMediLegs" count="1"/>					
+					<ingredient name="uniqueArmorHeavLegs" count="1"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
+					<ingredient name="resourceMetalAlloyAncient" count="1"/>
+				</recipe>
+
+
+
 				<!-- 
 				
 				<recipe name="LSAA" count="1" craft_time="60" craft_area="legenstation" tags="workbenchCrafting,LCLvl">
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
 					<ingredient name="armorParts" count="300"/>
 					<ingredient name="LSASP" count="1"/>
 					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
+					<ingredient name="resourcePractonium" count="10"/>
 				</recipe>
 				<recipe name="LSAG" count="1" craft_time="60" craft_area="legenstation" tags="workbenchCrafting,LCLvl">
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
 					<ingredient name="armorParts" count="300"/>
 					<ingredient name="LSASP" count="1"/>
 					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
+					<ingredient name="resourcePractonium" count="10"/>
 				</recipe>
 				<recipe name="LSAL" count="1" craft_time="60" craft_area="legenstation" tags="workbenchCrafting,LCLvl">
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
 					<ingredient name="armorParts" count="300"/>
 					<ingredient name="LSASP" count="1"/>
 					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
+					<ingredient name="resourcePractonium" count="10"/>
 
 				</recipe>
 				<recipe name="LSAB" count="1" craft_time="60" craft_area="legenstation" tags="workbenchCrafting,LCLvl">
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
 					<ingredient name="armorParts" count="250"/>
 					<ingredient name="LSASP" count="1"/>
 					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
+					<ingredient name="resourcePractonium" count="10"/>
 				</recipe> -->
 			<!--Militar-->
 				<!-- <recipe name="LMAH" count="1" craft_time="60" craft_area="legenstation" tags="workbenchCrafting,LCLvl">
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
 					<ingredient name="armorParts" count="250"/>
 					<ingredient name="LMASP" count="1"/>
 					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
+					<ingredient name="resourcePractonium" count="10"/>
 				</recipe>
 				<recipe name="LMAA" count="1" craft_time="60" craft_area="legenstation" tags="workbenchCrafting,LCLvl">
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
 					<ingredient name="armorParts" count="250"/>
 					<ingredient name="LMASP" count="1"/>
 					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
+					<ingredient name="resourcePractonium" count="10"/>
 				</recipe>
 				<recipe name="LMAG" count="1" craft_time="60" craft_area="legenstation" tags="workbenchCrafting,LCLvl">
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
 					<ingredient name="armorParts" count="250"/>
 					<ingredient name="LMASP" count="1"/>
 					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
+					<ingredient name="resourcePractonium" count="10"/>
 				</recipe>
 				<recipe name="LMAL" count="1" craft_time="60" craft_area="legenstation" tags="workbenchCrafting,LCLvl">
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
 					<ingredient name="armorParts" count="250"/>
 					<ingredient name="LMASP" count="1"/>
 					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
+					<ingredient name="resourcePractonium" count="10"/>
 				</recipe>
 				<recipe name="LMAB" count="1" craft_time="60" craft_area="legenstation" tags="workbenchCrafting,LCLvl">
-					<ingredient name="ResourceForgedPlatinum" count="1"/>
+					<ingredient name="resourceForgedPlatinum" count="1"/>
 					<ingredient name="armorParts" count="250"/>
 					<ingredient name="LMASP" count="1"/>
 					<ingredient name="resourceArmorCraftingKit" count="20"/>
-					<ingredient name="Practonium" count="10"/>
+					<ingredient name="resourcePractonium" count="10"/>
 				</recipe> 
 				-->
 		<!---->
@@ -1656,6 +1678,7 @@
 			<recipe name="casinoCoinD" count="1" craft_time="1" tags="learnable">
 				<ingredient name="casinoCoin" count="20000"/>
 			</recipe>
+			
 		<!--Ammmo-->
 			<recipe name="bammoJunkTurretLegend" count="2" craft_area="legenstation" craft_time="1000" tags="learnable,workbenchCrafting,PerkIngeS3">
 				<ingredient name="ammo9mmBulletBall" count="900"/>
@@ -2105,7 +2128,89 @@
 				<ingredient name="lsUnlockBundle" count="1"/>				
 			</recipe>
 
-			
+		<recipe name="refineSpawnerPistolT1" craft_area="forgeHF" count="1" craft_time="10" >
+			<ingredient name="epicRangedT1_Pistol" count="1"/>
+			<ingredient name="resourcePlatinumAnvil" count="1"/>				
+		</recipe>
+		<recipe name="refineSpawnerPistolT2" craft_area="forgeHF" count="1" craft_time="10" >
+			<ingredient name="legendRangedT2_SMG5" count="1"/>
+			<ingredient name="resourcePlatinumAnvil" count="1"/>				
+		</recipe>
+		<recipe name="refineSpawnerPistolT3" craft_area="forgeHF" count="1" craft_time="10" >
+			<ingredient name="mythRanged_Delta01" count="1"/>
+			<ingredient name="resourcePlatinumAnvil" count="1"/>				
+		</recipe>
+
+		<recipe name="refineSpawnerMagnumT1" craft_area="forgeHF" count="1" craft_time="10" >
+			<ingredient name="epicRangedT1_Revolver" count="1"/>
+			<ingredient name="resourcePlatinumAnvil" count="1"/>				
+		</recipe>
+		<recipe name="refineSpawnerMagnumT2" craft_area="forgeHF" count="1" craft_time="10" >
+			<ingredient name="legendRangedT2_Magnum44" count="1"/>
+			<ingredient name="resourcePlatinumAnvil" count="1"/>				
+		</recipe>
+		<recipe name="refineSpawnerMagnumT3" craft_area="forgeHF" count="1" craft_time="10" >
+			<ingredient name="mythRanged_Peacemaker" count="1"/>
+			<ingredient name="resourcePlatinumAnvil" count="1"/>					
+		</recipe>
+
+		<recipe name="refineSpawnerShotgunT1" craft_area="forgeHF" count="1" craft_time="10" >
+			<ingredient name="epicRangedT1_Sawed-off" count="1"/>
+			<ingredient name="resourcePlatinumAnvil" count="1"/>				
+		</recipe>
+		<recipe name="refineSpawnerShotgunT2" craft_area="forgeHF" count="1" craft_time="10" >
+			<ingredient name="legendRangedT2_Shotgun" count="1"/>
+			<ingredient name="resourcePlatinumAnvil" count="1"/>				
+		</recipe>
+		<recipe name="refineSpawnerShotgunT3" craft_area="forgeHF" count="1" craft_time="10" >
+			<ingredient name="mythRanged_Destroyer" count="1"/>	
+			<ingredient name="resourcePlatinumAnvil" count="1"/>				
+		</recipe>
+
+		<recipe name="refineSpawnerRifleT1" craft_area="forgeHF" count="1" craft_time="10" >
+			<ingredient name="epicRangedT1_Rifle" count="1"/>
+			<ingredient name="resourcePlatinumAnvil" count="1"/>				
+		</recipe>
+		<recipe name="refineSpawnerRifleT2" craft_area="forgeHF" count="1" craft_time="10" >
+			<ingredient name="legendRangedT2_Sniper" count="1"/>
+			<ingredient name="resourcePlatinumAnvil" count="1"/>				
+		</recipe>
+		<recipe name="refineSpawnerRifleT3" craft_area="forgeHF" count="1" craft_time="10" >
+			<ingredient name="mythRanged_OneShot" count="1"/>
+			<ingredient name="resourcePlatinumAnvil" count="1"/>				
+		</recipe>
+
+		<recipe name="refineSpawnerAutoT1" craft_area="forgeHF" count="1" craft_time="10" >
+			<ingredient name="epicRangedT1_AK47" count="1"/>	
+			<ingredient name="resourcePlatinumAnvil" count="1"/>			
+		</recipe>
+		<recipe name="refineSpawnerAutoT2" craft_area="forgeHF" count="1" craft_time="10" >
+			<ingredient name="legendRangedT2_TacticalAR" count="1"/>
+			<ingredient name="resourcePlatinumAnvil" count="1"/>				
+		</recipe>
+		<recipe name="refineSpawnerAutoT3" craft_area="forgeHF" count="1" craft_time="10" >
+			<ingredient name="mythRanged_Dominator" count="1"/>	
+			<ingredient name="resourcePlatinumAnvil" count="1"/>			
+		</recipe>
+
+		<recipe name="refineSpawnerCrossbowT1" craft_area="forgeHF" count="1" craft_time="10" >
+			<ingredient name="epicRangedT1_Crossbow" count="1"/>
+			<ingredient name="resourcePlatinumAnvil" count="1"/>	
+		</recipe>
+		<recipe name="refineSpawnerCrossbowT2" craft_area="forgeHF" count="1" craft_time="10" >
+			<ingredient name="legendRangedT2_CompoundCrossbow" count="1"/>
+			<ingredient name="resourcePlatinumAnvil" count="1"/>	
+		</recipe>
+		<recipe name="refineSpawnerCrossbowT3" craft_area="forgeHF" count="1" craft_time="10" >
+			<ingredient name="mythRanged_Arbalest" count="1"/>
+			<ingredient name="resourcePlatinumAnvil" count="1"/>	
+		</recipe>
+
+		<recipe name="resourcePlatinumAnvil" count="1" craft_time="120" material_based="true" craft_area="forgeHF">			<!--tags="perkAdvancedEngineering" craft_tool="toolAndDieSetHF"-->
+			<ingredient name="unit_platinumM" count="50"/>
+			<ingredient name="unit_iron" count="2500"/>
+			<ingredient name="unit_clay" count="250"/>						
+		</recipe>
 
 		<!---->
 	</append>

@@ -19,6 +19,12 @@
 	<append xpath="/blocks/block[@name='pressureplateLong']">
 		<property name="AllowedRotations" value="No45"/>
 	</append>
+
+	<append xpath="/blocks/block[@name='workbench']">
+		<property name="CustomIcon" value="cntCollapsedWorkbenchEmpty"/>
+		<property name="Model" value="@:Entities/Crafting/woodWorkBenchCollapsedEmptyPrefab.prefab" />
+
+	</append>
 		
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 
@@ -176,7 +182,7 @@
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ Legend Workbench ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 			<block name="SPWK">
 				<property name="ItemTypeIcon" value="star"/>
-				<property name="CustomIcon" value="cntHardenedChestSecureT5"/>
+				<property name="CustomIcon" value="workbench"/>
 				<property name="CustomIconTint" value="292726"/>
 
 				<property name="CustomIconTint" value="FFFF00"/>				
@@ -191,7 +197,7 @@
 				
 				<!-- <property name="Model" value="@:Entities/LootContainers/tier5LootChestPrefab.prefab"/>
 				<property name="Model" value="@:Entities/Crafting/woodWorkBenchPrefab.prefab"/> -->
-				<property name="Model" value="@:Entities/LootContainers/deskMetalFullPrefab.prefab"/>								
+				<property name="Model" value="@:Entities/Crafting/woodWorkBenchPrefab.prefab" />						
 				
 				<property name="Class" value="Workstation"/>
 				<property name="Material" value="Mmetal"/>
@@ -246,8 +252,7 @@
 				<property name="StabilitySupport" value="true"/>
 				<property name="Weight" value="0"/>
 				<property name="Shape" value="ModelEntity"/>
-				<property name="Path" value="solid"/>
-				<!--<property name="Model" value="Entities/Crafting/forgeWorkstationPrefab"/>-->
+				<property name="Path" value="solid"/>				
 				<property name="Model" value="@:Entities/Furniture/woodBurningStovePrefab.prefab"/>
 				<property name="CustomIconTint" value="231E1E"/>
 				<property name="TintColor" value="000000"/>
@@ -266,7 +271,7 @@
 				<property class="Workstation">
 					<property name="CraftingAreaRecipes" value="forgeHF"/>
 					<property name="Modules" value="tools,output,fuel,material_input"/>
-					<property name="InputMaterials" value="diamon,gold,silver,practo,iron,glass,brass,stone,lead,clay"/>
+				<property name="InputMaterials" value="diamon,gold,silver,platinumM,practo,ancientM,iron,glass,brass,stone,lead,clay"/>
 				</property>
 				<property name="WorkstationIcon" value="ui_game_symbol_forge"/>
 				<property name="OpenSound" value="forge_open"/>
@@ -297,7 +302,10 @@
 				<property name="CustomIcon" value="bladeTrap"/>
 				<property name="CustomIconTint" value="00AAE4"/>
 				<property name="TintColor" value="00AAE4"/>
-				<property name="UMA.Overlay0Tint" value="0,170,228"/>
+				
+				<property class="UMA">
+						<property name="Overlay0Tint" value="0,170,228"/>
+					</property>
 				<property name="ItemTypeIcon" value="computer"/>
 				<property name="Tags" value="noblocks"/>
 				<property name="DescriptionKey" value="DbladeTrapDesc"/>
@@ -388,7 +396,10 @@
 			<block name="trapSpikesScrapSteelMaster">				
 				<property name="CreativeMode" value="None"/>
 
-				<property name="UMA.Overlay0Tint" value="0,170,228"/>
+				
+				<property class="UMA">
+						<property name="Overlay0Tint" value="0,170,228"/>
+					</property>
 				<property name="CustomIconTint" value="00AAE4"/>
 				<property name="TintColor" value="00AAE4"/>
 
@@ -1055,9 +1066,7 @@
 			</block>
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->	
 
-		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲  NEW VARIANTS ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ 
-			
-			-->
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲  NEW VARIANTS ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->
 			<block name="stainlesSteelShapes" shapes="All">
                 <property name="DescriptionKey" value="steelBlockGroupDesc"/>            
                 <property name="DisplayType" value="blockHardened"/>
@@ -1077,6 +1086,564 @@
 				</property>
 			</block>
 		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->		
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲  Nuevos Sembradios ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->
+			<block name="plantedMushroom1_advanced">
+			<property name="Extends" value="plantedMushroom1"/>
+			<property name="CustomIcon" value="plantedMushroom1"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+				<property class="PlantGrowing">
+				<property name="LightLevelGrow" value="0"/>
+				<property name="LightLevelStay" value="0"/>
+				<property name="FertileLevel" value="0"/>
+				<property name="Next" value="plantedMushroom3HarvestPlayer_advanced"/>
+			</property>			
+			<property name="UnlockedBy" value="craftingSeeds"/>			
+			<drop event="Destroy" name="plantedMushroom1_advanced" count="1"/>			
+		</block>
+		<block name="plantedMushroom3HarvestPlayer_advanced">
+			<property name="Extends" value="plantedMushroom3Harvest"/>			
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property name="CustomIcon" value="plantedMushroom3Harvest"/>					
+			<property name="DowngradeBlock" value="plantedMushroom1_advanced"/>			
+		</block>
+
+		<block name="plantedYucca1_advanced">
+			<property name="Extends" value="plantedYucca1"/>
+			<property name="CustomIcon" value="plantedYucca1"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property class="PlantGrowing">
+				<property name="Next" value="plantedYucca3HarvestPlayer_advanced"/>
+			</property>
+			<property name="UnlockedBy" value="craftingSeeds"/>			
+			<drop event="Destroy" name="plantedYucca1" count="1"/>
+		</block>
+		<block name="plantedYucca3HarvestPlayer_advanced">
+			<property name="Extends" value="plantedYucca3Harvest"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property name="CustomIcon" value="plantedYucca1"/>			
+			<property name="DowngradeBlock" value="plantedYucca1_advanced"/>			
+		</block>
+
+		<block name="plantedCotton1_advanced">
+			<property name="Extends" value="plantedCotton1"/>
+			<property name="CustomIcon" value="plantedCotton1"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property class="PlantGrowing">
+				<property name="Next" value="plantedCotton3HarvestPlayer_advanced"/>
+			</property>
+			<property name="UnlockedBy" value="craftingSeeds"/>
+			<drop event="Destroy" name="plantedCotton1" count="1"/>
+		</block>
+		<block name="plantedCotton3HarvestPlayer_advanced">
+			<property name="Extends" value="plantedCotton3Harvest"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property name="CustomIcon" value="plantedCotton1"/>					
+			<property name="DowngradeBlock" value="plantedCotton1_advanced"/>			
+		</block>
+
+		<block name="plantedCoffee1_advanced">
+			<property name="Extends" value="plantedCoffee1"/>
+			<property name="CustomIcon" value="plantedCoffee1"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property class="PlantGrowing">
+				<property name="Next" value="plantedCoffee3HarvestPlayer_advanced"/>
+			</property>
+			<property name="UnlockedBy" value="craftingSeeds"/>			
+			<drop event="Destroy" name="plantedCoffee1_advanced" count="1"/>
+		</block>
+		<block name="plantedCoffee3HarvestPlayer_advanced">
+			<property name="Extends" value="plantedCoffee3Harvest"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property name="CustomIcon" value="plantedCoffee1"/>			
+			<property name="DowngradeBlock" value="plantedCoffee1_advanced"/>			
+		</block>
+
+		<block name="plantedGoldenrod1_advanced">
+			<property name="Extends" value="plantedGoldenrod1"/>
+			<property name="CustomIcon" value="plantedGoldenrod1"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property class="PlantGrowing">
+				<property name="Next" value="plantedGoldenrod3HarvestPlayer_advanced"/>
+			</property>
+			<property name="UnlockedBy" value="craftingSeeds"/>			
+			<drop event="Destroy" name="plantedGoldenrod1_advanced" count="1"/>			
+		</block>
+		<block name="plantedGoldenrod3HarvestPlayer_advanced">
+			<property name="Extends" value="plantedGoldenrod3Harvest"/>
+			<property name="CustomIcon" value="plantedGoldenrod3Harvest"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>			
+			<property name="DowngradeBlock" value="plantedGoldenrod1_advanced"/>			
+		</block>	
+
+		<block name="plantedAloe1_advanced">
+			<property name="Extends" value="plantedAloe1"/>
+			<property name="CustomIcon" value="plantedAloe1"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>			
+			<property class="PlantGrowing">
+				<property name="Next" value="plantedAloe3HarvestPlayer_advanced"/>
+			</property>
+			<property name="UnlockedBy" value="craftingSeeds"/>			
+			<drop event="Destroy" name="plantedAloe1_advanced" count="1"/>			
+		</block>
+		<block name="plantedAloe3HarvestPlayer_advanced">
+			<property name="Extends" value="plantedAloe3Harvest"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property name="CustomIcon" value="plantedAloe1"/>			
+			<property name="DowngradeBlock" value="plantedAloe1_advanced"/>			
+		</block>
+
+		<block name="plantedBlueberry1_advanced">
+			<property name="Extends" value="plantedBlueberry1"/>
+			<property name="CustomIcon" value="plantedBlueberry1"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property class="PlantGrowing">
+				<property name="Next" value="plantedBlueberry3HarvestPlayer_advanced"/>
+			</property>
+			<property name="UnlockedBy" value="craftingSeeds"/>			
+			<drop event="Destroy" name="plantedBlueberry1_advanced" count="1"/>			
+		</block>
+		<block name="plantedBlueberry3HarvestPlayer_advanced">
+			<property name="Extends" value="plantedBlueberry3Harvest"/>			
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>			
+			<property name="CustomIcon" value="plantedBlueberry1"/>			
+			<property name="DowngradeBlock" value="plantedBlueberry1_advanced"/>
+		</block>
+
+		<block name="plantedPotato1_advanced">
+			<property name="Extends" value="plantedPotato1"/>
+			<property name="CustomIcon" value="plantedPotato1"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>			
+			<property class="PlantGrowing">
+				<property name="Next" value="plantedPotato3HarvestPlayer_advanced"/>
+			</property>
+			<property name="UnlockedBy" value="craftingSeeds"/>			
+			<drop event="Destroy" name="plantedPotato1_advanced" count="1"/>			
+		</block>
+		<block name="plantedPotato3HarvestPlayer_advanced">
+			<property name="Extends" value="plantedPotato3Harvest"/>			
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property name="CustomIcon" value="plantedPotato1"/>
+			<property name="DowngradeBlock" value="plantedPotato1_advanced"/>			
+		</block>
+
+		<block name="plantedChrysanthemum1_advanced">
+			<property name="Extends" value="plantedChrysanthemum1"/>
+			<property name="CustomIcon" value="plantedChrysanthemum1"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>			
+			<property class="PlantGrowing">
+				<property name="Next" value="plantedChrysanthemum3HarvestPlayer_advanced"/>
+			</property>
+			<property name="UnlockedBy" value="craftingSeeds"/>			
+			<drop event="Destroy" name="plantedChrysanthemum1_advanced" count="1"/>			
+		</block>
+		<block name="plantedChrysanthemum3HarvestPlayer_advanced">
+			<property name="Extends" value="plantedChrysanthemum3Harvest"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property name="CustomIcon" value="plantedChrysanthemum1"/>
+			<property name="DowngradeBlock" value="plantedChrysanthemum1_advanced"/>			
+		</block>
+
+		<block name="plantedCorn1_advanced">
+			<property name="Extends" value="plantedCorn1"/>
+			<property name="CustomIcon" value="plantedCorn1"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property class="PlantGrowing">
+				<property name="Next" value="plantedCorn3HarvestPlayer_advanced"/>
+			</property>
+			<property name="UnlockedBy" value="craftingSeeds"/>			
+			<drop event="Destroy" name="plantedCorn1_advanced" count="1"/>			
+		</block>
+		<block name="plantedCorn3HarvestPlayer_advanced">
+			<property name="Extends" value="plantedCorn3Harvest"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>								
+			<property name="DowngradeBlock" value="plantedCorn1_advanced"/>			
+		</block>
+
+		<block name="plantedGraceCorn1_advanced">
+			<property name="Extends" value="plantedGraceCorn1"/>
+			<property name="CustomIcon" value="plantedCorn1"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="CustomIconTint" value="ff9f9f"/>	
+			<property name="TintColor" value="255,255,0"/>
+			<property class="PlantGrowing">
+				<property name="Next" value="plantedGraceCorn3HarvestPlayer_advanced"/>
+			</property>
+			<property name="UnlockedBy" value="plantedGraceCorn1Schematic"/><!-- KEEP_AS_SCHEMATIC_ONLY -->
+			<drop event="Destroy" name="plantedGraceCorn1_advanced" count="1"/>			
+		</block>
+		<block name="plantedGraceCorn3HarvestPlayer_advanced">
+			<property name="Extends" value="plantedGraceCorn3Harvest"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>			
+			<property name="CustomIcon" value="plantedCorn1"/>
+			<property name="CustomIconTint" value="ff9f9f"/>			
+			<property name="DowngradeBlock" value="plantedGraceCorn1_advanced"/>			
+		</block>
+
+		<block name="plantedHop1_advanced">
+			<property name="Extends" value="plantedHop1"/>
+			<property name="CustomIcon" value="plantedHop1"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property class="PlantGrowing">
+				<property name="Next" value="plantedHop3HarvestPlayer_advanced"/>
+			</property>
+			<property name="UnlockedBy" value="craftingSeeds"/>			
+			<drop event="Destroy" name="plantedHop1_advanced" count="1"/>
+		</block>
+		<block name="plantedHop3HarvestPlayer_advanced">
+			<property name="Extends" value="plantedHop3Harvest"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property name="CustomIcon" value="plantedHop1"/>			
+			<property name="DowngradeBlock" value="plantedHop1_advanced"/>
+		</block>
+
+		<block name="plantedSnowberry1_advanced">
+			<property name="Extends" value="plantedSnowberry1"/>
+			<property name="CustomIcon" value="plantedSnowberry3Harvest"/>
+			<property name="CustomIcon" value="plantedSnowberry1"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>			
+			<property class="PlantGrowing">
+				<property name="Next" value="plantedSnowberry3HarvestPlayer_advanced"/>
+			</property>
+			<property name="UnlockedBy" value="perkLivingOffTheLand"/> <!-- NOT_USED -->			
+			<drop event="Destroy" name="plantedSnowberry1_advanced" count="1"/>			
+		</block>
+		<block name="plantedSnowberry3HarvestPlayer_advanced">
+			<property name="Extends" value="plantedSnowberry3Harvest"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property name="CustomIcon" value="plantedSnowberry1"/>
+			<property name="DowngradeBlock" value="plantedSnowberry1_advanced"/>
+		</block>
+
+		<block name="plantedPumpkin1_advanced">
+			<property name="Extends" value="plantedPumpkin1"/>
+			<property name="CustomIcon" value="plantedPumpkin1"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>
+			<property class="PlantGrowing">
+				<property name="Next" value="plantedPumpkin3HarvestPlayer_advanced"/>
+			</property>
+			<property name="UnlockedBy" value="craftingSeeds"/>
+			<drop event="Destroy" name="plantedPumpkin1_advanced" count="1"/>
+		</block>
+		<block name="plantedPumpkin3HarvestPlayer_advanced">
+			<property name="Extends" value="plantedPumpkin3Harvest"/>
+			<property name="CustomIconTint" value="255,255,0"/>
+			<property name="TintColor" value="255,255,0"/>			
+			<property name="CustomIcon" value="plantedPumpkin1"/>			
+			<property name="DowngradeBlock" value="plantedPumpkin1_advanced"/>
+			
+		</block>
+		<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ -->	
+		<block name="refineSpawnerPistolT1">
+			<property name="Extends" value="graveStone01" />
+			<property name="ItemTypeIcon" value="pistol"/>
+			<property name="CreativeMode" value="Player" />
+			<property name="Class" value="GameEvent" />
+			<property name="Material" value="Mmetal_hard" />
+			<property name="TriggeredEvent" value="test_buff_sillysounds" />
+			<property name="DestroyOnEvent" value="true" />
+			<property name="CustomIconTint" value="81, 209, 246"/>
+			<property name="TintColor" value="81, 209, 246"/>
+			<property name="Shape" value="New" />
+			<property name="Model" value="@:Shapes/poi_part_helper.fbx" />						
+			<property name="CustomIcon" value="poiPartHelper" />			
+			<property name="Texture" value="62,62,62,62,537,62" />
+			<property name="DowngradeBlock" value="refineBlockPistolT1" />
+			<property name="Group" value="cRefine"/>
+		</block>
+		<block name="refineBlockPistolT1">
+			<property name="CreativeMode" value="Player" />
+			<property name="ItemTypeIcon" value="pistol"/>
+			<property name="Class" value="CompositeTileEntity" />			
+			<property name="CustomIcon" value="poiPartHelper" />
+			<property name="DisplayType" value="blockHardened" />
+			<property name="Material" value="Mmetal_hard" />
+			<property name="CustomIconTint" value="81, 209, 246"/>
+			<property name="TintColor" value="81, 209, 246"/>		
+			<property name="Shape" value="New" />
+			<property name="Model" value="@:Shapes/poi_part_helper.fbx" />
+			<property name="Texture" value="62,62,62,62,537,62" />
+			<property name="StabilitySupport" value="false" />			
+			<drop event="Destroy" count="0" />
+			<property name="Group" value="cRefine"/>
+			<property name="DowngradeFX" value="impact_organic_on_metal,silencefiller" />
+			<property class="CompositeFeatures">
+				<property class="TEFeatureStorage">
+					<property name="LootList" value="lootUpgradePistolT1" />					
+				</property>
+			</property>
+		</block>
+		<block name="refineSpawnerPistolT2">
+			<property name="Extends" value="refineSpawnerPistolT1" />
+			<property name="ItemTypeIcon" value="pistol"/>
+			<property name="DowngradeBlock" value="refineBlockPistolT2" />
+		</block>
+		<block name="refineBlockPistolT2">
+			<property name="Extends" value="refineBlockPistolT1" />	
+			<property name="ItemTypeIcon" value="pistol"/>		
+			<property class="CompositeFeatures">
+				<property class="TEFeatureStorage">
+					<property name="LootList" value="lootUpgradePistolT2" />					
+				</property>
+			</property>
+		</block>
+		<block name="refineSpawnerPistolT3">
+			<property name="Extends" value="refineSpawnerPistolT1" />
+			<property name="ItemTypeIcon" value="pistol"/>
+			<property name="DowngradeBlock" value="refineBlockPistolT3" />
+		</block>
+		<block name="refineBlockPistolT3">
+			<property name="Extends" value="refineBlockPistolT1" />	
+			<property name="ItemTypeIcon" value="pistol"/>		
+			<property class="CompositeFeatures">
+				<property class="TEFeatureStorage">
+					<property name="LootList" value="lootUpgradePistolT3" />					
+				</property>
+			</property>
+		</block>
+
+		<block name="refineSpawnerMagnumT1">
+			<property name="Extends" value="refineSpawnerPistolT1" />
+			<property name="ItemTypeIcon" value="gunslinger"/>
+			<property name="DowngradeBlock" value="refineBlockMagnumT1" />
+		</block>
+		<block name="refineBlockMagnumT1">
+			<property name="Extends" value="refineBlockPistolT1" />	
+			<property name="ItemTypeIcon" value="gunslinger"/>		
+			<property class="CompositeFeatures">
+				<property class="TEFeatureStorage">
+					<property name="LootList" value="lootUpgradeMagnumT1" />					
+				</property>
+			</property>
+		</block>
+		<block name="refineSpawnerMagnumT2">
+			<property name="Extends" value="refineSpawnerPistolT1" />
+			<property name="ItemTypeIcon" value="gunslinger"/>
+			<property name="DowngradeBlock" value="refineBlockMagnumT2" />
+		</block>
+		<block name="refineBlockMagnumT2">
+			<property name="Extends" value="refineBlockPistolT1" />	
+			<property name="ItemTypeIcon" value="gunslinger"/>		
+			<property class="CompositeFeatures">
+				<property class="TEFeatureStorage">
+					<property name="LootList" value="lootUpgradeMagnumT2" />					
+				</property>
+			</property>
+		</block>
+		<block name="refineSpawnerMagnumT3">
+			<property name="Extends" value="refineSpawnerPistolT1" />
+			<property name="ItemTypeIcon" value="gunslinger"/>
+			<property name="DowngradeBlock" value="refineBlockMagnumT3" />
+		</block>
+		<block name="refineBlockMagnumT3">
+			<property name="Extends" value="refineBlockPistolT1" />	
+			<property name="ItemTypeIcon" value="gunslinger"/>		
+			<property class="CompositeFeatures">
+				<property class="TEFeatureStorage">
+					<property name="LootList" value="lootUpgradeMagnumT3" />					
+				</property>
+			</property>
+		</block>
+
+		<block name="refineSpawnerShotgunT1">
+			<property name="Extends" value="refineSpawnerPistolT1" />
+			<property name="ItemTypeIcon" value="shotgun"/>
+			<property name="DowngradeBlock" value="refineBlockShotgunT1" />
+		</block>
+		<block name="refineBlockShotgunT1">
+			<property name="Extends" value="refineBlockPistolT1" />	
+			<property name="ItemTypeIcon" value="shotgun"/>		
+			<property class="CompositeFeatures">
+				<property class="TEFeatureStorage">
+					<property name="LootList" value="lootUpgradeShotgunT1" />					
+				</property>
+			</property>
+		</block>
+		<block name="refineSpawnerShotgunT2">
+			<property name="Extends" value="refineSpawnerPistolT1" />
+			<property name="ItemTypeIcon" value="shotgun"/>
+			<property name="DowngradeBlock" value="refineBlockShotgunT2" />
+		</block>
+		<block name="refineBlockShotgunT2">
+			<property name="Extends" value="refineBlockPistolT1" />	
+			<property name="ItemTypeIcon" value="shotgun"/>		
+			<property class="CompositeFeatures">
+				<property class="TEFeatureStorage">
+					<property name="LootList" value="lootUpgradeShotgunT2" />					
+				</property>
+			</property>
+		</block>
+		<block name="refineSpawnerShotgunT3">
+			<property name="Extends" value="refineSpawnerPistolT1" />
+			<property name="ItemTypeIcon" value="shotgun"/>
+			<property name="DowngradeBlock" value="refineBlockShotgunT3" />
+		</block>
+		<block name="refineBlockShotgunT3">
+			<property name="Extends" value="refineBlockPistolT1" />	
+			<property name="ItemTypeIcon" value="shotgun"/>		
+			<property class="CompositeFeatures">
+				<property class="TEFeatureStorage">
+					<property name="LootList" value="lootUpgradeShotgunT3" />					
+				</property>
+			</property>
+		</block>
+
+		<block name="refineSpawnerRifleT1">
+			<property name="Extends" value="refineSpawnerPistolT1" />
+			<property name="ItemTypeIcon" value="map_cursor"/>
+			<property name="DowngradeBlock" value="refineBlockRifleT1" />
+		</block>
+		<block name="refineBlockRifleT1">
+			<property name="Extends" value="refineBlockPistolT1" />	
+			<property name="ItemTypeIcon" value="map_cursor"/>			
+			<property class="CompositeFeatures">
+				<property class="TEFeatureStorage">
+					<property name="LootList" value="lootUpgradeRifleT1" />					
+				</property>
+			</property>
+		</block>
+		<block name="refineSpawnerRifleT2">
+			<property name="Extends" value="refineSpawnerPistolT1" />
+			<property name="ItemTypeIcon" value="map_cursor"/>
+			<property name="DowngradeBlock" value="refineBlockRifleT2" />
+		</block>
+		<block name="refineBlockRifleT2">
+			<property name="Extends" value="refineBlockPistolT1" />	
+			<property name="ItemTypeIcon" value="map_cursor"/>		
+			<property class="CompositeFeatures">
+				<property class="TEFeatureStorage">
+					<property name="LootList" value="lootUpgradeRifleT2" />					
+				</property>
+			</property>
+		</block>
+		<block name="refineSpawnerRifleT3">
+			<property name="Extends" value="refineSpawnerPistolT1" />
+			<property name="ItemTypeIcon" value="map_cursor"/>
+			<property name="DowngradeBlock" value="refineBlockRifleT3" />
+		</block>
+		<block name="refineBlockRifleT3">
+			<property name="Extends" value="refineBlockPistolT1" />	
+			<property name="ItemTypeIcon" value="map_cursor"/>			
+			<property class="CompositeFeatures">
+				<property class="TEFeatureStorage">
+					<property name="LootList" value="lootUpgradeRifleT3" />					
+				</property>
+			</property>
+		</block>
+
+		<block name="refineSpawnerAutoT1">
+			<property name="Extends" value="refineSpawnerPistolT1" />
+			<property name="ItemTypeIcon" value="rifle"/>
+			<property name="DowngradeBlock" value="refineBlockAutoT1" />
+		</block>
+		<block name="refineBlockAutoT1">
+			<property name="Extends" value="refineBlockPistolT1" />	
+			<property name="ItemTypeIcon" value="rifle"/>		
+			<property class="CompositeFeatures">
+				<property class="TEFeatureStorage">
+					<property name="LootList" value="lootUpgradeAutoT1" />					
+				</property>
+			</property>
+		</block>
+		<block name="refineSpawnerAutoT2">
+			<property name="Extends" value="refineSpawnerPistolT1" />
+			<property name="ItemTypeIcon" value="rifle"/>
+			<property name="DowngradeBlock" value="refineBlockAutoT2" />
+		</block>
+		<block name="refineBlockAutoT2">
+			<property name="Extends" value="refineBlockPistolT1" />	
+			<property name="ItemTypeIcon" value="rifle"/>		
+			<property class="CompositeFeatures">
+				<property class="TEFeatureStorage">
+					<property name="LootList" value="lootUpgradeAutoT2" />					
+				</property>
+			</property>
+		</block>
+		<block name="refineSpawnerAutoT3">
+			<property name="Extends" value="refineSpawnerPistolT1" />
+			<property name="ItemTypeIcon" value="rifle"/>
+			<property name="DowngradeBlock" value="refineBlockAutoT3" />
+		</block>
+		<block name="refineBlockAutoT3">
+			<property name="Extends" value="refineBlockPistolT1" />	
+			<property name="ItemTypeIcon" value="rifle"/>		
+			<property class="CompositeFeatures">
+				<property class="TEFeatureStorage">
+					<property name="LootList" value="lootUpgradeAutoT3" />					
+				</property>
+			</property>
+		</block>
+
+		<block name="refineSpawnerCrossbowT1">
+			<property name="Extends" value="refineSpawnerPistolT1" />
+			<property name="ItemTypeIcon" value="archery"/>
+			<property name="DowngradeBlock" value="refineBlockCrossbowT1" />
+		</block>
+		<block name="refineBlockCrossbowT1">
+			<property name="Extends" value="refineBlockPistolT1" />	
+					
+			<property class="CompositeFeatures">
+				<property class="TEFeatureStorage">
+					<property name="LootList" value="lootUpgradeCrossbowT1" />					
+				</property>
+			</property>
+		</block>
+		<block name="refineSpawnerCrossbowT2">
+			<property name="Extends" value="refineSpawnerPistolT1" />
+			<property name="ItemTypeIcon" value="archery"/>
+			<property name="DowngradeBlock" value="refineBlockCrossbowT2" />
+		</block>
+		<block name="refineBlockCrossbowT2">
+			<property name="Extends" value="refineBlockPistolT1" />	
+			<property name="ItemTypeIcon" value="archery"/>		
+			<property class="CompositeFeatures">
+				<property class="TEFeatureStorage">
+					<property name="LootList" value="lootUpgradeCrossbowT2" />					
+				</property>
+			</property>
+		</block>
+		<block name="refineSpawnerCrossbowT3">
+			<property name="Extends" value="refineSpawnerPistolT1" />
+			<property name="ItemTypeIcon" value="archery"/>
+			<property name="DowngradeBlock" value="refineBlockCrossbowT3" />
+		</block>
+		<block name="refineBlockCrossbowT3">
+			<property name="Extends" value="refineBlockPistolT1" />	
+			<property name="ItemTypeIcon" value="archery"/>		
+			<property class="CompositeFeatures">
+				<property class="TEFeatureStorage">
+					<property name="LootList" value="lootUpgradeCrossbowT3" />					
+				</property>
+			</property>
+		</block>
+
+
+
 	</append>
 	<!-- ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲  Add blocks upgrade to steel ▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ -->	
 		<append xpath="/blocks/block[@name='metalRivetSheet']">
@@ -1107,7 +1674,7 @@
 	<append xpath="/blocks/block[@name='cntDewCollector']">	
 		<property name="ConvertToItem" value="murkWaterBundle"/>
 		<property name="ModdedConvertToItem" value="waterBundle" />
-		<property name="HeatMapStrength" value="1"/>		
+		<property name="HeatMapStrength" value=".5"/>		
 	</append>
 
 	<append xpath="/blocks/block[@name='hayBaleSquare']">	
