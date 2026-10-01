@@ -6036,10 +6036,16 @@
 			<drop event="Harvest" name="resourceSilverNugget" prob=".2" count="3" tag="artOfMiningLuckyStrikeHarvest"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="50000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_set" value="15"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffSirenBossAlarm"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffSirenBossAlarm2"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffSirenBossSpeedController"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" target="self" buff="buffSirenBossSpeedController"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="SirenDeco"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffBossAura_SirenSound"/>
+				<!-- <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffBossAura_SirenSound"/> -->
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffBossAura_Siren"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffSirenBossSpeedController,buffSirenBossSpeedTier1,buffSirenBossSpeedTier2,buffSirenBossSpeedTier3"/>
 				
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 			</effect_group>
@@ -6883,12 +6889,15 @@
 			<property name="DeadBodyHitPoints" value="1000"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="120000"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="30"/>				
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="30"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="SirenDeco"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffSirenBossAlarm"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffSirenBossAlarm2"/>
 				<!--<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="decoBossSP"/>-->
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffBossAura_SirenSound"/>
+				<!-- <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffBossAura_SirenSound"/> -->
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffBossAura_SirenSP"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffNoiseAOE01"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffSirenBossSpeedController,buffSirenBossSpeedTier1,buffSirenBossSpeedTier2,buffSirenBossSpeedTier3"/>
 				
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="50"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffStayDownKO,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryConcussion,buffInjuryCrippled01,buffInjuryUnconscious,buffInjuryKnockdown01,buffInjuryKnockdown02,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>

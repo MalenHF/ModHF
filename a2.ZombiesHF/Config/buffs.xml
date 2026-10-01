@@ -4288,16 +4288,107 @@
 		<!--BUFF BY SNUKFIN! Malen EDIT-->
 		<buff name="SirenDeco" hidden="true">
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Electrical/speakerLoudWallPrefab.prefab" local_offset="0,-.15,.17" local_rotation="0,0,0" parent_transform="Head"/>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="SetHeadSize" size="0.01"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="SetHeadSize" size="0.01"/> -->
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Electrical/speakerLoudWallPrefab.prefab" local_offset="-0.3927,-0.0531,0.2326" local_rotation="354.5645,300.712,349.4585" local_scale="0.4501,0.5,0.7056" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/hoistHookPrefab.prefab" local_offset="0.0192,0.1037,0.0038" local_rotation="14.6088,40.552,180" local_scale="1,0.4355,1.8947" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Lighting/fluorescentLightBayBrokenOffPrefab.prefab" local_offset="0.4441,-0.0451,0.5283" local_rotation="356.9014,314.3481,82.6867" local_scale="0.1389,0.525,0.1011" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Commercial/newspaperDispenserStandBluePrefab.prefab" local_offset="0.1033,0,0.0928" local_rotation="0,305.4006,0" local_scale="0.3845,0.0358,0.1693" parent_transform="Head"/>
+
+
+
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Electrical/speakerLoudWallPrefab.prefab" local_offset="0,-.15,.17" local_rotation="0,0,0" parent_transform="Head"/> -->
 				<!-- Up/Down - Side/Side - Front/Back -->
 
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Electrical/speakerLoudWallPrefab.prefab" local_offset="0,-.15,.17" local_rotation="0,0,0" parent_transform="Head">
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Electrical/speakerLoudWallPrefab.prefab" local_offset="0,-.15,.17" local_rotation="0,0,0" parent_transform="Head">
 					<requirement name="!HasPrefab" particle="@:Entities/Electrical/speakerLoudWallPrefab.prefab" />
+				</triggered_effect> -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Electrical/speakerLoudWallPrefab.prefab" local_offset="-0.3927,-0.0531,0.2326" local_rotation="354.5645,300.712,349.4585" local_scale="0.4501,0.5,0.7056" parent_transform="Head">
+					<requirement name="!HasPrefab" particle="@:Entities/Electrical/speakerLoudWallPrefab.prefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Industrial/hoistHookPrefab.prefab" local_offset="0.0192,0.1037,0.0038" local_rotation="14.6088,40.552,180" local_scale="1,0.4355,1.8947" parent_transform="Head">
+					<requirement name="!HasPrefab" particle="@:Entities/Industrial/hoistHookPrefab.prefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Lighting/fluorescentLightBayBrokenOffPrefab.prefab" local_offset="0.4441,-0.0451,0.5283" local_rotation="356.9014,314.3481,82.6867" local_scale="0.1389,0.525,0.1011" parent_transform="Head">
+					<requirement name="!HasPrefab" particle="@:Entities/Lighting/fluorescentLightBayBrokenOffPrefab.prefab" />
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Entities/Commercial/newspaperDispenserStandBluePrefab.prefab" local_offset="0.1033,0,0.0928" local_rotation="0,305.4006,0" local_scale="0.3845,0.0358,0.1693" parent_transform="Head">
+					<requirement name="!HasPrefab" particle="@:Entities/Commercial/newspaperDispenserStandBluePrefab.prefab" />
 				</triggered_effect>
 			</effect_group>
 		</buff>
+		<!-- Alarm sounds based on mod AEC x Project -->
+		<buff name="buffSirenBossAlarm" hidden="true" duration="0">
+			<update_rate value="7"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="AECSirenHeadAlarmLoop" play_at_self="true"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="AECSirenHeadAlarmLoop" play_at_self="true"/>
+			</effect_group>
+		</buff>
+
+		<buff name="buffSirenBossAlarm2" hidden="true" duration="0">
+			<update_rate value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$siren2Counter" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$siren2Counter" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="AECSirenHeadDrone" play_at_self="true">
+					<requirement name="CVarCompare" cvar="$siren2Counter" operation="EQ" value="30"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="AECSirenHeadDrone2" play_at_self="true">
+					<requirement name="CVarCompare" cvar="$siren2Counter" operation="EQ" value="45"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$siren2Counter" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$siren2Counter" operation="GTE" value="60"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<!-- Speed Controller (based on mod AEC x Project): +25% par palier (75% / 50% / 25% HP) -->
+		<buff name="buffSirenBossSpeedController" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<update_rate value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffSirenBossSpeedTier1">
+					<requirement name="StatCompareCurrent" target="self" stat="health" operation="LTE" value="37500"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffSirenBossSpeedTier2">
+					<requirement name="StatCompareCurrent" target="self" stat="health" operation="LTE" value="25000"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffSirenBossSpeedTier3">
+					<requirement name="StatCompareCurrent" target="self" stat="health" operation="LTE" value="12500"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+
+		<buff name="buffSirenBossSpeedTier1" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<effect_group>
+				<passive_effect name="WalkSpeed" operation="base_set" value=".25"/>
+				<passive_effect name="RunSpeed" operation="base_set" value=".25"/>
+			</effect_group>
+		</buff>
+
+		<buff name="buffSirenBossSpeedTier2" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<effect_group>
+				<passive_effect name="WalkSpeed" operation="base_set" value=".50"/>
+				<passive_effect name="RunSpeed" operation="base_set" value=".50"/>
+			</effect_group>
+		</buff>
+
+		<buff name="buffSirenBossSpeedTier3" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<effect_group>
+				<passive_effect name="WalkSpeed" operation="base_set" value="1"/>
+				<passive_effect name="RunSpeed" operation="base_set" value="1"/>
+			</effect_group>
+		</buff>		
+
 		<buff name="zombiSBMiniSirenDeco" hidden="true">
 			<effect_group>																      <!--Entities/Electrical/loudspeakerPrefab-->
 				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Entities/Electrical/speakerLoudWallPrefab.prefab" local_offset="-.2,0,.5" local_rotation="0,0,90" parent_transform="Spine1"/>
